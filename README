@@ -1,0 +1,8 @@
+Structure of current directory:
+0) ./
+	include main tex file as well as compilation logs, Makefile and style files
+1) mainChapters
+	includes text of main chapters of thesis.
+2) otherText
+	include all other text, as preamble, appendices, etc.
+
