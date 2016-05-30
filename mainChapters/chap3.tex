@@ -1,3 +1,158 @@
-\chapter{Continued captions}
-\label{chap:ContCaptions}
+\chapter{LUCID}
+\label{chap:LUCID}
 
+\section{Plan of the LUCID chapter}
+
+\begin{itemize}
+ \item Lucid operation (should I write about it? if yes - what can I write?)
+ \begin{itemize}
+  \item performance of calibration system.
+  \item HV changes in 2015/2016. As an interesting fact how PMTs are aging.
+  \item interesting observations from LUCID operatins.
+  \item performance of detector - luminosity in 2015 (as a conlusion of LUCID chapter).
+ \end{itemize}
+ 
+ \item PMT temperature test (should I describe experimental setup and procedure of development a circuit?);
+ \begin{itemize}
+  \item have a look on temperature change during the nights...
+ \end{itemize}
+
+ \item Fiber boiling test (see sent letter by october 15, 2014):
+ \begin{itemize}
+  \item picture of bake-out phase
+ \end{itemize}
+ 
+ \item Testing of LUCID after installation:
+ \begin{itemize}
+  \item testing of LED diffuser and integrity of fibers
+ \end{itemize}
+ 
+ \item Detector design tests:
+ \begin{itemize}
+  \item Understanding LED and PIN-diode:
+  \begin{itemize}
+   \item tests charge or PMT/PIN vs. LED DAC (no conclution reached?)
+   \item angular distribution (lucid$\_$july22.pdf)
+   \item distance measurements 
+   \begin{itemize}
+    \item was done to proof that PMT is linear with light intensity
+    \item this because we saw that PMT charge is not linear vs. LED DAC.
+    \item conclusion: LED is not linear vs. DAC
+   \end{itemize}
+   
+   \item LED frequency test
+  \end{itemize}
+  
+  \item LED difuser geometry (no presentation?).
+  \item Laser diffuser distance.
+  \item Filter choice for LED diffuser (lucid$\_$september10.pdf; also ask Carla about 100 mV restriction).
+%   \item 
+%   \item 
+%   \item 
+ \end{itemize}
+ 
+ \item Time tests. Long LED runs. (Though Anders also did it and Vincent is using his results to show, but I also was working for quite some time on it, so I think I should write about it as well):
+ \begin{itemize}
+  \item find presentation of Anders. Check what he did.
+  \item from my presentation (lucid15$\_$apr15.pdf) it looks like we have strong effect in high rate and no effect in low rate.
+ \end{itemize}
+\end{itemize}
+
+\newpage
+
+\section{LUCID}
+LUCID is a luminosity monitor with two detectors placed around the beam-pipe on both forward ends of the ATLAS detector. 
+Each detector consists of 16 photomultipliers and 4 quartz fiber bundles. The photomultipliers (PMTs) detect charged 
+particles that traverse their quartz windows, where Cherenkov light is produced. Cherenkov light is produced in 
+the fiber bundles as well and carried to PMTs that are protected by shielding some 2 meters away 
+(see \FigureRef{fig:LucidDrawing}). To increase the detector lifetime, only a subset of the PMTs is used at a 
+given time, the others being available as spares. In addition, 4 PMTs have a reduced window opening to decrease 
+their acceptance and thus avoid saturation of some luminosity algorithms.
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{LUCID/LUCIDdesign.png}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{LUCID/FourPMTs_zoomed.png}
+\end{subfigure}
+\caption{(left) Schematic drawing of one of the two detectors, showing the position of the photomultipliers 
+and quartz fibers with respect to the LHC beampipe; (right) A quarter of one of the detectors. All tubes are 
+placed inside mu-metal shielding to protect the PMTs from a stray field. Cooling pipes were installed in order 
+to protect the PMTs from overheating during the beampipe bake-out procedure. Three of four tubes have fiber connectors, which
+tranfser LED and laser pulses for calibration. The fourth tube is equipped with a Bi-207 source and is completely 
+sealed.}
+\label{fig:LucidDrawing}
+\end{figure}
+
+
+New readout electronics have been built that consist of VME boards that digitize the PMT signals with FADCs. 
+The electronics record hits if the pulseheight is above a threshold and integrate the pulses in each 25 ns 
+interval that correspond to a LHC bunch crossing. Figure \FigureRef{fig:pulseShape} shows a typical PMT signal shape in 
+a physics run. The duration of the pulses is less than 25 ns.
+With respect to the detector used in Run I~\cite{Aad:2013ucp}, the new LUCID has a reduced material budget, 
+an increased dynamic 
+range and will measure luminosity with additional algorithms based on PMT charge integration. It also has a 
+completely new calibration system.
+
+\begin{figure}
+\centering
+\includegraphics[width=.6\textwidth]{LUCID/pulseShape_run_267367_preliminary.eps}
+\caption{Digitized pulse shape of a signal from one of the PMTs of the LUCID detector during a run recorded on 
+the 10th of June 2015 at $\sqrt{s}$ = 13 TeV. The polarity of the pulse is inverted. The FADCs measure the 
+pulse amplitude in time bins that are 3.125 ns long. Taken from Ref.~\cite{publicPlots}.}
+\label{fig:pulseShape}
+\end{figure}
+
+\section{Calibration system}
+The new LUCID uses R760 Hamamatsu PMTs, a smaller version of the previously used R762 model. These PMTs have a 
+10 mm
+quartz window diameter, while the old ones had a 14 mm diameter. A smaller PMT model has been chosen to reduce acceptance 
+which will help to cope with the increased occupancy and to avoid saturation of the luminosity algorithms.
+In addition, 4 PMTs per side have a specially reduced sensitive window with a 7 mm diameter which roughly 
+corresponds to a factor 2 decrease in rate. They provide luminosity algorithms that will not saturate at 
+increased luminosity.
+
+The PMT gain calibration is monitored in 3 independent ways (see \FigureRef{fig:calibrationSystem}):
+\begin{itemize}
+ \item by LED signals carried by optical fibers;
+ \item by laser signals transferred from the calibration system of ATLAS Tile Calorimeter;
+ \item by radioactive sources (Bi-207).
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth]{LUCID/calibrationSystem.png}
+\caption{The LUCID calibration system. 16 PMTs per side receives light from LEDs and the Tile laser calibration 
+system. 
+For redundancy, two fibers come from two different LED diffusers (with three LEDs each, monitored by 
+PIN-diodes), and two fibers come from one laser diffuser. The four remaining PMTs in each detector are calibrated 
+with Bi-207 sources.}
+\label{fig:calibrationSystem}
+\end{figure}
+
+LED signals provide sharp peaks in the amplitude and charge distributions that are recorded by LUCID.
+The stability of the PMT gain is controlled by measuring the mean value of these distributions. 
+The stability of the LEDs themselves is controlled by PIN-diodes.
+An alternative way of calibration is to use the ratio of the mean charge measured by PMTs with that of the 
+PIN-diode. 
+This charge is proportional to the LED intensity and by controlling charge ratio allows to rule out any 
+dependence of the calibration results on LED intensity fluctuations.
+
+The Tile calorimeter laser system provides an alternative source of stable light and is treated in the same way
+as the LED signals in the calibration 
+procedure. The stability of the laser signals is monitored by the Tile calibration system \cite{atlasGeneral}.
+
+Bi-207 radioactive sources provide monoenergetic electrons from an internal conversion process with energies 
+above the Cherenkov threshold in quartz. These electrons
+have enough kinetic energy to penetrate the quartz window of PMT and produce signals similar to the signals 
+from high 
+energetic particles from physics runs. The mean of the charge and amplitude 
+distributions from the Bi-207 sources are used in the same way as for the two methods described above. 
+This method doesn't suffer from any instability issues.
+
+The availability of three independent calibration methods increase the robustness of the calibration system 
+and provide a possibility to cross-check calibration results between the methods.
