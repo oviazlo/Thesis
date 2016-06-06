@@ -13,21 +13,21 @@ It cover aspects as design of the detector and its key components, assembly and 
 operation and performance of the detector during 2015-2016 years of data taking.
 Special attention is given for the calibration system of the detector and developing of the calibration procedure.
 
-During the design phase a lot of tests were done in order to find out optimal parameters of detector components.
-Also a lot of test were done in order to undersdant behaviour of detector componenets and to ???
-During the assembly and installation phase all parts of the detector were taken together. During this phase bunch of tests were done
+During the design phase a lot of tests were done in order to find out optimal design and parameters of detector components.
+Also a lot of tests were done in order to understand behaviour and performance of detector components.
+During the assembly and installation phase all parts of the detector were taken together. During this phase number of tests were done
 to make sure that all components perform as they should.
-Also though-out testing of the system was done to make sure that no damage was done during the installation of the detector.
+Also overall testing of the system was done to make sure that no damage was done during the installation of the detector.
 During operation phase which is still ongoing a lot of studies were held to understand performance of the detector and calibration system.
 
 I contributed in each step described above. I took part in developing of LUCID design particularly design of the calibration system. 
-I made series of test to find out optimal parameters of LED and Laser diffusers used to distribute evenly an LED and laser signal and deliver it to all detector channels.
-Also a lot of time I spent on undertanding behaviour of LED system as well as PMT and PIN-diode behaviour on it.
-Also a few tests were done with Bi-207 radioactive source which is used as one of the wasy to calibrate PMT gain.
+I made series of tests to find out optimal parameters of LED and Laser diffusers used to evenly distribute LED and laser signals and deliver it to all detector channels.
+Also I spent a lot of time on understanding behaviour of LED system as well as PMT and PIN-diode signal behaviour.
+Tests with Bi-207 radioactive source which is used as one of the way to calibrate PMT gain were done as well.
 Also I participated in detector assembly in the clean room and did testing of the detector during this process.
-Also testing of LED and Laser diffuser were done in order to cross check integrity of fibes and homogenity of signal between all PMTs.
-Also temperature stress test was done in order to undertand maximum possible temperature allowed to not destroy detector during a beam pipe bake out procedure.
-In the operational phase test main focus was given for undestanding of aging of PMTs and possibility to improve calibration system.
+Testing of LED and Laser diffuser were done in order to cross check integrity of fibers and homogenity of signals between all PMTs.
+Also temperature stress-test was performed in order to undertand maximum possible temperature allowed to not destroy detector during a beam pipe bake out procedure.
+In the operational phase tests main focus was given for undestanding of aging of PMTs and possibility to improve calibration system.
 
 LUCID group published paper with description of choice and charaterization of photomultipliers for the new LUCID detector for Run-2~\cite{Alberghi:2016tad}.
 My contribution was in understanding and developing of absolute calibration using a Bi-207 source.
@@ -197,35 +197,45 @@ and provide a possibility to cross-check calibration results between the methods
 
 Stability of light source used for calibration is very crucial factor for calibration procedure.
 That's why instead of relying on only one light source from LEDs it was chosen to employ laser light source 
-provided and monitored by Tile calibration system \cite{atlasGeneral}. 
+provided and monitored by Tile calibration system \cite{atlasGeneral} as alternative source of light. 
 To distribute light between the channels one can't use the same diffuser as for LED light, 
 due to the reason that laser light is very well collimated while it's not the case for LED.
 In order to handle laser light new diffuser was introduced, shematic of which is shown in \FigureRef{fig:laserDiffuserSchematics}.
-On one side of the diffuser there is a fiber bundle of 48 quartz fibers encased in ferrule connector of 2 mm diameter \FigureRef{fig:laserDiffuserMapping}.
-On other side there is a single 0.6 mm fiber which deliver laser signal from Tile calibration system.
+Diffuser represent itself as a fiber bundle of 48 quartz fibers encased in ferrule connector of 2 mm diameter \FigureRef{fig:laserDiffuserMapping}.
+Laser light is delivered from Tile calibration system by single fiber of 0.6 mm in diameter (depicted on the right at \FigureRef{fig:laserDiffuserSchematics}).
 
-??? ... which depends from numerical aperture of used fiber. In this case fiber with numerical aperture equal to 0.22 was used.
+Light travels in the fiber by undergoing multiple total internal reflections from the interface between fiber core and cladding. 
+Due to this, light from fiber will come out within a certain cone. The size of the cone is characterized by numerical aperture $NA$ of the fiber which is equal
 
-It means that 2 mm light spot (which correspod to the size of fiber bundle) will be created in distance of 3.1 mm from surface of the fiber interface.
+\begin{equation}
+\label{eq:numericalApperture}
+ NA = n \sin{\theta_{max}} = \sqrt{n_{core}^2 - n_{cladding}^2},
+\end{equation}
+
+where $n$ is the refractive index of the medium (air in our case), $n_{core}$ is the refractive index of the fiber core, $n_{cladding}$ is the refractive index of the cladding
+and $\theta_{max}$ is half-angle of light cone. That's why light spot produced by light from fiber will become bigger with distance from fiber edge. 
+That's why to distribute light from fiber to diffuser one need to introduce some air gap between them as shown at \FigureRef{fig:laserDiffuserSchematics}.
+Fiber used to deliver laser light has numerical aperture equal to 0.22, which correspond to 3.1 mm air gap distance needed to cover 2 mm surface of diffuser by light spot
+(according to \EquationRef{eq:numericalApperture}).
 For calibration purpose light received by each channel have to be approximately equal between channel to channel. But intesity of light is not constant within light spot
 that's why dedicated measurement are needed to find out best air gap distance.
-Two condition have to be met:
+Two conditions have to be met:
 \begin{itemize}
  \item light has to be evenly distributed between channels,
  \item preference are given for configurations in which dimmest channel receives maximum possible light.
 \end{itemize}
 Two fibers from bundle are used for each channel. For small distances between fiber with laser signal and diffuser biggest intensity are expected for central region of the diffuser, 
 while for peripheral region - the lowest intensity is expeted. 
-Diffuser are conventionally diveded to three regions: central, intermediate and peripheral. 
+Diffuser are conventionally divided to three regions: central, intermediate and peripheral. 
 If one of the channel fiber from pair is in central or intermediate region another fiber from pair has to be placed on the most peripheral ring of diffuser.
-And if both of fibers from pair are in peripheral region they are placed as close as possible to the center.
+And if both of fibers from pair are in peripheral region they are placed as close as possible to the center of diffuser.
 Pairs which include one fiber in central region are called central fibers and marked in orange color at \FigureRef{fig:laserDiffuserMapping}.
-Pair with one fiber from intermediate region are marked with yelow and pairs marked with green color consists from both fibers in peripheral region.
+Pair with one fiber from intermediate region are marked with yellow and pairs marked with green color consists from both fibers in peripheral region.
 
 \begin{figure}
 \centering
 \includegraphics[width=.6\textwidth]{LUCID/laserDiffuserAirGap.pdf}
-\caption{Schematic drawing of fiber diffuser. ???}
+\caption{Schematic drawing of coupling of laser diffuser (fiber bundle) with single quartz fiber which deliver laser light from Tile calibration system.}
 \label{fig:laserDiffuserSchematics}
 \end{figure}
 
@@ -240,37 +250,22 @@ Pair with one fiber from intermediate region are marked with yelow and pairs mar
   \centering
   \includegraphics[width=0.9\linewidth]{LUCID/mapping_bundle2_color.png}
 \end{subfigure}
-\caption{(left) Picture of fiber bundle connector which contains fibers which deliver laser signal to PMTs on side A detector. Numbers correpond to PMT number which fiber connected to; 
-	 Fibers are artificially (???) divided to three categories based on distance to the center of the connect: central (orange coloro), intermidiate (yellow) and peripheral fibers (green).
-	 ???
-	 (right) Fiber bundle connector which correspond to Side C detector.}
-\label{fig:laserDiffuserMapping}
+\caption{(left) Picture of laser diffuser (fiber bundle) with fibers which deliver laser signal to PMTs on side A detector. Numbers correpond to PMT number which fiber connected to; 
+	 Two fibers from bundle connected to each PMT. Fiber pairs are divided to three categories based on distance from center of the connect to the closest fiber from pair: 
+	 central (orange coloro), intermidiate (yellow) and peripheral fiber pair (green).
+	 (right) laser diffuser which correspond to Side C detector.}
+% \label{fig:laserDiffuserMapping}
 \end{figure}
 
-Measurement were done with different air gap distances for channels from each category. Due to identical structure of fiber bundle on side A and side C (or bundle 1 and 2), detiled measurements
+Measurement were done with different air gap distances for fiber pairs (and correspond PMTs) from each category. 
+Due to identical structure of fiber bundle on side A and side C (or bundle 1 and 2), detailed measurements
 were done only for one bundle and a few points were measured for the second bundle to verify results of first one. Amplitude of PMT signals were measured by osciloscope in 
-ATLAS experimental hall. Measurement results are shown at \FigureRef{fig:laserDiffuserDistanceTest}. PMT 1 represent central fibers, PMT 7 - intermediate and PMT 16 and 19 - peripheral
-fibers for bundle 1 and 2. With increasing distance signal amplitude are decreasing for central fibers which is expected. Biggest signal for peripheral fibers were obtained for distance of 4 cm.
-Also homogenity within all categories are pretty good for 4 cm, so it was decided to use this value for final version of the diffuser.
+ATLAS experimental hall. Measurement results are shown at \FigureRef{fig:laserDiffuserDistanceTest}. PMT 1 represent PMTs with central fiber pair connecter, 
+PMT 7 - intermediate and PMT 16 and 19 - peripheral fibers for bundle 1 and 2. 
+With increasing distance signal amplitude are decreasing for central fibers which is expected. 
+Intermediate and peripheral fibers has maximums. Maximum for peripheral fibers correspond to the distance of 4 cm.
+Homogenity within all categories are pretty good for 4 cm as well, so it was decided to use this value for final version of the diffuser.
 % TODO conclusionts above are very short... Make it longer!!!
-
-
-
-
-
-
-% It is a feryll connector of 2mm in diameter which contain all fibers which goes to PMTs \FigureRef{fig:laserDiffuserMapping}.
-% In order to 
-% 
-% 
-% But due to the fact that refractal index of fiber core is bigger than one for air ???
-% But when light come out from fiber to the environment with another refractal index then fiber core 
-% 
-% light will ???
-% New diffuser was introduced in order to handle laser light. ???
-% In order to spread light one can use ???
-
-
 
 % TODO describe some parameters of Tile system with reference to the atlasGeneral
 
@@ -283,7 +278,7 @@ Also homogenity within all categories are pretty good for 4 cm, so it was decide
 \begin{figure}
 \centering
 \includegraphics[width=.6\textwidth]{LUCID/laserDiffuserDistanceTest.pdf}
-\caption{Result of test. ??? air gap between quartz fiber with laser signal and fiber bundle }
+\caption{Measurement of PMT signal amplitude as a function of air gap distance for different catefories of fibers. Fiber pair connected to PMTs 1 represent central fiber pairs, to PMT 7 - intermediate, and to PMTs 16 and 19 - peripherl.}
 \label{fig:laserDiffuserDistanceTest}
 \end{figure}
 
