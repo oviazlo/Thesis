@@ -94,6 +94,7 @@ During my PhD studies I hold a role of ATLAS Forward detectors Run Coordinator w
 % \newpage
 
 \section{LUCID}
+\label{sec:LUCID}
 LUCID is a luminosity monitor with two detectors placed around the beam-pipe on both forward ends of the ATLAS detector. 
 Each detector consists of 16 photomultipliers and 4 quartz fiber bundles. The photomultipliers (PMTs) detect charged 
 particles that traverse their quartz windows, where Cherenkov light is produced. Cherenkov light is produced in 
@@ -190,6 +191,19 @@ This method doesn't suffer from any instability issues~\cite{Alberghi:2016tad}.
 The availability of three independent calibration methods increase the robustness of the calibration system 
 and provide a possibility to cross-check calibration results between the methods.
 
+\subsection{LED diffuser}
+\label{subsec:LEDDiffuser}
+
+*** some text here ***
+
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth]{LUCID/LEDdiffuser.png}
+\caption{Schematic drawing of LED diffuser.}
+\label{fig:LEDDiffuser}
+\end{figure}
+
+
 \subsection{Laser diffuser}
 \label{subsec:laserDiffuser}
 
@@ -270,15 +284,130 @@ Homogenity within all categories are pretty good for 4 cm as well, so it was dec
 % TODO describe some parameters of Tile system with reference to the atlasGeneral
 
 
-
-
-
-
-
 \begin{figure}
 \centering
 \includegraphics[width=.6\textwidth]{LUCID/laserDiffuserDistanceTest.pdf}
 \caption{Measurement of PMT signal amplitude as a function of air gap distance for different catefories of fibers. Fiber pair connected to PMTs 1 represent central fiber pairs, to PMT 7 - intermediate, and to PMTs 16 and 19 - peripherl.}
 \label{fig:laserDiffuserDistanceTest}
 \end{figure}
+
+\section{Detector performance}
+\label{sec:DetPerf}
+
+*** some text here ***
+
+\subsection{Luminosity measurements}
+\label{subsec:lumMeas}
+
+Luminosity is measured by LUCID from a measurement of the number of PMT-hits, the number of bunch crossings 
+with at least one PMT-hit and the integrated pulseheight (charge). These measurements are done over a time 
+period called a luminosity block, which are typically 1 minute long and they are done for each of the 
+individual bunch crossings in the LHC. 
+The new electronics provides luminosity measurements using 124 different algorithms which take as input 
+different combination of hits or charge from different tubes. Algorithms, which are based on PMT-hits from only 
+one of the detectors (either A or C), are calculated by the LUCROD VME custom boards, while algorithms which depend on 
+combination of hits from both detectors are calculated by the LUMAT boards (see 
+Fig.~\ref{fig:Eletronics_schematics}).
+The luminosity is proportional to the measured charge which is in turn proportional to the logarithm of the measured 
+number of PMT-hits *** add log formula for lumi ***. The two types of measurements therefore have different limitations. The main issue with the 
+charge measurement is PMT gain stability while the hit measurements can suffer from pile-up of several signals 
+below threshold giving a signal above threshold.
+% Figure~\ref{fig:hitCount} shows the number of PMT-hits from different LHC bunches. The large peaks correspond 
+% to six trains of 
+% six colliding bunches each, plus two isolated colliding bunches. Two smaller peaks that correspond to bunches 
+% with only one beam are also seen. The baseline background level is due to the Bi-207 source used for monitoring 
+% of the photomultiplier gain. 
+
+\begin{figure}
+\centering
+\includegraphics[width=.61\textwidth]{LUCID/Eletronics_schematics.eps}
+\caption{Bloc diagram of the LUCID electronics. Signals from all tubes are collected by 4 \mbox{LUCROD} cards 
+(two per 
+each side) that digitize the signals with FADCs. Some of the luminosity algorithms are calculated in the LUCRODs. 
+Output of these calculations as well as a copy of all digitized PMT 
+signals are sent to the LUMAT cards afterwards, which perform calculations of algorithms that combine data from 
+both detectors and publish the results to the Information Server (IS) database.}
+\label{fig:Eletronics_schematics}
+\end{figure}
+
+
+
+
+\section{First 13 TeV collisions at the LHC}
+\label{sec:physics}
+
+The LHC reported the first 13 TeV pp collision in May of 2015 and these were recorded by ATLAS and other LHC 
+experiments. 
+Starting from that time the new LUCID was succesfully operating and provided information about the 
+luminosity delivered to ATLAS. 
+% More than a femtobarn of luminosity is already recorded by ATLAS, which provides a
+% sufficient amount of data about the performace of the LUCID detector with a high number of pp-interaction per bunch 
+% crossing.
+
+The PMT pulseheight distribution in a physics run is shown in the left plot of Fig.~\ref{fig:Pulseheight} (blue) 
+together with the same distribution 
+during a Bi-207 calibration run (red). In both distributions a peak due to Cherenkov photons is visible. The 
+calibration distribution is cut due to the threshold in the electronics that define a PMT-hit.
+
+In the right plot of Fig.~\ref{fig:Pulseheight} a comparison of the pulseheight distributions in a physics run 
+with
+low-$\mu$ (red) and high-$\mu$ (blue) are shown. The pulse height is shifted towards higher values when at high 
+luminosity several particles traverse the photomultiplier window in the same bunch crossing.
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{LUCID/LowMuWithBi_ampl_preliminary_v2.pdf}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{LUCID/ComparisonPhysRuns_ampl_preliminary_v2.pdf}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{Comparison of pulseheight distribution in a physics run with low-$\mu$ with the same distribution 
+during a Bi-207 calibration run (left) and with distribution with high-$\mu$ physics run. Taken from Ref.~\cite{publicPlots}.}
+\label{fig:Pulseheight}
+\end{figure}
+
+LUCID can measure luminosity in many ways and Fig.~\ref{fig:InternalConsistency} shows a comparison of the 
+luminosity measured by an A and 
+a C detector for different ATLAS data taking runs. The two measurements agree to better than 0.5$\%$.
+
+The left plot of Fig.~\ref{fig:LumiVsTime} shows a measurement of the average number of inelastic pp collisions 
+using different ATLAS 
+luminometers and the right plot shows the ratio of this measurement with respect to a LUCID measurement. One of the 
+detectors shows a deviation of up to 2$\%$ during this LHC fill but the other measurements are all in agreement 
+with LUCID to better than 0.5$\%$.
+
+The first month of data taking with the new detector therefore showed that LUCID could measure the relative 
+luminosity with a precision of about 0.5$\%$.
+
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth]{LUCID/InternalConsistency_preliminary.pdf}
+\caption{Fractional difference in measured luminosity between the forward (A) and backward (C) arms of the LUCID 
+detector. The agreement between the two LUCID arms is better than 1$\%$. Taken from Ref.~\cite{publicPlots}.}
+\label{fig:InternalConsistency}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{LUCID/LumiVsTime_preliminary_v2.pdf}
+  \label{fig:sub3}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{LUCID/DeviationSubsystems_preliminary_v2.pdf}
+  \label{fig:sub4}
+\end{subfigure}
+\caption{(left) Average number of inelastic proton-proton collisions per bunch crossing during a 13 TeV fill; 
+(right) Comparison of measured luminosity by different luminometers in ATLAS with respect to LUCID. Taken from Ref.~\cite{publicPlots}.}
+\label{fig:LumiVsTime}
+\end{figure}
+
 
