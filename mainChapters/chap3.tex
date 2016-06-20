@@ -196,9 +196,18 @@ and provide a possibility to cross-check calibration results between the methods
 
 *** some text here ***
 
+
+
 \begin{figure}
 \centering
-\includegraphics[width=.7\textwidth]{LUCID/LEDdiffuser.png}
+\includegraphics[width=.7\textwidth]{LUCID/LED_diffuser_schematic.pdf}
+\caption{Schematic drawing of LED diffuser.}
+\label{fig:LEDDiffuser}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=.8\textwidth]{LUCID/LEDdiffuser.png}
 \caption{Schematic drawing of LED diffuser.}
 \label{fig:LEDDiffuser}
 \end{figure}
@@ -307,7 +316,7 @@ The new electronics provides luminosity measurements using 124 different algorit
 different combination of hits or charge from different tubes. Algorithms, which are based on PMT-hits from only 
 one of the detectors (either A or C), are calculated by the LUCROD VME custom boards, while algorithms which depend on 
 combination of hits from both detectors are calculated by the LUMAT boards (see 
-Fig.~\ref{fig:Eletronics_schematics}).
+\FigureRef{fig:Eletronics_schematics}).
 The luminosity is proportional to the measured charge which is in turn proportional to the logarithm of the measured 
 number of PMT-hits *** add log formula for lumi ***. The two types of measurements therefore have different limitations. The main issue with the 
 charge measurement is PMT gain stability while the hit measurements can suffer from pile-up of several signals 
@@ -331,6 +340,61 @@ both detectors and publish the results to the Information Server (IS) database.}
 \end{figure}
 
 
+\section{Temperature measurements}
+\label{sec:tempMeas}
+
+\subsection{Temperature controller}
+\label{subsec:tempController}
+
+In order to perform temperature tests one need to have reliable method to measure and control temperature within black box (were all measurements were done).
+For this purpose temperature device was built.
+It was based on microcontroller board Arduino Mega 2560 (reference???), which can be easily programmed by Arduino software (reference???).
+To measure temperature LM35CAH sensor was used which is precision integrated-circuit device with an output voltage linearly-proportional to the Centigrade temperature.
+In order to interface sensor with readout input channel from Arduino board electrical circuit shown at \FigureRef{fig:tempReadOutCircuit} have been made, 
+which shift and scale output voltage from sensor to suitable values for Arduino input.
+To control temperature a simple chain of resistors were used which were dissipating heat produced by current flowing thorough them. 
+Voltage was controlled by controller with help of MOSFET transistor. In order to verify that temperature will be homogenious within experimental scope (black box),
+a pc fan was used. Behaviour of all components were controlled by programming of Arduino microcontroller.
+Measured temperature values were sent directly to pc by serial port or could be stored on external microSD card, connected to Arduino board.
+
+\subsection{Temperature dependence of PMT gain}
+\label{subsec:pmtGainTempDep}
+
+% TODO ask Vincent: do I need to explain how I subtract baseline for charge measurements? Or I can put it into appendix?
+% TODO ask Vincent: do I need to describe all electronic chain here?
+
+One of possible component of systematic error of precise measurments of any detector is variation of temperature of environment.
+Quite often it's really hard to keep temperature stable over long period of time in very large hall, especially large as area as experimental hall of the ATLAS detector.
+That's why dedicated study was done to estimate temperature dependence of PMT gain used in LUCID detector.
+Experimental setup consisted from thermal-insulated black box, PMT coupled with Bi-207 source and heater controlled by Arduino temperature controller.
+Temperature measurments was done by Arduino controller as well.
+
+PMT charge was digitized by Flash ADC (model ???) which was operated by ATLAS cental TDAQ framework (link???).
+Shape of digitized pulse from Bi-207 source is shown at \FigureRef{fig:bi207DigitizedPulse}. 
+
+In order to calculate charge and amplitude of each Bi-207 signal 
+
+Results ???
+
+In order to make sure that temperature is reasonable stable within one mean charge measurement (which correspond to one red point in \FigureRef{fig:PMTChargeTempDep}) 
+very small temperature gradient was choosen, which was approximately 0.2\degree C per hour. 
+
+
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth]{LUCID/rndmPulse_1_mod.pdf}
+\caption{Shape of digitized pulse from Bi-207 source. Something about baseline substraction??? }
+\label{fig:bi207DigitizedPulse}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth]{LUCID/goodSlowTemp_Feb20_Feb22_charge.eps}
+\caption{Temperature dependence of PMT gain represented by measurments of mean of charge distribution Bi-207 source signals for different temperature values.
+Black dots correspond to temperature measurement; red dots correspond to charge mean measurements of Bi-207 source.}
+\label{fig:PMTChargeTempDep}
+\end{figure}
 
 
 \section{First 13 TeV collisions at the LHC}
@@ -344,12 +408,12 @@ luminosity delivered to ATLAS.
 % sufficient amount of data about the performace of the LUCID detector with a high number of pp-interaction per bunch 
 % crossing.
 
-The PMT pulseheight distribution in a physics run is shown in the left plot of Fig.~\ref{fig:Pulseheight} (blue) 
+The PMT pulseheight distribution in a physics run is shown in the left plot of \FigureRef{fig:Pulseheight} (blue) 
 together with the same distribution 
 during a Bi-207 calibration run (red). In both distributions a peak due to Cherenkov photons is visible. The 
 calibration distribution is cut due to the threshold in the electronics that define a PMT-hit.
 
-In the right plot of Fig.~\ref{fig:Pulseheight} a comparison of the pulseheight distributions in a physics run 
+In the right plot of \FigureRef{fig:Pulseheight} a comparison of the pulseheight distributions in a physics run 
 with
 low-$\mu$ (red) and high-$\mu$ (blue) are shown. The pulse height is shifted towards higher values when at high 
 luminosity several particles traverse the photomultiplier window in the same bunch crossing.
@@ -371,11 +435,11 @@ during a Bi-207 calibration run (left) and with distribution with high-$\mu$ phy
 \label{fig:Pulseheight}
 \end{figure}
 
-LUCID can measure luminosity in many ways and Fig.~\ref{fig:InternalConsistency} shows a comparison of the 
+LUCID can measure luminosity in many ways and \FigureRef{fig:InternalConsistency} shows a comparison of the 
 luminosity measured by an A and 
 a C detector for different ATLAS data taking runs. The two measurements agree to better than 0.5$\%$.
 
-The left plot of Fig.~\ref{fig:LumiVsTime} shows a measurement of the average number of inelastic pp collisions 
+The left plot of \FigureRef{fig:LumiVsTime} shows a measurement of the average number of inelastic pp collisions 
 using different ATLAS 
 luminometers and the right plot shows the ratio of this measurement with respect to a LUCID measurement. One of the 
 detectors shows a deviation of up to 2$\%$ during this LHC fill but the other measurements are all in agreement 
