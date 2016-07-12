@@ -18,7 +18,7 @@ Also a lot of tests were done in order to understand behaviour and performance o
 During the assembly and installation phase all parts of the detector were taken together. During this phase number of tests were done
 to make sure that all components perform as they should.
 Also overall testing of the system was done to make sure that no damage was done during the installation of the detector.
-During operation phase which is still ongoing a lot of studies were held to understand performance of the detector and calibration system.
+During operation phase which is still ongoing a lot of studies were held to understand performance of calibration system and detector overall.
 
 I contributed in each step described above. I took part in developing of LUCID design particularly design of the calibration system. 
 I made series of tests to find out optimal parameters of LED and Laser diffusers used to evenly distribute LED and laser signals and deliver it to all detector channels.
@@ -93,7 +93,7 @@ During my PhD studies I hold a role of ATLAS Forward detectors Run Coordinator w
 % 
 % \newpage
 
-\section{LUCID}
+\section{Overview of LUCID detector}
 \label{sec:LUCID}
 LUCID is a luminosity monitor with two detectors placed around the beam-pipe on both forward ends of the ATLAS detector. 
 Each detector consists of 16 photomultipliers and 4 quartz fiber bundles. The photomultipliers (PMTs) detect charged 
@@ -141,6 +141,28 @@ pulse amplitude in time bins that are 3.125 ns long. Taken from Ref.~\cite{publi
 \label{fig:pulseShape}
 \end{figure}
 
+\subsection{PMT sensors}
+
+   \begin{itemize}
+         \item Understanding LED and PIN-diode behaviour
+         \begin{itemize}
+          \item charge measurements of PMT/PIN vs. LED DAC
+%           \begin{itemize}
+           \item LED distance measurements  
+%            \begin{itemize}
+% 	    \item was done to proof that PMT is linear with light intensity
+% 	    \item this because we saw that PMT charge is not linear vs. LED DAC.
+% 	    \item conclusion: LED is not linear vs. DAC
+% 	   \end{itemize}
+%           \end{itemize}
+          \item LED angular distribution
+	  \item LED frequency test
+         \end{itemize}
+       \end{itemize}
+
+\subsection{LUCID electronics}
+
+
 \section{Calibration system}
 The new LUCID uses R760 Hamamatsu PMTs, a smaller version of the previously used R762 model. These PMTs have a 
 10 mm
@@ -186,7 +208,7 @@ have enough kinetic energy to penetrate the quartz window of PMT and produce sig
 from high 
 energetic particles from physics runs. The mean of the charge and amplitude 
 distributions from the Bi-207 sources are used in the same way as for the two methods described above. 
-This method doesn't suffer from any instability issues~\cite{Alberghi:2016tad}.
+This method does not suffer from any instability issues~\cite{Alberghi:2016tad}.
 
 The availability of three independent calibration methods increase the robustness of the calibration system 
 and provide a possibility to cross-check calibration results between the methods.
@@ -194,21 +216,65 @@ and provide a possibility to cross-check calibration results between the methods
 \subsection{LED diffuser}
 \label{subsec:LEDDiffuser}
 
-*** some text here ***
+% TODO structure of the section:
+% - to describe why we have 2 LED diffusers: why we use filters on one and don't use on another on
+% - geometry studies
+% - show LED stability plot over time (PIN-diode measurements)
+% - filter studies - explain why we have to be below 100mV for PMTs (discuss this with Carla)
+% - 
+% - 
 
 
+% light has to be evenly distributed among PMTs
+% LED has to be monitored by PIN-diode in order to verify its stability
+% geometrical constrain
+%   taking into account size of PIN-diode
+%   size of support structure for fibers
+%   bending of fibers - whole LED diffuser has to be hosted in limited space and fiber cannot be bend to much.
+% constrain during production of the diffuser:
+%   complexity of drilling holes for fiber for some angles
+%   gluing fibers to the diffuser
+
+
+Despite a simple purpose of LED diffuser to evenly distribute light among PMTs exsistance of a number of constrains lead to necessity make dedicated study 
+to define optimal parameters of the diffuser. Main points which were considered during design phase are:
+\begin{itemize}
+ \item light has to be evenly distributed among PMTs,
+ \item LED has to be monitored by PIN-diode in order to verify its stability,
+ \item geometrical constrains (size of PIN-diode case, limited space for the whole diffuser and limits on bending of fibers),
+ \item production constrains (problems with drilling wholes at some angles, some position of fibers make glueing challenging).
+\end{itemize}
+
+To meet all these requirements radial design was proposed - PIN-diode is located centrally facing LED. Fibers surround Pin-diode case 
+evenly with certain angle to the LED axis. Schematic sketch are shown in \FigureRef{fig:???}.
+% TODO insert sketch used for testing.
+Such geometry guarantee that distance between LED and fibers will be the same for all fibers and ???
+  
+As described above main purpose of LED diffuser is to evenly distribute light between PMT-channels. 
+
+% consists from LED itself, set of fibers which deliver light to the PMTs and PIN-diode which is used to monitor
+% stability of LED during long time. LED diffuser has to be design in such way, that all PMT channels have to receive the same amount of light.
+
+
+
+% \begin{figure}
+% \centering
+% \includegraphics[width=.7\textwidth]{LUCID/LED_diffuser_schematic.pdf}
+% \caption{Schematic drawing of LED diffuser.}
+% \label{fig:LEDDiffuser}
+% \end{figure}
 
 \begin{figure}
-\centering
-\includegraphics[width=.7\textwidth]{LUCID/LED_diffuser_schematic.pdf}
-\caption{Schematic drawing of LED diffuser.}
-\label{fig:LEDDiffuser}
-\end{figure}
+\begin{subfigure}{.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{LUCID/LEDdiffuser_rightPart.png}
+\end{subfigure}
+\begin{subfigure}{.48\textwidth}
+  \centering
+  \includegraphics[width=.8\textwidth]{LUCID/photo_LED_diffuser_v2.jpg}
+\end{subfigure}
 
-\begin{figure}
-\centering
-\includegraphics[width=.8\textwidth]{LUCID/LEDdiffuser.png}
-\caption{Schematic drawing of LED diffuser.}
+\caption{LED diffuser. Schematic drawing (left), photo (right).}
 \label{fig:LEDDiffuser}
 \end{figure}
 
@@ -221,7 +287,7 @@ and provide a possibility to cross-check calibration results between the methods
 Stability of light source used for calibration is very crucial factor for calibration procedure.
 That's why instead of relying on only one light source from LEDs it was chosen to employ laser light source 
 provided and monitored by Tile calibration system \cite{atlasGeneral} as alternative source of light. 
-To distribute light between the channels one can't use the same diffuser as for LED light, 
+To distribute light between the channels one cannot use the same diffuser as for LED light, 
 due to the reason that laser light is very well collimated while it's not the case for LED.
 In order to handle laser light new diffuser was introduced, shematic of which is shown in \FigureRef{fig:laserDiffuserSchematics}.
 Diffuser represent itself as a fiber bundle of 48 quartz fibers encased in ferrule connector of 2 mm diameter \FigureRef{fig:laserDiffuserMapping}.
@@ -300,48 +366,31 @@ Homogenity within all categories are pretty good for 4 cm as well, so it was dec
 \label{fig:laserDiffuserDistanceTest}
 \end{figure}
 
-\section{Detector performance}
-\label{sec:DetPerf}
 
-*** some text here ***
+\subsection{Bi207 calibration}
+\label{subsec:bi207Calibration}
 
-\subsection{Luminosity measurements}
-\label{subsec:lumMeas}
 
-Luminosity is measured by LUCID from a measurement of the number of PMT-hits, the number of bunch crossings 
-with at least one PMT-hit and the integrated pulseheight (charge). These measurements are done over a time 
-period called a luminosity block, which are typically 1 minute long and they are done for each of the 
-individual bunch crossings in the LHC. 
-The new electronics provides luminosity measurements using 124 different algorithms which take as input 
-different combination of hits or charge from different tubes. Algorithms, which are based on PMT-hits from only 
-one of the detectors (either A or C), are calculated by the LUCROD VME custom boards, while algorithms which depend on 
-combination of hits from both detectors are calculated by the LUMAT boards (see 
-\FigureRef{fig:Eletronics_schematics}).
-The luminosity is proportional to the measured charge which is in turn proportional to the logarithm of the measured 
-number of PMT-hits *** add log formula for lumi ***. The two types of measurements therefore have different limitations. The main issue with the 
-charge measurement is PMT gain stability while the hit measurements can suffer from pile-up of several signals 
-below threshold giving a signal above threshold.
-% Figure~\ref{fig:hitCount} shows the number of PMT-hits from different LHC bunches. The large peaks correspond 
-% to six trains of 
-% six colliding bunches each, plus two isolated colliding bunches. Two smaller peaks that correspond to bunches 
-% with only one beam are also seen. The baseline background level is due to the Bi-207 source used for monitoring 
-% of the photomultiplier gain. 
 
-\begin{figure}
-\centering
-\includegraphics[width=.61\textwidth]{LUCID/Eletronics_schematics.eps}
-\caption{Bloc diagram of the LUCID electronics. Signals from all tubes are collected by 4 \mbox{LUCROD} cards 
-(two per 
-each side) that digitize the signals with FADCs. Some of the luminosity algorithms are calculated in the LUCRODs. 
-Output of these calculations as well as a copy of all digitized PMT 
-signals are sent to the LUMAT cards afterwards, which perform calculations of algorithms that combine data from 
-both detectors and publish the results to the Information Server (IS) database.}
-\label{fig:Eletronics_schematics}
-\end{figure}
+\subsection{Calibration performance during 2015-2016}
+\label{subsec:calibPerformance}
+
+
+
+
+% \section{Detector performance}
+% \label{sec:DetPerf}
+% 
+% *** some text here ***
+% 
+% \subsection{Luminosity measurements}
+% \label{subsec:lumMeas}
 
 
 \section{Temperature measurements}
 \label{sec:tempMeas}
+
+TODO: describe scheme of temperature sensonrs installed in LUCID.
 
 \subsection{Temperature controller}
 \label{subsec:tempController}
@@ -357,7 +406,7 @@ Voltage was controlled by controller with help of MOSFET transistor. In order to
 a pc fan was used. Behaviour of all components were controlled by programming of Arduino microcontroller.
 Measured temperature values were sent directly to pc by serial port or could be stored on external microSD card, connected to Arduino board.
 
-\subsection{Temperature dependence of PMT gain}
+\subsection{PMT gain dependence}
 \label{subsec:pmtGainTempDep}
 
 % TODO ask Vincent: do I need to explain how I subtract baseline for charge measurements? Or I can put it into appendix?
@@ -397,7 +446,169 @@ Black dots correspond to temperature measurement; red dots correspond to charge 
 \end{figure}
 
 
-\section{First 13 TeV collisions at the LHC}
+\subsection{Temperature test of calibration fibers}
+
+% From https://indico.cern.ch/event/315665/contributions/1690160/attachments/605816/833747/LS2_LHC_paper_rev_final-1.pdf
+
+In 2015 year during first long shutdown (LS1) a central ATLAS beampipe made from Ferum (???) 
+was changed with a new one made from Beryllium and Aluminium to better deal with material activation and background.
+% TODO ask someone wht was the main reason to change beampipe (and beampipe material)?
+New beampipe has to be purified in order to prevent dust particles appear inside the pipe.
+Beampipe is heated up to 350 \degree C for a few hours. This procedure is called beampipe bakeout.
+
+The LUCID detector sits on supporting structure (gray structure in \FigureRef{???})
+
+dedicated cooling has to be installed to protect PMTs and calibration fibers.
+To understand how efficient cooling is needed 
+one need to know temperature robustness of detector components.
+% TODO what about temperature robustness of PMTs? do we know level at which they start to destroy? why we only did this test for fibers?
+% Becuase used PMTs in detector are quite small it makes them quite easy to cool down. 
+Calibration fibers goes from PMTs close to beampipe all along to LED and laser diffusers which are placed on top on monoblock structure 
+%  TODO some other picture???
+(see \FigureRef{fig:LucidDrawing} (left)).
+That's why fibers can be potentially overheated at some parts. 
+In order to understand which temperaure fibers can handle dedicated measurement was done. 
+Idea pf the test was to estimate temperature threshold at which fibers start to loose their optical properties
+by changing of optical properties of cladding and/or fiber core.
+
+Experimental setup was consisted from box with thermoisolation properties, 
+% TODO ``thermoisolation properties'' - rename it!!!
+where bundle of fiber where placed.
+LED was used as a light source on one side of of fiber and fiber was coupled with PMT on other side of the fiber to read out the signal.
+To provide high temperature inside the box thermogun was used which was blowing hot air inside the box.
+Temperature was measured with Arduino-based temperature controller described in~\ref{subsec:tempController}, with only temperature probe inside the box.
+% TODO do we really use Arduino-based temperature controller in this test?
+
+Firstly measurements were done with room temperature inside the box to use this value as a reference.
+Then thermogun was switched on and temperature raised to around 95\degree C.
+This temperature was kept constant for an slightly more than one hour to make sure that fiber was exposed to high temperature for
+long enough time period to make changes bservable if any. 
+% TODO end of previous sentence is a little bit weird... rephrase it!
+In third phase of measurement temperature of air was increased to 110\degree C and it was kept on this level for one hour as well.
+On the last phace thermogun was switched off and measurements were done for half an hour more.
+Charge and amplitude measurements were done constantly with five-minute intervals. 
+Temperature inside the box and charge measurements versus time are shown in \FigureRef{fig:fiberBakeOut}.
+Charge measurements during second phase, when temperature was 95\degree C in the box are compatible with measurements done with room temperature.
+And they kept stable during all phase two (which was one hour) which proofs that fibers can operate with this temperature.
+But during third phase (110\degree C) significant decreasment of measured charge is observed, which demonstrates changes in the
+optical properties of the fiber at this temperature. On the last phase temperature went back to room values and charge increased slightly but didn't reach 
+nominal values which indicate unrecoverable damage of the fiber at 110\degree C temperature.
+
+\begin{figure}
+\centering
+\includegraphics[width=.95\textwidth]{LUCID/fiberBakeOut.png}
+\caption{???}
+\label{fig:fiberBakeOut}
+\end{figure}
+
+This test demonstrated that there is big probability that calibration fibers will be damaged if they will be exposed 
+with high temperatures (above 95\degree C) for long period of time.
+But due to fact that bake-out procedure was planned to be done with around 220\degree C and early
+simulations showed that expected temperature on LUCID area can be around 140\degree C 
+% TODO find proof of this!!!
+efficient cooling for fibers became mandatory requirement for the system.
+
+Decision was to use water cooling. 
+To make cooling of PMTs efficient dedicated metal support was designed to host PMTs shown in \FigureRef{fig:PMTMetalSupport}.
+Water pipes were positioned under this support.
+To protect calibration fibers from overheating they were bundled and glued around cooling pipe which was placed along 
+the beampipe (see \FigureRef{fig:temperatureProbes_VJCone}).
+
+Also to provide circulation of air in the detector region additional air cooling was installed. 
+[according to Giulio air circulation was essential in order to make sure that some gas will not get into PMTs???]
+
+To monitor temperature during bake-out procedure 18 temperature sensonrs per side were installed 
+in important parts of the system as shown in \FigureRef{fig:metalSupportAndTempProbes} (right).
+
+Overall temperature read by all sensors were not always lower than 40\degree C
+An example of trending plot is shown in \FigureRef{fig:NEG_ctflangeA}, where emperatures in the cable tray 
+and the beam pipe flange during the beampipe NEG activation bakeout at 220\degree C is shown.
+It proofs that beampipe insulation and water cooling was very effective and no damage for LUCID detector components 
+were done.
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.6\textwidth}
+  \centering
+  \includegraphics[width=0.95\textwidth]{LUCID/PMT_metal_support.jpg}
+\end{subfigure}%
+\begin{subfigure}{.4\textwidth}
+  \centering
+  \includegraphics[width=0.95\linewidth]{LUCID/temperatureProbes_1_v2.jpg}
+\end{subfigure}
+\caption{???}
+\label{fig:metalSupportAndTempProbes}
+\end{figure}
+
+
+% TODO describe:
+% - water cooling - see in the figure
+% - additional air cooling by blowing air with fans to make circulation of air around lucid detecor
+% - temperature probes installed - add picture with probes
+% - temperature plots during bakeout procedure
+
+\begin{figure}
+\centering
+\includegraphics[width=.9\textwidth]{LUCID/temperatureProbes_2.jpg}
+\caption{???}
+\label{fig:temperatureProbes_VJCone}
+\end{figure}
+
+
+
+% TODO insert picture which show that LUCID sits on VJ cone around beampipe
+
+\begin{figure}
+\centering
+\includegraphics[width=.9\textwidth]{LUCID/NEG_ctflangeA.png}
+\caption{???}
+\label{fig:NEG_ctflangeA}
+\end{figure}
+ 
+ 
+
+\section{The LUCID luminosity measurements}
+
+
+Luminosity is measured by LUCID from a measurement of the number of PMT-hits, the number of bunch crossings 
+with at least one PMT-hit and the integrated pulseheight (charge). These measurements are done over a time 
+period called a luminosity block, which are typically 1 minute long and they are done for each of the 
+individual bunch crossings in the LHC. 
+The new electronics provides luminosity measurements using 124 different algorithms which take as input 
+different combination of hits or charge from different tubes. Algorithms, which are based on PMT-hits from only 
+one of the detectors (either A or C), are calculated by the LUCROD VME custom boards, while algorithms which depend on 
+combination of hits from both detectors are calculated by the LUMAT boards (see 
+\FigureRef{fig:Eletronics_schematics}).
+The luminosity is proportional to the measured charge which is in turn proportional to the logarithm of the measured 
+number of PMT-hits *** add log formula for lumi ***. The two types of measurements therefore have different limitations. 
+The main issue with the 
+charge measurement is PMT gain stability while the hit measurements can suffer from pile-up of several signals 
+below threshold giving a signal above threshold.
+% Figure~\ref{fig:hitCount} shows the number of PMT-hits from different LHC bunches. The large peaks correspond 
+% to six trains of 
+% six colliding bunches each, plus two isolated colliding bunches. Two smaller peaks that correspond to bunches 
+% with only one beam are also seen. The baseline background level is due to the Bi-207 source used for monitoring 
+% of the photomultiplier gain. 
+
+\begin{figure}
+\centering
+\includegraphics[width=.61\textwidth]{LUCID/Eletronics_schematics.eps}
+\caption{Bloc diagram of the LUCID electronics. Signals from all tubes are collected by 4 \mbox{LUCROD} cards 
+(two per 
+each side) that digitize the signals with FADCs. Some of the luminosity algorithms are calculated in the LUCRODs. 
+Output of these calculations as well as a copy of all digitized PMT 
+signals are sent to the LUMAT cards afterwards, which perform calculations of algorithms that combine data from 
+both detectors and publish the results to the Information Server (IS) database.}
+\label{fig:Eletronics_schematics}
+\end{figure}
+
+
+\subsection{Luminosity algorithms}
+
+
+
+\subsection{First 13 TeV collisions at the LHC}
 \label{sec:physics}
 
 The LHC reported the first 13 TeV pp collision in May of 2015 and these were recorded by ATLAS and other LHC 
@@ -473,5 +684,9 @@ detector. The agreement between the two LUCID arms is better than 1$\%$. Taken f
 (right) Comparison of measured luminosity by different luminometers in ATLAS with respect to LUCID. Taken from Ref.~\cite{publicPlots}.}
 \label{fig:LumiVsTime}
 \end{figure}
+
+
+\subsection{Luminosity measurements during 2015-2016}
+
 
 
