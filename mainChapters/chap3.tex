@@ -143,34 +143,32 @@ pulse amplitude in time bins that are 3.125 ns long. Taken from Ref.~\cite{publi
 
 \subsection{PMT sensors}
 
-   \begin{itemize}
-         \item Understanding LED and PIN-diode behaviour
-         \begin{itemize}
-          \item charge measurements of PMT/PIN vs. LED DAC
-%           \begin{itemize}
-           \item LED distance measurements  
-%            \begin{itemize}
-% 	    \item was done to proof that PMT is linear with light intensity
-% 	    \item this because we saw that PMT charge is not linear vs. LED DAC.
-% 	    \item conclusion: LED is not linear vs. DAC
-% 	   \end{itemize}
-%           \end{itemize}
-          \item LED angular distribution
-	  \item LED frequency test
-         \end{itemize}
-       \end{itemize}
+The new LUCID uses R760 Hamamatsu PMTs, a smaller version of the previously used R762 model. These PMTs have a 
+10 mm quartz window diameter, while the old ones had a 14 mm diameter. A smaller PMT model has been chosen to reduce acceptance 
+which will help to cope with the increased occupancy and to avoid saturation of the luminosity algorithms.
+In addition, 4 PMTs per side have a specially reduced sensitive window with a 7 mm diameter which roughly 
+corresponds to a factor 2 decrease in rate (see \FigureRef{fig:modPMT}). They provide luminosity algorithms that will not saturate at 
+increased luminosity. Detailed description of choise and characterization of PMTs used in detector can be found in~\cite{Alberghi:2016tad}.
+
+[ToAsk ???] Should I add additional information how choise of PMTs was done (as described in the paper~\cite{Alberghi:2016tad})?
+% TODO also mention that below in the text there will be some description of tests done to understand behaviour of PMts?
+
+\begin{figure}
+\centering
+\includegraphics[width=.6\textwidth]{LUCID/mod_PMT.jpg}
+\caption{R760 Hamamatsu PMT with specially reduced sensitive window size used in the LUCID detector.}
+\label{fig:modPMT}
+\end{figure}
+
 
 \subsection{LUCID electronics}
 
 
 \section{Calibration system}
-The new LUCID uses R760 Hamamatsu PMTs, a smaller version of the previously used R762 model. These PMTs have a 
-10 mm
-quartz window diameter, while the old ones had a 14 mm diameter. A smaller PMT model has been chosen to reduce acceptance 
-which will help to cope with the increased occupancy and to avoid saturation of the luminosity algorithms.
-In addition, 4 PMTs per side have a specially reduced sensitive window with a 7 mm diameter which roughly 
-corresponds to a factor 2 decrease in rate. They provide luminosity algorithms that will not saturate at 
-increased luminosity.
+
+% TODO add reference to some book with desciption of PMT aging 
+
+
 
 The PMT gain calibration is monitored in 3 independent ways (see \FigureRef{fig:calibrationSystem}):
 \begin{itemize}
@@ -390,27 +388,52 @@ Homogenity within all categories are pretty good for 4 cm as well, so it was dec
 \section{Temperature measurements}
 \label{sec:tempMeas}
 
+In current section measurements of temperature dependence of PMT gain and behaviour of quartz fiber at high temperatures will be discussed.
+LUCID detector is equipped with 18 temperature sensors per side which were installed to monitor temperature of key detector components during so called ``bake-out'' procedure of new
+ATLAS beampipe. A few sensors are installed close to the PMTs and temperature is taken and archived every ??? minutes.
+% TODO ask Davide how freuqent we archive temperature from sensors.
+It is known that PMT is more sensitive to ambient temperature than ordinary electronic components (such as capacitors and resistors).
+It caused by fact that PMT cathode quantum efficiency depends from temperature as well as gain of the dynode chain.
+To estimate temperature effect on PMT gain dedicated measurement were done in 
+the lab with R760 Hamamatsu tube which was coupled with Bi-207 radioactive 
+source and describe later in this section.
+
+Another test, described in this section, was focused on understanding how big 
+temperature quartz fiber, used to provid LED and laser calibration signals, can 
+tolerate during the bake-out procedure.
+
+% TODO insert references to the sub-sections here?
+
+
 TODO: describe scheme of temperature sensonrs installed in LUCID.
 
 \subsection{Temperature controller}
 \label{subsec:tempController}
 
-In order to perform temperature tests one need to have reliable method to measure and control temperature within black box (were all measurements were done).
-For this purpose temperature device was built.
-It was based on microcontroller board Arduino Mega 2560 (reference???), which can be easily programmed by Arduino software (reference???).
-To measure temperature LM35CAH sensor was used which is precision integrated-circuit device with an output voltage linearly-proportional to the Centigrade temperature.
-In order to interface sensor with readout input channel from Arduino board electrical circuit shown at \FigureRef{fig:tempReadOutCircuit} have been made, 
-which shift and scale output voltage from sensor to suitable values for Arduino input.
-To control temperature a simple chain of resistors were used which were dissipating heat produced by current flowing thorough them. 
-Voltage was controlled by controller with help of MOSFET transistor. In order to verify that temperature will be homogenious within experimental scope (black box),
-a pc fan was used. Behaviour of all components were controlled by programming of Arduino microcontroller.
-Measured temperature values were sent directly to pc by serial port or could be stored on external microSD card, connected to Arduino board.
+In order to perform any temperature tests one need to have a reliable method to measure and control temperature in a testing area.
+Measurements with PMTs are typically done in a light tight black boxes to make sure that no external light will accidently get on PMT photocathode.
+Also black box is hermetically well sealed which prevent air from the box to leak outside which make it easy to control temperature inside the box with good precision.
+A dedicated temperature controller, based Arduino Mega 2560 microcontroller
+% TODO (reference???)
+(programmed by Arduino software), was built.
+To measure temperature LM35CAH sensor was used which is a precision integrated-circuit device with an output voltage linearly-proportional to the Centigrade temperature.
+In order to interface the sensor with 
+% readout input channel from 
+Arduino board electrical circuit shown at \FigureRef{fig:tempReadOutCircuit} have been made, 
+to match output voltage from sensor with readout of Arduino board.
+As a heater element a simple chain of resistors were used which were dissipating heat produced by current flowing thorough them. 
+Voltage on resistors was controlled by controller with help of MOSFET transistor. In order to verify that temperature will be homogenious within black box,
+a pc fan was used. Heating profile was programmed in the Arduino microcontroller.
+Measured temperature values were sent directly to pc by serial port or were stored on external microSD card, connected to the Arduino board.
 
 \subsection{PMT gain dependence}
 \label{subsec:pmtGainTempDep}
 
 % TODO ask Vincent: do I need to explain how I subtract baseline for charge measurements? Or I can put it into appendix?
 % TODO ask Vincent: do I need to describe all electronic chain here?
+
+Due to the fact that interior of PMT is a vacuum and that heat conduct thought it very slowly temperature has to be changed really slowly in order to make sure that temperature of tube
+reaches the same level as the ambient temperature.
 
 One of possible component of systematic error of precise measurments of any detector is variation of temperature of environment.
 Quite often it's really hard to keep temperature stable over long period of time in very large hall, especially large as area as experimental hall of the ATLAS detector.
