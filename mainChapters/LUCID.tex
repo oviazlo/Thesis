@@ -8,33 +8,32 @@
 %  \item My personal contribution related to the described topic
 % \end{itemize}
 
-This chapter describe LUCID detector which was built specially for Run-2 phase of a LHC program.
-It cover aspects as design of the detector and its key components, assembly and testing of the new detector, 
-operation and performance of the detector during 2015-2016 years of data taking.
-Special attention is given for the calibration system of the detector and developing of the calibration procedure.
+This chapter describe the LUCID detector which was built specially for the Run-2 phase of the LHC program.
+It covers aspects such as the design of the detector and its key components,the assembly and testing of the new detector as well as
+operation and performance of the detector during the 2015-2016 data taking.
+Special attention is given to the calibration system of the detector and the development of the calibration procedure.
 
-During the design phase a lot of tests were done in order to find out optimal design and parameters of detector components.
-Also a lot of tests were done in order to understand behavior and performance of detector components.
-During the assembly and installation phase all parts of the detector were taken together. During this phase number of tests were done
-to make sure that all components perform as they should.
-Also overall testing of the system was done to make sure that no damage was done during the installation of the detector.
-During operation phase which is still ongoing a lot of studies were held to understand performance of calibration system and detector overall.
+During the design phase a lot of tests were done in order to find an optimal design and the parameters for various detector components.
+A lot of tests were done in order to understand the behavior and performance of the detector components.
+During the assembly and installation phase a number of tests were done to make sure that all components performed they should.
+An overall testing of the system was done to make sure that no damage had been done during the installation of the detector.
+During the operation phase, which is still ongoing, a lot of studies have been made to understand the performance of the calibration system and the detector.
 
-I contributed in each step described above. I took part in developing of LUCID design particularly design of the calibration system. 
-I made series of tests to find out optimal parameters of LED and Laser diffusers used to evenly distribute LED and laser signals and deliver it to all detector 
+I contributed to all the steps mentioned above. I took part in the development of the LUCID design and in particularly the design of the calibration system. 
+I made a series of tests to find the optimal design parameters of the LED and Laser diffusers used to evenly distribute LED and laser signals and deliver it to all detector 
 channels. 
-Also I spent a lot of time on understanding behavior of LED system as well as PMT and PIN-diode signal behavior.
-Tests with Bi-207 radioactive source which is used as one of the way to calibrate PMT gain were done as well.
-Also I participated in detector assembly in the clean room and did testing of the detector during this process.
-Testing of LED and Laser diffuser were done in order to cross check integrity of fibers and homogeneity of signals between all PMTs.
-Also temperature stress-test was performed in order to understand maximum possible temperature allowed to not destroy detector during a beam pipe bake out 
-procedure.
-In the operational phase tests main focus was given for understanding of aging of PMTs and possibility to improve calibration system.
+I spent a lot of time on understanding the behavior of the LED system as well as the PMT and PIN-diode signal behavior.
+Tests with Bi-207 radioactive sources which are used as one of the way to monitor photomultiplier (PMT) gain were done as well.
+I participated in the detector assembly in the clean room and did testing of the detector during this process.
+Testing of LED and laser diffusers were done in order to cross check the integrity of fibers and the homogeneity of signals between all PMTs.
+Also temperature stress-test was performed in order to understand what maximum temperature could be allowed without destroing the detector during the 
+beam pipe bake-out procedure.
+In the operational phase the main focus was on understanding the aging of PMTs and the possibility to improve the calibration system.
 
-LUCID group published paper with description of choice and characterization of photo multipliers for the new LUCID detector for Run-2~\cite{Alberghi:2016tad}.
-My contribution was in understanding and developing of absolute calibration using a Bi-207 source.
+The LUCID group published a paper with a description of the choice and the characterization of photomultipliers for the new LUCID detector for Run-2~\cite{Alberghi:2016tad}.
+My contribution was in understanding and developing the monitoring using a Bi-207 source.
 
-During my PhD studies I hold a role of ATLAS Forward detectors Run Coordinator with main focus on LUCID for a 5 months.
+During my PhD studies I was the ATLAS Forward detectors Run Coordinator for a pariod of 5 months.
 
 
 % \section{Plan of the LUCID chapter}
@@ -120,9 +119,9 @@ their acceptance and thus avoid saturation of some luminosity algorithms.
   \centering
   \includegraphics[width=\linewidth]{LUCID/FourPMTs_zoomed.png}
 \end{subfigure}
-\caption{(left) Schematic drawing of one of the two detectors, showing the position of the photomultipliers 
+\caption{(left) Schematic drawing of one of the two detectors, showing the position of the photomultiplier tubes 
 and quartz fibers with respect to the LHC beampipe; (right) A quarter of one of the detectors. All tubes are 
-placed inside mu-metal shielding to protect the PMTs from a stray field. Cooling pipes were installed in order 
+placed inside mu-metal shielding to protect the PMTs from a stray magnetic field. Cooling pipes carrying water were installed in order 
 to protect the PMTs from overheating during the beampipe bake-out procedure. Three of four tubes have fiber connectors, which
 transfer LED and laser pulses for calibration. The fourth tube is equipped with a Bi-207 source and is completely 
 sealed.}
@@ -130,7 +129,7 @@ sealed.}
 \end{figure}
 
 
-\subsection{Motivation of new LUCID-2 detector}
+\subsection{Motivation for the new LUCID-2 detector}
 \label{subsec:motivationNewLucid}
 
 [TODO: rewrite thoroughly this subsection!].
@@ -178,18 +177,18 @@ a physics run. The duration of the pulses is less than 25 ns.
 \includegraphics[width=.6\textwidth]{LUCID/pulseShape_run_267367_preliminary.eps}
 \caption{Digitized pulse shape of a signal from one of the PMTs of the LUCID detector during a run recorded on 
 the 10th of June 2015 at $\sqrt{s}$ = 13 TeV. The polarity of the pulse is inverted. The FADCs measure the 
-pulse amplitude in time bins that are 3.125 ns long. Taken from Ref.~\cite{publicPlots}.}
+pulse amplitude in time bins that are 3.125 ns long.}
 \label{fig:pulseShape}
 \end{figure}
 
-LUCID read-out consists from four (two per side) custom made VME LUCROD boards which sit close to the detector in ATLAS experimental hall.
-Decision to place electronics close to the detector in the experimental hall was motivated by preventing signals to have long tales.
-Signal from sensors are transferred with thick cables which prevent distrotions along the path.
-Every LUCROD board has 16 input channels. Every channel is consisted from low noise amplifier, filter and Flash ADC.
-Block diagram of LUCROD is shown in \FigureRef{fig:LUCROD_schematics}.
+The LUCID read-out consists of four (two per side) custom made so-called LUCROD boards of VME type which sit close to the detector in the ATLAS experimental hall.
+The decision to place electronics close to the detector in the experimental hall was motivated by preventing signals to develop long tails in the cables.
+Signal from PMTs are transferred with thick cables which prevent distortion along their path.
+Every LUCROD board has 16 input channels and every channel consists of a low noise amplifier, a filter and a Flash ADC.
+A block diagram of LUCROD is shown in \FigureRef{fig:LUCROD_schematics}.
 Channels are grouped in pairs and for each pair there is a dedicated channel FPGA.
 All information from all channel FPGAs are collected and processed by main FPGA.
-After that information are sent to the ATLAS as well as for LUMAT boards which are placed in the counting room of the experiment.
+After that information are sent to the ATLAS as well as to so-called LUMAT boards which are placed in the counting room of the experiment.
 
 \begin{figure}
 \centering
@@ -199,37 +198,39 @@ There are 16 channels (8 units) per LUCROD. All units are controlled by main FPG
 \label{fig:LUCROD_schematics}
 \end{figure}
 
-There are two LUCROD board per side and it was decided to couple different sets of sensors to the different boards as shown in \FigureRef{fig:Eletronics_schematics}.
-Bi, VDM and Spare sensors were connected to the one board while Modified and Fiber sensors were connected to the another board.
+There are two LUCROD board per side and it was decided to couple different sets of sensors to the different boards as shown in 
+\FigureRef{fig:Eletronics_schematics}.
+BI, VDM and SPARE PMTs were connected to one board while MOD and FIB PMTs were connected to the another board.
 The same connection scheme was used on the other side as well.
 
 % TODO change this picture with one which is in lumi note.
 \begin{figure}
 \centering
 \includegraphics[width=.95\textwidth]{LUCID/Eletronics_schematics.eps}
-\caption{Block diagram of the LUCID electronics. Signals from all tubes are collected by 4 \mbox{LUCROD} cards 
-(two per 
-each side) that digitize the signals with FADCs. Some of the luminosity algorithms are calculated in the LUCRODs. 
-Output of these calculations as well as a copy of all digitized PMT 
-signals are sent to the LUMAT cards afterwards, which perform calculations of algorithms that combine data from 
+\caption{Block diagram of the LUCID electronics. Signals from all photomultiplier tubes are collected by 4 \mbox{LUCROD} cards 
+(two per side) that digitize the signals with FADCs. Some of the luminosity algorithms are implemented in the LUCRODs. 
+The number of events that fullfil different luminosity algorithms are counted and a copy of all digitized PMT 
+signals are sent to the LUMAT cards, which perform calculations with algorithms that combine data from 
 both detectors and publish the results to the Information Server (IS) database.}
 \label{fig:Eletronics_schematics}
 \end{figure}
 
-Every LUCROD boards receive information from sensors from one side only.
-In order to implement possibility to look for a coincidence from sensors from both sides two additional boards which are called LUMAT boards are used
+Every LUCROD boards receive information from PMTs from only one of the teo detectors.
+In order to implement the possibility of requiring signals in both detectors, two additional boards which are called LUMAT boards are used
 as shown in \FigureRef{fig:Eletronics_schematics}.
-Digital signals from sensors of the same type from LUCRODs from both side are send to LUMAT boards, which can perform logical operation with signals from both sides.
+Digital signals from PMTs of the same family from LUCRODs from both sides are sent to LUMAT boards, 
+which then perform logical operation with signals from both sides.
 
-Information from LUCROD and LUMAT board then are published to Information Server (IS) where futher luminosity calculations are done.
+Information from the LUCROD and LUMAT boards are then published to the Information Server (IS) which is a database.
+From these the data is accessed by programs that calculate the luminosity online.
 
-\section{Design of the calibration system}
+\section{Design of the PMT gain monitoring system}
 
 % TODO add reference to some book with desciption of PMT aging 
 
 [TODO: describe why do we need calibration system. What is the purpose of it. Stress that it's important for correct measurements of luminosity.]
 
-The PMT gain calibration is monitored in 3 independent ways (see \FigureRef{fig:calibrationSystem}):
+The PMT gain is monitored in 3 independent ways (see \FigureRef{fig:calibrationSystem}):
 \begin{itemize}
  \item by LED signals carried by optical fibers;
  \item by laser signals transferred from the calibration system of ATLAS Tile Calorimeter;
@@ -239,7 +240,7 @@ The PMT gain calibration is monitored in 3 independent ways (see \FigureRef{fig:
 \begin{figure}
 \centering
 \includegraphics[width=.7\textwidth]{LUCID/calibrationSystem.png}
-\caption{The LUCID calibration system. 16 PMTs per side receives light from LEDs and the Tile laser calibration 
+\caption{The LUCID PMT gain monitoring system. 16 PMTs per side receives light from LEDs and the Tile laser calibration 
 system. 
 For redundancy, two fibers come from two different LED diffusers (with three LEDs each, monitored by 
 PIN-diodes), and two fibers come from one laser diffuser. The four remaining PMTs in each detector are calibrated 
@@ -250,34 +251,34 @@ with Bi-207 sources.}
 The availability of three independent calibration methods increase the robustness of the calibration system 
 and provide a possibility to cross-check calibration results between the methods.
 
-LED signals provide sharp peaks in the amplitude and charge distributions that are recorded by LUCID.
-The stability of the PMT gain is controlled by measuring the mean value of these distributions. 
-The stability of the LEDs themselves is controlled by PIN-diodes.
-An alternative way of calibration is to use the ratio of the mean charge measured by PMTs with that of the 
-PIN-diode. 
-This charge is proportional to the LED intensity and by controlling charge ratio allows to rule out any 
+LED signals provide peaks in the amplitude and charge distributions that are recorded by LUCID in data acquisition runs between LHC fills.
+The stability of the PMT gain is controlled by measuring the mean value of these distributions 
+and then changing the high voltage to the photomultiplier in order to keep their mean values constant. 
+The stability of the LEDs themselves is controlled by PIN-diodes and an alternative way of calibration is 
+to use the ratio of the mean charge measured by PMTs with that of the PIN-diode. 
+This charge is proportional to the LED intensity and by using this charge ratio allows to rule out any 
 dependence of the calibration results on LED intensity fluctuations.
-In order to provide the same amount of light simultaneously for all PMTs a special LED diffuser were designed and manufactured.
+In order to provide the same amount of light simultaneously to all PMTs a special LED diffuser was designed and manufactured.
 This is discussed in details at \SectionRef{subsec:LEDDiffuser}.
 
 The Tile calorimeter laser system provides an alternative source of stable light and is treated in the same way
 as the LED signals in the calibration procedure. 
 The stability of the laser signals is monitored by the Tile calibration system \cite{atlasGeneral}.
-The same as LED laser light has to be distributed between the PMTs as well.
-Laser light are provided by Tile calibration system by optical fiber which means that another type of the diffuser
-has to be used in order distribute light between the PMTs as is described in \SectionRef{subsec:laserDiffuser}.
+The laser light has to be distributed between the PMTs in the same way as the LED light.
+Laser light is provided by the Tile calibration system via optical fibers which means that another type of diffuser
+has to be used in order distribute the light to the PMTs as described in \SectionRef{subsec:laserDiffuser}.
 
 Bi-207 radioactive sources provide monoenergetic electrons from an internal conversion process with energies 
 above the Cherenkov threshold in quartz. These electrons
-have enough kinetic energy to penetrate the quartz window of PMT and produce signals similar to the signals 
-from high energetic particles from physics runs. The mean of the charge and amplitude 
+have enough kinetic energy to penetrate the quartz window of the PMT and produce signals similar to the signals 
+from high energetic particles in physics runs. The truncated mean of the charge and amplitude 
 distributions from the Bi-207 sources are used in the same way as for the two methods described above. 
 This method does not suffer from any instability issues~\cite{Alberghi:2016tad}.
-It was decided to use liquid Bi-207 source as described in the \SectionRef{subsec:bi207Calibration}.
+It was decided to use a liquid Bi-207 source as described in \SectionRef{subsec:bi207Calibration}.
 
-In the \SectionRef{subsec:calibPerformance} calibration strategy of 2015 and 2016 data-taking period are discussed.
+In \SectionRef{subsec:calibPerformance} the calibration strategy during the  2015 and 2016 data-taking periods are discussed.
 
-\subsection{LED diffuser}
+\subsection{The LED diffuser}
 \label{subsec:LEDDiffuser}
 
 % TODO structure of the section:
@@ -300,25 +301,28 @@ In the \SectionRef{subsec:calibPerformance} calibration strategy of 2015 and 201
 %   gluing fibers to the diffuser
 
 
-Despite a simple purpose of LED diffuser to evenly distribute light among PMTs existence of a number of constrains lead to necessity to make dedicated study 
-to define optimal parameters of the diffuser. Main points which were considered during design phase are:
+Despite the simple purpose of the LED diffuser to evenly distribute light among the PMTs 
+there was a number of constrains that made it necessary necessity to make dedicated studies 
+to define the optimal parameters of the diffuser. The main points which were considered during the design phase were:
 \begin{itemize}
- \item light has to be evenly distributed among PMTs,
- \item LED has to be monitored by PIN-diode in order to verify its stability,
- \item geometrical constrains such as size of PIN-diode case, limited space for the whole diffuser and limits on bending of fibers has to be taken into account,
- \item production constrains such as complexity of drilling wholes and fiber gluing at specific angles has to be kept in the mind.
+ \item light had to be evenly distributed among PMTs;
+ \item the LED had to be monitored by PIN-diode in order to verify its stability;
+ \item geometrical constrains such as the size of the PIN-diode, 
+       limited space for the whole diffuser and limits on the bending of fibers had to be taken into account;
+ \item manufacturing constrains such as the complexity of drilling small holes and gluing fiber at specific angles had to be kept in mind.
 \end{itemize}
 
-To meet all these requirements radial design was proposed - a PIN-diode is located aligned with LED axis. Fibers surround PIN-diode case 
-evenly with certain angle to the LED axis. Schematic sketch are shown in \FigureRef{fig:AngularMeasurementSetup} and in \FigureRef{fig:LEDDiffuser}.
+To meet all these requirements a radial design was proposed with a PIN-diode facing three LEDs and located aligned with LEDs axis. Fibers surround the PIN-diode 
+evenly with a certain angle to the LED axis. A schematic sketch is shown in \FigureRef{fig:AngularMeasurementSetup} and in \FigureRef{fig:LEDDiffuser}.
 % TODO insert sketch used for testing.
-Such geometry assume that distance between LED and fibers has to be the same for all fibers in order for fibers to pick up the same amount of light.
+Such a geometry assume that the distance between the LEDs and the fibers would be the same for all fibers in order for 
+the fibers to pick up the same amount of light.
   
 \begin{figure}
 \centering
 \includegraphics[width=.7\textwidth]{LUCID/LED_diffuser_schematic.pdf}
-\caption{Schematic of experimental setup which was used for LED diffuser design phase. LED and PIN-diode is aligned and face each other. 
-	 Angles represent possible positions of the fibers around PIN-diode case. Fibers are not shown on the sketch.}
+\caption{Schematic of the experimental setup which was used in the LED diffuser design phase. LED and PIN-diode are aligned and face each other. 
+	 Angles represent possible positions of the fibers around the PIN-diode. Fibers are not shown in the sketch.}
 \label{fig:AngularMeasurementSetup}
 \end{figure}
 
@@ -332,7 +336,7 @@ Such geometry assume that distance between LED and fibers has to be the same for
   \includegraphics[width=.8\textwidth]{LUCID/photo_LED_diffuser_v2.jpg}
 \end{subfigure}
 
-\caption{LED diffuser. Schematic drawing (left), photo (right).}
+\caption{The LED diffuser. Schematic drawing (left), photo (right).}
 \label{fig:LEDDiffuser}
 \end{figure}
   
@@ -342,12 +346,14 @@ Such geometry assume that distance between LED and fibers has to be the same for
 % stability of LED during long time. LED diffuser has to be design in such way, that all PMT channels have to receive the same amount of light.
 
 % TODO define what is LED axis. Try to explain it better.
-LED spreadsheet provide information about LED light intensity as a function of angle between observer and LED axis (\FigureRef{fig:AngularDistributionOfLED} (right)).
-But in order to make sure that real LEDs correspond to specified characteristics a test in the lab was done.
-Sketch up of the experimental setup is shown in \FigureRef{fig:AngularMeasurementSetup}.
-PMT anode current measurements as a function of fiber angle with respect to LED axis for different distances between 
-fiber surface (PIN-diode) and LED were done and results are shown in \FigureRef{fig:AngularDistributionOfLED} (left).
-Up to 30\degree light intensity is relatively homogeneous and for above 30\degree light intensity starting to drop.
+The manufacturer provided information about LED light intensity as a function of the angle between an observer and the LED axis 
+(\FigureRef{fig:AngularDistributionOfLED} (right)).
+% But in order to make sure that real LEDs correspond to specified characteristics a test in the lab was done.
+A set of measurements was also done.
+A sketch of the experimental setup is shown in \FigureRef{fig:AngularMeasurementSetup}.
+Measurements of the PMT anode current as a function of fiber angle with respect to LED axis for different distances between 
+the fiber surface (PIN-diode) and the LEDs were done and the results are shown in \FigureRef{fig:AngularDistributionOfLED} (left).
+With angles below to 30\degree the intensity is relatively homogeneous and above 30\degree the light intensity startsg to drop off.
 
 \begin{figure}
 \begin{subfigure}{.46\textwidth}
@@ -364,37 +370,38 @@ Up to 30\degree light intensity is relatively homogeneous and for above 30\degre
 \label{fig:AngularDistributionOfLED}
 \end{figure}
 
-Sensitivity of PIN-diode is significantly smaller than of PMT.
-That's why in order to have enough light intensity to see a clear signal with PIN-diode one can imagine to have as small as possible
-distance between LED and PIN-diode. But due to the fact that fibers sits around PIN-diode case and due to geometrical constrains 
-(diffuser has certain space requirements to meet in order to fit in limited space on top of monoblock) angle between fibers and LED - PIN-diode axis cannot be very big
-otherwise fiber has to be bent too much which can bring potential risk of their mechanical damage during detector installation.
+The sensitivity of the PIN-diodes is significantly smaller than that of the PMTs.
+That's why, in order to have enough light intensity to see a clear signal with PIN-diodes, one needs as small as possible
+distance between the LEDs and the PIN-diode. However, since the fibers sit around the PIN-diode case and due to geometrical constrains 
+(the diffuser has certain space requirements in order to fit in the limited space inside the shielding) 
+the angle between the fibers and the LEDs - PIN-diode axis cannot be very large because then
+the fibers have to be bent too much which can damage them during the detector installation.
 
-The proposed solution was to use 6 mm distance between PIN-diode and LED and 30\degree for fiber angles.
+The final design had a 6 mm distance between the PIN-diode and the LEDs and a 30\degree fiber angle.
 
-But as it was said before sensitivity of the PMT and PIN-diode are quite different and this leads to another limitation caused by dynamic range of the LUCROD board.
-Dynamic range is the maximum possible input voltage to the read-out card (after amplification) up to which the output is linear and thus not saturating.
-Dynamic range of the LUCROD card is 1.5 V. 
-Input signal are amplified with low noise amplifier with amplification factor of 14, as described in \SectionRef{subsec:LUCIDElectronics} 
+The different sensitivity of the PMT and the PIN-diode led to another limitation caused by the dynamic range of the LUCROD board.
+% TODO I am not sure if this sentence is correct... Probably Vincent had something else in mind.
+The dynamic range is the maximum possible input voltage (after amplification) the read-out card has an output is linear and thus not saturating.
+The dynamic range of the LUCROD card is 1.5 V. 
+The input signal are amplified with a low noise amplifier with an amplification factor of 14, as described in \SectionRef{subsec:LUCIDElectronics} 
 
-[TODO amplification factor is not explained in that section  - fix it].
+The maximum possible amplitude of the PMT signals which can be handled by the electronics without any saturation is therefore slightly above 100 mV.
+This introduce limitation for the diffuser because the intensity of the LED cannot be too high so that it produces larger than 100 mV PMT signals.
+However, for this LED intensity the signal from the PIN-diode will be very small and barely measurable.
+It was therefore needed to suppress the amount of light which goes to the fibers while keeping high intensity for the PIN-diode.
+The solution was to place a ring of optical filters which covers the fibers but not the PIN-diode.
 
-That's mean that maximum possible amplitude from PMT which can be handled by electronics without any saturation is equal slightly above 100 mV.
-And this introduce limitation for the diffuser that intensity of the LED cannot be higher than value which provide 100 mV signals from PMTs.
-At the same time signal from PIN-diode will be very small and barely measurable.
-
-This fact lead to the idea that it is needed to suppress amount of light which goes to the fibers while keep the same amount for PIN-diode.
-Solution was to place ring of photo filters which will cover fibers but will not cover PIN-diode.
-
-Two sets of filters with optical densities 0.15 and 0.6 were used. Criteria to choose proper combination of filters was that 
-with maximum possible intensity of LED signals from PMTs has to be smaller than maximum allowed input signal for the electronics (100 mV).
-Measurements with many possible combinations of filters were done in the lab.
-Used setup was the same as showed in \FigureRef{fig:AngularMeasurementSetup}. Distance between LED and PIN-diode and fiber angle were set to the values 
-decided to be used in the diffuser. Filter were inserted between LED and the fiber to reduce amount of light picked up by fiber.
-Measurements were repeated three times for each filter configuration. Results of measurements are showing in \TableRef{tab:FilterChoice}.
-It was decided to choose combination with one filter with 0.15 optical density and with one with 0.6 which correspond to 85.33 $\pm$ 0.29 mV.
-Amplitude is slightly smaller than threshold value of 100 mV in order to have safety margin for fibers 
-which potentially can be slightly off from the nominal position in the diffuser.
+Two sets of filters with the optical densities 0.15 and 0.6 were used. 
+% TODO ``lab'' is slang. is laboratory OK instead???
+Measurements with many possible combinations of filters were done in the laboratory.
+The setup was the same as showed in \FigureRef{fig:AngularMeasurementSetup}. The distance between the LED and the PIN-diode 
+and the fiber angle were set to the values 
+decided to be used in the diffuser. 
+Filter were inserted between the LED and the fiber to reduce the amount of light picked up by the fiber.
+Measurements were repeated three times for each filter configuration. The results of the measurements are showed in \TableRef{tab:FilterChoice}.
+It was decided to choose a combination with one filter with 0.15 optical density and one with 0.6 which gave a PMT signal amplitude of 85.33 $\pm$ 0.29 mV.
+This amplitude is slightly smaller than the threshold value of 100 mV in order to have a safety margin in case fibers 
+are slightly off from the nominal position in the diffuser.
 
 
 \begin{table}[bp]
@@ -414,9 +421,10 @@ which potentially can be slightly off from the nominal position in the diffuser.
   \label{tab:FilterChoice}
 \end{table}
 
-LED diffuser had to be placed on top of monoblock, where no hard radiation level is expected compared to the are close to the beampipe where LUCID sits.
-But still significant amount of radiation will be present there during collider operation.
-No estimation of radiation hardness of the filters were done that's why it was decided to make one diffuser with filters and another one - without.
+The LED diffuser had to be placed on top of the so-called shielding monoblock, where radiation levels are expected to be low compared to the ares 
+close to the beampipe where LUCID sits.
+However, significant amount of radiation will be present also in the location of the LED diffusers during operation.
+No estimation of the radiation hardness of the filters were done which is why it was decided to make one diffuser with filters and another one without.
 
 % \begin{figure}
 % \centering
@@ -425,26 +433,29 @@ No estimation of radiation hardness of the filters were done that's why it was d
 % \label{fig:LEDDiffuser}
 % \end{figure}
 
-\subsection{Laser diffuser}
+\subsection{The laser diffuser}
 \label{subsec:laserDiffuser}
 
 % TODO Read here: https://www.rp-photonics.com/numerical_aperture.html
 
-Stability of light source used for calibration is very crucial factor for calibration procedure.
-That's why instead of relying on only one light source from LEDs it was chosen to employ laser light source 
-provided and monitored by Tile calibration system \cite{atlasGeneral} as alternative source of light. 
-To distribute light between the channels one cannot use the same diffuser as for LED light, 
-due to the reason that laser light is very well collimated while it's not the case for LED.
-In order to handle laser light new diffuser was introduced, schematic of which is shown in \FigureRef{fig:laserDiffuserSchematics}.
-Diffuser represent itself as a fiber bundle of 48 quartz fibers encased in ferrule connector of 2 mm diameter \FigureRef{fig:laserDiffuserMapping}.
-Laser light is delivered from Tile calibration system by single fiber of 0.6 mm in diameter (depicted on the right at \FigureRef{fig:laserDiffuserSchematics}).
+The stability of the light source used for PMT gain monitoring is a crucial factor in the calibration procedure.
+Instead of relying on only one light source from LEDs it was decided to also use laser light
+provided and monitored by the Tile calibration system. 
+To distribute the light between the PMTs one cannot use the same diffuser as for LED light, 
+since laser light is very well collimated which is not the case for the LEDs.
+In order to handle laser light a new diffuser was made which is shown in \FigureRef{fig:laserDiffuserSchematics}.
+% TODO personaly I don't like this phrasing... because it sound that diffuser is just air gap... but in my opinion diffuser is air gap + ferryl connector 
+% with 48 fibers
+The diffuser connects a fiber bundle of 48 quartz fibers encased in ferrule connector of 2 mm diameter with a signle fiber with 0.6 mm diameter
+since the laser light is delivered from the Tile calibration system by single fiber.
 
 
 
 \begin{figure}
 \centering
 \includegraphics[width=.6\textwidth]{LUCID/laserDiffuserAirGap.pdf}
-\caption{Schematic drawing of coupling of laser diffuser (fiber bundle) with single quartz fiber which deliver laser light from Tile calibration system.}
+% TODO need to move top text from picture to the main text
+\caption{Schematic drawing of a laser diffuser that couples a fiber bundle to a single quartz fiber which delivers laser light from the Tile calibration system.}
 \label{fig:laserDiffuserSchematics}
 \end{figure}
 
@@ -458,57 +469,62 @@ Laser light is delivered from Tile calibration system by single fiber of 0.6 mm 
   \centering
   \includegraphics[width=0.9\linewidth]{LUCID/mapping_bundle2_color.png}
 \end{subfigure}
-\caption{(left) Picture of laser diffuser (fiber bundle) with fibers which deliver laser signal to PMTs on side A detector. Numbers correspond to PMT number 
-which fiber connected to; 
-Two fibers from bundle connected to each PMT. Fiber pairs are divided to three categories based on distance from center of the connect to the closest fiber 
-from pair: 
-central (orange color), intermediate (yellow) and peripheral fiber pair (green).
-(right) laser diffuser which correspond to Side C detector.}
+\caption{(left) Picture of a laser diffuser with the fiber buncdle which delivers laser signals to PMTs on the side A detector. 
+Numbers correspond to PMT numbers which the fiber is connected to. 
+Two fibers from a bundle are connected to each PMT. 
+Fiber pairs are divided into three categories based on the distance from the center of the connector to the closest fiber 
+in a pair: central (orange color), intermediate (yellow) and peripheral fiber pair (green).
+(right) Laser diffuser which correspond to the side C detector.}
 \label{fig:laserDiffuserMapping}
 \end{figure}
 
-Light travels in the fiber by undergoing multiple total internal reflections from the interface between fiber core and cladding. 
-Due to this, light from fiber will come out within a certain cone. The size of the cone is characterized by numerical aperture $NA$ of the fiber which is equal
+Light in the fiber undergos multiple total internal reflections in the interface between the fiber core and the cladding. 
+Due to this, the light from the fiber will come out within a certain cone. 
+The size of the cone is characterized by the numerical aperture $NA$ of the fiber which is given by
 
 \begin{equation}
 \label{eq:numericalApperture}
- NA = n \sin{\theta_{max}} = \sqrt{n_{core}^2 - n_{cladding}^2},
+ NA = n \sin{\theta_{max}} = \sqrt{n_{core}^2 - n_{cladding}^2}
 \end{equation}
 
 where $n$ is the refractive index of the medium (air in our case), $n_{core}$ is the refractive index of the fiber core, $n_{cladding}$ is the refractive index 
-of the cladding and $\theta_{max}$ is half-angle of light cone. That's why light spot produced by light from fiber will become bigger with distance from fiber 
-edge. 
-That's why to distribute light from fiber to diffuser one need to introduce some air gap between them as shown at \FigureRef{fig:laserDiffuserSchematics}.
-Fiber used to deliver laser light has numerical aperture equal to 0.22, which correspond to 3.1 mm air gap distance needed to cover 2 mm surface of diffuser by 
-light spot (according to \EquationRef{eq:numericalApperture}).
-For calibration purpose light received by each channel have to be approximately equal between channel to channel. But intensity of light is not constant within 
-light spot that's why dedicated measurement are needed to find out best air gap distance.
-Two conditions have to be met:
+of the cladding and $\theta_{max}$ is half-angle of light cone. 
+% TODO Vincent suggest to remove this sentence... need to rethink is it worth to let it be.
+% That's why light spot produced by light from fiber will become bigger with distance from fiber edge. 
+To distribute the light from the single fiber to the fiber bundle one need to introduce some air gap between them that depends on $NA$ 
+as shown at \FigureRef{fig:laserDiffuserSchematics}.
+The fiber used to deliver the laser light has a numerical aperture of 0.22, which corresponds to a 3.1 mm air gap distance 
+in order to cover the 2 mm surface of the diffuser by a light spot (according to \EquationRef{eq:numericalApperture}).
+The light received by each PMT have to be similar for all photomultipliers.
+However, the intensity of light is not constant within the light spot and dedicated measurements were needed to determine the optimal air gap distance.
+Two conditions had to be met:
 \begin{itemize}
- \item light has to be evenly distributed between channels,
- \item preference are given for configurations in which dimmest channel receives maximum possible light.
+ \item The light has to be evenly distributed between PMTs,
+%  TODO rephrase ``dimmest channel'', see comments bny Vincent
+ \item A preference is given for a configuration in which the dimmest channel receives a maximum amount of light.
 \end{itemize}
-Two fibers from bundle are used for each channel. For small distances between fiber with laser signal and diffuser biggest intensity are expected for central 
-region of the diffuser, while for peripheral region - the lowest intensity is expected. 
-Diffuser are conventionally divided to three regions: central, intermediate and peripheral. 
-If one of the channel fiber from pair is in central or intermediate region another fiber from pair has to be placed on the most peripheral ring of diffuser.
-And if both of fibers from pair are in peripheral region they are placed as close as possible to the center of diffuser.
-Pairs which include one fiber in central region are called central fibers and marked in orange color at \FigureRef{fig:laserDiffuserMapping}.
-Pair with one fiber from intermediate region are marked with yellow and pairs marked with green color consists from both fibers in peripheral region.
+% TODO is this sentence correct???
+Two fibers in each bundle goes to each PMT. 
+For small distances between the fiber with the laser signal and the fiber bundle one expected the biggest intensity for teh central 
+region of the diffuser, while for the peripheral region one expects the lowest intensity.
+The diffuser is divided into three regions: central, intermediate and peripheral. 
+If one of the channel fibers from pair is in the central or intermediate region, another fiber from the pair was placed in the most peripheral ring of the diffuser.
+If both fibers in a pair are in the peripheral region they were placed as close as possible to the center of the diffuser.
+Pairs which include one fiber in the central region are called central fibers and marked in orange color in \FigureRef{fig:laserDiffuserMapping}.
+Pairs with one fiber in the intermediate region are marked with yellow and pairs marked with green color have both fibers in the peripheral region.
 
 
 
-
-
-
-Measurement were done with different air gap distances for fiber pairs (and correspond PMTs) from each category. 
-Due to identical structure of fiber bundle on side A and side C (or bundle 1 and 2), detailed measurements
-were done only for one bundle and a few points were measured for the second bundle to verify results of first one. Amplitude of PMT signals were measured by 
-oscilloscope in ATLAS experimental hall. Measurement results are shown at \FigureRef{fig:laserDiffuserDistanceTest}. PMT 1 represent PMTs with central fiber 
-pair connector, PMT 7 - intermediate and PMT 16 and 19 - peripheral fibers for bundle 1 and 2. 
-With increasing distance signal amplitude are decreasing for central fibers which is expected. 
+Measurement were done with different air gap distances for fiber pairs from each category. 
+Due to the identical structure of the fiber bundle on side A and side C (or bundle 1 and 2), detailed measurements
+were done only for one bundle and only a few points were measured with the second bundle to verify the results of the first one. 
+The amplitude of the PMT signals were measured by the oscilloscope in the ATLAS experimental hall
+and the results are shown in \FigureRef{fig:laserDiffuserDistanceTest}. 
+PMT 1 represent PMTs with a central fiber pair, PMT 7 an intermediate pair and PMT 16 and 19 peripheral fibers for bundle 1 and 2. 
+With increasing distance the signal amplitude is decreasing for central fibers as expected. 
+% TODO Vincent suggest to remove this sentence... but probably he said to not later - have to check comments in my notebook...
 Intermediate and peripheral fibers has maximums. Maximum for peripheral fibers correspond to the distance of 4 cm.
-Homogeneity within all categories are pretty good for 4 cm as well, so it was decided to use this value for final version of the diffuser.
+Homogeneity within all categories is acceptable at 4 cm, so this distance was chosen for the final version of the diffuser.
 % TODO conclusions above are very short... Make it longer!!!
 
 % TODO describe some parameters of Tile system with reference to the atlasGeneral
