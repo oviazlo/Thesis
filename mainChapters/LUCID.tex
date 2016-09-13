@@ -33,7 +33,7 @@ In the operational phase the main focus was on understanding the aging of PMTs a
 The LUCID group published a paper with a description of the choice and the characterization of photomultipliers for the new LUCID detector for Run-2~\cite{Alberghi:2016tad}.
 My contribution was in understanding and developing the monitoring using a Bi-207 source.
 
-During my PhD studies I was the ATLAS Forward detectors Run Coordinator for a pariod of 5 months.
+During my PhD studies I was the ATLAS Forward detectors Run Coordinator for a period of 5 months.
 
 
 % \section{Plan of the LUCID chapter}
@@ -215,7 +215,7 @@ both detectors and publish the results to the Information Server (IS) database.}
 \label{fig:Eletronics_schematics}
 \end{figure}
 
-Every LUCROD boards receive information from PMTs from only one of the teo detectors.
+Every LUCROD boards receive information from PMTs from only one of the two detectors.
 In order to implement the possibility of requiring signals in both detectors, two additional boards which are called LUMAT boards are used
 as shown in \FigureRef{fig:Eletronics_schematics}.
 Digital signals from PMTs of the same family from LUCRODs from both sides are sent to LUMAT boards, 
@@ -533,8 +533,8 @@ Homogeneity within all categories is acceptable at 4 cm, so this distance was ch
 \begin{figure}
 \centering
 \includegraphics[width=.6\textwidth]{LUCID/laserDiffuserDistanceTest.pdf}
-\caption{Measurement of PMT signal amplitude as a function of air gap distance for different catefories of fibers. Fiber pair connected to PMTs 1 represent 
-central fiber pairs, to PMT 7 - intermediate, and to PMTs 16 and 19 - peripheral.}
+\caption{Measurement of the PMT signal amplitude as a function of air gap distance for different categories of fibers. Fiber pairs connected to PMTs 1 represent 
+central fiber pairs, PMT 7 intermediate pair, PMTs 16 and 19 to peripheral pairs.}
 \label{fig:laserDiffuserDistanceTest}
 \end{figure}
 
@@ -542,71 +542,76 @@ central fiber pairs, to PMT 7 - intermediate, and to PMTs 16 and 19 - peripheral
 \subsection{PMTs with Bi-207 source}
 \label{subsec:bi207Calibration}
 
-In order to exploit Bi-207 calibration one need to put radioactive source close to the PMT.
-Set of measurements with Bi-207 radioactive source was done in the lab and it was found out that peak from electron source 
-(shown in \FigureRef{fig:pulseheight_Bi207}) correspond to approximately 30 photon electrons~\cite{Alberghi:2016tad}.
+To use LED or laser light sources as a reference for the PMT gain monitoring system one has to be sure that intensity of the light delivered to the PMT 
+will stay constant over long period of time. In other words one has to be sure that the light source itself is stable and condition of 
+the optical fibers which deliver light to the PMTs stays constant.
+Alternative option which is robust againt mentioned effects above is to use a radioactive source.
+
+It was decided to use Bi-207 source because it provides monoenergetic electrons from an internal conversion process 
+with energies above the Cherenkov threshold in quartz.
+In order to use Bi-207 for gain monitoring one needs to put the radioactive source close to the PMT.
+A set of measurements with Bi-207 radioactive sources were done in a test set-up and it was found that peak from the electron source 
+(shown in \FigureRef{fig:pulseheight_Bi207}) corresponds to approximately 30 photo electrons~\cite{Alberghi:2016tad}.
 
 \begin{figure}
 \centering
 \includegraphics[width=.6\textwidth]{LUCID/Bi_amplitude_distribtion.png}
-\caption{Pulseheight distribution of Bi-207 radioactive source signals measured in the lab with Hamamatsu R760 PMT~\cite{Alberghi:2016tad}.}
+\caption{Pulseheight distribution of Bi-207 radioactive source signals measured in a test with a Hamamatsu R760 PMT~\cite{Alberghi:2016tad}.}
 \label{fig:pulseheight_Bi207}
 \end{figure}
 
-
-All measurements in the lab was done with radioactive source enclosed in circular case schematic of which is shown in \FigureRef{fig:Bi207_case} 
-(the source itself was enclosed in disc with diameter of 5 mm).
-During the measurements the source was put in contact with PMT quartz windows.
-And strong dependence of shape of charge and pulseheight distributions (such as in \FigureRef{fig:pulseheight_Bi207}) 
-was observed depending from the relative position of the source with respect to the center of PMT quartz window.
-This fact means that it would be extremely difficult position sources in the same way for all sets of PMTs.
-That's why it was decided to use liquid Bi-207 source and put it on the whole surface of the quartz window eliminating geometrical factor in such way.
+% TODO new text: cross check grammar
+A radioactive source was enclosed in a circular case with 25 mm diameter 
+(the source itself was enclosed in the disc with a diameter of 5 mm) as shown in \FigureRef{fig:Bi207_case}.
+During the measurements the source was put in contact with the PMT quartz window.
+Size of the source is bigger than the size of the PMT quartz window (25 mm and 10 mm respectively) 
+which led to an observed dependence of the shape of the charge and pulseheight of distributions (such as in \FigureRef{fig:pulseheight_Bi207}) 
+depending on the relative position of the source with respect to the center of PMT quartz window.
+It leads to possible difficulties to position sources in the same way for all sets of PMTs main problem arise from the 
+Despite this issue the main problem with using Bi-207 source was 2.5 times bigger size of the source itself than the size of quartz windoe.
+It was decided to use liquid Bi-207 source and put it on the whole surface of the quartz window which will eliminate geometrical factor as well.
 In order to prevent leaking of the source a special cup was glued on top of the PMT.
  
 \begin{figure}
 \centering
 \includegraphics[width=.6\textwidth]{LUCID/Bi207_CERN_upperPart.png}
-\caption{Schematic of case of Bi-207 radioactive source used in labs measurements during characterization of PMTs~\cite{Alberghi:2016tad}.}
+\caption{Schematic picture the of case of a Bi-207 radioactive source used in the measurements during the characterization of the PMTs~\cite{Alberghi:2016tad}.}
 \label{fig:Bi207_case}
 \end{figure}
-
-
 
 
 
 \subsection{Calibration strategy during 2015-2016}
 \label{subsec:calibPerformance}
 
-Between three available calibration methods LED and laser calibrations suffer from two following effects.
-The first one is that stability of the light source is very crucial for calibration correctness.
-The second one is related to the fact that wavelength of both LED and laser are different from the 
-wavelength of Cherenkov radiation. 
-One need to keep it in the mind while using these calibration methods that quantum efficiency of cathode depends from the wavelength 
-and this dependence can potetially change over the PMT aging.
+LED and laser calibrations suffered from the two following effects:
+the stability of the light source; the wavelength of both LED and laser were different from the wavelength of Cherenkov radiation. 
+The quantum efficiency of the cathode depends on the wavelength and this efficiency can potentially change with the PMT aging
+differently for a different wavelenght.
+% TODO not clear word --> check with Vincent
+Bi-207 calibrations doesn't suffer from these two effects and it was the best in 2015.
 
-
-Bi-207 calibration doesn't suffer from these two effects. That's why it became first priority calibration in 2015.
-
-% TODO show that PMT gain goes significantly lower with stable beams with time
-
-The idea of the calibration is to keep gain of PMT on the constant level.
-Due to the fact that luminosity during 2015-2016 are significantly higher compared to 2011-2012
+The purpose of the calibration is to keep the gain of the PMT constant with time.
+% TODO rewrite (see comments from Vincent, bottom of page 16)
+Due to the fact that luminosity during 2015-2016 are higher compared to 2011-2012
 aging effect become visible already after a few hours of the beam collisions.
+% end rewriting here
 The strategy was to make calibration runs after each physics run.
-During the calibration the mean truncated charge distribution from Bi-207 source is measured for each PMT.
-This values directly correlate with gain of PMTs. 
-And in order to keep gain of the PMT on the same level it is enough just to keep the mean truncated charge distribution on the same level.
-After each calibration run mean for each tube is compared to the reference values and if there is significant difference automatic script perform 
-high voltage adjustment in order to normalize PMT gain.
+After the calibration run the truncated mean pf the charge distribution from the Bi-207 sources were measured for each PMT.
+These values directly correlate with the gain of the PMTs. 
+In order to keep the gain of the PMT constant it is enough to keep the truncated mean of the charge distribution constant.
+After each calibration run the mean for each tube is compared to the reference values and if there is a significant difference a program 
+adjusts the high voltage in order to correct the PMT gain.
 
-This procedure was used for 2015 and 2016 and was proved to be highly effective and robust.
+This procedure was used for 2015 and 2016 and was shown to be highly effective and robust.
 
-LED calibration is not fully understood yet due to the fact that gain does not look to be kept on the same level.
+The LED calibrations were not as succesful in keeping the gain constant.
 
+% TODO write this explanation
 [ToASK: should I try to explain the reason why LED calibration doesn't work?].
 
-Laser calibration was not studied enough as well due to the reason that laser source is controlled by the Tile subsystem and require 
-precise coordination with Tile sub-detector to share one resources between two experiments.
+The laser calibrations were not studied much since the laser source is controlled by the Tile subsystem and require 
+coordination with the Tile sub-detector group to share this resource between the two detectors.
 
 [ToDO: add trending plot of the mean truncated charge over the time for Bi-207 tubes].
 
@@ -627,13 +632,13 @@ precise coordination with Tile sub-detector to share one resources between two e
 % \label{subsec:lumMeas}
 
 
-\section{PMT gain temperature dependence and calibration fibers temperature tolerance}
+\section{Temperature dependence of the PMT gain and the temperature tolerance of calibration fibers}
 \label{sec:tempMeas}
 
-During the first long LHC shutdown (LS1) between 2013 and 2015 beampipe at the interaction point of ATLAS
-had to be removed and to be replaced with the new one made of aluminum instead of stainless steel.
-New material was chosen to minimize the induced radioactivity of the beampipe (see \FigureRef{fig:metalSupportAndTempProbes} (left)).
-Also the new beampipe have reduced aperture to allow accommodating of new pixel inner barrel layer (IBL) of the inner tracker.
+During the first long LHC shutdown (LS1) between 2013 and 2015 the beampipe at the interaction point of ATLAS
+had to be removed and to be replaced with a new one made of aluminum instead of stainless steel.
+The new material was chosen to minimize the induced radioactivity of the beampipe (see \FigureRef{fig:metalSupportAndTempProbes} (left)).
+The new beampipe also had a reduced aperture in the inner detector region to allow for a new pixel inner barrel layer (IBL) of the inner tracker.
 
 \begin{figure}
 \centering
@@ -651,21 +656,21 @@ Also the new beampipe have reduced aperture to allow accommodating of new pixel 
 
 
 In order to remove residual gas molecules from the inner walls of the new beampipe (which otherwise will lead to significant beam-gas interactions during operation)
-the beampipe has to undergo so called ``bake-out'' process, which consists of heating up the walls of the beam pipe from the outside.
+the beampipe had to undergo a so called ``bake-out'' process, which consists of heating up the walls of the beam pipe from the outside.
 
-Due to fact that LUCID sits tightly around beampipe there was a need to understand temperature tolerance of the detector components.
-During the design phase special cooling for detector was made in order to protect PMTs, cables and calibration fibers against potential overheating.
-PMTs were placed on special metal supports which are cooled down by water pipes.
-Fiber and cables goes along the beampipe for a few meters and are more exposed than PMTs.
+Since LUCID sits close to the beampipe there was a need to understand the temperature tolerance of the detector components.
+During the design phase a special cooling of the detector was made in order to protect PMTs, cables and calibration fibers against potential overheating.
+The PMTs were placed on a special metal support which were cooled down by water pipes.
+Fibers and cables goes along the beampipe for a few meters and were more exposed to heat than PMTs.
 % TODO redo a little bit following sentence
-They also are protected with cooling pipes but it was practically impossible to make cooling along the whole path of fibers,
-that's why there are some areas were fibers are not cooled down by the water pipes.
+They are also protected with cooling pipes but it was practically impossible to provide cooling along the whole path of the fibers 
+and so there are some areas were fibers are not cooled down by the water pipes.
 
-Special studies was done in order to understand the temperature tolerance of the quartz fibers used in detector, which is described in current section.
+Special studies was done in order to understand the temperature tolerance of the quartz fibers used in the detector and ths is described in the current section.
 
 % TODO Describe temperate probes... probably somewhere before!!!
 
-Another temperature test described in the section was focused on understanding of the temperature dependence of the PMTs gain during their operation.
+Another temperature test described in this section was focused on understanding the temperature dependence of the PMTs gain during their operation.
 
 
 
@@ -685,19 +690,22 @@ Another temperature test described in the section was focused on understanding o
 \subsection{Temperature controller}
 \label{subsec:tempController}
 
-In order to perform any temperature tests one need to have a reliable method to measure and control temperature in a testing area.
-Measurements with PMTs are typically done in a light tight black boxes to make sure that no external light will accidentally get on PMT photo-cathode.
-Also black box is well sealed hermetically which prevent air from the box to leak outside which make it easy to control temperature inside the box with good 
+In order to perform any temperature tests one need to have a reliable method to measure and control temperature in the testing area.
+Measurements with PMTs are typically done in a light tight black box to make sure that no external light will accidentally get on the PMT photo-cathode.
+The black box is well sealed which prevent air from the box to circulate outside which make it easy to control temperature inside the box with good 
 precision.
-A dedicated temperature controller, based on Arduino Mega 2560 microcontroller~\cite{arduino} (programmed by Arduino software) was built.
-To measure temperature LM35CAH sensor was used which is a precision integrated-circuit device with an output voltage linearly-proportional to the Centigrade 
-temperature.
-In order to interface the sensor with readout input channel from Arduino board electrical circuit shown at \FigureRef{fig:tempReadOutCircuit} have been made, 
-to match output voltage from sensor to readout of Arduino board.
-As a heater element a simple chain of resistors were used which were dissipating heat produced by current flowing thorough them. 
-Voltage on resistors was controlled by controller with help of MOSFET transistor. In order to verify that temperature will be homogeneous within black box,
-a pc fan was used. A heating profile was programmed in the Arduino microcontroller.
-Measured temperature values were sent directly to personal computer by serial port or were stored on external microSD card, connected to the Arduino board.
+A dedicated temperature controller, based on the Arduino Mega 2560 microcontroller~\cite{arduino} (programmed by Arduino software) was built.
+To measure temperature the LM35CAH sensor was used which is a precision integrated-circuit device with an output voltage linearly-proportional to the 
+temperature C\degree.
+In order to interface the sensor with the readout input channel from the Arduino board an electrical circuit 
+(see \FigureRef{fig:tempReadOutCircuit}) has been made, 
+in order to match the output voltage from the sensor to the readout of the Arduino board.
+As a heater element a simple chain of resistors were used which were dissipating heat produced by the current flowing thorough them. 
+The voltage on the resistors was controlled by a controller with help of a MOSFET transistor. 
+In order to verify that the temperature will be homogeneous within the black box,
+a pc fan was used. A heating profile was programmed in the Arduino microcontroller and 
+the measured temperature values were sent directly to a personal computer by a serial port or were stored on an external microSD card 
+that was connected to the Arduino board.
  
  \begin{figure}
 \centering
@@ -707,51 +715,51 @@ Measured temperature values were sent directly to personal computer by serial po
 \end{figure}
 
  
-\subsection{PMT gain dependence}
+\subsection{The PMT gain dependence}
 \label{subsec:pmtGainTempDep}
 
-It is known that PMT is more sensitive to ambient temperature than ordinary 
+It is known that a PMT is more sensitive to ambient temperature than ordinary 
 electronic components (such as capacitors and resistors)~\cite{hamamatsu}.
-It is caused mainly by two factors: cathode quantum efficiency is sensitive for 
-temperature variations and gain of the dynode chain depends from temperature as well.
+It is caused mainly by two factors: the cathode quantum efficiency is sensitive to 
+temperature variations and gain of the dynode chain depends on the temperature as well.
 
-To estimate a temperature effect on PMT gain dedicated measurement in the lab were done. 
-R760 Hamamatsu tube was placed in the black box and was coupled with Bi-207 radioactive source
-to provide stable input signal over the time. Temperature in the box was controlled by the temperature controller described in 
+To estimate the temperature effect on the PMT gain a dedicated measurement was done. 
+A R760 Hamamatsu PMT was placed in the black box together with a Bi-207 radioactive source
+to provide stable input signals over time. The temperature in the box was controlled by the temperature controller described in 
 \SectionRef{subsec:tempController}.
 
-Due to the fact that interior of PMT is a vacuum and that heat conduct thought it very slowly temperature gradient has to be very small in order to make sure 
-that temperature of the tube reaches the same level as the ambient (measured) temperature.
-In order to satisfy this condition temperature gradient was chosen to be 0.2\degree~C per hour.
+The interior of a PMT is at vacuum and heat conducts through it very slowly temperature gradient has to be very small in order to make sure 
+that the temperature of the tube reaches the same level as the ambient (measured) temperature.
+In order to satisfy this condition the temperature gradient was chosen to be 0.2\degree~C per hour.
 
 % TODO link. Also put some information about v1720 (probably from Vincents note).
 % TODO explain what is the difference between this one and the one which is used in final verison of LUCRODs.
 % TODO probably make it not here.
-PMT signal is digitized by a 12 bit VME Flash ADC (FADC) which is operated by ATLAS central Trigger and Data Acquisition (TDAQ) framework.
-Ir order to write only signals from Bi-207 source a triggering was done only on signal above certain threshold.
-A digitized pulse height of every triggered event was stored in ROOT file on local disc of the lab computer.
-
-Shape of digitized pulse from Bi-207 source is shown at \FigureRef{fig:bi207DigitizedPulse}. 
+The PMT signal was digitized by a 12 bit VME Flash ADC (FADC) which was operated by the ATLAS central Trigger and Data Acquisition (TDAQ) framework.
+Ir order to record only signals from the Bi-207 source, a triggering was done that require a signal above a certain threshold.
+The digitized pulse height of every triggered event was stored in ROOT files.
+The shape of the digitized pulses from a Bi-207 source is shown at \FigureRef{fig:bi207DigitizedPulse}. 
 
 \begin{figure}
 \centering
 \includegraphics[width=.7\textwidth]{LUCID/rndmPulse_1_mod.pdf}
-\caption{Shape of digitized pulse from Bi-207 source. Something about baseline subtraction??? }
+\caption{Shape of a digitized pulse from a Bi-207 source. For pulseheight measurement the baseline has to be measured and subtracted in a region without signals.}
 \label{fig:bi207DigitizedPulse}
 \end{figure}
 
-In order to calculate charge and amplitude of Bi-207 signal baseline has to be subtracted. 
-To estimate baseline value last 30 (out of 80) samples were used as shown in \FigureRef{fig:bi207DigitizedPulse}.
+In order to calculate the charge and the amplitude of the Bi-207 signal, the baseline had to be subtracted. 
+To estimate the baseline value the last 30 (out of 80) FADC samples were used as shown in \FigureRef{fig:bi207DigitizedPulse}.
 
-Recorded rate of Bi-207 signals was equal around 150-200 Hz. In order to collect enough statistics to measure mean of charge and amplitude distributions
-every measurement was done for 5 minutes. After one measurements was finished another one was immediately started.
-Due to very small temperature gradient (0.2\degree~C per hour) temperature within one measurement was considered to be stable.
+The recorded rate of the Bi-207 signals was around 150-200 Hz. In order to collect enough statistics to measure the mean of the charge and 
+the amplitude distributions every measurement was done for 5 minutes. 
+After one measurements was finished another one was immediately started.
+Due to the very small temperature gradient (0.2\degree~C per hour) the temperature within one measurement was considered to be stable.
 
-Mean of charge distribution and temperature as a function of time is shown in \FigureRef{fig:PMTChargeTempDep}.
-Black markers represent measurements of ambient temperature. Temperature was slowly increasing and total change was 6\degree~C over 30 hours.
-With red markers mean of charge distribution over 5 minutes per measurement is shown.
-A clear decreasing trend is observed which represent temperature dependence of PMT gain.
-Measured temperature dependence is 0.25 $\%$ of gain per 1\degree~C. 
+The mean of the charge distribution and the temperature as a function of time is shown in \FigureRef{fig:PMTChargeTempDep}.
+Black points represent the measurements of the ambient temperature. The temperature was slowly increasing and the total change was 6\degree~C over 30 hours.
+Red points shows the mean of the charge distribution in 5 minute intervals.
+A clear decreasing trend is observed which represent the temperature dependence of the PMT gain.
+The measured temperature dependence was 0.25 $\%$ of gain per 1\degree~C. 
 
 
 
@@ -759,13 +767,14 @@ Measured temperature dependence is 0.25 $\%$ of gain per 1\degree~C.
 \begin{figure}
 \centering
 \includegraphics[width=.7\textwidth]{LUCID/goodSlowTemp_Feb20_Feb22_charge.eps}
-\caption{Temperature dependence of PMT gain represented by measurements of mean of charge distribution Bi-207 source signals for different temperature values.
-Black markers correspond to temperature measurement; red markers correspond to mean of charge distribution of Bi-207 signals collected for 5 minutes.}
+\caption{The temperature dependence of the PMT gain represented by measurements of the mean of the charge distribution the Bi-207 source signals 
+for different temperature values.
+Black markers correspond to the temperature measurement; red markers correspond to mean of charge distribution of Bi-207 signals collected for 5 minutes.}
 \label{fig:PMTChargeTempDep}
 \end{figure}
 
 
-\subsection{Calibration fibers bake-out test}
+\subsection{Bake-out tests of the calibration fibers}
 
 % From https://indico.cern.ch/event/315665/contributions/1690160/attachments/605816/833747/LS2_LHC_paper_rev_final-1.pdf
 % 
@@ -788,47 +797,47 @@ Black markers correspond to temperature measurement; red markers correspond to m
 % In order to understand which temperaure fibers can handle dedicated measurement was done. 
 
 
-Idea of the test was to estimate temperature threshold at which fibers start to loose their optical properties
-by heat damages of cladding and/or fiber core.
+The goal of this test was to estimate the temperature threshold at which fibers started to loose their optical properties
+due to heat damage of the cladding and/or the fiber core.
 
-Experimental setup was consisted from PMT placed in the black box, LED source and fiber bundle.
-Light was transmitted from LED to the PMT by fiber.
-Fiber bundle was placed in thermoinsulated box, while LED and PMT were outside and not heated.
+The experimental setup consisted of a PMT placed in the black box, a LED source and a fiber bundle.
+Light was transmitted from the LED to the PMT by the fiber.
+The fiber bundle was placed in the thermoinsulated box, while the LED and the PMT were outside and not heated.
 
-High ambient temperature inside the box was reached with help of thermogun, which was blowing hot air inside the box constantly.
-Temperature was measured with Arduino-based temperature controller described in \SectionRef{subsec:tempController}, with only temperature probe inside the box.
+A high ambient temperature was obtained inside the box with the help of a thermogun, which was blowing hot air into the box constantly.
+The temperature was measured with the Arduino-based temperature controller described in \SectionRef{subsec:tempController}, with the temperature probe inside the box.
 % TODO do we really use Arduino-based temperature controller in this test?
 
-First set of measurements were done with room temperature inside the box in order to use this value as a reference (first phase of the experiment).
-In the second phase thermogun was switched on and temperature raised to around 95\degree~C.
-This temperature was kept constant for a slightly more than one hour to make sure that fiber was exposed to high temperature for
-long enough time period to make changes observable if any. 
-% TODO end of previous sentence is a little bit weird... rephrase it!
-In the third phase power of thermogun was increased and temperature of air was raised to 110\degree~C and it was kept on this level for one hour as well.
-On the last phase thermogun was switched off and measurements were done for half an hour more.
-LED was pulsed by pulse generator with rate of ??? kHz and FADC was triggered with the same signal in order to make sure that only signals originated from LED 
-source were stored.
-Every measurement was done for 5 minute and next one was started as soon as last one was finished.
-Mean of charge distribution was calculated for each measurement and is shown as function of time with red markers in \FigureRef{fig:fiberBakeOut}.
-Black markers correspond to temperature measurements done in the same time.
-Charge measurements during second phase when temperature in the box was 95\degree~C are compatible with measurements done for the first phase 
-(with room temperature).
-And they are stable during all phase two (which was one hour) which proofs that fibers can operate normally with this temperature.
-During the third phase (110\degree~C) significant decreasement of measured charge is observed, which demonstrates some changes in the
-optical properties of the fiber. On the last phase temperature went back to room values and charge partially increased back but didn't reach 
-nominal values which indicate unrecoverable damage of the fiber at 110\degree~C temperature.
+The first set of measurements were done at room temperature inside the box in order to use this value as a reference (first phase of the experiment).
+In the second phase the thermogun was switched on and the temperature raised to around 95\degree~C.
+This temperature was kept constant for slightly more than one hour to make sure that the fiber was exposed to a high temperature for
+a long enough time period to make any changes observable. 
+In the third phase the power of the thermogun was increased further and the temperature of the air was raised to 110\degree~C and kept at this level for one hour.
+In the last phase the thermogun was switched off and the measurements were done for another half an hour.
+% TODO find out which rate of LED was used in the test
+The LED was pulsed by pulse generator with a rate of ??? kHz and the FADC was triggered 
+with the same signal in order to make sure that only signals originating from the LED source were stored.
+Every measurement was done for a 5 minute interval and the next one was started as soon as the last one had finished.
+The mean of the charge distribution was calculated for each measurement and is shown as function of time with red points in \FigureRef{fig:fiberBakeOut}.
+Black points correspond to the temperature measurements done during the same time.
+% TODO see orange question sign on page 22 on first Vincent comments
+The charge measurements during the second phase (when the temperature in the box was 95\degree~C) are compatible with measurements done during the first phase 
+(at room temperature) and they are stable during all of phase two (which was one hour long) which shows that fibers can operate normally at this temperature.
+During the third phase (110\degree~C) a significant decrease of the measured charge is observed, which demonstrates a change in the
+optical properties of the fiber. In the last phase the temperature went back to room temperature and the charge increased but didn't reach 
+nominal values which indicate a unrecoverable damage of the fiber at the 110\degree~C temperature.
 
 \begin{figure}
 \centering
 \includegraphics[width=.95\textwidth]{LUCID/fiberBakeOut.png}
-\caption{Measurements of mean of charge distribution of LED signals which goes through heated fiber bundle.
-Black markers correspond to temperature of fiber bundle; red markers correspond to mean of charge LED signals collected over 5 minutes.}
+\caption{Measurements of the mean of the charge distribution of LED signals which goes through a heated fiber bundle.
+Black points correspond to the temperature of the fiber bundle; red points correspond to the mean of the charge collected in 5 minute intervals.}
 \label{fig:fiberBakeOut}
 \end{figure}
 
 % TODO rephrase a little bit here...
-This test demonstrated that there is big probability that calibration fibers will be damaged if they will be exposed 
-with temperature above 95\degree~C for long period of time.
+This test demonstrated that the calibration fibers could be damaged if they will be exposed 
+to temperatures above 95\degree~C for long period of time.
 
 % TODO probably it's better to remove this...
 % But due to fact that bake-out procedure was planned to be done with around 220\degree~C and early
@@ -846,31 +855,32 @@ with temperature above 95\degree~C for long period of time.
 % [according to Giulio air circulation was essential in order to make sure that some gas will not get into PMTs???]
 
  
-\subsection{Temperature conditions during beampipe bake-out and detector operation period}
+\subsection{Temperature conditions during the beampipe bake-out and detector operational period}
 
-LUCID detector is equipped with 18 temperature sensors per side which were installed (\FigureRef{fig:metalSupportAndTempProbes} (right))
-to monitor temperature of the detector components during bake-out procedure of the new ATLAS beampipe and during detector operation.
-Temperature from all sensors is recording and archiving every 10 seconds.
+The LUCID detector was equipped with 18 temperature sensors per side which were installed (\FigureRef{fig:metalSupportAndTempProbes} right)
+to monitor the temperature of the detector components during the bake-out procedure of the new ATLAS beampipe and during the detector operation.
+Temperature from all sensors were recorded and archived every 10 seconds.
 
-Temperature from sensor placed in the cable tray and the beam pipe flange during the beampipe bake-out is shown in \FigureRef{fig:NEG_ctflangeA}.
-Temperature were well within safety margin and didn't exceed 40\degree~C. Temperature from other sensors didn't exceed 40\degree~C as well.
-It demonstrates high efficiency of beampipe insulation and water cooling system and proves that no damage to the LUCID detector components were done.
+The temperature from the sensor placed in the cable tray and at the beam pipe flange during the beampipe bake-out is shown in \FigureRef{fig:NEG_ctflangeA}.
+The temperature were well within the safety margin and didn't exceed 40\degree~C. The temperature from other sensors didn't exceed 40\degree~C as well.
+It demonstrated the high efficiency of the beampipe insulation and the LUCID cooling system and no damage to the LUCID detector components were done.
 
 \begin{figure}
 \centering
 \includegraphics[width=.9\textwidth]{LUCID/NEG_ctflangeA.png}
-\caption{Temperature reading from temperature probes during bake-out procedure.}
+\caption{The temperature reading from the temperature probes during the bake-out procedure.}
 \label{fig:NEG_ctflangeA}
 \end{figure}
  
 
 % Temperature of the sensors during data-taling:
-After bake-out procedure temperature was constantly monitored to make sure that there was no big fluctuations in the cavern.
+After the bake-out procedure had finished the temperature was constantly monitored to make sure that there was no large fluctuations in the cavern.
 A few sensors were installed close to the PMTs and their measurements can be treated as an approximate temperature of the PMT tubes.
-Temperature during data-taking period in 2015 and 2016 years are shown in \FigureRef{fig:???}. 
-There are no significant fluctuation over all period and they are within ?\degree~C.
-According to the measurements described in \SectionRef{subsec:pmtGainTempDep} PMT gain temperature dependence correspond
-to 0.25 $\%$ per 1\degree~C, which is negligible for present temperature variations during the data-taking period.
+% TODO insert picture mentioned in the sentence below!
+The temperature during the data-taking period in 2015 and 2016 years are shown in \FigureRef{fig:???}. 
+There are no significant fluctuation over the entire period and they are all within ?\degree~C.
+According to the measurements described in \SectionRef{subsec:pmtGainTempDep} the PMT gain dependence in temperature correspond
+to 0.25 $\%$ per 1\degree~C, which is negligible for the observed temperature variations during the data-taking period.
 
 
 
@@ -898,16 +908,17 @@ to 0.25 $\%$ per 1\degree~C, which is negligible for present temperature variati
 
 [WARNING: this section is work in the progress].
 
-Luminosity is measured by LUCID from a measurement of the number of PMT-hits, the number of bunch crossings 
+The luminosity is measured by LUCID from a measurement of the number of PMT-hits, the number of bunch crossings 
 with at least one PMT-hit and the integrated pulseheight (charge). These measurements are done over a time 
 period called a luminosity block, which are typically 1 minute long and they are done for each of the 
 individual bunch crossings in the LHC. 
 The new electronics provides luminosity measurements using 124 different algorithms which take as input 
 different combination of hits or charge from different tubes. Algorithms, which are based on PMT-hits from only 
-one of the detectors (either A or C), are calculated by the LUCROD VME custom boards, while algorithms which depend on 
-combination of hits from both detectors are calculated by the LUMAT boards (see 
+one of the detectors (either A or C), are calculated by the LUCROD VME custom made boards, while algorithms which depend on 
+a combination of hits from both detectors are calculated by the LUMAT boards (see 
 \FigureRef{fig:Eletronics_schematics}).
-The luminosity is proportional to the measured charge which is in turn proportional to the logarithm of the measured 
+The luminosity is proportional to the measured charge and to the logarithm of the measured 
+% TODO *** add log formula for lumi ***
 number of PMT-hits *** add log formula for lumi ***. The two types of measurements therefore have different limitations. 
 The main issue with the 
 charge measurement is PMT gain stability while the hit measurements can suffer from pile-up of several signals 
@@ -923,10 +934,11 @@ below threshold giving a signal above threshold.
 
 
 
-\subsection{First 13 TeV collisions at the LHC}
+\subsection{The first 13 TeV collisions at the LHC}
 \label{sec:physics}
 
-The LHC reported the first 13 TeV pp collision in May of 2015 and these were recorded by ATLAS and other LHC 
+% TODO Vincent comment. See orange question mark in comments. Probalby one has to put reference for plots?
+The LHC reported the first 13 TeV pp collision in May of 2015~\cite{publicPlots} and these were recorded by ATLAS and other LHC 
 experiments. 
 Starting from that time the new LUCID was succesfully operating and provided information about the 
 luminosity delivered to ATLAS. 
@@ -951,27 +963,25 @@ calibration distribution is cut due to the threshold in the electronics that def
   \includegraphics[width=\linewidth]{LUCID/ComparisonPhysRuns_ampl_preliminary_v2.pdf}
   \label{fig:sub2}
 \end{subfigure}
-\caption{Comparison of pulseheight distribution in a physics run with low-$\mu$ with the same distribution 
-during a Bi-207 calibration run (left) and with distribution with high-$\mu$ physics run. Taken from Ref.~\cite{publicPlots}.}
+\caption{Comparison of pulseheight distribution in a physics run with low-$\mu$ with the same distributions 
+during a Bi-207 calibration run (left) and with distributions during a high-$\mu$ physics run.}
 \label{fig:Pulseheight}
 \end{figure}
-
 
 In the right plot of \FigureRef{fig:Pulseheight} a comparison of the pulseheight distributions in a physics run 
 with
 low-$\mu$ (red) and high-$\mu$ (blue) are shown. The pulse height is shifted towards higher values when at high 
 luminosity several particles traverse the photomultiplier window in the same bunch crossing.
-
+A second peak correspond to events with two particles going through the PMT window is clearly seen.
 
 LUCID can measure luminosity in many ways and \FigureRef{fig:InternalConsistency} shows a comparison of the 
-luminosity measured by an A and 
-a C detector for different ATLAS data taking runs. The two measurements agree to better than 0.5$\%$.
+luminosity measured by the A and C detector in different ATLAS data taking runs. The two measurements agree to better than 0.5$\%$.
 
 \begin{figure}
 \centering
 \includegraphics[width=.7\textwidth]{LUCID/InternalConsistency_preliminary.pdf}
 \caption{Fractional difference in measured luminosity between the forward (A) and backward (C) arms of the LUCID 
-detector. The agreement between the two LUCID arms is better than 1$\%$. Taken from Ref.~\cite{publicPlots}.}
+detector. The agreement between the two LUCID arms is better than 1$\%$.}
 \label{fig:InternalConsistency}
 \end{figure}
 
@@ -980,6 +990,8 @@ using different ATLAS
 luminometers and the right plot shows the ratio of this measurement with respect to a LUCID measurement. One of the 
 detectors shows a deviation of up to 2$\%$ during this LHC fill but the other measurements are all in agreement 
 with LUCID to better than 0.5$\%$.
+The first month of data taking with the new detector therefore showed that LUCID could measure the relative 
+luminosity with a precision of about 0.5$\%$.
 
 \begin{figure}
 \centering
@@ -994,15 +1006,9 @@ with LUCID to better than 0.5$\%$.
   \label{fig:sub4}
 \end{subfigure}
 \caption{(left) Average number of inelastic proton-proton collisions per bunch crossing during a 13 TeV fill; 
-(right) Comparison of measured luminosity by different luminometers in ATLAS with respect to LUCID. Taken from Ref.~\cite{publicPlots}.}
+(right) Comparison of the measured luminosity by different luminometers in ATLAS with respect to LUCID.}
 \label{fig:LumiVsTime}
 \end{figure}
 
-The first month of data taking with the new detector therefore showed that LUCID could measure the relative 
-luminosity with a precision of about 0.5$\%$.
-
-
 \subsection{Luminosity measurements during 2015-2016}
-
-
 
