@@ -7,7 +7,23 @@
 
 
 
+The ATLAS Transition Radiation Tracker (TRT) is the outermost of the three tracking subsystems of the ATLAS Inner Detector. 
+ATLAS is one of two general-purpose detectors built for the Large Hadron Collider at CERN.
 
+% About TRT
+The TRT contains $\sim$300000 thin-walled proportional-mode drift tubes providing on average 30 two-dimensional 
+space points with $\sim$130 $\mu m$ resolution for charged particle tracks with |$\eta$| < 2 and $p_T$ > 0.5 GeV~\cite{Abat:2008zza,Abat:2008zzb,Abat:2008zz}.
+Along with continuous tracking, the TRT provides electron identification capability through the detection of transition radiation X-ray photons.
+
+% Implementation of Argon simulation
+Till now TRT simulation code supported only Xenon based gas-mixtures as active gas in the tubes. 
+Current study is focused on implementation of simulation of Argon based gas-mixture, 
+which was used for a few runs of data taking in 2013 in a few TRT modules.
+
+% Performance study
+% Performance study of the TRT using Argon and Xenon based gas-mixtures will be presented.
+% Hit and track parameters, such as hit reconstruction efficiency, residuals, track momentum resolution and extension fraction
+% will be shown for both gas-mixtures and compared to Monte Carlo simulation.
 
 Current note are dedicated to the performance study of Transition Radiation Tracker (TRT) of ATLAS detector on hit and track parameter with focus on active gas mixture.
 It consist from technical description of implementation of Argon-based active gas mixture to the TRT Digigtization package of ATHENA framework and performance study itself. 
@@ -15,14 +31,19 @@ Aim of current study was to investigate scenario when instead of standart Xenon-
 were hit residuals, track extension fraction ???
 Motivation for current study was leakages in tubes ???
 
-\begin{figure}[h]
+
+
+
+
+\begin{figure}
 \begin{center}
  \includegraphics[width=0.35\columnwidth]{TRT/fromPoster/driftTube.pdf}
-\caption{\label{fig:clusterDriftInTube} Example of ionisation and electron drift in a straw tube. [Peter Cwetanski thesis ???]}
+\caption{\label{fig:clusterDriftInTube} Example of ionisation and electron drift in a straw tube. Taken from ~\cite{Cwetanski:962570}. 
+	  [Peter Cwetanski thesis ???]}
 \end{center}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
  \includegraphics[width=0.6\columnwidth]{TRT/fromPoster/TRTdigi4.pdf}
 \caption{\label{fig:pulseDigitization} Illustration of the digitization of a TRT low threshold signal.}
@@ -43,7 +64,7 @@ But due to the fact that standart-configured GEANT4 package make poor job on cal
 of this in Digitization step. So from simulation step only list of hits in TRT are used when energy deposition to the gas inside the tubes are calculated in Digitization step.
 
 
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
  \includegraphics[width=0.59\columnwidth]{TRT/fromPoster/ArgonModules2013.png}
 \caption{\label{fig:argonModulesIn2013} Detector modules which were operated with Argon gas mixture during 2013 runs}
@@ -64,6 +85,25 @@ To make it work new (to the digitization code) Argon gas mixture was introduced 
 Digitization of the TRT hits are done straw by straw and in the beginning of the straw loop flag \mbox{ ``isArgonStraw''} is read from the COOL database. This flag represent is current straw contain Argon or Xenon based 
 gas mixture. The straw map lays under \mbox{/TRT/Cond/StatusHT} COOL folder, and one need to specify dedicated tag to make mixed Ar/Xe digitization.
 According to this flag relevant thresholds and shaping function are picked up and used during digitization following straw. 
+
+
+\begin{figure}
+
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{TRT/mapXY_barA.pdf}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{TRT/mapXY_endA.pdf}
+\end{subfigure}
+
+\caption{$T_{0}$ calibration constants obtained for MC simulation for Barrel A (left) and End-cap A (right) detectors for the mixed Xenon-Argon condition. 
+	  Modules with Argon gas have different $T_{0}$ calibration constants.}
+  \label{fig:t0_mixed_condition}
+\end{figure}
+
+
 
 Also two flags which provide simple possibility to change active gas mixture from default one (Xenon) to the optional (Argon) for all straws were implemented. These are:
 \begin{itemize}
@@ -96,7 +136,7 @@ Average ionization energy. Argon gas was studied before   [Explain how I count i
 
 
 
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
  \includegraphics[width=0.59\columnwidth]{TRT/meanFreePath.eps}
 \caption{\label{fig:meanFreePath} ???}
@@ -109,19 +149,24 @@ Average ionization energy. Argon gas was studied before   [Explain how I count i
 To simulate drift time of the primary cluster of electrons from place of origin to the wire Athena package 
 use empirically measured (TODO not from Garfield?) tables of dependence of drift distance versus drift time (so called RT tables). 
 Due to the facts that drift velocity depends from magnetic field in the tube and field itself is not homogenous within detector 
-there are two sets of tables: one which corespond to the maximum magnetic field (2T for Atlas experiment) and another - without magnetic field. To get RT table
+there are two sets of tables: one which corespond to the maximum magnetic field (2T for the ATLAS experiment) and another - without magnetic field. To get RT table
 for some specific value of magnetic field following interpolation formula are used:
 
 \begin{displaymath}
     RT(B_{eff}) = (RT_{MAX} - RT_{WO}) \cdot \dfrac{B_{eff}^2}{B_{max}^2} + RT_{WO}
 \end{displaymath}
 
-That's why to implement Argon gas mixture two such tables were added to the \\ \mbox{InDetSimUtils/TRT$\_$DriftTimeSimUtils} package 
-(\mbox{TRT$\_$BarrelDriftTimeData.cxx} file). These tables were obtained from Garfield simulation by Konstantin Vorobyev.
-The comparison of Argon and Xenon RT tables are shown in figure \ref{fig:rt_comp}. Also scaled Xenon RT distribution are shown to highlight different shape of distributions for Argon and Xenon gases.
+[TODO] explain variables in formula above.
+
+That's why to implement Argon gas mixture two such tables were added to the TRT digitization package.
+% \\ \mbox{InDetSimUtils/TRT$\_$DriftTimeSimUtils} package (\mbox{TRT$\_$BarrelDriftTimeData.cxx} file). 
+These tables were obtained from Garfield simulation [reference ???].
+% by Konstantin Vorobyev 
+The comparison of Argon and Xenon RT tables are shown in figure \ref{fig:rt_comp}. 
+Also scaled Xenon RT distribution are shown to highlight different shape of distributions for Argon and Xenon gases.
 
 
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
  \includegraphics[width=0.99\columnwidth]{TRT/rt_comp.png}
 \caption{\label{fig:rt_comp} }
@@ -131,15 +176,33 @@ The comparison of Argon and Xenon RT tables are shown in figure \ref{fig:rt_comp
 Another variable which was implemented for Argon mixture is signal shaping function. 
 
 Different active gases give diferent signals. These signals differs in leading front, amplitude and shape and size of tail. But TRT electronics expect to recieve signal with specific configuration.
-That's why ASDBLR chip convulve signal from straw with dedicated shaping function to produce final signal which will be acceptable by further chain of electronics. This leads to the fact that we need
-to have different shaping functions for Argon and Xenon based mixtures~\cite{Vorobev_private}. Due to the fact, that datataking ASDBLR chip was used different shaping function for Xenon and Argon 
+That's why ASDBLR chip~\cite{TRT_electronics} convulve signal from straw with dedicated shaping function to produce final signal which will be acceptable by further chain of electronics. This leads to the fact that we need
+to have different shaping functions for Argon and Xenon based mixtures.
+% TODO do I want to include this cite???
+% ~\cite{Vorobev_private}. 
+Due to the fact, that datataking ASDBLR chip was used different shaping function for Xenon and Argon 
 digitization code should also provide such kind of functionality. 
+
+\begin{figure}
+
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{TRT/fromPoster/rt_FinalXenon.eps}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{TRT/fromPoster/rt_FinalArgon.eps}
+\end{subfigure}
+
+\caption{Track to wire distance in Xenon (left) and Argon (right) straws in Endcap detectors.}
+  \label{fig:RT_xenon_argon}
+\end{figure}
 
 Shaping functions are used in the simulation of electronics. It effect simulation of discriminator responce and accordingly TRT bit pattern.
 Shaping function are stored at \mbox{TRTDigSettings.amplitudes} file in the \mbox{TRT$\_$Digitization} package. During digitization according to ``isArgonStraw'' flag relevant shaping function is used. 
 All available shaping functions are shown in figure \ref{fig:shaping}.
 
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
  \includegraphics[width=0.69\columnwidth]{TRT/shaping.eps}
 \caption{\label{fig:shaping} Argon low threshold shaping function in comparison with Xenon low and high treshold shaping functions}
@@ -153,9 +216,10 @@ All available shaping functions are shown in figure \ref{fig:shaping}.
 
 \subsection{Noise simulation}
 
-Noise note:~\cite{noise_note}
+% TODO I am not sure if it is this note....
+Noise note:~\cite{Kittelmann:987854}
 
-TRTDigCondFakeMap::setStrawStateInfo()
+[TODO] see comments in TRTDigCondFakeMap::setStrawStateInfo() function.
 
 
 \begin{equation}
@@ -181,6 +245,15 @@ TRTDigCondFakeMap::setStrawStateInfo()
 %%% WARNING Sasha: for now I will assume that it is okay for Argon
 %%% Found in file: ./InDetDigitization/TRT_Digitization/src/TRTNoise.cxx *
 
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.79\columnwidth]{TRT/grBMPos_mod.pdf}
+\caption{ Position residual width as a function of the TRT module number in the Barrel detector. Red points correspond to simulation of TRT detector
+using Argon-based mixture in all straws, black points correspond to Xenon-based mixture while green point correspond to the mixed detector condition
+which was used during ??? data taking period. Modules with Argon mixture in mixed condition can be clearly seen.}
+\label{fig:meanFreePath}
+\end{center}
+\end{figure}
 
 \section{Tracking performance study}
 \label{sec:TRT:trackPerf}
@@ -193,7 +266,7 @@ to be higher [??? explain why HV has to be different] and it was 1470 V.
 
 
 
-\begin{figure}[hb]
+\begin{figure}
 
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -213,7 +286,7 @@ to be higher [??? explain why HV has to be different] and it was 1470 V.
 
 
 
-\begin{figure}[hb]
+\begin{figure}
 
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -229,15 +302,29 @@ to be higher [??? explain why HV has to be different] and it was 1470 V.
   \label{fig:hit_eff_rtrack_bar}
 \end{figure}
 
+As was mentioned above electrons drift faster in the Argon-based gas mixture than Xenon one, which can be observed in the track to wire distance
+distributions shown in \FigureRef{fig:RT_xenon_argon}. 
+This results that timing calibration constants have to be significantly different 
+for Argon and Xenon straws which can be seen in \FigureRef{fig:t0_mixed_condition}. 
+
+
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.9\columnwidth]{TRT/fromPoster/track_ext_frac_eta.eps}
+\caption{Track extension fraction as a function of $\eta$ for Xenon and Argon active gas mixture obtained with MC simulation.}
+\label{fig:meanFreePath}
+\end{center}
+\end{figure}
+
 
 
 Due to a lower threshold a larger hit reconstruction efficiency is seen for Argon straws. This leads to a
 larger number of hits per track and larger fraction of precision hits. Also position residuals are seen to be 
 slightly larger. All these observations indicate that additional threshold tuning is required.
 
+[TODO] think which plots can be added to this section.
 
-
-\begin{figure}[hb]
+\begin{figure}
 
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -253,7 +340,7 @@ slightly larger. All these observations indicate that additional threshold tunin
 \end{figure}
 
 
-\begin{figure}[hb]
+\begin{figure}
 
 \begin{subfigure}{.5\textwidth}
   \centering

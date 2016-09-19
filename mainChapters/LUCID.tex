@@ -101,13 +101,13 @@ During my PhD studies I was the ATLAS Forward detectors Run Coordinator for a pe
 
 [TODO: rewrite thoroughly this subsection!].
 
-LUCID (LUminosity Cherenkov Integrating Detector) is a luminosity monitor with two detectors placed around the beam-pipe on both forward ends of the ATLAS detector. 
-Each detector consists of 16 photo multipliers and 4 quartz fiber bundles. The Photo Multiplier Tubes (PMTs) detect charged 
-particles that traverse their quartz windows, where Cherenkov light is produced. Cherenkov light is produced in 
-the fiber bundles as well and carried to PMTs that are protected by shielding some 2 meters away 
-(see \FigureRef{fig:LucidDrawing}). To increase the detector lifetime, only a subset of the PMTs is used at a 
-given time, the others being available as spares. In addition, 4 PMTs have a reduced window opening to decrease 
-their acceptance and thus avoid saturation of some luminosity algorithms.
+LUCID (LUminosity Cherenkov Integrating Detector) is a luminosity monitor with two detectors placed around the beam-pipe on both forward ends of the ATLAS detector.
+It is a relative luminosity detector which detects inelastic p-p scattering in order to measure luminosity and provide online monitoring of the instantaneous luminosity.
+The first version of the detector was installed in 2008 and it is described in ~\cite{Aad:2008zzm}.
+It was used as a main luminosity detector for Run-1 of the LHC program in 2009-2010 ~\cite{Aad:2013ucp} and in combination with other luminosity detectors in 2011-2013.
+The second version of the detector and read-out electronics was designed to cope with 
+the increased luminosity and the decreased bunch spacing (from 50 ns to 25 ns) for Run-2 of the LHC program.
+In this section the design of the new detector and its electronics is presented. 
 
 \begin{figure}
 \centering
@@ -128,16 +128,36 @@ sealed.}
 \label{fig:LucidDrawing}
 \end{figure}
 
+\subsection{The detector design}
+\label{subsec:newLucidDesign}
 
-\subsection{Motivation for the new LUCID-2 detector}
-\label{subsec:motivationNewLucid}
+LUCID consists from two identical parts which are placed on both sides of the ATLAS interection point at a distance of 17 meters.
+Each detector consists of 20 photo multipliers.
+16 of them, grouped by four, are placed close to the beampipe. The center of these photomultipliers is at a distance of 125 mm from the beamline.
+These PMTs detect charged particles that traverse their quartz windows, where Cherenkov light is produced.
+Four other PMTs are placed 1.2 m away from the beampipe and are protected by the shielding and 
+Cherenkov light is produced in the quartz fiber bundles coupled to the PMTs (see \FigureRef{fig:LucidDrawing} left).
 
-[TODO: rewrite thoroughly this subsection!].
+All PMTs are grouped in 5 different families:
+\begin{itemize}
+ \item FIB PMTs are the one which are protected by the shielding. Cherenkov light are produced and delivered by quartz fibers bundle 
+ (which consists of 37 optical fibers each with a 0.8 mm quartz core) and is recorded by FIB PMTs.
+ \item BI PMTs are equipped with a Bi-207 radioactive source which is used for PMT gain monitoring. 
+ \item VDM PMTs had to be used during so-called van der Meer (vdM) scan ~\cite{vanderMeer:296752,Rubbia:1025746} taken to determine the absolute luminosity.
+ \item SPARE PMTs are spare PMTs and have to be turned on when VDM PMTs will aged too much.
+ \item MOD PMTs have a thin ring shaped layer of aluminium deposited between the quartz window and the photocathode. 
+ The center hole of this ring has a diameter of 7 mm which can be compared to the 10 mm diameter of the photocathode 
+ and the layer thus reduces the acceptance of these photomultipliers with a factor of 2 (in comparison with other used PMTs) 
+ which will help to avoid saturation of some luminosity algorithms.
+\end{itemize}
 
-With respect to the detector used in Run I~\cite{Aad:2013ucp}, the new LUCID has a reduced material budget, 
-an increased dynamic 
-range and will measure luminosity with additional algorithms based on PMT charge integration. It also has a 
-completely new calibration system.
+BI, VDM, SPARE and MOD PMTs are grouped together and 16 PMTs form four such groups which are placed equidistantly from each other around the beampipe (see \FigureRef{fig:LucidDrawing} left).
+
+Gain of all PMTs are monitored by the dedicated gain monitoring system which are described in \SectionRef{sec:pmtGainMonitoringSystem}.
+
+With respect to the detector used in Run-1~\cite{Aad:2013ucp}, the new LUCID has a reduced material budget, 
+an increased dynamic range and will measure luminosity with additional algorithms based on PMT charge integration. 
+
 
 \subsection{Choice of photomultipliers}
 \label{subsec:PMTChoice}
@@ -181,14 +201,14 @@ pulse amplitude in time bins that are 3.125 ns long.}
 \label{fig:pulseShape}
 \end{figure}
 
-The LUCID read-out consists of four (two per side) custom made so-called LUCROD boards of VME type which sit close to the detector in the ATLAS experimental hall.
+The LUCID read-out consists of four (two per side) custom made so-called LUCROD (LUCid ReadOut Driver) boards of VME type which sit close to the detector in the ATLAS experimental hall.
 The decision to place electronics close to the detector in the experimental hall was motivated by preventing signals to develop long tails in the cables.
 Signal from PMTs are transferred with thick cables which prevent distortion along their path.
-Every LUCROD board has 16 input channels and every channel consists of a low noise amplifier, a filter and a Flash ADC.
+Every LUCROD board has 16 input channels and every channel consists of a low noise amplifier, a filter and a Flash ADC (FADC).
 A block diagram of LUCROD is shown in \FigureRef{fig:LUCROD_schematics}.
 Channels are grouped in pairs and for each pair there is a dedicated channel FPGA.
 All information from all channel FPGAs are collected and processed by main FPGA.
-After that information are sent to the ATLAS as well as to so-called LUMAT boards which are placed in the counting room of the experiment.
+After that information are sent to the ATLAS as well as to so-called LUMAT (LUminosity Monitor And Trigger) boards which are placed in the counting room of the experiment.
 
 \begin{figure}
 \centering
@@ -225,7 +245,7 @@ Information from the LUCROD and LUMAT boards are then published to the Informati
 From these the data is accessed by programs that calculate the luminosity online.
 
 \section{Design of the PMT gain monitoring system}
-
+\label{sec:pmtGainMonitoringSystem}
 % TODO add reference to some book with desciption of PMT aging 
 
 [TODO: describe why do we need calibration system. What is the purpose of it. Stress that it's important for correct measurements of luminosity.]
@@ -263,7 +283,7 @@ This is discussed in details at \SectionRef{subsec:LEDDiffuser}.
 
 The Tile calorimeter laser system provides an alternative source of stable light and is treated in the same way
 as the LED signals in the calibration procedure. 
-The stability of the laser signals is monitored by the Tile calibration system \cite{atlasGeneral}.
+The stability of the laser signals is monitored by the Tile calibration system \cite{Aad:2008zzm}.
 The laser light has to be distributed between the PMTs in the same way as the LED light.
 Laser light is provided by the Tile calibration system via optical fibers which means that another type of diffuser
 has to be used in order distribute the light to the PMTs as described in \SectionRef{subsec:laserDiffuser}.
@@ -735,7 +755,7 @@ In order to satisfy this condition the temperature gradient was chosen to be 0.2
 % TODO link. Also put some information about v1720 (probably from Vincents note).
 % TODO explain what is the difference between this one and the one which is used in final verison of LUCRODs.
 % TODO probably make it not here.
-The PMT signal was digitized by a 12 bit VME Flash ADC (FADC) which was operated by the ATLAS central Trigger and Data Acquisition (TDAQ) framework.
+The PMT signal was digitized by a 12 bit VME Flash ADC which was operated by the ATLAS central Trigger and Data Acquisition (TDAQ) framework.
 Ir order to record only signals from the Bi-207 source, a triggering was done that require a signal above a certain threshold.
 The digitized pulse height of every triggered event was stored in ROOT files.
 The shape of the digitized pulses from a Bi-207 source is shown at \FigureRef{fig:bi207DigitizedPulse}. 
@@ -904,7 +924,7 @@ to 0.25 $\%$ per 1\degree~C, which is negligible for the observed temperature va
 
  
 
-\section{The LUCID luminosity measurements}
+\section{The LUCID performance and luminosity measurements during 2015-2016}
 
 [WARNING: this section is work in the progress].
 
@@ -930,15 +950,14 @@ below threshold giving a signal above threshold.
 % of the photomultiplier gain. 
 
 
-\subsection{Luminosity algorithms}
-
-
-
 \subsection{The first 13 TeV collisions at the LHC}
 \label{sec:physics}
 
 % TODO Vincent comment. See orange question mark in comments. Probalby one has to put reference for plots?
-The LHC reported the first 13 TeV pp collision in May of 2015~\cite{publicPlots} and these were recorded by ATLAS and other LHC 
+The LHC reported the first 13 TeV pp collision in May of 2015
+% TODO make this cite.
+% ~\cite{publicPlots} 
+and these were recorded by ATLAS and other LHC 
 experiments. 
 Starting from that time the new LUCID was succesfully operating and provided information about the 
 luminosity delivered to ATLAS. 
@@ -1009,6 +1028,165 @@ luminosity with a precision of about 0.5$\%$.
 (right) Comparison of the measured luminosity by different luminometers in ATLAS with respect to LUCID.}
 \label{fig:LumiVsTime}
 \end{figure}
+
+\subsection{Luminosity algorithms}
+
+[TODO] improved lumi 7 TeV paper:~\cite{Aad:2013ucp}
+
+% TODO change ``process of interest'' to ``inelastic collisions''
+The rate of the process of the interest occurring at the collider experiment can be expressed as
+\begin{equation}
+R_{process} = \mathscr{L} \sigma_{process}
+\label{eq:simpleLumi}
+\end{equation}
+where $\sigma_{process}$ is a cross section of the process and $\mathscr{L}$ - luminosity delivered by the collider which doesn't depend 
+on the type of the process itself. To express number of events where process of interest took place one can integrate \EquationRef{eq:simpleLumi} 
+over the data-taking period
+\begin{equation}
+N_{process} = \int_{t_{1}}^{t_{2}} \mathscr{L} \sigma_{process} dt
+\label{eq:simpleLumi2}
+\end{equation}
+The usual quantity of interest are cross section of the process, which can be calculated by counting number of events where process took place 
+occurred over some period and by knowing value of luminosity. If one want to measure cross section for some other process the approach will be 
+the same where luminosity will be one of the needed inputs for any type of studied process.
+That's why precision measurements of the luminosity is important task for the experiment.
+ At the LHC collider every bunch crossing a few pp interaction can occur. Number of the interaction can vary from bunch crossing to by 
+ bunch crossing and by assumption it is distributed by the Poisson law with mean $\mu$ - average number of interaction per bunch crossing.
+Taking into account revolution frequency of the LHC, $f_{LHC}$, \EquationRef{eq:simpleLumi2} will have a look like
+\begin{equation}
+\mathscr{L} = \dfrac{f_{LHC} \mu}{\sigma_{process}}
+\end{equation}
+But there are many bunches in the ring at the same moment and typically luminosity is measured for each bunch crossing individually in 
+the experiments which 
+\begin{equation}
+\mathscr{L} = \dfrac{f_{LHC}}{\sigma_{process}} \sum_{j=1}^{n_{b}} \mu_{j}
+\label{eq:lumi_bunch_sum}
+\end{equation}
+But in reality one can only measure a visible number of interactions ($\mu_{vis}$) which is number of interaction times acceptance and 
+efficiency of the method ($\mu_{vis} = \varepsilon \mu$).
+In the same way it's possible to express visible cross section ($\sigma_{vis}$) which is cross section of the process time acceptance and 
+efficiency of the used luminosity method ($\sigma_{vis} = \varepsilon \sigma_{process}$).
+\EquationRef{eq:lumi_bunch_sum} will transform to:
+\begin{equation}
+\mathscr{L} = \dfrac{f_{LHC}}{\sigma_{vis}} \sum_{j=1}^{n_{b}} \mu_{j}^{vis}
+\label{eq:lumi_bunch_sum_visible}
+\end{equation}
+
+So to measure luminosity one have to measure a visible number of interaction ($\mu_{vis}$) and visible cross section ($\sigma_{vis}$). 
+Former variables for each bunch crossing can be measured by the LUCID detector while latter is measured in the special runs which 
+will be described in \SectionRef{subsec:alfa_run}. A period over which luminosity is measured is called luminosity block (LB) and 
+typically is equal for one minute in the ATLAS experiment. 
+
+LUCID can measure luminosity separately for all possible bunch slots (LHC has 3564 of them) but only slots which really contain 
+bunches are taken into account (maximum of 2808 bunches in the ring).
+% TODO do I need really tell this information (in the sentence above)?
+% TODO why LUCID can’t count instanteneous luminosity also in BCID aware way?
+LUCID also provide so-called instantaneous luminosity which are measured every second and is used by LHC for beam condition monitoring. 
+Due to ??? [ask Carla the reason why ins. Lumi is BCID blind] luminosity is measured for all possible bunch slots ???.
+
+
+Luminosity can be measured in a three different ways with the LUCID detector: by counting number of events, 
+number of hits or measuring charge collected by the PMTs. When particle, created in the pp inelastic collision,
+penetrate quartz window a clear signal from the PMT can be seen and if it is bigger than a specific threshold 
+value we call it a hit. If there is a hit in the at least one PMT in the detector, we call it event. 
+LUCID consists from two identical detectors placed from both sides (side A and side C) of the interaction point. 
+If there is at least one hit in the side A (side C) detector, ``Event ORA'' (``Event ORC'') take place. ``Event OR'' 
+require at least one hit in either detector while ``Event AND'' require at least one hit in both side A and side C 
+detectors simultaneously. These four combinations are used in the same way in a hit counting algorithms where number 
+PMT hits are counted instead of number of events.
+
+\begin{figure}
+\centering
+\includegraphics[width=.99\textwidth]{LUCID/lumiAlgs_2015.jpg}
+% TODO update this caption and label
+\caption{List of luminosity algorithms provided by the LUCID detector in 2015. Only a subset of algirithms are stored in the COOL database.}
+\label{fig:InternalConsistency}
+\end{figure}
+
+
+
+\subsection{The absolute $\sigma^{vis}$ calibration}
+
+The only unknown component in \EquationRef{eq:lumi_bunch_sum_visible} is visible inelastic cross section $\sigma^{vis}$.
+This cross section is measured in special beam-separation runs, called van der Meer runs, 
+where the absolute luminosity can be measured directly from the beam parameters ~\cite{vanderMeer:296752,Rubbia:1025746}.
+Absolute luminosity for centered bunches with respect to each other can be expressed 
+with transverse proton density functions of the two beams ($\rho_{1}(x,y)$ and $\rho_{2}(x,y)$) as:
+\begin{equation}
+\mathscr{L} = f_{LHC} n_{p1} n_{p2} \int \rho_{1}(x,y) \rho_{2}(x,y) dx dy
+\label{eq:lumi_vs_intensity}
+\end{equation}
+where $n_{p1}$ and $n_{p2}$ are number of protons in each of the two colliding bunches.
+
+Number of protons in the bunches (in other words beam currents) are measured by the special direct current (DC) transformers: 
+pair of DC current transformers (DCCT) and pair of fast beam current transformers (FBCT). 
+DCCT is used to measure total beam current while FBCT is used tomeasure relative intensity of separate bunches.
+
+Van der Meer scan is performed by changing the relative position of beams in one direction while keeping them centered in another direction.
+By doing such scan in the both directions and measuring interaction rate as a function of beam shift one can obtain 
+two scan curves (with curve widths $\Sigma_{x}$ and $\Sigma_{y}$), one of such curves, normalized to number of protons in the beams, 
+is shown in \FigureRef{fig:vdmScanCurve}.
+The peak luminosity during van der Meer run can be written as:
+
+\begin{equation}
+\mathscr{L}^{peak} = f_{LHC} n_{p1} n_{p2} \int \rho_{1}(x,y) \rho_{2}(x,y) dx dy =  f_{LHC} n_{p1} n_{p2} \dfrac{1}{2\pi \Sigma_{x} \Sigma_{y}}
+\label{eq:lumi_vdm}
+\end{equation}
+
+By comparing \EquationRef{eq:lumi_bunch_sum_visible} and \EquationRef{eq:lumi_vdm} one can show that visible cross section equal to:
+
+\begin{equation}
+\sigma^{vis} = \dfrac{ 2 \pi \Sigma_{x} \Sigma_{y} \mu_{max}  }{ n_{p1} n_{p2} }
+\label{eq:sigma_vis}
+\end{equation}
+
+And by recalling definition of the visible cross section one can express efficiency of luminosity algorithm as:
+
+\begin{equation}
+\varepsilon = \dfrac{\sigma^{vis}}{\sigma^{ineal}}
+\label{eq:alg_method_eff}
+\end{equation}
+
+In \TableRef{tab:sigma_vis_efficiency} measured visible cross sections and efficiencies for a few LUCID luminosity algorithms are shown.
+Last column in the table contain maximum possible number of interaction which algorithms can deal with without saturation.
+These number were calculated for values $\mu_{vis} = 10$.
+All counting can start to saturate if number of interaction became large enough. As example let's take a look on ``Event OR'' algorithm.
+If in the every bunch crossing at least one hit will be present in the detector (which correspond to ``Event OR'' definition)
+ratio $\frac{N_{OR}}{N_{BC}}$ will become equal to 1 and it will be impossible to use \EquationRef{eq:log???} to calculate 
+number of interaction $\mu$.
+
+
+% TODO describe how often vdM runs are done and explain that parameters of the beams have to stay more or less constant.
+
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth]{LUCID/vdM_scan.pdf}
+% TODO update this caption and label
+\caption{Visible interaction rate for the LUCID algorithm (BI$\_$OR$\_$A) in one bunch crossing and per unit bunch population, 
+	 versus nominal beam separation during horizontal scan 1 in the August 2015 luminosity-calibration session. }
+\label{fig:vdmScanCurve}
+\end{figure}
+
+\begin{table}[p]
+  \begin{tabular}{|l|c|c|c|}
+    Algorithm & $\sigma^{vis}$ (mb) & $\varepsilon$ ($\%$) & $\mu_{max}$ \\
+    \hline
+    BI$\_$OR & 32.4 & 40.5 & 24 \\
+    \hline
+    BI$\_$OR$\_$A & 19.3 & 24.2 & 41 \\
+    \hline
+    BI$\_$AND & 6.38 & 8.0 & 125 \\
+    \hline
+    BI$\_$OR$\_$C9 & 6.44 & 8.0 & 125 \\
+    \hline
+    MOD$\_$OR & 21.7 & 27.1 & 36 \\
+  \end{tabular}
+  \caption{The result of the vdM calibrations for some of the LUCID luminosity algorithms.}
+  \label{tab:sigma_vis_efficiency}
+\end{table}
+
+
+
 
 \subsection{Luminosity measurements during 2015-2016}
 

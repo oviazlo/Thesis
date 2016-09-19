@@ -1,4 +1,73 @@
 
+
+\chapter{Wprime}
+\label{chap:Wprime}
+
+% ***Explanation of my personal contribution to the analysis.***
+% TODO this is not a real text to be used - just a plan of what I want to write,,,
+% \begin{itemize}
+%  \item MC simultaion
+%  \item second analysis of muon channel
+%  \begin{itemize}
+%   \item comparison of results with Magnar
+%  \end{itemize}
+%  \item mono-W investigation
+% \end{itemize}
+
+
+% PLAN
+% <What this chapter about - short intro to Wprime analysis>
+% <What was my personal contribution to the analysis> 
+
+
+This chapter describe search for new charged boson (namely $\PWprime$) in final state with one lepton and missing transverse energy ($E_T^{miss}$).
+Search was done with first $\sqrt{s}$ = 13 TeV data collected in 2015 by ATLAS with corresponded luminosity of 3.2 fb$^{-1}$.
+% TODO describe more about the analysis.
+% Analysis focuses on high-p$_T$ 
+
+This analysis have been made public as a conference note~\cite{ATLAS-CONF-2015-063} with early reasults and later as a paper~\cite{Aaboud:2016zkn} where final results were presented.
+
+My personal contribution to the analysis can be concluded in following three parts.
+I performed complete analysis in muon channel. Signal selection, control and validation plots, estimation of systematics and other.
+This part was done in parrallel with other collaborator to make sure that results are robust and are the same from two independent analyses and there are no mistaken done.
+
+% TODO discuss with Monika, should I include it or not. If yes - how should I argument about why it was not use and how to explain differnce comparing to inclusive sample?
+Secondly I was investigating ways to decrease systematics caused by limited statistic of inclusive diboson and ttbar backgound samples at high-$m_{T}$ region.
+One option was to generate lepton-neutrino mass-binned samples. After investigation it was found out that these samples doesn't populate high-$m_{T}$ region
+good enough, so it was decided to develop unique (first ever?) samples in bins of lepton-$E_T^{miss} $ $m_T$.
+
+Third part was related to investigation of use another models which can be potentially sensitive in signal selection.
+Main focus of this investigation was mono-W Dark Matter (DM) models, where pair of DM particles candidates are produced in final state in association with SM W boson.
+Two sets of model were considered: simplified and Effective Field Theory models [links???]. 
+
+% TODO discuss with Monika - how should I position analysis - as a dedicated search of Wprime or as more model-independent search?
+
+\section{Introduction}
+\label{sec:wprimeIntro}
+
+\section{Wprime signal}
+\label{sec:wprimeSignal}
+
+\section{Background processes}
+\label{sec:wprimeBackgrounds}
+
+\section{Event Selection}
+\label{sec:wprimeEventSelection}
+
+\section{Data driven multijet background estimate}
+\label{sec:wprimeMultijetBackground}
+
+\section{Signal Region}
+\label{sec:wprimeSignalRegion}
+
+\section{Systematic Uncertainties}
+\label{sec:wprimeSystematics}
+
+\section{Conclusion}
+\label{sec:wprimeConclusion}
+
+
+
 % Sources:
 % 
 % Dark Matter Benchmark Models for Early LHC Run-2 Searches:
@@ -246,6 +315,14 @@ On other hand EFT DM samples contribute to high-$m_{T}$ region but as desribed a
 significantly smaller comparing with $\PWprime$ signal for physicaly motivated values of scale of new physics $\Lambda$. Which leads to the conclusion that
 lepton and $E_{T}^{miss}$ signal selection is not sensitive for DM searches.
 
+
+
+Similar studies was done by Bell and collaborators~\cite{arXiv:1512.00476}, where authors estimated approximate upper limit on for 3000 fb$^{-1}$. 
+At \FigureRef{fig:bellExclLim} exclusion limit
+as a function of mass of DM particle and mass of DM-SM mediator $Z'$ is shown. One can notice that obtained limits for mono-lepton channel are significantly 
+worse than from all other channel, especially than from di-jet analysis. Conclusion of authors are identical to the conclusion of this study that mono-lepton channel
+are not sensitive enough for DM searches and is significantly worse comparing to all other hadronic channels.
+
 \begin{figure}[hb]
  \includegraphics[width=0.8\textwidth]{monoW/schan1.pdf}
   \caption{Exclusion limit for the s-channel $Z'$ model as a function of mass of dark matter particle, $m_{\chi}$, 
@@ -254,9 +331,3 @@ lepton and $E_{T}^{miss}$ signal selection is not sensitive for DM searches.
   and the reaches are shown for the mono lepton and mono fat jet searches at 14 TeV 3000 fb$^{-1}$.}
   \label{fig:bellExclLim}
 \end{figure}
-
-Similar studies was done by Bell and collaborators~\cite{arXiv:1512.00476}, where authors estimated approximate upper limit on for 3000 fb$^{-1}$. 
-At \FigureRef{fig:bellExclLim} exclusion limit
-as a function of mass of DM particle and mass of DM-SM mediator $Z'$ is shown. One can notice that obtained limits for mono-lepton channel are significantly 
-worse than from all other channel, especially than from di-jet analysis. Conclusion of authors are identical to the conclusion of this study that mono-lepton channel
-are not sensitive enough for DM searches and is significantly worse comparing to all other hadronic channels.
