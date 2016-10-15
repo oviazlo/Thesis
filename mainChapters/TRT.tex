@@ -1,6 +1,125 @@
 \chapter{TRT}
 \label{chap:TRT}
 
+In the end of the Rin-1 period some of TRT straws start to leak.
+
+
+In the \SectionRef{???} overview of the TRT read-out electronics is done with focus on front end electronics, becuase 
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{TRT/Xe_Ar_map_2015.png}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{TRT/Xe_Ar_map_2016.png}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{TRT gas configuration used during 2015 (left) and 2016 (right) data taking years.}
+\label{fig:gas_gain}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=.6\textwidth]{TRT/TRT_improvement_momentum_resolution.png}
+\caption{ 
+Momentum resolution determined from cosmic ray data, taken in 2008, as a function of transverse momentum~\cite{Aad:2010bx}.
+The resolution are shown for simulated full ID tracks (stars), full ID tracks (solid triangles) and silicon-only tracks (open triangles).
+}
+\label{fig:gas_gain}
+\end{figure}
+
+
+
+
+
+\section{Description of the straw}
+% - main idea of signal detection 
+% - material of the straw
+% - gas mixture and all properties
+
+The main basic elements of the TRT is proportional drift tubes, hereafter called straw tubes or simply straws.
+Tubes need to have good electrical (the cathode resistance has to be as low as possible) and mechanical (to avoid gas leaks) properties.
+Geometrical factor has to be taken into account as well. Large straws provide better hit efficiency; small straws provide small drift time (time to collect electrons in the tube).
+Another crucial requirement was a limit on thickness of the tubes. 
+In order to let low-energy transition radiation photons (created by electrons passing radiators) go through and be adsorbed in the gas, tube walls need to be as thin as possible.
+
+All these requirements were considered during the design face and most optimal choise was used.
+Tube size is 4 mm in diameter. Walls are made from two layers of multilayer film. Section of the straw wall is shown in \FigureRef{fig:straw_wall_section}.
+Two layers consist from 6 $\mu$m thick carbon-polyimide layer, which protects 0.2 $\mu$m thick Al layer, which is coated on 25 $\mu$m Kapton film.
+These two layers were placed back to back and were glued by 5 $\mu$m thick polyurethane layer.
+Mechanically, tubes were supported by carbon fiber bundles, which were placed from four sizes around each tube.
+The anode is 30 $\mu$m diameter tungsten wire coated with 0.6-0.7 $\mu$m layer of gold.
+
+\begin{figure}
+\centering
+\includegraphics[width=.4\textwidth]{TRT/straw_cross_section.png}
+\caption{ 
+Section of the TRT straw tube wall.
+}
+\label{fig:straw_wall_section}
+\end{figure}
+
+Active detector volume of straw is gas mixture which is flushed through the tubes with help of the gas system.
+% TODO make similar chapter about transiiton radiation, same as Alex
+This mixture was carefully chosen in order to be safe to use, compatible with detector materials and to not have dissociation products (after electron avalanche) with aggressive properties.
+Higher electron drift velocity is preferred as well as wide operating plateau (range of high voltage were straws works in the proportional regime). Latter is important in order to have 
+safety margin in case high voltage has to be changed to correct for temperaature variations, to enhance signal to noise ratio or to adjust for heavy-ionizing particle effect~\cite{Abat:2008zza}.
+In order to have enough adsorb efficiency of transition radiation photons main component of the mixture has to be a noble gas [???WHY???] which are inert and have 
+large photo-adsorbtion cross sections.
+Target energy of transition radiation photons to be absorbed in order to make electron identification is in range 1-20 keV.
+In \FigureRef{fig:absorption_lenght} absorption lenghts are shown for four most heavy noble gases.
+As one can see the best choice would be the Radon gas, but due to its radioactivity it can not be used.
+Next candidate was Xenon and it was choosen to be a main gas component.
+Because of big cost of Xenon it was decided for all tests and during commisioning phase before pp collisions to use Argon gas. That is why read-out electronics were
+designed with possibility to work with Argon- and Xenon-based gas mixtures, as described in \SectionRef{subsec:front_end_electronics}.
+
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth]{TRT/absorption_lenght_noble_gases.png}
+\caption{ 
+  Absorption lenght as a function of photon energy for heaviest noble gases. Data was taken from~\cite{Hubbell:353989}.
+}
+\label{fig:absorption_lenght}
+\end{figure}
+
+[TODO] Explanation of the CO$_{2}$ and $O_2$ quenching additions.
+
+\begin{figure}
+\centering
+\includegraphics[width=.5\textwidth]{TRT/gas_gain_Xe_Ar.png}
+\caption{ 
+Straw gas gain as a function of high voltage for different gas mixtures. Taken from~\cite{Abat:2008zza}.
+}
+\label{fig:gas_gain}
+\end{figure}
+
+
+\section{Description of the Front-End read-out electronics}
+\label{subsec:front_end_electronics}
+
+
+Full description of TRT read-out chain can be found in~\cite{TRT_electronics}.
+In this sub-section main focus will lay on Front End electronics, which take raw signals from the straws as input and return digitized information of 24+3 bits.
+Signal is read fromm 
+
+
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth]{TRT/electronics.png}
+\caption{ 
+ Schematic representation of the TRT readout electronic.
+}
+\label{fig:electronics}
+\end{figure}
+
+
+
 \section{Introduction}
 \label{sec:TRT:introduction}
 
