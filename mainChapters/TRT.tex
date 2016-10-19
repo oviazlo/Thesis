@@ -1,8 +1,23 @@
-\chapter{TRT}
+\chapter{Simulation and performance of the Transition Radiation Tracker with Argon-based gas mixture}
 \label{chap:TRT}
 
 % TODO write
 % 1) explain my personal contribution to the study.
+
+This chapter describe performance of the ATLAS Transition Radiation Tracker (TRT) detector in case of using 
+Argon-based gas mixture in some parts of the detector.
+TRT was built with focus on using Xenon mixture with carbon dioxide and oxygen additiona (in proportion 70/27/3).
+But apperance of leaks in some straw led to decision to switch to cheaper Argon-based mixture for leaking modules.
+This chapter cover description of implementation of the Argon mixture in the TRT digitization package as well as possibility
+to simulate detector with different gases in different parts.
+Chapter consists from three section. In \SectionRef{sec:trt_straw_hw} general TRT description is present with emphasis
+of description of the straw tube, used gas and front-end electronics.
+Second chapter cover overview of the simulation package with description of Argon implementation in it.
+Third part describe performance study of TRT on hit and track parameters with focus on active gas mixture. Comparison of 
+Xenon- and Argon-based mixtures.
+
+I was working on Argon simulation for 1.5 years and my implementation was integrated to the official TRT digitization 
+package. I performed study on hit and track parameters with respect to the used gas.
 
 %#######################################################################################################################
 % SECTION 0 ############################################################################################################
@@ -10,54 +25,15 @@
 \section{Introduction}
 \label{sec:TRT_intro}
 
-% TODO write: study motivation
-% 1) explain situation with leaking of the Xenon
-% 2) describe pictures of the mixed condition for 2015-2016 and say some words about worst case scenario.
-
-%#######################################################################################################################
-% SECTION 1 ############################################################################################################
-%#######################################################################################################################
-\section{TRT straw tube performance and front-end electronics}
-\label{sec:trt_straw_hw}
-
-\subsection{TRT description}
-\label{subsec:trt_description}
-
-
-The ATLAS Transition Radiation Tracker (TRT) is the outermost of the three tracking subsystems of the ATLAS Inner Detector. 
-ATLAS is one of two general-purpose detectors built for the Large Hadron Collider at CERN.
-
-% About TRT
-The TRT contains $\sim$300000 thin-walled proportional-mode drift tubes providing on average 30 two-dimensional 
-space points with $\sim$130 $\mu m$ resolution for charged particle tracks with |$\eta$| < 2 and $p_T$ > 0.5 GeV~\cite{Abat:2008zza,Abat:2008zzb,Abat:2008zz}.
-Along with continuous tracking, the TRT provides electron identification capability through the detection of transition radiation X-ray photons.
-
-% Implementation of Argon simulation
-Till now TRT simulation code supported only Xenon based gas-mixtures as active gas in the tubes. 
-Current study is focused on implementation of simulation of Argon based gas-mixture, 
-which was used for a few runs of data taking in 2013 in a few TRT modules.
-
-% Performance study
-% Performance study of the TRT using Argon and Xenon based gas-mixtures will be presented.
-% Hit and track parameters, such as hit reconstruction efficiency, residuals, track momentum resolution and extension fraction
-% will be shown for both gas-mixtures and compared to Monte Carlo simulation.
-
-Current note are dedicated to the performance study of Transition Radiation Tracker (TRT) of ATLAS detector on hit and track parameter with focus on active gas mixture.
-It consist from technical description of implementation of Argon-based active gas mixture to the TRT Digigtization package of ATHENA framework and performance study itself. 
-Aim of current study was to investigate scenario when instead of standart Xenon-based mixture Argon-based mixture will be used in some part of detector. Main parameters of interest
-were hit residuals, track extension fraction ???
-Motivation for current study was leakages in tubes ???
-
-
-\begin{figure}
-\begin{center}
- \includegraphics[width=0.6\columnwidth]{TRT/fromPoster/TRTdigi4.pdf}
-\caption{\label{fig:pulseDigitization} Illustration of the digitization of a TRT low threshold signal.}
-\end{center}
-\end{figure}
-
-
-
+During Run-1 TRT detector was performing well, providing essential part of tracking information as well as particle identification
+information by detecting transition radiation from electrons. But in the end of Run-1 a few leaks in the straws were
+observed which caused large activity in order to understand and fix the problem. After detailed investigation it became
+clear that it is impossible to change or fix part of problematic straws due to lack of access to them. That is why 
+arrangments in the gas system was done in order to minimize leaks and study on possibility to use Argon-based 
+gas mixtures (which are significantly cheaper) started. With time passing amount of leaking gas was increasing that is
+why it become inevitably to switch to the Argon mixture some TRT modules. In \FigureRef{fig:mixed_condition_2015_2016} used gas 
+configurations of the TRT in 2015 and 2016 years are shown which demonstrates that problem is slowly developing
+further.
 
 \begin{figure}
 \centering
@@ -72,8 +48,63 @@ Motivation for current study was leakages in tubes ???
   \label{fig:sub2}
 \end{subfigure}
 \caption{TRT gas configuration used during 2015 (left) and 2016 (right) data taking years.}
-\label{fig:gas_gain}
+\label{fig:mixed_condition_2015_2016}
 \end{figure}
+
+% TODO write: study motivation
+% 1) explain situation with leaking of the Xenon
+% 2) describe pictures of the mixed condition for 2015-2016 and say some words about worst case scenario.
+
+%#######################################################################################################################
+% SECTION 1 ############################################################################################################
+%#######################################################################################################################
+\section{Detector design and front-end electronics}
+\label{sec:trt_straw_hw}
+
+\subsection{Detector design}
+\label{subsec:trt_description}
+
+% TODO 
+% 1) insert fancy picture of the TRT
+% 2) some information about tracking here? change name of the subseciton then?
+% 3) some information about transition radiation?
+% 4) 
+
+The ATLAS Transition Radiation Tracker is the outermost of the three tracking subsystems of the ATLAS Inner Detector. 
+ATLAS is one of two general-purpose detectors built for the Large Hadron Collider at CERN.
+
+The TRT contains $\sim$300000 thin-walled proportional-mode drift tubes providing on average 30 two-dimensional 
+space points with $\sim$130 $\mu m$ resolution for charged particle tracks with |$\eta$| < 2 and $p_T$ > 0.5 GeV~\cite{Abat:2008zza,Abat:2008zzb,Abat:2008zz}.
+Along with continuous tracking, the TRT provides electron identification capability through the detection of transition radiation X-ray photons.
+
+% Implementation of Argon simulation
+% Till now TRT simulation code supported only Xenon based gas-mixtures as active gas in the tubes. 
+% Current study is focused on implementation of simulation of Argon based gas-mixture, 
+% which was used for a few runs of data taking in 2013 in a few TRT modules.
+
+% Performance study
+% Performance study of the TRT using Argon and Xenon based gas-mixtures will be presented.
+% Hit and track parameters, such as hit reconstruction efficiency, residuals, track momentum resolution and extension fraction
+% will be shown for both gas-mixtures and compared to Monte Carlo simulation.
+
+% Current note are dedicated to the performance study of Transition Radiation Tracker (TRT) of ATLAS detector on hit and track parameter with focus on active gas mixture.
+% It consist from technical description of implementation of Argon-based active gas mixture to the TRT Digigtization package of ATHENA framework and performance study itself. 
+% Aim of current study was to investigate scenario when instead of standart Xenon-based mixture Argon-based mixture will be used in some part of detector. Main parameters of interest
+% were hit residuals, track extension fraction ???
+% Motivation for current study was leakages in tubes ???
+
+
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.6\columnwidth]{TRT/fromPoster/TRTdigi4.pdf}
+\caption{\label{fig:pulseDigitization} Illustration of the digitization of a TRT low threshold signal.}
+\end{center}
+\end{figure}
+
+
+
+
+
 
 
 \begin{figure}
@@ -88,7 +119,7 @@ The resolution are shown for simulated full ID tracks (stars), full ID tracks (s
 
 
 
-\subsection{Description of the straw}
+\subsection{The straw tube and operating gas mixture}
 % - main idea of signal detection 
 % - material of the straw
 % - gas mixture and all properties
@@ -166,8 +197,24 @@ Straw gas gain as a function of high voltage for different gas mixtures. Taken f
 \end{figure}
 
 
-\subsection{Description of the Front-End read-out electronics}
+\subsection{Front-end electronics and signal processing}
 \label{subsubsec:front_end_electronics}
+
+As described previously purpose of the TRT detector is not only to provide good track reconstruction (which means list of hits)???
+
+Signal from the straws has a specific shape as shown in \FigureRef{fig:ion_tail}.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth]{TRT/ion_tail.png}
+\caption{ 
+ Typical signal from the TRT straw. Sharp peak correspond to the fast collection of the electrons. 
+ Following tail is caused by slow drift of ions in the gas.
+ Source:~\cite{ID_TDR_vol2}.
+}
+\label{fig:ion_tail}
+\end{figure}
 
 
 Full description of TRT read-out chain can be found in~\cite{TRT_electronics}.
@@ -185,21 +232,23 @@ Signal is read fromm
 \end{figure}
 
 
+
+
 \begin{figure}
 \centering
-\includegraphics[width=.7\textwidth]{TRT/ion_tail.png}
+\includegraphics[width=.8\textwidth]{TRT/nice_ASDBLR_schematics.png}
 \caption{ 
- Typical signal from the TRT straw. Sharp peak correspond to the fast collection of the electrons. 
- Following tail is caused by slow drift of ions in the gas.
- Taken from~\cite{ID_TDR_vol2}.
+ ??? Source:~\cite{Aad:2008zzm}.
 }
-\label{fig:ion_tail}
+\label{fig:nice_asdblr_schematics}
 \end{figure}
+
+\subsection{Tracking with TRT}
 
 %#######################################################################################################################
 % SECTION 2 ############################################################################################################
 %#######################################################################################################################
-\section{Implementation of simulation of Argon based gas-mixture}
+\section{Implementation of modelling of the new Argon-based gas mixture in TRT}
 \label{sec:digi_argon}
 
 In this section description of the digitization code will be present with detailed explanation of the implementation of the Argon-based gas mixture.
@@ -215,7 +264,7 @@ Main attention:
 \end{itemize}
 
 
-\subsection{ATLAS detector MC simulation}
+\subsection{Monte Carlo simulation of the ATLAS detector}
 
 % TODO
 % 0) some nice words why MC simulation is needed
@@ -262,7 +311,7 @@ But due to the fact that standart-configured GEANT4 package make poor job on cal
 of this in Digitization step. So from simulation step only list of hits in TRT are used when energy deposition to the gas inside the tubes are calculated in Digitization step.
 
 
-\subsection{Digitization of the TRT}
+\subsection{Simulation and digitization of the TRT}
 
 
 
@@ -279,7 +328,7 @@ of this in Digitization step. So from simulation step only list of hits in TRT a
 
 
 
-\subsection{Implementation of mixed condition}
+\subsection{Digitization of the mixed gas condition}
 
 % TODO revisit this piece of text
 
@@ -356,32 +405,7 @@ to the Xenon one.
 \end{figure}
 
 
-\subsection{Electron recapture}
-When electrons drift towards the anode there is a probablity that they will be captured by the oxygen moleculus in reactions
-$O_2 + e^- \to O_2^-$ or $O_2 + e^- \to O + O^-$. Presence of the magnetic fiels enhance cross section of these reactions.
-In order to take into account this effect a special study was done as is reported in~\cite{esben_thesis}.
-It was found out that electron capture probability strongly depends from the distance between primary electron to the anode.
-Garfield simulation shown that this dependence can be parametrized with forth order polinominal (see \FigureRef{fig:electron_recapture}), 
-which was inplemented in the TRT digitization package. 
-Because Argon-based mixture contain the same amount of the oxygen in it the same survival probability
-curve was used for it as well.
-% TODO ask Kostja: 1) did he look on it for Argon? 2) is it correct that Argon-mixture will have the same suvivl probability as in Xenon?
-
-As it was described previously oxygen was added in the mixture in order to increase operating plateau of the straw, but there is an another effect which it take care of.
-Drifting ions might free electrons when they reach cathode, which can in their turn make electron avalanches, which is not wanted effect.
-As can seen from \FigureRef{fig:electron_recapture}, oxygen addition to the gas mixture provide 60$\%$ probability that these electrons will be recaptured 
-and will never reach anode. 
-
-\begin{figure}
-\centering
-\includegraphics[width=.7\textwidth]{TRT/electron_recapture.png}
-\caption{ 
- Survival probability of the primary electron to reach the anode. Source:~\cite{esben_thesis}.
-}
-\label{fig:electron_recapture}
-\end{figure}
-
-\subsection{Simulation of the energy transfer to the active straw volume}
+\subsection{Simulation of the energy transfer to the gas and initial number of electrons in a cluster}
 
 When charged particle go through active gas volume of the straw it interacts with gas molecules.
 It can either ionize them by kicking out an electon or it can excite them. Energy needed to kick out least bound shell electron for TRT gases lays
@@ -407,7 +431,10 @@ Difference in the average ionization energy means that number of primary electro
   \label{tab:ionization_energy}
 \end{table}
 
-\subsection{Simulation of timing variables}
+\subsection{Electron drift velocity and $r-t$ relation}
+
+\subsection{The influence of the magnetic flux density on drift time}
+% \subsection{Simulation of timing variables}
 % TODO revisit this section
 To simulate drift time of the primary cluster of electrons from place of origin to the wire Athena package 
 use empirically measured (TODO not from Garfield?) tables of dependence of drift distance versus drift time (so called RT tables). 
@@ -487,6 +514,8 @@ All available shaping functions are shown in figure \ref{fig:shaping}.
 % TODO new text starts from here [August 2016]:
 
 
+
+
 \subsection{Drift diffusion}
 % TODO describe this part. recall was that measured by Kostja? probbly Kontact Kostja for more details.
 
@@ -500,7 +529,37 @@ All available shaping functions are shown in figure \ref{fig:shaping}.
 \end{figure}
 
 
-\subsection{Noise simulation}
+% \subsection{Electron recapture}
+\subsection{Electron attachment processes in oxygen}
+When electrons drift towards the anode there is a probablity that they will be captured by the oxygen moleculus in reactions
+$O_2 + e^- \to O_2^-$ or $O_2 + e^- \to O + O^-$. Presence of the magnetic fiels enhance cross section of these reactions.
+In order to take into account this effect a special study was done as is reported in~\cite{esben_thesis}.
+It was found out that electron capture probability strongly depends from the distance between primary electron to the anode.
+Garfield simulation shown that this dependence can be parametrized with forth order polinominal (see \FigureRef{fig:electron_recapture}), 
+which was inplemented in the TRT digitization package. 
+Because Argon-based mixture contain the same amount of the oxygen in it the same survival probability
+curve was used for it as well. But separate implementation for the Argon was done in the code in order to allow future tuning of this effect separately for Xenon and Argon gas mixtures
+in case of other concentrations of oxygen will be used.
+% TODO ask Kostja: 1) did he look on it for Argon? 2) is it correct that Argon-mixture will have the same suvivl probability as in Xenon?
+
+As it was described previously oxygen was added in the mixture in order to increase operating plateau of the straw, but there is an another effect which it take care of.
+Drifting ions might free electrons when they reach cathode, which can in their turn make electron avalanches, which is not wanted effect.
+As can seen from \FigureRef{fig:electron_recapture}, oxygen addition to the gas mixture provide 60$\%$ probability that these electrons will be recaptured 
+and will never reach anode. 
+
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth]{TRT/electron_recapture.png}
+\caption{ 
+ Survival probability of the primary electron to reach the anode. Source:~\cite{esben_thesis}.
+}
+\label{fig:electron_recapture}
+\end{figure}
+
+\subsection{Signal shaping and discrimination}
+
+
+\subsection{Modelling of White Noise}
 
 % TODO I am not sure if it is this note.... and it's internal note???
 Noise note:~\cite{Kittelmann:987854}
@@ -552,14 +611,16 @@ which was used during ??? data taking period. Modules with Argon mixture in mixe
 \section{Performance study of TRT on hit and track parameter with focus on active gas mixture}
 \label{sec:digi_argon}
 
-\subsection{Inner Detector and TRT tracking}
-\label{subsec:general_tracking}
+% \subsection{Inner Detector and TRT tracking}
+% \label{subsec:general_tracking}
 % TODO explain here
 % 1) shortly about ID tracking 
 % 2) TRT improvement of momentum resolution
 % 3) TRT hit and track parameters
 
-\subsection{Argon and Xenon track and hit parameters}
+\subsection{TRT hit and track parameters}
+
+\subsection{Time and spatial resolution}
 \label{subsec:TRT:trackPerf}
 
 % TODO add:
@@ -668,4 +729,10 @@ slightly larger. All these observations indicate that additional threshold tunin
 \caption{Precision hit fraction. MC simulation.}
   \label{fig:precHitFracPerTrack}
 \end{figure}
+
+\subsection{Hit efficiency, number of hits per track and track extension fraction}
+
+\subsection{Momentum resolution}
+
+
 
