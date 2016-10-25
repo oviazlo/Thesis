@@ -1,4 +1,87 @@
 
+
+\chapter{Wprime}
+\label{chap:Wprime}
+
+% ***Explanation of my personal contribution to the analysis.***
+% TODO this is not a real text to be used - just a plan of what I want to write,,,
+% \begin{itemize}
+%  \item MC simultaion
+%  \item second analysis of muon channel
+%  \begin{itemize}
+%   \item comparison of results with Magnar
+%  \end{itemize}
+%  \item mono-W investigation
+% \end{itemize}
+
+
+% PLAN
+% <What this chapter about - short intro to Wprime analysis>
+% <What was my personal contribution to the analysis> 
+
+
+This chapter describe search for new charged boson (namely $\PWprime$) in final state with one lepton and missing transverse energy ($E_T^{miss}$).
+Search was done with first $\sqrt{s}$ = 13 TeV data collected in 2015 by ATLAS with corresponded luminosity of 3.2 fb$^{-1}$.
+% TODO describe more about the analysis.
+% Analysis focuses on high-p$_T$ 
+
+This analysis have been made public as a conference note~\cite{ATLAS-CONF-2015-063} with early reasults and later as a paper~\cite{Aaboud:2016zkn} where final results were presented.
+
+My personal contribution to the analysis can be concluded in following three parts.
+I performed complete analysis in muon channel. Signal selection, control and validation plots, estimation of systematics and other.
+This part was done in parrallel with other collaborator to make sure that results are robust and are the same from two independent analyses and there are no mistaken done.
+
+% TODO discuss with Monika, should I include it or not. If yes - how should I argument about why it was not use and how to explain differnce comparing to inclusive sample?
+Secondly I was investigating ways to decrease systematics caused by limited statistic of inclusive diboson and ttbar backgound samples at high-$m_{T}$ region.
+One option was to generate lepton-neutrino mass-binned samples. After investigation it was found out that these samples doesn't populate high-$m_{T}$ region
+good enough, so it was decided to develop unique (first ever?) samples in bins of lepton-$E_T^{miss} $ $m_T$.
+
+Third part was related to investigation of use another models which can be potentially sensitive in signal selection.
+Main focus of this investigation was mono-W Dark Matter (DM) models, where pair of DM particles candidates are produced in final state in association with SM W boson.
+Two sets of model were considered: simplified and Effective Field Theory models [links???]. 
+
+% TODO discuss with Monika - how should I position analysis - as a dedicated search of Wprime or as more model-independent search?
+
+\section{Introduction}
+\label{sec:wprimeIntro}
+
+\section{Wprime signal}
+\label{sec:wprimeSignal}
+
+\section{Background processes}
+\label{sec:wprimeBackgrounds}
+\subsection{The W boson}
+\subsection{The Z boson}
+\subsection{The top quark}
+\subsection{Diboson}
+\subsection{Multijet}
+
+\section{Event Selection}
+\label{sec:wprimeEventSelection}
+\subsection{Data and Monte Carlo samples}
+\subsection{Muon selection}
+\subsection{Definition of the missing transverse energy}
+
+\section{Data driven multijet background estimate}
+\label{sec:wprimeMultijetBackground}
+\subsection{The matrix method}
+\subsection{The real muon efficiency}
+\subsection{The fake muon efficiency}
+\subsection{Results}
+
+\section{Signal Region}
+\label{sec:wprimeSignalRegion}
+
+\section{Systematic Uncertainties}
+\label{sec:wprimeSystematics}
+
+\subsection{High-$p_T$ muon uncertainty}
+
+\section{Conclusion}
+\label{sec:wprimeConclusion}
+
+
+
 % Sources:
 % 
 % Dark Matter Benchmark Models for Early LHC Run-2 Searches:
@@ -7,10 +90,10 @@
 % 
 
 
-\chapter{Dark Matter Mono-W models}
+\section{Search for dark matter pair-production with a leptonically decaying W boson}
 \label{chap:monoW}
 
-\section{Introduction}
+\subsection{Introduction}
 
 Beside $\PWprime$ model discussed above there are other BSM models 
 with lepton plus $E_{T}^{miss}$ final state signature.
@@ -34,7 +117,7 @@ which address question about sensitivity of signal selection presented above to 
 % look the same as well. But if we consider pair-production of dark matter 
 % particles associated with W we expect 
 
-\section{Theoretical models}
+\subsection{Theoretical models}
 
 % TODO rephrase first setence
 There are plethora of models which try to introduce and explain DM as a possible particles which can be produced at LHC. 
@@ -83,6 +166,8 @@ In EFT approach W can be produces as final state particle (\FigureRef{fig:feynMo
   \label{fig:feynMonoWSimple}
 \end{figure}
 
+% TODO change y-axis title. because it is normalized distribution!!!
+
 \begin{figure}[hb]
 
 \centering
@@ -105,7 +190,7 @@ They are charachterized by energy scale of ``new physics'' $\Lambda$ (or effecti
 Both models assume vector type of interaction between DM and SM sectors. For D52 model (which correspond to the right diagram in  \FigureRef{fig:feynMonoWEFT}) 
 we consider only constructive interferance with SM.
 
-\section{Sensitivity studies}
+\subsection{Sensitivity studies}
 
 Main idea of the study is to understand kinematics of DM models in final state with one lepton and missing energy and to estimate sensitivity 
 of signal selection to such kind of models.
@@ -115,9 +200,6 @@ with signal from $\PWprime$ model.
 It's worth to mention that due to the fact that mass of DM particles doesn't affect kinematic distribution of the event 
 all simulated DM samples used are with mass of DM particle was set to 1 GeV.
 (should some plots to be shown to proof this???).
-
-% TODO show comparison of t- and s-channel
-% TODO include plot which show comparison of s- and t-channels.
 
 In \FigureRef{fig:kinematicsSChannel} normalized kinematic distributions of transverse mass of lepton and $E_{T}^{miss}$ of the event
 and $E_{T}^{miss}$ of the event for s-channel simplified model as well as EFT models with comparison with $\PWprime$ model are shown.
@@ -132,8 +214,6 @@ and for mass equal 10 TeV cross section is a few order of magnitude lower than b
 makes signal selection not sensitive for s-channel simplified DM model.
 
 % TODO reprhase it. It not visible from table - only from non-normalized plot. Plot should be mono-W with W backgound only? Or I should also include other backgounds?
-% TODO add Wprime to the table.
-% TODO add not-normalized kinematic plots.
 
 \begin{figure}[hb]
 
@@ -155,9 +235,13 @@ makes signal selection not sensitive for s-channel simplified DM model.
   \label{fig:kinematicsSChannel}
 \end{figure}
 
-In \FigureRef{fig:kinematicsTChannel} similar normalized kinematic distribution are show for t-channel simplified model. Distribution for t-channel model looks almost identical to one
-for s-channel. But cross sections for t-channel processes are for one-two order of magnitude lower compared to s-channel (see \TableRef{tab:TriggerDetails}) which leads to conclution
-that signal selection even less sensitive for t-channel simplified model.
+In \FigureRef{fig:scaledKin} transverse mass distribution are show for s- and t-channels simplified models as well as EFT and $\PWprime$ signals with comparison to SM W background 
+scaled to according cross process section. Distribution for t-channel model looks almost identical to one for s-channel. 
+But cross sections for t-channel processes are for one-two order of magnitude lower compared to s-channel (see \TableRef{tab:TriggerDetails}) which leads to conclution
+that signal selection even less sensitive for t-channel simplified model. Aslo SM W backround are for a few orders higher in all range of $m_{T}$ than any sample of simplified model.
+For D52 EFT model excess over SM W backgound can be seen in high-$m_{T}$ region. While for WW$\chi\chi$ EFT model it is not the case, because cross section is very low.
+
+% TODO us or D5 or D52. harmonize stuff!!!
 
 \begin{figure}[hb]
 \begin{subfigure}{.5\textwidth}
@@ -173,9 +257,9 @@ that signal selection even less sensitive for t-channel simplified model.
   \includegraphics[width=\textwidth]{monoW/dm_final_EFT_vs_SMW_pad1.png}
 \end{subfigure}
 % \includegraphics[width=0.75\textheight]{monoW/kinematics_simplifiedTChannel_EFT_Wprime.png}
-\caption{Kinematic distributions of transverse mass of simplified model in s- and t-channel (left) 
-and EFT models with $\PWprime$ signal (right) in comparison with SM W background scaled to appropriate process cross section.}
-  \label{fig:kinematicsTChannel}
+\caption{Kinematic distributions of transverse mass of simplified model in s- and t-channels (left) 
+and EFT models with $\PWprime$ signal (right) in comparison with SM W background scaled to according process cross section.}
+  \label{fig:scaledKin}
 \end{figure}
 
 Transverse mass distribution for both EFT models looks similar and majority (???) of the signal lays in the signal region. 
@@ -199,6 +283,8 @@ Transverse mass distribution for both EFT models looks similar and majority (???
 % 		& D52		  & $m_{\chi}$=1GeV; $M^{*}$=1TeV	& 4.4E-4 \\
 EFT 	& WW$\chi\chi$	  & $\Lambda$=3TeV    & 3.6E-10 \\
 	& D52		  & $M^{*}$=1TeV	& 4.4E-4 \\
+    \midrule	
+$\PWprime$ 	& 	  & $m_{\PWprime} =$ 2 GeV   & 1.1E-4 \\    
 		%     Wprime ($m_{\PWprime}$=2TeV) & 1.1E-4 \\
   \end{tabular}
   \caption{Mono-W cross section for different theoretical models.}
@@ -212,7 +298,7 @@ EFT 	& WW$\chi\chi$	  & $\Lambda$=3TeV    & 3.6E-10 \\
   \label{fig:lambdaScan}
 \end{figure}
 
-\section{Validity of EFT approach and summary}
+\subsection{Validity of EFT approach and summary}
 
 Cross section for both EFT processes strongly depends on energy scale of new physics $\Lambda$ (or effective mediator mass $M^{*}$ for D52 model).
 Dependence of cross section for WW$\chi\chi$ model versus energy scale is shown in \FigureRef{fig:lambdaScan}.
@@ -234,14 +320,22 @@ which make this model less appealing comparing with other models [add non-collid
 D5 constructive (D52) model violate weak gauge invariance as described at ~\cite{arXiv:1503.07874}.
 It leads to spurious cross section enhancements at LHC energies. It is not recommended to be used anymore by Dark Matter Forum (some link???).
 
-\section{Conclusion}
+\subsection{Conclusion}
 
-Transverse mass and $E_{T}^{miss}$ for all presented DM models with comparison with $\PWprime$ ($M_{W'}$ = 2TeV) signal are shown at \FigureRef{fig:bellExcLim}.
+Transverse mass and $E_{T}^{miss}$ for all presented DM models with comparison with $\PWprime$ ($M_{W'}$ = 2TeV) signal are shown at \FigureRef{fig:scaledKin}.
 All distribution are scaled according to the cross section of the process. It's clearly seen that simplified models tends to contribute to low-$m_{T}$ region
 outside of the signal selection. With increasing of mediator mass $Z'$ cross section drops significantly and become indistinguishable with SM W background.
 On other hand EFT DM samples contribute to high-$m_{T}$ region but as desribed above D52 model has physicaly unmotivated high cross section and WW$\chi\chi$ 
 significantly smaller comparing with $\PWprime$ signal for physicaly motivated values of scale of new physics $\Lambda$. Which leads to the conclusion that
 lepton and $E_{T}^{miss}$ signal selection is not sensitive for DM searches.
+
+
+
+Similar studies was done by Bell and collaborators~\cite{arXiv:1512.00476}, where authors estimated approximate upper limit on for 3000 fb$^{-1}$. 
+At \FigureRef{fig:bellExclLim} exclusion limit
+as a function of mass of DM particle and mass of DM-SM mediator $Z'$ is shown. One can notice that obtained limits for mono-lepton channel are significantly 
+worse than from all other channel, especially than from di-jet analysis. Conclusion of authors are identical to the conclusion of this study that mono-lepton channel
+are not sensitive enough for DM searches and is significantly worse comparing to all other hadronic channels.
 
 \begin{figure}[hb]
  \includegraphics[width=0.8\textwidth]{monoW/schan1.pdf}
@@ -251,9 +345,3 @@ lepton and $E_{T}^{miss}$ signal selection is not sensitive for DM searches.
   and the reaches are shown for the mono lepton and mono fat jet searches at 14 TeV 3000 fb$^{-1}$.}
   \label{fig:bellExclLim}
 \end{figure}
-
-Similar studies was done by Bell and collaborators~\cite{arXiv:1512.00476}, where authors estimated approximate upper limit on for 3000 fb$^{-1}$. 
-At \FigureRef{fig:bellExclLim} exclusion limit
-as a function of mass of DM particle and mass of DM-SM mediator $Z'$ is shown. One can notice that obtained limits for mono-lepton channel are significantly 
-worse than from all other channel, especially than from di-jet analysis. Conclusion of authors are identical to the conclusion of this study that mono-lepton channel
-are not sensitive enough for DM searches and is significantly worse comparing to all other hadronic channels.

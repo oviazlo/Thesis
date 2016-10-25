@@ -1,4 +1,4 @@
-\chapter{Simulation and performance of the Transition Radiation Tracker with Argon-based gas mixture}
+\chapter{Simulation and performance studies of the Transition Radiation Tracker with Argon-based gas mixture}
 \label{chap:TRT}
 
 % TODO write
@@ -6,18 +6,23 @@
 
 This chapter describe performance of the ATLAS Transition Radiation Tracker (TRT) detector in case of using 
 Argon-based gas mixture in some parts of the detector.
-TRT was built with focus on using Xenon mixture with carbon dioxide and oxygen additiona (in proportion 70/27/3).
+TRT was built with focus on using Xenon mixture with carbon dioxide and oxygen additions (in proportion 70/27/3).
 But apperance of leaks in some straw led to decision to switch to cheaper Argon-based mixture for leaking modules.
 This chapter cover description of implementation of the Argon mixture in the TRT digitization package as well as possibility
 to simulate detector with different gases in different parts.
 Chapter consists from three section. In \SectionRef{sec:trt_straw_hw} general TRT description is present with emphasis
 of description of the straw tube, used gas and front-end electronics.
-Second chapter cover overview of the simulation package with description of Argon implementation in it.
+Second chapter cover overview of the digitization package with detailed description of the Argon implementation in it.
 Third part describe performance study of TRT on hit and track parameters with focus on active gas mixture. Comparison of 
 Xenon- and Argon-based mixtures.
 
-I was working on Argon simulation for 1.5 years and my implementation was integrated to the official TRT digitization 
-package. I performed study on hit and track parameters with respect to the used gas.
+Argon and mixed Xenon and Argon detector configuration implementations, done by me, were integrated to the official TRT digitization 
+package and are currently used for Monte Carlo simulation of the TRT. 
+All Argon gas mixture properties needed for the implementation to the Digitization code were measured in the laboratory 
+with straw prototype or by the Garfield package~\cite{garfield_program} by other TRT collaborants. 
+Tracking performance study was done to understand behaviour of the Argon mixture in the TRT compared to the Xenon one.
+Particle identification capabilities (by adsorbtion transition radiation photons) of the Argon gas mixture are not discussed 
+in this chapter.
 
 %#######################################################################################################################
 % SECTION 0 ############################################################################################################
@@ -92,18 +97,6 @@ Along with continuous tracking, the TRT provides electron identification capabil
 % Aim of current study was to investigate scenario when instead of standart Xenon-based mixture Argon-based mixture will be used in some part of detector. Main parameters of interest
 % were hit residuals, track extension fraction ???
 % Motivation for current study was leakages in tubes ???
-
-
-\begin{figure}
-\begin{center}
- \includegraphics[width=0.6\columnwidth]{TRT/fromPoster/TRTdigi4.pdf}
-\caption{\label{fig:pulseDigitization} Illustration of the digitization of a TRT low threshold signal.}
-\end{center}
-\end{figure}
-
-
-
-
 
 
 
@@ -186,7 +179,9 @@ Argon has significatly higher absorption lenght with respect to Xenon, as can be
 that is why tubes with Argon almost completely loose the ability to detect transition radiation, 
 which correspond to loosing the ability of particle identification.
 
- 
+Operating working gas gain for straws were chosen to be 2.5 $\cdot$ 10$^4$~\cite{ID_TDR_vol1}. It correspond to 1530 V for Xenon mixture as shown in \FigureRef{fig:gas_gain}.
+Gas gain curve for the Argon mixture is significantly different and to reach thew same gain only 1420 V have to be applied.
+
 \begin{figure}
 \centering
 \includegraphics[width=.5\textwidth]{TRT/gas_gain_Xe_Ar.png}
@@ -197,17 +192,49 @@ Straw gas gain as a function of high voltage for different gas mixtures. Taken f
 \end{figure}
 
 
+% TODO toWrite descfribe gas gain in general. Say about Argon mixture. Explain plot \FigureRef{fig:gas_gain} in the text.
+
 \subsection{Front-end electronics and signal processing}
 \label{subsubsec:front_end_electronics}
 
-As described previously purpose of the TRT detector is not only to provide good track reconstruction (which means list of hits)???
+% TODO toWrite 1) idea of the signal digitization. Explain plot \FigureRef{pulseDigitization}. Say that we want to measure drift time of the electrons!
+% TODO toWrite 2) But we have ions as well. Explain plot \FigureRef{fig:ion_tail}
+% TODO toWrite 3) Start explanation of the ASDBLR chip. Explain that it kill ion tail with shaping function. Explain triggering over the two thresholds: LT - for tracking; HT - electron PID.
 
-Signal from the straws has a specific shape as shown in \FigureRef{fig:ion_tail}.
+The main purpose of the TRT is to provide hits for track reconstruction and information for electron identification by detecting transition radiation photons.
+In order to get the best possible precision of hits one need not only have possibility to identify which straws particle went through 
+but also to measure the closest approach of the track to the straw wire. For this purpose the drift time of electron clusters to the wire has to be measured.
+That is why TRT front-end electronics were design to perform precise measurements of the timing information of the straw signal.
+One want to measure time when signal arrives (drift time of the electron clusters to the anode wire) and duration of the signal, so-called Time over Threshold (ToT).
+Time over Threshold is needed to distinguish signals from particles originated from different bunch crossings 
+and can be used for particle identification (because it charachterize amount of the ionization in the straw gas).
+Typical time needed for electrons to drift from straw wall to the anode wire in the Xenon-based gas mixture correspond to 40-45 ns, which dictates size of the readout window to be 
+3 BCID or 75 ns. As shown in \FigureRef{fig:pulseDigitization} signal is sampled with 24 bits (3.125 ns each). Value 1 is assigned to a bit if signal is higher than predefined threshold, 
+otherwise value 0 is assigned. The first transition in the bit pattern from 0 to 1 correspond to the leading edge of the signal. Following transition from 1 to 0 
+correspond to the trailing edge of the signal. Their difference is equal to the time over threshold of the signal. 
 
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.8\columnwidth]{TRT/fromPoster/TRTdigi4.pdf}
+\caption{Illustration of the digitization of a TRT low threshold signal.}
+\label{fig:pulseDigitization}
+\end{center}
+\end{figure}
+
+% TODO cross check with Anders, Kostja and Alex if this is true!!!
+% Measurements in the laboratory showed that signal from the straw consists from two components, as shown in \FigureRef{fig:ion_tail}: 
+% a sharp peak, which correspond to the primary ionization electrons, created by passing particle, reaching the anode wire and the ion tail, which is caused by ion drift towards the cathode.
+% When ions hit the wall of the straw there is a probability that it will free a few electrons from the wall which will start to drift towards the anode.
+% This effect is partly compensated by the oxygen gas component, which provide recapturing of the electron by oxygen moleulus, as described in the following \SectionRef{subsec:recapture}.
+% But some electrons will reach anode and will cause slowly falling component of the signal. To cancel out 
+
+Typical signal from the straw consists from two components, as shown in \FigureRef{fig:ion_tail}: 
+a sharp peak, which correspond to electron drift and slowly following ion tail, which correspond to ions of gas atoms created in the avalanches process.
+Only electron peak contain information of iterest (primary electron drift time) that is why ion tail canceled out by adding of the mirror image impulse to the signal.
 
 \begin{figure}
 \centering
-\includegraphics[width=.7\textwidth]{TRT/ion_tail.png}
+\includegraphics[width=.6\textwidth]{TRT/ion_tail.png}
 \caption{ 
  Typical signal from the TRT straw. Sharp peak correspond to the fast collection of the electrons. 
  Following tail is caused by slow drift of ions in the gas.
@@ -216,10 +243,33 @@ Signal from the straws has a specific shape as shown in \FigureRef{fig:ion_tail}
 \label{fig:ion_tail}
 \end{figure}
 
+The ion tail cancellation and signal digitization is done by custom-made ASDBLR (Amplification, Shaping, Discrimination and Base-Line Restoration) chip. 
+This chip also perform restoration of the signals baseline and discrimination against the thresholds. 
+Electronics make discrimination against two different threshold. One threshold, so-called Low Threshold (LT), 
+is used to trigger on cases when high-energetic particle pass through the straw and ionize gas along it's path (and it is shown in \FigureRef{fig:pulseDigitization}).
+Second one is used for transition radiation case.
+In contrary to the high-energetic particles, transition radiation photons transfer all their energy practically in one point when interacting with gas.
+It correspond to large number of primary electrons which is propagated to a large read-out signal.
+That is why a second threshold, so-called High Threshold (HT), used to trigger on such cases, are significantly larger to the LT.
+Values used for the Xenon-based gas mixture are correspond to 300 eV and 6 keV correspondly.
+Discrimination against HT is done per BCID. 
 
-Full description of TRT read-out chain can be found in~\cite{TRT_electronics}.
-In this sub-section main focus will lay on Front End electronics, which take raw signals from the straws as input and return digitized information of 24+3 bits.
-Signal is read fromm 
+In total ASDBLR chip provide 24+3 bits which correspond to 24 LT bits and 3 HT bits over 75 ns read-out window.
+Summary schematic of work of ASDBLR chip is shown in \FigureRef{fig:nice_asdblr_schematics}.
+ASDBLRs are placed close to the straw in order to reduce noise in the signal. One chip read-out eight straws.
+Next component in the read-out chain is a complementary read-out chip DTMROC (Drift Time Measurements Read Out Chip), which accept 
+information from two ASDBLRs, which hold data in the pipeline until the first level trigger arrives. If the event is accepted 
+data are sent 
+The overall TRT read-out chain is shown in \FigureRef{fig:electronics}. The detailed description of the TRT electronics is reported in~\cite{TRT_electronics}.
+
+\begin{figure}
+\centering
+\includegraphics[width=.8\textwidth]{TRT/nice_ASDBLR_schematics.png}
+\caption{ 
+ ??? Source:~\cite{Aad:2008zzm}.
+}
+\label{fig:nice_asdblr_schematics}
+\end{figure}
 
 
 \begin{figure}
@@ -233,43 +283,19 @@ Signal is read fromm
 
 
 
-
-\begin{figure}
-\centering
-\includegraphics[width=.8\textwidth]{TRT/nice_ASDBLR_schematics.png}
-\caption{ 
- ??? Source:~\cite{Aad:2008zzm}.
-}
-\label{fig:nice_asdblr_schematics}
-\end{figure}
-
-\subsection{Tracking with TRT}
+\subsection{Tracking with the TRT}
 
 %#######################################################################################################################
 % SECTION 2 ############################################################################################################
 %#######################################################################################################################
-\section{Implementation of modelling of the new Argon-based gas mixture in TRT}
+\section{Modelling of the new Argon-based gas mixture in the TRT}
 \label{sec:digi_argon}
 
 In this section description of the digitization code will be present with detailed explanation of the implementation of the Argon-based gas mixture.
 Main task of the digitization code is to simulate number and properties of primary electron clusters as well as their drift in the gas to the anode wire.
-Response of the front-end electronics which provide final digitized timing information is covered as well.
-
-Main attention:
-\begin{itemize}
- \item 
- \item Electron recapture
- \item Drift time and 
- \item 
-\end{itemize}
-
+Response of the front-end electronics which provide final digitized timing information is simulated as well.
 
 \subsection{Monte Carlo simulation of the ATLAS detector}
-
-% TODO
-% 0) some nice words why MC simulation is needed
-% 1) describe all simulation steps: EVGEN -> SIM -> DIGI -> Reco
-% 2) 
 
 In order to have possibility to reconstruct any physics process which happenned in high energetic particle collisions at collider or to measure some corresponded physics quantity of the process
 one need to have a clear picture of the detector response from each detector sub-system. But beside of the understanding of the real detector performance it is equaly important to have 
@@ -296,85 +322,82 @@ A lot of effort was spent to make and validate detector software. In ATLAS simul
  for simulation and for real data).
 \end{itemize}
 
-
-
+\subsection{Simulation and digitization of the Argon gas mixture in the TRT}
+\label{subsec:TRT:argonImpl}
 % TODO should I write here information about energy depositoin calculated not with GEANT4 but with PAI modeil in the digitization package???
 
 % - Describe all steps of MC production, as described in the Esben thesis.
 % - for simulation part make reference to the Esben thesis, say that it is described there.
 % - 
 
+Geometry of the TRT is described in the ATLAS simulation package and on simulation step it is used simulation of particle interaction with detector material as was described previously.
+But due to the fact that standart-configured GEANT4 package make poor job on calculating energy deposition in thin layer of gas in tubes 
+(which is described in following \SectionRef{subsec:pai_model}) it was decided to take care of this simulation during the Digitization step in the Digitization package.
+So from simulation step only list of hits in TRT are used when energy deposition to the gas inside the tubes are calculated in Digitization step.
 
-To simulate propagation of charged partiles trough TRT two steps are using: Simulation and Digitization. 
-Roughly speaking on simulation step .... and digitization step should take care of processing all physical energy contributions which were left by those particles.
-But due to the fact that standart-configured GEANT4 package make poor job on calculating energy deposition in thin layer of gas in tubes it was decided to take care 
-of this in Digitization step. So from simulation step only list of hits in TRT are used when energy deposition to the gas inside the tubes are calculated in Digitization step.
-
-
-\subsection{Simulation and digitization of the TRT}
-
-
-
-
-
-\subsection{Argon implementation into Digitization package}
-\label{subsec:TRT:argonImpl}
-
-
-
-
-
-
-
-
-
-\subsection{Digitization of the mixed gas condition}
-
-% TODO revisit this piece of text
-
-TRT detector was originally designed as an homogenous detector and it was planned that only one gas mixture will be used in the all straws. 
-Digitization code, as all physics codes, was written with an idea to be as simple as possible, that is why it was designed with assumption that all straws will be simulated with only one type of gas mixture.
-But after leakeges appears at the end of the Run 1, it become higly probable, that TRT may be run in mixed condition, when some part of straws will be run with one gas and other part - with another. That's why 
-possibility to digitize mixed condition become essential feature of the code. 
-
-To make it work new (to the digitization code) Argon gas mixture was introduced and following simulated detector/electronics parameters as low/high treshold and shaping functions were duplicated.
-Digitization of the TRT hits are done straw by straw and in the beginning of the straw loop flag \mbox{ ``isArgonStraw''} is read from the COOL database. This flag represent is current straw contain Argon or Xenon based 
-gas mixture. The straw map lays under \mbox{/TRT/Cond/StatusHT} COOL folder, and one need to specify dedicated tag to make mixed Ar/Xe digitization.
-According to this flag relevant thresholds and shaping function are picked up and used during digitization following straw. 
-
-
-\begin{figure}
-
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{TRT/mapXY_barA.pdf}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{TRT/mapXY_endA.pdf}
-\end{subfigure}
-
-\caption{$T_{0}$ calibration constants obtained for MC simulation for Barrel A (left) and End-cap A (right) detectors for the mixed Xenon-Argon condition. 
-	  Modules with Argon gas have different $T_{0}$ calibration constants.}
-  \label{fig:t0_mixed_condition}
-\end{figure}
-
-
-
-Also two flags which provide simple possibility to change active gas mixture from default one (Xenon) to the optional (Argon) for all straws were implemented. These are:
+The Digitization package also cover simulation of following properties:
 \begin{itemize}
- \item UseArgonStraws
- \item UseConditionsHTStatus
+ \item Number of primary ionization clusters along the particle path and number of electrons in these clusters
+ \item Drift time of the electrons to the anode wire with taking into acount magnetix flux density and drift diffusion
+ \item Gas gain simulation and electron recapture probability by the oxygen moleculus % TODO is it realy the case? check the code!!!
+ \item Signal shaping and discrimination by the front-end electronics
+ \item Detector white noise
 \end{itemize}
 
-First flag says that we want to use optional gas in some part or in full detector. If it is false - default Xenon gas will be used despite of the second flag. 
-Second flag says do we want to read straw map from COOL database or not.
-If it is false full Argon geometry condition will be run. Example of usage these flags can be found at [???].
+% TODO explain how Argon implementation was done.
+All these parameters depends from the types and proportition of the components used in the gas mixture. 
+In order to implement new Argon gas mixture to the Digitization package all these properties were considered in detail 
+and proper imlementation of all of them were done.
 
-Points related to the actual gas mixture implementation are described at the next subsections.
+
+% \subsection{Digitization of the mixed gas configuration}
+% 
+% % TODO revisit this piece of text
+% 
+% TRT detector was originally designed as an homogenous detector and it was planned that only one gas mixture will be used in the all straws. 
+% Digitization code, as all physics codes, was written with an idea to be as simple as possible, that is why it was designed with assumption that all straws will be simulated with only one type of gas mixture.
+% But after leakeges appears at the end of the Run 1, it become higly probable, that TRT may be run in mixed condition, when some part of straws will be run with one gas and other part - with another. That's why 
+% possibility to digitize mixed condition become essential feature of the code. 
+% 
+% To make it work new (to the digitization code) Argon gas mixture was introduced and following simulated detector/electronics parameters as low/high treshold and shaping functions were duplicated.
+% Digitization of the TRT hits are done straw by straw and in the beginning of the straw loop flag \mbox{ ``isArgonStraw''} is read from the COOL database. This flag represent is current straw contain Argon or Xenon based 
+% gas mixture. The straw map lays under \mbox{/TRT/Cond/StatusHT} COOL folder, and one need to specify dedicated tag to make mixed Ar/Xe digitization.
+% According to this flag relevant thresholds and shaping function are picked up and used during digitization following straw. 
+% 
+% 
+% \begin{figure}
+% 
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=\textwidth]{TRT/mapXY_barA.pdf}
+% \end{subfigure}%
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=\textwidth]{TRT/mapXY_endA.pdf}
+% \end{subfigure}
+% 
+% \caption{$T_{0}$ calibration constants obtained for MC simulation for Barrel A (left) and End-cap A (right) detectors for the mixed Xenon-Argon condition. 
+% 	  Modules with Argon gas have different $T_{0}$ calibration constants.}
+%   \label{fig:t0_mixed_condition}
+% \end{figure}
+% 
+% 
+% 
+% Also two flags which provide simple possibility to change active gas mixture from default one (Xenon) to the optional (Argon) for all straws were implemented. These are:
+% \begin{itemize}
+%  \item UseArgonStraws
+%  \item UseConditionsHTStatus
+% \end{itemize}
+% 
+% First flag says that we want to use optional gas in some part or in full detector. If it is false - default Xenon gas will be used despite of the second flag. 
+% Second flag says do we want to read straw map from COOL database or not.
+% If it is false full Argon geometry condition will be run. Example of usage these flags can be found at [???].
+% 
+% Points related to the actual gas mixture implementation are described at the next subsections.
 
 
-\subsection{Photo absorption ionisation model}
+\subsection{Photo absorption ionization model}
+\label{subsec:pai_model}
 During the development phase of the TRT simulation and digitization software it was found out that GEANT4 simulation does not provide accurate enough description of the physics
 of a charged particle passing through the very thin gas layers (straws). 
 % Kittelman thesis, p.92, Figure 9.2.
@@ -432,10 +455,14 @@ Difference in the average ionization energy means that number of primary electro
 \end{table}
 
 \subsection{Electron drift velocity and $r-t$ relation}
+% TODO here...
 
-\subsection{The influence of the magnetic flux density on drift time}
+
+\subsection{Influence of the magnetic flux density on the drift time}
 % \subsection{Simulation of timing variables}
 % TODO revisit this section
+% TODO just say that previous studies (cite to Esben/Kittelman/Cwetanski thesis) showed that dependence can be fitted by function.
+
 To simulate drift time of the primary cluster of electrons from place of origin to the wire Athena package 
 use empirically measured (TODO not from Garfield?) tables of dependence of drift distance versus drift time (so called RT tables). 
 Due to the facts that drift velocity depends from magnetic field in the tube and field itself is not homogenous within detector 
@@ -531,6 +558,7 @@ All available shaping functions are shown in figure \ref{fig:shaping}.
 
 % \subsection{Electron recapture}
 \subsection{Electron attachment processes in oxygen}
+\label{subsec:recapture}
 When electrons drift towards the anode there is a probablity that they will be captured by the oxygen moleculus in reactions
 $O_2 + e^- \to O_2^-$ or $O_2 + e^- \to O + O^-$. Presence of the magnetic fiels enhance cross section of these reactions.
 In order to take into account this effect a special study was done as is reported in~\cite{esben_thesis}.
@@ -559,7 +587,7 @@ and will never reach anode.
 \subsection{Signal shaping and discrimination}
 
 
-\subsection{Modelling of White Noise}
+\subsection{White noise modelling}
 
 % TODO I am not sure if it is this note.... and it's internal note???
 Noise note:~\cite{Kittelmann:987854}
@@ -608,7 +636,7 @@ which was used during ??? data taking period. Modules with Argon mixture in mixe
 %#######################################################################################################################
 % SECTION 3 ############################################################################################################
 %#######################################################################################################################
-\section{Performance study of TRT on hit and track parameter with focus on active gas mixture}
+\section{TRT tracking performance with focus on active gas mixture}
 \label{sec:digi_argon}
 
 % \subsection{Inner Detector and TRT tracking}
@@ -618,7 +646,7 @@ which was used during ??? data taking period. Modules with Argon mixture in mixe
 % 2) TRT improvement of momentum resolution
 % 3) TRT hit and track parameters
 
-\subsection{TRT hit and track parameters}
+\subsection{TRT hit and track properties}
 
 \subsection{Time and spatial resolution}
 \label{subsec:TRT:trackPerf}
@@ -730,7 +758,7 @@ slightly larger. All these observations indicate that additional threshold tunin
   \label{fig:precHitFracPerTrack}
 \end{figure}
 
-\subsection{Hit efficiency, number of hits per track and track extension fraction}
+\subsection{Hit efficiency and track extension fraction}
 
 \subsection{Momentum resolution}
 
