@@ -671,41 +671,40 @@ in the TRT community but it is not covered in the current chapter.
 
 \subsection{White noise modelling}
 
-TRT noise correspond to a presence of the hit for a short time in some straws while there was no particle passing through.
-Level of the noise has to be kept on low level because it increase combinatoric probability to reconstruct fake tracks or to use 
-fake its in the reconstruction of the real track.
+There are several possible sources of the noise in the TRT. They can be splitted into two categories as track-induced or not.
+Track-induced noise can appear when transition radiation photon, e.g. which appeared from electron passing through radiator, was detected in the neighbour straw which didn't belong to the track.
+But results of the test-beam in 2004 showed that this effect is quite small~\cite{trt_test_beam}.
+Not track-induced sources 
 
+% - spontaneous cluster in the gas - not implemented because test beam data showed that it's not big effect as well
+% - white noise - originating mainly from front-end electronics. Doesn't depend on the type of the gas mixture. But depends on LT.
+% - Model don't try to provide detasailed understanding of noise source it only aim to reproduce total effect in the detector.
+% - in the simulation all straws are identically ``ideal''. In reality it's not the case. Model doesn't try to describe separately condition for the each straw. 
+% Instead it mimic spread of LTs which are originated by imperection of the straws in real life.
+% - The main constrain for the model is average noise level. The idea of Argon implementation is to provide the same average noise level for Argon straws as for Xenon one.
+% This assumption is taken from private communication with Anatoli Romaniuk.
 
-% TODO I am not sure if it is this note.... and it's internal note???
-Noise note:~\cite{Kittelmann:987854}
+A white noise model is reported in~\cite{kittelmann_thesis}.
 
-% TODO describe using Esbens's thesis.
+% TODO describe formila whith explanations in general first and then discuss what was done for the Argon implementation!!!
 
-[TODO] see comments in TRTDigCondFakeMap::setStrawStateInfo() function.
-
-
+A noise amplitude, according to the model, is equal to:
 \begin{equation}
- LT_i = A_i \cdot (\alpha + \beta \cdot ErfcInv(\gamma \cdot f_i)) %TODO make EffcInv as in Noise note (eq. 2)
+ \mathcal A_{i} = r_{i} \cdot \dfrac{\langle LT \rangle}{\langle f_i \cdot r_i \rangle}
 \end{equation}
+where $r_{i}$ is a parameter which depends from the lengh of the straw and is modelled with Gaussian with mean $\mu_i = c_1 l + c_2$, where $l$ is lenght of the wire in the straw
+and $c_1$ and $c_2$ empirical parametes~\cite{kittelmann_thesis}. A Gaussian width equal to $\sigma_i = \omega \mu_i$, where $\omega$ is a free parameter which characterize
+relative channel-to-channel spread in noise amplitudes.
+$\langle LT \rangle$ is average of the low thresholds for all tubes. Because this parameter is significantly different for Argon and Xenon straws, noise modelling are done separately
+for Xenon and Argon straws. Practically these values are equal to low thresholds implemented in the code for Xenon and Argon.
+$f_{i}$ is a noise level of the $i$'th straw. This value is generated based on distribution of straw noise level on test-beam in 2004~\cite{trt_test_beam}. 
+Distribution is reported in~\cite{kittelmann_thesis}. Test beam was done for Xenon-based gas mixture. 
+However, there is no such distribution measured with straws with Argon. That is why Xenon distribution was used in the initial implementation of the digitization code.
+It is a topic for further Argon mixture tuning.
 
-%%% OR 
-%%% 
-%%% just say that according to the Noise revision note LT_i is proportional to the noise signal amplitude
-%%%
 
-% LTi = Ai · ( +  · ErfcInv(  · fi)) ,
 
-%%% formula from ``Revision of Noise and Threshold Description in MC Simulation'':
-%%% --> averagenoiseampforstrawlength = ( ( (3000.-1350.)/(70*CLHEP::cm) ) * strawlength + 1350.0 ) / 3000.0;
-%%% according to Anatoli, we need to scale noise amplitude for Argon straws by factor LT_argon/LT_xenon
-%%% --> scaleAmplitudeFactor = m_settings->lowThreshold(true)/m_settings->lowThreshold(false);
-%%% --> averagenoiseampforstrawlength *= scaleAmplitudeFactor; 
-%%% Found in file: ./InDetDigitization/TRT_Digitization/src/TRTDigCondFakeMap.cxx *
 
-%%% WARNING Sasha: this function used hardcoded noise signal shape in TRTSignalShape.cxx line 58.
-%%% WARNING Sasha: should noise be different for Argon? should I change something here?  
-%%% WARNING Sasha: for now I will assume that it is okay for Argon
-%%% Found in file: ./InDetDigitization/TRT_Digitization/src/TRTNoise.cxx *
 
 \begin{figure}
 \begin{center}
