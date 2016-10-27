@@ -98,20 +98,6 @@ Along with continuous tracking, the TRT provides electron identification capabil
 % were hit residuals, track extension fraction ???
 % Motivation for current study was leakages in tubes ???
 
-
-
-\begin{figure}
-\centering
-\includegraphics[width=.6\textwidth]{TRT/TRT_improvement_momentum_resolution.png}
-\caption{ 
-Momentum resolution determined from cosmic ray data, taken in 2008, as a function of transverse momentum~\cite{Aad:2010bx}.
-The resolution are shown for simulated full ID tracks (stars), full ID tracks (solid triangles) and silicon-only tracks (open triangles).
-}
-\label{fig:gas_gain}
-\end{figure}
-
-
-
 \subsection{The straw tube and operating gas mixture}
 % - main idea of signal detection 
 % - material of the straw
@@ -160,7 +146,7 @@ designed with possibility to work with Argon- and Xenon-based gas mixtures, as d
 \centering
 \includegraphics[width=.7\textwidth]{TRT/absorption_lenght_noble_gases.png}
 \caption{ 
-  Absorption lenght as a function of photon energy for heaviest noble gases. Data was taken from~\cite{Hubbell:353989}.
+  Absorption lenght as a function of photon energy for heaviest noble gases. Plot is based on data from~\cite{Hubbell:353989}.
 }
 \label{fig:absorption_lenght}
 \end{figure}
@@ -291,12 +277,9 @@ The overall TRT read-out chain is shown in \FigureRef{fig:electronics}. The deta
 % 4) definition of the time and hit residuals. Use the same picture as Alex has in his thesis.
 % 5) definition of tube and precision hits!!
 
-Track reconstruction algorithm require a list of spatial hits with errors in order to build a track.
-In the s
-
-In order to perform track reconstruction algorithms using TRT hits one have to provide 
-Reconstruction algorithm take as input require position of the hits as well as their errors.
-% TODO explain picture with drift circle.
+Track reconstruction algorithm require a list of spatial hits and corresponding error matrix in order to build a track.
+Direct measurements that are done with TRT straws are measurements of the drift time. This drift time can be transformed to the
+drift radius (drift distance of the first primary electrons to the anode wire), which can be used in the track reconstructin.
 
 The first task is to properly measure drift time of the electrons to the anode wire. Time of the leading edge of the signal from particle
 consists from the two components: actual drift time of electrons ($t$) and calibration constant $T_{0}$ as illustrated in \FigureRef{fig:pulseDigitization}.
@@ -307,14 +290,20 @@ Calibration constant $T_{0}$ consists from three components:
  which correspond up to 9 ns of time needed for relativistic particle to reach farthest straws.
  \item Time of the signal propagation in the wire to the front-end electronics. Typically a few nanoseconds.
 \end{itemize}
-Calibration constant $T_{0}$ is obtained from calibration procedure which is done after each run.
-Also during the calibration so-called $r-t$ relation is built and fitted 
+Calibration constant $T_{0}$ is obtained from the calibration procedure which is done after each run.
+Next task is to transform drift time to the drift radius. It is done with help of so-called $r-t$ relation (dependence of the drift radius of the drift time), 
+which is determined from data and is fitted to a third degree polynomial, which is used for calculation of the drift radius itself.
+The last missing parameter, hit measurement errors, are also defined in the special calibration procedure. Detailed description of the calibration procedure
+cn be found in ~\cite{alonso_thesis}.
 
-% TODO explain r-t relation taken from the data during the calibration...
-Next step is to convert drift time to the so-called drift radius which is drift distance of the the electron cluster to the anode wire.
-To perform this operation one need to know $r-t$ relation
-
-Detailed explanation of the calibration procedure can be found in:~\cite{alonso_thesis}.
+Main used track algorithm in ATLAS are global $\chi^2$ fit, when track is fitted by minimization of the $\chi^2$ value, or Kalman filter which make track reconstruction
+layer by layer. When track are fitted all used hits by track are removed from the list and track algorithm is running again until all tracks will be reconstructed.
+In \FigureRef{fig:drift_radius} schematic representation of the track passing two straws is shown. Drift radius obtained from drift time with $r-t$ relation is
+shown with dashed linearound the wire. Distance of the closest approach of the track to the anode is called track-to-wire distance ($r_{track}$). Difference
+between drift radius and track-to-wire distance is called position residual. By calculating position residuals for each hit in the track and for all
+tracks in the barrel or end-cap part of the detector we can estimate resolution of the detector by measuring width of position residual distribution.
+In the same way time residuals can be measured, which is equal difference between drift time and track time, which is obtained by using $r_{track}$ and 
+$r-t$ relation.
 
 \begin{figure}
 \centering
@@ -322,8 +311,48 @@ Detailed explanation of the calibration procedure can be found in:~\cite{alonso_
 \caption{ 
  ???
 }
-\label{fig:electronics}
+\label{fig:drift_radius}
 \end{figure}
+
+% TODO explain $\frac{d}{\sqrt{12}}$ error, as described in Alex thesis???
+There are two types of the TRT hits: precision and tube hits. Precision hits are hits which were described above. Tube hits are hits, where drift time 
+information is not used and only fact that there was a hit is used. For such hits drift radius is assigned for a 0 mm and hit error to $\frac{d}{\sqrt{12}}$, where
+$d$ is a diameter of the straw (4 mm). Tubes hits are assigned during track fitting for a hits which have difference between track and drift darius larger than
+2.5 times uncertainty of the drift radius. As track fitting is done iteratevely some hits can go back and forth from being tube or precision hits.
+Tube hits decrease quality of the track fitting which corelate with detector resolution.
+
+% TODO reference for a used formula
+Main contribution of the TRT for tracking is improvement of the momentum resolution of tracks measured with Inner Detector. Large number of hits in TRT provide
+a solid handle to measure curvature of the track which translates to measurement of the track momentum. Momentum resolution can be expressed in following formula:
+\begin{equation}
+ \dfrac{\delta p}{p^2} = \dfrac{\sigma}{0.3BL^2}\sqrt{4C_N}
+ \label{eq:momentum_resolution}
+\end{equation}
+where $p$ is momentum of the track and $\delta p$ is its error, $\sigma$ is spatial resolution of the hit, $B$ is magnetic field, $L$ is the lenght of the mesured track
+and $C_N$ is factor which depends from the number of hits, N:
+\begin{equation}
+ C_N = \dfrac{180N^3}{(N-1)(N+1)(N+2)(N+3)}
+\end{equation}
+As can be seen from formulas below momentum resolution is proportional to the spatial resolution of the hits and is inversely proportional to the square root of 
+number of hits. That is why spatial resolution and number of hits are parameters of interestduring during any tracking performance study.
+
+Importance of the TRT for the momentum resolutoin measurements can be seen in \FigureRef{fig:improvement_of_momentum_resolution}.
+This plot demonstrate momentum resolution of the cosmic ray data collected in 2008 for Inner Detector track reconstructed with and without TRT.
+Clear significant improvement can be seen especially for a large track momentum region.
+
+\begin{figure}
+\centering
+\includegraphics[width=.6\textwidth]{TRT/TRT_improvement_momentum_resolution.png}
+\caption{ 
+Momentum resolution determined from cosmic ray data, taken in 2008, as a function of transverse momentum~\cite{Aad:2010bx}.
+The resolution are shown for simulated full ID tracks (stars), full ID tracks (solid triangles) and silicon-only tracks (open triangles).
+}
+\label{fig:improvement_of_momentum_resolution}
+\end{figure}
+
+% TODO
+% describe about the momentum resolution and it's dependence from spatial resolution and number of tracks.
+
 
 %#######################################################################################################################
 % SECTION 2 ############################################################################################################
@@ -642,6 +671,11 @@ in the TRT community but it is not covered in the current chapter.
 
 \subsection{White noise modelling}
 
+TRT noise correspond to a presence of the hit for a short time in some straws while there was no particle passing through.
+Level of the noise has to be kept on low level because it increase combinatoric probability to reconstruct fake tracks or to use 
+fake its in the reconstruction of the real track.
+
+
 % TODO I am not sure if it is this note.... and it's internal note???
 Noise note:~\cite{Kittelmann:987854}
 
@@ -692,7 +726,9 @@ which was used during ??? data taking period. Modules with Argon mixture in mixe
 \section{TRT tracking performance with focus on active gas mixture}
 \label{sec:digi_argon}
 
-In the end of the Run-1 part of the TRT was operating with Argon mixture as shown in \FigureRef{fig:argonModulesIn2013}.
+In the end of the Run-1 part of the TRT, specifically
+four of 32 phi-sectors in the inner layer of the barrel and one of 14 wheels in the endcap A were filled with Argon mixture while other sectors were operating 
+with usual Xenon mixture as shown in \FigureRef{fig:argonModulesIn2013}.
 It was a good opportunity to test implementation of the Argon mixture in the digitization package.
 This section contain overview of the track and hit performance of the TRT in this gas configuration.
 
@@ -706,34 +742,47 @@ This section contain overview of the track and hit performance of the TRT in thi
 
 \subsection{TRT hit and track properties}
 
-To charachterize performance of the ???
-
+Main charachteristics of the tracking detector is spatial resolution of hits and their number. 
+More precise hits are available, more precisely track will be reconstructed.
+However, there are few other charachteristic which are sensitive to the gas mixture used in the detector.
 % TODO should I include some other parameters?
+List of all considered distribution in this study are following:
 \begin{itemize}
  \item Reconstruction hit efficiency. This parameter charachterize probability that particle, which went through the straw, will lead to a hit.
  It is heavely depends from distance of the closest approach of particle to the anode wire, because larger gas layer particle will fly through more gas atoms it will
  ionize, larger the signal will be. That is why typically it is plotted as a function of track to wire distance. It is defined as:
  \begin{equation}
   \varepsilon = \dfrac{N^{TRT}_{hits}}{N^{TRT}_{hits} + N^{TRT}_{holes}}
+ \label{eq:hit_eff}
  \end{equation}
  where $N^{TRT}_{hits}$ is number of TRT hits in track and $N^{TRT}_{holes}$ is number of holes in the track. Hole correspond to case when there is no hit in the straw
  but reconstructed track pass it.
  \item Position residuals. As described previously the width of this distribution charachterize detector resolution.
- \item Number of precision and number of all hits per track. Directly correlate with the track momentum resolution.
+ \item Number of precision and tube hits per track. Directly correlate with the track momentum resolution.
  \item Track extension fraction. Probability to find an extension of the track reconstructed in the silicon detector in the TRT.
+ \item $r-t$ relation. It demonstrates drift time with respect to drift radius and is direct comparison of drift velocity in Xenon and Argon mixtures.
 \end{itemize}
-
-
 
 
 \subsection{Time and spatial resolution}
 \label{subsec:TRT:trackPerf}
-
 % TODO add:
 % 1) RT relation for Argon and Xenon with data!!! (I should have them!).
+% 2) time residuals...
+
+In order to make comparison between performance of Xenon and Argon straws and taking into account used gas configuration shown in \FigureRef{fig:argonModulesIn2013} 
+straws only in the first barrel layer were considered because only first layer contained some straws with Argon and some with Xenon 
+(wile second and third were fully operating with Xenon).
+Each layer of the TRT barrel part is splitted to 32 modules which are placed radially. 
+Modules 1-28 contained Xenon mixture and modules 29-32 contained Argon mixture.
+For end-cap detector part only one wheel in one side was operating with Argon. That is why for comparison the same wheel number from other side was used in order
+to have identical geometry for both Xenon and Argon cases.
+
+One of the main difference of the Xenon and Argon gas mixtures is electron drift velocity. Electrons drifts faster in Argon. 
+That can be seen from $r-t$ relation plot in \FigureRef{fig:RT_xenon_argon} which is constructed and used during the calibration procedure.
+Argon $r-t$ distribution is shorter for a few nonasecond than Xenon one which mean that drift time for the dift radius is shorter.
 
 \begin{figure}
-
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=\textwidth]{TRT/fromPoster/rt_FinalXenon.eps}
@@ -747,13 +796,14 @@ To charachterize performance of the ???
   \label{fig:RT_xenon_argon}
 \end{figure}
 
-During 2013 year a few runs with Argon gas mixture in the detetector was done in order to investigate performace of the detector with Argon as active gav.
-Four of 32 phi sectors in the inner layer for the barrels and one of 14 wheel in the endcap A were filled with Argon mixture while other sectors were operating 
-with usual Xenon mixture (as it shown in \FigureRef{fig:argonModulesIn2013}). Used Argon mixture had following cofiguration: Ar/CO$_{2}$/O$_{2}$ (70$\%$/27$\%$/3$\%$). In order to operate it high voltage had
-to be higher [??? explain why HV has to be different] and it was 1470 V.
+% TODO here
+Faster drift velocity of electrons in the Argon led to worse position resolution,
+becase time drift is digitized in bins of 3.125 ns and if total measured time drift is smaller that means that width of bins matters more.
+It can be observed in \FigureRef{fig:resFit}. Worse position residual lead to fact that momentum resolution will also become worse according to
+\EquationRef{eq:momentum_resolution}. But difference between Argon and Xenon is rather small.
 
-
-
+It is worth to mention that these results were obtained before fine tuning of Argon simulation parameters that is why slightly bigger difference between 
+data and MC distributions can be observed for Argon straws. A dedicated study were performed later by the TRT team to tune Argon MC parameters.
 
 \begin{figure}
 
@@ -773,19 +823,32 @@ to be higher [??? explain why HV has to be different] and it was 1470 V.
   \label{fig:resFit}
 \end{figure}
 
-
-
-
+Second parameter of interest is reconstructed hit efficiency. It is counted with \EquationRef{eq:hit_eff}.
+Distribution for Argon and Xenon both for barrel and end-cap parts are shown in \FigureRef{fig:hit_eff_rtrack_bar}.
+Argon straws has larger hit efficiency. To understand this effect we have to recall that low threshold settings
+for Xenon and Argon straws are quite different (300 eV versus 100 eV). Smaller low threshold for Argon were chosen 
+in order to compensate for fact that same particle will produce smaller number of primary electron clusters in Argon 
+and number of electrons in the cluster will be smaller. That mean that signal from Argon tubes are smaller which means
+that threshold has to be smaller as well. But we observe higher efficiency for the Argon than for Xenon. After some investigation
+it was found out that quite often in order for signal to rech low threshold a two or more primary electron clusters has to reach wire anode in
+the Xenon straws, while in Argon only in most cases only one first cluster is enough to reach a low threshold.
+In order to equalize hit efficiency between Argon and Xenon low threshold for Xenon tubes can be slightly increased.
+Hit efficiency shown as a funciton of track-to-wire distance. In all wire it is stable except for values close to 2 mm which correspond
+to case when particle fly just small path in the gas close to the straw wall. Number of primary ionization cluster are very small that is 
+why hit efficiency drops significantly.
+% TODO explain hit eff distribution vs. track-to-wire distance. Why do we have some deep close to r=0 ??? Ask Alex!
 
 \begin{figure}
 
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=\textwidth]{TRT/fromPoster/hit_eff_rtrack_bar_xenon_region.eps}
+  \includegraphics[width=\textwidth]{TRT/fromPoster/hit_eff_rtrack_ec_xenon_region.eps}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=\textwidth]{TRT/fromPoster/hit_eff_rtrack_bar_argon_region.eps}
+  \includegraphics[width=\textwidth]{TRT/fromPoster/hit_eff_rtrack_ec_argon_region.eps}
 \end{subfigure}
 
 % \includegraphics[width=0.75\textheight]{monoW/kinematics_simplifiedSChannel_EFT_Wprime.png}
@@ -793,27 +856,16 @@ to be higher [??? explain why HV has to be different] and it was 1470 V.
   \label{fig:hit_eff_rtrack_bar}
 \end{figure}
 
-As was mentioned above electrons drift faster in the Argon-based gas mixture than Xenon one, which can be observed in the track to wire distance
-distributions shown in \FigureRef{fig:RT_xenon_argon}. 
-This results that timing calibration constants have to be significantly different 
-for Argon and Xenon straws which can be seen in \FigureRef{fig:t0_mixed_condition}. 
+% TODO do I want to show T0 caontants for Argon and Xenon? If yes - I have to understand first why they are different...
+% As was mentioned above electrons drift faster in the Argon-based gas mixture than Xenon one, which can be observed in the track to wire distance
+% distributions shown in \FigureRef{fig:RT_xenon_argon}. 
+% This results that timing calibration constants have to be significantly different 
+% for Argon and Xenon straws which can be seen in \FigureRef{fig:t0_mixed_condition}. 
 
-
-\begin{figure}
-\begin{center}
- \includegraphics[width=0.9\columnwidth]{TRT/fromPoster/track_ext_frac_eta.eps}
-\caption{Track extension fraction as a function of $\eta$ for Xenon and Argon active gas mixture obtained with MC simulation.}
-\label{fig:meanFreePath}
-\end{center}
-\end{figure}
-
-
-
-Due to a lower threshold a larger hit reconstruction efficiency is seen for Argon straws. This leads to a
-larger number of hits per track and larger fraction of precision hits. Also position residuals are seen to be 
-slightly larger. All these observations indicate that additional threshold tuning is required.
-
-[TODO] think which plots can be added to this section.
+Due to larger hit reconstruction efficiency in Argon straws observed number of hits per track is also larger as seen in \FigureRef{fig:nHitsPerTrack}. 
+As shown in \EquationRef{eq:momentum_resolution} larger number of hits led to better momentum resolution. But as was shown before postion residuals are
+worse for Argon which negatively affect momentum resolution. But both factors are quite small that is why momentum resolution is expected to be similar for
+both Argon and Xenon mixtures.
 
 \begin{figure}
 
@@ -827,9 +879,13 @@ slightly larger. All these observations indicate that additional threshold tunin
 \end{subfigure}
 
 \caption{Number of hits per track. MC simulation.}
-  \label{fig:nPrecHitsPerTrack}
+  \label{fig:nHitsPerTrack}
 \end{figure}
 
+% TODO ask Alex why fraction of precision hits are better for Argon???
+In \FigureRef{fig:precHitFracPerTrack} fraction of precision hit to total number of hit are shown. Hit is considered to be precision
+if difference between track and drift radius is smaller than 2.5 time hit uncertainty. Argon has higher fraction because hit uncertainty
+for Argon hits are larger (dur to faster drift time of the electron clusters and digitization binning). 
 
 \begin{figure}
 
@@ -845,6 +901,30 @@ slightly larger. All these observations indicate that additional threshold tunin
 \caption{Precision hit fraction. MC simulation.}
   \label{fig:precHitFracPerTrack}
 \end{figure}
+
+
+Next set of plots are related directly to the whole tracks. To make a comparison of this variable the whole detector has to use all Xenon and Argon mixture.
+Unfortunately there were no such available data that is why comparion is done only with Monte Carlo simulation for the two detector configurations when 
+all tubes contain Argon mixture or Xenon mixture. In \FigureRef{fig:track_ext_fraction} track extension fraction is shown. This parameter charachterize
+probability to find continuation of the track, recosntructed in the silicon part of the Inner Detector, in the TRT.
+In the barrel region fraction is flat except the region around $\eta = 0$. This can be explained by inneficiency of the fisrt few layers of straws in the barrel region.
+First layers of the barrel region contain shorter straw in comparison with other layers. It was done in order to deal with the occupancy at high $\mu$.
+These short straws have glass joints at $\eta = 0$ which make them inneficient there. That is why drop in extension fraction is observed.
+Behavious in the end-cap region can be explained by geometrical factor, because in the intermediate region between barrel and end-cap particle
+go through small number of straws and with increasing $\eta$ number of straws is also increasing.
+One can observe that fraction is slightly higher for the Argon straws. It can be explained by higher reconstruction hit efficiency and larger number of hits per
+track for Argon tubes.
+
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.9\columnwidth]{TRT/fromPoster/track_ext_frac_eta.eps}
+\caption{Track extension fraction as a function of $\eta$ for Xenon and Argon active gas mixture obtained with MC simulation.}
+\label{fig:track_ext_fraction}
+\end{center}
+\end{figure}
+
+
+
 
 \subsection{Hit efficiency and track extension fraction}
 
