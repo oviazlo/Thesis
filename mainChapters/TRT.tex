@@ -671,10 +671,26 @@ in the TRT community but it is not covered in the current chapter.
 
 \subsection{White noise modelling}
 
-There are several possible sources of the noise in the TRT. They can be splitted into two categories as track-induced or not.
-Track-induced noise can appear when transition radiation photon, e.g. which appeared from electron passing through radiator, was detected in the neighbour straw which didn't belong to the track.
-But results of the test-beam in 2004 showed that this effect is quite small~\cite{trt_test_beam}.
-Not track-induced sources 
+During test beam in 2004~\cite{trt_test_beam} many sources of the noise in the TRT were observed.
+After study it was found that many of the noise sources doesn't affect operation of the detector much and there is no need to model them in simulation software.
+Example of such sources are track-induced source, when e.g. transition radiation photon, created by electron, can be detected by neighbour straw which is close 
+but don't belong to the track or appearing of spontaneous noise electron cluster in the gas due to radioactive decay of unstable nuclei in the gas.
+However, it was decided to model so-called white noise, which consists from high-frequency uncrorrelated small fluctuations of the Gaussian nature which 
+can pile up high enough to reach a threshold. This kind of source can originate for a many reasons, for example thermal noise of capacitors in the front-end electronics
+or noise from the wire anode. A noise model was developed by the TRT community in order to reproduse noise level in the detector.
+The model does not explain the reasons of the noise it only quantively describe noise level basing on few simple assumptions.
+Some of these assumptions use:
+\begin{itemize}
+ \item Noise amplitude depends from the lenght of the wire.
+ \item In the simulation every straw has ``ideal'' design shape, while in real detector every straw is slightly different due to bending of the wire, 
+ fluctuation of the gas  density and temperature, anode connected to different power supplies, etc. Model don't simulate condition of each wire 
+ (which is not practical). 
+ Instead for every straw it's own value of low threshold is assigned which can fluctuate.
+ \item Model aim to reproduce noise condition of the detector, that mean that it has to be known and it is input information for the model.
+ \item Model is universal and it can work for any multi-channel detector with threshold discrimination.
+\end{itemize}
+The full description of the model is reported in~\cite{kittelmann_thesis}. 
+Only information related to the noise modelling in the straws with Argon gas will be discussed below.
 
 % - spontaneous cluster in the gas - not implemented because test beam data showed that it's not big effect as well
 % - white noise - originating mainly from front-end electronics. Doesn't depend on the type of the gas mixture. But depends on LT.
@@ -684,40 +700,28 @@ Not track-induced sources
 % - The main constrain for the model is average noise level. The idea of Argon implementation is to provide the same average noise level for Argon straws as for Xenon one.
 % This assumption is taken from private communication with Anatoli Romaniuk.
 
-A white noise model is reported in~\cite{kittelmann_thesis}.
-
-% TODO describe formila whith explanations in general first and then discuss what was done for the Argon implementation!!!
+% TODO describe formula whith explanations in general first and then discuss what was done for the Argon implementation!!!
 
 A noise amplitude, according to the model, is equal to:
 \begin{equation}
  \mathcal A_{i} = r_{i} \cdot \dfrac{\langle LT \rangle}{\langle f_i \cdot r_i \rangle}
+ \label{eq:ampl_noise}
 \end{equation}
-where $r_{i}$ is a parameter which depends from the lengh of the straw and is modelled with Gaussian with mean $\mu_i = c_1 l + c_2$, where $l$ is lenght of the wire in the straw
-and $c_1$ and $c_2$ empirical parametes~\cite{kittelmann_thesis}. A Gaussian width equal to $\sigma_i = \omega \mu_i$, where $\omega$ is a free parameter which characterize
+where $r_{i}$ is a parameter which depends from the lengh of the straw and is modelled with Gaussian with mean $\mu_i = c_1 l + c_2$, 
+where $l$ is lenght of the wire in the straw and $c_1$ and $c_2$ empirical parametes. 
+A Gaussian width equal to $\sigma_i = \omega \mu_i$, where $\omega$ is a free parameter which characterize
 relative channel-to-channel spread in noise amplitudes.
-$\langle LT \rangle$ is average of the low thresholds for all tubes. Because this parameter is significantly different for Argon and Xenon straws, noise modelling are done separately
-for Xenon and Argon straws. Practically these values are equal to low thresholds implemented in the code for Xenon and Argon.
-$f_{i}$ is a noise level of the $i$'th straw. This value is generated based on distribution of straw noise level on test-beam in 2004~\cite{trt_test_beam}. 
-Distribution is reported in~\cite{kittelmann_thesis}. Test beam was done for Xenon-based gas mixture. 
-However, there is no such distribution measured with straws with Argon. That is why Xenon distribution was used in the initial implementation of the digitization code.
-It is a topic for further Argon mixture tuning.
+$\langle LT \rangle$ is average of the low thresholds for all tubes. Practically this value is equal to low thresholds of ``ideal'' straw 
+implemented in the code.
+$f_{i}$ is a noise level of the $i$'th straw. This value is generated based on distribution of straw noise level measured in test-beam in 2004 
+(distribution is reported in~\cite{kittelmann_thesis}). Test beam was done with Xenon-based gas mixture. 
 
-
-
-
-
-\begin{figure}
-\begin{center}
- \includegraphics[width=0.79\columnwidth]{TRT/grBMPos_mod.pdf}
-\caption{ Position residual width as a function of the TRT module number in the Barrel detector. Red points correspond to simulation of TRT detector
-using Argon-based mixture in all straws, black points correspond to Xenon-based mixture while green point correspond to the mixed detector condition
-which was used during ??? data taking period. Modules with Argon mixture in mixed condition can be clearly seen.}
-\label{fig:meanFreePath}
-\end{center}
-\end{figure}
-
-
-
+Because low threshold is significantly different for Xenon and Argon straws and because model is universal (can be applied to any number of the straws) 
+simulation of the noise in Argon and Xenon straws is done separately. This brings that value $\langle LT \rangle$ from \EquationRef{eq:ampl_noise} are 
+equal to the low trhesholds of Argon and Xenon straws implemented in the code. All other parameters are identical for Argon and Xenon straws.
+It is important to mention that noise distribution, which is used as input information for the model and was measured in the test beam with Xenon straws
+is used for Argon straw noise modelling as well in the initial code implementation. This parameter has to be properly measured and tuned for the Argon straws which
+was not part of current studya and is a topic for further Argon mixture tunings.
 
 %#######################################################################################################################
 % SECTION 3 ############################################################################################################
@@ -821,6 +825,16 @@ data and MC distributions can be observed for Argon straws. A dedicated study we
 \caption{Position residuals. Barrel A.}
   \label{fig:resFit}
 \end{figure}
+
+% \begin{figure}
+% \begin{center}
+%  \includegraphics[width=0.79\columnwidth]{TRT/grBMPos_mod.pdf}
+% \caption{ Position residual width as a function of the TRT module number in the Barrel detector. Red points correspond to simulation of TRT detector
+% using Argon-based mixture in all straws, black points correspond to Xenon-based mixture while green point correspond to the mixed detector condition
+% which was used during ??? data taking period. Modules with Argon mixture in mixed condition can be clearly seen.}
+% \label{fig:meanFreePath}
+% \end{center}
+% \end{figure}
 
 Second parameter of interest is reconstructed hit efficiency. It is counted with \EquationRef{eq:hit_eff}.
 Distribution for Argon and Xenon both for barrel and end-cap parts are shown in \FigureRef{fig:hit_eff_rtrack_bar}.
