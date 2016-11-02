@@ -4,6 +4,11 @@
 \usepackage{mathrsfs} % script font
 \usepackage{verbatim}
 % \usepackage{gensymb}
+\usepackage{mathpazo}
+\usepackage{amsmath}
+\usepackage{multirow} % for tables
+% \usepackage{atlasphysics}
+\usepackage{ssdefs} % defitions for inclusive Same Sign dilepton search note
 
 %% Using Babel allows other languages to be used and mixed-in easily
 %\usepackage[ngerman,english]{babel}
@@ -70,6 +75,12 @@
 \DeclareRobustCommand{\Xzerobar}{\HepGenAntiParticle{X}{}{0}\xspace}
 \DeclareRobustCommand{\epluseminus}{\Ppositron\!\Pelectron\xspace}
 \DeclareRobustCommand{\protonproton}{\Pproton\APantiproton\xspace}
+
+% Some custom declarations needed for pieces of text taken from internal notes...
+\def\Wpm{\ensuremath{W^{\pm}}}%
+\def\antibar#1{\ensuremath{#1\bar{#1}}}
+% \def\tbar{\ensuremath{\bar{t}}}
+\def\ttbar{\antibar{t}}
 
 %% Fix for \bf problem in bibliography
 \DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}

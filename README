@@ -6,3 +6,5 @@ Structure of current directory:
 2) otherText
 	include all other text, as preamble, appendices, etc.
 
+Modification in the primary template done by me:
+1) add atlasphysics.sty to the extrastyles.zip. And also use it in Makefile and in preamble.tex 
