@@ -1,27 +1,40 @@
 \chapter{Searches for beyond Standard Model physics with same-sign dileptons}
 \label{chap:SS}
 \section{Motivation}
+% ******************************************************************************
+% TODO
+% - write something about lepton signature... why it has benefits wrt to jets and photons...
+% - write which models we are looking for. how signal looks like with comparison with background
+% - write about benefits of the general search (or model-independent? or it's dangerous to say like this?)... theorists can use these results for their models?
+% - motivation flow: why leptons -> why same-sign dilepton -> why model-independent search?
+% ******************************************************************************
 
-% TODO write something about lepton signature... why it has benefits wrt to jets and photons...
-% TODO write about benefits of the general search (or model-independent? or it's dangerous to say like this?)... theorists can use these results for their models?
-% TODO motivation flow: why leptons -> why same-sign dilepton -> why model-independent search?
-
-The idea of the current analysis was to make a general search for a new physics in a same-sign dilepton channel. ???
+The idea of the current analysis is to make a general search for a new physics in a same-sign dilepton channel. \toFix
 % Why do we use leptons as final objects?
 Leptons as a physics signature are very clean and straighforward observalbles. 
-ATLAS detector capable to detect leptons with amazing presition... bla-bla-bla... ???
+ATLAS detector capable to detect leptons with amazing momentum resolution precision... \toFix[show some resolution plot]
+
+In resonant searches for new physics using leptons are beneficial due to fact that resonance peak for potential BSM signals will be narrower with compariosn to e.g. using jets.
+Because energy of leptons is reconstructed very well resonance peaks 
+BSM bosons whose decay would manifest itself as a narrow resonance in the dilepton mass spectrum
+
 % Why do we use same-sign dilepton channel
 Looking for a same-sign dilepton channel is motivated by the fact that cross section for SM processes with such signature are really small, which make 
-it very sensitive possible signals of new physics.  ???
+it very sensitive possible signals of new physics.  \toFix
 % Why model-independent search
-There are other searches in ATLAS which taget the same final signature but with requiring additional cuts on number of jets [link???] of missing transverse energy [link].
+There are other searches in ATLAS which taget the same final signature but with requiring additional cuts on number of jets \toFix[link] of missing transverse energy \toFix[link].
 In such way these analyses target limited number of specific models.
-Analyses presented in this chapter aims to be more general and model-independent. ???
-[Which model does this analysis cover?]
+Analyses presented in this chapter aims to be more general and model-independent. 
+\toFix[Explain which models does this analysis cover?]
 
 \section{Background processes}
 \label{sec:wprimeBackgrounds}
-% TODO describe that there are hree possibilities to reconstruct same-sign lepton pair
+% ******************************************************************************
+% TODO
+% - describe that there are hree possibilities to reconstruct same-sign lepton pair
+% - 
+% ******************************************************************************
+
 
 There are three different components which contribute to the signal selection.
 The first component is so called prompt contribution when same-sign dilepton originates from the SM processes.
@@ -94,29 +107,70 @@ $V=W,Z$ &  + {\scshape pythia-6.426} & & \\
 \label{tab:MC_cross}
 \end{table}
 
+\begin{figure}
+
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/feynman/WZ_electron.eps}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/feynman/ttbar_electron_v2.eps}
+\end{subfigure}
+
+\caption{Possible production diagrams for diboson (left) and $\ttbar W$ leading to same-sign dileptons. \toAsk[check diagrams]}
+  \label{fig:precHitFracPerTrack}
+\end{figure}
+
+
 \section{Event selection}
 % TODO mention here about size of the dataset and that it was 8 TeV 50 ns data.
 % TODO description of the used triggers here!
 
-% TODO ToTHINK MC cross section and sample sizes???
+% TODO ToTHINK MC cross section and sample sizes\toFix
 
-
-Events of interest are events which have two high-$p_T$ isolated leptons ???
+Events of interest are events which have two high-$p_T$ isolated leptons \toFix
 
 20.3 fb$^{-1}$ of data collected at 8 TeV center of mass energy pp collisions, with mean number of interactions per crossing equal to 21, 
 with 50 ns bunch distance were used for the analysis.
-Firstly events need to have a reconstructud primary vertex with at least three tracks matched to it. If there are few vertices, one with highest
+Firstly events are required to have at least one reconstructed primary vertex with at least three tracks matched to it. If there are few vertices, the one with the highest
 $\sum p^2_T$, where $p_T$ is transverse momenta of the tracks, is chosen.
-Events which pass ??? trigger, which correspond to presense of the two isolated leptons with $p_{T}>25$??? and $p_{T}>20$???, were selected.
+Events which pass \toFix trigger, which selects events with two isolated \toFix leptons with $p_{T}>25$\toFix and $p_{T}>20$\toFix, were selected.
 % TODO Cleaning and all other event-related cuts to describe here...
 
-\subsection{Electron selection}``s''
-% TODO description all cut on electron level
-% TODO just tell about $p_T$>20 GeV cut!
+\subsection{Electron selection}
+
+Electron candidates are reconstructed by matching of the track from ID with energy deposits in the EM calorimeter.
+
+\toDo[explain how electron energy is measured]
+
+Electrons used for the signal selection are required to satisfy critereas:
+\begin{itemize}
+ \item $p_T > 20$ GeV. To ensure a high and flat trigger efficiency and to harmonize $p_T$ requirement between three analysis channels ($ee$, $\mu\mu$ and $e\mu$) 
+ \toAsk[is it OK to use ``channel''?].
+ \item $|\eta|<2.47$ to be within high-granularity acceptance of EM calorimeter, but excluding barrel-end-cap transition region $1.37<|\eta|<1.52$.
+ \item Transverse and longitudinal impact parameters $|d_0|/\sigma(d_0) < 3$ and $|z_0 \times sin \theta| < 1$ mm. 
+ To verify that electron was born close to the primary vertex and to reject electrons which were originated from the decay of long-lived particles.
+ \item To pass ``tight'' electron set of identification criterea defined in~\cite{electron_tight}. \\ 
+ \toFix[explain shortly purpose of the cut]
+ \item To pass isolation requirement. To distinguish prompt electrons from those associated with jet activity.
+ \item No reconstructed jet within $\Delta R < 0.4$ \toFix[define R]. To remove ambiguous clasification of the track, when track is clasified as electron and as jet simultaneously. 
+ Or when jet is too close to the electron which will lead to poor reconstruction of latter. 
+\end{itemize}
+
+Isolation requirements were chosen in order to reach pile-up independent efficiency of more than 99$\%$ for electrons 
+with $p_T >$ 40 GeV. The requirements consist from two parts. \toAsk[two parts? firstly? secondly?]
+Firstly, the sum of the transverse energies in the EM and hadronic calorimeters around the electron within 
+$\Delta R < 0.2$, with core electron energy subtracted from the sum, has to be less than 
+3 GeV $+ (p_T^e - 20$ GeV$) \times 0.037$, where $p_T^e$ is electron transverse momentum.
+Secondly, the sum of the $p_T$ of all tracks with $p_T > 0.4$ GeV within $\Delta R < 0.3$ around the electron track has
+to be less than 10$\%$ of electron $p_T$.
+
+Electrons used in control regions are required to fail one or few requirements above but pass looser one.
 
 \subsection{Definition of same-sign electron pair}
 % TODO inv. mass cut; treatment of event with three leptons;
-All electrons which passed selection are considered to form a lepton pair.
+All electrons which passed selection are considered while forming a lepton pair.
 All combinations are checked and it is allowed to have more than one pair selected in one event.
 Electrons in the pair are chatechorized by the $p_T$: electror with higher $p_T$ is called leading lepton, while another one with lower $p_T$ subleading lepton.
 Leading lepton have to pass more strict cut $p_T>25$ GeV cut while subleading lepton have to satisfy $p_T>20$ GeV as described above.
@@ -127,17 +181,74 @@ This significantly suppress prompt background.
 
 To avoid low-mass hadronic resonances like $J/\psi$ or $\varUpsilon$ to show up in the mass spectrum only same-sign pair with $m_{\Plepton\Plepton}>15$ GeV are selected.
 Aditionaly, if same-sign lepton pair satisfies $70 < m_{\Plepton\Plepton}< 110$ GeV, which corresponds to the Z peak region, event is removed.
-This region is used for electron charge misidentification background.
+This region is used for estimation of the electron charge misidentification background.
 
 \section{Estimation of the non-prompt and charge flip backgrounds}
 \subsection{Non-prompt background}
-% TODO short description of the fake factor method. Put details on which regions were used.
+\toDo[short description of the fake factor method. Put details on which regions were used.]
+\toDo[reference to Anthonys thesis]
 
 \subsection{Prompt opposite-sign dilepton with charge flip}
-% TODO description how charge flip rate was obtained, and plots if CF rate vs. pT and eta.
+% TODO
+% subsection flow:
+% CF sources --> method and used regions --> validation of the method --> deriving scale factors --> appling to specific MC samples
+\toDo[description how charge flip rate was obtained, and plots if CF rate vs. pT and eta.]
+\toAsk[why we define CF rate in 80..100 GeV region, while we cut 70..110 GeV from signal region?]
+\toAsk[CF at high pT. extrapolation? of one large bin with huge error? look it up!]
+
+As was mentioned before charge of one reconstructed electron from pair can be missidentified, which lead to that
+\toAsk[lead to that?]
+processes with opposite-sign dilepton final state will contribute as a background for same-sign dilepton signal selection.
+Because background is relatevily small in the signal selection a charge flip cannot be neglected and have to be properly estimated. Two cases are considered as a charge flip. When electron charge is actually misreconstructed due to matching of the wrong track to the EM cluster or by too small curvature of the high-momentum track. Or when electron emit a photon by bremsstrahlung, which decays to electron-positron pair. 
+
+In order to estimate how many events with opposite-sign dileptons will ``leak'' to same-sign dilepton signal region one
+need to know charge flip rate for electrons. It is expected that charge flip will depends from electron momentum (due to track curvature) and from $\eta$ (due to different geometry of the detector versus $\eta$).
+
+Electrons from Z boson decay provide a great possibility to estimate charge flip rate. By applying signal selection
+and requiring invariant mass of the lepton pair to be around Z mass, $80 < m_{ee} < 100$ GeV, one obtain a pure
+sample of electron pairs, with one electron with missidentified charge. 
+
+
+Charge flip can be measured both with Monte Carlo simulation as well as with data-driven techniques.
+
+
+In \FigureRef{fig:chargeFlip_structure} MC simulation of the charge flip \toDo 
+
+
+To estimate charge flip \toDo.
+
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.7\columnwidth]{SS/support_note/chargeflip/misidratept_ZDY.eps}
+\caption{\toDo[caption]}
+\label{fig:chargeFlip_structure}
+\end{center}
+\end{figure}
+
+
+
+
+
+
+
+% \begin{figure}
+% \begin{center}
+%  \includegraphics[width=0.7\columnwidth]{SS/paper_draft/misidrate_datamc.eps}
+% \caption{Electron charge misidentification rate as a function of $\eta$. Data/MC comparison [data is likelihood of T_and_P \toFix]}
+% \label{fig:track_ext_fraction}
+% \end{center}
+% \end{figure}
+
+
+
 
 \section{Control regions}
-\label{sec:wprimeMultijetBackground}
+
+In order to make sure that all backgrounds are modelled/estimated correctly in the signal region one can define and use special control (or validation) regions.
+These regions have to have kinematics close to the one in the signal region but should not overlap with it. Each region is designed to test one given background type at a time,
+which means that in each control region only one background type has to give dominant contribution with comparison to all other backgrounds.
+
+
 \subsection{Prompt opposite-sign dilepton}
 \subsection{Prompt same-sign enhanced control region}
 % TODO table with final numbers to show how good MC normalization is wrt to data.
@@ -151,7 +262,7 @@ This region is used for electron charge misidentification background.
 \label{sec:wprimeSystematics}
 \subsection{Electron ID and momentum scale}
 \subsection{Event-level and modelling systematics}
-\subsection{Background estimate uncertainty}
+\subsection{Background uncertainty estimation}
 \subsection{Systematic uncertainty on the signal}
 
 \section{Cross section and mass limits}

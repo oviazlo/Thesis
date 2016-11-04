@@ -14,7 +14,6 @@
 %\usepackage{lmodern}
 %\usepackage{euler}
 
-
 %% Put package includes etc. into preamble.tex for convenience
 \input{otherText/preamble}
 
@@ -39,6 +38,11 @@
 }}{}
 \makeatother
 
+%% User-defined commands
+\newcommand{\toAsk}[1][?]{\colorbox{red!40}{[#1]}}
+\newcommand{\toFix}[1][!]{\colorbox{blue!40}{[#1]}}
+\newcommand{\toDo}[1][]{\colorbox{green!40}{[TODO: #1]}}
+
 %% Start the document
 \begin{document}
 
@@ -61,9 +65,9 @@
   %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
 %   \input{mainChapters/theory}
 %   \input{mainChapters/ATLAS}
-  \input{mainChapters/TRT}
+%   \input{mainChapters/TRT}
 %   \input{mainChapters/LUCID}
-%   \input{mainChapters/SS}
+  \input{mainChapters/SS}
 %   \input{mainChapters/monoW}
   %% To ignore a specific chapter while working on another, making the build faster, comment it out:
   %\input{chap4}
