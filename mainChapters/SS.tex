@@ -206,16 +206,15 @@ need to know charge flip rate for electrons. It is expected that charge flip wil
 
 Electrons from Z boson decay provide a great possibility to estimate charge flip rate. By applying signal selection
 and requiring invariant mass of the lepton pair to be around Z mass, $80 < m_{ee} < 100$ GeV, one obtain a pure
-sample of electron pairs, with one electron with missidentified charge. 
+sample of electron pairs, with one electron with missidentified charge. Knowing number of opposite- and same-sign
+pairs one can extract charge flip rate.
 
+In \FigureRef{fig:chargeFlip_structure} charge flip rate obtained from MC simulation as a function of $p_T$ is shown.
+Contribution from photon conversion from bremsstrhulng process is shown separately. This contribution is dominant 
+to charge flip rate over all $p_T$ range except high-$p_T$ region, where dominant effect become misreconstruction 
+of charge due to very small curvature of tracks.
 
-Charge flip can be measured both with Monte Carlo simulation as well as with data-driven techniques.
-
-
-In \FigureRef{fig:chargeFlip_structure} MC simulation of the charge flip \toDo 
-
-
-To estimate charge flip \toDo.
+\toAsk[should I describe likelihood method?]
 
 \begin{figure}
 \begin{center}
@@ -225,22 +224,48 @@ To estimate charge flip \toDo.
 \end{center}
 \end{figure}
 
+To verify estimation of charge flip by MC simulation a special data-driven technique, so-called likelihood method, was used, which is described in~\cite{same_sign_paper_7tev}. To cross-check that applicability of the method it was used on 
+MC simulation first and chrage flip rates were compared with the one from truth information. 
 
+\toAsk[is it OK to use ``truth information''?]
 
+Comparison demonstrates that likelihood method provide very reliable results as shown in
+\FigureRef{fig:likelihood_cross_check}.
 
+\begin{figure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/support_note/chargeflip/eta_mctruth.eps}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/support_note/chargeflip/pt_mctruth.eps}
+\end{subfigure}
+\caption{\toDo}
+\label{fig:likelihood_cross_check}
+\end{figure}
 
+Charge flip rate as a function of $p_T$ and $\eta$ is shown in \FigureRef{fig:charge_flip_data_vs_mc}.
+Comparison between MC simulation and likelihood data-driven predictions are shown. 
+Dependence of the rate as a function of $p_T$ is well described by MC simulation, while some difference can be observed
+for high $\eta$ region. This is why $\eta$ dependent scale factors were obtained in order to correct MC prediction.
 
+\begin{figure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/support_note/chargeflip/misidrate_datamc.eps}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/support_note/chargeflip/misidratept_datamc.eps}
+\end{subfigure}
+\caption{\toDo}
+\label{fig:charge_flip_data_vs_mc}
+\end{figure}
 
-% \begin{figure}
-% \begin{center}
-%  \includegraphics[width=0.7\columnwidth]{SS/paper_draft/misidrate_datamc.eps}
-% \caption{Electron charge misidentification rate as a function of $\eta$. Data/MC comparison [data is likelihood of T_and_P \toFix]}
-% \label{fig:track_ext_fraction}
-% \end{center}
-% \end{figure}
-
-
-
+For prediction of the charge flip in the signal region MC simulation of processes which produce opposite-sign pairs
+were used (which are shown in \TableRef{tab:MC_cross}). Reconstructed same-sign lepton pairs were corrected by 
+charge flip scale factor.
 
 \section{Control regions}
 
