@@ -111,7 +111,7 @@ $V=W,Z$ &  + {\scshape pythia-6.426} & & \\
 
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{SS/feynman/WZ_electron.eps}
+  \includegraphics[width=\textwidth]{SS/feynman/WZ_electron_v2.eps}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -144,11 +144,11 @@ Events which pass \toFix trigger, which selects events with two isolated \toFix 
 Electron candidates are reconstructed by matching of the track from ID with energy deposits in the EM calorimeter.
 
 \toDo[explain how electron energy is measured]
+\toDo[describe three chanels: ee, emu, mumu]
 
 Electrons used for the signal selection are required to satisfy critereas:
 \begin{itemize}
  \item $p_T > 20$ GeV. To ensure a high and flat trigger efficiency and to harmonize $p_T$ requirement between three analysis channels ($ee$, $\mu\mu$ and $e\mu$) 
- \toAsk[is it OK to use ``channel''?].
  \item $|\eta|<2.47$ to be within high-granularity acceptance of EM calorimeter, but excluding barrel-end-cap transition region $1.37<|\eta|<1.52$.
  \item Transverse and longitudinal impact parameters $|d_0|/\sigma(d_0) < 3$ and $|z_0 \times sin \theta| < 1$ mm. 
  To verify that electron was born close to the primary vertex and to reject electrons which were originated from the decay of long-lived particles.
@@ -159,8 +159,8 @@ Electrons used for the signal selection are required to satisfy critereas:
  Or when jet is too close to the electron which will lead to poor reconstruction of latter. 
 \end{itemize}
 
-Isolation requirements were chosen in order to reach pile-up independent efficiency of more than 99$\%$ for electrons 
-with $p_T >$ 40 GeV. The requirements consist from two parts. \toAsk[two parts? firstly? secondly?]
+Isolation requirement were chosen in order to reach pile-up independent efficiency of more than 99$\%$ for electrons 
+with $p_T >$ 40 GeV. The requirement has two parts.
 Firstly, the sum of the transverse energies in the EM and hadronic calorimeters around the electron within 
 $\Delta R < 0.2$, with core electron energy subtracted from the sum, has to be less than 
 3 GeV $+ (p_T^e - 20$ GeV$) \times 0.037$, where $p_T^e$ is electron transverse momentum.
@@ -194,9 +194,8 @@ This region is used for estimation of the electron charge misidentification back
 \toAsk[why we define CF rate in 80..100 GeV region, while we cut 70..110 GeV from signal region?]
 \toAsk[CF at high pT. extrapolation? of one large bin with huge error? look it up!]
 
-As was mentioned before charge of one reconstructed electron from pair can be missidentified, which lead to that
-\toAsk[lead to that?]
-processes with opposite-sign dilepton final state will contribute as a background for same-sign dilepton signal selection.
+Since the charge of one of the reconstructed electrons from the pair can be missidentified, 
+opposite-sign dilepton final state processes can contribute as a background for the same-sign dilepton signal selection.
 Because background is relatevily small in the signal selection a charge flip cannot be neglected and have to be properly estimated. Two cases are considered as a charge flip. When electron charge is actually misreconstructed due to matching of the wrong track to the EM cluster or by too small curvature of the high-momentum track. Or when electron emit a photon by bremsstrahlung, which decays to electron-positron pair. 
 
 In order to estimate how many events with opposite-sign dileptons will ``leak'' to same-sign dilepton signal region one
@@ -223,9 +222,7 @@ of charge due to very small curvature of tracks.
 \end{figure}
 
 To verify estimation of charge flip by MC simulation a special data-driven technique, so-called likelihood method, was used, which is described in~\cite{same_sign_paper_7tev}. To cross-check that applicability of the method it was used on 
-MC simulation first and chrage flip rates were compared with the one from truth information. 
-
-\toAsk[is it OK to use ``truth information''?]
+MC simulation first and chrage flip rates were compared with the one from generator level (``truth'') information. 
 
 Comparison demonstrates that likelihood method provide very reliable results as shown in
 \FigureRef{fig:likelihood_cross_check}.
@@ -269,7 +266,7 @@ charge flip scale factor.
 \toDo[short description of the fake factor method. Put details on which regions were used.]
 \toDo[reference to Anthonys thesis]
 
-Other background which is present after the signal selection is so the called non-prompt background.
+Other background which is present after the signal selection is the so-called non-prompt background.
 Main sources of this background are objects misidentified as electrons and electron born not close 
 to the primary vertex, such as electrons from semi-leptonic decays of heavy flavor quarks ($b$, $c$)
 To estimate this background a data-driven method, the so-called fake factor method, is used.
@@ -285,7 +282,9 @@ To make sure that away side jet and non-prompt electron are well balanced in ter
 requested to have $p_T < 30$ GeV.
 To supress contribution from W boson production processes requirement on transverse invariant mass 
 $m_\mathrm{T} > 40$ GeV is applied.
-\footnote{$m_\mathrm{T} = \sqrt{2 p_\mathrm{T} E_\mathrm{T}^{miss} (1-\cos\varphi_{\Plepton\nu})}$, }
+\footnote{$m_\mathrm{T} = \sqrt{2 p_\mathrm{T} E_\mathrm{T}^{miss} (1-\cos\varphi_{\Plepton\nu})}$, where
+$p_\mathrm{T}$ is transverse momentum of the electron, $E_\mathrm{T}^{miss}$ is transverse missing energy of the event
+and $varphi_{\Plepton\nu}$ is the angle between of them \toAsk[is it clear?].}
 
 In this background region a fake factor $f$ is determined as:
 \begin{equation}
@@ -293,27 +292,33 @@ f = \frac{N_{\mathrm{P}} - N_{\mathrm{P}}^{\mathrm{prompt}}}{N_{\mathrm{F}}  - N
 \label{eq:fakefactor}
 \end{equation}
 where $N_{\mathrm{P}}$ is number of electron found in the background region which pass electron signal selection,
-described before in \SectionRef{subsec:electron_selection} and $N_{\mathrm{F}}$ is number of electron do not meet 
+described before in \SectionRef{subsec:electron_selection} and $N_{\mathrm{F}}$ is number of electrons which do not meet 
 signal electron selection but satisfy a less stringent one, where electron have to satisfy ``medium'' electron set of identification criterea~\cite{electron_tight} and to fail the calorimeter-based or track-based isolation requirement,
 or both.
 $N_{\mathrm{P}}^{\mathrm{prompt}}$ and $N_{\mathrm{F}}^{\mathrm{prompt}}$ are numbers of prompt
-lepton, obtained from MC simulation, which pass signal and looser selections and have to be subtracted in order to make sure that fake factor was calculated with using only non-prompt electrons \toDo[weird phrasing, rewrite!].
+leptons, obtained from MC simulation, which pass signal and looser selections and have to be subtracted in order to make sure that fake factor was calculated with using only non-prompt electrons \toDo[weird phrasing, rewrite!].
 
-Due to large enough statistics of the background region the fake factor is measured as a function of 
-electrons $E_\mathrm{T}$ and $\eta$. Knowing fake factor allows to calculate the total number of the events,
-$N_{\mathrm{NP}}$, with same-sign lepton pairs, passed signal selection, but which contain non-prompt leptons by formula:
-\toAsk[how to rephrase it?]
+Thanks to sufficiently large statistics of the background region the fake factor can be measured as a function of 
+electrons $E_\mathrm{T}$ and $\eta$ with sufficient precition. 
+Knowing fake factor one can calculate the total number of the events,
+$N_{\mathrm{NP}}$, that contain same-sign lepton pairs which passed signal selection 
+and have non-prompt:
+\toAsk[is it good enough phrasing?]
 \begin{equation}
-N_{\mathrm{NP}} = \sum_{i}^{\mathrm{N_{P_l+F_s}}} f_{\mathrm{s}}(p_{\mathrm{Ti}},|\eta_{i}|) + \sum_{i}^{\mathrm{N_{F_l+P_s}}} f_{\mathrm{l}}(p_{\mathrm{T}i},|\eta_{i}|) - \sum_{i}^{\mathrm{N_{F_l+F_s}}} f_{\mathrm{l}}(p_{\mathrm{T}i},|\eta_{i}|) \times f_{\mathrm{s}}(p_{\mathrm{T}i},|\eta_{i}|).
+N_{\mathrm{NP}} = \sum_{i}^{\mathrm{N_{P_l F_s}}} f_{\mathrm{s}}(p_{\mathrm{Ti}},|\eta_{i}|) + \sum_{i}^{\mathrm{N_{F_l P_s}}} f_{\mathrm{l}}(p_{\mathrm{T}i},|\eta_{i}|) - \sum_{i}^{\mathrm{N_{F_l F_s}}} f_{\mathrm{l}}(p_{\mathrm{T}i},|\eta_{i}|) \times f_{\mathrm{s}}(p_{\mathrm{T}i},|\eta_{i}|).
 \label{eq:fake_pred}
 \end{equation}
-where first term correspond to the number electron pairs ($N_{P_l+F_s}$), 
-where leading electron (denoted by ``l'') pass selection criterea ($P_l$) and subleading electron (denoted by ``s'')
-fail to fulfils it ($F_s$). Contribution of every such pair to the signal region is scaled by fake factor 
-$f_{\mathrm{s}}(p_{\mathrm{Ti}},|\eta_{i}|)$, where $p_\mathrm{Ti}$ and $\eta_{i}$ is transverse momentum and $\eta$
-of subleading electron from pair which fails selection. Similarly second term represent number of pairs where
-leading electron fails selection while subleading one pass it. Last term correspond to the case when both leading
-and subleading electrons fail signal selection and it has to be subtracted from the sum to correct for the double
+where the first term corresponds to the number of electron pairs ($N_{P_l F_s}$) 
+where the leading electron (denoted by ``l'') passes selection criteria ($P_l$) and subleading electron 
+(denoted by ``s'')
+fails to fulfil it ($F_s$), but passes the looser selection used for fake factor calculation. 
+Contribution of every such pair to the signal region is scaled by the fake factor 
+$f_{\mathrm{s}}(p_{\mathrm{Ti}},|\eta_{i}|)$, where $p_\mathrm{Ti}$ and $\eta_{i}$ are transverse momentum and $\eta$
+of the subleading electron from a pair which fails selection. 
+Similarly, the second term represents number of pairs where
+leading electron fails signal selection while the subleading passes it. 
+The last term corresponds to the case when both leading
+and subleading electrons fail signal selection. This term has to be subtracted from the sum to correct for the double
 counting of non-prompt electrons.
 \toAsk[is explanation above clear?]
 
@@ -323,14 +328,17 @@ shown in \FigureRef{fig:ff_e_errs}. Derivation of the systematic errors is descr
 \begin{figure}[h]
 \begin{center}
 %\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
-\includegraphics[width=0.48\textwidth]{SS/support_note/electrons/electron_fake_plot.eps}
-\caption{Electron fake factor versus $E_\mathrm{T}$ with full statistical and systematic errors.}
+\includegraphics[width=0.65\textwidth]{SS/support_note/electrons/electron_fake_plot.eps}
+\caption{Electron fake factor $f$ as a function of electron $E_\mathrm{T}$. Combined statistical and systematic errors shown with error bars.}
 \label{fig:ff_e_errs}
 \end{center}
-\end{figure}
-
+\end{figure} 
 \toDo[say that fake factors were also measured not only for signal selection, but also for less strong selections
 which are used for fake validation regions].
+\toAsk[what fake CR says us? we use different fake factors for them then for signal, so there is no direct relation?]
+
+Verification of the fake factor method is done with help of validation region which are described further,
+
 
 % The fake background includes all background processes where at least one of the leptons is fake. The dominant sources are $W$+jets and QCD multijets with smaller contributions arising from $Z$+jets and $t\bar{t}$. To assess this background, a data-driven method, known as the fake factor method, is employed. This method is used in several ATLAS analyses, particularly diboson measurements and searches\footnotemark. The method employed was covered in great depth in the previous 7 TeV incarnation of this analysis.
 
@@ -342,12 +350,34 @@ In order to make sure that all backgrounds are modelled/estimated correctly in t
 These regions have to have kinematics close to the one in the signal region but should not overlap with it. Each region is designed to test one given background type at a time,
 which means that in each control region only one background type has to give dominant contribution with comparison to all other backgrounds.
 
-
 \subsection{Prompt opposite-sign dilepton}
+
 \subsection{Prompt same-sign enhanced control region}
 % TODO table with final numbers to show how good MC normalization is wrt to data.
+
 \subsection{Electron charge flip enhanced region}
+
 \subsection{Fake-enriched region}
+To verify the fake factor method, a set of validation regions is checked. 
+These regions must satisfy the same requirements as
+in signal selection except that either the isolation requirement must fail 
+or the ``medium'' electron identification requirement has to be passed
+but not ``tight'' (in order to not overlap with the signal region).
+Non-prompt background is calculated in the same way as for the signal region, 
+with the only difference that the fake factor used
+in \EquationRef{eq:fake_pred} is obtained for the validation regions. 
+\toAsk[phrasing?]
+
+\begin{figure}[h]
+\begin{center}
+%\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
+\includegraphics[width=0.7\textwidth]{SS/fake_regions_black_diagram.pdf}
+\caption{\toDo}
+\label{fig:fake_regions}
+\end{center}
+\end{figure}
+
+
 
 \section{Signal Region}
 \label{sec:wprimeSignalRegion}
