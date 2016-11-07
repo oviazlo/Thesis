@@ -139,6 +139,7 @@ Events which pass \toFix trigger, which selects events with two isolated \toFix 
 % TODO Cleaning and all other event-related cuts to describe here...
 
 \subsection{Electron selection}
+\label{subsec:electron_selection}
 
 Electron candidates are reconstructed by matching of the track from ID with energy deposits in the EM calorimeter.
 
@@ -183,10 +184,7 @@ To avoid low-mass hadronic resonances like $J/\psi$ or $\varUpsilon$ to show up 
 Aditionaly, if same-sign lepton pair satisfies $70 < m_{\Plepton\Plepton}< 110$ GeV, which corresponds to the Z peak region, event is removed.
 This region is used for estimation of the electron charge misidentification background.
 
-\section{Estimation of the non-prompt and charge flip backgrounds}
-\subsection{Non-prompt background}
-\toDo[short description of the fake factor method. Put details on which regions were used.]
-\toDo[reference to Anthonys thesis]
+\section{Estimation of the charge flip and non-prompt backgrounds}
 
 \subsection{Prompt opposite-sign dilepton with charge flip}
 % TODO
@@ -266,6 +264,77 @@ for high $\eta$ region. This is why $\eta$ dependent scale factors were obtained
 For prediction of the charge flip in the signal region MC simulation of processes which produce opposite-sign pairs
 were used (which are shown in \TableRef{tab:MC_cross}). Reconstructed same-sign lepton pairs were corrected by 
 charge flip scale factor.
+
+\subsection{Non-prompt background}
+\toDo[short description of the fake factor method. Put details on which regions were used.]
+\toDo[reference to Anthonys thesis]
+
+Other background which is present after the signal selection is so the called non-prompt background.
+Main sources of this background are objects misidentified as electrons and electron born not close 
+to the primary vertex, such as electrons from semi-leptonic decays of heavy flavor quarks ($b$, $c$)
+To estimate this background a data-driven method, the so-called fake factor method, is used.
+
+The idea of the method is following. 
+First one need to define a background region, which will not overlap with the signal selection.
+Contribution from prompt electrons in the background region have to be small and it should be enriched with
+non-prompt electrons.
+For this purpose a dijet data sample is used which contains strictly one reconstructed electron with $p_T > 20$ GeV
+and a side away jet in the opposite azimuthal direction ($\Delta \phi (e,jet) > 2.4$).
+By requiring strictly one electron one can make sure that background region will not overlap with the signal selection and processes like Drell-Yan and \ttbar will be supressed.
+To make sure that away side jet and non-prompt electron are well balanced in terms of energy, away side jet is
+requested to have $p_T < 30$ GeV.
+To supress contribution from W boson production processes requirement on transverse invariant mass 
+$m_\mathrm{T} > 40$ GeV is applied.
+\footnote{$m_\mathrm{T} = \sqrt{2 p_\mathrm{T} E_\mathrm{T}^{miss} (1-\cos\varphi_{\Plepton\nu})}$, }
+
+In this background region a fake factor $f$ is determined as:
+\begin{equation}
+f = \frac{N_{\mathrm{P}} - N_{\mathrm{P}}^{\mathrm{prompt}}}{N_{\mathrm{F}}  - N_{\mathrm{F}}^{\mathrm{prompt}}}.
+\label{eq:fakefactor}
+\end{equation}
+where $N_{\mathrm{P}}$ is number of electron found in the background region which pass electron signal selection,
+described before in \SectionRef{subsec:electron_selection} and $N_{\mathrm{F}}$ is number of electron do not meet 
+signal electron selection but satisfy a less stringent one, where electron have to satisfy ``medium'' electron set of identification criterea~\cite{electron_tight} and to fail the calorimeter-based or track-based isolation requirement,
+or both.
+$N_{\mathrm{P}}^{\mathrm{prompt}}$ and $N_{\mathrm{F}}^{\mathrm{prompt}}$ are numbers of prompt
+lepton, obtained from MC simulation, which pass signal and looser selections and have to be subtracted in order to make sure that fake factor was calculated with using only non-prompt electrons \toDo[weird phrasing, rewrite!].
+
+Due to large enough statistics of the background region the fake factor is measured as a function of 
+electrons $E_\mathrm{T}$ and $\eta$. Knowing fake factor allows to calculate the total number of the events,
+$N_{\mathrm{NP}}$, with same-sign lepton pairs, passed signal selection, but which contain non-prompt leptons by formula:
+\toAsk[how to rephrase it?]
+\begin{equation}
+N_{\mathrm{NP}} = \sum_{i}^{\mathrm{N_{P_l+F_s}}} f_{\mathrm{s}}(p_{\mathrm{Ti}},|\eta_{i}|) + \sum_{i}^{\mathrm{N_{F_l+P_s}}} f_{\mathrm{l}}(p_{\mathrm{T}i},|\eta_{i}|) - \sum_{i}^{\mathrm{N_{F_l+F_s}}} f_{\mathrm{l}}(p_{\mathrm{T}i},|\eta_{i}|) \times f_{\mathrm{s}}(p_{\mathrm{T}i},|\eta_{i}|).
+\label{eq:fake_pred}
+\end{equation}
+where first term correspond to the number electron pairs ($N_{P_l+F_s}$), 
+where leading electron (denoted by ``l'') pass selection criterea ($P_l$) and subleading electron (denoted by ``s'')
+fail to fulfils it ($F_s$). Contribution of every such pair to the signal region is scaled by fake factor 
+$f_{\mathrm{s}}(p_{\mathrm{Ti}},|\eta_{i}|)$, where $p_\mathrm{Ti}$ and $\eta_{i}$ is transverse momentum and $\eta$
+of subleading electron from pair which fails selection. Similarly second term represent number of pairs where
+leading electron fails selection while subleading one pass it. Last term correspond to the case when both leading
+and subleading electrons fail signal selection and it has to be subtracted from the sum to correct for the double
+counting of non-prompt electrons.
+\toAsk[is explanation above clear?]
+
+The electron fake factor as a function of electrons $E_\mathrm{T}$ with statistical and systematic errors are
+shown in \FigureRef{fig:ff_e_errs}. Derivation of the systematic errors is described in \SectionRef{???}.
+\toDo[or should I describe them here???]
+\begin{figure}[h]
+\begin{center}
+%\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
+\includegraphics[width=0.48\textwidth]{SS/support_note/electrons/electron_fake_plot.eps}
+\caption{Electron fake factor versus $E_\mathrm{T}$ with full statistical and systematic errors.}
+\label{fig:ff_e_errs}
+\end{center}
+\end{figure}
+
+\toDo[say that fake factors were also measured not only for signal selection, but also for less strong selections
+which are used for fake validation regions].
+
+% The fake background includes all background processes where at least one of the leptons is fake. The dominant sources are $W$+jets and QCD multijets with smaller contributions arising from $Z$+jets and $t\bar{t}$. To assess this background, a data-driven method, known as the fake factor method, is employed. This method is used in several ATLAS analyses, particularly diboson measurements and searches\footnotemark. The method employed was covered in great depth in the previous 7 TeV incarnation of this analysis.
+
+% \footnotetext{The following analyses, among others, use the fake factor method: SM $WW \ra \ell\nu\ell\nu$ and $WZ \ra \ell\nu\ell\ell$, $H \ra WW \ra \ell\nu\ell\nu$, and exotics $WZ \ra \ell\nu\ell\ell$ search.}
 
 \section{Control regions}
 
