@@ -9,6 +9,8 @@
 % - motivation flow: why leptons -> why same-sign dilepton -> why model-independent search?
 % ******************************************************************************
 
+\toAsk[shoud I use ``same-sign'' or ``like-sign''? Can I use both simultaneously?]
+
 The idea of the current analysis is to make a general search for a new physics in a same-sign dilepton channel. \toFix
 % Why do we use leptons as final objects?
 Leptons as a physics signature are very clean and straighforward observalbles. 
@@ -267,43 +269,45 @@ charge flip scale factor.
 \toDo[reference to Anthonys thesis]
 
 Other background which is present after the signal selection is the so-called non-prompt background.
-Main sources of this background are objects misidentified as electrons and electron born not close 
-to the primary vertex, such as electrons from semi-leptonic decays of heavy flavor quarks ($b$, $c$)
+Main sources of this background are jets misidentified as electrons and electrons originating not from 
+the primary vertex, such as electrons from semi-leptonic decays of heavy flavor quarks ($b$, $c$).
 To estimate this background a data-driven method, the so-called fake factor method, is used.
 
 The idea of the method is following. 
 First one need to define a background region, which will not overlap with the signal selection.
-Contribution from prompt electrons in the background region have to be small and it should be enriched with
-non-prompt electrons.
-For this purpose a dijet data sample is used which contains strictly one reconstructed electron with $p_T > 20$ GeV
+Contribution from prompt electrons in this region have to be small and while contributoin from non-prompt electrons have to be dominant.
+For this purpose a dijet data sample is used. It must contain strictly one reconstructed electron with $p_T > 20$ GeV
 and a side away jet in the opposite azimuthal direction ($\Delta \phi (e,jet) > 2.4$).
-By requiring strictly one electron one can make sure that background region will not overlap with the signal selection and processes like Drell-Yan and \ttbar will be supressed.
+By requiring strictly one electron one can make sure that background region will not overlap with the signal selection and processes 
+like Drell-Yan and \ttbar~will be supressed.
 To make sure that away side jet and non-prompt electron are well balanced in terms of energy, away side jet is
 requested to have $p_T < 30$ GeV.
 To supress contribution from W boson production processes requirement on transverse invariant mass 
 $m_\mathrm{T} > 40$ GeV is applied.
 \footnote{$m_\mathrm{T} = \sqrt{2 p_\mathrm{T} E_\mathrm{T}^{miss} (1-\cos\varphi_{\Plepton\nu})}$, where
 $p_\mathrm{T}$ is transverse momentum of the electron, $E_\mathrm{T}^{miss}$ is transverse missing energy of the event
-and $varphi_{\Plepton\nu}$ is the angle between of them.}
+and $\varphi_{\Plepton\nu}$ is the angle between of them.}
 
-In this background region a fake factor $f$ is determined as:
+In this background region one determine a fake factor $f$ as:
 \begin{equation}
 f = \frac{N_{\mathrm{P}} - N_{\mathrm{P}}^{\mathrm{prompt}}}{N_{\mathrm{F}}  - N_{\mathrm{F}}^{\mathrm{prompt}}}.
 \label{eq:fakefactor}
 \end{equation}
-where $N_{\mathrm{P}}$ is number of electron found in the background region which pass electron signal selection,
-described before in \SectionRef{subsec:electron_selection} and $N_{\mathrm{F}}$ is number of electrons which do not meet 
-signal electron selection but satisfy a less stringent one, where electron have to satisfy ``medium'' electron set of identification criterea~\cite{electron_tight} and to fail the calorimeter-based or track-based isolation requirement,
-or both.
+where $N_{\mathrm{P}}$ is number of electrons in the background region which pass electron signal selection,
+described above in \SectionRef{subsec:electron_selection} and $N_{\mathrm{F}}$ is number of electrons which do not meet 
+signal electron selection requirements but satisfy a looser selection. Looser selection is identical for signal selection except 
+requirement that electron have to satisfy ``medium'' electron set of identification criterea~\cite{electron_tight} (instead of ``tight'') 
+and it have to fail the calorimeter-based or track-based isolation requirement, or both.
 $N_{\mathrm{P}}^{\mathrm{prompt}}$ and $N_{\mathrm{F}}^{\mathrm{prompt}}$ are numbers of prompt
-leptons, obtained from MC simulation, which pass signal and looser selections and have to be subtracted in order to make sure that fake factor was calculated with using only non-prompt electrons \toDo[weird phrasing, rewrite!].
-
-Thanks to sufficiently large statistics of the background region the fake factor can be measured as a function of 
-electrons $E_\mathrm{T}$ and $\eta$ with sufficient precition. 
-Knowing fake factor one can calculate the total number of the events,
-$N_{\mathrm{NP}}$, that contain same-sign lepton pairs which passed signal selection 
-and have non-prompt:
-\toAsk[is it good enough phrasing?]
+leptons, obtained from MC simulation, which pass signal and looser selections accordingly.
+Contribution of prompt leptons have to be subtracted in order to make sure that 
+fake factor is properly defined as a ratio of non-prompt electrons passed signal selection over 
+the number of non-prompt electrons passed looser selection.
+When fake factor have been measured in the background region with dijet data sample it can be applied for the dilepton data sample of interest.
+In order to take into account possible different kinematics of a lepton in the region were fake factor was derived 
+and region were it will be applied, fake factor is measured as a function of electron $E_\mathrm{T}$ and $\eta$.
+The total number of the events, $N_{\mathrm{NP}}$, of non-prompt background in the delipton signal region can be estimated as:
+\toAsk[is phrasing above clear enough?]
 \begin{equation}
 N_{\mathrm{NP}} = \sum_{i}^{\mathrm{N_{P_l F_s}}} f_{\mathrm{s}}(p_{\mathrm{Ti}},|\eta_{i}|) + \sum_{i}^{\mathrm{N_{F_l P_s}}} f_{\mathrm{l}}(p_{\mathrm{T}i},|\eta_{i}|) - \sum_{i}^{\mathrm{N_{F_l F_s}}} f_{\mathrm{l}}(p_{\mathrm{T}i},|\eta_{i}|) \times f_{\mathrm{s}}(p_{\mathrm{T}i},|\eta_{i}|).
 \label{eq:fake_pred}
@@ -320,11 +324,9 @@ leading electron fails signal selection while the subleading passes it.
 The last term corresponds to the case when both leading
 and subleading electrons fail signal selection. This term has to be subtracted from the sum to correct for the double
 counting of non-prompt electrons.
-\toAsk[is explanation above clear?]
 
 The electron fake factor as a function of electrons $E_\mathrm{T}$ with statistical and systematic errors are
 shown in \FigureRef{fig:ff_e_errs}. Derivation of the systematic errors is described in \SectionRef{???}.
-\toDo[or should I describe them here???]
 \begin{figure}[h]
 \begin{center}
 %\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
@@ -337,21 +339,21 @@ shown in \FigureRef{fig:ff_e_errs}. Derivation of the systematic errors is descr
 which are used for fake validation regions].
 \toAsk[what fake CR says us? we use different fake factors for them then for signal, so there is no direct relation?]
 
-Verification of the fake factor method is done with help of validation region which are described further,
+Verification of the fake factor method is done with help of validation regions which are described further.
 
 
 % The fake background includes all background processes where at least one of the leptons is fake. The dominant sources are $W$+jets and QCD multijets with smaller contributions arising from $Z$+jets and $t\bar{t}$. To assess this background, a data-driven method, known as the fake factor method, is employed. This method is used in several ATLAS analyses, particularly diboson measurements and searches\footnotemark. The method employed was covered in great depth in the previous 7 TeV incarnation of this analysis.
 
 % \footnotetext{The following analyses, among others, use the fake factor method: SM $WW \ra \ell\nu\ell\nu$ and $WZ \ra \ell\nu\ell\ell$, $H \ra WW \ra \ell\nu\ell\nu$, and exotics $WZ \ra \ell\nu\ell\ell$ search.}
 
-\section{Control regions}
+\section{Validation regions}
 
-In order to make sure that all backgrounds are modelled/estimated correctly in the signal region one can define and use special control (or validation) regions.
-These regions have to have kinematics close to the one in the signal region but should not overlap with it. Each region is designed to test one given background type at a time,
+In order to make sure that all backgrounds are modelled/estimated correctly in the signal region one can define and use special validation regions.
+These regions cantain same-sign lepton pairs and have to have kinematics close to the one in the signal region but should not overlap with it. 
+Each region is designed to test one given background type at a time,
 which means that in each control region only one background type has to give dominant contribution with comparison to all other backgrounds.
 
-\subsection{Prompt opposite-sign dilepton}
-
+\subsection{Prompt opposite-sign dileptons}
 
 \begin{table}[htbp]
 \caption{Observed and expected number of lepton pairs for the control region with opposite-sign, isolated leptons.} %The significance of the difference between the number of data events observed and that predicted is calculated considering the statistical error on the data and the systematic uncertainty on the prediction.}
@@ -388,9 +390,19 @@ Process & Number of lepton pairs \\\hline\hline
 
 
 
-\subsection{Prompt same-sign enhanced control region}
+\subsection{Prompt same-sign dileptons}
 % TODO table with final numbers to show how good MC normalization is wrt to data.
 
+Same-sign dilepton prompt background originates dominantly from $WZ$ and $ZZ$ processes, where both Z and W bosons decays leptonicaly.
+In order to check normalization of these processes prompt validation region is used.
+In fully reconstructed event, where one of these processes took place, one can find at least one same-sign and one opposite-sign lepton pairs.
+In order to enhance $WZ$ and $ZZ$ contributions to the validation region at least three leptons are required in the event, where one lepton pair
+has to be same-sign electron pair and other one opposite-sign same-flavour pair (from $Z$ boson decay). 
+Invariant mass of opposite-sign pair has to be close to $Z$ boson mass $(|m_{\Plepton\Plepton} - m_{Z}| < 10$ GeV$)$.
+
+Expected and observed number of same-sign pairs in the control region are listed in \TableRef{tab:promptCR_yields}, 
+and the ratios between data and expected pairs are collected in \TableRef{tab:prompt_ratios}. 
+The expectations are in good agreement with data.
 
 \begin{table*}[htbp]
 \caption{Expected and observed numbers of pairs for various cuts on the dilepton invariant mass. The uncertainties shown are the quadratic sum of the statistical and systematic uncertainties.}
@@ -420,6 +432,26 @@ Data  & $268 \pm 16$ & $156 \pm 12$ & $46.0 \pm 6.8$ & $14.0 \pm 3.7$ & $6.0 \pm
 \end{table*}
 
 
+\begin{table*}[htbp]
+\caption{Ratio between observed and expected same-sign pairs in the $WZ$ and $ZZ$ control region for various cuts on the dielectron invariant mass. 
+The uncertainties account for both statistical and systematic errors.}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{c|c|c|c|c|c|c}
+\multicolumn{6}{c}{Ratio between observed and expected for $m(l^{\pm}l^{\pm})$} \\
+$>15$~GeV & $>100$~GeV & $>200$~GeV & $>300$~GeV & $>400$~GeV & $>500$~GeV & $>600$~GeV \\
+\hline \hline
+$0.97 \pm 0.09$ & $0.95 \pm 0.10$ & $0.96 \pm 0.17$ & $0.93 \pm 0.27$ & $1.3 \pm 0.6$ & $1.5 \pm 1.0$ & $1.3 \pm 1.9$ \\
+\hline \hline
+\end{tabular}
+}
+\end{center}
+\label{tab:prompt_ratios}
+\end{table*}
+
+\FigureRef{fig:prompt_CR} shows invariant mass distribution in the prompt validatin region.
+Simulation agrees well with data.
+
 \begin{figure}[h]
 \begin{center}
 %\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
@@ -430,18 +462,28 @@ Data  & $268 \pm 16$ & $156 \pm 12$ & $46.0 \pm 6.8$ & $14.0 \pm 3.7$ & $6.0 \pm
 \end{figure} 
 
 
-\subsection{Electron charge flip enhanced region}
-\toDo[descibe plots...]
+\subsection{Electron charge flip}
+\toDo[describe plots...]
 
-% The same-sign \Zboson\ peak with two isolated electrons (defined as $80 < \mee < 100$~GeV) is used to test the charge flip prediction, with kinematics shown in Figure~\ref{fig:ee_2iso_SS_Z}.  
-% %The disagreement in $\eta$ seen in the opposite-sign control regions in Figure~\ref{fig:ee_2iso_OS} is not clearly visible here.
-% 
-% %For these plots only, the alternate fake denominator (``interiso'') described in section~\ref{fake_e_qflip} is used, as the mass shape of the fake prediction for the nominal denominator is distorted.  
-% Table~\ref{tab:ee_isoSS_Z} shows the expected and observed number of events, using the fake prediction from the nominal method.  
-% %The fake predictions for the nominal and interiso denominators are compared in Table~\ref{tab:ssZ_e_qflipcor} and agree well after the charge flip correction (by construction).
-% 
-% Results are also shown in Table~\ref{tab:ee_isoSS_Z} separately for $e^{+}e^{+}$ and $e^{-}e^{-}$ pairs.  
-% %A slight charge asymmetry is observed in this region, $1.12\pm0.06$ for $e^{+}e^{+}/e^{-}e^{-}$ in data.  This is well modeled by the MC in this region, where the charge asymmetry predicted is $1.17\pm0.06$.
+As described before events with opposite-sign lepton pairs can be reconstructed as same-sign lepton pairs if charge for one of leptons was wrongly reconstructed.
+Misreconstraction probability is well modelled as function of $p_T$ in simulation 
+but $\eta$-dependence have to be corrected by scale factors obtained with data-driven method.
+One can make a sanity check, to cross check data from $Z$ peak region (same-sign pairs with invariant mass $80 < m_{ee} < 100$~GeV) with MC simulation corrected by the charge flip scale factors.
+
+Invariant mass of the same-sign $Z$ peak is shown in \FigureRef{fig:charge_flip_CR_inv_mass}. 
+Also $p_T$ and $\eta$ distribution for the leading electron are shown in \FigureRef{fig:charge_flip_CR_kinematics}.
+A good agreement is observed which demonstrates work of charge lip scale factors.
+
+Observed and expected number of lepton pairs are also shown in \TableRef{tab:ee_isoSS_Z} for combined $ee$ and separately for $e^{+}e^{+}$ and $e^{-}e^{-}$ pairs.
+
+\begin{figure}[h]
+\begin{center}
+%\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
+\includegraphics[width=0.65\textwidth]{SS/paper_draft/2isoSS_ee_mll_ssz.eps}
+\caption{\toDo}
+\label{fig:charge_flip_CR_inv_mass}
+\end{center}
+\end{figure} 
 
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
@@ -456,25 +498,17 @@ Data  & $268 \pm 16$ & $156 \pm 12$ & $46.0 \pm 6.8$ & $14.0 \pm 3.7$ & $6.0 \pm
   \label{fig:charge_flip_CR_kinematics}
 \end{figure}
 
-\begin{figure}[h]
-\begin{center}
-%\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
-\includegraphics[width=0.65\textwidth]{SS/paper_draft/2isoSS_ee_mll_ssz.eps}
-\caption{\toDo}
-\label{fig:ff_e_errs}
-\end{center}
-\end{figure} 
-
 
 \begin{table}[htbp]
-\caption{Observed and expected number of lepton pairs for the control region with same-sign, isolated electrons falling inside the $Z$ mass window. The uncertainties on the predictions are combined statistical then systematic \toDo[is it the case? or it is only statistical errors?].}
+\caption{Observed and expected number of lepton pairs for the control region with same-sign, isolated electrons falling inside the $Z$ mass window. 
+The uncertainties on the predictions are combined statistical then systematic \toDo[is it the case? or it is only statistical errors?].}
 \begin{center}
 \begin{tabular}{l|c}
 \hline
 Process & Number of $ee$ pairs \\\hline\hline
 %
 \multicolumn{2}{c}{\textbf{Same-sign $ee$ $Z$ mass window.}} \\\hline 
-        Fakes      & $200 \pm 110$ \\[+0.05in]
+        Non-prompt      & $200 \pm 110$ \\[+0.05in]
         Charge Flips & $12400 \pm 1300$ \\[+0.05in]
         Prompt Electrons & $143.4 \pm 8.1$ \\[+0.05in]
         $W\gamma$  & $26.8 \pm 5.6$ \\[+0.05in]
@@ -484,32 +518,31 @@ Process & Number of $ee$ pairs \\\hline\hline
         Data       &       $11793 \pm 110$ \\[+0.05in]
             \hline
         Agreement  &      0.8$\sigma$ \\[+0.05in]
+\hline \hline
+\multicolumn{2}{c}{\textbf{Same-sign $e^{+}e^{+}$ $Z$ mass window.}} \\\hline 
+        Fakes      & $66 \pm 60$ \\[+0.05in]
+        Charge Flips & $6380 \pm 670$ \\[+0.05in]
+        Prompt Electrons & $82.0 \pm 5.0$ \\[+0.05in]
+        $W\gamma$  & $17.5 \pm 4.0$ \\[+0.05in]
+            \hline
+        Total Prediction & $6540 \pm 680$ \\[+0.05in]
+            \hline
+        Data       &        $5908 \pm 77$ \\[+0.05in]
+            \hline
+        Agreement  &     1.0$\sigma$ \\[+0.05in]
 %
-% \hline \hline
-% \multicolumn{2}{c}{\textbf{Same-sign $e^{+}e^{+}$ \Zboson\ mass window.}} \\\hline 
-%         Fakes      & $66 \pm 60$ \\[+0.05in]
-%         Charge Flips & $6380 \pm 670$ \\[+0.05in]
-%         Prompt Electrons & $82.0 \pm 5.0$ \\[+0.05in]
-%         $W\gamma$  & $17.5 \pm 4.0$ \\[+0.05in]
-%             \hline
-%         Total Prediction & $6540 \pm 680$ \\[+0.05in]
-%             \hline
-%         Data       &        $5908 \pm 77$ \\[+0.05in]
-%             \hline
-%         Agreement  &     1.0$\sigma$ \\[+0.05in]
-% %
-% \hline \hline
-% \multicolumn{2}{c}{\textbf{Same-sign $e^{-}e^{-}$ \Zboson\ mass window.}} \\\hline 
-%         Fakes      & $131 \pm 63$ \\[+0.05in]
-%         Charge Flips & $5990 \pm 630$ \\[+0.05in]
-%         Prompt Electrons & $61.4 \pm 3.9$ \\[+0.05in]
-%         $W\gamma$  & $9.4 \pm 2.3$ \\[+0.05in]
-%             \hline
-%         Total Prediction & $6190 \pm 630$ \\[+0.05in]
-%             \hline
-%         Data       &        $5885 \pm 77$ \\[+0.05in]
-%             \hline
-%         Agreement  &     0.5$\sigma$ \\[+0.05in]
+\hline \hline
+\multicolumn{2}{c}{\textbf{Same-sign $e^{-}e^{-}$ $Z$ mass window.}} \\\hline 
+        Fakes      & $131 \pm 63$ \\[+0.05in]
+        Charge Flips & $5990 \pm 630$ \\[+0.05in]
+        Prompt Electrons & $61.4 \pm 3.9$ \\[+0.05in]
+        $W\gamma$  & $9.4 \pm 2.3$ \\[+0.05in]
+            \hline
+        Total Prediction & $6190 \pm 630$ \\[+0.05in]
+            \hline
+        Data       &        $5885 \pm 77$ \\[+0.05in]
+            \hline
+        Agreement  &     0.5$\sigma$ \\[+0.05in]
 \hline 
 \end{tabular}
 \end{center}
@@ -517,57 +550,54 @@ Process & Number of $ee$ pairs \\\hline\hline
 \end{table}
 
 
-
-
 \subsection{Fake-enriched region}
 To verify the fake factor method, a set of validation regions is checked. 
-These regions must satisfy the same requirements as
-in signal selection except that either the isolation requirement must fail 
-or the ``medium'' electron identification requirement has to be passed
-but not ``tight'' (in order to not overlap with the signal region).
-Non-prompt background is calculated in the same way as for the signal region, 
-with the only difference that the fake factor used
-in \EquationRef{eq:fake_pred} is obtained for the validation regions. 
-\toAsk[phrasing?]
+These regions have to be kinematically close as much as possible to
+the nominal signal selection as well as looser signal selections, 
+which is used to estimate non-prompt background with \EquationRef{eq:fake_pred}.
 
-\toDo[describe VR block diagram]
+Looser signal selection have weaker isolation requirements and weaker 
+electron identification requirement compared with nominal selection.
+This is why two validation regions are used, one which is identical
+to the nominal signal selection, except weaker isolation cut and another
+one - except weaker identification requirement. 
+Schematic representation of the signal and validation regions is shown
+in \FigureRef{fig:fake_validation_regions}. 
+% TODO
+\toDo[explain here how fake factors for validation regions were calculated]
+Looser selections for the
+validation regions which were used for fake factor calculation are shown
+as well. As can be seen from the picture, such design of the validation
+region allows to test non-prompt estimation for signal region in the 
+best way possible.
 
 \begin{figure}[h]
 \begin{center}
 %\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
 \includegraphics[width=0.7\textwidth]{SS/fake_regions_black_diagram.pdf}
 \caption{\toDo}
-\label{fig:fake_regions}
+\label{fig:fake_validation_regions}
 \end{center}
 \end{figure}
 
+In total, four different validation regions were defined for pairs of like-sign electrons.
+One validation region consists from like-sign electron pairs, where both electrons pass the signal region isolation requirement, 
+but fail ``tight'' electron identification requirement, while passing ``medium''.
+Second validation region consists from like-sign electron pairs, where both electrons fails the signal isolation requirement
+but pass a looser \textit{intermediate} isolation cut, which is loosened by 4 GeV, instead.
+Third and fourt validation regions are identical for the second one but requires only leading (third region) or subleading (fourth region)
+electron to fails the signal isolation requirement but pass a looser \textit{intermediate} isolation cut instead.
 
+\FigureRef{fig:fakeCR_part1} and \FigureRef{fig:fakeCR_part2} show the invariant mass distributions for the validation regions. 
+The agreement between observation and prediction is generally good.  
+\TableRef{tab:ee_fakeCR} shows the expected and observed numbers of electron pairs. 
+The uncertainties quoted are statistical only. 
 
-
-
-% 
-% Control regions enhanced in fake electrons are defined for the $ee$ channel to test the fake predictions.
-% Four different  control regions are defined for pairs of like-sign electrons, 
-% either relaxing the isolation requirement or by using electrons that 
-% fail "isEM tight++" reconstruction requirement, while passing "isEM medium++".
-% 
-% \begin{itemize}
-% \item Like-sign electron pairs, both passing the signal region isolation requirement, but fails "isEM tight++", while passing "isEM medium++".
-% \item Like-sign electron pairs where both electrons fails the signal isolation requirement but pass a looser \textit{intermediate} isolation cut instead.
-% \item Like-sign electron pairs. The leading $\pt$ electron must pass the signal isolation cut, while the subleading electron fails the signal region isolation and instead passes the looser intermediate isolation cut.  
-% \item Like-sign electron pairs. The subleading $\pt$ electron must pass the signal isolation cut, while the leading electron fails the signal region isolation and instead passes the looser intermediate isolation cut.  
-% \end{itemize}
-% 
-% Table~\ref{tab:ee_fakeCR} shows the expected and observed numbers of electron pairs for the fake-enhanced control regions. 
-% The uncertainties quoted are statistical only. For the uncertainty on the fake predictions, 
+\toDo[say about uncertainties]
+% For the uncertainty on the non-prompt background predictions, 
 % this includes the uncertainty associated with limited statistics where the fakes are estimated together 
 % with the resulting fractional systematic uncertainty on the fake factor as propagated through for the signal region. 
-% Figure~\ref{fig:ee_fakeCR_mll} shows the invariant mass distributions for the four control regions. 
-% The agreement between observation and prediction is generally good.  
-% 
-% Additional plots of fake-enhanced control regions can be found in Appendix~\ref{app:eeCR}. 
-% These include $\pt$ spectra and $\eta$ distribution for the fake-enhanced control regions.
-% 
+
 
 
 \begin{table}[htbp]
@@ -580,13 +610,13 @@ uncertainties have been included; other systematic uncertainties are negligible 
     \resizebox{\textwidth}{!}{
     \begin{tabular}{ l | r r r r r r r }
         \hline
-        Region 		& Fakes 			& Prompt 	& Charge Flip 			& W$\gamma$ 		& Total Pred 			& Data		&  Agreement($\sigma$) \\
+        Validation region 		& Fakes 			& Prompt 	& Charge Flip 			& W$\gamma$ 		& Total Pred 			& Data		&  Agreement($\sigma$) \\
             \hline
 
-        SS\_medium++ 	& $ 111.04 \pm 27.4 $	&	$ 2.9 \pm 0.5 $	& $ 72.46 \pm 16.75 $		& $ 8.78 \pm 2.3 $	& $ 195.18 \pm 32.2 $		& $ 217 \pm 15 $&  -0.62\\
-        SS\_InterIso 	& $ 252.9 \pm 133.64 $	& $ 1.23 \pm 0.3 $	& $ 29.07 \pm 10.1 $		& $ 0.27 \pm 0.28 $	& $ 283.47 \pm 134.02 $		& $285 \pm 17 $	&  -0.01\\
-        SS\_sublInterIso& $ 519.21 \pm 120.72 $ & $ 32.88 \pm 2.14 $	& $ 52.69 \pm 14.87 $		& $ 17.64 \pm 4.32 $	& $ 622.42 \pm 121.72 $		& $574 \pm 24 $ &  0.39\\
-        SS\_leadInterIso& $ 154.97 \pm 58.67 $  & $ 13.28 \pm 1.21 $	& $ 15.96 \pm 7.5 $		& $ 5.12 \pm 1.72 $	& $ 189.33 \pm 59.19 $		& $ 224 \pm 15 $&  -0.57\\
+        Medium electron identification 	& $ 111.04 \pm 27.4 $	&	$ 2.9 \pm 0.5 $	& $ 72.46 \pm 16.75 $		& $ 8.78 \pm 2.3 $	& $ 195.18 \pm 32.2 $		& $ 217 \pm 15 $&  -0.62\\
+        Weak isolation on both electrons 	& $ 252.9 \pm 133.64 $	& $ 1.23 \pm 0.3 $	& $ 29.07 \pm 10.1 $		& $ 0.27 \pm 0.28 $	& $ 283.47 \pm 134.02 $		& $285 \pm 17 $	&  -0.01\\
+        Weak isolation on subleading electron 	& $ 519.21 \pm 120.72 $ & $ 32.88 \pm 2.14 $	& $ 52.69 \pm 14.87 $		& $ 17.64 \pm 4.32 $	& $ 622.42 \pm 121.72 $		& $574 \pm 24 $ &  0.39\\
+        Weak isolation on leading electron 	& $ 154.97 \pm 58.67 $  & $ 13.28 \pm 1.21 $	& $ 15.96 \pm 7.5 $		& $ 5.12 \pm 1.72 $	& $ 189.33 \pm 59.19 $		& $ 224 \pm 15 $&  -0.57\\
         
         \hline
     \end{tabular}
