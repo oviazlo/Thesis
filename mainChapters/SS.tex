@@ -284,7 +284,7 @@ To supress contribution from W boson production processes requirement on transve
 $m_\mathrm{T} > 40$ GeV is applied.
 \footnote{$m_\mathrm{T} = \sqrt{2 p_\mathrm{T} E_\mathrm{T}^{miss} (1-\cos\varphi_{\Plepton\nu})}$, where
 $p_\mathrm{T}$ is transverse momentum of the electron, $E_\mathrm{T}^{miss}$ is transverse missing energy of the event
-and $varphi_{\Plepton\nu}$ is the angle between of them \toAsk[is it clear?].}
+and $varphi_{\Plepton\nu}$ is the angle between of them.}
 
 In this background region a fake factor $f$ is determined as:
 \begin{equation}
@@ -352,10 +352,172 @@ which means that in each control region only one background type has to give dom
 
 \subsection{Prompt opposite-sign dilepton}
 
+
+\begin{table}[htbp]
+\caption{Observed and expected number of lepton pairs for the control region with opposite-sign, isolated leptons.} %The significance of the difference between the number of data events observed and that predicted is calculated considering the statistical error on the data and the systematic uncertainty on the prediction.}
+\begin{center}
+\begin{tabular}{l|c}
+
+Process & Number of lepton pairs \\\hline\hline
+        Drell-Yan	& $ 4701110 \pm 329108 $	\\[+0.05in]
+	$t\bar{t}$	& $ 14580.8 \pm 874.92 $	\\[+0.05in]
+	Dibosons	& $ 12210.9 \pm 545.6 $	\\[+0.05in]
+	Non-prompt	& $ 8321.28 \pm 244.4 $	\\[+0.05in]
+	$W\gamma$	& $ 243.03 \pm 35.2 $	\\[+0.05in]
+	DPI	& $ 32.74 \pm 32.74 $	\\[+0.05in]
+	\hline
+	Total Prediction	& $ 4736500 \pm 329109 $	\\[+0.05in]
+	\hline
+	Observation in data	& $ 4895830 $	\\[+0.05in]
+	\hline
+	Agreement ($\sigma$) & -0.48 \\[+0.05in]
+
+\hline  
+\end{tabular}
+\end{center}
+\label{tab:dilep_isoOS}
+\end{table}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.65\textwidth]{SS/support_note/dielectrons/crs/OS_mod_v4.pdf}
+\caption{\toDo}
+\label{fig:OS_CR}
+\end{center}
+\end{figure} 
+
+
+
 \subsection{Prompt same-sign enhanced control region}
 % TODO table with final numbers to show how good MC normalization is wrt to data.
 
+
+\begin{table*}[htbp]
+\caption{Expected and observed numbers of pairs for various cuts on the dilepton invariant mass. The uncertainties shown are the quadratic sum of the statistical and systematic uncertainties.}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{l|c|c|c|c|c|c|c}
+\hline 
+Sample & \multicolumn{6}{|c}{Number of electron-electron pairs with  $m(e^{\pm}e^{\pm})$} \\
+ & $>15$~GeV & $>100$~GeV & $>200$~GeV & $>300$~GeV & $>400$~GeV & $>500$~GeV & $>600$~GeV \\
+\hline \hline
+Non-prompt & $49 \pm 14$ & $31.1 \pm 8.1$ & $11.1 \pm 3.0$ & $3.4 \pm 1.3$ & $1.22 \pm 0.72$ & $0.81 \pm 0.63$ & $0.41 \pm 0.44$ \\
+\hline
+Prompt total & $226 \pm 18$ & $133.8 \pm 9.2$ & $36.7 \pm 3.0$ & $11.6 \pm 1.3$ & $3.44 \pm 0.63$ & $1.15 \pm 0.34$ & $0.38 \pm 0.18$ \\
+\hline
+$W/ \gamma$ & $0.0 \pm 0.0$ & $0.0 \pm 0.0$ & $0.0 \pm 0.0$ & $0.0 \pm 0.0$ & $0.0 \pm 0.0$ & $0.0 \pm 0.0$ & $0.0 \pm 0.0$ \\
+\hline
+Charge Flip total & $0.00036 \pm 0.00068$ & $0.0 \pm 0.0$ & $0.0 \pm 0.0$ & $0.0 \pm 0.0$ & $0.0 \pm 0.0$ & $0.0 \pm 0.0$ & $0.0 \pm 0.0$ \\
+\hline \hline
+Sum of Backgrounds & $275 \pm 23$ & $165 \pm 12$ & $47.9 \pm 4.2$ & $15.0 \pm 1.9$ & $4.65 \pm 0.95$ & $1.96 \pm 0.71$ & $0.78 \pm 0.47$ \\
+\hline \hline
+Data  & $268 \pm 16$ & $156 \pm 12$ & $46.0 \pm 6.8$ & $14.0 \pm 3.7$ & $6.0 \pm 2.4$ & $3.0 \pm 1.7$ & $1.0 \pm 1.3$ \\
+\hline 
+\end{tabular}
+}
+\end{center}
+\label{tab:promptCR_yields}
+\end{table*}
+
+
+\begin{figure}[h]
+\begin{center}
+%\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
+\includegraphics[width=0.65\textwidth]{SS/support_note/PromptCR/ElEl/2isoSS_ee_mll_pr.eps}
+\caption{\toDo}
+\label{fig:prompt_CR}
+\end{center}
+\end{figure} 
+
+
 \subsection{Electron charge flip enhanced region}
+\toDo[descibe plots...]
+
+% The same-sign \Zboson\ peak with two isolated electrons (defined as $80 < \mee < 100$~GeV) is used to test the charge flip prediction, with kinematics shown in Figure~\ref{fig:ee_2iso_SS_Z}.  
+% %The disagreement in $\eta$ seen in the opposite-sign control regions in Figure~\ref{fig:ee_2iso_OS} is not clearly visible here.
+% 
+% %For these plots only, the alternate fake denominator (``interiso'') described in section~\ref{fake_e_qflip} is used, as the mass shape of the fake prediction for the nominal denominator is distorted.  
+% Table~\ref{tab:ee_isoSS_Z} shows the expected and observed number of events, using the fake prediction from the nominal method.  
+% %The fake predictions for the nominal and interiso denominators are compared in Table~\ref{tab:ssZ_e_qflipcor} and agree well after the charge flip correction (by construction).
+% 
+% Results are also shown in Table~\ref{tab:ee_isoSS_Z} separately for $e^{+}e^{+}$ and $e^{-}e^{-}$ pairs.  
+% %A slight charge asymmetry is observed in this region, $1.12\pm0.06$ for $e^{+}e^{+}/e^{-}e^{-}$ in data.  This is well modeled by the MC in this region, where the charge asymmetry predicted is $1.17\pm0.06$.
+
+\begin{figure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/support_note/ChargeFlipCR/ElEl/ElEl_selection_pt_lead_ee_SS_CF_CR.eps}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/support_note/ChargeFlipCR/ElEl/ElEl_selection_eta_lead_ee_SS_CF_CR.eps}
+\end{subfigure}
+\caption{\toDo Leading electron $E_\mathrm{T}$ and $\eta$ distributions in the same-sign $Z$ peak control region with two isolated electrons.}
+  \label{fig:charge_flip_CR_kinematics}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+%\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
+\includegraphics[width=0.65\textwidth]{SS/paper_draft/2isoSS_ee_mll_ssz.eps}
+\caption{\toDo}
+\label{fig:ff_e_errs}
+\end{center}
+\end{figure} 
+
+
+\begin{table}[htbp]
+\caption{Observed and expected number of lepton pairs for the control region with same-sign, isolated electrons falling inside the $Z$ mass window. The uncertainties on the predictions are combined statistical then systematic \toDo[is it the case? or it is only statistical errors?].}
+\begin{center}
+\begin{tabular}{l|c}
+\hline
+Process & Number of $ee$ pairs \\\hline\hline
+%
+\multicolumn{2}{c}{\textbf{Same-sign $ee$ $Z$ mass window.}} \\\hline 
+        Fakes      & $200 \pm 110$ \\[+0.05in]
+        Charge Flips & $12400 \pm 1300$ \\[+0.05in]
+        Prompt Electrons & $143.4 \pm 8.1$ \\[+0.05in]
+        $W\gamma$  & $26.8 \pm 5.6$ \\[+0.05in]
+            \hline
+        Total Prediction & $12700 \pm 1300$ \\[+0.05in]
+            \hline
+        Data       &       $11793 \pm 110$ \\[+0.05in]
+            \hline
+        Agreement  &      0.8$\sigma$ \\[+0.05in]
+%
+% \hline \hline
+% \multicolumn{2}{c}{\textbf{Same-sign $e^{+}e^{+}$ \Zboson\ mass window.}} \\\hline 
+%         Fakes      & $66 \pm 60$ \\[+0.05in]
+%         Charge Flips & $6380 \pm 670$ \\[+0.05in]
+%         Prompt Electrons & $82.0 \pm 5.0$ \\[+0.05in]
+%         $W\gamma$  & $17.5 \pm 4.0$ \\[+0.05in]
+%             \hline
+%         Total Prediction & $6540 \pm 680$ \\[+0.05in]
+%             \hline
+%         Data       &        $5908 \pm 77$ \\[+0.05in]
+%             \hline
+%         Agreement  &     1.0$\sigma$ \\[+0.05in]
+% %
+% \hline \hline
+% \multicolumn{2}{c}{\textbf{Same-sign $e^{-}e^{-}$ \Zboson\ mass window.}} \\\hline 
+%         Fakes      & $131 \pm 63$ \\[+0.05in]
+%         Charge Flips & $5990 \pm 630$ \\[+0.05in]
+%         Prompt Electrons & $61.4 \pm 3.9$ \\[+0.05in]
+%         $W\gamma$  & $9.4 \pm 2.3$ \\[+0.05in]
+%             \hline
+%         Total Prediction & $6190 \pm 630$ \\[+0.05in]
+%             \hline
+%         Data       &        $5885 \pm 77$ \\[+0.05in]
+%             \hline
+%         Agreement  &     0.5$\sigma$ \\[+0.05in]
+\hline 
+\end{tabular}
+\end{center}
+\label{tab:ee_isoSS_Z}
+\end{table}
+
+
+
 
 \subsection{Fake-enriched region}
 To verify the fake factor method, a set of validation regions is checked. 
@@ -368,6 +530,8 @@ with the only difference that the fake factor used
 in \EquationRef{eq:fake_pred} is obtained for the validation regions. 
 \toAsk[phrasing?]
 
+\toDo[describe VR block diagram]
+
 \begin{figure}[h]
 \begin{center}
 %\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
@@ -379,19 +543,208 @@ in \EquationRef{eq:fake_pred} is obtained for the validation regions.
 
 
 
+
+
+% 
+% Control regions enhanced in fake electrons are defined for the $ee$ channel to test the fake predictions.
+% Four different  control regions are defined for pairs of like-sign electrons, 
+% either relaxing the isolation requirement or by using electrons that 
+% fail "isEM tight++" reconstruction requirement, while passing "isEM medium++".
+% 
+% \begin{itemize}
+% \item Like-sign electron pairs, both passing the signal region isolation requirement, but fails "isEM tight++", while passing "isEM medium++".
+% \item Like-sign electron pairs where both electrons fails the signal isolation requirement but pass a looser \textit{intermediate} isolation cut instead.
+% \item Like-sign electron pairs. The leading $\pt$ electron must pass the signal isolation cut, while the subleading electron fails the signal region isolation and instead passes the looser intermediate isolation cut.  
+% \item Like-sign electron pairs. The subleading $\pt$ electron must pass the signal isolation cut, while the leading electron fails the signal region isolation and instead passes the looser intermediate isolation cut.  
+% \end{itemize}
+% 
+% Table~\ref{tab:ee_fakeCR} shows the expected and observed numbers of electron pairs for the fake-enhanced control regions. 
+% The uncertainties quoted are statistical only. For the uncertainty on the fake predictions, 
+% this includes the uncertainty associated with limited statistics where the fakes are estimated together 
+% with the resulting fractional systematic uncertainty on the fake factor as propagated through for the signal region. 
+% Figure~\ref{fig:ee_fakeCR_mll} shows the invariant mass distributions for the four control regions. 
+% The agreement between observation and prediction is generally good.  
+% 
+% Additional plots of fake-enhanced control regions can be found in Appendix~\ref{app:eeCR}. 
+% These include $\pt$ spectra and $\eta$ distribution for the fake-enhanced control regions.
+% 
+
+
+\begin{table}[htbp]
+\caption{Expected and observed numbers of electron pairs for the different like-sign $ee$ fake control regions. 
+The uncertainties on the predictions include the statistical and systematic uncertainties (fake factor and charge flip 
+uncertainties have been included; other systematic uncertainties are negligible in these regions). 
+% For the fake predictions, a systematic uncertainty derived for the signal region is assumed.
+}
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{ l | r r r r r r r }
+        \hline
+        Region 		& Fakes 			& Prompt 	& Charge Flip 			& W$\gamma$ 		& Total Pred 			& Data		&  Agreement($\sigma$) \\
+            \hline
+
+        SS\_medium++ 	& $ 111.04 \pm 27.4 $	&	$ 2.9 \pm 0.5 $	& $ 72.46 \pm 16.75 $		& $ 8.78 \pm 2.3 $	& $ 195.18 \pm 32.2 $		& $ 217 \pm 15 $&  -0.62\\
+        SS\_InterIso 	& $ 252.9 \pm 133.64 $	& $ 1.23 \pm 0.3 $	& $ 29.07 \pm 10.1 $		& $ 0.27 \pm 0.28 $	& $ 283.47 \pm 134.02 $		& $285 \pm 17 $	&  -0.01\\
+        SS\_sublInterIso& $ 519.21 \pm 120.72 $ & $ 32.88 \pm 2.14 $	& $ 52.69 \pm 14.87 $		& $ 17.64 \pm 4.32 $	& $ 622.42 \pm 121.72 $		& $574 \pm 24 $ &  0.39\\
+        SS\_leadInterIso& $ 154.97 \pm 58.67 $  & $ 13.28 \pm 1.21 $	& $ 15.96 \pm 7.5 $		& $ 5.12 \pm 1.72 $	& $ 189.33 \pm 59.19 $		& $ 224 \pm 15 $&  -0.57\\
+        
+        \hline
+    \end{tabular}
+    }
+\label{tab:ee_fakeCR}
+\end{table}
+
+
+
+\begin{figure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_medium_v2.eps}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_bothInter_v2.eps}
+\end{subfigure}
+\caption{\toDo Invariant mass distributions for different $e^{\pm}e^{\pm}$ control regions enhanced in fake background. The dashed lines show the statistical uncertainty on the background prediction.}
+  \label{fig:fakeCR_part1}
+\end{figure}
+
+\begin{figure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_leadNom_sublInter_v2.eps}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_leadInter_sublNom_v2.eps}
+\end{subfigure}
+\caption{\toDo Invariant mass distributions for different $e^{\pm}e^{\pm}$ control regions enhanced in fake background. The dashed lines show the statistical uncertainty on the background prediction.}
+  \label{fig:fakeCR_part2}
+\end{figure}
+
+
+
 \section{Signal Region}
-\label{sec:wprimeSignalRegion}
+\label{sec:ss_signalRegion}
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{SS/paper_draft/2isoSS_ee_mll.eps}
+\caption{\toDo Invariant mass distributions for $ee$ pairs in the same-sign signal region.}
+\label{fig:signal_mass}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/paper_draft/2isoSS_ee_pt1.eps}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/paper_draft/2isoSS_ee_eta1.eps}
+\end{subfigure}
+\caption{\toDo $p_T$ and $\eta$ distributions of leading electron.}
+  \label{fig:signal_kinematics}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{SS/support_note/dielectrons/crs/signal_deltaPhi_v2.eps}
+\caption{\toDo $\Delta\phi(ee)$ in the $ee$ signal region.}
+\label{fig:delta_phi}
+\end{center}
+\end{figure}
+
+
 
 \section{Systematic Uncertainties}
-\label{sec:wprimeSystematics}
+\label{sec:ss_Systematics}
 \subsection{Electron ID and momentum scale}
 \subsection{Event-level and modelling systematics}
 \subsection{Background uncertainty estimation}
 \subsection{Systematic uncertainty on the signal}
 
 \section{Cross section and mass limits}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{SS/paper/limit_ee_all.eps}
+\caption{\toDo 95\% C.L. upper limits on the cross section for new physics contributing to the fiducial region for $ee$ events.}
+\label{fig:signal_mass}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/support_note/limits/limit_ee_neg.eps}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/support_note/limits/limit_ee_pos.eps}
+\end{subfigure}
+\caption{\toDo 95\% C.L. upper limits on the cross section for new physics contributing to the fiducial region 
+for $e^{+}e^{+}$ (left) and $e^{+}e^{+}$ (right) events.}
+  \label{fig:signal_kinematics}
+\end{figure}
+
 \subsection{Statistical analysis for discovery and exclusion}
 \subsection{Fiducial cross section limits on new physics}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{SS/support_note/DCHLimits/effic_DCH_ee_pairSF.eps}
+\caption{\toDo Total acceptance times efficiency ($\varepsilon_{tot}$ in the text) as a function of simulated $H^{\pm\pm}$ mass for the $ee$ channels, 
+fitted with piecewise empirical functions described in the text.}
+\label{fig:signal_mass}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{SS/support_note/DCHPlots/ee/2isoSS_ee_mll_dch.eps}
+\caption{\toDo Invariant mass distributions for $\ee$ pairs passing the full event selection. 
+The data are shown as closed circles. The stacked histograms represent 
+the backgrounds composed of pairs of prompt leptons from SM processes, 
+pairs with at least one non-prompt lepton and backgrounds arising from charge misidentification and conversions. 
+The open histograms show the expected signal from simulated $H^{\pm\pm}$ samples,
+assuming a 100\% branching ratio to the decay channel considered. The last bin is an overflow bin.}
+\label{fig:signal_mass}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{SS/paper/limitDCH_ee_all.eps}
+\caption{\toDo 95\% C.L. upper limits on the cross section for new physics contribution for $ee$ events.  
+Pair production cross sections for left and right-handed $H^{\pm\pm}$ are overlaid.}
+\label{fig:signal_mass}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/paper/limitDCH_ee_allvsBR_LH.eps}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{SS/paper/limitDCH_ee_allvsBR_RH.eps}
+\end{subfigure}
+\caption{\toDo 95\% C.L. limits on the right-handed Doubly Charged Higgs mass vs 
+branching fraction of $H^{\pm\pm}_L$ (left) and $H^{\pm\pm}_R$ (right) for $ee$ events.}
+  \label{fig:signal_kinematics}
+\end{figure}
+
+
+
 \subsection{Mass limits on double charged Higgs}
 
 \section{Outlook}
