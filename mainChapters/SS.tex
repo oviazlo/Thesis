@@ -355,6 +355,15 @@ which means that in each control region only one background type has to give dom
 
 \subsection{Prompt opposite-sign dileptons}
 
+First validation region is defined by using exactly the same event selection as for the same-sign signal region,
+but requiring the two leptons to have opposite charge. 
+This validation region is not testing any background specifically.
+Overall normalization of the simulation to the data verify trigger and lepton reconstruction efficiencies.
+While correct description of the Z peak shape in data by MC simulation tests electron scale momentum and resolution.
+In \FigureRef{fig:OS_CR} invariant mass of opposite-sign electron pairs is shown.
+In \TableRef{tab:dilep_isoOS} observed and expected number of the electron pair are shown as well.
+Good agreement between data and simulation can be seen.
+
 \begin{table}[htbp]
 \caption{Observed and expected number of lepton pairs for the control region with opposite-sign, isolated leptons.} %The significance of the difference between the number of data events observed and that predicted is calculated considering the statistical error on the data and the systematic uncertainty on the prediction.}
 \begin{center}
@@ -488,11 +497,11 @@ Observed and expected number of lepton pairs are also shown in \TableRef{tab:ee_
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{SS/support_note/ChargeFlipCR/ElEl/ElEl_selection_pt_lead_ee_SS_CF_CR.eps}
+  \includegraphics[width=\textwidth]{SS/paper_draft/2isoSS_ee_pt1_ssz.eps}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{SS/support_note/ChargeFlipCR/ElEl/ElEl_selection_eta_lead_ee_SS_CF_CR.eps}
+  \includegraphics[width=\textwidth]{SS/paper_draft/2isoSS_ee_eta1_ssz.eps}
 \end{subfigure}
 \caption{\toDo Leading electron $E_\mathrm{T}$ and $\eta$ distributions in the same-sign $Z$ peak control region with two isolated electrons.}
   \label{fig:charge_flip_CR_kinematics}
@@ -692,10 +701,108 @@ uncertainties have been included; other systematic uncertainties are negligible 
 
 \section{Systematic Uncertainties}
 \label{sec:ss_Systematics}
-\subsection{Electron ID and momentum scale}
-\subsection{Event-level and modelling systematics}
-\subsection{Background uncertainty estimation}
-\subsection{Systematic uncertainty on the signal}
+
+
+\toDo[some general words about importance of the systematics...]
+
+Systematic uncertainties related to the data-driven methods for non-prompt and charge flip backgrounds estimation 
+were described in \SectionRef{???} \toDo[] accordingly.
+
+\subsection{Electron reconstruction}
+Several systematic uncertainties are related to the electron reconstruction in the detector.
+These uncertainties are provided by the ATLAS e/gamma working group which works on electron and photon identification performance of the ATLAS detector.
+They provide recommendations and uncertainty estimations for all physics analyses which work with electron or photon final states.
+
+Electron reconstruction and ``tight'' identification efficienies are obtained with tag-and-probe methods using
+events with leptonic decays of $W$ and $Z$ bosons and $J/\psi$ mesons.
+Reconstruction efficiency uncertainty range from 1.3-2.4\% depending on $\eta$, 
+``tight'' identification efficiency uncertainty range from 2.0-2.8\% depending on both $E_\mathrm{T}$ and $\eta$~\cite{electron_reco_id_2011}.
+
+The reconstruction of electron energies is optimised using multivariate algorithms.
+Electron energy scale and energy resolution are obtained with the Z resonance peak.
+Their uncertainies are provided as function of $E_\mathrm{T}$ and $\eta$~\cite{electron_energy_errors_Run1} 
+by working group as well.
+
+All these uncertainties are grouped togeter under the name ``Electron reconstruction ans identification'' in \TableRef{tab:syst}.
+
+\subsection{Trigger and luminosity}
+Efficiency of trigger for electrons with different $p_T$ and $\eta$ have some uncertainty as well.
+This uncertainty is estimated to be at $\sim1\%$ level by the ATLAS trigger groups.
+The resulting uncertainty on the yield in the signal region is different, since there are two leptons that can pass the trigger requirement. 
+
+To scale background prediction obtained with MC simulation to the data 
+one need to know integrated luminosity of the collected data sample. 
+That is why luminosity uncetainty propagates to all backgrounds measured from MC simulation.
+The integrated luminosity uncertainty in 2012 is equal to 2.8$\%$~\cite{Aad:2013ucp} 
+and it was obtained in similar way as described in \SectionRef{sec:lucid_performance}.
+
+\subsection{Statistics and theoretical cross section}
+Limited number of simulated events in the Monte Carlo samples lead to an additional uncertainty which is listed as ``MC statistics'' in \TableRef{tab:syst}.
+This uncertainty also include effect of the limited number of events in data sets used in data-driven methods to measure charge flip rate and fake factor.
+Statistical uncertainty give significant contribution for high-mass bins.
+
+As one can see from \TableRef{tab:MC_cross} different processes were simulated with using different MC generators, PDF sets and normalization.
+Additional uncertainty arises from choices of latter.
+To estimate these uncertainties different MC generators, parton shower and hadronization models are tested.
+Uncertainty on PDF and strong coupling constant $\alpha_{\mathrm{s}}$ are estimated by using different PDF sets following recommendations from~\cite{pdf4lhc}.
+Also renormalisation and factorisation scales are varied by factor of two to estimate an effect on total cross section of the processes.
+Summary list of uncertainties used in the analysis in shown in \TableRef{tab:systematics_common}.
+Detailed information about cross section calculations and its errors for some processes 
+are reported in~\cite{diboson_cross_section,ttW_cross_section,ttV_cross_section}.
+
+\toDo[describe about $W\gamma$ background process somewhere]
+\toFix[define ``DPI'' somewhere before using in the table]
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{l|l|c}
+Source & Process & Uncertainty \\
+\hline
+\multirow{2}{*}{Trigger} & Signal and background & \multirow{2}{*}{2.1-2.6\%}  \\
+& from MC simulations &\\
+\hline
+Electron reconstruction & Signal, prompt &\multirow{2}{*}{1.9--2.7\%}\\
+and identification & background&\\\hline
+Electron charge  & Opposite-sign& \multirow{2}{*}{9\%} \\
+misidentification& backgrounds&\\\hline
+Determination of & Non-prompt &\multirow{2}{*}{22\%}\\
+fake factor $f$& backgrounds&  \\\hline
+\multirow{2}{*}{Luminosity} & Signal and background& \multirow{2}{*}{2.8\%}\\
+& from MC simulations&\\\hline
+\multirow{2}{*}{MC statistics} & Backgrounds from &  \multirow{2}{*}{5\%}\\
+& MC simulations &\\\hline
+%Differences between fast & \multirow{2}{*}{Signal}& \multirow{2}{*}{1.8\%}& \multirow{2}{*}{5\%}& \multirow{2}{*}{0.7\%}\\
+%and normal simulation &&&&\\\hline
+Photon misidentification & \multirow{2}{*}{$W\gamma$} & \multirow{2}{*}{13\%}\\
+as electron&&\\\hline
+\multirow{2}{*}{MC cross sections} & Prompt, opposite-& \multirow{2}{*}{4\%}\\
+& sign backgrounds & \\
+\end{tabular}
+\end{center}
+\caption{Sources of systematic uncertainty (in \%) on the signal yield and the expected background predictions, described in the second column, for the mass range $m_{ee} > 15$ GeV.
+}
+\label{tab:syst}
+\end{table}
+
+
+\begin{table}[ht]
+\caption{Theoretical uncertainties on the production cross section.}
+\begin{center}
+\begin{tabular}{l|c}
+Processes affected & Uncertainty \\
+\hline
+ Drell-Yan (Charge flips) & $\pm$7\% \\
+ $WZ$ & $\pm$7\% \\
+ $ZZ$ & $\pm$5\% \\
+ $t\bar{t}W$, $t\bar{t}Z$  & $\pm$22\% \\
+ $W^{\pm}W^{\pm}$ & $\pm$50\% \\
+ DPI $WW$, $WZ$, $ZZ$ & $\pm$100\% \\
+ $t\bar{t}$ & $\pm$5\% \\
+ $W\gamma$ & $\pm$14\% \\
+\end{tabular}
+\end{center}
+\label{tab:systematics_common}
+\end{table}
 
 \section{Cross section and mass limits}
 
