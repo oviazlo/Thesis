@@ -12,6 +12,7 @@
 \toAsk[shoud I use ``same-sign'' or ``like-sign''? Can I use both simultaneously?]
 
 \toDo[no jet selection]
+\toDo[add Fast/Full sim systematics]
 
 The idea of the current analysis is to make a general search for a new physics in a same-sign dilepton channel. \toFix
 % Why do we use leptons as final objects?
@@ -77,7 +78,7 @@ Process &  Generator&  PDF set & Normalisation \\
 &  + fragmentation/ &  & based on \\
 &  hadronisation & &\\
 \hline\hline
-\multirow{2}{*}{$WZ$ } &  \multirow{2}{*}{{\scshape sherpa-1.4.1} \cite{Sherpa}} &   \multirow{2}{*}{CT10 \cite{ct10}} & NLO QCD \\
+\multirow{2}{*}{$WZ$ } &  \multirow{2}{*}{{\scshape sherpa-1.4.1} \cite{Sherpa}} &   \multirow{2}{*}{CT10 \cite{CT10}} & NLO QCD \\
  & & &  with {\scshape mcfm-6.2}\cite{mcfm} \\
 \hline
 \multirow{2}{*}{$ZZ$}  &  \multirow{2}{*}{{\scshape sherpa-1.4.1}} & \multirow{2}{*}{CT10} & NLO QCD  \\
@@ -172,7 +173,7 @@ Isolation requirement were chosen in order to reach pile-up independent efficien
 with $p_T >$ 40 GeV. The requirement has two parts.
 Firstly, the sum of the transverse energies in the EM and hadronic calorimeters around the electron within 
 $\Delta R < 0.2$, with core electron energy subtracted from the sum, has to be less than 
-3 GeV $+ (p_T^e - 20$ GeV$) \times 0.037$, where $p_T^e$ is electron transverse momentum.
+3 GeV $+ (p_T - 20$ GeV$) \times 0.037$, where $p_T$ is electron transverse momentum.
 Secondly, the sum of the $p_T$ of all tracks with $p_T > 0.4$ GeV within $\Delta R < 0.3$ around the electron track has
 to be less than 10$\%$ of electron $p_T$.
 
@@ -416,7 +417,7 @@ Process & Number of lepton pairs \\\hline\hline
 	Dibosons	& $ 12210.9 \pm 545.6 $	\\[+0.05in]
 	Non-prompt	& $ 8321.28 \pm 244.4 $	\\[+0.05in]
 	$W\gamma$	& $ 243.03 \pm 35.2 $	\\[+0.05in]
-	DPI	& $ 32.74 \pm 32.74 $	\\[+0.05in]
+	MPI	& $ 32.74 \pm 32.74 $	\\[+0.05in]
 	\hline
 	Total Prediction	& $ 4736500 \pm 329109 $	\\[+0.05in]
 	\hline
@@ -761,7 +762,7 @@ are reported in~\cite{diboson_cross_section,ttW_cross_section,ttV_cross_section}
 
 \toDo[describe about $W\gamma$ background process somewhere]
 
-\toFix[define ``DPI'' somewhere before using in the table]
+\toFix[define ``MPI'' somewhere before using in the table]
 
 \begin{table}[ht]
 \begin{center}
@@ -806,7 +807,7 @@ Processes affected & Uncertainty \\
  $ZZ$ & $\pm$5\% \\
  $t\bar{t}W$, $t\bar{t}Z$  & $\pm$22\% \\
  $W^{\pm}W^{\pm}$ & $\pm$50\% \\
- DPI $WW$, $WZ$, $ZZ$ & $\pm$100\% \\
+ MPI $WW$, $WZ$, $ZZ$ & $\pm$100\% \\
  $t\bar{t}$ & $\pm$5\% \\
  $W\gamma$ & $\pm$14\% \\
 \end{tabular}
@@ -862,7 +863,7 @@ $WZ$	& $ 234.36 \pm 22.24 $	& $ 132.79 \pm 12.76 $	& $ 37.12 \pm 3.9 $	& $ 10.95
 $t\bar{t}W$	& $ 5.33 \pm 1.23 $	& $ 3.83 \pm 0.89 $	& $ 1.32 \pm 0.32 $	& $ 0.44 \pm 0.11 $	& $ 0.14 \pm 0.04 $	& $ 0.08 \pm 0.03 $	& $ 0.03 \pm 0.01 $	\\[+0.05in]
 $t\bar{t}Z$	& $ 1.73 \pm 0.41 $	& $ 1.2 \pm 0.29 $	& $ 0.4 \pm 0.1 $	& $ 0.11 \pm 0.04 $	& $ 0.03 \pm 0.01 $	& $ 0.02 \pm 0.01 $	& $ 0.01 \pm 0.01 $	\\[+0.05in]
 $WWjj$	& $ 14.99 \pm 7.59 $	& $ 12.1 \pm 6.14 $	& $ 5.55 \pm 2.84 $	& $ 2.35 \pm 1.22 $	& $ 1.22 \pm 0.66 $	& $ 0.4 \pm 0.24 $	& $ 0.16 \pm 0.11 $	\\[+0.05in]
-DPI	& $ 4.04 \pm 4.06 $	& $ 1.6 \pm 1.61 $	& $ 0.38 \pm 0.39 $	& $ 0.06 \pm 0.07 $	& $ 0.02 \pm 0.02 $	& $ 0 \pm 0 $	& $ 0 \pm 0 $	\\[+0.05in]
+MPI	& $ 4.04 \pm 4.06 $	& $ 1.6 \pm 1.61 $	& $ 0.38 \pm 0.39 $	& $ 0.06 \pm 0.07 $	& $ 0.02 \pm 0.02 $	& $ 0 \pm 0 $	& $ 0 \pm 0 $	\\[+0.05in]
 \hline
 Prompt total	& $ 346.51 \pm 24.95 $	& $ 173.94 \pm 14.44 $	& $ 51.52 \pm 4.93 $	& $ 15.7 \pm 1.92 $	& $ 5.25 \pm 0.92 $	& $ 2.34 \pm 0.49 $	& $ 0.91 \pm 0.28 $	\\[+0.05in]
 \hline\hline
@@ -1006,12 +1007,13 @@ In order to estimate value of the fiducial efficiency four different BSM models 
  This state is charachterized by large hadron activity due to high jet multiplicity.
  Mass of forth generation quark was varied from 400 GeV to 1 TeV.
 \end{itemize}
-Fiducial efficiencies for these model were calculated with different dilepton mass threshold.
+Fiducial efficiencies for these model were calculated with different dilepton mass thresholds.
 Obtained efficiencies are in range 48-74$\%$. The lowest efficiency were given by forth generation down-type quark, while the highest one 
 for heavy right-handed $W_R$ boson and heavy Majorana neutrino. Latter model had larger efficiency with respect to doubly charged Higgs model
 because final state of doubly charged Higgs model contains two same-sign pairs against one pair in Majorana model.
+Efficiencies were measured separately for positive and negative same-sign pairs separately but no significant difference were observed.
 
-In order to be conservative the lowest obtained efficiency, which was 48.3$\%$, have been decided to be used for cross section limits.
+To provide conservate cross section limit setting for new physics beyond the SM the lowest obtained efficiency, which was 48.3$\%$, have been decided to be used.
 
 \toAsk[why do we need calorimeter-based isolation? Because it helps to reduce pile-up dependence?]
 
@@ -1019,7 +1021,8 @@ In order to be conservative the lowest obtained efficiency, which was 48.3$\%$, 
 
 Computed upper limits at the 95$\%$ confidence level on the fidicual cross section ($\sigma_{95}^{fid}$)
 of the new physics beyond the SM for different invariant mass thresholds based on the values from \TableRef{tab:2iso_ee_SS}
-are shown in \FigureRef{fig:inclusive_fid_limit}. 
+are shown in \FigureRef{fig:inclusive_fid_limit}. Limits separately for positive and negative same-sign pairs are shown in \FigureRef{fig:signal_kinematics}.
+Expected limits are shown with 2$\sigma$ bands. Limits are also shown in \TableRef{tab:limits}.
 
 \begin{figure}[h]
 \begin{center}
@@ -1044,18 +1047,113 @@ for $e^{+}e^{+}$ (left) and $e^{+}e^{+}$ (right) events.}
   \label{fig:signal_kinematics}
 \end{figure}
 
-\subsection{Statistical analysis for discovery and exclusion}
-\subsection{Fiducial cross section limits on new physics}
+
+\begin{table*}[!ht]
+\begin{center}
+\begin{tabular}{c||c|c||c|c||c|c}
+
+ & \multicolumn{6}{c}{95\%  CL upper limit [fb]} \\
+ & \multicolumn{2}{c||}{$e^{\pm}e^{\pm}$} & \multicolumn{2}{c||}{$e^{+}e^{+}$} & \multicolumn{2}{c}{$e^{-}e^{-}$} \\
+Mass range & Expected & Observed & Expected & Observed & Expected & Observed \\
+%[+0.05in]
+\hline
+\rule{0pt}{3ex}
+  $>15$~GeV   &  $39^{+10}_{-13}$        &  32    &    $27^{+11}_{-6}$         &  28    &    $23^{+8}_{-5}$          &  19\\
+  $>100$~GeV  &  $19^{+6}_{-6}$          &  14    &    $14.3^{+5.4}_{-2.8}$    &  13.5  &    $10.8^{+4.4}_{-2.4}$    &  9.0\\
+  $>200$~GeV  &  $6.8^{+2.6}_{-1.7}$     &  5.3   &    $5.4^{+2.0}_{-1.4}$     &  4.6   &    $3.9^{+1.4}_{-1.2}$     &  3.5\\
+  $>300$~GeV  &  $3.3^{+1.3}_{-0.4}$     &  3.3   &    $2.5^{+0.9}_{-0.6}$     &  2.0   &    $2.1^{+0.7}_{-0.5}$     &  2.6\\
+  $>400$~GeV  &  $2.02^{+0.74}_{-0.21}$  &  2.03  &    $1.59^{+0.47}_{-0.34}$  &  1.64  &    $1.56^{+0.41}_{-0.31}$  &  1.35\\
+  $>500$~GeV  &  $1.25^{+0.36}_{-0.26}$  &  1.10  &    $1.44^{+0.34}_{-0.36}$  &  1.55  &    $0.69^{+0.27}_{-0.17}$  &  0.64\\
+  $>600$~GeV  &  $0.99^{+0.34}_{-0.20}$  &  1.02  &    $1.27^{+0.37}_{-0.26}$  &  1.10  &    $0.58^{+0.21}_{-0.08}$  &  0.61\\
+
+\end{tabular}
+\end{center}
+ \caption{Upper limit at 95\% CL on the fiducial cross-section for $\ell^{\pm} \ell^{\pm}$ pairs from non-SM signals. The expected limits and their $1 \sigma$ uncertainties are given together with the observed limits derived from the data. Limits are given inclusively and separated by charge.}
+\label{tab:limits}
+\end{table*}
+
+
+\section{Mass limits on doubly charged Higgs}
+As an example of the BSM model which produce same-sing lepton pairs in the final state, a double charged Higgs bosons were studied.
+The search strategy are the same as described above.
+Since final state of this model is two same-sign pair of leptons without any jet activity or presense of missing transverse energy 
+there is no need to optimize signal selection.
+Double charged Higgs decay is reconstructed as a sharp peak in the dilepton invariant mass.
+This is why using fiducial efficiency calculated in bins of 100 GeV is not optimal from point of view signal sensetivity.
+Thus search is performed in mass bins with mass dependent width.
+
+\subsection{MC simulation}
+A few samples were generated with Pythia8~\cite{???} which correspond to the different mass of the left-handed and right-handed douly charged Higgs.
+Simulated masses were in range 50-600 GeV in steps of 50 GeV and one sample with 1 TeV mass.
+Kinematics of the left-handed and right-handed Higgs bosons are identical, but production rate is different due to different coupling constant to Z boson mediator~\cite{dch_note}.
+Cross sections are known with NLO precision.
+
+\subsection{Model acceptance and efficiency}
+The width of double charged Higgs decay is dominated by the momentum resolution of the electrons.
+Because widths become larger with invariant mass search was performed in the mass bins with variable width.
+The idea behind mass bin widths optimization lay in two facts. From one side, a mass bin have to cover most part of the signal
+but from otherside, background contribution in the mass bin is desired to be as small as possible.
+To satisfy both conditions signal significance, $S$, was chosen as optimization criteria:
+\begin{equation}
+ S = \sqrt{ 2((s+B)ln(1+s/B)-s } 
+\end{equation}
+where $s$ is the expected signal and $B=b+\delta b^2$ is the predicted background plus background systematics squared.
+A bin width is parametrized as a second-order polinom of the Higgs mass.
+Cofficients of the polinom were parameters to optimize.
+During the optimization procedre it become clear that there is a third factor which have to be taken into account.
+Due to limited statistics of the predicted background one cannot have too many mass bins otherwise cross section
+exlusion limit will fluctuate very much from bin to bin. 
+The optimal bin width parametrization was found to be $\pm(0.04 \times m(\dch) + 0.2 \cdot 10^{-4} \times m(\dch)^{2})$,
+where $m(\dch)$ is the Higgs mass.
+
+Next step is to define how many lepton pairs produced from Higgs boson decays are reconstructed, selected and fall into appropriate mass bin.
+Number of generated Higgs boson is known this is why one need only count number of reconstructed same-sign pairs which fall into appropriate mass bins.
+The ratio of reconstructed pairs to the total number of generated correscpond to the total efficiency which includes acceptance and selection eficiency.
+Efficienies for each mass points were calculated but in order to interpolate between the simulated mass points, total efficiency, $\varepsilon_{tot}$, is fitted by
+an empiricalpiecewise function:
+\begin{equation}
+\varepsilon_{tot}(m) = \begin{cases} p_{0} (1-e^{-(m-p_{1})/p_{2}}), & \mbox{if } m < 450\mbox{ GeV} \\ 
+p_{3} + p_{4} m, & \mbox{if } m \geq 450\mbox{ GeV} \end{cases}
+\label{eq:ee_eff}
+\end{equation}
+where $m$ is Higgs mass and $p_{0}, p_{1}, p_{2}, p_{3}, p_{4}$ are fit parameters which values are shown in \TableRef{tab:ee_eff_params}.
+\begin{table}[htbp]
+    \caption{Fitted parameter values for Equation~\ref{eq:ee_eff}, which gives $\varepsilon_{tot}(m)$.}
+    \begin{center}
+    \begin{tabular}{ l | l }
+        \hline
+        Parameter & Value \\
+        \hline
+        $p_{0}$    & $4.76 \times 10^{-1}$ \\[+0.05in]
+        $p_{1}$    & $2.94 \times 10^{+1}$ \\[+0.05in]
+        $p_{2}$    & $1.05 \times 10^{+2}$ \\[+0.05in]
+        $p_{3}$    & $4.51 \times 10^{-1}$ \\[+0.05in]
+        $p_{4}$    & set by requiring continuity \\[+0.05in]
+        \hline
+    \end{tabular}
+    \end{center}
+    \label{tab:ee_eff_params}
+\end{table}
+
+Computed efficiency for available mass point and their fit is shown in \FigureRef{fig:signal_efficiency}.
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{SS/support_note/DCHLimits/effic_DCH_ee_pairSF.eps}
 \caption{\toDo Total acceptance times efficiency ($\varepsilon_{tot}$ in the text) as a function of simulated $H^{\pm\pm}$ mass for the $ee$ channels, 
 fitted with piecewise empirical functions described in the text.}
-\label{fig:signal_mass}
+\label{fig:signal_efficiency}
 \end{center}
 \end{figure}
 
+\toDo[describe systematics for the DCH]
+
+\toDo[CLs = CLs+b/CLb. What is the signal in case of limit on new pysics?]
+
+\subsection{Cross section and mass limits}
+
+Invariant mass distribution for same-sign electron pairs with signal from left-handed Higgs with masses 300 GeV and 500 GeV supeimopes are shown in \FigureRef{fig:signal_mass}.
+Branching ratio of $H^{\pm\pm} \to e^{\pm}e^{\pm}$ decay, plotted in the figure, is assumed to be 100$\%$.
 
 \begin{figure}[h]
 \begin{center}
@@ -1070,16 +1168,49 @@ assuming a 100\% branching ratio to the decay channel considered. The last bin i
 \end{center}
 \end{figure}
 
+Upper cross section limit on pair production of doubly charged Higgs are set in the same way as limits on new physics described earlier.
+A cross section is determined as:
+\begin{equation}
+ \sigma_{HH}\times BR =\frac{N_{H}^{rec}}{2\times A\times \epsilon \times \int \mathscr{L} dt}
+\end{equation}
+where BR is branching ratio of $H^{\pm\pm} \to e^{\pm}e^{\pm}$ decay, $N_{H}^{rec}$ is number of reconstructed $H^{\pm\pm}$, $A\times \epsilon$ is total efficiency described earlier and
+$\int \mathscr{L} dt$ is integrated luminosity.
+Factor 2 in the denominator is present to take into account presence of two same-sign pairs from $H^{++}$ and $H^{--}$ in the event.
+
+Upper cross section limit times branching ratio (which is assumed to be 100$\%$) at 95$\%$ CL is shown in \FigureRef{fig:dch_limits_mass}.
+The scatter between mass bins are caused by fluctuations of the predicted background due to low statistics in bins.
+A good agreement between expected and observed limit lines are observed and all diviations lay within $2\sigma$.
+The theoretical cross section curves as a function of Higgs mass for left- and right-handed doubly charged Higgs bosons 
+are shown as well.
+Lower mass limits of the model correspond to intersaction of the theoretical curve with expected cross section curve.
+Mass limits are summarized in the \TableRef{tab:limits_mass}.
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{SS/paper/limitDCH_ee_all.eps}
 \caption{\toDo 95\% C.L. upper limits on the cross section for new physics contribution for $ee$ events.  
 Pair production cross sections for left and right-handed $H^{\pm\pm}$ are overlaid.}
-\label{fig:signal_mass}
+\label{fig:dch_limits_mass}
 \end{center}
 \end{figure}
 
+\begin{table}[htbp]
+\caption{Upper limit at 95\% C.L. on mass of \dch, assuming 100\% branching fraction.}
+\begin{center}
+\begin{tabular}{c||c|c}
+& \multicolumn{2}{c}{95\%  C.L. upper limit [GeV]}\\
+Signal & expected & observed \\
+\hline
+$H^{\pm\pm}_L$ & $552.6^{+11.1}_{-49.9}$ & $551.2 \pm 3.1$ \\
+\hline
+$H^{\pm\pm}_R$ & $424.8^{+1.0}_{-59.7}$ & $374.0 \pm 6.2$ \\
+\end{tabular}
+\end{center}
+\label{tab:limits_mass}
+\end{table}
+
+Also limits above can be interpreted as mass limits as a function the branching fraction for $H^{\pm\pm}_L$ and $H^{\pm\pm}_R$.
+They are shown in \FigureRef{fig:dch_limits_BR}.
 
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
@@ -1092,13 +1223,9 @@ Pair production cross sections for left and right-handed $H^{\pm\pm}$ are overla
 \end{subfigure}
 \caption{\toDo 95\% C.L. limits on the right-handed Doubly Charged Higgs mass vs 
 branching fraction of $H^{\pm\pm}_L$ (left) and $H^{\pm\pm}_R$ (right) for $ee$ events.}
-  \label{fig:signal_kinematics}
+  \label{fig:dch_limits_BR}
 \end{figure}
 
-
-
-\subsection{Mass limits on double charged Higgs}
-
 \section{Outlook}
-\label{sec:wprimeConclusion}
+\label{sec:ssOutlook}
 
