@@ -9,32 +9,32 @@
 % - motivation flow: why leptons -> why same-sign dilepton -> why model-independent search?
 % ******************************************************************************
 
-\toAsk[should I use ``same-sign'' or ``same-sign''? Can I use both simultaneously?]
+Despite a great success of the Standard Model (SM) to describe interaction of the elementary particles there are plethora phenomena
+which cannot be explained by the SM. Gravity, Dark Energy and Matter, neutrino masses and other evidence is not predicted by the
+SM, which indicate its incompleteness.
+This is why many studies at LHC experiments are focused on probing new energetic regimes to search of new physics, 
+observation of which can prove or deny different extensions of the SM.
 
-\toDo[no jet selection]
-\toDo[add Fast/Full sim systematics]
+Many beyond the Standard Model (BSM) models predict same-sign dilepton final state,
+which is very distinctive final state.
+Also it is a very clean signal due to very few SM processes, which predict such final state.
+This lead to high new physics sensitivity.
 
-\toDo[list of BSM models with same-sign dilepton final state]
+There are number searches in ATLAS which target the same final signature but all of them targets some given 
+BSM model which means requiring additional cuts on number of jets \toFix[link] of missing transverse energy \toFix[link].
+Current analysis is aim to be as inclusive as possible and to probe exclusively same-sign dilepton signature and
+all the BSM models which predict it.
 
-\toDo[outlook; more explanation for fid. and DCH limits]
+For these purpose signal selection consists from the minimal kinematic requirements on leptons.
+Electron are very clean object which can be precisely reconstructed with high efficiency in ATLAS.
+The search observable for the analysis was chosen to be same-sign dilepton invariant mass.
 
-The idea of the current analysis is to make a general search for a new physics in a same-sign dilepton channel. \toFix
-% Why do we use leptons as final objects?
-Leptons as a physics signature are very clean and straightforward observables. 
-ATLAS detector capable to detect leptons with amazing momentum resolution precision... \toFix[show some resolution plot]
+If no physics is found an upper limit on fiducial cross section for new physics can be set.
+As an example of BSM model with same-sign dilepton final state, a pair production of double charged Higgs bosons
+will be studied in details within current search.
 
-In resonant searches for new physics using leptons are beneficial due to fact that resonance peak for potential BSM signals will be narrower with comparison to e.g. using jets.
-Because energy of leptons is reconstructed very well resonance peaks 
-BSM bosons whose decay would manifest itself as a narrow resonance in the dilepton mass spectrum
-
-% Why do we use same-sign dilepton channel
-Looking for a same-sign dilepton channel is motivated by the fact that cross section for SM processes with such signature are really small, which make 
-it very sensitive possible signals of new physics.  \toFix
-% Why model-independent search
-There are other searches in ATLAS which target the same final signature but with requiring additional cuts on number of jets \toFix[link] of missing transverse energy \toFix[link].
-In such way these analyses target limited number of specific models.
-Analyses presented in this chapter aims to be more general and model-independent. 
-\toFix[Explain which models does this analysis cover?]
+Analysis use three channels: $e^{\pm}e^{\pm}$, $\mu^{\pm}\mu^{\pm}$ and $e^{\pm}\mu^{\pm}$.
+This chapter will describe search only with $e^{\pm}e^{\pm}$ channel.
 
 \section{Background processes}
 \label{sec:wprimeBackgrounds}
@@ -117,9 +117,11 @@ $V=W,Z$ &  + {\scshape pythia-6.426} & & \\
 \hline
 \end{tabular}
 \end{center}
-  \caption{Generated samples used for background estimates. The generator, PDF set and order of cross-section calculations used for the normalization
-  are shown for each sample.
-  The upper part of the table shows the MC samples used for the SM background coming from leptons with the same charge (MPI stands for multiple parton interactions), the lower part gives the background sources arising due to electron charge misidentification.}
+  \caption{List of MC generated samples used for background prediction. 
+  The used MC generator, PDF set and order of cross section calculations used for the normalization are listed for each sample.
+  The upper part of the table contains MC sample which provide same-sign dilepton in the final state.
+  (MPI stands for multiple parton interactions), 
+  while the lower part contains samples, which contribute to the signal selection due to electron charge misidentification.}
 \label{tab:MC_cross}
 \end{table}
 
@@ -142,17 +144,19 @@ $V=W,Z$ &  + {\scshape pythia-6.426} & & \\
 \section{Event selection}
 % TODO mention here about size of the dataset and that it was 8 TeV 50 ns data.
 % TODO description of the used triggers here!
+\toDo[no jet selection is described]
 
-% TODO ToTHINK MC cross section and sample sizes\toFix
-First step in the selection is to select events with fired dilepton trigger ???
-Events of interest are events which have two high-$p_T$ isolated leptons \toFix
+The analysis is based on the pp data collected in 2012 by the ATLAS detector with 8 TeV center of mass energy.
+Integrated luminosity of the data correspond to 20.3 fb$^{-1}$, the mean number of interactions per bunch crossing equal to 21.
 
-20.3 fb$^{-1}$ of data collected at 8 TeV center of mass energy pp collisions, with mean number of interactions per crossing equal to 21, 
-with 50 ns distance between bunches were used for the analysis.
-Events are required to have at least one reconstructed primary vertex with at least three tracks matched to it. If there are few vertices, the one with the highest
+Event should have at least one reconstructed vertex with at least three tracks matched to it. If there are few vertices, the one with the highest
 $\sum p^2_T$, where $p_T$ is transverse momenta of the matched tracks, is chosen.
-Events which pass \toFix trigger, which selects events with two isolated \toFix leptons with $p_{T}>25$\toFix and $p_{T}>20$\toFix, were selected.
-% TODO Cleaning and all other event-related cuts to describe here...
+Events should have at least two electron candidates which is provided by selecting only events
+which fire dilepton trigger, which require presence of two electrons with $p_T > 12$ GeV.
+In order to exclude ambiguities between electron and jet reconstruction electron are required to
+be isolated. Isolation is calculated by summing up activity around the electron candidate within a given cone size, $\Delta R = \sqrt{ (\eta_e-\eta_i)^2 + (\phi_e-\phi_i)^2 }$,
+where $\eta_e$ and $\phi_e$ are rapidity and azimuthal angle of the electron candidate and $\eta_i$ and $\phi_i$ are rapidity and azimuthal angle of track or calorimeter cluster, 
+not related to the electron candidate.
 
 \subsection{Electron selection}
 \label{subsec:electron_selection}
@@ -163,8 +167,6 @@ Electron reconstruction is done by matching track from inner detector with an en
 
 \toDo[explain how electron energy is measured]
 
-\toDo[describe three channels: ee, emu, mumu]
-
 Electrons of interest are good reconstructed candidates, track of which originates from the primary vertex. To select such candidates following requirements have to be satisfied:
 \begin{itemize}
  \item $p_T > 20$ GeV. To ensure a high and flat trigger efficiency and to harmonize $p_T$ requirement between three analysis channels ($ee$, $\mu\mu$ and $e\mu$) 
@@ -174,7 +176,7 @@ Electrons of interest are good reconstructed candidates, track of which originat
  \item To pass ``tight'' electron set of identification criteria defined in~\cite{electron_tight}. \\ 
  \toFix[explain shortly purpose of the cut]
  \item To pass isolation requirement. To distinguish prompt electrons from those associated with jet activity.
- \item No reconstructed jet within $\Delta R < 0.4$ \toFix[define R]. To remove ambiguous classification of the track, when track is classified as electron and as jet simultaneously. 
+ \item No reconstructed jet within $\Delta R < 0.4$. To remove ambiguous classification of the track, when track is classified as electron and as jet simultaneously. 
  Or when jet is too close to the electron which will lead to poor reconstruction of latter. 
 \end{itemize}
 
@@ -210,7 +212,7 @@ This region is used for estimation of the electron charge misidentification back
 % TODO
 % subsection flow:
 % CF sources --> method and used regions --> validation of the method --> deriving scale factors --> appling to specific MC samples
-\toDo[description how charge flip rate was obtained, and plots if CF rate vs. pT and eta.]
+
 \toAsk[why we define CF rate in 80..100 GeV region, while we cut 70..110 GeV from signal region?]
 \toAsk[CF at high pT. extrapolation? of one large bin with huge error? look it up!]
 
@@ -241,7 +243,8 @@ of charge due to very small curvature of tracks.
 \begin{figure}
 \begin{center}
  \includegraphics[width=0.7\columnwidth]{SS/support_note/chargeflip/misidratept_ZDY.eps}
-\caption{\toDo[caption]}
+\caption{Electron charge misidentification rate, obtained from MC simulation with using electrons from Z boson decay. 
+Contribution from charge flip due to photon conversion is shown separately.}
 \label{fig:chargeFlip_structure}
 \end{center}
 \end{figure}
@@ -266,7 +269,7 @@ Comparison demonstrates that likelihood method provide very reliable results as 
   \centering
   \includegraphics[width=\textwidth]{SS/support_note/chargeflip/pt_mctruth.eps}
 \end{subfigure}
-\caption{\toDo}
+\caption{Electron charge misidentification rate, obtained from MC simulation using truth (generated) information and likelihood method.}
 \label{fig:likelihood_cross_check}
 \end{figure}
 
@@ -284,7 +287,7 @@ in high-$\eta$ region. This is why $\eta$ dependent scale factors were calculate
   \centering
   \includegraphics[width=\textwidth]{SS/support_note/chargeflip/misidratept_datamc.eps}
 \end{subfigure}
-\caption{\toDo}
+\caption{Electron charge misidentification rate, obtained from MC simulation and from real collision data with likelihood method.}
 \label{fig:charge_flip_data_vs_mc}
 \end{figure}
 
@@ -314,8 +317,6 @@ Charge flip scale factor and uncertainty are also applied for the MC prediction 
 
 \subsection{Non-prompt background}
 \label{subsec:fakes_description}
-\toDo[short description of the fake factor method. Put details on which regions were used.]
-
 Another type of background present after the signal selection is the so-called non-prompt background.
 Main sources of this background are jets misidentified as electrons and electrons which originate not from 
 primary vertex, e.g. electrons from semi-leptonic decays of heavy flavor quarks ($b$, $c$).
@@ -354,7 +355,6 @@ When fake factor have been measured in the background region it can be used to p
 In order to take into account possible different kinematics of a lepton in the region were fake factor was derived 
 and region were it will be applied, fake factor is measured as a function of electron $E_\mathrm{T}$ and $\eta$.
 The total number of the non-prompt same-sign pairs, $N_{\mathrm{NP}}$, in the signal region can be estimated as:
-\toAsk[is phrasing above clear enough?]
 \begin{equation}
 N_{\mathrm{NP}} = \sum_{i}^{\mathrm{N_{P_l F_s}}} f_{\mathrm{s}}(p_{\mathrm{Ti}},|\eta_{i}|) + \sum_{i}^{\mathrm{N_{F_l P_s}}} f_{\mathrm{l}}(p_{\mathrm{T}i},|\eta_{i}|) - \sum_{i}^{\mathrm{N_{F_l F_s}}} f_{\mathrm{l}}(p_{\mathrm{T}i},|\eta_{i}|) \times f_{\mathrm{s}}(p_{\mathrm{T}i},|\eta_{i}|).
 \label{eq:fake_pred}
@@ -388,19 +388,18 @@ fake factors, and region where they will be applied. The following sources were 
 \end{itemize}
 More detailed description of the evaluated systematic uncertainties and the fake factor method overall can be found in~\cite{anthony_thesis}.
 
-The electron fake factor as a function of electrons $E_\mathrm{T}$ with statistical and systematic errors are
+The electron fake factor as a function of electrons $p_T$ with statistical and systematic errors are
 shown in \FigureRef{fig:ff_e_errs}.
 \begin{figure}[h]
 \begin{center}
 %\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
 \includegraphics[width=0.65\textwidth]{SS/support_note/electrons/electron_fake_plot.eps}
-\caption{Electron fake factor $f$ as a function of electron $E_\mathrm{T}$. Combined statistical and systematic errors shown with error bars.}
+\caption{Electron fake factor $f$ as a function of electron $p_{T}$. Combined statistical and systematic errors shown with error bars.}
 \label{fig:ff_e_errs}
 \end{center}
 \end{figure} 
 \toDo[say that fake factors were also measured not only for signal selection, but also for less strong selections
 which are used for fake validation regions].
-\toAsk[what fake CR says us? we use different fake factors for them then for signal, so there is no direct relation?]
 
 Verification of the fake factor method is done with help of validation regions which are described further.
 
@@ -457,7 +456,7 @@ Process & Number of lepton pairs \\\hline\hline
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.65\textwidth]{SS/support_note/dielectrons/crs/OS_mod_v4.pdf}
-\caption{\toDo}
+\caption{Invariant mass of the opposite-sign electron pairs passed signal selection.}
 \label{fig:OS_CR}
 \end{center}
 \end{figure} 
@@ -530,7 +529,7 @@ Simulation agrees well with data.
 \begin{center}
 %\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
 \includegraphics[width=0.65\textwidth]{SS/support_note/PromptCR/ElEl/2isoSS_ee_mll_pr.eps}
-\caption{\toDo}
+\caption{Prompt background validation region.}
 \label{fig:prompt_CR}
 \end{center}
 \end{figure} 
@@ -554,7 +553,7 @@ Observed and expected number of electron pairs are also shown in \TableRef{tab:e
 \begin{center}
 %\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
 \includegraphics[width=0.65\textwidth]{SS/paper_draft/2isoSS_ee_mll_ssz.eps}
-\caption{\toDo}
+\caption{Invariant mass of reconstructed same-sign electron pairs arising due to electron charge flip identification. Validation region for the charge flip background prediction.}
 \label{fig:charge_flip_CR_inv_mass}
 \end{center}
 \end{figure} 
@@ -568,14 +567,14 @@ Observed and expected number of electron pairs are also shown in \TableRef{tab:e
   \centering
   \includegraphics[width=\textwidth]{SS/paper_draft/2isoSS_ee_eta1_ssz.eps}
 \end{subfigure}
-\caption{\toDo Leading electron $E_\mathrm{T}$ and $\eta$ distributions in the same-sign $Z$ peak control region with two isolated electrons.}
+\caption{\toDo Leading electron $p_T$ and $\eta$ distributions in the same-sign $Z$ peak validation region with two isolated electrons.}
   \label{fig:charge_flip_CR_kinematics}
 \end{figure}
 
 
 \begin{table}[htbp]
 \caption{Observed and expected number of lepton pairs for the control region with same-sign, isolated electrons falling inside the $Z$ mass window. 
-The uncertainties on the predictions are combined statistical then systematic \toDo[is it the case? or it is only statistical errors?].}
+The uncertainties on the predictions are combined statistical then systematic.}
 \begin{center}
 \begin{tabular}{l|c}
 \hline
@@ -625,6 +624,9 @@ Process & Number of $ee$ pairs \\\hline\hline
 
 
 \subsection{Non-prompt background validation region}
+% TODO
+\toDo[explain here how fake factors for validation regions were calculated]
+
 To verify the fake factor method, a set of validation regions is checked. 
 These regions have to be as much as possible kinematically close to
 the nominal signal selection as well as looser signal selection, 
@@ -637,8 +639,6 @@ to the nominal signal selection, except weaker isolation cut and another
 one - except weaker identification requirement. 
 Schematic representation of the signal and validation regions is shown
 in \FigureRef{fig:fake_validation_regions}. 
-% TODO
-\toDo[explain here how fake factors for validation regions were calculated]
 Looser selections for the
 validation regions which were used for fake factor calculation are shown
 as well. As can be seen from the picture, such design of the validation
@@ -649,7 +649,7 @@ best way possible.
 \begin{center}
 %\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
 \includegraphics[width=0.7\textwidth]{SS/fake_regions_black_diagram.pdf}
-\caption{\toDo}
+\caption{Schematic representation of the kinematic phase space of non-prompt validation regions with respect to signal region.}
 \label{fig:fake_validation_regions}
 \end{center}
 \end{figure}
@@ -666,13 +666,6 @@ electron to fails the signal isolation requirement but pass a looser \textit{int
 The agreement between observation and prediction is generally good.  
 \TableRef{tab:ee_fakeCR} shows the expected and observed numbers of electron pairs. 
 The uncertainties quoted are statistical only. 
-
-\toDo[say about uncertainties]
-% For the uncertainty on the non-prompt background predictions, 
-% this includes the uncertainty associated with limited statistics where the fakes are estimated together 
-% with the resulting fractional systematic uncertainty on the fake factor as propagated through for the signal region. 
-
-
 
 \begin{table}[htbp]
 \caption{Expected and observed numbers of electron pairs for the different same-sign $ee$ fake control regions. 
@@ -709,7 +702,7 @@ uncertainties have been included; other systematic uncertainties are negligible 
   \centering
   \includegraphics[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_bothInter_v2.eps}
 \end{subfigure}
-\caption{\toDo Invariant mass distributions for different $e^{\pm}e^{\pm}$ control regions enhanced in fake background. 
+\caption{Invariant $e^{\pm}e^{\pm}$ mass distributions for non-prompt background prediction with medium electron identification (left) and with weak isolation on both electrons (right).
 The dashed lines show the statistical uncertainty on the background prediction.}
   \label{fig:fakeCR_part1}
 \end{figure}
@@ -723,7 +716,7 @@ The dashed lines show the statistical uncertainty on the background prediction.}
   \centering
   \includegraphics[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_leadInter_sublNom_v2.eps}
 \end{subfigure}
-\caption{\toDo Invariant mass distributions for different $e^{\pm}e^{\pm}$ control regions enhanced in fake background. 
+\caption{Invariant $e^{\pm}e^{\pm}$ mass distributions for non-prompt background prediction with weak isolation on subleading electron (left) and on leading electron (right).
 The dashed lines show the statistical uncertainty on the background prediction.}
   \label{fig:fakeCR_part2}
 \end{figure}
@@ -732,8 +725,7 @@ The dashed lines show the statistical uncertainty on the background prediction.}
 
 \section{Systematic Uncertainties}
 \label{sec:ss_Systematics}
-
-\toDo[some general words about importance of the systematics...]
+\toDo[add Fast/Full sim. systematics]
 
 A set of possible systematic sources which can affect background predictions were studied.
 Description of the considered sources are presented below.
@@ -781,14 +773,6 @@ Also renormalization and factorization scales are varied by factor of two to est
 Summary list of uncertainties used in the analysis is shown in \TableRef{tab:systematics_common}.
 Detailed information about cross section calculations and their errors for some processes 
 are reported in~\cite{diboson_cross_section,ttW_cross_section,ttV_cross_section}.
-
-% \subsection{Photon misidentification as electron}
-% TODO
-
-
-\toDo[describe about $W\gamma$ background process somewhere]
-
-\toFix[define ``MPI'' somewhere before using in the table]
 
 \begin{table}[ht]
 \begin{center}
@@ -858,7 +842,8 @@ Background prediction reasonably describes observed numbers in all of these dist
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{SS/paper_draft/2isoSS_ee_mll.eps}
-\caption{\toDo Invariant mass distributions for $ee$ pairs in the same-sign signal region.}
+\caption{Invariant mass distribution for $e^{\pm}e^{\pm}$ pairs in the signal region. 
+Shaded region in the lower plot correspond to the combination of the statistical and systematic uncertainties of the background prediction.}
 \label{fig:signal_mass}
 \end{center}
 \end{figure}
@@ -912,14 +897,14 @@ Data	& $ 1976 $	& $ 987 $	& $ 265 $	& $ 83 $	& $ 30 $	& $ 13 $	& $ 7 $	\\[+0.05i
   \centering
   \includegraphics[width=\textwidth]{SS/paper_draft/2isoSS_ee_eta1.eps}
 \end{subfigure}
-\caption{\toDo $p_T$ and $\eta$ distributions of leading electron.}
+\caption{$p_T$ and $\eta$ distributions of the leading electron in the signal region.}
   \label{fig:signal_kinematics}
 \end{figure}
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{SS/support_note/dielectrons/crs/signal_deltaPhi_v2.eps}
-\caption{\toDo $\Delta\phi(ee)$ in the $ee$ signal region.}
+\caption{Azimuthal angle difference between two same-sign electrons from the pair in the signal region.}
 \label{fig:delta_phi}
 \end{center}
 \end{figure}
@@ -1052,7 +1037,7 @@ Expected limits are shown with 2$\sigma$ bands. Limits are summarized in \TableR
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{SS/paper/limit_ee_all.eps}
-\caption{\toDo 95\% C.L. upper limits on the cross section for new physics contributing to the fiducial region for $ee$ events.}
+\caption{95\% C.L. upper limits on the fiducial cross section for new physics contributing to the signal region for events with $e^{\pm}e^{\pm}$ pairs.}
 \label{fig:inclusive_fid_limit}
 \end{center}
 \end{figure}
@@ -1067,8 +1052,8 @@ Expected limits are shown with 2$\sigma$ bands. Limits are summarized in \TableR
   \centering
   \includegraphics[width=\textwidth]{SS/support_note/limits/limit_ee_pos.eps}
 \end{subfigure}
-\caption{\toDo 95\% C.L. upper limits on the cross section for new physics contributing to the fiducial region 
-for $e^{+}e^{+}$ (left) and $e^{+}e^{+}$ (right) events.}
+\caption{95\% C.L. upper limits on the fiducial cross section for new physics contributing to the signal region
+for events with $e^{+}e^{+}$ (left) and $e^{+}e^{+}$ (right) pairs.}
   \label{fig:signal_kinematics}
 \end{figure}
 
@@ -1165,15 +1150,15 @@ Computed efficiencies for available mass points and their fit are shown in \Figu
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{SS/support_note/DCHLimits/effic_DCH_ee_pairSF.eps}
-\caption{\toDo Total acceptance times efficiency ($\varepsilon_{tot}$ in the text) as a function of simulated $H^{\pm\pm}$ mass for the $ee$ channels, 
-fitted with piecewise empirical functions described in the text.}
+\caption{\toDo Total reconstruction efficiency ($\varepsilon_{tot}$) of the doubly charged Higgs bosons decay to same-sign electron pair as a function of simulated $H^{\pm\pm}$ mass, 
+fitted with piecewise empirical function.}
 \label{fig:signal_efficiency}
 \end{center}
 \end{figure}
 
 \toDo[describe systematics for the DCH]
 
-\toDo[CLs = CLs+b/CLb. What is the signal in case of limit on new physics?]
+\toAsk[CLs = CLs+b/CLb. What is the signal in case of limit on new physics?]
 
 \subsection{Cross section and mass limits}
 
@@ -1213,7 +1198,7 @@ mass limits are summarized in the \TableRef{tab:limits_mass}.
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{SS/paper/limitDCH_ee_all.eps}
-\caption{\toDo 95\% C.L. upper limits on the cross section for new physics contribution for $ee$ events.  
+\caption{\toDo 95\% C.L. upper limits on the cross section for new physics contribution for events with $e^{\pm}e^{\pm}$ pairs.  
 Pair production cross sections for left and right-handed $H^{\pm\pm}$ are overlaid.}
 \label{fig:dch_limits_mass}
 \end{center}
@@ -1247,10 +1232,10 @@ They are shown in \FigureRef{fig:dch_limits_BR}.
   \includegraphics[width=\textwidth]{SS/paper/limitDCH_ee_allvsBR_RH.eps}
 \end{subfigure}
 \caption{\toDo 95\% C.L. limits on the right-handed Doubly Charged Higgs mass vs 
-branching fraction of $H^{\pm\pm}_L$ (left) and $H^{\pm\pm}_R$ (right) for $ee$ events.}
+branching ratio of $H^{\pm\pm}_L$ (left) and $H^{\pm\pm}_R$ (right) for events with $e^{\pm}e^{\pm}$ pairs.}
   \label{fig:dch_limits_BR}
 \end{figure}
 
 \section{Outlook}
 \label{sec:ssOutlook}
-
+\toDo[comparison with 7 TeV and 13 TeV results?]
