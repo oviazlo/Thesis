@@ -46,10 +46,45 @@ Two sets of model were considered: simplified and Effective Field Theory models 
 \label{sec:wprimeIntro}
 
 \section{$\PWprime$ signal}
-\label{sec:wprimeSignal}
+\label{sec:wprimeSignal} 
 
 \section{Background processes}
 \label{sec:wprimeBackgrounds}
+
+\begin{table}[ht]
+  \begin{center}
+    \begin{tabular}{l|c|c|c}
+
+      \hline
+Process &  Generator&  PDF set & Normalization \\
+&  + fragmentation/ &  & based on \\
+&  hadronization & &\\
+\hline\hline
+&   &   \multirow{4}{*}{CT14NNLO~\cite{Dulat:2015mca}} & NNLO QCD \\
+$W +$ jets, & \powhegbox\ v2~\cite{Alioli:2010xd} & &  with \vrap~\cite{vrap}, \\
+$Z/\gamma^* +$ jets & + {\scshape pythia-8.186}~\cite{pythia8}  & &  NLO QED \\
+ & & &  with \mcsanc~\cite{Bardin:2012jk,Bondarenko:2013nu} \\
+\hline
+\ttbar, t-channel $t$, & \powhegbox\ & \multirow{2}{*}{CT10} & \multirow{2}{*}{NLO QCD} \\
+s-channel $Wt$ & + {\scshape pythia-6.428}~\cite{Pythia} & &  \\
+\hline
+\multirow{2}{*}{$WW, WZ, ZZ$} & \multirow{2}{*}{{\scshape sherpa-2.1.1}~\cite{SHERPA}} & \multirow{2}{*}{CT10} & \multirow{2}{*}{???} \\
+ & & &  \\
+\hline
+\hline
+\multirow{2}{*}{$W^\prime \rightarrow \Plepton \nu$} & \multirow{2}{*}{{\scshape pythia-8.183}} &   \multirow{2}{*}{NNPDF2.3 LO} & NNLO QCD \\
+& & &  with \vrap, \\
+\hline
+\end{tabular}
+\end{center}
+  \caption{List of MC generated samples used for background prediction. 
+  The used MC generator, PDF set and order of cross section calculations used for the normalization are listed for each sample.
+  }
+\label{tab:MC_cross}
+\end{table}
+
+
+
 \subsection{The W boson}
 \subsection{The Z boson}
 \subsection{The top quark}

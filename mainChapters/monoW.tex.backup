@@ -1,6 +1,6 @@
 
 
-\chapter{Wprime}
+\chapter{Search for new charged bosons in final states with one muon and missing transverse energy}
 \label{chap:Wprime}
 
 % ***Explanation of my personal contribution to the analysis.***
@@ -42,14 +42,42 @@ Two sets of model were considered: simplified and Effective Field Theory models 
 
 % TODO discuss with Monika - how should I position analysis - as a dedicated search of Wprime or as more model-independent search?
 
-\section{Introduction}
+\section{Motivation}
 \label{sec:wprimeIntro}
 
-\section{Wprime signal}
-\label{sec:wprimeSignal}
+\section{$\PWprime$ signal}
+\label{sec:wprimeSignal} 
 
 \section{Background processes}
 \label{sec:wprimeBackgrounds}
+
+\begin{table}[ht]
+  \begin{center}
+    \begin{tabular}{l|c|c|c}
+
+      \hline
+Process &  Generator&  PDF set & Normalization \\
+&  + fragmentation/ &  & based on \\
+&  hadronization & &\\
+\hline\hline
+&  \multirow{4}{*}{\powhegbox\ v2~\cite{Alioli:2010xd}} &   \multirow{4}{*}{CT14NNLO~\cite{Dulat:2015mca}} & NNLO QCD \\
+$W +$ jets, & & &  with \vrap~\cite{vrap}, \\
+$Z/\gamma^* +$ jets & & &  NLO QED \\
+ & & &  with \mcsanc~\cite{Bardin:2012jk,Bondarenko:2013nu} \\
+\hline
+\ttbar, t-channel $t$, & \powhegbox\ & \multirow{2}{*}{CT10} & \multirow{2}{*}{NLO QCD} \\
+s-channel $Wt$ & + {\scshape pythia-6.428}~\cite{Pythia} & &  \\
+\hline
+\end{tabular}
+\end{center}
+  \caption{List of MC generated samples used for background prediction. 
+  The used MC generator, PDF set and order of cross section calculations used for the normalization are listed for each sample.
+  }
+\label{tab:MC_cross}
+\end{table}
+
+
+
 \subsection{The W boson}
 \subsection{The Z boson}
 \subsection{The top quark}
@@ -74,11 +102,15 @@ Two sets of model were considered: simplified and Effective Field Theory models 
 
 \section{Systematic Uncertainties}
 \label{sec:wprimeSystematics}
+\subsection{Muon efficiency, resolution and scale}
+\subsection{Jet energy scale and resolution}
+\subsection{Transverse missing energy scale and resolution}
+\subsection{Background estimate uncertainty}
+\subsection{Systematic uncertainty on the signal}
 
-\subsection{High-$p_T$ muon uncertainty}
-
-\section{Conclusion}
-\label{sec:wprimeConclusion}
+\section{Cross section and mass limits}
+\subsection{Statistical analysis for discovery and exclusion}
+\subsection{$\PWprime$ cross section and mass limits}
 
 
 
@@ -345,3 +377,8 @@ are not sensitive enough for DM searches and is significantly worse comparing to
   and the reaches are shown for the mono lepton and mono fat jet searches at 14 TeV 3000 fb$^{-1}$.}
   \label{fig:bellExclLim}
 \end{figure}
+
+\section{Outlook}
+\label{sec:wprimeConclusion}
+
+\chapter{Conclusion}
