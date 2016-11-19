@@ -25,6 +25,22 @@ Search was done with first $\sqrt{s}$ = 13 TeV data collected in 2015 by ATLAS w
 % TODO describe more about the analysis.
 % Analysis focuses on high-p$_T$ 
 
+% Key features of the analysis.
+One can highlight three important key features of the analysis:
+\begin{itemize}
+ \item Modeling of the background prediction. 
+ Largest part of the background originates from the charged-current Drell-Yan process and the analysis selection tests it up to the few TeV.
+ Thus it is crucially important to use latest and most precise high-order calculations and corrections available at a time.
+ \item Lepton selection. Due to topologically simple event selection (one isolated lepton and missing energy) 
+ this analysis use most energetic lepton candidates available at 13 TeV center-of-mass energy collisions.
+ This is why reconstruction efficiency and momentum resolution of high-$p_T$ leptons are factors of special interest for the analysis.
+ \item Missing transverse energy. The signal discriminant (search variable) in the analysis is transverse invariant mass, $m_T$, which is described later in the text,
+ which means that transverse $E_T$ is main parameter of importance, along with lepton momentum resolution, because it enters $m_T$ calculation the same way as lepton momentum do.
+\end{itemize}
+
+
+
+
 This analysis have been made public as a conference note~\cite{ATLAS-CONF-2015-063} with early reasults and later as a paper~\cite{Aaboud:2016zkn} where final results were presented.
 
 My personal contribution to the analysis can be concluded in following three parts.
@@ -45,6 +61,8 @@ Two sets of model were considered: simplified and Effective Field Theory models 
 \section{Motivation}
 \label{sec:wprimeIntro}
 
+
+
 \section{$\PWprime$ signal}
 \label{sec:wprimeSignal} 
 
@@ -60,13 +78,20 @@ Process &  Generator&  PDF set & Normalization \\
 &  + fragmentation/ &  & based on \\
 &  hadronization & &\\
 \hline\hline
-&  \multirow{4}{*}{\powhegbox\ v2~\cite{Alioli:2010xd}} &   \multirow{4}{*}{CT14NNLO~\cite{Dulat:2015mca}} & NNLO QCD \\
-$W +$ jets, & & &  with \vrap~\cite{vrap}, \\
-$Z/\gamma^* +$ jets & & &  NLO QED \\
+&   &   \multirow{4}{*}{CT14NNLO~\cite{Dulat:2015mca}} & NNLO QCD \\
+$W +$ jets, & \powhegbox\ v2~\cite{Alioli:2010xd} & &  with \vrap~\cite{vrap}, \\
+$Z/\gamma^* +$ jets & + {\scshape pythia-8.186}~\cite{pythia8}  & &  NLO QED \\
  & & &  with \mcsanc~\cite{Bardin:2012jk,Bondarenko:2013nu} \\
 \hline
 \ttbar, t-channel $t$, & \powhegbox\ & \multirow{2}{*}{CT10} & \multirow{2}{*}{NLO QCD} \\
 s-channel $Wt$ & + {\scshape pythia-6.428}~\cite{Pythia} & &  \\
+\hline
+\multirow{2}{*}{$WW, WZ, ZZ$} & \multirow{2}{*}{{\scshape sherpa-2.1.1}~\cite{SHERPA}} & \multirow{2}{*}{CT10} & \multirow{2}{*}{???} \\
+ & & &  \\
+\hline
+\hline
+\multirow{2}{*}{$W^\prime \rightarrow \Plepton \nu$} & \multirow{2}{*}{{\scshape pythia-8.183}} &   \multirow{2}{*}{NNPDF2.3 LO} & NNLO QCD \\
+& & &  with \vrap, \\
 \hline
 \end{tabular}
 \end{center}

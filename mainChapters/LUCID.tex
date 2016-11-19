@@ -648,7 +648,7 @@ coordination with the Tile sub-detector group to share this resource between the
   \includegraphics[width=\linewidth]{LUCID/hv_2016_sideC_trendingPlot.png}
   \label{fig:sub4}
 \end{subfigure}
-\caption{Trending plot of high voltage change for Bismuth PMTs on side A (left) and side C (right) during 2016.}
+\caption{Trending plot of the high voltage change for Bismuth PMTs on side A (left) and side C (right) during 2016.}
 \label{fig:hv_trending_plot_2016}
 \end{figure}
 
@@ -673,33 +673,26 @@ coordination with the Tile sub-detector group to share this resource between the
 
 During the first long LHC shutdown (LS1) between 2013 and 2015 the beampipe at the interaction point of ATLAS
 had to be removed and to be replaced with a new one made of aluminum instead of stainless steel.
-The new material was chosen to minimize the induced radioactivity of the beampipe (see \FigureRef{fig:metalSupportAndTempProbes} (left)).
+The new material was chosen to minimize the induced radioactivity of the beampipe.
 The new beampipe also had a reduced aperture in the inner detector region to allow for a new pixel inner barrel layer (IBL) of the inner tracker.
-
-\begin{figure}
-\centering
-\begin{subfigure}{.6\textwidth}
-  \centering
-  \includegraphics[width=0.95\textwidth]{LUCID/PMT_metal_support.jpg}
-\end{subfigure}%
-\begin{subfigure}{.4\textwidth}
-  \centering
-  \includegraphics[width=0.95\linewidth]{LUCID/temperatureProbes_1_v2.jpg}
-\end{subfigure}
-\caption{Metal support for the PMT tubes (left). Positions of the temperature probes close to the beam pipe flange (right).}
-\label{fig:metalSupportAndTempProbes}
-\end{figure}
 
 In order to remove residual gas molecules from the inner walls of the new beampipe (which otherwise will lead to significant beam-gas interactions during operation)
 the beampipe had to undergo a so called ``bake-out'' process, which consists of heating up the walls of the beam pipe from the outside.
 
 Since LUCID sits close to the beampipe there was a need to understand the temperature tolerance of the detector components.
 During the design phase a special cooling of the detector was made in order to protect PMTs, cables and calibration fibers against potential overheating.
-The PMTs were placed on a special metal support which were cooled down by water pipes.
+The PMTs were placed on a special metal support, as shown in \FigureRef{fig:metalSupport}, which were cooled down by water pipes.
 Fibers and cables goes along the beampipe for a few meters and were more exposed to heat than PMTs.
 % TODO redo a little bit following sentence
 They are also protected with cooling pipes but it was practically impossible to provide cooling along the whole path of the fibers 
 and so there are some areas were fibers are not cooled down by the water pipes.
+
+\begin{figure}
+\centering
+\includegraphics[width=.65\textwidth]{LUCID/PMT_metal_support.jpg}
+\caption{Metal support for the PMT tubes that is used in the LUCID detector.}
+\label{fig:metalSupport}
+\end{figure}
 
 Special studies was done in order to understand the temperature tolerance of the quartz fibers used in the detector and ths is described in the current section.
 
@@ -876,10 +869,17 @@ to temperatures above 95\degree~C for long period of time.
  
 \subsection{Temperature conditions during the beampipe bake-out and detector operational period}
 
-The LUCID detector was equipped with 18 temperature sensors per side which were installed (\FigureRef{fig:metalSupportAndTempProbes} (right) 
+The LUCID detector was equipped with 18 temperature sensors per side which were installed (\FigureRef{fig:TempProbes1}
 and \FigureRef{fig:temperatureProbes_VJCone})
 to monitor the temperature of the detector components during the bake-out procedure of the new ATLAS beampipe and during the detector operation.
 Temperature from all sensors were recorded and archived every 10 seconds.
+
+\begin{figure}
+\centering
+\includegraphics[width=.99\textwidth]{LUCID/temperatureProbes_1_v3.jpg}
+\caption{Positions of the temperature probes close to the beam pipe flange.}
+\label{fig:TempProbes1}
+\end{figure}
 
 \begin{figure}
 \centering
