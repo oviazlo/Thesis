@@ -271,7 +271,7 @@ with Bi-207 sources.}
 
 % The availability of three independent calibration methods increase the robustness of the calibration system 
 % and provide a possibility to cross-check calibration results between the methods.
-\toAsk[the paragraph below is new]
+% \toAsk[the paragraph below is new]
 
 PMTs which are coupled with Bi-207 radioactive sources constantly see signals of radioactive decays which is treated as a background
 during luminosity measurements. This is why activity of the radioactive sources have to be as low as possible on the one hand, 
@@ -600,90 +600,6 @@ In order to prevent contamination by the source a special cap was glued on top o
 \label{fig:Bi207_case}
 \end{figure}
 
-\subsection{Calibration strategy during 2015-2016}
-\label{subsec:calibPerformance}
-
-% LED and laser calibrations could be influenced by the two following effects:
-% the stability of the light source and the wavelength of both LED and laser which were different from the wavelength of Cherenkov radiation. 
-% The quantum efficiency of the cathode depends on the wavelength and this efficiency can potentially change during PMT aging
-% differently for different wavelengths.
-
-The purpose of the calibration is to keep the gain of the PMT constant with time.
-Due to the fact that luminosity during 2015-2016 are higher compared to 2011-2012
-aging effect become visible already after a few hours of the beam collisions.
-The strategy was to make calibration runs after each physics run.
-
-To monitor the gain of the BI PMTs a truncated mean of the charge distribution from the Bi-207 sources were measured in each calibration run.
-These values directly correlate with the gain of the PMTs. 
-In order to keep the gain of the PMT constant it is enough to keep the truncated mean of the charge distribution constant.
-After each calibration run the mean charge for each tube is compared to a reference value and if there is a significant difference a program 
-automatically adjusts the high voltage in order to correct the PMT gain.
-This procedure was used for 2015 and 2016 and was shown to be highly effective and robust.
-In \FigureRef{fig:hv_trending_plot_2016} the high voltage change for Bismuth PMTs during 2016 are shown. 
-Voltage was increased up to 170 V for some tubes.
-
-\toAsk[the paragraph below is new]
-
-Despite the fact that BI PMTs were the one used for the luminosity measurements, 
-VDM PMTs were kept turned on as well in order to study performance of the LED calibration with comparison with Bi-207 one.
-The idea of the LED calibration is identical to one with Bi-207 source: mean charge distribution of the signals from the LED light
-is used as a handle to control PMTs gain. If one keep this value constant it correspond that PMT gain will be kept constant as well.
-However, studying luminosity measurements provided by the VDM PMTs showed discrepancy with the BI luminosity as well as with other ATLAS
-luminometers. Thus many studies were done to understand the reason of disagreement.
-Initial suspect of the disagreement was LED calibration procedure, because BI and VDM PMTs are of the same type.
-However, stability of the LED light is monitored separately by the PIN-diode, which guarantees that LED provide the same 
-amount of the light to the PMTs over long period of time, which rules out potential problem in the LED calibration procedure.
-By studying of a profile of the number of hits as a function of BCID it was found that VDM PMTs observe significantly larger (a few time of magnitude)
-background than BI PMTs which distorts luminosity measurements during the physics runs. The cause of this huge background is not clear but one can
-assume that ferrule connect, which is not present in BI PMT setup, can activates during the physics run and provide additional counts, which 
-distort luminosity measurements. The reason of the effect is still not clear and studies are ongoing.
-
-% [ToASK: ask Vincent for table of HV (or time) vs. integrated luminosity].
-% 
-% The LED calibrations were not as succesful in keeping the gain constant, results were overestimated all the time.
-% A few possible effects can help to explain it. First of all, the wavelenght of the used LED light are diferent from the Cherenkov radiation 
-% (which is prodused both in physics runs and from Bismuth source).
-% Quantum efficiency of the photocathode depends from the wavelenght of the incoming light and it probably can depends from PMT aging.
-% One possibility to proove this explanation can be to make a dedicated test in the laboratory to study behaviour of the PMT with different sources of light, which have different wavelenght.
-% Another possible effect can be radiation damage of the optical fibers which deliver LED light or activation of the material of the ferrule connector, which mounts the fiber to PMT 
-% (as shown in \FigureRef{fig:LucidDrawing} (right)). LED calibration for the FIB detectos behave in the same way, which make assumption about radiation damage of the fibers more stronger.
-% The reason of the effect is still not clear and studies are ongoing.
-
-The laser calibrations were not studied much since the laser source is controlled by the Tile subsystem and require 
-coordination with the Tile sub-detector group to share this resource between the two detectors.
-
-\begin{figure}
-\centering
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=\linewidth]{LUCID/hv_2016_sideA_trendingPlot.png}
-  \label{fig:sub3}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=\linewidth]{LUCID/hv_2016_sideC_trendingPlot.png}
-  \label{fig:sub4}
-\end{subfigure}
-\caption{Trending plot of the high voltage change for Bismuth PMTs on side A (left) and side C (right) during 2016.}
-\label{fig:hv_trending_plot_2016}
-\end{figure}
-
-% TODO: explain why Bi-207 calibration is preferred calibration method and only more or less understood.
-
-% TODO 
-% describe how we did Bi-207 calibration during 2015-2016 years
-% attempt to do LED calibration
-% situation with Laser calibration
-
-
-% \section{Detector performance}
-% \label{sec:DetPerf}
-% 
-% *** some text here ***
-% 
-% \subsection{Luminosity measurements}
-% \label{subsec:lumMeas}
-
 \section{Temperature dependence of the PMT gain and the temperature tolerance of calibration fibers}
 \label{sec:tempMeas}
 
@@ -892,7 +808,7 @@ Temperature from all sensors were recorded and archived every 10 seconds.
 
 \begin{figure}
 \centering
-% \includegraphics[width=.99\textwidth]{LUCID/temperatureProbes_1_v3.jpg}
+\includegraphics[width=.99\textwidth]{LUCID/temperatureProbes_1_v3.jpg}
 \caption{Positions of the temperature probes close to the beam pipe flange.}
 \label{fig:TempProbes1}
 \end{figure}
@@ -940,7 +856,7 @@ the experimental cavern during physics runs and that fluctuations are smaller th
 % - temperature plots during bakeout procedure
 % TODO insert picture which show that LUCID sits on VJ cone around beampipe
 
-\section{The LUCID performance and luminosity measurements during 2015-2016}
+\section{The LUCID performance and luminosity measurements during 2015}
 \label{sec:lucid_performance}
 
 The LUCID detector have different sets of PMTs which make it possible for LUCID to provide many independent measurements of the luminosity by many algorithms.
@@ -1161,6 +1077,82 @@ It saturates on the similar level as counting algorithm for single tube (e.g. ``
 \label{fig:peakMuByFill}
 \end{figure}
 
+\subsection{Calibration strategy during 2015}
+\label{subsec:calibPerformance}
+
+% LED and laser calibrations could be influenced by the two following effects:
+% the stability of the light source and the wavelength of both LED and laser which were different from the wavelength of Cherenkov radiation. 
+% The quantum efficiency of the cathode depends on the wavelength and this efficiency can potentially change during PMT aging
+% differently for different wavelengths.
+
+The purpose of the calibration is to keep the gain of the PMT constant with time.
+Due to the fact that luminosity during 2015-2016 are higher compared to 2011-2012
+aging effect become visible already after a few hours of the beam collisions.
+The strategy was to make calibration runs after each physics run.
+
+To monitor the gain of the BI PMTs a truncated mean of the charge distribution from the Bi-207 sources were measured in each calibration run.
+These values directly correlate with the gain of the PMTs. 
+In order to keep the gain of the PMT constant it is enough to keep the truncated mean of the charge distribution constant.
+After each calibration run the mean charge for each tube is compared to a reference value and if there is a significant difference a program 
+automatically adjusts the high voltage in order to correct the PMT gain.
+This procedure was used for 2015 and 2016 and was shown to be highly effective and robust.
+In \FigureRef{fig:hv_trending_plot_2016} the high voltage change for Bismuth PMTs during 2016 are shown. 
+Voltage was increased up to 170 V for some tubes.
+
+% \toAsk[the paragraph below is new]
+
+Despite the fact that BI PMTs were the one used for the luminosity measurements, 
+VDM PMTs were kept turned on as well in order to study performance of the LED calibration with comparison with Bi-207 one.
+The idea of the LED calibration is identical to one with Bi-207 source: mean charge distribution of the signals from the LED light
+is used as a handle to control PMTs gain. If one keep this value constant it correspond that PMT gain will be kept constant as well.
+However, studying luminosity measurements provided by the VDM PMTs showed discrepancy with the BI luminosity as well as with other ATLAS
+luminometers. Thus many studies were done to understand the reason of disagreement.
+Initial suspect of the disagreement was LED calibration procedure, because BI and VDM PMTs are of the same type.
+However, stability of the LED light is monitored separately by the PIN-diode, which guarantees that LED provide the same 
+amount of the light to the PMTs over long period of time, which rules out potential problem in the LED calibration procedure.
+By studying of a profile of the number of hits as a function of BCID it was found that VDM PMTs observe significantly larger (a few time of magnitude)
+background than BI PMTs which distorts luminosity measurements during the physics runs. The cause of this huge background is not clear but one can
+assume that ferrule connect, which is not present in BI PMT setup, can activates during the physics run and provide additional counts, which 
+distort luminosity measurements. The reason of the effect is still not clear and studies are ongoing.
+
+% [ToASK: ask Vincent for table of HV (or time) vs. integrated luminosity].
+% 
+% The LED calibrations were not as succesful in keeping the gain constant, results were overestimated all the time.
+% A few possible effects can help to explain it. First of all, the wavelenght of the used LED light are diferent from the Cherenkov radiation 
+% (which is prodused both in physics runs and from Bismuth source).
+% Quantum efficiency of the photocathode depends from the wavelenght of the incoming light and it probably can depends from PMT aging.
+% One possibility to proove this explanation can be to make a dedicated test in the laboratory to study behaviour of the PMT with different sources of light, which have different wavelenght.
+% Another possible effect can be radiation damage of the optical fibers which deliver LED light or activation of the material of the ferrule connector, which mounts the fiber to PMT 
+% (as shown in \FigureRef{fig:LucidDrawing} (right)). LED calibration for the FIB detectos behave in the same way, which make assumption about radiation damage of the fibers more stronger.
+% The reason of the effect is still not clear and studies are ongoing.
+
+The laser calibrations were not studied much since the laser source is controlled by the Tile subsystem and require 
+coordination with the Tile sub-detector group to share this resource between the two detectors.
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{LUCID/hv_2016_sideA_trendingPlot.png}
+  \label{fig:sub3}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{LUCID/hv_2016_sideC_trendingPlot.png}
+  \label{fig:sub4}
+\end{subfigure}
+\caption{Trending plot of the high voltage change for Bismuth PMTs on side A (left) and side C (right) during 2016.}
+\label{fig:hv_trending_plot_2016}
+\end{figure}
+
+% TODO: explain why Bi-207 calibration is preferred calibration method and only more or less understood.
+
+% TODO 
+% describe how we did Bi-207 calibration during 2015-2016 years
+% attempt to do LED calibration
+% situation with Laser calibration
+
+
 
 \subsection{The first 13 TeV collisions at the LHC}
 \label{sec:physics}
@@ -1212,9 +1204,12 @@ detector. The agreement between the two LUCID arms is better than 1$\%$.}
 
 The left plot of \FigureRef{fig:LumiVsTime} shows a measurement of the average number of inelastic pp collisions 
 using different ATLAS 
-luminometers and the right plot shows the ratio of this measurement with respect to a LUCID measurement. One of the 
-detectors shows a deviation of up to 2$\%$ during this LHC fill but the other measurements are all in agreement 
+luminometers and the right plot shows the ratio of this measurement with respect to a LUCID measurement. BCM 
+detector shows a deviation of up to 2$\%$ during this LHC fill but Tile calorimeter measurements are all in agreement 
 with LUCID to better than 0.5$\%$.
+After investigation it was found that BCM detector significantly underestimate luminosity for bunch trains with 25 ns distance between bunches
+and have difficulty to cope with such small distance between bunches.
+Discrepancy of LUCID with Tile calorimeter will be described later and will be taken into account as a systematic uncertainty.
 The first month of data taking with the new detector therefore showed that LUCID could measure the relative 
 luminosity with a precision of about 0.5$\%$.
 
@@ -1343,7 +1338,7 @@ A similar dependence has been observed with respect to the track counting algori
 One of the effects which contribute to the $\mu$-dependence is the assumption that the probability of an individual pp interaction to give a hit (or event) does not depend on the number of interactions in the bunch crossing, which was made during the derivation of \EquationRef{eq:logFormula}.
 However, in the case of many $pp$ interactions the signals from separate proton collisions which do not provide large enough signal to reach the threshold value can sum up and give a hit. 
 This effect is known as a pile-up (or migration) problem.
-It is present at some level in any counting algorithms because they rely on the definition of independent hits - as a signal larger than a certain threshold.
+It is present at some level in any counting algorithms because they rely on the definition of independent hits as a signal larger than a certain threshold.
 Algorithms which rely on measurements of values proportional to the $\mu$, such as current (charge) from the PMTs or track counting does not suffer from this effect.
 
 
@@ -1374,8 +1369,12 @@ The LED setup was used in order to mimic normal conditions during physics run.}
 \label{fig:pmt_gain_profile}
 \end{figure}
 
+Since different runs have different average number of $pp$ interactions $\mu$, presence of the $\mu$-dependence will create differences in the measured run luminosities.
+However, no special systematic uncertainty is assigned because these differences will be visible in the run-ro-run luminosity comparison between luminometers 
+and estimation of the systematic uncertainty on the run-to-run stability will cover $\mu$-dependence effect as well.
+
 % By extrapolating curves of 25 and 50 ns runs to low-$\mu$ values one can see that extrapolation from high-$\mu$ region will not match with values obtained in vdM runs.
-As one can see from \FigureRef{fig:pmt_gain_profile} the ratio of the the average number of pp interactions per bunch crossing
+As one can see from \FigureRef{fig:mu_dependence} the ratio of the the average number of pp interactions per bunch crossing
 measured by the Tile Calorimeter to that of BI$\_$OR$\_$A LUCID is systematically below 1. 
 It means that the calibration constant $\sigma^{vis}$ (measured in vdM runs for LUCID) is not directly applicable for the high-$\mu$ regime, 
 which was the case for 2012 as well~\cite{Aaboud:2016hhf}.
@@ -1384,17 +1383,25 @@ To estimate this correction for LUCID one can use measurements from calorimeter-
 % In 2015 Tile calorimeter luminosity was showing inconsistency between its luminosity algorithms that is why track counting was used to derive the corrections.
 Runs which had both Tile and track counting luminosity available and which happened before the vdM scan were used to made comparisons of the average luminosity for LUCID and track algorithms
 and to derive corrections from it. Calibration transfer correction was found to be 1.2$\%$ for 50 ns and 2.5$\%$ for 25 ns runs in 2015.
+Systematic uncertainty for the calibration transfer was obtained by comparison four different track selections as well as measurements by the Tile calorimeter
+and was equal 1.2$\%$.
 
+Additionally one need to take into account systematic uncertainty on $\sigma^{vis}$ itself, determination of which was described previously.
+Systematic uncertainty was obtained during analysis of the vdM scans and are related to the uncertainty of variables which are used in
+\EquationRef{eq:sigma_vis} to calculate $\sigma^{vis}$. 
+Detailed description of the uncertainty estimation of the vdM scans can be found on many notes and paper such 
+as~\cite{ATLAS:2010uca,ATLAS-CONF-2011-011,ATLAS:2011cia,ATLAS:2012roa,Aad:2011dr,Aad:2013ucp,Aaboud:2016hhf}.
 % TODO explain that aging of PMTs become slower with age. Show one of the Vincents plots.
+
+\toAsk[in lumi note run-ro-run stab. uncert. is 1.2$\%$,]
+
+\toAsk[while caption to public plot in \FigureRef{fig:runByRunStability} was stated 2.5$\%$?]
 
 Taking into account all systematic effect of different luminometers one has to choose the preferred detector algorithm to be used as a main algorithm for high-$\mu$ runs.
 For both 2015 and 2016 LUCID Bismuth algorithms were used as main algorithm. 
 In \FigureRef{fig:runByRunStability} the run-to-run stability of measurements from other detectors with respect to the LUCID measurements in 2015 are shown. 
 All luminometers were cross-calibrated in this plot to a LUCID measurement in a reference fill, which is shown by the arrow in the figure.
 The relative variations in measurements of all ATLAS luminometer was found to be within $\pm$ 2.5$\%$ during the year.
-
-% TODO add summary table with systematics
-
 \begin{figure}
 \centering
 \includegraphics[width=.7\textwidth]{LUCID/RunByRunStability.pdf}
@@ -1406,7 +1413,29 @@ equal to one of the LUCID detector.
 \label{fig:runByRunStability}
 \end{figure}
 
-\subsection{Estimation of total systematic errors}
+% TODO add summary table with systematics
+List of all systematic uncertainties in the 2015 luminosity measurements with LUCID is shown in \TableRef{tab:lucid_syst_errors}.
+Effect of the background have been found to be negligible, as was described before, thus systematic uncertainty on the background is estimated to be 
+negligible as well.
+
+\begin{table}[bp]
+  \begin{tabular}{l|c}
+    Source & Uncertainty \\
+    \hline
+    Background		&	< 0.1$\%$ \\
+    \hline
+    Calibration transfer correction	&	1.2$\%$ \\
+    \hline
+    $\sigma_{vis}$	&	1.9$\%$ \\
+    \hline
+    Run-to-run stability	&	2.5$\%$ \\
+    \hline
+    \hline
+    Total 	&	3.4$\%$ \\
+  \end{tabular}
+  \caption{Sources of systematic uncertainties in the 2015 luminosity measurements with LUCID.}
+  \label{tab:lucid_syst_errors}
+\end{table}
 
 \subsection{Future prospects of the LUCID measurements}
 
@@ -1424,9 +1453,23 @@ The PMT gain can decrease by up to a few $\%$ during one long physics run (espec
 One possible way to obtain this information can be to pulse the LED light to PMTs in the so-called ``forbidden gap'' where no bunches are present.
 Signals from LED can then be used in the same way as in the PMT gain monitoring system to estimate the change of the gain.
 
-Another critical problem for the charge method is the afterglow background, which was described for counting algorithms in \SectionRef{subsec:backgrounds}.
-For 25 ns physics runs this background can reach 3$\%$, which make it very important to develop a precise subtraction procedure of the background.
-Possibility to use template method for charge algorithm is currently under study.
+However, PMTs become more robust to radiation more time they are exposed. It can be seen in \FigureRef{fig:hv_vs_cumLumi}, where one can see that the high voltage corrections
+applied to correct PMT gain decrease become smaller with more cumulative luminosity PMT see. Thus one have to train new PMTs before use them for luminosity measurements much enough
+to made the high voltage correction small enough.
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth]{LUCID/hv_vs_cumLumi_2016_sideC_trendingPlot.png}
+\caption{
+Trending plot of the high voltage change for Bismuth PMTs on side C as a function of cumulative luminosity during 2016.
+}
+\label{fig:hv_vs_cumLumi}
+\end{figure}
 
+Another point of interest are FIB and MOD PMTs. FIB PMTs are protected by the shielding and Cherenkov light are produced and delivered by quartz fibers bundles. 
+MOD PMTs have reduced quartz window size to 7 mm in diameter. 
+Performance of these PMTs are different from VDM and BI PMTs and additional detailed studies are needed to understand their potential benefits to be used for luminosity measurements.
 
+% Another critical problem for the charge method is the afterglow background, which was described for counting algorithms in \SectionRef{subsec:backgrounds}.
+% For 25 ns physics runs this background can reach 3$\%$, which make it very important to develop a precise subtraction procedure of the background.
+% Possibility to use template method for charge algorithm is currently under study.
 
