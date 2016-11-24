@@ -1041,7 +1041,9 @@ One can then calculate the efficiency of the luminosity algorithm as:
 \label{eq:alg_method_eff}
 \end{equation}
 Measured visible cross sections and efficiencies for some LUCID luminosity algorithms are given in \TableRef{tab:sigma_vis_efficiency}.
-The last column in the table contain the maximum possible number of interactions which an algorithm can deal with without saturation.
+The last column in the table contain the maximum possible number of interactions, $\mu_{max}$, which an algorithm can deal with without saturation.
+It has been calculated by an assumption that maximum number of interactions observed by the detector $\varepsilon\mu_{max} = 10$, which is somewhat arbitrary 
+threshold which represent accepted level of uncertainty caused by logarithm calculation in \EquationRef{eq:logFormula}.
 All counting algorithms can start to saturate if the number of interactions became large enough.
 If in all bunch crossings during a LB at least one hit is detected by LUCID (which correspond to the ``Event OR'' definition) 
 the ratio $\frac{N_{OR}}{N_{BC}}$ will be equal to 1 and it will be impossible to use \EquationRef{eq:logFormula} to calculate 
@@ -1065,8 +1067,7 @@ It saturates on the similar level as counting algorithm for single tube (e.g. ``
     \hline
     MOD$\_$OR & 21.7 & 27.1 & 36 \\
   \end{tabular}
-  \caption{The result of the vdM calibrations for some of the LUCID luminosity algorithms.
-  $\mu_{max}$ has been calculated from $\varepsilon\mu_{max} = 10$.}
+  \caption{The result of the vdM calibrations for some of the LUCID luminosity algorithms.}
   \label{tab:sigma_vis_efficiency}
 \end{table}
 
@@ -1207,8 +1208,10 @@ using different ATLAS
 luminometers and the right plot shows the ratio of this measurement with respect to a LUCID measurement. BCM 
 detector shows a deviation of up to 2$\%$ during this LHC fill but Tile calorimeter measurements are all in agreement 
 with LUCID to better than 0.5$\%$.
-After investigation it was found that BCM detector significantly underestimate luminosity for bunch trains with 25 ns distance between bunches
-and have difficulty to cope with such small distance between bunches.
+Discrepancy with BCM is caused due to sensitivity of the BCM counting algorithm and electronics to the bunch train structure.
+Results shown in \FigureRef{fig:LumiVsTime} represent one of the early run with 50 ns distance between bunches.
+During the first runs with 25 ns distance between bunches BCM detector started to show up to 20$\%$ difference 
+with respect to other ATLAS luminometers, which led to the decision to not use BCM measurements for the final calculation of the ATLAS luminosity and systematic uncertainty.
 Discrepancy of LUCID with Tile calorimeter will be described later and will be taken into account as a systematic uncertainty.
 The first month of data taking with the new detector therefore showed that LUCID could measure the relative 
 luminosity with a precision of about 0.5$\%$.
@@ -1391,23 +1394,18 @@ Systematic uncertainty was obtained during analysis of the vdM scans and are rel
 \EquationRef{eq:sigma_vis} to calculate $\sigma^{vis}$. 
 Detailed description of the uncertainty estimation of the vdM scans can be found on many notes and paper such 
 as~\cite{ATLAS:2010uca,ATLAS-CONF-2011-011,ATLAS:2011cia,ATLAS:2012roa,Aad:2011dr,Aad:2013ucp,Aaboud:2016hhf}.
-% TODO explain that aging of PMTs become slower with age. Show one of the Vincents plots.
-
-\toAsk[in lumi note run-ro-run stab. uncert. is 1.2$\%$,]
-
-\toAsk[while caption to public plot in \FigureRef{fig:runByRunStability} was stated 2.5$\%$?]
 
 Taking into account all systematic effect of different luminometers one has to choose the preferred detector algorithm to be used as a main algorithm for high-$\mu$ runs.
 For both 2015 and 2016 LUCID Bismuth algorithms were used as main algorithm. 
 In \FigureRef{fig:runByRunStability} the run-to-run stability of measurements from other detectors with respect to the LUCID measurements in 2015 are shown. 
 All luminometers were cross-calibrated in this plot to a LUCID measurement in a reference fill, which is shown by the arrow in the figure.
-The relative variations in measurements of all ATLAS luminometer was found to be within $\pm$ 2.5$\%$ during the year.
+The relative variations in measurements of all ATLAS luminometer was found to be within $\pm$ 1.2$\%$ during the year.
 \begin{figure}
 \centering
-\includegraphics[width=.7\textwidth]{LUCID/RunByRunStability.pdf}
+\includegraphics[width=.95\textwidth]{LUCID/run_to_run_stability_Vincent.png}
 \caption{
-Fractional difference of the measured luminosity per run between LUCID BI$\_$OR$\_$A algorithm and other luminometer measurements in 2015.
-All luminometers are cross-calibrated with respect to the LUCID measurements in a way that luminosity reported by them in a reference run (indicated by arrow) are
+Fractional difference of the measured luminosity per run between LUCID BI$\_$OR$\_$A algorithm and average of Tile, EMEC calorimeters and track counting luminosity algorithms in 2015.
+All luminometers are cross-calibrated with respect to the LUCID measurements in a way that luminosity reported by them in a reference run (used to determine calibration transfer correction) are
 equal to one of the LUCID detector.
 }
 \label{fig:runByRunStability}
@@ -1428,10 +1426,10 @@ negligible as well.
     \hline
     $\sigma_{vis}$	&	1.9$\%$ \\
     \hline
-    Run-to-run stability	&	2.5$\%$ \\
+    Run-to-run stability	&	1.2$\%$ \\
     \hline
     \hline
-    Total 	&	3.4$\%$ \\
+    Total 	&	2.6$\%$ \\
   \end{tabular}
   \caption{Sources of systematic uncertainties in the 2015 luminosity measurements with LUCID.}
   \label{tab:lucid_syst_errors}
@@ -1452,7 +1450,6 @@ This is why a lot of effort was made to develop a precise monitoring system with
 The PMT gain can decrease by up to a few $\%$ during one long physics run (especially for new PMTs), which is why information about the PMT gain change during a physics run would be useful.
 One possible way to obtain this information can be to pulse the LED light to PMTs in the so-called ``forbidden gap'' where no bunches are present.
 Signals from LED can then be used in the same way as in the PMT gain monitoring system to estimate the change of the gain.
-
 However, PMTs become more robust to radiation more time they are exposed. It can be seen in \FigureRef{fig:hv_vs_cumLumi}, where one can see that the high voltage corrections
 applied to correct PMT gain decrease become smaller with more cumulative luminosity PMT see. Thus one have to train new PMTs before use them for luminosity measurements much enough
 to made the high voltage correction small enough.
@@ -1465,11 +1462,11 @@ Trending plot of the high voltage change for Bismuth PMTs on side C as a functio
 \label{fig:hv_vs_cumLumi}
 \end{figure}
 
-Another point of interest are FIB and MOD PMTs. FIB PMTs are protected by the shielding and Cherenkov light are produced and delivered by quartz fibers bundles. 
-MOD PMTs have reduced quartz window size to 7 mm in diameter. 
-Performance of these PMTs are different from VDM and BI PMTs and additional detailed studies are needed to understand their potential benefits to be used for luminosity measurements.
-
-% Another critical problem for the charge method is the afterglow background, which was described for counting algorithms in \SectionRef{subsec:backgrounds}.
-% For 25 ns physics runs this background can reach 3$\%$, which make it very important to develop a precise subtraction procedure of the background.
-% Possibility to use template method for charge algorithm is currently under study.
-
+Another important aspect is the maximum possible number of interactions which detector can handle without saturation. 
+During 2016 all LUCID counting algorithm, which were used before in Run 1 and 2015, 
+started to saturate and in practice, only ``HITOR'' algorithm is capable to measure luminosity without saturation.
+For the future Run 3 $\mu$ is expected to be above 100, which will cause lead to potential saturation of the``HITOR'' algorithm as well.
+One of the possible solutions for Run 3 is to use FIB PMTs. They were installed for Run 2 detector as well to study their performance.
+They have two benefits for very high-$\mu$ running condition. Firstly, readout PMTs are protected by the muon shielding, which cancel potential 
+problems of too large radiation damage of the PMTs. Secondly, bundle of quartz fibers is used as a medium to produce a Cherenkov light, which
+make it easy to choose and change bundle fiber configuration to obtain needed acceptance of the detector in order to avoid any saturation problems.

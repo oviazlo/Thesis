@@ -148,7 +148,7 @@ $V=W,Z$ &  + {\scshape pythia-6.426} & & \\
 \section{Event selection}
 % TODO mention here about size of the dataset and that it was 8 TeV 50 ns data.
 % TODO description of the used triggers here!
-\toDo[no jet selection is described]
+% TODO [no jet selection is described]
 
 The analysis is based on the pp collision data collected in 2012 by the ATLAS detector with 8 TeV center of mass energy.
 Integrated luminosity of the sample correspond to 20.3 fb$^{-1}$, the mean number of interactions per bunch crossing was equal to 21.
@@ -165,12 +165,18 @@ where $\eta_e$ and $\phi_e$ are rapidity and azimuthal angle of the electron can
 
 \subsection{Electron selection}
 \label{subsec:electron_selection}
-Next step in the selection is to select all isolated high-$p_T$ electrons present in the event.
-Electron reconstruction is done by matching tracks from inner detector with energy deposits in the EM calorimeter.
+Next step in the selection is to select isolated high-$p_T$ electrons present in the event.
+Electron reconstruction in the ATLAS detector central region ($\eta<2.5$) is done by matching tracks from inner detector with energy deposits in the EM calorimeter.
+The spatial resolution of the electron candidate in ($\eta$,$\phi$) plane are taken from the parameters of the matched track,
+while energy is calculated from energy deposits in the EM calorimeter.
 
-\toDo[add how electrons are reconstructed in the ATLAS from electron ID note]
+% ATLAS use three sets of electron identification criteria, which are ordered by background-rejection power and identification efficiency~\cite{electron_tight}.
+% These sets are labelled as loose, medium and tight. Loose set provide has poor background-rejection power while tight - has the best.
+% But background-rejection power comes at cost of identification efficiency
 
-\toDo[explain how electron energy is measured]
+% so as to provide increasing
+% background-rejection power at some cost to the identi-fication efficiency. 
+
 
 Electrons of interest are good reconstructed candidates, tracks of which originate from the primary vertex. To select such candidates, 
 the following requirements have to be satisfied:
@@ -180,7 +186,8 @@ the following requirements have to be satisfied:
  \item Transverse and longitudinal impact parameters $|d_0|/\sigma(d_0) < 3$ and $|z_0 \times sin \theta| < 1$ mm: 
  to verify that the electron was produced close to the primary vertex and to reject electrons originating from decays of long-lived particles.
  \item To pass ``tight'' electron set of identification criteria defined in~\cite{electron_tight}. \\ 
- \toFix[explain shortly purpose of the cut]
+ This set provide the best background-rejection efficiency, a factor of two with respect to the medium selection, 
+ at cost of slightly smaller identification efficiency, less than 10$\%$ with respect to the medium selection.
  \item To pass isolation requirement: to distinguish prompt electrons from those associated with jet activity.
  \item No reconstructed jet within $\Delta R < 0.4$: to remove ambiguous classification of the track, 
  when track is classified as an electron and as a jet simultaneously,
@@ -223,8 +230,8 @@ This region is used for estimation of the electron charge misidentification back
 % subsection flow:
 % CF sources --> method and used regions --> validation of the method --> deriving scale factors --> appling to specific MC samples
 
-\toAsk[why we define CF rate in 80..100 GeV region, while we cut 70..110 GeV from signal region?]
-\toAsk[CF at high pT. extrapolation? of one large bin with huge error? look it up!]
+% \toAsk[why we define CF rate in 80..100 GeV region, while we cut 70..110 GeV from signal region?]
+% \toAsk[CF at high pT. extrapolation? of one large bin with huge error? look it up!]
 
 Since the charge of one of the reconstructed electrons from the pair can be misidentified, 
 processes with opposite-sign dilepton final state can contribute to the signal region.
@@ -282,7 +289,7 @@ The comparison demonstrates that the likelihood method provides a very reliable 
   \includegraphics[width=\textwidth]{SS/support_note/chargeflip/pt_mctruth.eps}
 \end{subfigure}
 \caption{Electron charge misidentification rate, obtained from MC simulation using truth (generated) information and the likelihood method. 
-Ratio between the rate obtained with the likelihood method to the rate obtained with truth MC information is shown below in the ratio plot.}
+Ratio between the rate obtained with the likelihood method to the rate obtained with truth MC information is shown below in the ratio plot. }
 \label{fig:likelihood_cross_check}
 \end{figure}
 
@@ -310,7 +317,6 @@ The charge flip background consists of opposite-sign lepton pairs which were rec
 The background is estimated from MC simulation (all the considered processes are shown in the lower part of the \TableRef{tab:MC_cross}) 
 plus is corrected by a charge flip scale factor to properly reproduce $\eta$-dependence of the charge flip rate.
 
-% TODO systematics on CF scale factor
 To estimate the systematic error of the derived scale factors, the following uncertainty sources were considered:
 \begin{itemize}
  \item The width of the invariant mass window, used to preselect electrons from the $Z$ peak, was varied by 10 GeV.
@@ -412,8 +418,7 @@ shown in \FigureRef{fig:ff_e_errs}.
 \label{fig:ff_e_errs}
 \end{center}
 \end{figure} 
-\toDo[say that fake factors were also measured not only for signal selection, but also for less strong selections
-which are used for fake validation regions].
+% TODO[say that fake factors were also measured not only for signal selection, but also for less strong selections which are used for fake validation regions].
 
 Verification of the fake factor method is done with the help of validation regions which are described further.
 
@@ -471,7 +476,8 @@ Agreement between observed and expected number of pairs is quoted in the bottom 
 \begin{center}
 \includegraphics[width=0.65\textwidth]{SS/support_note/dielectrons/crs/OS_mod_v4.pdf}
 \caption{Invariant mass of the opposite-sign electron pairs that passed signal selection.
-Points represent data, while shaded areas and solid lines represent MC simulation.
+The data are shown as closed circles. The stacked histograms represent the background estimations. 
+The last bin is an overflow bin.
 }
 \label{fig:OS_CR}
 \end{center}
@@ -492,7 +498,6 @@ and the ratios between observed and expected number of pairs are summarized in \
 The expectations are in good agreement with observation.
 
 \begin{table*}[htbp]
-\caption{Expected and observed numbers of pairs for various cuts on the dilepton invariant mass. The uncertainties shown are the quadratic sum of the statistical and systematic uncertainties.}
 \begin{center}
 \resizebox{\textwidth}{!}{
 \begin{tabular}{l|c|c|c|c|c|c|c}
@@ -515,13 +520,12 @@ Data  & $268 \pm 16$ & $156 \pm 12$ & $46.0 \pm 6.8$ & $14.0 \pm 3.7$ & $6.0 \pm
 \end{tabular}
 }
 \end{center}
+\caption{Expected and observed numbers of pairs for various cuts on the dilepton invariant mass. The uncertainties shown are the quadratic sum of the statistical and systematic uncertainties.}
 \label{tab:promptCR_yields}
 \end{table*}
 
 
 \begin{table*}[htbp]
-\caption{Ratio between observed and expected same-sign pairs in the $WZ$ and $ZZ$ control region for various cuts on the dielectron invariant mass. 
-The uncertainties account for both statistical and systematic errors.}
 \begin{center}
 \resizebox{\textwidth}{!}{
 \begin{tabular}{c|c|c|c|c|c|c}
@@ -533,6 +537,8 @@ $0.97 \pm 0.09$ & $0.95 \pm 0.10$ & $0.96 \pm 0.17$ & $0.93 \pm 0.27$ & $1.3 \pm
 \end{tabular}
 }
 \end{center}
+\caption{Ratio between observed and expected same-sign pairs in the $WZ$ and $ZZ$ control region for various cuts on the dielectron invariant mass. 
+The uncertainties account for both statistical and systematic errors.}
 \label{tab:prompt_ratios}
 \end{table*}
 
@@ -543,7 +549,7 @@ Simulation agrees well with data.
 \begin{center}
 %\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
 \includegraphics[width=0.65\textwidth]{SS/support_note/PromptCR/ElEl/2isoSS_ee_mll_pr.eps}
-\caption{Prompt background validation region.}
+\caption{Invariant mass os reconstructed same-sign electron pairs in the prompt background validation region. The last bin is an overflow bin.}
 \label{fig:prompt_CR}
 \end{center}
 \end{figure} 
@@ -584,7 +590,7 @@ Dominant background contribution is arising due to electron charge misidentifica
   \centering
   \includegraphics[width=\textwidth]{SS/paper_draft/2isoSS_ee_eta1_ssz.eps}
 \end{subfigure}
-\caption{\toDo Leading electron $p_T$ and $\eta$ distributions in the same-sign $Z$ peak validation region with two isolated electrons.}
+\caption{Leading electron $p_T$ (left) and $\eta$ (right) distributions in the charge flip validation region. The last bin is an overflow bin in the left figure.}
   \label{fig:charge_flip_CR_kinematics}
 \end{figure}
 
@@ -643,8 +649,7 @@ Agreement between observed and expected number of pairs is quoted as a fraction 
 
 
 \subsection{Non-prompt background validation region}
-% TODO
-\toDo[explain here how fake factors for validation regions were calculated]
+% TODO [explain here how fake factors for validation regions were calculated]
 
 To verify the fake factor method, a set of validation regions is checked. 
 These regions have to be as much as possible kinematically close to
@@ -745,7 +750,7 @@ The hatched areas show the statistical uncertainty of the background prediction.
 
 \section{Systematic Uncertainties}
 \label{sec:ss_Systematics}
-\toDo[add Fast/Full sim. systematics]
+% TODO [add Fast/Full sim. systematics]
 
 A set of possible systematic sources which can affect background predictions were studied.
 Description of the considered sources are presented below.
@@ -866,13 +871,13 @@ Background prediction describes observed numbers in all of these distributions r
 \begin{center}
 \includegraphics[width=0.7\textwidth]{SS/paper_draft/2isoSS_ee_mll.eps}
 \caption{Invariant mass distribution for $e^{\pm}e^{\pm}$ pairs in the signal region. 
-Shaded band in the lower plot corresponds to the combination of the statistical and systematic uncertainties of the background prediction.}
+Shaded band in the lower plot corresponds to the combination of the statistical and systematic uncertainties of the background prediction.
+The last bin is an overflow bin.}
 \label{fig:signal_mass}
 \end{center}
 \end{figure}
 
 \begin{table*}[htbp]
-\caption{Expected and observed numbers of pairs of isolated same-sign electrons for various cuts on the dielectron invariant mass, \mee. The uncertainties shown include statistical and systematic contributions.}
 \begin{center}
 \resizebox{\textwidth}{!}{
 \begin{tabular}{l|c|c|c|c|c|c|c}
@@ -907,6 +912,7 @@ Data	& $ 1976 $	& $ 987 $	& $ 265 $	& $ 83 $	& $ 30 $	& $ 13 $	& $ 7 $	\\[+0.05i
 \end{tabular}
 }
 \end{center}
+\caption{Expected and observed numbers of pairs of isolated same-sign electrons for various cuts on the dielectron invariant mass, \mee. The uncertainties shown include statistical and systematic contributions.}
 \label{tab:2iso_ee_SS}
 \end{table*}
 
@@ -920,7 +926,7 @@ Data	& $ 1976 $	& $ 987 $	& $ 265 $	& $ 83 $	& $ 30 $	& $ 13 $	& $ 7 $	\\[+0.05i
   \centering
   \includegraphics[width=\textwidth]{SS/paper_draft/2isoSS_ee_eta1.eps}
 \end{subfigure}
-\caption{$p_T$ and $\eta$ distributions of the leading electron in the signal region.}
+\caption{$p_T$ and $\eta$ distributions of the leading electron in the signal region. The last bin is an overflow bin in the left figure.}
   \label{fig:signal_kinematics}
 \end{figure}
 
@@ -1059,7 +1065,8 @@ Expected limits are shown with 2$\sigma$ bands. Limits are summarized in \TableR
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{SS/paper/limit_ee_all.eps}
-\caption{95\% C.L. upper limits on the fiducial cross section for new physics contributing to the signal region for events with $e^{\pm}e^{\pm}$ pairs.}
+\caption{Fiducial cross section upper limits at 95\% C.L. for new physics contributing to the signal region for events with $e^{\pm}e^{\pm}$ pairs.
+The green and yellow bands correspond to the 1$\sigma$ and 2$\sigma$ bands on the expected limits respectively.}
 \label{fig:inclusive_fid_limit}
 \end{center}
 \end{figure}
@@ -1074,8 +1081,8 @@ Expected limits are shown with 2$\sigma$ bands. Limits are summarized in \TableR
   \centering
   \includegraphics[width=\textwidth]{SS/support_note/limits/limit_ee_pos.eps}
 \end{subfigure}
-\caption{95\% C.L. upper limits on the fiducial cross section for new physics contributing to the signal region
-for events with $e^{+}e^{+}$ (left) and $e^{+}e^{+}$ (right) pairs.}
+\caption{Fiducial cross section upper limits at 95\% C.L. for new physics contributing to the signal region
+for events with $e^{+}e^{+}$ (left) and $e^{+}e^{+}$ (right) pairs. The green and yellow bands correspond to the 1$\sigma$ and 2$\sigma$ bands on the expected limits respectively.}
   \label{fig:signal_kinematics}
 \end{figure}
 
@@ -1100,7 +1107,9 @@ Mass range & Expected & Observed & Expected & Observed & Expected & Observed \\
 
 \end{tabular}
 \end{center}
- \caption{Upper limit at 95\% CL on the fiducial cross-section for $\ell^{\pm} \ell^{\pm}$ pairs from non-SM signals. The expected limits and their $1 \sigma$ uncertainties are given together with the observed limits derived from the data. Limits are given inclusively and separated by charge.}
+ \caption{Upper limit at 95\% CL on the fiducial cross-section for $e^{\pm} e^{\pm}$ pairs from non-SM signals. 
+ The expected limits and their $1 \sigma$ uncertainties are given together with the observed limits derived from the data. 
+ Limits are given inclusively and separated by charge.}
 \label{tab:limits}
 \end{table*}
 
@@ -1117,8 +1126,8 @@ Thus, the search is performed in mass bins with mass-dependent width.
 \subsection{MC simulation}
 A few signal samples were generated with Pythia8~\cite{pythia8} with different masses of the left-handed and right-handed doubly charged Higgs bosons.
 Simulated masses were in the range of 50-600 GeV in steps of 50 GeV and one sample had 1 TeV mass.
-Kinematics of the left-handed and right-handed Higgs bosons is identical, but production rate is different due to the different coupling to Z boson mediator~\cite{dch_note}.
-Cross sections were calculated with NLO precision. \toDo[link]
+Kinematics of the left-handed and right-handed Higgs bosons is identical, but production rate is different due to the different coupling to Z boson mediator~\cite{dch_note}. Cross sections were calculated with NLO precision. 
+% TODO [link] for NLO cross section
 
 \subsection{Model acceptance and efficiency}
 The width of the doubly charged Higgs decay is mainly caused by the detector momentum resolution of the electrons.
@@ -1151,7 +1160,6 @@ p_{3} + p_{4} m & ,\mbox{if } m \geq 450\mbox{ GeV} \end{cases}
 \end{equation}
 where $m$ is the Higgs mass and $p_{0}, p_{1}, p_{2}, p_{3}, p_{4}$ are fit parameters, shown in \TableRef{tab:ee_eff_params}.
 \begin{table}[htbp]
-    \caption{Fitted parameter values for Equation~\ref{eq:ee_eff}, which gives $\varepsilon_{tot}(m)$.}
     \begin{center}
     \begin{tabular}{ l | l }
         \hline
@@ -1165,6 +1173,7 @@ where $m$ is the Higgs mass and $p_{0}, p_{1}, p_{2}, p_{3}, p_{4}$ are fit para
         \hline
     \end{tabular}
     \end{center}
+    \caption{Fitted parameter values for Equation~\ref{eq:ee_eff}, which gives $\varepsilon_{tot}(m)$.}
     \label{tab:ee_eff_params}
 \end{table}
 
@@ -1173,15 +1182,13 @@ Computed efficiencies for available mass points and their fit are shown in \Figu
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{SS/support_note/DCHLimits/effic_DCH_ee_pairSF_v2.eps}
-\caption{\toDo Total reconstruction efficiency ($\varepsilon_{tot}$) of the doubly charged Higgs boson decay to same-sign electron pair as a function of simulated $H^{\pm\pm}$ mass, 
-fitted with piecewise empirical function.}
+\caption{Total reconstruction efficiency ($\varepsilon_{tot}$) of the doubly charged Higgs boson decay to same-sign electron pair as a function of simulated $H^{\pm\pm}$ mass, fitted with piecewise empirical function.}
 \label{fig:signal_efficiency}
 \end{center}
 \end{figure}
 
-\toDo[describe systematics for the DCH signal]
-
-\toAsk[CLs = CLs+b/CLb. What is the signal in case of limit on new physics? Read Ingas thesis]
+% TODO \toDo[describe systematics for the DCH signal]
+% TODO [CLs = CLs+b/CLb. What is the signal in case of limit on new physics? Read Ingas thesis]
 
 \subsection{Cross section and mass limits}
 
@@ -1192,12 +1199,9 @@ Branching ratio of the $H^{\pm\pm} \to e^{\pm}e^{\pm}$ decay is assumed to be 10
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{SS/support_note/DCHPlots/ee/2isoSS_ee_mll_dch.eps}
-\caption{\toDo Invariant mass distributions for $\ee$ pairs passing the full event selection. 
-The data are shown as closed circles. The stacked histograms represent 
-the backgrounds composed of pairs of prompt leptons from SM processes, 
-pairs with at least one non-prompt lepton and backgrounds arising from charge misidentification and conversions. 
+\caption{Invariant mass distributions for $\ee$ pairs passing the full event selection. 
 The open histograms show the expected signal from simulated $H^{\pm\pm}$ samples,
-assuming a 100\% branching ratio to the decay channel considered. The last bin is an overflow bin.}
+assuming a 100\% branching ratio to the same-sign electron pair. The last bin is an overflow bin.}
 \label{fig:signal_mass}
 \end{center}
 \end{figure}
@@ -1223,14 +1227,14 @@ mass limits are summarized in \TableRef{tab:limits_mass}.
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{SS/paper/limitDCH_ee_all.eps}
-\caption{\toDo 95\% C.L. upper limits on the cross section for new physics contribution for events with $e^{\pm}e^{\pm}$ pairs.  
+\caption{Upper limits at 95\% C.L. on the cross section as a function of $e^{\pm}e^{\pm}$ invariant mass for the production of a double charged Higgs boson 
+assuming a 100\% branching ratio to $e^{\pm}e^{\pm}$. The green and yellow bands correspond to the 1$\sigma$ and 2$\sigma$ bands on the expected limits respectively.
 Pair production cross sections for left and right-handed $H^{\pm\pm}$ are overlaid.}
 \label{fig:dch_limits_mass}
 \end{center}
 \end{figure}
 
 \begin{table}[htbp]
-\caption{Upper limit at 95\% C.L. on mass of \dch, assuming 100\% branching ratio.}
 \begin{center}
 \begin{tabular}{c||c|c}
 & \multicolumn{2}{c}{95\%  C.L. upper limit [GeV]}\\
@@ -1241,6 +1245,7 @@ $H^{\pm\pm}_L$ & $552.6^{+11.1}_{-49.9}$ & $551.2 \pm 3.1$ \\
 $H^{\pm\pm}_R$ & $424.8^{+1.0}_{-59.7}$ & $374.0 \pm 6.2$ \\
 \end{tabular}
 \end{center}
+\caption{Upper limit at 95\% C.L. on mass of \dch, assuming 100\% branching ratio to $e^{\pm}e^{\pm}$.}
 \label{tab:limits_mass}
 \end{table}
 
@@ -1256,7 +1261,7 @@ They are shown in \FigureRef{fig:dch_limits_BR}.
   \centering
   \includegraphics[width=\textwidth]{SS/paper/limitDCH_ee_allvsBR_RH.eps}
 \end{subfigure}
-\caption{\toDo 95\% C.L. limits on the right-handed doubly charged Higgs mass vs 
+\caption{95\% C.L. limits on the doubly charged Higgs mass vs 
 branching ratio of $H^{\pm\pm}_L$ (left) and $H^{\pm\pm}_R$ (right) for events with $e^{\pm}e^{\pm}$ pairs.}
   \label{fig:dch_limits_BR}
 \end{figure}
