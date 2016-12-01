@@ -287,11 +287,8 @@ $\PWprime$ flat sample passing the medium or high-$p_T$ working point requiremen
 \end{figure}
 
 
-\subsection{Definition of the missing transverse energy}
+\subsection{Transverse mass and missing transverse energy}
 \label{subsec:etmiss}
-% TODO describe why if muon is not reconstructed it will contribute to Etmiss (see Magnars thesis, page 89)
-% TODO cut of the mT
-
 The missing transverse energy, $E_T^{miss}$, is calculated following the ATLAS recommendation and recommendations described in ref.~\cite{met2015_1,met2015_2}.
 It is evaluated as a vector sum of the $p_T$ of selected objects:
 \begin{itemize}
@@ -306,24 +303,189 @@ It is evaluated as a vector sum of the $p_T$ of selected objects:
  Only jets with $p_T > 20$~GeV and $|\eta| < 2.4$ are used. \toAsk[is $|\eta| < 2.4$ correct? in paper it's 5?]
  \item tracks originating from the primary vertex with $p_T > 0.5$ GeV and $|\eta| < 2.5$ but not belonging to any of the reconstructed physics objects listed above.
 \end{itemize}
+The missing transverse energy is required to be $E_T^{miss} > 55$ GeV in order 
+to balances the lepton transverse momentum cut.
+Such high cut allows to significantly suppress 
+the multi-jet background which will be described below.
 
+% TODO describe why if muon is not reconstructed it will contribute to Etmiss (see Magnars thesis, page 89)
 
+The main variable of interest which is used as a signal discriminant is transverse mass
+\begin{equation}
+ m_\mathrm{T} = \sqrt{2 p_\mathrm{T} p_T^{miss} (1-\cos\varphi_{\Plepton\nu})}
+\end{equation}
+where $\varphi_{\Plepton\nu}$ is the angle between the muon and $E_T^{miss}$ in the transverse plane.
+The transverse mass has to be $m_\mathrm{T} > 110$~GeV.
 
-% The multi-jet background includes both real leptons from heavy flavor decay
-% and jets that fake electrons.  In both cases, the \mettext\ is
-% typically small in contrast to \wp\ (and standard model \w) events
-% where the \mettext\ roughly balances the lepton transverse momentum.
-% The multi-jet background is effectively suppressed by adopting a \mettext\ threshold equal
-% to the lepton \pt\ threshold, i.e. $\met > 55 \gev$ for both channels.
-
-
-\section{Data driven multijet background estimate}
-\label{sec:wprimeMultijetBackground}
+\section{Background estimation}
+\label{sec:wprime_backgroundEstimation}
 % TODO describe sources of fakes:
-???
-\subsection{The matrix method}
+
+The backgrounds which have final state with a real muon originating from the primary vertex and 
+which can contribute to the signal selection are modelled with MC simulation.
+List of all considered processes is shown in \TableRef{tab:MC_cross}.
+Such muons are called ``real'' (prompt) muons.
+
+However, processes with multijet final states (with one or more jets) will also contribute to
+the signal selection due to probability of wrong reconstruction of the jet activity as a muon.
+Such muon candidates are called ``fake'' (non-prompt) muons.
+The ``fake'' muon can be a real muon which originate from a heavy flavor hadron decay within a jet
+or from pion or kaon decays. But because they are not originate from the primary vertex they are not
+desired to be selected in the signal region and thus are called ``fake'' muons.
+The ``fake'' muon background is estimated using a data driven technique. 
+``Fake'' muons are expected to be in general non-isolated, although some
+fraction does pass the isolation cut and ends up in the selected event sample. Isolation variables
+hence provide a strong separation of ``fake'' and ``real'' muons, and are essential to the data-driven
+estimation of the ``fake'' background.
+The ``fake'' background is estimated using the Matrix Method, which is presented below.
+
+\subsection{The Matrix Method}
+\label{subsec:matrix_method}
 % TODO what is the difference between atrix and fake factor methods?
 % TODO some motivation why we use exactly his method in this analysis.
+
+% The cut used to distinguish between loose and tight muons is the isolation cut, and the loose muons
+% are thus defined as passing all muon selection cuts except the isolation cut. Tight muons correspond
+% to the baseline selection.
+
+
+
+The goal of the method is to get an estimation of fake muon which
+pass the selection. The idea on how to obtain this number is to loosen
+some of the identification cuts for the signal selection and measure
+the efficiency for these looser objects to pass the signal selection. This
+efficiency gives a handle for the fake contribution of the signal.
+
+The matrix method provides a connection between the true number of
+``real'' muons ($N_R$) and the true number of ``fakes'' ($N_F$) and
+the measurable quantities from a sample in which the muons have are passing loose selection ($N_L$) criteria and at the same time failing a tight selection and a sample in which the muons pass the tight
+selection ($N_T$) criteria via Eq.~\ref{eq:mm1}.
+\begin{align}
+  \left(\begin{array}{c} N_T \\ N_L \end{array}\right)&=
+  \begin{pmatrix}
+    \epsilon_R & \epsilon_F \\
+    1-\epsilon_R & 1- \epsilon_F \\
+  \end{pmatrix}
+  \left(\begin{array}{c} N_R \\ N_F \end{array}\right)
+  \label{eq:mm1}
+\end{align} 
+The vector on the right hand side of the equation describes the
+inaccessible truth quantities. Since these truth quantities are
+independent from each other, which means $N_R$ has no component from
+$N_F$, also the vector on the left side of the equation has to fulfill
+this criteria. Because of this $N_L$ should not contain $N_T$ and in
+the following $L$ indicates ``pass loose but not tight'' or short
+``loose fail tight''.
+
+The entries in the matrix are called real efficiency ($\epsilon_R$)
+and fake efficiency ($\epsilon_F$) and denote the probability for a real
+(fake) electron to pass from loose to tight and is given by:
+\begin{align}
+ \epsilon_F = \frac{N_{\rm tight}^{\rm fake}}{N_{\rm loose}^{\rm fake}} ,\qquad & \epsilon_R = \frac{N_{\rm tight}^{\rm real}}{N_{\rm loose}^{\rm real}}.
+  \label{eq:mm2}
+\end{align}
+The total number of muons passed signal selection is given in the first line of the matrix:
+\begin{align*}
+ N_T&=N_{\rm tight}^{\rm real} + N_{\rm tight}^{\rm fake}=\epsilon_R N_R + \epsilon_F N_F\, ,
+\end{align*}
+By inverting the matrix one get an equation for the truth variables:
+\begin{align*}
+\left(\begin{array}{c} N_R \\ N_F \end{array}\right)&=
+\frac{1}{\epsilon_R(1-\epsilon_F)-\epsilon_F(1-\epsilon_R)}
+\begin{pmatrix}
+ 1- \epsilon_F & -\epsilon_F \\
+\epsilon_R-1 & \epsilon_R  \\
+\end{pmatrix}
+\left(\begin{array}{c} N_T \\ N_L \end{array}\right)
+\end{align*} 
+For the number of fake electrons which pass the selection it follows
+then by insertion:
+\begin{align}
+N_{\rm tight}^{\rm fake} = \epsilon_F N_F=\frac{\epsilon_{F}}{\epsilon_{R}-\epsilon_{F}}\left(\epsilon_{R}(N_{L}+N_{T})-N_{T}\right) \,
+  \label{eq:mm5}
+\end{align}
+which only contains measurable quantities.
+
+The cut used to distinguish between loose and tight muons is the isolation cut, and the loose muons
+are thus defined as passing all muon selection cuts except the isolation cut. Tight muons correspond
+to the baseline selection.
+
+``Real'' muon efficiency is found from MC simulation, because MC reproduce efficiency of the isolation cut in data well. ``Fake'' muon efficiency is found from a control region designed to have a high purity of ``fake'' muons. The region is defined in the same way as signal selection without cuts in $E_T^{miss}$ and $m_T$ and following additional requirements:
+\begin{itemize}
+\item At least one jet with $\pt > 40~\GeV$ which does not overlap ($\Delta R > 0.2$)
+with the selected muon.
+\item Opening angle in the transverse plane between the muon and the \mettext,  $\Delta\phi_{\mu,\met} < 0.5$.
+\item No $Z$ candidate (any two muons with $80 < m_{\mu\mu} < 100~\GeV$).
+\item $d_0$ significance greater than $1.5$.
+\item $\met < 55~\GeV$, ensuring that the control region does not overlap with the signal region.
+\end{itemize}
+This region is enhanced with ``fake'' muons, however, significant ``real'' muon contamination is present in the region as well. This is why a ``real'' contribution predicted with MC modeling is subtracted.
+
+
+Systematic uncertainty were estimated for both ``real'' and ``fake'' muon efficiencies, 
+but due to really small contribution of the ``fake'' background to the signal region (at most approximately 1$\%$) the impact of its systematic uncertainties on the total background was found to be negligible.
+
+\subsection{Background extrapolation}
+% TODO explain why it hurts to have huge statistical fluctuation for limit settings 
+% TODO (it was somewhere in the note?)
+% % from app_muonSmooth.tex:
+% In a single-bin statistical analysis,
+% it is straight forward to take into account the statistical uncertainty of the MC background
+% estimates, as one can simply add it in quadrature to the systematic uncertainties on the
+% background level in the search region. However, in a multi-bin analysis, results depend on
+% the shape of the background distribution, and one should avoid propagating clearly unphysical features
+% in this shape to the final results.
+
+The top and diboson backgrounds suffer currently from lack of MC statistics at high mass.
+% TODO say something about mT-binned samples HERE!!!
+Therefore
+these backgrounds are fitted and extrapolated to obtain a smooth description in the high mass region.
+
+% TODO this is from Marcus --> change phrasing!!!
+The fit functions are based on functions which are commonly used to extrapolate the background
+ in the search for di-jet resonances~\cite{???} and also have been used in the $8~\TeV$ dilepton resonance search~\cite{???}.
+ The first function used to extrapolate the background is defined as follows:
+\begin{align}
+ f(\mt) = e^{-a} m_\mathrm{T}^{b} m_\mathrm{T}^{c \log(m_\mathrm{T})}.
+  \label{eq:dijetfunc}
+\end{align}
+The second function is a modified power law function:
+\begin{align}
+ f(\mt) = \frac{a}{(m_\mathrm{T}+b)^{c}}.
+  \label{eq:powerlaw}
+\end{align}
+Several fits are performed with both functions and varying start and end point of the fit range. The fit with the best $\chi^{2}/N.d.o.f$ of all fits is taken
+as central value for the extrapolation and the envelope of all fits as systematic uncertainty for the extrapolation. The statistical uncertainty of the fit parameters
+has found to be negligible.\\
+
+For the top background, the
+starting point of the fit range was varied from $140$~GeV to $260$~GeV in steps of $20$~GeV. The end point
+was varied from $600$~GeV to $900$~GeV in steps of $25$~GeV. For the diboson background,
+the starting point of the fit range was varied from $120$~GeV to $240$~GeV in steps of $20$~GeV. The end point
+was varied from $500$~GeV to $700$~GeV in steps of $25$~GeV. The extrapolated background was stitched to the background
+estimated with Monte Carlo at $\mt=600$~GeV in both the top and diboson cases. 
+
+The results are shown for the top background in
+Fig.~\ref{fig:mu_extrapolate_top} and for the diboson background in Fig.~\ref{fig:mu_extrapolate_diboson}.
+Both figures show the full set of different fits (left) as well as the assigned central value
+and corresponding systematic uncertainty (right). The central value is taken to be the fit with the best $\chi^2$
+and the systematic uncertainty is taken as the envelope.
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.49\textwidth]{Wprime/top_extrapolate_fits.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/top_extrapolate.eps}
+  \caption{Results of fitting and extrapolation for the top background. Both the full set of individual
+fits (left) and the resulting central value and uncertainty (right) are shown.}
+  \label{fig:mu_extrapolate_top}
+\end{figure}
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.49\textwidth]{Wprime/diboson_extrapolate_fits.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/diboson_extrapolate.eps}
+  \caption{Results of fitting and extrapolation for the diboson background. Both the full set of individual
+fits (left) and the resulting central value and uncertainty (right) are shown.}
+  \label{fig:mu_extrapolate_diboson}
+\end{figure}
 
 
 \section{Validation Region}
