@@ -228,7 +228,7 @@ from the primary vertex. They have to satisfy set of following criteria:
 \begin{itemize}
  \item $p_T > 55$ GeV: to ensure a high and flat trigger efficiency.
  \item $|\eta|<2.5$, excluding $1.01 < |\eta| < 1.1$: muons have to be within ID acceptance. 
- Exclusion region is applied in order to reject muons whose tracks in the muon spectrometer fall into poorly aligned chambers (relative barrel-endcap alignment).
+ Exclusion region is applied in order to reject muons whose tracks in the muon spectrometer fall into poorly equationed chambers (relative barrel-endcap equationment).
 %  TODO see comment from Monika to SS chapter
  \item Transverse and longitudinal impact parameters $|d_0|/\sigma(d_0) < 3$ and $|z_0 \times sin \theta| < 10$ mm: 
  to verify that the muon was produced close to the primary vertex and to reject muon originating from decays of long-lived particles. Recommendation by the muon combined performance (MCP) working group has
@@ -348,8 +348,7 @@ The ``fake'' background is estimated using the Matrix Method, which is presented
 % are thus defined as passing all muon selection cuts except the isolation cut. Tight muons correspond
 % to the baseline selection.
 
-
-
+% TODO text taken directly from support note --> rewrite it!!!
 The goal of the method is to get an estimation of fake muon which
 pass the selection. The idea on how to obtain this number is to loosen
 some of the identification cuts for the signal selection and measure
@@ -360,7 +359,7 @@ The matrix method provides a connection between the true number of
 ``real'' muons ($N_R$) and the true number of ``fakes'' ($N_F$) and
 the measurable quantities from a sample in which the muons have are passing loose selection ($N_L$) criteria and at the same time failing a tight selection and a sample in which the muons pass the tight
 selection ($N_T$) criteria via Eq.~\ref{eq:mm1}.
-\begin{align}
+\begin{equation}
   \left(\begin{array}{c} N_T \\ N_L \end{array}\right)&=
   \begin{pmatrix}
     \epsilon_R & \epsilon_F \\
@@ -368,7 +367,7 @@ selection ($N_T$) criteria via Eq.~\ref{eq:mm1}.
   \end{pmatrix}
   \left(\begin{array}{c} N_R \\ N_F \end{array}\right)
   \label{eq:mm1}
-\end{align} 
+\end{equation} 
 The vector on the right hand side of the equation describes the
 inaccessible truth quantities. Since these truth quantities are
 independent from each other, which means $N_R$ has no component from
@@ -380,16 +379,16 @@ the following $L$ indicates ``pass loose but not tight'' or short
 The entries in the matrix are called real efficiency ($\epsilon_R$)
 and fake efficiency ($\epsilon_F$) and denote the probability for a real
 (fake) electron to pass from loose to tight and is given by:
-\begin{align}
- \epsilon_F = \frac{N_{\rm tight}^{\rm fake}}{N_{\rm loose}^{\rm fake}} ,\qquad & \epsilon_R = \frac{N_{\rm tight}^{\rm real}}{N_{\rm loose}^{\rm real}}.
+\begin{equation}
+ \epsilon_F = \frac{N_{\textrm tight}^{\textrm fake}}{N_{\textrm loose}^{\textrm fake}} ,\qquad & \epsilon_R = \frac{N_{\textrm tight}^{\textrm real}}{N_{\textrm loose}^{\textrm real}}.
   \label{eq:mm2}
-\end{align}
+\end{equation}
 The total number of muons passed signal selection is given in the first line of the matrix:
-\begin{align*}
- N_T&=N_{\rm tight}^{\rm real} + N_{\rm tight}^{\rm fake}=\epsilon_R N_R + \epsilon_F N_F\, ,
-\end{align*}
+\begin{equation*}
+ N_T&=N_{\textrm tight}^{\textrm real} + N_{\textrm tight}^{\textrm fake}=\epsilon_R N_R + \epsilon_F N_F\, ,
+\end{equation*}
 By inverting the matrix one get an equation for the truth variables:
-\begin{align*}
+\begin{equation*}
 \left(\begin{array}{c} N_R \\ N_F \end{array}\right)&=
 \frac{1}{\epsilon_R(1-\epsilon_F)-\epsilon_F(1-\epsilon_R)}
 \begin{pmatrix}
@@ -397,13 +396,13 @@ By inverting the matrix one get an equation for the truth variables:
 \epsilon_R-1 & \epsilon_R  \\
 \end{pmatrix}
 \left(\begin{array}{c} N_T \\ N_L \end{array}\right)
-\end{align*} 
+\end{equation*} 
 For the number of fake electrons which pass the selection it follows
 then by insertion:
-\begin{align}
-N_{\rm tight}^{\rm fake} = \epsilon_F N_F=\frac{\epsilon_{F}}{\epsilon_{R}-\epsilon_{F}}\left(\epsilon_{R}(N_{L}+N_{T})-N_{T}\right) \,
+\begin{equation}
+N_{\textrm tight}^{\textrm fake} = \epsilon_F N_F=\frac{\epsilon_{F}}{\epsilon_{R}-\epsilon_{F}}\left(\epsilon_{R}(N_{L}+N_{T})-N_{T}\right) \,
   \label{eq:mm5}
-\end{align}
+\end{equation}
 which only contains measurable quantities.
 
 The cut used to distinguish between loose and tight muons is the isolation cut, and the loose muons
@@ -412,15 +411,23 @@ to the baseline selection.
 
 ``Real'' muon efficiency is found from MC simulation, because MC reproduce efficiency of the isolation cut in data well. ``Fake'' muon efficiency is found from a control region designed to have a high purity of ``fake'' muons. The region is defined in the same way as signal selection without cuts in $E_T^{miss}$ and $m_T$ and following additional requirements:
 \begin{itemize}
-\item At least one jet with $\pt > 40~\GeV$ which does not overlap ($\Delta R > 0.2$)
+\item At least one jet with $p_T > 40$~GeV which does not overlap ($\Delta R > 0.2$)
 with the selected muon.
-\item Opening angle in the transverse plane between the muon and the \mettext,  $\Delta\phi_{\mu,\met} < 0.5$.
-\item No $Z$ candidate (any two muons with $80 < m_{\mu\mu} < 100~\GeV$).
+\item Opening angle in the transverse plane between the muon and the $E_T^{miss}$, $\Delta\phi_{\mu,E_T^{miss}} < 0.5$.
+\item No $Z$ candidate (any two muons with $80 < m_{\mu\mu} < 100$~GeV).
 \item $d_0$ significance greater than $1.5$.
-\item $\met < 55~\GeV$, ensuring that the control region does not overlap with the signal region.
+\item $E_T^{miss} < 55$~GeV, ensuring that the control region does not overlap with the signal region.
 \end{itemize}
 This region is enhanced with ``fake'' muons, however, significant ``real'' muon contamination is present in the region as well. This is why a ``real'' contribution predicted with MC modeling is subtracted.
 
+Obtained efficiencies are shown in \FigureRef{fig:matrix_method_efficiencies}.
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.45\textwidth]{Wprime/realEffNominal.eps}
+  \includegraphics[width=0.45\textwidth]{Wprime/fakeEffNominal.eps}
+  \caption{\toDo}
+  \label{fig:matrix_method_efficiencies}
+\end{figure}
 
 Systematic uncertainty were estimated for both ``real'' and ``fake'' muon efficiencies, 
 but due to really small contribution of the ``fake'' background to the signal region (at most approximately 1$\%$) the impact of its systematic uncertainties on the total background was found to be negligible.
@@ -445,15 +452,15 @@ these backgrounds are fitted and extrapolated to obtain a smooth description in 
 The fit functions are based on functions which are commonly used to extrapolate the background
  in the search for di-jet resonances~\cite{???} and also have been used in the $8~\TeV$ dilepton resonance search~\cite{???}.
  The first function used to extrapolate the background is defined as follows:
-\begin{align}
+\begin{equation}
  f(\mt) = e^{-a} m_\mathrm{T}^{b} m_\mathrm{T}^{c \log(m_\mathrm{T})}.
   \label{eq:dijetfunc}
-\end{align}
+\end{equation}
 The second function is a modified power law function:
-\begin{align}
+\begin{equation}
  f(\mt) = \frac{a}{(m_\mathrm{T}+b)^{c}}.
   \label{eq:powerlaw}
-\end{align}
+\end{equation}
 Several fits are performed with both functions and varying start and end point of the fit range. The fit with the best $\chi^{2}/N.d.o.f$ of all fits is taken
 as central value for the extrapolation and the envelope of all fits as systematic uncertainty for the extrapolation. The statistical uncertainty of the fit parameters
 has found to be negligible.\\
@@ -487,8 +494,46 @@ fits (left) and the resulting central value and uncertainty (right) are shown.}
   \label{fig:mu_extrapolate_diboson}
 \end{figure}
 
+% TODO add extrapolation of the multijet background!!!
+In order to extend the multijet background estimates beyond the region where there is sufficient statistics, a simple power law fit is performed:
+\begin{equation}
+\frac{dN}{d m_T} = a\, m_T^{-b}
+\end{equation}
+with $a$ and $b$ as the fitted parameters. Fits are done in the ranges
+$150$--$300~\GeV$ and $200$--$300~\GeV$.
 
 \section{Validation Region}
+
+To validate the ``fake'' muon background estimate and MC description of the ``real'' muon backgrounds
+% , and also to ensure that
+% all cut variables used in the definition of the fake muon control region are reasonably
+% well described in the real muon MC,
+a validation region is used, which is defined in the same way as signal selection but without the $E_T^{miss}$ and $m_T$ requirements. Validation region with and without using isolation requirements
+are shown which correspond to tight and loose muon definitions used in the Matrix Method.
+
+
+% For the purpose of validation of the fake muon background estimate, and also to ensure that
+% all cut variables used in the definition of the fake muon control region are reasonably
+% well described in the real muon MC, we consider several relevant distributions
+% before the \mettext\ and \mt\ cuts. The distributions are shown both in the inclusive
+% loose muon sample, i.e. without the isolation cut applied, and in the tight muon sample.
+% The virtue of considering the inclusive loose muon sample, is that the fake muon background
+% is larger, making for more convincing validation of the background estimate. Also, the fake
+% muon background in this sample has a different, much weaker, dependence on the fake-muon
+% efficiency, as we are considering $N_F$ rather than $\epsilon_F N_F$ (see Eq.~\eqref{eq:mm5}).
+% This means that the distributions in the loose muon sample serve more as validation
+% of the real-muon efficiency measurement and the MC description, and less as validation of the
+% fake-muon efficiency measurement.
+% 
+% The validation distributions are shown in Figs.~\ref{fig:muMMval1} and~\ref{fig:muMMval2}.
+% In general, reasonable agreement is observed. The most obvious discrepancy is seen in the
+% distribution of the number of jets. The disagreement is likely mostly due to the modeling
+% of jet emission in the $W\to\mu\,\nu$ MC, where only one jet emission is included at the
+% matrix element level. This affects in principle the MC subtraction in the ``fake muon'' control region,
+% but the efficiency of the baseline cut $N_\mathrm{jet}\geq1$ is not strongly affected by the
+% discrepancy, which is prominent only for $N_\mathrm{jet}\geq2$. Furthermore, the systematics
+% variations with no $N_\mathrm{jet}$ cut are clearly unaffected by the MC description of this variable.
+
 
 \section{Signal Region}
 \label{sec:wprimeSignalRegion}
