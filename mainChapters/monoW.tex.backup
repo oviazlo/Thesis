@@ -45,8 +45,8 @@ One can highlight three key features of the analysis:
 This analysis have been made public as a conference note~\cite{ATLAS-CONF-2015-063} with early reasults and later as a paper~\cite{Aaboud:2016zkn} where final results were presented.
 
 My personal contribution to the analysis can be concluded in following three parts.
-I performed complete analysis in muon channel. Signal selection, control and validation plots, estimation of systematics and other.
-This part was done in parrallel with other collaborator to make sure that results are robust and are the same from two independent analyses and there are no mistaken done.
+I was involved in the analysis of muon channel. Signal selection, muon and missing transverse energy performance, validation plots and estimation of some systematic uncertainties.
+This part was done in parrallel with other collaborator to make sure that results are robust and are the same from two independent analyses codes and there are no mistaken done.
 
 % TODO discuss with Monika, should I include it or not. If yes - how should I argument about why it was not use and how to explain differnce comparing to inclusive sample?
 Secondly I was investigating ways to decrease systematics caused by limited statistic of inclusive diboson and ttbar backgound samples at high-$m_{T}$ region.
@@ -58,6 +58,11 @@ Main focus of this investigation was mono-W Dark Matter (DM) models, where pair 
 Two sets of model were considered: simplified and Effective Field Theory models [links???]. 
 
 % TODO discuss with Monika - how should I position analysis - as a dedicated search of Wprime or as more model-independent search?
+
+%*******************************************************************************
+% MOTIVATION
+%*******************************************************************************
+
 
 \section{Motivation}
 \label{sec:wprimeIntro}
@@ -103,6 +108,10 @@ Invaraint mass and transverse mass distributions for the samples with fixed $\PW
 on top of the $W$ background on generated MC level.}
   \label{fig:signal_with_W}
 \end{figure}
+
+%*******************************************************************************
+% BKG PROCESSES AND MC
+%*******************************************************************************
 
 
 \section{Background processes}
@@ -197,6 +206,11 @@ s-channel $Wt$ & + {\scshape pythia-6.428}~\cite{Pythia} & &  \\
   }
 \label{tab:MC_cross}
 \end{table}
+
+%*******************************************************************************
+% SELECTION
+%*******************************************************************************
+
 
 \section{Event and lepton selection}
 \label{sec:wprimeSelection}
@@ -316,6 +330,10 @@ The main variable of interest which is used as a signal discriminant is transver
 \end{equation}
 where $\varphi_{\Plepton\nu}$ is the angle between the muon and $E_T^{miss}$ in the transverse plane.
 The transverse mass has to be $m_\mathrm{T} > 110$~GeV.
+
+%*******************************************************************************
+% BACKGROUND ESTIMATION
+%*******************************************************************************
 
 \section{Background estimation}
 \label{sec:wprime_backgroundEstimation}
@@ -502,63 +520,319 @@ In order to extend the multijet background estimates beyond the region where the
 with $a$ and $b$ as the fitted parameters. Fits are done in the ranges
 $150$--$300~\GeV$ and $200$--$300~\GeV$.
 
+%*******************************************************************************
+% VALIDATION REGIONS
+%*******************************************************************************
+
 \section{Validation Region}
-
-To validate the ``fake'' muon background estimate and MC description of the ``real'' muon backgrounds
-% , and also to ensure that
-% all cut variables used in the definition of the fake muon control region are reasonably
-% well described in the real muon MC,
+To validate the ``fake'' muon background estimate and MC description of the ``real'' muon backgrounds, and also to ensure that
+all cut variables used in the definition of the fake muon control region are reasonably
+well described in the MC,
 a validation region is used, which is defined in the same way as signal selection but without the $E_T^{miss}$ and $m_T$ requirements. Validation region with and without using isolation requirements
-are shown which correspond to tight and loose muon definitions used in the Matrix Method.
+are shown which correspond to tight and loose muon definitions used in the matrix method.
 
+The validation distributions of variables, used in the definition of the ``fake'' muon control region, are shown in \FigureRef{fig:muMMval1}.
+In general, reasonable agreement is observed. The most obvious discrepancy is seen in the
+distribution of the number of jets. The disagreement is likely mostly due to the modeling
+of jet emission in the $W\to\mu\,\nu$ MC, where only one jet emission is included at the
+matrix element level calculations.
+This affects in principle the MC subtraction in the ``fake'' muon control region,
+but discrepancy is present only for $N_\mathrm{jet}\geq2$, while control region is 
+defined with requirement $N_\mathrm{jet}\geq1$ and thus this discrepancy is not 
+strongly affected the ``fake'' muon efficiency calculations.
+Furthermore, as a systematic variation of the ``fake'' muon efficiency was estimated with no $N_\mathrm{jet}$ cut at all and was found to be negligible which prove that discrepancy in
+the $N_\mathrm{jet}$ is negligible as well.
 
-% For the purpose of validation of the fake muon background estimate, and also to ensure that
-% all cut variables used in the definition of the fake muon control region are reasonably
-% well described in the real muon MC, we consider several relevant distributions
-% before the \mettext\ and \mt\ cuts. The distributions are shown both in the inclusive
-% loose muon sample, i.e. without the isolation cut applied, and in the tight muon sample.
-% The virtue of considering the inclusive loose muon sample, is that the fake muon background
-% is larger, making for more convincing validation of the background estimate. Also, the fake
-% muon background in this sample has a different, much weaker, dependence on the fake-muon
-% efficiency, as we are considering $N_F$ rather than $\epsilon_F N_F$ (see Eq.~\eqref{eq:mm5}).
-% This means that the distributions in the loose muon sample serve more as validation
-% of the real-muon efficiency measurement and the MC description, and less as validation of the
-% fake-muon efficiency measurement.
-% 
-% The validation distributions are shown in Figs.~\ref{fig:muMMval1} and~\ref{fig:muMMval2}.
-% In general, reasonable agreement is observed. The most obvious discrepancy is seen in the
-% distribution of the number of jets. The disagreement is likely mostly due to the modeling
-% of jet emission in the $W\to\mu\,\nu$ MC, where only one jet emission is included at the
-% matrix element level. This affects in principle the MC subtraction in the ``fake muon'' control region,
-% but the efficiency of the baseline cut $N_\mathrm{jet}\geq1$ is not strongly affected by the
-% discrepancy, which is prominent only for $N_\mathrm{jet}\geq2$. Furthermore, the systematics
-% variations with no $N_\mathrm{jet}$ cut are clearly unaffected by the MC description of this variable.
+% TODO think about some additional description here!
+% TODO check in the Magnars thesis
+Distribution of the $E_T^{miss}$, muon momentum and $m_T$ are shown in \FigureRef{fig:muMMval2}.
+As one can note in the loose muon sample contribution of the multijet background are  significantly enhanced with respect to tight sample. Reasonable good agreement between data and background prediction in this sample proves validity of the data-driven jet background method.
+The tight muon sample includes isolation requirement and thus contribution from multijet background is significantly reduced. Also because no $E_T^{miss}$ and $m_T$ are applied 
+there are significantly more statistics available than in the signal region which allows 
+to test overall background prediction. In general, reasonable agreement is observed. 
 
+\toAsk[can I say something more here?]
 
-\section{Signal Region}
-\label{sec:wprimeSignalRegion}
-???
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.49\textwidth]{Wprime/Njet40loose.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/Njet40.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/deltaPhiLoose.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/deltaPhi.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/d0sigLoose.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/d0sig.eps}
+  \caption{
+  Distributions of the number of jets (top), $\Delta\phi_{\mu,\met}$ (middle), 
+  and $d_0$ significance (bottom) in the inclusive loose (left) and tight (right) muon samples. 
+  The distributions are considered before the $E_T^{miss}$ and $m_T$ cuts.
+}
+  \label{fig:muMMval1}
+\end{figure}
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.49\textwidth]{Wprime/METloose.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/MET.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/pTloose.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/pT.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/mTloose.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/mT.eps}
+  \caption{
+  Distributions of the $E_T^{miss}$ (top), $p_T$ (middle), and $m_T$ (bottom)
+  in the inclusive loose (left) and tight (right) muon samples. 
+  The distributions are considered before the $E_T^{miss}$ and $m_T$ cuts.
+}
+  \label{fig:muMMval2}
+\end{figure}
+
+%*******************************************************************************
+% SYSTEMATICS
+%*******************************************************************************
 
 \section{Systematic Uncertainties}
 \label{sec:wprimeSystematics}
-???
 \subsection{Muon efficiency, resolution and scale}
-???
+The muon efficiency corrections from the MCP group are obtained using the tag and probe method
+on $Z\to\mu\mu$ and $J/\psi\to\mu\mu$ decays in data~\cite{MCP13TeV}. Systematic uncertainties
+are derived from variations of the tag and probe selection, background subtraction etc. following
+the methodology documented in ref.~\cite{MCPrun1}.
+
+The muon momentum corrections from the MCP are obtained by fitting certain correction constants 
+to match the invariant mass distribution in $Z\to\mu\mu$ and $J/\psi\to\mu\mu$ decays in MC
+to that observed in data~\cite{MCP13TeV}. The dependence of the muon momentum on the fit parameters
+is given by a model where each parameter is associated to a certain source of potential data/MC disagreement.
+Systematic uncertainties are derived from variations of the fit procedure, alignment studies etc. 
+following the methodology documented in ref~\cite{MCPrun1}.
+
 \subsection{Jet energy scale and resolution}
-???
+% TODO write something more (about jet energy scale)
+The jet energy scale and resolution uncertainties enter the analysis through 
+the $\met$ calculation, since the $\met$ is calculated using calibrated jets. 
+The uncertainties for the jet energy scale and resolution are provided 
+by the ATLAS JetEtMiss working group ~\cite{jet_calib_syst_13TeV, JESUncer13TeV}. 
+% A reduced set of uncertainties with three nuisance parameters is chosen for the jet energy scale. This reduced set of
+% nuisance parameters simplifies the correlations between the different sources of the jet energy scale uncertainty (JET\_GroupedNP\_1, JET\_GroupedNP\_2, JET\_GroupedNP\_3).
+% Four scenarios of correlation models are provided by the JetEtMiss group. The final result of an analysis using the reduced set must not
+% depend on a specific choice of correlation model. 
+The jet energy scale uncertainty has been tested for different recommended scenarios 
+and was found to be negligible for all of them.\\
+No resolution smearing is applied in the default scenario. 
+According to working group recommendation effect of the smearing has to be used as a systematic uncertainty.\\ The jet uncertainties are fully correlated between the electron and muon channel.
+
 \subsection{Transverse missing energy scale and resolution}
-???
+The uncertainties for the $\met$ scale and resolution are provided by the JetEtMiss group~\cite{met2015_1}. They enter
+the analysis through the soft term in the $\met$ calculation, 
+which corresponds to the energy deposits in the calorimeter not associated with
+any reconstructed physics objects (leptons, photons, jets).
+The uncertainties cover differences between data and MC and are only applied to MC. 
+The $\met$ uncertainties are fully correlated between the electron and muon channel. 
+Also the jet, electron and muon energy/momentum uncertainties are affecting the $\met$
+calculation. These uncertainties are propagated to the $\met$ calculation in the same way.
+
 \subsection{Background estimate uncertainty}
-???
-\subsection{Systematic uncertainty on the signal}
+
+Uncertainty of the charged and neutral current Drell-Yan processes were estimated by variations of $\alpha_s$ and electroweak corrections as well as by using PDF error set and estimation pf difference between alternative PDF sets.
+The $\alpha_s$ uncertainty was estimated by varying $\alpha_s$ by $\pm 0.0003$. This corresponds to the 90\% C.L uncertainty. The effect on the $W$ background when doing this variation
+was $3\%$ at maximum and the effect is therefore neglected. 
+The variation of the electroweak corrections was estimated to be larger than $3\%$ and was
+taken into account during limit settings.
+The PDF uncertainty of the CT14NNLO PDF is one of the main theory uncertainties
+and it was calculated by using 90$\%$ CL PDF error set.
+Uncertainty related to the choice of the PDF set to use was estimated by comparing
+results with NNPDF3.0~\cite{Ball:2014uwa}.
+The difference between CT14 and HERAPDF2.0 is not considered as the PDF does not include high-x data. 
+
+Uncertainty on ``Top'' and ``Diboson'' background consist from theoretical uncertainty on cross section and high-$m_T$ extrapolation uncertainty. The former uncertainty affect total background
+prediction less than 3$\%$ and thus are neglected, the latter one become visible at high-$m_T$
+region is is taken into account during limit settings.
+
+The detailed description of the theoretical uncertainties on MC cross section can be found in~\cite{Aaboud:2016zkn}.
+
+\subsection{Summary}
+\TableRef{tab:syst} lists the various systematic uncertainty sources
+and their size for background and a 2 or 4~TeV $\PWprime$ signal at a transverse mass at 2 or 4~TeV.
+Uncertainties which do not have a number are either neglected or do not apply. 
+All uncertainties below $3$\% have been neglected so far
+since they do not affect the final result of the statistical analysis. 
+The remaining experimental and theoretical systematics are applied to the background.
+To the signal only the experimental uncertainties are applied. 
+
+\begin{table}
+\begin{center}
+\centering
+\small
+\begin{tabular}{l|cc}
+\toprule
+Source &  Background  &  Signal  \\
+\midrule
+Trigger &\syspair{3}{4} & \syspair{4}{4}\\
+Lepton reconstruction  &\multirow{2}{*}{\syspair{5}{8}} & \multirow{2}{*}{\syspair{5}{7}}\\
+and identification & & \\
+Lepton isolation &\syspair{5}{5} & \syspair{5}{5}\\
+Lepton momentum &\multirow{2}{*}{\syspair{3}{11}} & \multirow{2}{*}{\syspair{1}{4}}\\
+scale and resolution & & \\
+$E_T^{miss}$ resolution and scale &\syspair{<0.5}{<0.5} &\syspair{<0.5}{<0.5}\\
+Jet energy resolution &\syspair{1}{2} &\syspair{<0.5}{<0.5}\\
+\midrule
+Multijet background & \syspair{1}{1} & {\sc n/a} ({\sc n/a})\\
+Diboson \& top-quark bkg. &\syspair{5}{15} & {\sc n/a} ({\sc n/a})\\
+PDF choice for DY &\syspair{<0.5}{1} & {\sc n/a} ({\sc n/a})\\
+PDF variation for DY &\syspair{8}{12} & {\sc n/a} ({\sc n/a})\\
+Electroweak corrections &\syspair{4}{6} & {\sc n/a} ({\sc n/a})\\
+\midrule
+Luminosity &\syspair{5}{5} &\syspair{5}{5}\\
+\midrule
+Total &\syspair{14}{25} & \syspair{9}{12}\\
+\bottomrule
+\end{tabular}
+\end{center}
+\caption{Systematic uncertainties on the expected number of events as evaluated at $m_T = $ 2 (4)~\TeV, both for signal events 
+with a \wpssm\ mass of 2~(4)~\TeV\ and for background. Uncertainties estimated to have an impact
+$< 3\%$ on the expected number of events in both channels and for all values of $m_T$ are not listed.
+Uncertainties that are not applicable are denoted ``n/a''. \label{tab:syst}}
+\end{table}
+
+%*******************************************************************************
+% SIGNAL REGION
+%*******************************************************************************
+\section{Signal Region}
+\label{sec:wprimeSignalRegion}
+% TODO some text here!!!
+\toDo[describe plots, some conclusions]
+
+The muon $\eta$, $\phi$, $\pt$, and $E_T^{miss}$ distributions in the signal region are shown in \FigureRef{fig:mu_results_etaphi} and \FigureRef{fig:mu_results_ptmet}. The dominant contribution to
+the signal region originates from W boson background.
+No visible excess is observed and good agreement between data and background estimate is observed.
+
+The basis for the statistical analysis and the main distribution of interest 
+is the transverse mass distributions which is shown in \FigureRef{fig:MT_mu_Wprime}.
+The resonant $\PWprime$ signal overlaid on background prediction is shown as well.
+
+
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.49\textwidth]{Wprime/muon_eta.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/muon_phi.eps}
+  \caption{
+  Muon \eta\ (left) and $\phi$ (right) distributions after final selection. The uncertainty band in the ratio plot includes all systematic uncertainties which are included in the statistical analysis except the integrated luminosity uncertainty ($5\%$).
+}
+  \label{fig:mu_results_etaphi}
+\end{figure}
+
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.49\textwidth]{Wprime/muon_pT.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/muon_MET.eps}
+ \caption{
+ Muon $p_T$ (left) and $E_T^{miss}$ (right) distributions after final selection. The uncertainty band in the ratio plot includes all systematic uncertainties which are included in the statistical analysis except the integrated luminosity uncertainty ($5\%$).
+}
+  \label{fig:mu_results_ptmet}
+\end{figure}
+
+
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.65\textwidth]{Wprime/muon_mT.eps}
+  \caption{
+  Muon $m_T$ distribution after final selection. 
+  Shown is the total background estimate with resonant $\PWprime$ signal overlaid for various pole masses. 
+  The uncertainty band in the ratio plot includes all systematic uncertainties which are included in the statistical analysis except the integrated luminosity uncertainty (5$\%$).}
+  \label{fig:MT_mu_Wprime}
+\end{figure}
+
+\TableRef{tab:muBkgData}
+shows the contributions of individual backgrounds as well as the total background
+and the data in different $\mt$ regions. The quoted uncertainties include both systematic and
+statistical uncertainties except the uncertainty on the integrated luminosity ($5\%$).
+
+\begin{table}[]
+  \centering
+  \scriptsize
+  \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    
+    \multirow{2}{*}{Process} & \multicolumn{7}{c|}{$m_T$ [\GeV]} \\
+& $110$--$150$ & $150$--$200$ & $200$--$400$ & $400$--$600$ & $600$--$1000$ & $1000$--$3000$ & $3000$--$7000$ \\ \hline 
+$W$ & $98100\pm10000$ & $21000\pm2000$ & $7700\pm400$ & $476\pm30$ & $110\pm9$ & $13.0\pm1.2$ & $0.051\pm0.010$ \\ 
+Top & $9900\pm700$ & $5410\pm340$ & $3090\pm140$ & $120\pm6$ & $13\pm5$ & $0.44\pm0.32$ & $0.00005\pm0.00030$ \\ 
+$Z/\gamma^*$ & $7700\pm1000$ & $2130\pm250$ & $840\pm70$ & $37\pm4$ & $7.6\pm1.8$ & $0.64\pm0.06$ & $0.0037\pm0.0007$ \\ 
+Diboson & $1140\pm80$ & $588\pm33$ & $326\pm14$ & $20.6\pm1.2$ & $3.8\pm2.1$ & $0.4\pm0.4$ & $0.002\pm0.008$ \\ 
+Multi-jet & $1350\pm40$ & $551\pm23$ & $180\pm10$ & $5.6\pm1.0$ & $0.85\pm0.21$ & $0.078\pm0.028$ & $0.00038\pm0.00022$ \\ \hline 
+Total SM & $118000\pm12000$ & $29700\pm2600$ & $12100\pm600$ & $660\pm40$ & $135\pm11$ & $14.6\pm1.4$ & $0.058\pm0.013$ \\ \hline 
+Data & $131672$ & $31980$ & $12393$ & $631$ & $121$ & $15$ & $0$ \\ 
+\end{tabular}
+\caption{Contributions of individual backgrounds with uncertainties for different $m_T$ regions.
+The uncertainties include both statistical and systematic uncertainty, and all weights are included
+so that the total background level can be compared to data. The systematic uncertainty includes all systematic 
+uncertainties which are included in the statistical analysis except the uncertainty
+on the integrated luminosity ($5\%$). For the multi-jet background, only statistical uncertainty is shown,
+since the multi-jet systematics are not included in the statistical analysis.}
+\label{tab:muBkgData}
+\end{table}
+
+
+
+%*******************************************************************************
+% XSEC and MASS LIMITS
+%*******************************************************************************
 
 \section{Cross section and mass limits}
-???
-\subsection{Statistical analysis for discovery and exclusion}
-???
-\subsection{$\PWprime$ cross section and mass limits}
-???
+% TODO say that Bayesian approach is used...
+\toDo[some text here]
 
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.65\textwidth]{Wprime/acceptance.eps}
+  \caption{
+%   Total signal acceptance times efficiency versus SMM \wp\ pole mass for the SSM \wp\ model in the muon channel.
+  }
+  \label{fig:AccEff_mu}
+\end{figure}
+
+\subsection{$\PWprime$ cross section and mass limits}
+% TODO some texh here
+\toDo[some text here]
+
+\begin{figure}[]
+  \centering
+\includegraphics[width=0.49\textwidth]{Wprime/Limit_xsec_wprime_m_Sys.eps}
+\includegraphics[width=0.49\textwidth]{Wprime/Limit_xsec_wprime_e_Sys.eps}
+\caption{$\PWprime$ cross section limit results for the muon (left) and electron (right) channels.}
+\label{fig:wprime_limits}
+\end{figure}
+
+
+\begin{figure}[]
+  \centering
+\includegraphics[width=0.65\textwidth]{Wprime/Limit_xsec_wprime_comb_Sys.eps}
+\caption{$\PWprime$ cross section limit results for combined both muon and electron channels.}
+\label{fig:wprime_limits}
+\end{figure}
+
+
+\begin{table}[]
+  \centering
+  \begin{tabular}{c|cc}
+    \hline
+    \hline
+    &  \multicolumn{2}{c}{$m_{\PWprime}$ lower limit [\TeV]} \\
+    Decay     &  Expected & Observed \\
+    \hline
+    \wpe  & 3.99 & 3.96 \\
+    \wpmu & 3.72 & 3.56 \\
+    \wpl  & 4.18 & 4.07 \\
+    \hline
+    \hline
+  \end{tabular}
+  \caption{Expected and observed 95\% CL lower limit on the \wpssm\ mass in the electron and muon channels and their combination.}
+  \label{tab:limits_mass_wp}
+\end{table}
+
+
+
+%*******************************************************************************
+%*******************************************************************************
+% MONO-W STUDY
+%*******************************************************************************
+%*******************************************************************************
 
 % Sources:
 % 
@@ -566,7 +840,6 @@ are shown which correspond to tight and loose muon definitions used in the Matri
 % Report of the ATLAS/CMS Dark Matter Forum (July 6, 2015)
 % http://arxiv.org/pdf/1507.00966.pdf
 % 
-
 
 \section{Search for dark matter pair-production with a leptonically decaying W boson}
 \label{chap:monoW}
