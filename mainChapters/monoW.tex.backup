@@ -647,6 +647,12 @@ region is is taken into account during limit settings.
 
 The detailed description of the theoretical uncertainties on MC cross section can be found in~\cite{Aaboud:2016zkn}.
 
+\subsection{Trigger and luminosity}
+Trigger systematics is evaluated by the ATLAS trigger group and it is related to the trigger
+efficiency of muons with different $\eta$ and $p_T$.
+Luminosity uncertainty was estimated in the same way as described in \SectionRef{sec:lucid_performance}, however current analysis is using preliminary luminosity
+uncertainty equal to 5$\%$ which was obtained from preliminary calibration of the luminosity scale done with using data from vdM scans in August 2015.
+
 \subsection{Summary}
 \TableRef{tab:syst} lists the various systematic uncertainty sources
 and their size for background and a 2 or 4~TeV $\PWprime$ signal at a transverse mass at 2 or 4~TeV.
@@ -696,17 +702,15 @@ Uncertainties that are not applicable are denoted ``n/a''. \label{tab:syst}}
 %*******************************************************************************
 \section{Signal Region}
 \label{sec:wprimeSignalRegion}
-% TODO some text here!!!
-\toDo[describe plots, some conclusions]
-
-The muon $\eta$, $\phi$, $\pt$, and $E_T^{miss}$ distributions in the signal region are shown in \FigureRef{fig:mu_results_etaphi} and \FigureRef{fig:mu_results_ptmet}. The dominant contribution to
-the signal region originates from W boson background.
+The muon $\eta$, $\phi$, $p_T$, and $E_T^{miss}$ distributions in the signal region are shown in \FigureRef{fig:mu_results_etaphi} and \FigureRef{fig:mu_results_ptmet}. 
+The dominant contribution to the signal region originates from W boson background.
 No visible excess is observed and good agreement between data and background estimate is observed.
 
 The basis for the statistical analysis and the main distribution of interest 
 is the transverse mass distributions which is shown in \FigureRef{fig:MT_mu_Wprime}.
 The resonant $\PWprime$ signal overlaid on background prediction is shown as well.
-
+As one can see from the ratio plot a data is systematically above the total background prediction
+in low-$m_T$ region but are within $\pm 1 \sigma$ uncertainty band, which is dominated by the $E_T^{miss}$ systematic uncertainty at low $m_T$.
 
 \begin{figure}[]
   \centering
@@ -743,6 +747,8 @@ The resonant $\PWprime$ signal overlaid on background prediction is shown as wel
 shows the contributions of individual backgrounds as well as the total background
 and the data in different $\mt$ regions. The quoted uncertainties include both systematic and
 statistical uncertainties except the uncertainty on the integrated luminosity ($5\%$).
+One can observe good agreement between data and total background prediction in all $\mt$ regions. Charged-current DY provides the dominant contribution to the high-$m_T$ region which is above 90$\%$ of the total background for $m_T>1$ TeV region. No events with $m_T > 3$ TeV are
+observed in data.
 
 \begin{table}[]
   \centering
@@ -768,7 +774,7 @@ since the multi-jet systematics are not included in the statistical analysis.}
 \label{tab:muBkgData}
 \end{table}
 
-
+\toAsk[something more here?]
 
 %*******************************************************************************
 % XSEC and MASS LIMITS
@@ -777,6 +783,15 @@ since the multi-jet systematics are not included in the statistical analysis.}
 \section{Cross section and mass limits}
 % TODO say that Bayesian approach is used...
 \toDo[some text here]
+
+
+% TODO describe look for deviation
+To search for a $\PWprime$ signal-like excess in the data a log likelihood ratio test is performed using RooStat~\cite{RooStat_project} framework.
+The likelihood function is constructed as the product of Poisson probabilities of over all $m_T$ bins in the search region.
+The effect of systematic uncertainties are described by nuisance parameters in the likelihood function.
+
+One of the needed component for the statistical analysis to calculate the number of expected events is total efficiency (product of acceptance and reconstruction efficiency) 
+of the signal selection to reconstruct $\PWprime$ decay, which is shown in \FigureRef{fig:AccEff_mu}.
 
 \begin{figure}[]
   \centering
@@ -787,9 +802,18 @@ since the multi-jet systematics are not included in the statistical analysis.}
   \label{fig:AccEff_mu}
 \end{figure}
 
-\subsection{$\PWprime$ cross section and mass limits}
-% TODO some texh here
-\toDo[some text here]
+Statistical analysis demonstrates that no excess larger than 2$\sigma$ is observed.
+This is why upper limit on the cross section for the production of $\PWprime$ times branching ratio has been set. 
+
+% TODO how upper limit was calculated
+in the Bayesian Analysis Toolkit~\cite{BAT}.
+
+
+
+
+Upper limits are set on the cross-section times branching ratio, $\PWprime \rightarrow \Plepton\nu$, at 95\% C.L. and mass 
+limits are extracted using the relationship between the theoretical $\PWprime$ cross section and pole mass. Limits are presented for the electron, muon, 
+and combined lepton channels in \TableRef{tab:limits_mass_wp}, \FigureRef{fig:wprime_limits} and \FigureRef{wprime_limits_combined}.
 
 \begin{figure}[]
   \centering
@@ -804,7 +828,7 @@ since the multi-jet systematics are not included in the statistical analysis.}
   \centering
 \includegraphics[width=0.65\textwidth]{Wprime/Limit_xsec_wprime_comb_Sys.eps}
 \caption{$\PWprime$ cross section limit results for combined both muon and electron channels.}
-\label{fig:wprime_limits}
+\label{fig:wprime_limits_combined}
 \end{figure}
 
 

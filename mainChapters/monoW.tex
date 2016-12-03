@@ -69,7 +69,8 @@ Two sets of model were considered: simplified and Effective Field Theory models 
 % TODO model-independent search???
 % TODO experimental signature - lepton + MET
 % TODO a signal discriminant: mT
-???
+
+\toDo[add something here???]
 
 \section{$\PWprime$ signal}
 \label{sec:wprimeSignal} 
@@ -785,6 +786,13 @@ since the multi-jet systematics are not included in the statistical analysis.}
 \toDo[some text here]
 
 
+% TODO describe look for deviation
+To search for a $\PWprime$ signal-like excess in the data a log likelihood ratio test is performed using RooStat~\cite{RooStat_project} framework.
+The likelihood function is constructed as the product of Poisson probabilities of over all $m_T$ bins in the search region.
+The effect of systematic uncertainties are described by nuisance parameters in the likelihood function.
+
+One of the needed component for the statistical analysis to calculate the number of expected events is total efficiency (product of acceptance and reconstruction efficiency) 
+of the signal selection to reconstruct $\PWprime$ decay, which is shown in \FigureRef{fig:AccEff_mu}.
 
 \begin{figure}[]
   \centering
@@ -795,9 +803,15 @@ since the multi-jet systematics are not included in the statistical analysis.}
   \label{fig:AccEff_mu}
 \end{figure}
 
+Statistical analysis demonstrates that no excess larger than 2$\sigma$ is observed.
+This is why upper limit on the cross section for the production of $\PWprime$ times branching ratio has been set. 
+A Bayesian approach have been used for the limit settings and limits were calculated with help of the Bayesian Analysis Toolkit~\cite{BAT}.
+
+\toDo[add something here???]
+
 Upper limits are set on the cross-section times branching ratio, $\PWprime \rightarrow \Plepton\nu$, at 95\% C.L. and mass 
 limits are extracted using the relationship between the theoretical $\PWprime$ cross section and pole mass. Limits are presented for the electron, muon, 
-and combined lepton channels in \TableRef{tab:limits_mass_wp}, \FigureRef{fig:wprime_limits} and \FigureRef{wprime_limits_combined}.
+and combined lepton channels in \TableRef{tab:limits_mass_wp}, \FigureRef{fig:wprime_limits} and \FigureRef{fig:wprime_limits_combined}.
 
 \begin{figure}[]
   \centering
