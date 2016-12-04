@@ -6,11 +6,134 @@
 % 2) BCID, bunch spasing, bunch length
 % 3) define physics run, interfill period
 
+% coordinate system
+
 \section{The \LHC}
 \subsection{The LHC performance and beam structure}
+
+
+
+
 \section{Magnet System}
-\section{Inner detector}
+\section{The inner detector}
+\label{sec:ID}
+% additional feature - electron identifiation with TRT
+
+The innermost detector of ATLAS and the closest one to the interaction point (IP) is the inner detector (ID).
+The main purpose of the ID is to reconstruct tracks of all charged particles which pass through the detector.
+Also tracking detector have to provide information on the sign of the electrical charge of the particles, 
+this is why a strong magnetic field is maintained within ID, which 
+which makes tracks of particle with different charges be bent into different directions.
+
+From reconstructed tracks vertices are formed. The primary vertex correspond to the vertex where $pp$ collision took place, 
+while secondary vertices correspond to the decay of the particles.
+
+ID is done with layers of the sensitive detectors. When particle interact with one of them it deposits the part of its energy to the sensor,
+and this energy afterwards is being read and multiplied by the sensor readout electronics. The collected signal is trigerred against the predefined threshold and if 
+it signal is larger a hit have been recorded.
+One want to have the large number of hits in order to precisely measure the particles track, however, more interaction particles experienced with the detector the more
+energy it left, the more distorted track of the particle will be. This is why one prefer as less amount of the material in the ID as possible.
+Material  budget of the ID is shown in \FigureRef{fig:material_budget}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{intro/material_budget.eps}
+\caption{ 
+The material budget of the ATLAS Inner Detector as a function of absolute pseudorapidity in units of radiation length $X_0$.
+}
+\label{fig:material_budget}
+\end{figure}
+
+
+Particle density is falling with the distance from the IP as a $1/R^2$, this is why layers close to the IP need to have a large granularity in order to be able to distinguish 
+hundreds of particle from one pp collisions, while outermost layers can have lesser granularity to provide the same occupancy as innermost layers.
+Thus ID consists from three subdetectors, listed from innermost to outermost one: high-granular silicon pixel detector, silicon strip (SCT) detector and transition radiation tracker (TRT).
+
+All subdetectors consist of two barrel parts (Barrel A and Barrel C) and two end-cap parts (End-cap A and End-cap C) 
+which are placed symmetrically with respect to the interaction point.
+Detector geometry and acceptance is shown in \FigureRef{fig:ID_eta}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.99\textwidth]{TRT/TRTeta.png}
+\caption{ 
+The Inner Detector quarter-section showing detector acceptance and geometrical sizes of the layers.
+}
+\label{fig:ID_eta}
+\end{figure}
+
+
+% Pixel and SCT
+The Pixel detector is a semiconductor detector which consists of pixels~\cite{Wermes:381263}.
+Detector resolution in the barrel region is 10 $\mu m$ in $R-\phi$ and 115 in $z$,
+while in the endcap region is 10 $\mu m$ in $R-\phi$ and 115 in $R$.
+
+The SCT detector is a semiconductor microstrip detector. Each layer consists from
+two layers of strips rotated in 40 mrad with respect to each other.
+Detector resolution in the barrel region is 17 $\mu m$ in $R-\phi$ and 580 in $z$,
+while in the endcap region is 17 $\mu m$ in $R-\phi$ and 580 in $R$.
+
+% TRT
+% electron identifications
+The TRT contains $\sim$300000 thin-walled proportional-mode drift tubes providing on average 30 two-dimensional 
+space points with $\sim$130 $\mu m$ resolution for charged particle tracks with |$\eta$| < 2 and $p_T$ > 0.5 GeV~\cite{Abat:2008zza,Abat:2008zzb,Abat:2008zz}.
+Along with continuous tracking, the TRT provides electron identification capability through the detection of transition radiation X-ray photons.
+Detailed description of the detector can be found in \ChapterRef{chap:TRT}.
+
+
+
+
 \section{Calorimeters}
+
+The ATLAS calorimeter is designed to trigger and to measure accurately the energy and position of photons, electrons and hadrons, as well as to ensure a good missing energy measurement, which is crucial for new physics searches. The calorimeter system is divided into two different parts: an inner electromagnetic (EM) calorimeter is aimed to detect electrons and photons, an outer hadronic calorimeter is designed to detect mesons and baryons which escape the EM calorimeter.
+
+The EM calorimeter covers the rapidity region $|\eta| < 3.2$.
+In order to meet the physics requirements and to operate properly at high radiation environment, the hadronic calorimeter is further divided into barrel hadronic calorimeter covering $|\eta| < 1.7$, hadronic end-cap calorimeter covering $1.5 < |\eta| < 3.2$, and forward calorimeter covering $3.1 < |\eta| < 4.9$. A global view of the ATLAS calorimeter is illustrated in Figure \ref{fig:Calo}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.84\textwidth]{intro/0803015_01-A4-at-144-dpi.jpg}
+\caption{ Three-dimensional view of the ATLAS calorimetry.}
+\label{fig:Calo}
+\end{figure}
+
+\subsubsection{EM calorimeter}
+The ATLAS EM calorimeter is a sampling calorimeter with accordion-shaped lead absorbers and Kapton electrodes.
+Figure \ref{fig:EMgran} shows illustrates the accordion shape geometry of the ATLAS EM calorimeter. The accordion geometry benefits from fast signal readout and the azimuthal symmetry without cracks. The liquid Argon is used as an active material. The EM calorimeter is divided into two barrel parts ($|\eta|<1.475$) and end-caps ($1.375<|\eta|<3.2$).
+Before the EM calorimeter the presampler is placed covering the pseudorapidity range of $|\eta|<1.8$. It is needed to correct the energy lost in the material before the calorimeter (inner detector, cryostat). An amount of the material in terms of number of electromagnetic radiation lengths ($X_0$) is shown in Figure 2.
+The thickness of the EM calorimeter is above $24 X_0$ in the barrel and above $26 X_0$ in the end-cap regions.
+
+Both, barrel and end-cap calorimeters, are segmented into three longitudinal layers. The first layer has about $6 X_0$ thickness with upstream material and plays a role as preshower compartment. It has the finest granularity in $\eta$ with cell width of about 4~mm. The second layer has the thickness of about $18 X_0$ and is designed to contain almost full EM shower. The third layer has two times coarser granularity and the thickness varying between $2 X_0$ and $12 X_0$.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{intro/caloDepth_eta.png}
+\caption{Amount of material in the EM calorimeter (with upstream material), in units of radiation length $X_0$, as a function of $|\eta|$.}
+\label{fig:Calo}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.44\textwidth]{intro/LARG3-TDR-barrelM_samplings_presamp_new.png}
+\includegraphics[width=0.44\textwidth]{intro/F3-eps-converted-to.pdf}
+\caption{Read-out granularity and accordion shape of the EM calorimeter.}
+\label{fig:EMgran}
+\end{figure}
+
+% TODO to use this paragraph
+% The particles entering the EM calorimeter develop EM showers through their interactions with absorbers.
+% The ionization electrons drift to the electrode under electric field generated
+% by the high voltage of 2000 V. The size of the drift gap on each side of the electrode is 2.1 mm.
+% The induced current on the electrode has triangular shape and is initially proportional
+% to the deposited energy in the cell. The time of charge collection has order of 400 ns. The physical triangular
+% signal is then amplified, shaped by bipolar shaper and digitized every 25 nanoseconds. If signal is accepted
+% by trigger, the signal amplitude is determined  from signal samples and transformed to the cell energy.
+% The energy response of the calorimeter needs to be calibrated in advance. The energy deposited in the absorber
+% can be taken into account by knowing the sample fraction of the calorimeter. 
+
+% TODO formula of energy resolution...
+The energy resolution in a calorimeter is parametrized as the following: 
+
 \section{Muon Spectrometer}
 \section{Luminometers and beam monitors}
 \section{Trigger, Data Acquisition and Detector Control Systems}
