@@ -1,61 +1,37 @@
-
-
 \chapter{Search for new charged bosons in final states with one muon and missing transverse energy}
 \label{chap:Wprime}
-
-% ***Explanation of my personal contribution to the analysis.***
-% TODO this is not a real text to be used - just a plan of what I want to write,,,
-% \begin{itemize}
-%  \item MC simultaion
-%  \item second analysis of muon channel
-%  \begin{itemize}
-%   \item comparison of results with Magnar
-%  \end{itemize}
-%  \item mono-W investigation
-% \end{itemize}
-
 
 % PLAN
 % <What this chapter about - short intro to Wprime analysis>
 % <What was my personal contribution to the analysis> 
 
 
-This chapter describe search for new charged boson (namely $\PWprime$) in final state with one lepton and missing transverse energy ($E_T^{miss}$).
-Search was done with first $\sqrt{s}$ = 13 TeV data collected in 2015 by ATLAS with corresponded luminosity of 3.2 fb$^{-1}$.
+This chapter describes search for new spin-1 heavy charged boson (namely $\PWprime$) in the final state with one lepton and missing transverse energy ($E_T^{miss}$).
+The search was done with first $\sqrt{s}$=13~TeV data collected in 2015 by ATLAS with corresponded luminosity of 3.2~fb$^{-1}$. The search have been performed with muon and electron channels, however, this chapter is focused in the muon channel and only final results for electron channel is shown as well as combination of both channels.
+
 % TODO describe more about the analysis.
 % Analysis focuses on high-p$_T$ 
 
 % Key features of the analysis.
-One can highlight three key features of the analysis:
-\begin{itemize}
- \item Modeling of the background prediction. 
- Largest part of the background originates from the charged-current Drell-Yan process and the analysis selection tests it up to the few TeV.
- Thus it is crucially important to use latest and most precise high-order calculations and corrections available at a time.
- \item Lepton selection. Due to topologically simple event selection (one isolated lepton and missing energy) 
- this analysis use most energetic lepton candidates available at 13 TeV center-of-mass energy collisions.
- This is why reconstruction efficiency and momentum resolution of high-$p_T$ leptons are factors of special interest for the analysis.
- \item Missing transverse energy, $E_T^{miss}$. Along with the lepton momentum, $E_T^{miss}$ is used for transverse invariant mass, $m_T$, calculations,
- which is the signal discriminant and search variable in the analysis. In order to $m_T$ be most precisely reconstructed and modelled one need
- to have not only good lepton momentum resolution but also good understanding of the events missing $E_T$.
-\end{itemize}
 
+% TODO move it to preface!!!
+% This analysis have been made public as a conference note~\cite{ATLAS-CONF-2015-063} with early reasults and later as a paper~\cite{Aaboud:2016zkn} where final results were presented.
+% 
+% \toDo[carefully revisit and rewrite this]
+% 
+% My personal contribution to the analysis can be concluded in following three parts.
+% I was involved in the analysis of muon channel. Signal selection, muon and missing transverse energy performance, validation plots and estimation of some systematic uncertainties.
+% This part was done in parrallel with other collaborator to make sure that results are robust and are the same from two independent analyses codes and there are no mistaken done.
+% 
+% Secondly I was investigating ways to decrease systematic uncertainty caused by the limited available statistic of inclusive diboson and top backgound samples at high-$m_{T}$ region.
+% One option was to generate lepton-neutrino mass-binned samples. However, it was found out that these samples doesn't populate enough high-$m_{T}$ region
+% so it was decided to make samples in bins of lepton-$E_T^{miss}$ $m_T$.
+% This is still ongoing project and it is planned to finish these samples for paper of the $\PZprime$ and $\PWprime$ results from 2015-2016.
+% 
+% The third part was related to the investigation sensitivity of $\PWprime$ signal selection for Dark Matter (DM) search.
+% Main focus of this investigation was mono-W DM models, where pair of DM particles candidates are produced in final state in association with SM W boson.
+% Two type of DM of models were considered: simplified and Effective Field Theory models. 
 
-
-
-This analysis have been made public as a conference note~\cite{ATLAS-CONF-2015-063} with early reasults and later as a paper~\cite{Aaboud:2016zkn} where final results were presented.
-
-My personal contribution to the analysis can be concluded in following three parts.
-I was involved in the analysis of muon channel. Signal selection, muon and missing transverse energy performance, validation plots and estimation of some systematic uncertainties.
-This part was done in parrallel with other collaborator to make sure that results are robust and are the same from two independent analyses codes and there are no mistaken done.
-
-% TODO discuss with Monika, should I include it or not. If yes - how should I argument about why it was not use and how to explain differnce comparing to inclusive sample?
-Secondly I was investigating ways to decrease systematics caused by limited statistic of inclusive diboson and ttbar backgound samples at high-$m_{T}$ region.
-One option was to generate lepton-neutrino mass-binned samples. After investigation it was found out that these samples doesn't populate high-$m_{T}$ region
-good enough, so it was decided to develop unique (first ever?) samples in bins of lepton-$E_T^{miss} $ $m_T$.
-
-Third part was related to investigation of use another models which can be potentially sensitive in signal selection.
-Main focus of this investigation was mono-W Dark Matter (DM) models, where pair of DM particles candidates are produced in final state in association with SM W boson.
-Two sets of model were considered: simplified and Effective Field Theory models [links???]. 
 
 % TODO discuss with Monika - how should I position analysis - as a dedicated search of Wprime or as more model-independent search?
 
@@ -64,36 +40,69 @@ Two sets of model were considered: simplified and Effective Field Theory models 
 %*******************************************************************************
 
 
-\section{Motivation}
+\section{Search strategy}
 \label{sec:wprimeIntro}
 % TODO model-independent search???
 % TODO experimental signature - lepton + MET
 % TODO a signal discriminant: mT
-???
 
-\section{$\PWprime$ signal}
+As was described in \SectionRef{subsec:bsm_models} there are large number of models
+which predict new spin-1 gauge charged boson. Thus it is not practical to perform
+dedicated searches for all of them. This is why the so-called ``sequential'' Standard Model (SSM) is often used which is a reference benchmark model.
+This model aims to provide a clear interpretation of the experimental results and
+is used for results comparison between different experiments.
+It assumes $\PWprime$ to be a heavy ``copy'' of the SM $W$ with the same couplings 
+to the leptons, quarks and gauge bosons.
+
+% TODO add something about mixing with SM W???
+The  assumes $\PWprime$ to have the same
+coupling as the SM $W$. Although it is not a gauge invariant model it is 
+used by many analyses for purposes of results comparison.
+Such clear interpretation allows benefit theorists to use results for other BSM models.
+Considering given couplings a new decay channel (with respect to the SM $W$)
+will be present $\PWprime \to WZ$. It will be dominant decay mode 
+for high $\PWprime$ masses and will lead to the $\PWprime$ width larger
+than its mass at  $m_{\PWprime} > 500$~GeV. Thus, branching ratio for
+this channel is considered to be zero. This assumptions fits well with models, such as Left-Right Symmetric model, described previously, in which this channel is suppressed in case of $m_{W_R} \gg m_{W_L}$.
+The branching ratio of $\PWprime \to \mu\nu$ or $e\nu$ as a function of $\PWprime$ mass
+is shown in \FigureRef{fig:wprimeBR}. Rapid decrease at approximately 200 GeV correspond to the decay channel $\PWprime \to tb$.
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=7.5cm]{Wprime/WprimeBR.eps}
+  \caption{Branching ratio of $\PWprime \rightarrow e\nu$ or $\mu\nu$ as a function of the $\PWprime$ mass.}
+  \label{fig:wprimeBR}
+\end{figure}
+
+Considering used model one can highlight three key features important for this search:
+\begin{itemize}
+ \item Precise modeling of the background prediction. 
+ Largest part of the background originates from the charged-current Drell-Yan process and the analysis selection tests it up to the few TeV.
+ Thus it is crucially important to use the latest and most precise high-order calculations and corrections available at a time.
+ \item High-$p_T$ lepton selection. Due to topologically simple event selection (one isolated lepton and missing energy) 
+ this analysis use most energetic lepton candidates available at 13 TeV center-of-mass energy collisions.
+ This is why reconstruction efficiency and momentum resolution of high-$p_T$ leptons are factors of special interest for the analysis.
+ \item Missing transverse energy, $E_T^{miss}$. Along with the lepton momentum, $E_T^{miss}$ is used for transverse invariant mass ($m_T$) calculations,
+ which is the signal discriminant and search variable in the analysis. In order to $m_T$ to be most precisely reconstructed and modelled one need
+ to have not only good lepton momentum resolution but also good understanding of the missing $E_T$ performance.
+\end{itemize}
+
+
+\section{$\PWprime$ signal Monte Carlo}
 \label{sec:wprimeSignal} 
-% TODO rewrite it a little bit, cause it is directly copied from the note...
+% TODO rewrite it a little bit, cause it is directly copied from the note!!!
 
 % MC generator
 Samples for the signal process $\PWprime \to \mu \nu$ are produced with the leading-order (LO) 
 {\scshape pythia-8.183}~\cite{pythia8} generator for a series of $\PWprime$ masses. 
-The {\scshape pythia} default settings are used, i.e. the 
-$\PWprime$ has the same $V-A$ couplings as the Standard Model $W$ boson but
-interference between the $\PWprime$ and $W$ is not included. 
-The couplings to the SM $W$ and $Z$ boson are turned off. 
-Therefore, only decays in quarks and leptons is possible.
-
-% generated masses; flat sample with possibility to reweight to any given mass
-One large sample is generated which is flat in $\PWprime$ mass and therefore has high 
-statistics from low to high $m_T$.  The flat sample can then be used for any 
-$\PWprime$ mass by reweighting with the correct line shape for the desired $\PWprime$ mass.
-Several additional samples are generated with fixed $\PWprime$ mass which
-allows the reweighting procedure to be verified.
+Additionally so-called flat sample is produced, which can be reweighted
+with the correct line shape for the desired $\PWprime$ mass by an appropriate reweighting function.
+In order to verify validity of this sample and validity of the reweighting procedure comparison with fixed mass samples were done.
+Flat sample was generated with large statistics in order to cover
+wide range of the invariant transverse mass $m_T$.
+\toDo[Is $m_T$ already introduced?]
 
 % comparison with W boson background (show plot of Wprime overlaid on top of W)
-Invaraint mass and transverse mass distributions for the samples with fixed $\PWprime$ mass on top of $W$ background are shown in \FigureRef{fig:signal_with_W}.
-
+The invariant mass and transverse mass distributions for the $\PWprime$ samples with pole mass of 2,3,4 and 5 TeV are shown superimposed on top of SM $W$ background in \FigureRef{fig:signal_with_W}.
 
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
@@ -117,63 +126,58 @@ on top of the $W$ background on generated MC level.}
 \section{Background processes}
 \label{sec:wprimeBackgrounds}
 
-Analysis is focused in a search of the new charged, heavy boson which produce 
-an excess in the final signature with one lepton and missing transverse energy.
-Thus it is important to examine all other SM processes which contribute 
-to such final state as well.
+In order to look for a potential signal from new physics one have firstly to examine all other SM processes which contribute to the final state of interest.
 
 % All background predictions are obtained with MC simulation, except for non-prompt
 % lepton contribution, which arising due to jets and photon being misreconstructed
 % as leptons.
 
-Since this chapter is focused on muon decay channel, processes which produce muon and
-missing transverse energy will be discuss, however in general the same processes are 
-relevant for the electron decay channel as well.
+Since this chapter is focused on the muon decay channel, the processes which produce muon and missing transverse energy will be discussed, 
+however in general the same processes are relevant for the electron decay channel as well.
 
-Dominant expected background in the analysis is the SM W boson production,
-The SM W decays to lepton and neutrino which reconstructed as missing transverse energy,
-Contribution of this process to the $m_T$ spectrum is appearing like a Jacobian peak 
+The dominant expected background in the analysis is the charged current Drell-Yan.
+The SM W decays to lepton and neutrino which will be reconstructed as missing transverse energy in the detector.
+Contribution of this process appears like a Jacobian peak in the $m_T$ spectrum
 with maximum around 80 GeV and slowly falling tail above 80 GeV.
 % TODO probably I need to move it somewhere else, no?
 Since $\PWprime$ conceptually is a heavier version of the SM W, it also appears in the 
-transerse mass distribution as a Jacobian peak around the mass of the $\PWprime$ boson
-(as shown in \FigureRef{fig:signal_with_W}). 
+transerse mass distribution as a Jacobian peak around the pole mass of the $\PWprime$ boson (as shown in \FigureRef{fig:signal_with_W}). 
 % W boson bkg
-W boson production is simulated with \powhegbox\ v2~\cite{Alioli:2010xd}and {\scshape pythia-8.186} at next-to-leading-order (NLO) using the CT10~\cite{CT10} NLO PDFs. 
-Cross sections are corrected to NNLO with using the CT14NNLO PDF set by applying QCD and Electroweak (EW) mass dependent $K$-factors to the MC generator cross sections.
-In order to get sufficient statistics at high transverse mass several samples binned in invariant mass of the lepton-neutrino pair are used.
+The charged current Drell-Yan is simulated with \powhegbox\ v2~\cite{Alioli:2010xd}and {\scshape pythia-8.186} at next-to-leading-order (NLO) using the CT10~\cite{CT10} NLO PDFs. 
+The cross section is corrected to NNLO with using the CT14NNLO PDF set by applying to the MC generator cross sections QCD and Electroweak (EW) mass dependent $K$-factors.
+In order to get sufficient statistics at high transverse mass several samples, binned in invariant mass of the lepton-neutrino pair, are used if available.
 % Z boson bkg
-The neutral current Drell-Yan process $Z/\gamma^* \to \mu \mu$ can contribute to the muon plus $E_T^{miss}$ final state, when of the muons are not properly reconstructed 
+The neutral current Drell-Yan process $Z/\gamma^* \to \mu \mu$ can contribute to the muon plus $E_T^{miss}$ final state, when one of the muons is not properly reconstructed 
 in the detector. In that case it will be not used in the $E_T^{miss}$ calculations as well, which will contribute to the $E_T^{miss}$ itself, as will be described in the \SectionRef{subsec:etmiss}.
 Thus $Z$ boson production have to be considered as well. The process is simulated with the same MC generators and in the same way as W boson production process.
 % Contribution from taus
 Contribution of the processes $W \to \tau \nu$ and $Z \to \tau \tau$, which can contribute to the muon channel 
-when tau decays to muon and neutrinos as $\tau^{-} \to \mu^{-} \overline{\nu_{\mu}} \nu_{\tau} $ are considered and simulated in the same way as well.
+when tau decays to muon and neutrinos as $\tau^{-} \to \mu^{-} \overline{\nu_{\mu}} \nu_{\tau}$, are considered and simulated in the same way as well.
 
 % Top
 Another background which contribute to the final state of interest is the $t\bar{t}$ and single top production.
 Top quark decays immediately to the $W$ boson and $b$ quark. Further leptonic decay of $W$ provides an isolated muon and $E_T^{miss}$ from escaping neutrino.
 % TODO make feynman diagrams the same as in magnars thesis p.91-92
 Some Feynman diagrams of the top production processes are shown in \FigureRef{???} and \FigureRef{???}.
-This background is simulated with \powhegbox\ and {\scshape pythia-6.428}~\cite{Pythia} at next-to-leading-order (NLO) using the CT10~\cite{CT10} NLO PDFs.
-All these processes are considered as a ``Top'' background in the text above.
+This background is simulated with \powhegbox\ and {\scshape pythia-6.428}~\cite{Pythia} at NLO using the CT10~\cite{CT10} NLO PDFs.
+All these processes are considered as a ``Top'' background in the text below.
 
 % Diboson
-More than one SM gauge boson can be produced in a single hard interaction, thus processes where $WW$, $WZ$ and $ZZ$ boson pairs are considered as well.
-Some Feynman diagrams of the diboson processes are shown in \FigureRef{???}.
-Contribution to the final state of interest can be provided via decays as $WZ \to \Plepton \nu \nu \nu$ or $WZ \to \Plepton \nu q \overline{q}$.
+More than one SM gauge boson can be produced in a single hard interaction, thus processes with $WW$, $WZ$ and $ZZ$ boson pairs produced in the final state are considered as well.
+Some Feynman diagrams of the such processes are shown in \FigureRef{???}.
+Contribution to the muon plus $E_T^{miss}$ final state can be provided via decays as $WZ \to \Plepton \nu \nu \nu$ or $WZ \to \Plepton \nu q \overline{q}$.
 These processes are simulated with {\scshape sherpa-2.1.1}~\cite{Sherpa} using the CT10 NLO PDFs.
 Such processes are grouped as a ``diboson'' background. 
 
 % mT-binned samples
-Only inclusive samples for both diboton and top backgrounds were available. 
+Only inclusive samples for both diboson and top backgrounds were available. 
 This is why it was considered to produce samples binned in the transverse mass of lepton plus $E_T^{miss}$.
-But due to technical complications these samples were not produced for 2015 analysis 
-and a dedicated fitting procedure for high-$m_T$ region have been used for estiamation of this backgrounds.
-However it is planned to use these samples for 2016 analysis.
+But due to technical complications these samples were not finished for 2015 analysis 
+and a dedicated fitting procedure to high-$m_T$ region have been used for the estimation of these backgrounds.
+However, it is planned to use these samples for 2015 and 2016 result combination study.
 
 % Table with MC
-List of all processes with used MC generatrs are summarized in \TableRef{tab:MC_cross}.
+List of all processes with used MC generators are summarized in \TableRef{tab:MC_cross}.
 
 \begin{table}[ht]
   \begin{center}
@@ -215,10 +219,10 @@ s-channel $Wt$ & + {\scshape pythia-6.428}~\cite{Pythia} & &  \\
 \section{Event and lepton selection}
 \label{sec:wprimeSelection}
 
-The analysis is based on the pp collision data collected in 2015 by the ATLAS detector with 13 TeV center of mass energy.
-The integrated luminosity of the sample corresponds to 3.2 fb$^{-1}$, the mean number of interactions per bunch crossing was 14.
+The analysis is based on data pp collision data collected in 2015 by the ATLAS detector with 13 TeV center of mass energy.
+The integrated luminosity of the data sample corresponds to 3.2 fb$^{-1}$, the mean number of interactions per bunch crossing was 14.
 
-An event selected for the analysis have at least one reconstructed vertex with at least two tracks matched to it. 
+An event selected for the analysis need to have at least one reconstructed vertex with at least two tracks matched to it. 
 If there are several vertices, the one with the highest
 $\sum p^2_T$, where $p_T$ are transverse momenta of the matched tracks, is chosen.
 Events should have at least one muon candidates, and fire the single muon trigger, 
@@ -227,9 +231,9 @@ which requires the presence of one muon with $p_T > 50$ GeV.
 \subsection{Lepton selection}
 % description of muon reconstruction in the ATLAS detector
 Muon reconstruction in ATLAS is performed independently in ID and MS detectors. 
-Later the information from the detectors are combined to form a muon track.
+Than information from the detectors are combined to form a muon track.
 There are different possibilities how to combine information from both detectors, 
-thus four different muon types are defined in ATLAS~\cite{muon_performance_2015}.
+thus four different muon types are used in ATLAS~\cite{muon_performance_2015}.
 In this analysis so-called combined muons are used, for which track reconstruction is done 
 separately in the ID and MS and than global refit is done to form a combined track.
 % muon momentum reconstruction
@@ -238,29 +242,29 @@ Muon $p_T$ is measured from the track curvature.
 % As well as for electrons, there are different sets of identification criteria which provide different background supression, reconstruction efficiency and momentum measurement resolution: Loose, Medium, Tight and High$-pT$.
 
 Muons of interest are high-$p_T$ isolated muons, tracks of which originates
-from the primary vertex. They have to satisfy set of following criteria:
+from the primary vertex. Candidates have to satisfy set of following criteria:
 \begin{itemize}
  \item $p_T > 55$ GeV: to ensure a high and flat trigger efficiency.
  \item $|\eta|<2.5$, excluding $1.01 < |\eta| < 1.1$: muons have to be within ID acceptance. 
- Exclusion region is applied in order to reject muons whose tracks in the muon spectrometer fall into poorly equationed chambers (relative barrel-endcap equationment).
+ Exclusion region is applied in order to reject muons whose tracks in the muon spectrometer fall into poorly aligned chambers (relative barrel-endcap aligned).
 %  TODO see comment from Monika to SS chapter
- \item Transverse and longitudinal impact parameters $|d_0|/\sigma(d_0) < 3$ and $|z_0 \times sin \theta| < 10$ mm: 
- to verify that the muon was produced close to the primary vertex and to reject muon originating from decays of long-lived particles. Recommendation by the muon combined performance (MCP) working group has
+ \item Transverse and longitudinal impact parameters $|d_0|/\sigma(d_0)<3$ and $|z_0\times sin\theta|<10$~mm: 
+ to verify that the muon was produced close to the primary vertex and to reject muons originating from decays of long-lived particles. Recommendation by the muon combined performance (MCP) working group has
  more strict requirement $|z_0 \times sin \theta| < 0.5$ mm, however after dedicated studies it 
  was decided to relax this requirement to 10 mm as will be described in \SectionRef{subsec:wprime_cut_optimization}.
-  \item Pass ``high-$p_T$'' muon set of identification criteria defined in~\cite{muon_performance_2015}. \\ 
- This set aims to maximize the momentum resolution for tracks with $p_T > 100$ GeV.
+ \item Pass ``high-$p_T$'' set of muon identification criteria defined in~\cite{muon_performance_2015}. \\ 
+ This set aims to maximize the momentum resolution for tracks with $p_T > 100$~GeV.
  It includes tight requirements on the MS part of the track which reduce reconstruction
  efficiency of the muons up to 20$\%$ with respect to other identification sets, however, 
  improvement of the $p_T$ resolution is reaching approximately 30$\%$.
 %  TODO describe why LooseTrackOnly isolation is enough
- \item Pass LooseTrackOnly isolation requirement~\cite{muon_performance_2015}. 
- This requirement provide 99$\%$ constant efficiency over complete ($\eta$,$p_T$) phase space.
- The discriminating variable is the ratio of the sum of $p_T$ of all tracks (excluding the muon itself) with $p_T > 1.0$ GeV within  $\Delta R = min(10$ GeV $/p_T^{\mu}, 0.3)$ 
- cone around the the muon track to muon track $p_T^{\mu}$.
+ \item Pass ``LooseTrackOnly'' isolation requirement~\cite{muon_performance_2015}. 
+ This requirement provides 99$\%$ constant efficiency over complete ($\eta$,$p_T$) phase space.
+ The discriminating variable is the ratio of the sum of $p_T$ of all tracks (excluding the muon itself) with $p_T > 1.0$~GeV within $\Delta R = min(10$ GeV $/p_T^{\mu}, 0.3)$ 
+ cone around the the muon track to the muon track $p_T^{\mu}$.
 \end{itemize}  
  
-\subsection{Signal selection optimization}
+\subsection{Optimization of the signal selection}
 \label{subsec:wprime_cut_optimization}
 % TODO additional lepton veto cut
 
@@ -285,6 +289,7 @@ The possibility of using the ``loose'' identification working point for the addi
 
 % TODO z sin_theta
 The default recommendation by the muon combined performance working group is to apply requirement $|z_0 \times sin \theta| < 0.5$ mm. The main purpose of this requirement is to veto events with cosmic muons.
+\toAsk [``After dedicated study by the MCP group'' is it OK?]
 However by making requirement on absence of the second muon in the event we ``automatically'' discard most of the events with cosmic muons. After dedicated study by the MCP group it was found that on 
 $|z_0 \times sin \theta|$ can be loose to 10 mm, without significant decrease on cosmic muon rejection.
 Figure \ref{fig:Muon_LepVtxEff} shows the $d_0$ significance and $|z_0 \times sin \theta|$ cut efficiency. The efficiency is shown on the left side for the recommended $|z_0 \times sin \theta|$ cut value of $0.5$ mm and on the right side for a looser
@@ -359,7 +364,7 @@ The ``fake'' background is estimated using the Matrix Method, which is presented
 
 \subsection{The Matrix Method}
 \label{subsec:matrix_method}
-% TODO what is the difference between atrix and fake factor methods?
+% TODO what is the difference between Matrix and fake factor methods?
 % TODO some motivation why we use exactly his method in this analysis.
 
 % The cut used to distinguish between loose and tight muons is the isolation cut, and the loose muons
@@ -793,6 +798,8 @@ The effect of systematic uncertainties are described by nuisance parameters in t
 One of the needed component for the statistical analysis to calculate the number of expected events is total efficiency (product of acceptance and reconstruction efficiency) 
 of the signal selection to reconstruct $\PWprime$ decay, which is shown in \FigureRef{fig:AccEff_mu}.
 
+\toDo[explain shape of the total efficiency curve!]
+
 \begin{figure}[]
   \centering
   \includegraphics[width=0.65\textwidth]{Wprime/acceptance.eps}
@@ -804,16 +811,17 @@ of the signal selection to reconstruct $\PWprime$ decay, which is shown in \Figu
 
 Statistical analysis demonstrates that no excess larger than 2$\sigma$ is observed.
 This is why upper limit on the cross section for the production of $\PWprime$ times branching ratio has been set. 
+A Bayesian approach have been used for the limit settings and limits were calculated with help of the Bayesian Analysis Toolkit~\cite{BAT}.
 
-% TODO how upper limit was calculated
-in the Bayesian Analysis Toolkit~\cite{BAT}.
+\toAsk[is it OK to not explain in the detail about limit setting procedure?]
 
-
-
+\toDo[add something here???]
 
 Upper limits are set on the cross-section times branching ratio, $\PWprime \rightarrow \Plepton\nu$, at 95\% C.L. and mass 
 limits are extracted using the relationship between the theoretical $\PWprime$ cross section and pole mass. Limits are presented for the electron, muon, 
-and combined lepton channels in \TableRef{tab:limits_mass_wp}, \FigureRef{fig:wprime_limits} and \FigureRef{wprime_limits_combined}.
+and combined lepton channels in \TableRef{tab:limits_mass_wp}, \FigureRef{fig:wprime_limits} and \FigureRef{fig:wprime_limits_combined}.
+
+\toAsk[which conclution whuols I made? comparison with 8 TeV?]
 
 \begin{figure}[]
   \centering
