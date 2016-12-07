@@ -9,33 +9,32 @@
 % - motivation flow: why leptons -> why same-sign dilepton -> why model-independent search?
 % ******************************************************************************
 
-Despite a great success of the Standard Model (SM) in describing interactions of the elementary particles, there is a plethora of phenomena
+Despite the great success of the Standard Model in describing interactions of the elementary particles with high precision, there is a plethora of phenomena
 which cannot be explained by the SM. Gravity, Dark Energy and Matter, neutrino masses and other observations are not predicted by the
 SM, which indicates its incompleteness.
-This is why many studies at LHC experiments are focused on probing new energy regimes to search for new physics, 
-observation of which can prove or deny validity of different extensions of the SM.
+% TODO comment from Monika
+This is why many studies at LHC experiments are focused on probing the new energy regime to search for new physics, 
+observation of which can prove or reject the validity of different extensions of the SM.
 
-Many beyond the Standard Model (BSM) models predict a same-sign dilepton production, which is a very distinctive final state.
-Also it is a very clean signal due to the very few SM processes, which predict such a final state.
-This leads to high new physics sensitivity.
+Many BSM models predict same-sign dilepton in the final state.
+It is a very clean signature as only few SM processes predict such final state.
+This leads to high sensitivity for new physics.
+% TODO some more ATLAS 8 TeV papers with same-sign leptons?
 
-\toAsk[some more ATLAS 8 TeV papers with same-sign leptons?]
+% TODO comment from Monika
+There is a number of searches in ATLAS which target same-sign dilepton final state signatures with additional requirements on number of jets or missing transverse energy~\cite{heavy_majorana_neutrino_paper,floderus_paper,Aad:2014pda}.
+% There is number of inclusive searches which target same-sign dilepton final state as well as searches with additional requirements on number of jets or missing transverse energy in ATLAS~\cite{heavy_majorana_neutrino_paper,floderus_paper,Aad:2014pda}.
+The analysis presented here aims to be as inclusive as possible and to probe exclusively the same-sign dilepton signature and all the BSM models which predict it.
 
-There is a number of searches in ATLAS which target same-sign dilepton final state signature with 
-additional requirements on number of jets or missing transverse energy~\cite{heavy_majorana_neutrino_paper,floderus_paper,Aad:2014pda}.
-Current analysis aims to be as inclusive as possible and to probe exclusively the same-sign dilepton signature and
-all the BSM models which predict it.
-
-For this purpose signal selection is based on the minimal kinematic requirements on leptons.
-Electron is a very clean object which can be precisely reconstructed with high efficiency in ATLAS.
-The search observable for the analysis was chosen to be the same-sign dilepton invariant mass.
+The signal selection is based on minimal kinematic requirements on leptons.
+Electrons are very clean objects which can be precisely reconstructed with high efficiency in ATLAS.
+The search observable for the analysis is the same-sign dilepton invariant mass distribution.
 
 If no signal from new physics is found, an upper limit on fiducial cross section for new physics can be set.
-As an example of a BSM model with the same-sign dilepton final state, a pair production of a doubly charged Higgs bosons
-will be studied in detail within current search.
+As an example of a BSM model with the same-sign dilepton final state, the pair production of a doubly charged Higgs bosons is studied in detail with the search presented in this thesis.
 
-The analysis uses three dilepton channels: $e^{\pm}e^{\pm}$, $\mu^{\pm}\mu^{\pm}$ and $e^{\pm}\mu^{\pm}$.
-This chapter will describe search only with the $e^{\pm}e^{\pm}$ channel.
+The analysis searches in three channels: $e^{\pm}e^{\pm}$, $\mu^{\pm}\mu^{\pm}$ and $e^{\pm}\mu^{\pm}$.
+This chapter will describe the search only for the $e^{\pm}e^{\pm}$ channel.
 
 \section{Background processes}
 \label{sec:wprimeBackgrounds}
@@ -45,20 +44,22 @@ This chapter will describe search only with the $e^{\pm}e^{\pm}$ channel.
 % - 
 % ******************************************************************************
 
-There are four different components which contribute to the signal region.
-The first component is the so called prompt background which corresponds to prompt same-sign dileptons originating from the SM processes.
-Just a few SM processes have same-sign dileptons in the final state. In such processes same-sign leptons originate from semileptonic decays of top quarks
-and/or leptonic decays of $W$ or $Z$ bosons. Some example of corresponding Feynman diagrams are shown in \FigureRef{fig:prompt_bkg_feynman_diag}.
-In general, SM processes with the same-sign dilepton final state have relatively small cross sections.
+There are four different sources of background which contribute to the signal region.
+The first source is the so called prompt background which corresponds to prompt same-sign dileptons originating from the SM processes.
+Just a few SM processes have same-sign dileptons in the final state. 
+For example they can originate from semileptonic decays of top quarks
+and/or leptonic decays of $W$ or $Z$ bosons. The corresponding Feynman diagrams are shown in \FigureRef{fig:prompt_bkg_feynman_diag}.
+% TODO is sentence below OK? It was modified after Monika's comment.
+In general, SM processes with the same-sign dilepton final state have relatively small cross sections at high dilepton invariant mass region of interest.
 
-The second component comes from the wrong reconstruction of the lepton itself, when a pion or a jet is reconstructed as a lepton, or from leptons which were produced 
+The second component comes from the wrong identification of the lepton itself, when a pion or a jet is reconstructed as a lepton, or from leptons which were produced 
 not in the pp collision but from decays of secondary particles, e.g. kaons. This component is called non-prompt or fake background.
 
 % TODO add trident event Feynman diagram
-The third component comes from the misidentification of the electrical charge of the lepton, which makes processes where opposite-sign lepton pair is produced 
-contributing to the signal selection as well. The charge misidentification effect becomes significant for high-momentum leptons, when curvature of the track 
-is hard to reconstruct. 
-This component also includes events where a prompt electron emits a photon due to bremsstrahlung, which in its turn creates an electron-positron pair.
+The third component comes from the misidentification of the electric charge of the lepton, which makes processes in which an opposite-sign lepton pair is produced 
+contributing to the signal selection as well. The charge misidentification effect becomes significant for high-momentum leptons, when the curvature of the track 
+is difficult to reconstruct. 
+This component also includes events in which a prompt electron which emits a photon due to hard bremsstrahlung. Subsequently the photon creates an electron-positron pair in which one of the two leptons receives most of the energy.
 One lepton from the pair can form a same-sign electron pair with the original prompt lepton. These two processes are referred to as charge misidentification or
 charge flip background later in the text.
 
