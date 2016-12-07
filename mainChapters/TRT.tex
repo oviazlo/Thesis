@@ -4,24 +4,23 @@
 % TODO write
 % 1) explain my personal contribution to the study.
 
-This chapter describes performance of the ATLAS Transition Radiation Tracker (TRT) detector in case of using 
-Argon-based gas mixture in some sector of the detector.
-The TRT was designed for Xenon-based mixture with carbon dioxide and oxygen additions (in proportion 70/27/3).
-But appearance of leaks in some drift tubes led to the decision to switch to a cheaper Argon-based mixture for the leaking modules.
-This chapter covers description of the implementation of the Argon mixture in the TRT digitization package.
-The chapter consists of three sections. In \SectionRef{sec:TRT_intro} overview of the detector running conditions is described. In \SectionRef{sec:trt_straw_hw} the general TRT description is presented with emphasis on description of the drift tubes, used gas and front-end electronics.
+This chapter describes the performance of the ATLAS Transition Radiation Tracker (TRT) detector with an Argon-based gas mixture in some sectors of the detector.
+The TRT was designed for a Xenon-based mixture with carbon dioxide and oxygen additions (in proportions 70/27/3).
+However, leaks in some drift tubes led to the decision to switch to a cheaper Argon-based mixture for the leaking modules.
+This chapter covers a description of the implementation of the Argon mixture in the TRT digitization package.
+The chapter consists of three sections. In \SectionRef{sec:TRT_intro} an overview of the detector running conditions is described. In \SectionRef{sec:trt_straw_hw}, the general TRT description is presented with an emphasis on a description of the drift tubes, the gas used and the front-end electronics.
 \SectionRef{sec:digi_argon} gives an overview of the digitization package as well as a detailed description of the Argon implementation in the code.
-\SectionRef{sec:trt_tracking_perf} describes performance study of the TRT regarding hit and track parameters with focus on active gas mixture, and particularly the comparison of 
+\SectionRef{sec:trt_tracking_perf} describes a performance study of the TRT regarding hit and track parameters with focus on an active gas mixture, and particularly the comparison of 
 Xenon- and Argon-based mixtures.
-In \SectionRef{sec:trt_summary} conclusion of the Argon studies are discussed.
+In \SectionRef{sec:trt_summary} conclusion of the Argon studies are made.
 
-Modelling of the new Argon gas mixture and the new detector configuration (which allows to simulate detector with different gas mixtures in different parts), 
-which were done as a part of this PhD project, were integrated to the official TRT digitization package and are currently used for the Monte Carlo simulation of the TRT detector. 
-Existing implementation of the Xenon-filled drift tubes was used as a basis for modelling of Argon-filled drift tubes.
+Modelling of the new Argon gas mixture and the new detector configuration (which allows to simulate the detector with different gas mixtures in different parts), 
+were integrated into the official TRT digitization package and are currently used for the Monte Carlo simulation of the TRT detector. 
+The previous implementation of the Xenon-filled drift tubes was used as a basis for the modelling of Argon-filled drift tubes.
 All Argon gas mixture properties needed for the implementation in the digitization code were measured in the laboratory with a drift tube prototype 
-or modelled by the Garfield package~\cite{garfield_program} by other TRT collaborators.
-Tracking performance study was done to understand behavior of the Argon mixture in the TRT compared to the Xenon one.
-Particle identification capabilities (by adsorption of transition radiation photons) of the Argon gas mixture are not discussed in this thesis.
+or modelled by the Garfield package~\cite{garfield_program}.
+A tracking performance study was done to understand the behavior of the Argon mixture in the TRT compared to the Xenon one.
+% Particle identification capabilities (by adsorption of transition radiation photons) of the Argon gas mixture are not discussed in this thesis.
 
 %#######################################################################################################################
 % SECTION 0 ############################################################################################################
@@ -29,14 +28,15 @@ Particle identification capabilities (by adsorption of transition radiation phot
 \section{Motivation}
 \label{sec:TRT_intro}
 
-During LHC Run-1 the TRT detector was successfully operating and providing essential part of tracking information 
-as well as particle identification information by detecting transition radiation photons. In the end of Run-1 
+During LHC Run-1 the TRT detector was successfully operating and was providing an essential part the of tracking information 
+as well as particle identification information by detecting transition radiation photons.
+At the end of Run-1 
 a few leaks in the drift tubes were observed, which triggered a large investigation in order to understand and fix the problem. 
-After investigation of the problem during the technical LHC shutdown part of the problematic tubes were fixed, however, large part of the leaking tubes were impossible to fix due to the lack of access to them due to Inner Detector services.
+After investigation of the problem during the technical LHC shutdown some of the problematic tubes were fixed, however, a large part of the leaking tubes were impossible to fix due to the lack of access to them.
 Therefore some changes in the gas system were done in order to minimize the leaks, 
-and study of possibility of using Argon-based gas mixtures (which are significantly cheaper) started. 
-With time, the amount of the leaking gas increased, and it became inevitable to switch to the Argon mixture 
-for the heavy leaking TRT modules. In \FigureRef{fig:mixed_condition_2015_2016} gas configurations of the TRT used in years 2015 and 2016 are shown, demonstrating that the problem is gradually developing with time.
+and a study of the possibility of using Argon-based gas mixtures (which are significantly cheaper) started. 
+With time, the amount of leaking gas increased, and it became inevitable to switch to the Argon mixture 
+for the most leaking TRT modules. In \FigureRef{fig:mixed_condition_2015_2016} the gas configurations of the TRT used in years 2015 and 2016 are shown, demonstrating that the problem was gradually increasing with time.
 
 \begin{figure}
 \centering
@@ -61,8 +61,7 @@ for the heavy leaking TRT modules. In \FigureRef{fig:mixed_condition_2015_2016} 
 \label{sec:trt_straw_hw}
 
 The general description of the TRT detector have been described previously in \SectionRef{sec:ID}.
-In this chapter main focus will be given to a straw tube performance, readout electronics as well as 
-short overview of the track reconstruction with TRT.
+In this chapter the main focus will be on straw tube performance, readout electronics as well as a short overview of the track reconstruction with the TRT.
 
 % \subsection{Detector design}
 % \label{subsec:trt_description}
@@ -103,20 +102,20 @@ short overview of the track reconstruction with TRT.
 % - material of the straw
 % - gas mixture and all properties
 
-The main element of the TRT are proportional straw-shaped drift tubes, hereafter called straw tubes or simply straws.
-Tubes need to have good electrical (the cathode resistance has to be as low as possible) and mechanical properties. Latter is important to to avoid gas leaks as well as to prevent bending of the tubes, which will lead to change in the alignment.
-The geometrical factor has to be taken into account as well: large straws provide better hit efficiency while small straws provide small drift time (time needed to collect electrons in the straw tube), which is crucial in order to have possibility to cope with 25 ns distance between bunch crossings.
-Another crucial requirement is a limit on thickness of the tubes. 
+The main elements of the TRT are proportional straw-shaped drift tubes, hereafter called straw tubes or simply straws.
+The tubes need to have good electrical and mechanical properties (the cathode resistance has to be as low as possible). It is important to minimize possibility of gas leaks as well as to avoid bending of the tubes, which will lead to changes in the alignment.
+The geometrical factor has to be taken into account as well: large straws provide a better hit efficiency while small straws provide small drift time (the time needed to collect electrons in the straw tube), which is crucial in order to cope with a 25 ns distance between bunch crossings.
+Another crucial requirement is a limit on the thickness of the tubes. 
 In order to let low-energy transition radiation photons (created mainly by electrons passing through radiators) go through and be adsorbed in the gas, straw walls need to be as thin as possible.
-Also one want to keep material budget as low as possible in the ID to reduce multiple scattering,
-which is the main source of uncertainty of track $p_T$ measurement.
+One also want to keep the material budget as low as possible in the ID to reduce multiple scattering,
+which is the main source of uncertainty of the track $p_T$ measurement.
 
-All these requirements were considered during the design phase, and the optimal choice was used.
+All these requirements were considered during the design phase, in order to get an optimal choice.
 The straw size is 4 mm in diameter. Walls are made from two layers of multilayer film. A section of the straw wall is shown in \FigureRef{fig:straw_wall_section}.
-The multilayer film consists of 6 $\mu$m thick carbon-polyimide layer, which protects a 0.2 $\mu$m thick Al layer, which is coated by 25 $\mu$m Kapton film.
-These two films are placed back to back and are glued by 5 $\mu$m thick polyurethane layer.
+The multilayer film consists of a 6 $\mu$m thick carbon-polyimide layer, which protects a 0.2 $\mu$m thick Al layer, which is coated by a 25 $\mu$m Kapton film.
+These two films are placed back to back and are glued by a 5 $\mu$m thick polyurethane layer.
 Mechanically, each straw is supported by 4 carbon fiber bundles.
-The anode is 30 $\mu$m diameter tungsten wire coated with 0.6-0.7 $\mu$m layer of gold.
+The anode is a 30 $\mu$m diameter tungsten wire coated with a 0.6-0.7 $\mu$m layer of gold.
 
 \begin{figure}
 \centering
@@ -129,31 +128,33 @@ Section of the TRT straw tube wall.
 \end{figure}
 
 The active detector volume of a straw is a gas mixture which is flushed through the tubes with the help of the gas system.
-This mixture was carefully chosen in order to be safe to use (to prevent sparks that can perforate the walls), be compatible with the detector materials, and to not have dissociation products, after the electron avalanche, with aggressive properties that could chemically damage the straw.
+This mixture was carefully chosen in order to be safe to use (to prevent sparks that can perforate the walls), be compatible with the detector materials, and to not produce dissociation products, after the electron avalanche, with aggressive properties that could chemically damage the straw.
 A high electron drift velocity is preferred, as well as a wide operating plateau (the high voltage range where straws work in the proportional regime). 
 The latter is important in order to have a
-safety margin in case the high voltage has to be changed to correct for temperature variations, to enhance signal to noise ratio (during operation, due to the radiation damage, the electronics becomes more noise) or to adjust for 
+safety margin in case the high voltage has to be changed to correct for temperature variations, to enhance the signal to noise ratio 
+% (during operation, due to the radiation damage, the electronics becomes more noise) 
+or to adjust for 
 heavy-ionizing particle effects~\cite{Abat:2008zza}.
-Several noble gases were considered as a main component of gas mixture. Because they are inert they are safe to use in the detector for a long time, and they have 
+Several noble gases were considered as a main component of the gas mixture. Because they are inert they are safe to use in the detector for a long time, and they have 
 excellent photo-adsorption cross sections.
-The target energy of transition radiation photons to be absorbed in order to make electron identification is in the range of 1-20 keV.
-In \FigureRef{fig:absorption_lenght} absorption lengths are shown for four most heavy noble gases.
-As one can see, the best choice would be the Radon gas, but due to its radioactivity it can not be used.
+The target energy of transition radiation photons for electron identification is in the range of 1-20 keV.
+In \FigureRef{fig:absorption_lenght} the absorption lengths are shown for the four most heavy noble gases.
+As one can see, the best choice would be Radon, but due to its radioactivity it can not be used.
 The next candidate was Xenon, and it was chosen to be the main gas component.
-Because of the high cost of Xenon it was decided to use Argon gas for large number of tests and during commissioning phase before pp collisions. It is why the read-out electronics was
+Because of the high cost of Xenon it was decided to use Argon gas for a large number of tests and during the commissioning phase before pp collisions. This is the reason why the read-out electronics was
 designed with a possibility to work with both Argon- and Xenon-based gas mixtures, as described in \SectionRef{subsubsec:front_end_electronics}.
 
 \begin{figure}
 \centering
 \includegraphics[width=.7\textwidth]{TRT/absorption_lenght_noble_gases.png}
 \caption{ 
-  Absorption length as a function of photon energy for heaviest noble gases. Plot is based on data reported in~\cite{Hubbell:353989}.
+  Absorption length as a function of photon energy for the heaviest noble gases. The plot is based on data reported in~\cite{Hubbell:353989}.
 }
 \label{fig:absorption_lenght}
 \end{figure}
 
-In order to have well controlled electron avalanches in the straw, one has to add another gas component, a quencher. The main purpose of quencher is to absorb UV photons created in the avalanche process and prevent secondary avalanches, which can lead to an early breakdown.
-After a dedicated study, reported in~\cite{Abat:2008zza}, it was decided to use carbon dioxide as a quencher due to suitable and well known properties.
+In order to have a well controlled electron avalanches in the straw, one has to add another gas component, a quencher. The main purpose of the quencher is to absorb UV photons created in the avalanche process and to prevent secondary avalanches, which can lead to an early breakdown.
+After a dedicated study, reported in~\cite{Abat:2008zza}, it was decided to use carbon dioxide as a quencher due to its suitability and well known properties.
 In order to increase the width of the operating plateau even more, a third gas component, oxygen, was added.
 By itself $O_2$ does not interact with UV photons, but ozone ($O_3$), which is created in the electron avalanches, does.
 However, $O_2$ is a strongly electronegative gas, which can negatively affect straw performance by capturing drifting primary electrons, as described below,
@@ -163,16 +164,16 @@ The final choice of the gas mixture to be used in the TRT was decided to be 70$\
 When some straws started to leak, it was decided to switch the main gas component from Xenon to Argon for these straws, due to economic reasons.
 Argon has significantly higher absorption length with respect to Xenon, as can be seen in \FigureRef{fig:absorption_lenght} (approximately an order of magnitude difference), 
 therefore straws with Argon almost completely lose the ability to detect transition radiation, 
-which means losing the particle identification ability.
+which means losing the particle identification capability.
 
-The operating gas gain for straws was chosen to be 2.5 $\cdot$ 10$^4$~\cite{ID_TDR_vol1} and it has to be the same for all straws. It corresponds to 1530~V for the Xenon mixture, as shown in \FigureRef{fig:gas_gain}.
-The gas gain curve for the Argon mixture is significantly different, and to reach the same gain only 1420~V voltage has have to be applied.
+The operating gas gain for the straws was chosen to be 2.5 $\cdot$ 10$^4$~\cite{ID_TDR_vol1} and it had to be the same for all straws. It corresponds to 1530~V for the Xenon mixture, as shown in \FigureRef{fig:gas_gain}.
+The gas gain curve for the Argon mixture is significantly different, and to reach the same gain only a voltage of 1420~V had to be applied.
 
 \begin{figure}
 \centering
 \includegraphics[width=.5\textwidth]{TRT/gas_gain_Xe_Ar.png}
 \caption{ 
-Straw gas gain as a function of high voltage for different gas mixtures. Source:~\cite{Abat:2008zza}.
+Straw gas gain as a function of high voltage for different gas mixtures~\cite{Abat:2008zza}.
 }
 \label{fig:gas_gain}
 \end{figure}
@@ -184,23 +185,23 @@ Straw gas gain as a function of high voltage for different gas mixtures. Source:
 \label{subsubsec:front_end_electronics}
 
 The main purpose of the TRT is to provide hits for track reconstruction and information for electron identification by detecting transition radiation photons.
-In order to get the best possible hit position resolution of hits one needs not only to have a possibility to identify which straws particle traversed,
+In order to get the best possible position resolution of hits one needs not only to have a possibility to identify which straws particle traversed,
 but also to measure the closest approach of the charged particle to the straw wire, the so-called track to wire distance. 
-For this purpose, the drift time of electron clusters to the wire has to be measured.
+For this purpose, the drift time of electron clusters has to be measured.
 The TRT front-end electronics was designed to perform these precise time measurements.
-One has to measure the time of signal arrival (drift time of the electron clusters to the anode wire) and duration of the signal, the so-called Time over Threshold (ToT).
+One has to measure the time of signal arrival (drift time of the electron clusters to the anode wire) and the duration of the signal, the so-called Time over Threshold (ToT).
 Time over Threshold is needed to distinguish signals from particles originating from different bunch crossings 
-and can be used for particle identification because it characterizes amount of the ionization in the straw gas.
-Typical time needed for electrons to drift from the straw wall to the anode wire in the Xenon-based gas mixture corresponds to 40-45 ns, which dictates size of the read-out window to be 
+and can be used for particle identification because it characterizes the amount of the ionization in the straw gas.
+Typical time needed for electrons to drift from the straw wall to the anode wire in the Xenon-based gas mixture corresponds to 40-45 ns, which dictates the size of the read-out window to be 
 3 BCID or 75 ns. As shown in \FigureRef{fig:pulseDigitization} the signal is sampled with 24 bits (3.125 ns each). 
-Value of 1 is assigned to a bit if signal amplitude is higher than the predefined threshold, 
-otherwise value of 0 is assigned. The first transition in the bit pattern from 0 to 1 correspond to the so-called leading edge of the signal. Consequent transition from 1 to 0 
+A value of 1 is assigned to a bit if the signal amplitude is higher than the predefined threshold, 
+otherwise a value of 0 is assigned. The first transition in the bit pattern from 0 to 1 corresponds to the so-called leading edge of the signal and the transition from 1 to 0 
 corresponds to the trailing edge of the signal. Their difference is equal to the Time over Threshold of the signal. 
 
 \begin{figure}
 \begin{center}
  \includegraphics[width=0.8\columnwidth]{TRT/fromPoster/TRTdigi4.pdf}
-\caption{Illustration of discrimination against low threshold and digitization of the straw signal.}
+\caption{Illustration of the digitization of the straw signal.}
 \label{fig:pulseDigitization}
 \end{center}
 \end{figure}
@@ -213,8 +214,8 @@ corresponds to the trailing edge of the signal. Their difference is equal to the
 % But some electrons will reach anode and will cause slowly falling component of the signal. To cancel out 
 
 A typical signal from the straw consists of two components, as shown in \FigureRef{fig:ion_tail}: 
-a sharp peak, which corresponds to the fast electron drift, and a slowly falling ion tail, which corresponds to the ions of gas created in the avalanche process.
-Only the electron peak contains information of interest (drift time of primary electron clusters), thus ion tail is canceled out by adding a mirror image impulse to the signal.
+a sharp peak, which corresponds to the fast electron drift, and a slowly falling ion tail, which corresponds to the gas ions created in the avalanche process.
+Only the electron peak contains information of interest (the drift time of the primary electron clusters), thus the ion tail is canceled out by adding a mirror image pulse to the signal.
 
 \begin{figure}
 \centering
@@ -228,28 +229,28 @@ Only the electron peak contains information of interest (drift time of primary e
 \end{figure}
 
 The ion tail cancellation and signal digitization is done by a custom-made ASDBLR (Amplification, Shaping, Discrimination and Base-Line Restoration) chip. 
-This chip also performs restoration of the signal baseline and discrimination against the threshold. 
-Electronics make discrimination against two different thresholds. One threshold, the so-called Low Threshold (LT), 
+This chip also performs restoration of the signal baseline and discrimination. 
+Electronics make discrimination with two different thresholds. One threshold, the so-called Low Threshold (LT), 
 is used to trigger on cases when a high-energetic particle passes through the straw and ionizes the gas along its path, and it is shown in \FigureRef{fig:pulseDigitization}.
-The second threshold is used for the case of transition radiation photon detection.
+The second threshold, the so-called High Threshold (HT), is used for the case of transition radiation photon detection.
 Contrary to the high-energetic particles, transition radiation photons deposit all their energy essentially in one point when interacting with gas.
-This corresponds to a large number of primary electrons, which leads to a strong read-out signal.
-The aim of the second threshold, the so-called High Threshold (HT), is to be fired on such cases, this is why it is significantly higher than LT.
+This corresponds to a large number of primary electrons, which leads to a large read-out signal.
 Threshold values used for the Xenon-based gas mixture correspond to 300 eV and 6 keV for LT and HT respectively.
-Discrimination against HT is done per BCID. 
+Discrimination with HT is done per BCID. 
 
 In total, the ASDBLR chip provides 24+3 bits, which corresponds to 24 LT bits and 3 HT bits over the 75 ns read-out window.
 A schematic illustration of the ASDBLR chip operation principle is shown in \FigureRef{fig:nice_asdblr_schematics}.
-ASDBLRs are placed close to straws in order to reduce noise in the signal. One chip reads eight straws.
+ASDBLRs are placed close to the straws in order to reduce noise in the signal. One chip reads eight straws.
 The next component in the read-out chain is a complementary read-out chip DTMROC (Drift Time Measurements Read-Out Chip), which accepts 
-information from two ASDBLRs and holds data in the pipeline until the first level trigger arrives. If the event is accepted, data is sent further to read-out electronics.
+information from two ASDBLRs and holds data in the pipeline until the first level trigger arrives. 
+% If the event is accepted, data is sent further to read-out electronics.
 The overall TRT read-out chain is shown in \FigureRef{fig:electronics}. The detailed description of the TRT electronics is reported in~\cite{TRT_electronics}.
 
 \begin{figure}
 \centering
 \includegraphics[width=.8\textwidth]{TRT/nice_ASDBLR_schematics.png}
 \caption{ 
- Schematic illustration of the straw signal digitization by the ASDBLR chip. Source:~\cite{Aad:2008zzm}.
+ Schematic illustration of the straw signal digitization by the ASDBLR chip~\cite{Aad:2008zzm}.
 }
 \label{fig:nice_asdblr_schematics}
 \end{figure}
@@ -259,7 +260,7 @@ The overall TRT read-out chain is shown in \FigureRef{fig:electronics}. The deta
 \centering
 \includegraphics[width=.7\textwidth]{TRT/electronics.png}
 \caption{ 
- Schematic representation of the TRT read-out electronic. Source:~\cite{TRT_electronics}.
+ Schematic representation of the TRT read-out electronic~\cite{TRT_electronics}.
 }
 \label{fig:electronics}
 \end{figure}
@@ -269,31 +270,30 @@ The overall TRT read-out chain is shown in \FigureRef{fig:electronics}. The deta
 \subsection{Tracking with the TRT}
 \label{subsec:tracking_with_trt}
 
-The track reconstruction algorithm require a list of spatial hits and a corresponding error matrices in order to build a track. The TRT electronics provide drift time measurements which can be transformed to the
+The track reconstruction algorithm require a set of spatial hits and the corresponding error matrices in order to build a track. The TRT electronics provide drift time measurements which can be transformed to the
 drift radius (drift distance of the electron cluster which reached the anode wire first), which can be used in the track reconstruction.
 
-The first task is to properly measure drift time of the electrons to the anode wire. 
-The measured leading edge consists of the signal from particle 
-consists of two components: the actual drift time of electrons $t$ and the calibration constant $T_{0}$, as illustrated in \FigureRef{fig:pulseDigitization}.
-The calibration constant $T_{0}$ is made of three components:
+The first task is to properly measure the drift time of the electrons to the anode wire. 
+The measured leading edge time has two components: the actual drift time $t$ and the calibration constant $T_{0}$, as illustrated in \FigureRef{fig:pulseDigitization}.
+The calibration constant $T_{0}$ has three parts:
 \begin{itemize}
- \item Collision time with respect to the edge of the ATLAS clock. Since there could be some uncompensated delays due to propagation in the wires and electronics.
- \item Time of flight of particle to the straw. Straws are placed at a distance from 0.5 to 2.6 meters from the interaction point, 
- which corresponds to up to 9 ns needed for a relativistic particle to reach the farthest straws.
+ \item The collision time with respect to the ATLAS clock, since there could be some uncompensated delays due to propagation in the wires and electronics.
+ \item The time of flight of the particle to the straw. Straws are placed at a distance varying from 0.5 to 2.6 meters from the interaction point, 
+ which corresponds to up to 9 ns for a relativistic particle to reach the furthest straws.
  \item Time of the signal propagation in the wire to the front-end electronics, typically a few nanoseconds.
 \end{itemize}
 The calibration constant $T_{0}$ is obtained for each DTMROC from the calibration procedure which is done after each run.
-The next task is to transform the drift time to the drift radius. It is done with the help of the so-called $r-t$ relation, relation of the drift radius as a function of the drift time.
+The next task is to transform the drift time to a drift radius. It is done with the help of the so-called $r-t$ relation which gives the drift radius as a function of the drift time.
 This relation is determined from data and is fitted by a third degree polynomial, which is used for calculations of the drift radius itself.
-The last missing parameter, hit measurement errors, is also calculated in the special calibration procedure. A detailed description of the calibration procedure
+The last missing parameter, the hit measurement error, is also calculated in the special calibration procedure. A detailed description of the calibration procedure
 can be found in ~\cite{alonso_thesis}.
 
-The main tracking algorithms used in ATLAS are the global $\chi^2$ fit, when tracks are fitted by minimization of the $\chi^2$ value, and Kalman filter, which makes pattern recognition
-layer by layer. When a track is fitted all the used hits in the fit are removed from the list of available hits, and the tracking algorithm is executed iteratively until all tracks are reconstructed.
-In \FigureRef{fig:drift_radius} a schematic representation of a track passing two straws is shown. The drift radius obtained from the drift time with $r-t$ relation is
+The main tracking algorithms used in ATLAS are the global $\chi^2$ fit, when tracks are fitted by minimization of the $\chi^2$ value, and Kalman filters which makes pattern recognition
+layer by layer. When a track is fitted, all the used hits in the fit are removed from the list of available hits, and the tracking algorithm is executed iteratively until all tracks are reconstructed.
+In \FigureRef{fig:drift_radius} a schematic representation of a track passing two straws is shown. The drift radius obtained from the drift time with the $r-t$ relation is
 shown with a dashed line around the wire. The track to wire distance is the distance of the closest approach of the track to the anode wire ($r_{track}$). The difference
-between the drift radius and the track to wire distance is called position residual. By calculating position residuals for each hit and for all
-tracks in the barrel or end-cap parts of the detector and by measuring the width of the residual distribution, we can estimate the resolution of the detector.
+between the drift radius and the track to wire distance is called the position residual. By calculating position residuals for each hit and for all
+tracks in the barrel or end-cap parts of the detector and by measuring the width of the residual distribution one can estimate the resolution of the detector.
 In the same manner, the time residuals can be measured, which are equal to the difference between the drift time and the track time, which are obtained by using $r_{track}$ and the inverse of the
 $r-t$ relation.
 
@@ -302,26 +302,26 @@ $r-t$ relation.
 \centering
 \includegraphics[width=.7\textwidth]{TRT/drift_radius.png}
 \caption{ 
- Illustration of the main hit parameters as drift radius, track to wire distance ($r_{track}$) and position residual.
+ Illustration of the main hit parameters such as drift radius, track to wire distance ($r_{track}$) and position residual.
 }
 \label{fig:drift_radius}
 \end{figure}
 
 % TODO explain $\frac{d}{\sqrt{12}}$ error, as described in Alex thesis???
-There are two types of the TRT hits: precision hits and tube hits. Precision hits are the hits described above. Tube hits are hits where the drift time 
-information is not used, but only the fact that there is a hit in the straw. For such hits, the drift radius is assigned to be 0 mm, and the hit error is $\frac{d}{\sqrt{12}}$, where
-$d$ is a diameter of the straw (4 mm). Tubes hits are defined during the track fitting for hits which have difference between track and drift radius larger than
+There are two types of TRT hits: precision hits and tube hits. Precision hits are the hits described above. Tube hits are hits where the drift time 
+information is not used, only the fact that there is a hit in the straw. For such hits, the drift radius is assigned to be 0 mm, and the hit error is $\frac{d}{\sqrt{12}}$, where
+$d$ is a diameter of the straw (4 mm). Tubes hits are hits which have a difference between track and drift radius larger than
 2.5 times the uncertainty of the drift radius. Since the track fitting is done iteratively, some hits can go back and forth from being tube or precision hits.
 % Tube hits decrease quality of the track, which correlates with detector resolution.
 
-Main TRT detector contribution for tracking is an improvement of the momentum resolution of tracks measured with Inner Detector. Large number of hits in TRT provide
-a solid handle to measure curvature of the track which translates to measurement of the track momentum. Momentum resolution can be expressed by following formula~\cite{mom_res_book,Gluckstern:1963ng}:
+The main TRT detector contribution to the tracking is an improvement of the momentum resolution of tracks measured with the Inner Detector. The large number of hits in the TRT provide
+a solid handle to measure the curvature of the track which translates into a measurement of the track momentum. Momentum resolution can be expressed by the following formula~\cite{mom_res_book,Gluckstern:1963ng}:
 \begin{equation}
 %  \dfrac{\delta p}{p^2} = \dfrac{\sigma}{0.3BL^2}\sqrt{4C_N}
 \dfrac{\delta p_T}{p_T^2} = \dfrac{\sqrt{([c^2])}}{0.3B}
  \label{eq:momentum_resolution}
 \end{equation}
-where $p_T$ is a transverse momentum of the track and $\delta p_T$ is its error, $[c^2]$ is the variance of the track curvature, which can be expressed as~\cite{mom_res_book}:
+where $p_T$ is the transverse momentum of the track and $\delta p_T$ is its error, $[c^2]$ is the variance of the track curvature, which can be expressed as~\cite{mom_res_book}:
 
 % $\sigma$ is spatial resolution of the hit, $B$ is magnetic field, $L$ is the length of the measured track
 % and $C_N$ is factor which depends on the number of hits, N:
@@ -329,13 +329,13 @@ where $p_T$ is a transverse momentum of the track and $\delta p_T$ is its error,
 %  C_N = \dfrac{180N^3}{(N-1)(N+1)(N+2)(N+3)}
 [c^2] = \dfrac{\sigma^2}{L^4}\dfrac{720 N^3}{(N-1)(N+1)(N+2)(N+3)}
 \end{equation}
-$\sigma$ is spatial resolution of the hit, $B$ is magnetic field, $L$ is the length of the measured track.
-As can be seen from formula above, momentum resolution is proportional to the spatial resolution of the hits and is inversely proportional to the square root of 
-number of hits. Therefore spatial resolution and number of hits are parameters of interest during the tracking performance studies.
+where $\sigma$ is the spatial resolution of the hit, $B$ is the magnetic field and $L$ is the length of the measured track.
+As can be seen from formula above, the momentum resolution is proportional to the spatial resolution of the hits and is inversely proportional to the square root of 
+the number of hits. Therefore spatial resolution and the number of hits are parameters of interest during the tracking performance studies.
 
-Importance of the TRT for the momentum resolution measurements can be seen in \FigureRef{fig:improvement_of_momentum_resolution}.
-This plot demonstrates momentum resolution of the cosmic ray data, collected in 2008, for the Inner Detector tracks reconstructed with and without the TRT.
-A clear and significant improvement can be seen, especially for the high momentum region.
+The importance of the TRT for the momentum resolution can be seen in \FigureRef{fig:improvement_of_momentum_resolution}.
+This plot shows the momentum resolution of cosmic ray data collected in 2008, for Inner Detector tracks reconstructed with and without the TRT.
+A clear and significant improvement can be seen, especially in the high momentum region.
 
 
 \begin{figure}
