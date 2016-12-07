@@ -13,7 +13,7 @@ The chapter consists of three sections. In \SectionRef{sec:TRT_intro} overview o
 \SectionRef{sec:digi_argon} gives an overview of the digitization package as well as a detailed description of the Argon implementation in the code.
 \SectionRef{sec:trt_tracking_perf} describes performance study of the TRT regarding hit and track parameters with focus on active gas mixture, and particularly the comparison of 
 Xenon- and Argon-based mixtures.
-In \SectionRef{sec:trt_summary} conslusion of the Argon studies are discussed.
+In \SectionRef{sec:trt_summary} conclusion of the Argon studies are discussed.
 
 Modelling of the new Argon gas mixture and the new detector configuration (which allows to simulate detector with different gas mixtures in different parts), 
 which were done as a part of this PhD project, were integrated to the official TRT digitization package and are currently used for the Monte Carlo simulation of the TRT detector. 
@@ -54,9 +54,6 @@ for the heavy leaking TRT modules. In \FigureRef{fig:mixed_condition_2015_2016} 
 \label{fig:mixed_condition_2015_2016}
 \end{figure}
 
-% TODO write: study motivation
-% 1) explain situation with leaking of the Xenon
-% 2) describe pictures of the mixed condition for 2015-2016 and say some words about worst case scenario.
 %#######################################################################################################################
 % SECTION 1 ############################################################################################################
 %#######################################################################################################################
@@ -114,7 +111,7 @@ In order to let low-energy transition radiation photons (created mainly by elect
 Also one want to keep material budget as low as possible in the ID to reduce multiple scattering,
 which is the main source of uncertainty of track $p_T$ measurement.
 
-All these requirements were considered during the design phase, and the optimal choise was used.
+All these requirements were considered during the design phase, and the optimal choice was used.
 The straw size is 4 mm in diameter. Walls are made from two layers of multilayer film. A section of the straw wall is shown in \FigureRef{fig:straw_wall_section}.
 The multilayer film consists of 6 $\mu$m thick carbon-polyimide layer, which protects a 0.2 $\mu$m thick Al layer, which is coated by 25 $\mu$m Kapton film.
 These two films are placed back to back and are glued by 5 $\mu$m thick polyurethane layer.
@@ -132,8 +129,7 @@ Section of the TRT straw tube wall.
 \end{figure}
 
 The active detector volume of a straw is a gas mixture which is flushed through the tubes with the help of the gas system.
-% TODO make similar chapter about transition radiation, same as Alex
-This mixture was carefully chosen in order to be safe to use (to prevent sparks that can perforate the walls), be compatible with the detector materials, and to not have dissociation products, after the electron avalanche, with aggressive properties that could chamically damage the straw.
+This mixture was carefully chosen in order to be safe to use (to prevent sparks that can perforate the walls), be compatible with the detector materials, and to not have dissociation products, after the electron avalanche, with aggressive properties that could chemically damage the straw.
 A high electron drift velocity is preferred, as well as a wide operating plateau (the high voltage range where straws work in the proportional regime). 
 The latter is important in order to have a
 safety margin in case the high voltage has to be changed to correct for temperature variations, to enhance signal to noise ratio (during operation, due to the radiation damage, the electronics becomes more noise) or to adjust for 
@@ -151,12 +147,12 @@ designed with a possibility to work with both Argon- and Xenon-based gas mixture
 \centering
 \includegraphics[width=.7\textwidth]{TRT/absorption_lenght_noble_gases.png}
 \caption{ 
-  Absorption lenght as a function of photon energy for heaviest noble gases. Plot is based on data reported in~\cite{Hubbell:353989}.
+  Absorption length as a function of photon energy for heaviest noble gases. Plot is based on data reported in~\cite{Hubbell:353989}.
 }
 \label{fig:absorption_lenght}
 \end{figure}
 
-In order to have well controlled electron avalanches in the straw, one has to add another gas component, a quencher. Tha main purpose of quencher is to absorb UV photons created in the avalanche process and prevent secondary avalanches, which can lead to an early breakdown.
+In order to have well controlled electron avalanches in the straw, one has to add another gas component, a quencher. The main purpose of quencher is to absorb UV photons created in the avalanche process and prevent secondary avalanches, which can lead to an early breakdown.
 After a dedicated study, reported in~\cite{Abat:2008zza}, it was decided to use carbon dioxide as a quencher due to suitable and well known properties.
 In order to increase the width of the operating plateau even more, a third gas component, oxygen, was added.
 By itself $O_2$ does not interact with UV photons, but ozone ($O_3$), which is created in the electron avalanches, does.
@@ -186,10 +182,6 @@ Straw gas gain as a function of high voltage for different gas mixtures. Source:
 
 \subsection{Front-end electronics and signal processing}
 \label{subsubsec:front_end_electronics}
-
-% TODO toWrite 1) idea of the signal digitization. Explain plot \FigureRef{pulseDigitization}. Say that we want to measure drift time of the electrons!
-% TODO toWrite 2) But we have ions as well. Explain plot \FigureRef{fig:ion_tail}
-% TODO toWrite 3) Start explanation of the ASDBLR chip. Explain that it kill ion tail with shaping function. Explain triggering over the two thresholds: LT - for tracking; HT - electron PID.
 
 The main purpose of the TRT is to provide hits for track reconstruction and information for electron identification by detecting transition radiation photons.
 In order to get the best possible hit position resolution of hits one needs not only to have a possibility to identify which straws particle traversed,
@@ -243,7 +235,7 @@ The second threshold is used for the case of transition radiation photon detecti
 Contrary to the high-energetic particles, transition radiation photons deposit all their energy essentially in one point when interacting with gas.
 This corresponds to a large number of primary electrons, which leads to a strong read-out signal.
 The aim of the second threshold, the so-called High Threshold (HT), is to be fired on such cases, this is why it is significantly higher than LT.
-Threshold values used for the Xenon-based gas mixture correspond to 300 eV and 6 keV for LT and HT, correspondly.
+Threshold values used for the Xenon-based gas mixture correspond to 300 eV and 6 keV for LT and HT respectively.
 Discrimination against HT is done per BCID. 
 
 In total, the ASDBLR chip provides 24+3 bits, which corresponds to 24 LT bits and 3 HT bits over the 75 ns read-out window.
@@ -276,12 +268,6 @@ The overall TRT read-out chain is shown in \FigureRef{fig:electronics}. The deta
 
 \subsection{Tracking with the TRT}
 \label{subsec:tracking_with_trt}
-% TODO explain here
-% 1) shortly about ID tracking 
-% 2) TRT improvement of momentum resolution
-% 3) TRT hit and track parameters
-% 4) definition of the time and hit residuals. Use the same picture as Alex has in his thesis.
-% 5) definition of tube and precision hits!!
 
 The track reconstruction algorithm require a list of spatial hits and a corresponding error matrices in order to build a track. The TRT electronics provide drift time measurements which can be transformed to the
 drift radius (drift distance of the electron cluster which reached the anode wire first), which can be used in the track reconstruction.
@@ -291,7 +277,7 @@ The measured leading edge consists of the signal from particle
 consists of two components: the actual drift time of electrons $t$ and the calibration constant $T_{0}$, as illustrated in \FigureRef{fig:pulseDigitization}.
 The calibration constant $T_{0}$ is made of three components:
 \begin{itemize}
- \item Collision time with respect to the edge of the LHC clock. Length of the LHC bunches is typically 1.1-1.2 ns, and collisions are happening along the whole bunch length.\\ \toDo[ask Alex about this!]
+ \item Collision time with respect to the edge of the ATLAS clock. Since there could be some uncompensated delays due to propagation in the wires and electronics.
  \item Time of flight of particle to the straw. Straws are placed at a distance from 0.5 to 2.6 meters from the interaction point, 
  which corresponds to up to 9 ns needed for a relativistic particle to reach the farthest straws.
  \item Time of the signal propagation in the wire to the front-end electronics, typically a few nanoseconds.
@@ -326,9 +312,8 @@ There are two types of the TRT hits: precision hits and tube hits. Precision hit
 information is not used, but only the fact that there is a hit in the straw. For such hits, the drift radius is assigned to be 0 mm, and the hit error is $\frac{d}{\sqrt{12}}$, where
 $d$ is a diameter of the straw (4 mm). Tubes hits are defined during the track fitting for hits which have difference between track and drift radius larger than
 2.5 times the uncertainty of the drift radius. Since the track fitting is done iteratively, some hits can go back and forth from being tube or precision hits.
-Tube hits decrease quality of the track, which correlates with detector resolution.
+% Tube hits decrease quality of the track, which correlates with detector resolution.
 
-% TODO reference for a used formula
 Main TRT detector contribution for tracking is an improvement of the momentum resolution of tracks measured with Inner Detector. Large number of hits in TRT provide
 a solid handle to measure curvature of the track which translates to measurement of the track momentum. Momentum resolution can be expressed by following formula~\cite{mom_res_book,Gluckstern:1963ng}:
 \begin{equation}
@@ -345,7 +330,7 @@ where $p_T$ is a transverse momentum of the track and $\delta p_T$ is its error,
 [c^2] = \dfrac{\sigma^2}{L^4}\dfrac{720 N^3}{(N-1)(N+1)(N+2)(N+3)}
 \end{equation}
 $\sigma$ is spatial resolution of the hit, $B$ is magnetic field, $L$ is the length of the measured track.
-As can be seen from formulae above, momentum resolution is proportional to the spatial resolution of the hits and is inversely proportional to the square root of 
+As can be seen from formula above, momentum resolution is proportional to the spatial resolution of the hits and is inversely proportional to the square root of 
 number of hits. Therefore spatial resolution and number of hits are parameters of interest during the tracking performance studies.
 
 Importance of the TRT for the momentum resolution measurements can be seen in \FigureRef{fig:improvement_of_momentum_resolution}.
@@ -399,7 +384,7 @@ Typical MC generators used in ATLAS
  %  TODO references!!!
  It is done using the GEANT4~\cite{Agostinelli:2002hh} package, which returns a list of hits, the so-called simulation hits, or simply ``simhits'', which contain position and timing information of 
  the interaction together with the amount of energy lost by the particle due to the interaction (deposited in the detector material).
- \item Digitization. Energy depositions in the detector creates an analog signals which are read and processed by the read-out electronics. During the digitization step, behaviour of the front-end electronics is simulated together with the signal processing, in order to simulate the same outputs (measured quantities) as the real electronics provide (e.g. hit in the pixel or strip,
+ \item Digitization. Energy depositions in the detector creates an analog signals which are read and processed by the read-out electronics. During the digitization step, behavior of the front-end electronics is simulated together with the signal processing, in order to simulate the same outputs (measured quantities) as the real electronics provide (e.g. hit in the pixel or strip,
  digitized current from the PMT or calorimeter cell, etc.). Due to the different read-out electronics designs for different sub-detectors, the digitization software is different for each sub-detector.
  Such software is written and maintained by each sub-detector community separately.
  \item Reconstruction. The final step is to collect all information from sub-detectors together, apply all the needed calibration and alignment corrections and reconstruct physics objects. This step is identical to the one applied to the real data, only that the mentioned above corrections can be different for simulated and real 
@@ -484,12 +469,12 @@ and proper implementation of all of them was done.
 Before the description of the details of the Argon mixture simulation and digitization one need to briefly explain how digitization code works and how Argon option was embedded in the code itself.
 % TODO [Oxana] add some concrete description of the digitization package, as which language it is written, block diagram of the code-flow and so on.
 All tubes in the code inherit geometry of the ``ideal'' tube, defined during the designed phase. But each tube has some unique charachteristics. It has concrete position, 
-which linked with value of magnetic field in the straw. It can be dead, which means that straw will be skept in the digitization.
+which linked with value of magnetic field in the straw. It can be dead, which means that straw will be skipped in the digitization.
 When GEANT4 propagate particles, originated in the collision, it simulates interaction of the particle with matter in order to obtain array of simulation hits, where any energy deposition to the 
 detector material took place. Digitization code take list of simulated hits and loop over all of them for each track. If track hit a TRT straw, processing of the straw begins.
-First step is to check if straw is dead or not by accesing information from the straw database.
+First step is to check if straw is dead or not by accessing information from the straw database.
 If it is not dead, a drift time simulation is done.
-Argon implementation was done by assigning each straw additional charachteristic, type of used gas mixture. This information is also stored in the straw status database.
+Argon implementation was done by assigning each straw additional characteristic, type of used gas mixture. This information is also stored in the straw status database.
 After cross check if the straw is dead or not, the type of gas mixture is defined by taking information from the database.
 Then simulation of any parameters, described above, are done accordingly to the type of the gas mixture.
 It is worth to mention that such approach allows to simulate detector mixed gas configurations, when part of the detector is operated with Xenon and other one with Argon mixtures.
@@ -499,9 +484,9 @@ It is worth to mention that such approach allows to simulate detector mixed gas 
 During the development phase of the TRT simulation and digitization software it was found that the GEANT4 simulation does not provide accurate enough description of the physics
 of a charged particle passing through the very thin gas layers (straws). 
 % Kittelman thesis, p.92, Figure 9.2.
-In ~\cite{kittelmann_thesis} the author made a comparison of the photo-absorption cross section parameterisation used in GEANT4 with the more detailed one provided by I. Gavrilenko.
-Even though the difference between these two parameterisations was small, using them in the code led to a 7$\%$ difference in the mean free path length, which is significant for the TRT straw simulation.
-That is why a dedicated model, the so-called photo-absorption ionisation (PAI) model~\cite{pai_model_paper}, is now used to simulate deposited energy in the straw.
+In ~\cite{kittelmann_thesis} the author made a comparison of the photo-absorption cross section parameterization used in GEANT4 with the more detailed one provided by I. Gavrilenko.
+Even though the difference between these two parameterizations was small, using them in the code led to a 7$\%$ difference in the mean free path length, which is significant for the TRT straw simulation.
+That is why a dedicated model, the so-called photo-absorption ionization (PAI) model~\cite{pai_model_paper}, is now used to simulate deposited energy in the straw.
 This model derives ionization cross section for a charged particle with a given gamma factor numerically from the tabulated values of photo absorption cross section for the gas.
 The missing piece for the Argon-based gas mixture simulation was the lack of the photo absorption cross section for Argon itself in the code.
 Cross section as a function of photon energy reported in~\cite{argon_cross_section} was therefore taken and implemented in the code.
@@ -529,9 +514,9 @@ When a charged particle traverse active gas volume of the straw, it interacts wi
 It can either ionize them by kicking out an electron, or it can excite them. Energy needed to kick out a least bound shell electron for TRT gases lays
 in the range of 10-20 eV. But a part of the energy goes to the excitation of gas molecules, this is why the average energy needed to create an ion pair (the so-called W-value) is higher than the energy needed to 
 kick out an electron from shell. The list of these values for all gases used in TRT is shown in \TableRef{tab:ionization_energy}.
-Using the values from the table and knowing the gas mixture proportions (70/27/3 $\%$) one can estimate the average energy for Xenon-based mixture, which is equal to 25.3 eV.
+Using the values from the table and knowing the gas mixture proportions (70/27/3 $\%$) one can estimate the average energy for Xenon-based mixture, which is equal to 25.3~eV.
 
-The W-value for Argon-based mixture was calculated in the same manner and is equal to 28.3 eV, which is implemented in the digitization code.
+The W-value for Argon-based mixture was calculated in the same manner and is equal to 28.3~eV, which is implemented in the digitization code.
 The number of primary electrons, $N_{prim.electrons}$, is calculated by the formula:
 % TODO probably it's worth to explain why we need +1
 \begin{equation}
@@ -616,7 +601,7 @@ Movement of the electron in the gas contains a stochastic component due to colli
 That means that the drift time can differ for clusters which drift the same distance.
 The spread of the drift time as a function of the drift distance is shown in \FigureRef{fig:diffusion}.
 Black points correspond to the drift time spread obtained with the Garfield simulation for the Argon gas mixture.
-In the digitization code, the spread is parametrized by a 4-th order polynomial, which was used for the Argon modelling as well,
+In the digitization code, the spread is parameterized by a 4-th order polynomial, which was used for the Argon modelling as well,
 in order to preserve consistency (the spread of the drift time is shown with red and green points in \FigureRef{fig:diffusion} for Xenon and Argon accordingly).
 
 \begin{figure}
@@ -673,7 +658,7 @@ by a pin on the board itself): two for Xenon and two for Argon mixtures. Two set
 \begin{figure}
 \begin{center}
  \includegraphics[width=0.69\columnwidth]{TRT/shaping.eps}
-\caption{Argon low threshold shaping function compared to the Xenon low and high treshold shaping functions.}
+\caption{Argon low threshold shaping function compared to the Xenon low and high threshold shaping functions.}
 \label{fig:shaping}
 \end{center}
 \end{figure}
@@ -692,8 +677,8 @@ To get a similar hit efficiency the low threshold for Argon has to be lower.
 Moreover, the threshold can have different values for barrel and end-cap parts. This is due to the fact that the end-cap straws are positioned perpendicular to the barrel straws (see \FigureRef{pic???}), % picture of posituining of end-cap and barrel straws.
 which changes behavior of the drifting electrons in the tubes due to the different orientation of the magnetic field.
 Possibility to set separate thresholds for Argon tubes was implemented in the code.
-After preliminary studies in the laboratory it was found that the low threshold for Argon has to be around 100 eV, 
-while for Xenon straws this value is 285 eV for Barrel and 300 eV for end-cap detectors. The 100 eV value was used in the code.
+After preliminary studies in the laboratory it was found that the low threshold for Argon has to be around 100~eV, 
+while for Xenon straws this value is 285~eV for Barrel and 300~eV for end-cap detectors. The 100~eV value was used in the code.
 Low threshold values are the main parameter of interest for the Monte Carlo simulation tuning.
 
 \subsection{White noise modelling}
@@ -705,7 +690,7 @@ but doesn't belong to the track, or appearance of a spontaneous electron cluster
 However, it was decided to model the so-called white noise, which consists of high-frequency uncorrelated small fluctuations of the Gaussian nature which 
 can pile up high enough to reach a threshold. This kind of source can appear for many reasons, for example from thermal noise of capacitors in the front-end electronics
 or noise from the anode wire. A noise model was developed by the TRT community in order to reproduce noise levels in the detector.
-The model does not explain the reasons of the noise, but quantively describes noise levels based on few simple assumptions.
+The model does not explain the reasons of the noise, but numerically describes noise levels based on few simple assumptions.
 % TODO what about rad damage?? will change during ops.
 % 	as I understand LTs are changed in order to keep noise level constant --> no need to change modelling of the noise, because it is the same, even if detector become more damaged by radiation with time...
 Some of these assumptions are:
@@ -736,12 +721,12 @@ A noise amplitude, according to the model, is equal to:
  \mathcal A_{i} = r_{i} \cdot \dfrac{\langle LT \rangle}{\langle f_i \cdot r_i \rangle}
  \label{eq:ampl_noise}
 \end{equation}
-where $r_{i}$ is a parameter which depends on the lengh of the straw and is modelled with a Gaussian with mean $\mu_i = c_1 l + c_2$, 
+where $r_{i}$ is a parameter which depends on the length of the straw and is modelled with a Gaussian with mean $\mu_i = c_1 l + c_2$, 
 where $l$ is the length of the wire in the straw and $c_1$ and $c_2$ are empirical parameters.
 % TODO add reference to sentence above, about the empirical parameters
 The Gaussian width is equal to $\sigma_i = \omega \mu_i$, where $\omega$ is a free parameter which characterizes
 relative channel-to-channel spread in noise amplitudes.
-$\langle LT \rangle$ is the average of the low thresholds for all tubes. In practise, this value is equal to low thresholds of ``ideal'' straws 
+$\langle LT \rangle$ is the average of the low thresholds for all tubes. In practice, this value is equal to low thresholds of ``ideal'' straws 
 implemented in the code.
 $f_{i}$ is a noise level of the $i$'th straw. This value is generated based on the distribution of straw noise level measured in test beam studies in 2004 
 (the distribution is reported in~\cite{kittelmann_thesis}).
@@ -809,6 +794,9 @@ Distributions considered in this study are:
 In order to make a performance comparison of Xenon and Argon straws taking into account used gas configuration shown in \FigureRef{fig:argonModulesIn2013},
 only straws in the first barrel layer were considered, because only the first layer contained some straws with Argon and some - with Xenon 
 (while second and third were operating fully with Xenon, as shown in \FigureRef{fig:argonModulesIn2013}).
+It's worth to mention that first layer of the TRT consists from two types of straws: regular and short, while second and third layer - only from regular straws.
+Short straw were introduced to the first layer during the design phase in order for TRT to
+better cope with high-$\mu$ running condition and to keep occupancy on lower level.
 Each layer of the TRT barrel part is split into 32 modules, which are placed radially. 
 Modules 1-28 contained Xenon mixture and modules 29-32 contained Argon mixture.
 For the end-cap detector part, only one wheel in one side was operating with Argon. Therefore for comparison the same wheel number from the other side was used in order
@@ -835,7 +823,7 @@ Argon $r-t$ distribution is shorter by a few nanoseconds than the Xenon one, whi
 \end{figure}
 
 Faster drift velocity of electrons in the Argon led to a worse position resolution,
-because the time drift is digitized in bins of 3.125 ns and, if the total measured drift time is shorter the bin width matters more.
+because the time drift is digitized in bins of 3.125~ns and, if the total measured drift time is shorter the bin width matters more.
 It can be observed in \FigureRef{fig:resFit}. Worse position residual means that the momentum resolution will also become worse, according to the
 \EquationRef{eq:momentum_resolution}. Nevertheless, difference between Argon and Xenon is small.
 
@@ -874,12 +862,12 @@ simulation fit - with solid black line.}
 The second parameter of interest is the reconstructed hit efficiency $\varepsilon$. It is calculated using \EquationRef{eq:hit_eff}.
 Distribution of $\varepsilon$ for Argon and Xenon, both for barrel and end-cap parts, are shown in \FigureRef{fig:hit_eff_rtrack_bar}.
 Argon straws have higher hit efficiency. To understand this effect one has to recall that the low threshold settings
-for Xenon and Argon straws are quite different (300 eV versus 100 eV). Smaller low threshold for Argon was chosen 
+for Xenon and Argon straws are quite different (300~eV versus 100~eV). Smaller low threshold for Argon was chosen 
 in order to compensate for the fact that the same particle will produce a smaller number of primary electron clusters in Argon, 
 and number of electrons in the cluster will be smaller. It means that the signal from Argon tubes is weaker, which means
 that the threshold has to be lower as well. Still, we observe higher efficiency for Argon than for Xenon. After some investigation
 it was found that quite often in order for the signal to reach the low threshold, a two or more primary electron clusters have to reach the anode wire in
-Xenon straws, while in Argon in most cases only one first cluster is enough to reach a low threshold.
+Xenon straws, while in Argon in most cases only one first cluster is enough to reach a low threshold. This is caused due to a few times lower LT in Argon with respect to the one in Xenon.
 In order to equalize hit efficiency between Argon and Xenon, low threshold for Xenon tubes can be slightly increased.
 In \FigureRef{fig:hit_eff_rtrack_bar} hit efficiency is shown as a function of track to wire distance. 
 It is stable throughout the straw radius except for the values close to 2 mm, which corresponds
@@ -902,7 +890,7 @@ The number of primary ionization clusters is thus very small, hence hit efficien
 
 % \includegraphics[width=0.75\textheight]{monoW/kinematics_simplifiedSChannel_EFT_Wprime.png}
 \caption{Hit reconstruction straw efficiency as a function of track to wire distance 
-for Xenon (left) and Argon (right) straws in Barrel (top) amd End-cap (bottom) detectors.}
+for Xenon (left) and Argon (right) straws in Barrel (top) and End-cap (bottom) detectors.}
   \label{fig:hit_eff_rtrack_bar}
 \end{figure}
 
@@ -958,9 +946,12 @@ Unfortunately, there were no such data available, thus the comparison is done on
 all tubes contain either Argon mixture or Xenon mixture. In \FigureRef{fig:track_ext_fraction}, track extension fraction is shown. This parameter characterizes
 probability to find continuation of the track reconstructed in the silicon part of the Inner Detector in the TRT.
 In the barrel region the fraction is flat, except for the region around $\eta = 0$. This can be explained by inefficiency of the first few layers of straws in the barrel region.
-First layers of the barrel region contain shorter straws compared to other layers. It was done in order to deal with the occupancy at high $\mu$.
-These short straws have glass joints at $\eta = 0$, which make them inefficient in that region. This is why a drop in the extension fraction is observed.
-Behaviour in the end-cap region can be explained by the geometrical factor, because in the intermediate region between the barrel and end-caps particles
+First layers of the barrel region contains shorter straws compared to other layers. 
+As it was mentioned before short straws help to deal with the occupancy at high $\mu$.
+These short straws are splitted to three parts by two glass joints. And only two outer 
+straw part are read out by electronics, why middle part (which is placed around $\eta=0$) is not read, thus, it is inefficient region of the detector. 
+This is why a drop in the extension fraction is observed.
+Behavior in the end-cap region can be explained by the geometrical factor, because in the intermediate region between the barrel and end-caps particles
 traverse smaller number of straws and with increasing $\eta$ number of straws is increasing.
 One can observe that the fraction is slightly higher for the Argon straws. It can be explained by the higher reconstruction hit efficiency and the larger number of hits per
 track for Argon tubes.
@@ -977,7 +968,7 @@ track for Argon tubes.
 \label{sec:trt_summary}
 
 Implementation of the new Argon gas mixture to the TRT digitization code was presented. As shown above simulation of Argon gas mixture works very well. though 
-fine tuning of the simlation is needed.
+fine tuning of the simulation is needed.
 Tracking performance of the TRT was compared for the case of Argon and Xenon gas mixtures and it was found that tracking performance is not significantly affected
 by the gas mixture used. That conclude that operating of the TRT with some part with Argon mixture will not affect tracking performance.
 

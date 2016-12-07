@@ -452,90 +452,52 @@ Obtained efficiencies are shown in \FigureRef{fig:matrix_method_efficiencies}.
   \label{fig:matrix_method_efficiencies}
 \end{figure}
 
-Systematic uncertainty were estimated for both ``real'' and ``fake'' muon efficiencies, 
-but due to really small contribution of the ``fake'' background to the signal region (at most approximately 1$\%$) the impact of its systematic uncertainties on the total background was found to be negligible.
+Systematic uncertainty were estimated for both ``real'' and ``fake'' muon efficiencies.
 
-\subsection{Background extrapolation}
-% TODO explain why it hurts to have huge statistical fluctuation for limit settings 
-% TODO (it was somewhere in the note?)
-% % from app_muonSmooth.tex:
-% In a single-bin statistical analysis,
-% it is straight forward to take into account the statistical uncertainty of the MC background
-% estimates, as one can simply add it in quadrature to the systematic uncertainties on the
-% background level in the search region. However, in a multi-bin analysis, results depend on
-% the shape of the background distribution, and one should avoid propagating clearly unphysical features
-% in this shape to the final results.
 
-MC simulation of the top and diboson background processes were available only as an inclusive samples,
-thus they didn't provide enough statistics in the high-$m_T$ region.
-Therefore these backgrounds were fitted in the low-$m_T$ region and extrapolated to obtain smooth description in the high-$m_T$ region.
+``Fake'' muon efficiency uncertainty was estimated by variation of the requirements for ``fake'' muon control region. These variations are:
+% TODO rewrite list!!!
+\begin{itemize}
+\item Removing the $Z$ veto and $\Delta\phi_{\mu,\met}$ cuts.
+\item Removing the $Z$ veto and $\Delta\phi_{\mu,\met}$ cuts, but tightening the $d_0$ significance
+cut to $2$.
+\item Removing the $d_0$ significance cut. 
+\item Using a tighter $d_0$ significance cut of $2$.
+\item Removing the jet requirement.
+\item Removing the jet requirement, but tightening the $d_0$ significance
+cut to $2$.
+\item Requiring $\met < 20~\GeV$.
+\item Requiring $\met > 20~\GeV$ (but still $\met < 55~\GeV$).
+\end{itemize}
+Effect on the ``fake'' muon efficiency is shown in \FigureRef{fig:matrix_method_systematics} (right).
 
-% TODO this is from Marcus --> change phrasing!!!
-The fit was done with functions that are commonly used to extrapolate the background, such as
-in the search for di-jet resonances~\cite{???} and also have been used in the $8~\TeV$ dilepton resonance search~\cite{???}.
- The first function used to extrapolate the background is defined as follows:
-\begin{equation}
- f(\mt) = e^{-a} m_\mathrm{T}^{b} m_\mathrm{T}^{c \log(m_\mathrm{T})}.
-  \label{eq:dijetfunc}
-\end{equation}
-The second function is a modified power law function:
-\begin{equation}
- f(\mt) = \frac{a}{(m_\mathrm{T}+b)^{c}}.
-  \label{eq:powerlaw}
-\end{equation}
-Several fits are performed with both functions and varying start and end point of the fit range. The fit with the best $\chi^{2}/N.d.o.f$ of all fits is taken
-as central value for the extrapolation and the envelope of all fits as systematic uncertainty for the extrapolation. The statistical uncertainty of the fit parameters
-has found to be negligible.\\
+Since ``real'' muon efficiency is obtained from MC simulation one can use efficiency obtained with tag-and-probe method using muon pairs in the invariant mass window $80 < m_{\mu\mu} < 102~\GeV$ from $Z\to\mu\mu$ decays as a systematic uncertainty variation. It is shown in \FigureRef{fig:matrix_method_systematics} (left).
 
-For the top background, the
-starting point of the fit range was varied from $140$~GeV to $260$~GeV in steps of $20$~GeV. The end point
-was varied from $600$~GeV to $900$~GeV in steps of $25$~GeV. For the diboson background,
-the starting point of the fit range was varied from $120$~GeV to $240$~GeV in steps of $20$~GeV. The end point
-was varied from $500$~GeV to $700$~GeV in steps of $25$~GeV. The extrapolated background was stitched to the background
-estimated with Monte Carlo at $\mt=600$~GeV in both the top and diboson cases. 
-
-The results are shown for the top background in
-Fig.~\ref{fig:mu_extrapolate_top} and for the diboson background in Fig.~\ref{fig:mu_extrapolate_diboson}.
-Both figures show the full set of different fits (left) as well as the assigned central value
-and corresponding systematic uncertainty (right). The central value is taken to be the fit with the best $\chi^2$
-and the systematic uncertainty is taken as the envelope.
-\begin{figure}[!htb]
+\begin{figure}[]
   \centering
-  \includegraphics[width=0.49\textwidth]{Wprime/top_extrapolate_fits.eps}
-  \includegraphics[width=0.49\textwidth]{Wprime/top_extrapolate.eps}
-  \caption{Results of fitting and extrapolation for the top background. Both the full set of individual
-fits (left) and the resulting central value and uncertainty (right) are shown.}
-  \label{fig:mu_extrapolate_top}
-\end{figure}
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[width=0.49\textwidth]{Wprime/diboson_extrapolate_fits.eps}
-  \includegraphics[width=0.49\textwidth]{Wprime/diboson_extrapolate.eps}
-  \caption{Results of fitting and extrapolation for the diboson background. Both the full set of individual
-fits (left) and the resulting central value and uncertainty (right) are shown.}
-  \label{fig:mu_extrapolate_diboson}
+  \includegraphics[width=0.45\textwidth]{Wprime/realEffVariations.eps}
+  \includegraphics[width=0.45\textwidth]{Wprime/fakeEffVariations.eps}
+  \caption{Systematic variations of the ``real'' (left) and ``fake'' (right) muon efficiencies as a function of muon $p_T$.}
+  \label{fig:matrix_method_systematics}
 \end{figure}
 
-% TODO add extrapolation of the multijet background!!!
-In order to extend the multijet background estimates beyond the region where there is sufficient statistics, a simple power law fit is performed, which was found to be the most appropriate choice according to 8 TeV analysis~\cite{wprime_8TeV}:
-\begin{equation}
-\frac{dN}{d m_T} = a\, m_T^{-b}
-\end{equation}
-with $a$ and $b$ as the fitted parameters. Fits are done in the ranges
-$150$--$300~\GeV$ and $200$--$300~\GeV$.
+Impact of the systematic variations of the efficiencies on the final $m_T$ spectrum of the multijet background will be discussed in \SectionRef{subsec:multijet_systematcs}.
 
 %*******************************************************************************
 % VALIDATION REGIONS
 %*******************************************************************************
 
-\section{Validation Region}
-To validate the ``fake'' muon background estimate and MC description of the ``real'' muon backgrounds, and also to ensure that
-all cut variables used in the definition of the fake muon control region are reasonably
-well described in the MC,
-a validation region is used, which is defined in the same way as signal selection but without the $E_T^{miss}$ and $m_T$ requirements. Validation region with and without using isolation requirements
-are shown which correspond to tight and loose muon definitions used in the matrix method.
+\subsection{Multijet validation region}
 
-The validation distributions of variables, used in the definition of the ``fake'' muon control region, are shown in \FigureRef{fig:muMMval1}.
+\toAsk[this subsection has to be carefully reviewed]
+
+To test data-driven prediction of the multijet background one want to find a region
+where its contribution will be enhanced. Also region has to be kinematically 
+close to the signal selection.
+A validation region is defined in the same way as the signal selection but without the $E_T^{miss}$ and $m_T$ requirements. Also distribution with and without using isolation requirements are considered, 
+which corresponds to tight and loose muon definitions used in the matrix method described above.
+
+The validation distributions of variables, used in the definition of the enhanced ``fake'' muon control region, are shown in \FigureRef{fig:muMMval1}.
 In general, reasonable agreement is observed. The most obvious discrepancy is seen in the
 distribution of the number of jets. The disagreement is likely mostly due to the modeling
 of jet emission in the $W\to\mu\,\nu$ MC, where only one jet emission is included at the
@@ -550,12 +512,15 @@ the $N_\mathrm{jet}$ is negligible as well.
 % TODO think about some additional description here!
 % TODO check in the Magnars thesis
 Distribution of the $E_T^{miss}$, muon momentum and $m_T$ are shown in \FigureRef{fig:muMMval2}.
-As one can note in the loose muon sample contribution of the multijet background are  significantly enhanced with respect to tight sample. Reasonable good agreement between data and background prediction in this sample proves validity of the data-driven jet background method.
+As one can note in the loose muon sample contribution of the multijet background are significantly enhanced with respect to the tight sample. 
+Taking into account size of systematic uncertainties, discussed in \SectionRef{sec:wprimeSystematics}, data and background prediction agrees reasonably which proves validity of the data-driven jet background method.
 The tight muon sample includes isolation requirement and thus contribution from multijet background is significantly reduced. Also because no $E_T^{miss}$ and $m_T$ are applied 
 there are significantly more statistics available than in the signal region which allows 
 to test overall background prediction. In general, reasonable agreement is observed. 
 
-\toAsk[can I say something more here?]
+\toAsk[Is explanation above good enough?]
+
+\toDo[more discussion here?]
 
 \begin{figure}[]
   \centering
@@ -588,6 +553,72 @@ to test overall background prediction. In general, reasonable agreement is obser
   \label{fig:muMMval2}
 \end{figure}
 
+
+\subsection{Background extrapolation}
+% TODO explain why it hurts to have huge statistical fluctuation for limit settings 
+% TODO (it was somewhere in the note?)
+% % from app_muonSmooth.tex:
+% In a single-bin statistical analysis,
+% it is straight forward to take into account the statistical uncertainty of the MC background
+% estimates, as one can simply add it in quadrature to the systematic uncertainties on the
+% background level in the search region. However, in a multi-bin analysis, results depend on
+% the shape of the background distribution, and one should avoid propagating clearly unphysical features
+% in this shape to the final results.
+
+MC simulation of the top and diboson background processes were available only as an inclusive samples,
+thus they didn't provide enough statistics in the high-$m_T$ region.
+Therefore these backgrounds were fitted in the low-$m_T$ region and extrapolated to obtain smooth description in the high-$m_T$ region.
+
+% TODO this is from Marcus --> change phrasing!!!
+The fit was done with functions that are commonly used to extrapolate the background, as an example in the $8~\TeV$ dilepton resonance search~\cite{Aad:2014cka}.
+The first considered function is defined as::
+\begin{equation}
+ f(\mt) = e^{-a} m_\mathrm{T}^{b} m_\mathrm{T}^{c \log(m_\mathrm{T})}.
+  \label{eq:dijetfunc}
+\end{equation}
+The second one is:
+\begin{equation}
+ f(\mt) = \frac{a}{(m_\mathrm{T}+b)^{c}}.
+  \label{eq:powerlaw}
+\end{equation}
+These two functions were used to preform fit of the backgrounds in different ranges. 
+The best fit according to $\chi^{2}/N.d.o.f$ value have been used as a central value.
+The systematic uncertainty is taken as the envelope of all fits.
+Statistical uncertainty of the fit was found to be negligible.
+
+The starting range for the top background was in the range from $140$~GeV to $260$~GeV in steps of $20$~GeV. The end fit point - from $600$~GeV to $900$~GeV in steps of $25$~GeV.
+For diboson background these value were from $120$~GeV to $240$~GeV and from $500$~GeV to $700$~GeV with the same step widths as for top.
+The extrapolation was stitched to the background estimated with Monte Carlo at $\mt=600$~GeV in both cases.
+
+Fits and appropriate systematic uncertainty estimations are shown in 
+\FigureRef{fig:mu_extrapolate_top} fo the top and in \FigureRef{fig:mu_extrapolate_diboson} for the diboson backgrounds.
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.49\textwidth]{Wprime/top_extrapolate_fits.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/top_extrapolate.eps}
+  \caption{Fit and extrapolation of the top background. Both the full set of individual
+fits (left) and the resulting central value and uncertainty (right) are shown.}
+  \label{fig:mu_extrapolate_top}
+\end{figure}
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.49\textwidth]{Wprime/diboson_extrapolate_fits.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/diboson_extrapolate.eps}
+  \caption{Fit and extrapolation of the diboson background. Both the full set of individual
+fits (left) and the resulting central value and uncertainty (right) are shown.}
+  \label{fig:mu_extrapolate_diboson}
+\end{figure}
+
+The multijet data-driven background estimation also suffers from large statistical fluctuation at high-$m_T$ region, thus, similar fitting and extrapolation is done as well.
+A simple power law fit is performed, which was found to be the most appropriate way according to the 8 TeV analysis~\cite{wprime_8TeV}:
+\begin{equation}
+\frac{dN}{d m_T} = a\, m_T^{-b}
+\end{equation}
+Fits are done in the ranges $150$--$300~\GeV$ and $200$--$300~\GeV$.
+The extrapolation was stitched to the multijet background estimate $\mt=300$~GeV.
+
+% TODO where it was stitched?
+
 %*******************************************************************************
 % SYSTEMATICS
 %*******************************************************************************
@@ -595,9 +626,9 @@ to test overall background prediction. In general, reasonable agreement is obser
 \section{Systematic Uncertainties}
 \label{sec:wprimeSystematics}
 \subsection{Muon efficiency, resolution and scale}
-The muon efficiency corrections from the MCP group are obtained using the tag and probe method
+The muon efficiency corrections from the MCP group are obtained using the tag-and-probe method
 on $Z\to\mu\mu$ and $J/\psi\to\mu\mu$ decays in data~\cite{MCP13TeV}. Systematic uncertainties
-are derived from variations of the tag and probe selection, background subtraction etc. following
+are derived from variations of the tag-and-probe selection, background subtraction etc. following
 the methodology documented in ref.~\cite{MCPrun1}.
 
 The muon momentum corrections from the MCP are obtained by fitting certain correction constants 
@@ -656,6 +687,30 @@ Trigger systematics is evaluated by the ATLAS trigger group and it is related to
 efficiency of muons with different $\eta$ and $p_T$.
 Luminosity uncertainty was estimated in the same way as described in \SectionRef{sec:lucid_performance}, however current analysis is using preliminary luminosity
 uncertainty equal to 5$\%$ which was obtained from preliminary calibration of the luminosity scale done with using data from vdM scans in August 2015.
+
+\subsection{Multijet background}
+\label{subsec:multijet_systematcs}
+
+Systematic variations on the ``real'' and ``fake'' efficiency used in the matrix method were
+described previously in \SectionRef{subsec:matrix_method}.
+Multijet background have a very small contribution to the muon signal selection, as can be seen in 
+\FigureRef{fig:muMMfinal} (left), where fraction of the multijet background to the total background
+after the final selection is shown as function of $m_T$. Thus affect from the systematic
+variations of the matrix method efficiencies on the total background is small as well, as shown in
+\FigureRef{fig:muMMfinal} (right). 
+Systematic uncertainty on the total background is at level of 1 $\%$ for $m_T<4$~TeV and less than 2$\%$ for $m_T>4$~TeV.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.49\textwidth]{Wprime/totalBGfrac.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/totalBGsys.eps}
+  \caption{The fraction that the fake muon background constitutes of the total background
+as function of \mt\ (left) and the effect of systematics variations on the total background
+level as function of \mt\ (right). The power law fits are used for the fake muon background above
+$\mt=300~\GeV$. In the left plot, the fit range $150$--$300~\GeV$ is used, and in the right plot, the
+range $150$--$300~\GeV$ corresponds to solid lines and $200$--$300~\GeV$ to dashed lines.}
+  \label{fig:muMMfinal}
+\end{figure}
 
 \subsection{Summary}
 \TableRef{tab:syst} lists the various systematic uncertainty sources

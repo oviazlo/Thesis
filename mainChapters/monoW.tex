@@ -452,8 +452,111 @@ Obtained efficiencies are shown in \FigureRef{fig:matrix_method_efficiencies}.
   \label{fig:matrix_method_efficiencies}
 \end{figure}
 
-Systematic uncertainty were estimated for both ``real'' and ``fake'' muon efficiencies, 
-but due to really small contribution of the ``fake'' background to the signal region (at most approximately 1$\%$) the impact of its systematic uncertainties on the total background was found to be negligible.
+Systematic uncertainty were estimated for both ``real'' and ``fake'' muon efficiencies.
+
+
+``Fake'' muon efficiency uncertainty was estimated by variation of the requirements for ``fake'' muon control region. These variations are:
+% TODO rewrite list!!!
+\begin{itemize}
+\item Removing the $Z$ veto and $\Delta\phi_{\mu,\met}$ cuts.
+\item Removing the $Z$ veto and $\Delta\phi_{\mu,\met}$ cuts, but tightening the $d_0$ significance
+cut to $2$.
+\item Removing the $d_0$ significance cut. 
+\item Using a tighter $d_0$ significance cut of $2$.
+\item Removing the jet requirement.
+\item Removing the jet requirement, but tightening the $d_0$ significance
+cut to $2$.
+\item Requiring $\met < 20~\GeV$.
+\item Requiring $\met > 20~\GeV$ (but still $\met < 55~\GeV$).
+\end{itemize}
+Effect on the ``fake'' muon efficiency is shown in \FigureRef{fig:matrix_method_systematics} (right).
+
+Since ``real'' muon efficiency is obtained from MC simulation one can use efficiency obtained with tag-and-probe method using muon pairs in the invariant mass window $80 < m_{\mu\mu} < 102~\GeV$ from $Z\to\mu\mu$ decays as a systematic uncertainty variation. It is shown in \FigureRef{fig:matrix_method_systematics} (left).
+
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.45\textwidth]{Wprime/realEffVariations.eps}
+  \includegraphics[width=0.45\textwidth]{Wprime/fakeEffVariations.eps}
+  \caption{Systematic variations of the ``real'' (left) and ``fake'' (right) muon efficiencies as a function of muon $p_T$.}
+  \label{fig:matrix_method_systematics}
+\end{figure}
+
+Impact of the systematic variations of the efficiencies on the final $m_T$ spectrum of the multijet background will be discussed in \SectionRef{subsec:multijet_systematcs}.
+
+%*******************************************************************************
+% VALIDATION REGIONS
+%*******************************************************************************
+
+\subsection{Multijet validation region}
+
+\toAsk[this subsection has to be carefully reviewed]
+
+To test data-driven prediction of the multijet background one want to find a region
+where its contribution will be enhanced. Also region has to be kinematically 
+close to the signal selection.
+A validation region is defined in the same way as the signal selection but without the $E_T^{miss}$ and $m_T$ requirements. Also distribution with and without using isolation requirements are considered, 
+which corresponds to tight and loose muon definitions used in the matrix method described above.
+
+The validation distributions of variables, used in the definition of the enhanced ``fake'' muon control region, are shown in \FigureRef{fig:muMMval1}.
+In general, reasonable agreement is observed. The most obvious discrepancy is seen in the
+distribution of the number of jets. The disagreement is likely mostly due to the modeling
+of jet emission in the $W\to\mu\,\nu$ MC, where only one jet emission is included at the
+matrix element level calculations.
+This affects in principle the MC subtraction in the ``fake'' muon control region,
+but discrepancy is present only for $N_\mathrm{jet}\geq2$, while control region is 
+defined with requirement $N_\mathrm{jet}\geq1$ and thus this discrepancy is not 
+strongly affected the ``fake'' muon efficiency calculations.
+Furthermore, as a systematic variation of the ``fake'' muon efficiency was estimated with no $N_\mathrm{jet}$ cut at all and was found to be negligible which prove that discrepancy in
+the $N_\mathrm{jet}$ is negligible as well.
+
+% TODO think about some additional description here!
+% TODO check in the Magnars thesis
+Distribution of the $E_T^{miss}$, muon momentum and $m_T$ are shown in \FigureRef{fig:muMMval2}.
+As one can note in the loose muon sample contribution of the multijet background are significantly enhanced with respect to the tight sample. 
+Taking into account size of systematic uncertainties, discussed in \SectionRef{sec:wprimeSystematics}, data and background prediction agrees reasonably which proves validity of the data-driven jet background method.
+The tight muon sample includes isolation requirement and thus contribution from multijet background is significantly reduced. Also because no $E_T^{miss}$ and $m_T$ are applied 
+there are significantly more statistics available than in the signal region which allows 
+to test overall background prediction. In general, reasonable agreement is observed. 
+
+\toAsk[Is explanation above good enough?]
+
+\toAsk[is ``reasonable agreement'' sounds strange for such plots?]
+
+\toAsk[should I focus more of the shape comparison of tight and loose plots?]
+
+\toDo[more discussion here?]
+
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.49\textwidth]{Wprime/Njet40loose.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/Njet40.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/deltaPhiLoose.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/deltaPhi.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/d0sigLoose.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/d0sig.eps}
+  \caption{
+  Distributions of the number of jets (top), $\Delta\phi_{\mu,\met}$ (middle), 
+  and $d_0$ significance (bottom) in the inclusive loose (left) and tight (right) muon samples. 
+  The distributions are considered before the $E_T^{miss}$ and $m_T$ cuts.
+}
+  \label{fig:muMMval1}
+\end{figure}
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.49\textwidth]{Wprime/METloose.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/MET.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/pTloose.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/pT.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/mTloose.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/mT.eps}
+  \caption{
+  Distributions of the $E_T^{miss}$ (top), $p_T$ (middle), and $m_T$ (bottom)
+  in the inclusive loose (left) and tight (right) muon samples. 
+  The distributions are considered before the $E_T^{miss}$ and $m_T$ cuts.
+}
+  \label{fig:muMMval2}
+\end{figure}
+
 
 \subsection{Background extrapolation}
 % TODO explain why it hurts to have huge statistical fluctuation for limit settings 
@@ -516,72 +619,9 @@ A simple power law fit is performed, which was found to be the most appropriate 
 \frac{dN}{d m_T} = a\, m_T^{-b}
 \end{equation}
 Fits are done in the ranges $150$--$300~\GeV$ and $200$--$300~\GeV$.
+The extrapolation was stitched to the multijet background estimate $\mt=300$~GeV.
+
 % TODO where it was stitched?
-
-%*******************************************************************************
-% VALIDATION REGIONS
-%*******************************************************************************
-
-\section{Validation Region}
-\toFix[this section is work in progress]
-
-To validate the ``fake'' muon background estimate and MC description of the ``real'' muon backgrounds, and also to ensure that all cut variables used in the definition of the fake muon control region are reasonably
-well described in the MC, a validation region is used, which is defined in the same way as the signal selection but without the $E_T^{miss}$ and $m_T$ requirements. Two cases are considered - with and without using isolation requirements, which corresponds to tight and loose muon definitions used in the matrix method.
-
-The validation distributions of variables, used in the definition of the enhanced ``fake'' muon control region, are shown in \FigureRef{fig:muMMval1}.
-In general, reasonable agreement is observed. The most obvious discrepancy is seen in the
-distribution of the number of jets. The disagreement is likely mostly due to the modeling
-of jet emission in the $W\to\mu\,\nu$ MC, where only one jet emission is included at the
-matrix element level calculations.
-This affects in principle the MC subtraction in the ``fake'' muon control region,
-but discrepancy is present only for $N_\mathrm{jet}\geq2$, while control region is 
-defined with requirement $N_\mathrm{jet}\geq1$ and thus this discrepancy is not 
-strongly affected the ``fake'' muon efficiency calculations.
-Furthermore, as a systematic variation of the ``fake'' muon efficiency was estimated with no $N_\mathrm{jet}$ cut at all and was found to be negligible which prove that discrepancy in
-the $N_\mathrm{jet}$ is negligible as well.
-
-% TODO think about some additional description here!
-% TODO check in the Magnars thesis
-Distribution of the $E_T^{miss}$, muon momentum and $m_T$ are shown in \FigureRef{fig:muMMval2}.
-As one can note in the loose muon sample contribution of the multijet background are significantly enhanced with respect to the tight sample. Taking into account size of systematic uncertainties, discussed in \SectionRef{sec:wprimeSystematics}, data and background prediction agrees reasonably which proves validity of the data-driven jet background method.
-The tight muon sample includes isolation requirement and thus contribution from multijet background is significantly reduced. Also because no $E_T^{miss}$ and $m_T$ are applied 
-there are significantly more statistics available than in the signal region which allows 
-to test overall background prediction. In general, reasonable agreement is observed. 
-
-\toFix[I don't have validation plots with systematics bands - have to describe it in text]
-
-\toDo[more discussion here?]
-
-\begin{figure}[]
-  \centering
-  \includegraphics[width=0.49\textwidth]{Wprime/Njet40loose.eps}
-  \includegraphics[width=0.49\textwidth]{Wprime/Njet40.eps}
-  \includegraphics[width=0.49\textwidth]{Wprime/deltaPhiLoose.eps}
-  \includegraphics[width=0.49\textwidth]{Wprime/deltaPhi.eps}
-  \includegraphics[width=0.49\textwidth]{Wprime/d0sigLoose.eps}
-  \includegraphics[width=0.49\textwidth]{Wprime/d0sig.eps}
-  \caption{
-  Distributions of the number of jets (top), $\Delta\phi_{\mu,\met}$ (middle), 
-  and $d_0$ significance (bottom) in the inclusive loose (left) and tight (right) muon samples. 
-  The distributions are considered before the $E_T^{miss}$ and $m_T$ cuts.
-}
-  \label{fig:muMMval1}
-\end{figure}
-\begin{figure}[]
-  \centering
-  \includegraphics[width=0.49\textwidth]{Wprime/METloose.eps}
-  \includegraphics[width=0.49\textwidth]{Wprime/MET.eps}
-  \includegraphics[width=0.49\textwidth]{Wprime/pTloose.eps}
-  \includegraphics[width=0.49\textwidth]{Wprime/pT.eps}
-  \includegraphics[width=0.49\textwidth]{Wprime/mTloose.eps}
-  \includegraphics[width=0.49\textwidth]{Wprime/mT.eps}
-  \caption{
-  Distributions of the $E_T^{miss}$ (top), $p_T$ (middle), and $m_T$ (bottom)
-  in the inclusive loose (left) and tight (right) muon samples. 
-  The distributions are considered before the $E_T^{miss}$ and $m_T$ cuts.
-}
-  \label{fig:muMMval2}
-\end{figure}
 
 %*******************************************************************************
 % SYSTEMATICS
@@ -651,6 +691,30 @@ Trigger systematics is evaluated by the ATLAS trigger group and it is related to
 efficiency of muons with different $\eta$ and $p_T$.
 Luminosity uncertainty was estimated in the same way as described in \SectionRef{sec:lucid_performance}, however current analysis is using preliminary luminosity
 uncertainty equal to 5$\%$ which was obtained from preliminary calibration of the luminosity scale done with using data from vdM scans in August 2015.
+
+\subsection{Multijet background}
+\label{subsec:multijet_systematcs}
+
+Systematic variations on the ``real'' and ``fake'' efficiency used in the matrix method were
+described previously in \SectionRef{subsec:matrix_method}.
+Multijet background have a very small contribution to the muon signal selection, as can be seen in 
+\FigureRef{fig:muMMfinal} (left), where fraction of the multijet background to the total background
+after the final selection is shown as function of $m_T$. Thus affect from the systematic
+variations of the matrix method efficiencies on the total background is small as well, as shown in
+\FigureRef{fig:muMMfinal} (right). 
+Systematic uncertainty on the total background is at level of 1 $\%$ for $m_T<4$~TeV and less than 2$\%$ for $m_T>4$~TeV.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.49\textwidth]{Wprime/totalBGfrac.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/totalBGsys.eps}
+  \caption{The fraction that the fake muon background constitutes of the total background
+as function of \mt\ (left) and the effect of systematics variations on the total background
+level as function of \mt\ (right). The power law fits are used for the fake muon background above
+$\mt=300~\GeV$. In the left plot, the fit range $150$--$300~\GeV$ is used, and in the right plot, the
+range $150$--$300~\GeV$ corresponds to solid lines and $200$--$300~\GeV$ to dashed lines.}
+  \label{fig:muMMfinal}
+\end{figure}
 
 \subsection{Summary}
 \TableRef{tab:syst} lists the various systematic uncertainty sources
