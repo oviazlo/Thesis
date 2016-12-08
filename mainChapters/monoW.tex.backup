@@ -7,7 +7,7 @@
 
 
 This chapter describes search for new spin-1 heavy charged boson (namely $\PWprime$) in the final state with one lepton and missing transverse energy ($E_T^{miss}$).
-The search was done with first $\sqrt{s}$=13~TeV data collected in 2015 by ATLAS with corresponded luminosity of 3.2~fb$^{-1}$. The search have been performed with muon and electron channels, however, this chapter is focused in the muon channel and only final results for electron channel is shown as well as combination of both channels.
+The search was done with first $\sqrt{s}$=13~TeV data collected in 2015 by ATLAS with a corresponding luminosity of 3.2~fb$^{-1}$. The search has been performed with muon and electron channels, however, this chapter is focused on the muon channel and only final results for the electron channel are shown, as well as the combination of both channels.
 
 % TODO describe more about the analysis.
 % Analysis focuses on high-p$_T$ 
@@ -46,26 +46,20 @@ The search was done with first $\sqrt{s}$=13~TeV data collected in 2015 by ATLAS
 % TODO experimental signature - lepton + MET
 % TODO a signal discriminant: mT
 
-As was described in \SectionRef{subsec:bsm_models} there are large number of models
-which predict new spin-1 gauge charged boson. Thus it is not practical to perform
-dedicated searches for all of them. This is why the so-called ``sequential'' Standard Model (SSM) is often used which is a reference benchmark model.
+As was described in \SectionRef{subsec:bsm_models}, there is a large number of models
+which predict a new spin-1 gauge charged boson $\PWprime$. Thus it is not practical to perform a number of dedicated searches for all of them. This is why the so-called ``sequential'' Standard Model (SSM) is often used, being a reference benchmark model.
 This model aims to provide a clear interpretation of the experimental results and
 is used for results comparison between different experiments.
-It assumes $\PWprime$ to be a heavy ``copy'' of the SM $W$ with the same couplings 
-to the leptons, quarks and gauge bosons.
-
-% TODO add something about mixing with SM W???
-The  assumes $\PWprime$ to have the same
-coupling as the SM $W$. Although it is not a gauge invariant model it is 
-used by many analyses for purposes of results comparison.
-Such clear interpretation allows benefit theorists to use results for other BSM models.
-Considering given couplings a new decay channel (with respect to the SM $W$)
-will be present $\PWprime \to WZ$. It will be dominant decay mode 
+It assumes $\PWprime$ to be a heavy ``copy'' of the SM $W$ with the same couplings to leptons, quarks and gauge bosons. 
+Given such couplings a new decay channel (with respect to the SM $W$)
+should be present: $\PWprime \to WZ$. It would be the dominant decay mode 
 for high $\PWprime$ masses and will lead to the $\PWprime$ width larger
-than its mass at  $m_{\PWprime} > 500$~GeV. Thus, branching ratio for
-this channel is considered to be zero. This assumptions fits well with models, such as Left-Right Symmetric model, described previously, in which this channel is suppressed in case of $m_{W_R} \gg m_{W_L}$.
+than its mass at  $m_{\PWprime} > 500$~GeV. 
+Some models predict such channel to be heavily suppressed, 
+such as the Left-Right Symmetric model, described previously, in a case of $m_{W_R} \gg m_{W_L}$.
+Thus, branching ratio for this channel is set to be zero for any $\PWprime$ mass.
 The branching ratio of $\PWprime \to \mu\nu$ or $e\nu$ as a function of $\PWprime$ mass
-is shown in \FigureRef{fig:wprimeBR}. Rapid decrease at approximately 200 GeV correspond to the decay channel $\PWprime \to tb$.
+is shown in \FigureRef{fig:wprimeBR}. Rapid decrease at approximately 200 GeV corresponds to the decay channel $\PWprime \to tb$.
 \begin{figure}[!htb]
   \centering
   \includegraphics[width=7.5cm]{Wprime/WprimeBR.eps}
@@ -73,21 +67,19 @@ is shown in \FigureRef{fig:wprimeBR}. Rapid decrease at approximately 200 GeV co
   \label{fig:wprimeBR}
 \end{figure}
 
-Considering used model one can highlight three key features important for this search:
+Considering the used model one can highlight three key features essential for this search:
 \begin{itemize}
  \item Precise modeling of the background prediction. 
- Largest part of the background originates from the charged-current Drell-Yan process and the analysis selection tests it up to the few TeV.
- Thus it is crucially important to use the latest and most precise high-order calculations and corrections available at a time.
- \item High-$p_T$ lepton selection. Due to topologically simple event selection (one isolated lepton and missing energy) 
- this analysis use most energetic lepton candidates available at 13 TeV center-of-mass energy collisions.
- This is why reconstruction efficiency and momentum resolution of high-$p_T$ leptons are factors of special interest for the analysis.
- \item Missing transverse energy, $E_T^{miss}$. Along with the lepton momentum, $E_T^{miss}$ is used for transverse invariant mass ($m_T$) calculations,
- which is the signal discriminant and search variable in the analysis. In order to $m_T$ to be most precisely reconstructed and modelled one need
- to have not only good lepton momentum resolution but also good understanding of the missing $E_T$ performance.
+ The dominant part of the background originates from the charged-current Drell-Yan process and the analysis selection tests it up to few TeV.
+ Thus, it is crucially important to use the latest and most precise high-order calculations and corrections available at the time.
+ \item High-$p_T$ lepton selection. Due to a topologically simple event selection (one isolated lepton and missing energy) 
+ this analysis uses most energetic lepton candidates available at 13 TeV center-of-mass energy collisions.
+ This is why reconstruction efficiency and momentum resolution of high-$p_T$ leptons are factors of particular interest for the analysis.
+ \item Missing transverse energy, $E_T^{miss}$. Along with the lepton momentum, $E_T^{miss}$ is used for transverse invariant mass $m_T$ (which will be defined in \SectionRef{subsec:etmiss}) calculations,
+ which is the signal discriminant and search variable in the analysis. For $m_T$ to be precisely reconstructed and modelled one has to have a good understanding of the missing $E_T$ performance together with good lepton momentum resolution.
 \end{itemize}
 
-
-\section{$\PWprime$ signal Monte Carlo}
+\section{$\PWprime$ signal in Monte Carlo}
 \label{sec:wprimeSignal} 
 % TODO rewrite it a little bit, cause it is directly copied from the note!!!
 
@@ -113,8 +105,7 @@ The invariant mass and transverse mass distributions for the $\PWprime$ samples 
   \centering
   \includegraphics[width=\textwidth]{Wprime/Signal_onTopOf_W_mT.eps}
 \end{subfigure}
-\caption{Invariant mass (left) and transverse mass (right) spectrum of the $\PWprime$ signal 
-on top of the $W$ background on generated MC level.}
+\caption{Invariant mass (left) and transverse mass (right) spectrum of the $\PWprime$ signal on top of the $W$ background on generated MC level.}
   \label{fig:signal_with_W}
 \end{figure}
 
@@ -291,9 +282,8 @@ The possibility of using the ``loose'' identification working point for the addi
 The default recommendation by the muon combined performance (MCP) working group is to apply requirement $|z_0 \times sin \theta| < 0.5$ mm. The main purpose of this requirement is to veto events with cosmic muons.
 However by making requirement on absence of the second muon in the event we ``automatically'' discard most of the events with cosmic muons. After dedicated study by the MCP group it was found that on 
 $|z_0 \times sin \theta|$ requirement can be loosened to 10 mm, without significant decrease on cosmic muon rejection power.
-Figure \ref{fig:Muon_LepVtxEff} shows $d_0$ significance and $|z_0 \times sin \theta|$ cut efficiencies. The efficiency shown on the left side for the recommended $|z_0 \times sin \theta|$ cut value of $0.5$ mm while on the right side - for a looser
-cut value of $10$~mm. The nominal cut value leads to a reduction of the selection efficiency by about $1$\% due to picking the wrong vertex as primary vertex. This efficiency
-is partially restored by loosened cut.
+Figure \ref{fig:Muon_LepVtxEff} shows $d_0$ significance ($|d_0|/\sigma(d_0)$) and $|z_0 \times sin \theta|$ cut efficiencies. The efficiency shown on the left side for the recommended $|z_0 \times sin \theta|$ cut value of $0.5$ mm while on the right side - for a looser
+cut value of $10$~mm. The nominal cut value leads to a reduction of the selection efficiency by about $1$\% due to picking the wrong vertex as primary vertex. This efficiency is partially restored by loosened cut.
 
 \begin{figure}[]
   \centering
@@ -490,15 +480,17 @@ Impact of the systematic variations of the efficiencies on the final $m_T$ spect
 \subsection{Multijet validation region}
 
 \toAsk[this subsection has to be carefully reviewed]
-
+% definition of the validation region
 To test data-driven prediction of the multijet background one want to find a region
 where its contribution will be enhanced. Also region has to be kinematically 
 close to the signal selection.
 A validation region is defined in the same way as the signal selection but without the $E_T^{miss}$ and $m_T$ requirements. Also distribution with and without using isolation requirements are considered, 
 which corresponds to tight and loose muon definitions used in the matrix method described above.
 
+% plots used for multijet CR
 The validation distributions of variables, used in the definition of the enhanced ``fake'' muon control region, are shown in \FigureRef{fig:muMMval1}.
-In general, reasonable agreement is observed. The most obvious discrepancy is seen in the
+Reasonable agreement within 10$\%$ for both tight and loose distributions is observed for $\Delta\phi_{\mu,E_T^{miss}}$ and muon $d_0$ significance.
+The most obvious discrepancy is seen in the
 distribution of the number of jets. The disagreement is likely mostly due to the modeling
 of jet emission in the $W\to\mu\,\nu$ MC, where only one jet emission is included at the
 matrix element level calculations.
@@ -519,6 +511,10 @@ there are significantly more statistics available than in the signal region whic
 to test overall background prediction. In general, reasonable agreement is observed. 
 
 \toAsk[Is explanation above good enough?]
+
+\toAsk[is ``reasonable agreement'' sounds strange for such plots?]
+
+\toAsk[should I focus more of the shape comparison of tight and loose plots?]
 
 \toDo[more discussion here?]
 
