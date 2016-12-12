@@ -6,7 +6,9 @@
 %\documentclass[hyperpdf,nobind,draft,hidefrontback]{hepthesis}
 
 %%For Cambridge soft-bound version
-\documentclass[hyperpdf,bindnopdf]{hepthesis}
+% \documentclass[hyperpdf,bindnopdf]{hepthesis}
+\documentclass[hyperpdf,nobind,draft,twoside]{hepthesis}
+% \documentclass[hyperpdf,nobind,draft,oneside]{hepthesis}
 %% For Cambridge hard-bound version (must be one-sided)
 %\documentclass[hyperpdf,oneside]{hepthesis}
 
@@ -43,6 +45,8 @@
 \newcommand{\toFix}[1][!]{\colorbox{blue!40}{[#1]}}
 \newcommand{\toDo}[1][]{\colorbox{green!40}{[TODO: #1]}}
 
+% \linenumbers
+
 %% Start the document
 \begin{document}
 
@@ -57,7 +61,7 @@
 % \end{frontmatter}
 
 % TODO there is tableofcontents in frontmatter. Just temprorary
-\tableofcontents
+% \tableofcontents
 
 
 %% Start the content body of the thesis
@@ -65,10 +69,10 @@
   %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
 %   \input{mainChapters/theory}
 %   \input{mainChapters/ATLAS}
-  \input{mainChapters/TRT}
+%   \input{mainChapters/TRT}
 %   \input{mainChapters/LUCID}
 %   \input{mainChapters/SS}
-%   \input{mainChapters/monoW}
+  \input{mainChapters/monoW}
   %% To ignore a specific chapter while working on another, making the build faster, comment it out:
   %\input{chap4}
 \end{mainmatter}

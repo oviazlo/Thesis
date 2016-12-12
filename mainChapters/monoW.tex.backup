@@ -653,7 +653,7 @@ by the ATLAS JetEtMiss working group ~\cite{jet_calib_syst_13TeV, JESUncer13TeV}
 The jet energy scale uncertainty has been tested for different recommended scenarios 
 and was found to be negligible for all of them.\\
 No resolution smearing is applied in the default scenario. 
-According to working group recommendation effect of the smearing has to be used as a systematic uncertainty.\\ The jet uncertainties are fully correlated between the electron and muon channel.
+According to the working group recommendation, effect of the smearing has to be used as a systematic uncertainty.\\ The jet uncertainties are fully correlated between the electron and muon channel.
 
 \subsection{Transverse missing energy scale and resolution}
 The uncertainties for the $\met$ scale and resolution are provided by the JetEtMiss group~\cite{met2015_1}. They enter
@@ -662,13 +662,14 @@ which corresponds to the energy deposits in the calorimeter not associated with
 any reconstructed physics objects (leptons, photons, jets).
 The uncertainties cover differences between data and MC and are only applied to MC. 
 The $\met$ uncertainties are fully correlated between the electron and muon channel. 
-Also the jet, electron and muon energy/momentum uncertainties are affecting the $\met$
+The jet, electron and muon energy/momentum uncertainties are affecting the $\met$
 calculation. These uncertainties are propagated to the $\met$ calculation in the same way.
+% TODO see comment from Oxana about sentence above!
 
 \subsection{Background estimate uncertainty}
 
-Uncertainty of the charged and neutral current Drell-Yan processes were estimated by variations of $\alpha_s$ and electroweak corrections as well as by using PDF error set and estimation pf difference between alternative PDF sets.
-The $\alpha_s$ uncertainty was estimated by varying $\alpha_s$ by $\pm 0.0003$. This corresponds to the 90\% C.L uncertainty. The effect on the $W$ background when doing this variation
+Uncertainty of the charged and neutral current Drell-Yan processes were estimated by variations of $\alpha_s$ and electroweak corrections as well as by using PDF error set and estimation of difference between alternative PDF sets.
+The $\alpha_s$ influence was estimated by varying $\alpha_s$ by $\pm 0.0003$. This corresponds to the 90\% C.L uncertainty. The effect on the $W$ background when doing this variation
 was $3\%$ at maximum and the effect is therefore neglected. 
 The variation of the electroweak corrections was estimated to be larger than $3\%$ and was
 taken into account during limit settings.
@@ -676,19 +677,19 @@ The PDF uncertainty of the CT14NNLO PDF is one of the main theory uncertainties
 and it was calculated by using 90$\%$ CL PDF error set.
 Uncertainty related to the choice of the PDF set to use was estimated by comparing
 results with NNPDF3.0~\cite{Ball:2014uwa}.
-The difference between CT14 and HERAPDF2.0 is not considered as the PDF does not include high-x data. 
+The difference between CT14 and HERAPDF2.0 is not considered as the PDF does not include high Bjorken x data. 
+% TODO fix above about x. comment from Oxana
 
-Uncertainty on ``Top'' and ``Diboson'' background consist from theoretical uncertainty on cross section and high-$m_T$ extrapolation uncertainty. The former uncertainty affect total background
-prediction less than 3$\%$ and thus are neglected, the latter one become visible at high-$m_T$
-region is is taken into account during limit settings.
+Uncertainty of ``Top'' and ``Diboson'' backgrounds consists of the theoretical uncertainty on cross section and the high-$m_T$ extrapolation uncertainty. The former uncertainty affects the total background
+prediction less than 3$\%$ and thus is neglected; the latter one becomes considerable at the high-$m_T$ region and is taken into account during limit settings.
 
-The detailed description of the theoretical uncertainties on MC cross section can be found in~\cite{Aaboud:2016zkn}.
+The detailed description of the theoretical uncertainties on the MC cross section can be found in~\cite{Aaboud:2016zkn}.
 
 \subsection{Trigger and luminosity}
-Trigger systematics is evaluated by the ATLAS trigger group and it is related to the trigger
+Trigger systematic uncertainty is evaluated by the ATLAS trigger group and it is related to the trigger
 efficiency of muons with different $\eta$ and $p_T$.
-Luminosity uncertainty was estimated in the same way as described in \SectionRef{sec:lucid_performance}, however current analysis is using preliminary luminosity
-uncertainty equal to 5$\%$ which was obtained from preliminary calibration of the luminosity scale done with using data from vdM scans in August 2015.
+Luminosity uncertainty was estimated in the same way as described in \SectionRef{sec:lucid_performance}, however, the current analysis is using a preliminary luminosity
+uncertainty equal to 5$\%$, which was obtained from the preliminary calibration of the luminosity scale done using data from vdM scans in August 2015.
 
 \subsection{Multijet background}
 \label{subsec:multijet_systematcs}
@@ -700,7 +701,7 @@ Multijet background have a very small contribution to the muon signal selection,
 after the final selection is shown as function of $m_T$. Thus affect from the systematic
 variations of the matrix method efficiencies on the total background is small as well, as shown in
 \FigureRef{fig:muMMfinal} (right). 
-Systematic uncertainty on the total background is at level of 1 $\%$ for $m_T<4$~TeV and less than 2$\%$ for $m_T>4$~TeV.
+Systematic uncertainty on the total background is at the level of 1 $\%$ for $m_T<4$~TeV and less than 2$\%$ for $m_T>4$~TeV.
 
 \begin{figure}[!htb]
   \centering
@@ -715,13 +716,13 @@ range $150$--$300~\GeV$ corresponds to solid lines and $200$--$300~\GeV$ to dash
 \end{figure}
 
 \subsection{Summary}
-\TableRef{tab:syst} lists the various systematic uncertainty sources
-and their size for background and a 2 or 4~TeV $\PWprime$ signal at a transverse mass at 2 or 4~TeV.
-Uncertainties which do not have a number are either neglected or do not apply. 
+\TableRef{tab:syst} lists various systematic uncertainty sources
+and their size for the background and for the 2 or 4~TeV $\PWprime$ signal at a transverse mass equal to 2 and 4~TeV.
+Uncertainties which do not have a value are either neglected or do not apply. 
 All uncertainties below $3$\% have been neglected so far
 since they do not affect the final result of the statistical analysis. 
 The remaining experimental and theoretical systematics are applied to the background.
-To the signal only the experimental uncertainties are applied. 
+Only the experimental uncertainties are applied to the signal. 
 
 \begin{table}
 \begin{center}
@@ -765,12 +766,12 @@ Uncertainties that are not applicable are denoted ``n/a''. \label{tab:syst}}
 \label{sec:wprimeSignalRegion}
 The muon $\eta$, $\phi$, $p_T$, and $E_T^{miss}$ distributions in the signal region are shown in \FigureRef{fig:mu_results_etaphi} and \FigureRef{fig:mu_results_ptmet}. 
 The dominant contribution to the signal region originates from W boson background.
-No visible excess is observed and good agreement between data and background estimate is observed.
+No visible excess is observed, and good agreement between data and background estimate is observed.
 
 The basis for the statistical analysis and the main distribution of interest 
 is the transverse mass distributions which is shown in \FigureRef{fig:MT_mu_Wprime}.
 The resonant $\PWprime$ signal overlaid on background prediction is shown as well.
-As one can see from the ratio plot a data is systematically above the total background prediction
+As one can see from the ratio plot data is systematically above the total background prediction
 in low-$m_T$ region but are within $\pm 1 \sigma$ uncertainty band, which is dominated by the $E_T^{miss}$ systematic uncertainty at low $m_T$.
 
 \begin{figure}[]
@@ -808,8 +809,7 @@ in low-$m_T$ region but are within $\pm 1 \sigma$ uncertainty band, which is dom
 shows the contributions of individual backgrounds as well as the total background
 and the data in different $\mt$ regions. The quoted uncertainties include both systematic and
 statistical uncertainties except the uncertainty on the integrated luminosity ($5\%$).
-One can observe good agreement between data and total background prediction in all $\mt$ regions. Charged-current DY provides the dominant contribution to the high-$m_T$ region which is above 90$\%$ of the total background for $m_T>1$ TeV region. No events with $m_T > 3$ TeV are
-observed in data.
+One can observe good agreement between data and total background prediction in all $\mt$ regions. Charged-current DY provides the dominant contribution to the high-$m_T$ region which is above 90$\%$ of the total background for $m_T>1$ TeV region. No events with $m_T > 3$ TeV are observed in data.
 
 \begin{table}[]
   \centering
@@ -934,20 +934,20 @@ and combined lepton channels in \TableRef{tab:limits_mass_wp}, \FigureRef{fig:wp
 
 \subsection{Introduction}
 
-Beside $\PWprime$ model discussed above there are other BSM models 
+Beside the $\PWprime$ model discussed above, there are other BSM models 
 with lepton plus $E_{T}^{miss}$ final state signature.
-One of such model is associated 
+One of such models is an associated 
 production of pair of weakly interacting massive particles (WIMP)
-with SM W boson. WIMPs are one of possible dark matter candidates (DM).
+with SM W boson. WIMPs are one among of the possible dark matter (DM) candidates.
 
 % Another possible BSM signature which can be easily tested in signal region is
 % associated production of pair of weakly interacting massive particles (WIMP), 
 % which are candidates for dark matter (DM) particles, with SM W. 
-Because WIMPs don't interact strongly or electromagnetic they will most probably escape from detector the same way as neutrino
-from leptonic W decay and will contribute to $E_{T}^{miss}$ of the event.
+Because WIMPs don't interact strongly or electromagnetically they will most probably escape detection the same way as neutrinos
+from leptonic W decays, and will contribute to $E_{T}^{miss}$ of the event.
 
-In this section qualitative study based on using models recommended by Dark Matter Forum (link?) are presented 
-which address question about sensitivity of signal selection presented above to such kind of models.
+In this section, a qualitative study based on models recommended by the Dark Matter Forum (link?) are presented, 
+which addresses the question about sensitivity of signal selection presented in \SectionRef{sec:wprimeSelection} to such kind of models.
 
 
 % While searching for $\PWprime$ boson one can naivly expect that distributions of 
@@ -959,18 +959,20 @@ which address question about sensitivity of signal selection presented above to 
 \subsection{Theoretical models}
 
 % TODO rephrase first setence
-There are plethora of models which try to introduce and explain DM as a possible particles which can be produced at LHC. 
-But all these models can be classified to the three distinct classes: DM Effective Field Theories (EFT), Simplified DM models 
-and Complete DM models. EFT approach allows to describe the DM-SM interactions mediated by all 
+There are plethora of models which try to introduce and explain DM as hypothetical particles which can be produced at LHC. 
+All these models can be classified to the three distinct classes: DM Effective Field Theories (EFT), Simplified DM models 
+and Complete DM models. The EFT approach allows one to describe the DM-SM interactions mediated by all 
 kinematically inaccesible particles in a universal way. 
+% TODO say something about \Lambda scale. What does it means or what does it define.
+%      is it the scale up to which gauge symmetry works?
 It allows to derive stringent bounds on the ``new physics'' scale $\Lambda$. 
-Simplified models are charachterized by the most important state mediating the DM interaction with SM. Unlike EFT approach,
-simplified models are able to describe correctly the full kinematics of DM production, because they resolve the EFT contact interaction in single-particle 
-s- or t-channel exchange. Complete DM models allows to describe correlation between observables~\cite{arXiv:1506.03116}.
+Simplified models are charachterized by the most important state mediating the DM interaction with SM. Unlike the EFT approach,
+simplified models are able to describe correctly full kinematics of the DM production, because they resolve the EFT contact interaction in single-particle 
+s- or t-channel exchange. Complete DM models allow to describe correlations between observables~\cite{arXiv:1506.03116}.
 
-Main focus of current study will stay on EFT and Simplified DM models with W boson and DM particles produced in the final state. 
-In simplfied model W is produced as initial state radiation from one of incoming quarks as shown at \FigureRef{fig:feynMonoWSimple}. 
-In EFT approach W can be produces as final state particle (\FigureRef{fig:feynMonoWEFT}) or initial state radiation (\FigureRef{fig:feynMonoWEFT}).
+Main focus of the current study will stay in EFT and Simplified DM models with W boson and DM particles produced in the final state. 
+In the simplified model, W is produced as an initial state radiation from one of the incoming quarks, as shown in \FigureRef{fig:feynMonoWSimple}. 
+In the EFT approach, W can be produced as a final state particle (\FigureRef{fig:feynMonoWEFT}) or an initial state radiation (\FigureRef{fig:feynMonoWEFT}).
 
 % TODO: explanation of simplified and EFT models (take from DM forum report or fro Bell's papers).
 
@@ -1000,8 +1002,8 @@ In EFT approach W can be produces as final state particle (\FigureRef{fig:feynMo
   \centering
   \includegraphics[width=0.3\textheight]{monoW/simplified_tChannel_model_diag.pdf}
 \end{subfigure}
-  \caption{Feynman diagrams of production of dark matter pairs ($\chi\overline{\chi}$) associated with a W boson in simplified model 
-	   in s-channel (left) and t-channel (right) scenarious.}
+  \caption{Feynman diagrams of production of the dark matter pairs ($\chi\overline{\chi}$) associated with a W boson in the simplified model 
+	   in the s-channel (left) and t-channel (right) scenarios.}
   \label{fig:feynMonoWSimple}
 \end{figure}
 
@@ -1019,15 +1021,20 @@ In EFT approach W can be produces as final state particle (\FigureRef{fig:feynMo
   \includegraphics[width=0.3\textheight]{monoW/EFT_D5_model_diag_v3.pdf}
 \end{subfigure}
   \caption{Representative diagrams for production of dark matter pairs ($\chi\overline{\chi}$) associated with a W boson in models where
-dark matter interacts directly with W boson (left) or with quarks (right).}
+dark matter interacts directly with W boson (left) or with quarks (right).
+\toDo[explain shaded area!].
+}
   \label{fig:feynMonoWEFT}
 \end{figure}
 
-Current study cover both s- and t-channel simplified models with different mass of $Z'$ mediator and with different mass of DM particles.
-EFT approach are represented by two models which correspond to diagrams which are shown at \FigureRef{fig:feynMonoWEFT}. 
-They are charachterized by energy scale of ``new physics'' $\Lambda$ (or effective mass $M^{*}$) as well as mass of produced DM particles.
-Both models assume vector type of interaction between DM and SM sectors. For D52 model (which correspond to the right diagram in  \FigureRef{fig:feynMonoWEFT}) 
-we consider only constructive interferance with SM.
+Current study covers both s- and t-channel simplified models with different mass of $Z'$ mediator and with different mass of DM particles.
+EFT approach is represented by two models which correspond to diagrams shown in \FigureRef{fig:feynMonoWEFT}. 
+% TODO explan \Lambda or M*
+They are characterized by the energy scale of the ``new physics'' $\Lambda$ (or effective mass $M^{*}$), as well as the mass of produced DM particles.
+Both models assume vector type of interaction between DM and SM sectors. 
+% TODO this is crap written. rewrite it!!!
+For the D52 model ref~\cite{???} (which corresponds to the right diagram in  \FigureRef{fig:feynMonoWEFT}) 
+we consider only constructive interference with SM.
 
 \subsection{Sensitivity studies}
 
