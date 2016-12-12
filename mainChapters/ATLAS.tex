@@ -5,6 +5,7 @@
 % 1) Run-1 and Run-2 definitions
 % 2) BCID, bunch spasing, bunch length
 % 3) define physics run, interfill period
+% 4) ATLAS coordination system
 
 % coordinate system
 
@@ -83,42 +84,111 @@ Detailed description of the detector can be found in \ChapterRef{chap:TRT}.
 
 
 
-\section{Calorimeters}
+\subsection{The calorimetry system}
 
 The ATLAS calorimeter is designed to trigger and to measure accurately the energy and position of photons, electrons and hadrons, as well as to ensure a good missing energy measurement, which is crucial for new physics searches. The calorimeter system is divided into two different parts: an inner electromagnetic (EM) calorimeter is aimed to detect electrons and photons, an outer hadronic calorimeter is designed to detect mesons and baryons which escape the EM calorimeter.
 
 The EM calorimeter covers the rapidity region $|\eta| < 3.2$.
-In order to meet the physics requirements and to operate properly at high radiation environment, the hadronic calorimeter is further divided into barrel hadronic calorimeter covering $|\eta| < 1.7$, hadronic end-cap calorimeter covering $1.5 < |\eta| < 3.2$, and forward calorimeter covering $3.1 < |\eta| < 4.9$. A global view of the ATLAS calorimeter is illustrated in Figure \ref{fig:Calo}.
+In order to meet the physics requirements and to operate properly at high radiation environment, the hadronic calorimeter is further divided into barrel hadronic calorimeter covering $|\eta| < 1.7$, hadronic end-cap calorimeter covering $1.5 < |\eta| < 3.2$, and forward calorimeter covering $3.1 < |\eta| < 4.9$. A global view of the ATLAS calorimeter is illustrated in \FigureRef{fig:Calo}.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.84\textwidth]{intro/0803015_01-A4-at-144-dpi.jpg}
-\caption{ Three-dimensional view of the ATLAS calorimetry.}
+ \includegraphics[width=0.99\textwidth]{intro/0803015_01-A4-at-144-dpi.jpg}
+ \caption{ Three-dimensional view of the ATLAS calorimetry.}
 \label{fig:Calo}
 \end{figure}
 
 \subsubsection{EM calorimeter}
 The ATLAS EM calorimeter is a sampling calorimeter with accordion-shaped lead absorbers and Kapton electrodes.
-Figure \ref{fig:EMgran} shows illustrates the accordion shape geometry of the ATLAS EM calorimeter. The accordion geometry benefits from fast signal readout and the azimuthal symmetry without cracks. The liquid Argon is used as an active material. The EM calorimeter is divided into two barrel parts ($|\eta|<1.475$) and end-caps ($1.375<|\eta|<3.2$).
-Before the EM calorimeter the presampler is placed covering the pseudorapidity range of $|\eta|<1.8$. It is needed to correct the energy lost in the material before the calorimeter (inner detector, cryostat). An amount of the material in terms of number of electromagnetic radiation lengths ($X_0$) is shown in Figure 2.
+\FigureRef{fig:EMgran} shows illustrates the accordion shape geometry of the ATLAS EM calorimeter. The accordion geometry benefits from fast signal readout and the azimuthal symmetry without cracks. The liquid Argon is used as an active material. The EM calorimeter is divided into two barrel parts ($|\eta|<1.475$) and end-caps ($1.375<|\eta|<3.2$).
+The end-cap calorimeter on each side is built of two wheels: Inner Wheel ($1.375<|\eta|<2.5$) is the closest part to the beam pipe,
+Outer Wheel ($2.5<|\eta|<3.2$) is the part further from the beam pipe.
+An amount of the material in terms of number of electromagnetic radiation lengths ($X_0$) is shown in Figure 2.
 The thickness of the EM calorimeter is above $24 X_0$ in the barrel and above $26 X_0$ in the end-cap regions.
 
-Both, barrel and end-cap calorimeters, are segmented into three longitudinal layers. The first layer has about $6 X_0$ thickness with upstream material and plays a role as preshower compartment. It has the finest granularity in $\eta$ with cell width of about 4~mm. The second layer has the thickness of about $18 X_0$ and is designed to contain almost full EM shower. The third layer has two times coarser granularity and the thickness varying between $2 X_0$ and $12 X_0$.
+Both, barrel and end-cap calorimeters, are segmented into three longitudinal layers. The first layer has about $6 X_0$ thickness with upstream material and plays a role as preshower compartment. It has the finest granularity in $\eta$ with cell width of about 4~mm. The second layer has the thickness of about $18 X_0$ and is designed to contain almost full EM shower. It has the finest cell granularity in $\phi$ allowing to provide the azimuth coordinate of the electromagnetic shower direction. The third layer has two times coarser granularity and the thickness varying between $2 X_0$ and $12 X_0$. The read-out granularity of the LAr system and the accordion shape of the EM calorimeter are schematically illustrated in \FigureRef{fig:EMgran}.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.5\textwidth]{intro/caloDepth_eta.png}
-\caption{Amount of material in the EM calorimeter (with upstream material), in units of radiation length $X_0$, as a function of $|\eta|$.}
+ \includegraphics[width=0.5\textwidth]{intro/caloDepth_eta.png}
+ \caption{Amount of material traversed by a particle before and in EM calorimeter, in units of radiation length $X_0$ , as a function of $|\eta|$.}
 \label{fig:Calo}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.44\textwidth]{intro/LARG3-TDR-barrelM_samplings_presamp_new.png}
-\includegraphics[width=0.44\textwidth]{intro/F3-eps-converted-to.pdf}
-\caption{Read-out granularity and accordion shape of the EM calorimeter.}
+ \includegraphics[width=0.6\textwidth]{intro/LARG3-TDR-barrelM_samplings_presamp_new.png}
+ \includegraphics[width=0.39\textwidth]{intro/F3-eps-converted-to.pdf}
+ \caption{Read-out granularity and accordion shape of the barrel EM calorimeter.}
 \label{fig:EMgran}
 \end{figure}
+
+The main goal of the lead absorbers in the sampling EM calorimeter is to develop an electromagnetic shower, while a part of EM shower is collected in the lAr sensitive material. The energy deposited in the absorber material is accounted through the known sampling fraction of the calorimeter. In order to achieve a good performance of the EM calorimeter, an important aspect is the material budget in front of the calorimeter as it degrades the energy resolution of the calorimeter~\cite{electron_tight}.
+Before the EM calorimeter the presampler is placed covering the pseudorapidity range of $|\eta|<1.8$. It is needed to recover the energy lost in the material before the calorimeter (inner detector, cryostat, etc).
+The relative energy resolution for EM objects is parameterized as follows:
+\begin{equation}
+\frac{\sigma(E)}{E}=\frac{a}{\sqrt{E[GeV]}}\otimes\frac{b}{E[GeV]}\otimes c
+\end{equation}
+where $a$ is the sampling term which describes the statistical fluctuations of the EM shower, $b$ is the noise term due to electronics and pile-up, and $c$ is the constant term which accounts for non-uniformity of the calorimeter response. The sampling term mostly contributes at low energies, whereas at high energies theenergy resolution tends asymptotically to the constant term, which is designed  to be of 0.7\%.
+The transition region between the barrel and the end-cap, $1.37<|\eta|<1.52$, has significant amount of material in front of the calorimeter (about $ 10 X_0$), making the energy resolution to be poor and thus is usually excluded in physics analyses.
+
+The drift of ionisation electrons in the lAr gap is ensured by high voltage system which generates an electric field of about 1~kV/mm. The induced current on the electrodes is then reconstructed into the deposited energy in an EM calorimeter cell.
+
+The reconstruction of the electrons and photons starts from reconstructing of clusters, a group of the calorimeter cells ($3\times 5$ cells of middle sampling) containing almost full EM shower. Clusters matched to a well-reconstructed track in the ID and originating from the interaction point (IP) are classified as electrons. Clusters without corresponding track matching are considered as unconverted photons. If there are two tracks corresponding to the reconstructed cluster, and if in addition the conversion vertex can be reconstructed, the considered candidate is reconstructed as converted photon.
+
+\subsubsection{Hadronic calorimeter}
+
+The hadronic calorimeter surrounding the EM calorimeter, is designed to measure the hadrons penetrating the EM calorimeter.
+It consists of Tile calorimeter in the range of $|\eta|<1.7$ constructed with iron-scintillating-tiles technique, and hadronic end-cap lAr calorimeter spanning $1.5<|\eta|<3.2$. The acceptance of the hadronic calorimeter is extended by lAr Forward calorimeter up to $|\eta|<4.9$ (see \FigureRef{fig:Calo}). The lAr technology for large $|\eta|$ is chosen because of the
+intrinsic radiation hardness.
+In the Tile calorimeter the signal is provided by scintillating tiles as an active material, while the absorbers are made out of iron. It is divided into of barrel and two extended barrels with inner radius of 2.28~m and outer radius of 4.23~m. Similarly to EM calorimeter, the Tile calorimeter is longitudinally segmented into three layers, which are needed for triggering and reconstruction of jets. The readout of the tiles is performed using optical fibers. The tiles are grouped into the readout cells, which are designed to be projective with respect to the interaction point.
+
+The Hadronic end-cap calorimeters are constructed using coppers as an absorber material and lAr as an active material. The absorber plates are orthogonal to the beam axis and consists of two consecutive wheels
+with absorber thickness of 25 and 50 mm; respectively. The forward calorimeter is placed at a distance of about 5 meters from the interaction point. It consists of three longitudinal sections: the first is made of copper absorbers, while the next two are made of tungsten absorbers. The forward calorimeter also provides the electron reconstruction capability.
+
+% Few sentenceas how jets are reconstructed?
+
+
+
+
+
+% 
+% \section{Calorimeters}
+% 
+% The ATLAS calorimeter is designed to trigger and to measure accurately the energy and position of photons, electrons and hadrons, as well as to ensure a good missing energy measurement, which is crucial for new physics searches. The calorimeter system is divided into two different parts: an inner electromagnetic (EM) calorimeter is aimed to detect electrons and photons, an outer hadronic calorimeter is designed to detect mesons and baryons which escape the EM calorimeter.
+% 
+% The EM calorimeter covers the rapidity region $|\eta| < 3.2$.
+% In order to meet the physics requirements and to operate properly at high radiation environment, the hadronic calorimeter is further divided into barrel hadronic calorimeter covering $|\eta| < 1.7$, hadronic end-cap calorimeter covering $1.5 < |\eta| < 3.2$, and forward calorimeter covering $3.1 < |\eta| < 4.9$. A global view of the ATLAS calorimeter is illustrated in Figure \ref{fig:Calo}.
+% 
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=0.84\textwidth]{intro/0803015_01-A4-at-144-dpi.jpg}
+% \caption{ Three-dimensional view of the ATLAS calorimetry.}
+% \label{fig:Calo}
+% \end{figure}
+% 
+% \subsubsection{EM calorimeter}
+% The ATLAS EM calorimeter is a sampling calorimeter with accordion-shaped lead absorbers and Kapton electrodes.
+% Figure \ref{fig:EMgran} shows illustrates the accordion shape geometry of the ATLAS EM calorimeter. The accordion geometry benefits from fast signal readout and the azimuthal symmetry without cracks. The liquid Argon is used as an active material. The EM calorimeter is divided into two barrel parts ($|\eta|<1.475$) and end-caps ($1.375<|\eta|<3.2$).
+% Before the EM calorimeter the presampler is placed covering the pseudorapidity range of $|\eta|<1.8$. It is needed to correct the energy lost in the material before the calorimeter (inner detector, cryostat). An amount of the material in terms of number of electromagnetic radiation lengths ($X_0$) is shown in Figure 2.
+% The thickness of the EM calorimeter is above $24 X_0$ in the barrel and above $26 X_0$ in the end-cap regions.
+% 
+% Both, barrel and end-cap calorimeters, are segmented into three longitudinal layers. The first layer has about $6 X_0$ thickness with upstream material and plays a role as preshower compartment. It has the finest granularity in $\eta$ with cell width of about 4~mm. The second layer has the thickness of about $18 X_0$ and is designed to contain almost full EM shower. The third layer has two times coarser granularity and the thickness varying between $2 X_0$ and $12 X_0$.
+% 
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=0.5\textwidth]{intro/caloDepth_eta.png}
+% \caption{Amount of material in the EM calorimeter (with upstream material), in units of radiation length $X_0$, as a function of $|\eta|$.}
+% \label{fig:Calo}
+% \end{figure}
+% 
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=0.44\textwidth]{intro/LARG3-TDR-barrelM_samplings_presamp_new.png}
+% \includegraphics[width=0.44\textwidth]{intro/F3-eps-converted-to.pdf}
+% \caption{Read-out granularity and accordion shape of the EM calorimeter.}
+% \label{fig:EMgran}
+% \end{figure}
 
 % TODO to use this paragraph
 % The particles entering the EM calorimeter develop EM showers through their interactions with absorbers.
@@ -132,7 +202,7 @@ Both, barrel and end-cap calorimeters, are segmented into three longitudinal lay
 % can be taken into account by knowing the sample fraction of the calorimeter. 
 
 % TODO formula of energy resolution...
-The energy resolution in a calorimeter is parametrized as the following: 
+% The energy resolution in a calorimeter is parametrized as the following: 
 
 \section{Muon Spectrometer}
 \section{Luminometers and beam monitors}

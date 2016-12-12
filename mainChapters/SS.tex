@@ -14,7 +14,7 @@ which cannot be explained by the SM. Gravity, Dark Energy and Matter, neutrino m
 SM, which indicates its incompleteness.
 % TODO comment from Monika
 This is why many studies at LHC experiments are focused on probing the new energy regime to search for new physics, 
-observation of which can prove or reject the validity of different extensions of the SM.
+observation of   can prove or reject the validity of different extensions of the SM.
 
 Many BSM models predict same-sign dilepton in the final state.
 It is a very clean signature as only few SM processes predict such final state.
@@ -52,32 +52,34 @@ and/or leptonic decays of $W$ or $Z$ bosons. The corresponding Feynman diagrams 
 % TODO is sentence below OK? It was modified after Monika's comment.
 In general, SM processes with the same-sign dilepton final state have relatively small cross sections at high dilepton invariant mass region of interest.
 
-The second component comes from the wrong identification of the lepton itself, when a pion or a jet is reconstructed as a lepton, or from leptons which were produced 
-not in the pp collision but from decays of secondary particles, e.g. kaons. This component is called non-prompt or fake background.
+The second source comes from the wrong identification of the lepton itself, when a pion or a jet is reconstructed as a lepton, or from leptons which were produced 
+not in the pp collision but from decays of secondary particles, e.g. kaons. This source is called non-prompt or fake background.
 
 % TODO add trident event Feynman diagram
-The third component comes from the misidentification of the electric charge of the lepton, which makes processes in which an opposite-sign lepton pair is produced 
+The third source comes from the misidentification of the electric charge of the lepton, which makes processes in which an opposite-sign prompt lepton pair is produced 
 contributing to the signal selection as well. The charge misidentification effect becomes significant for high-momentum leptons, when the curvature of the track 
 is difficult to reconstruct. 
-This component also includes events in which a prompt electron which emits a photon due to hard bremsstrahlung. Subsequently the photon creates an electron-positron pair in which one of the two leptons receives most of the energy.
-One lepton from the pair can form a same-sign electron pair with the original prompt lepton. These two processes are referred to as charge misidentification or
-charge flip background later in the text.
+This source also includes events in which a prompt electron which emits a photon due to hard bremsstrahlung. Subsequently the photon creates an electron-positron pair in which one of the two leptons receives most of the energy.
+One lepton from the pair can form a same-sign electron pair with the original prompt lepton. These two processes are referred to as charge misidentification 
+background later in the text.
 
-The last component originates from $W\gamma$ processes, where an electron-positron pair is created from photon conversion, and by combining with an electron from $W$ decay
-a same-sign lepton pair can be formed. It is considered separately from the charge flip background because it does not contain prompt opposite-sign electron pairs.
+The last source arises from $W\gamma$ processes, where an electron-positron pair is created from photon conversion, and by combining with an electron from $W$ decay
+a same-sign lepton pair can be formed. 
+% This source is similar to the charge misidentification background, however, is estimated in a different way, as will be described further in the text.
+% It is considered separately from the charge misidentification background because it does not contain prompt opposite-sign electron pairs.
 
 % TODO describe connection of written above with table with all used MC samples...
 % TODO normalization is just checked for it is not applied as a scale factor. Cross check with Monika!!!
 Prompt background is modelled by the MC simulation. 
 % with applying the overall normalization of the MC samples to the data in the control region.
 Non-prompt background is derived using a data-driven method, the so-called fake factor method.
-Charge flip and $W\gamma$ backgrounds are estimated from the MC simulation plus are corrected by the charge flip scale factor, derived in a data-driven way.
+Charge misidentification and $W\gamma$ backgrounds are estimated from the MC simulation as well. However, as will be shown in \SectionRef{subsec:CF_definition}, electron charge misidentification probability is not properly described by the MC simulation, this is why a special correction, the so-called charge misidentification scale factor, obtained from the data, is used.
 
 The list of all the MC samples used in the analysis is shown in \TableRef{tab:MC_cross}. 
-All listed samples were centrally produced by ATLAS working groups.
+All listed samples were centrally produced by the ATLAS simulation group.
 All other processes which are not listed in the table don't contribute
 significantly to the same-sign signal region and are considered negligible.
-This table summarizes which MC generators and parton distribution function (PDF) sets were used, and order of cross section calculations.
+This table summarizes which MC generators and parton distribution function (PDF) sets were used, and the order of cross section calculations.
 
 
 \begin{table}[ht]
@@ -154,20 +156,19 @@ $V=W,Z$ &  + {\scshape pythia-6.426} & & \\
 The analysis is based on the pp collision data collected in 2012 by the ATLAS detector with 8 TeV center of mass energy.
 The integrated luminosity of the sample corresponds to 20.3 fb$^{-1}$, the mean number of interactions per bunch crossing was 21.
 
-An event selected for the analysis should have at least one reconstructed vertex with at least three tracks matched to it. 
+An event selected for the analysis have at least one reconstructed vertex with at least three tracks matched to it. 
 If there are several vertices, the one with the highest
 $\sum p^2_T$, where $p_T$ are transverse momenta of the matched tracks, is chosen.
-Events should have at least two electron candidates, which is provided by selecting only events
-which fire dilepton trigger, which requires presence of two electrons with $p_T > 12$ GeV.
+Events should have at least two electron candidates and fire the dilepton trigger, which requires the presence of two electrons with $p_T > 12$ GeV.
 In order to exclude ambiguities between electron and jet reconstruction, the electrons are required to
-be isolated. Isolation is calculated by summing up activity around the electron candidate within a defined cone size, 
+be isolated. Isolation is calculated by summing up the particle momenta around the electron candidate within a defined cone size, 
 $\Delta R = \sqrt{ (\eta_e-\eta_i)^2 + (\phi_e-\phi_i)^2 }$,
-where $\eta_e$ and $\phi_e$ are rapidity and azimuthal angle of the electron candidate and $\eta_i$ and $\phi_i$ are rapidity and azimuthal angle of track or calorimeter cluster, not related to the electron candidate. Detailed explanations of the isolation and other requirements on electron candidates are given further in the text.
+where $\eta_e$ and $\phi_e$ are rapidity and azimuthal angle of the electron candidate and $\eta_i$ and $\phi_i$ are rapidity and azimuthal angle of track or calorimeter cluster, not related to the electron candidate. Detailed explanations of the isolation and other requirements on electron candidates are given later in this thesis.
 
 \subsection{Electron selection}
 \label{subsec:electron_selection}
-Next step in the selection is to select isolated high-$p_T$ electrons present in the event.
-Electron reconstruction in the ATLAS detector central region ($\eta<2.5$) is done by matching tracks from inner detector with energy deposits in the EM calorimeter.
+The next step is the selection of isolated high-$p_T$ electrons present in the event.
+Electron reconstruction in the ATLAS detector central region ($\eta<2.5$) is done by matching tracks from the inner detector with energy deposits in the EM calorimeter.
 The spatial resolution of the electron candidate in ($\eta$,$\phi$) plane are taken from the parameters of the matched track,
 while energy is calculated from energy deposits in the EM calorimeter.
 
@@ -178,44 +179,46 @@ while energy is calculated from energy deposits in the EM calorimeter.
 % so as to provide increasing
 % background-rejection power at some cost to the identi-fication efficiency. 
 
-
-Electrons of interest are good reconstructed candidates, tracks of which originate from the primary vertex. To select such candidates, 
-the following requirements have to be satisfied:
+The electrons of interest are well-reconstructed candidates which satisfy
+the following requirements:
 \begin{itemize}
- \item $p_T > 20$ GeV: to ensure a high and flat trigger efficiency and to harmonize $p_T$ requirement between three analysis channels ($ee$, $\mu\mu$ and $e\mu$) 
- \item $|\eta|<2.47$: to be within high-granularity acceptance of the EM calorimeter, but excluding barrel-end-cap transition region $1.37<|\eta|<1.52$.
- \item Transverse and longitudinal impact parameters $|d_0|/\sigma(d_0) < 3$ and $|z_0 \times sin \theta| < 1$ mm: 
- to verify that the electron was produced close to the primary vertex and to reject electrons originating from decays of long-lived particles.
- \item To pass ``tight'' electron set of identification criteria defined in~\cite{electron_tight}. \\ 
- This set provide the best background-rejection efficiency, a factor of two with respect to the medium selection, 
- at cost of slightly smaller identification efficiency, less than 10$\%$ with respect to the medium selection.
- \item To pass isolation requirement: to distinguish prompt electrons from those associated with jet activity.
- \item No reconstructed jet within $\Delta R < 0.4$: to remove ambiguous classification of the track, 
- when track is classified as an electron and as a jet simultaneously,
- or when a jet is too close to the electron, leading to poor reconstruction of the latter. 
+ \item 
+ \item $p_T > 20$ GeV: to ensure a high and constant trigger efficiency as a function of $p_T$ and to harmonizes $p_T$ requirement between the three analysis channels ($ee$, $\mu\mu$ and $e\mu$) 
+ \item $1.37<|\eta|$ or $1.52<|\eta|<2.47$: to be within high-granularity acceptance of the EM calorimeter, but excluding barrel-end-cap transition region.
+ \item Electron tracks have to originate from the primary vertex.
+ Transverse impact parameter significance, which is defined as the ratio of the absolute transverse impact parameter ($d_0$) to its uncertainty parameters ($\sigma(d_0)$) have to be below three. The distance between the $z$-coordinate of the primary vertex and $z$-position of the point of closest approach of the electron track in the ID to the beamline to be less than 1 mm.
+ These requirements also reject electrons originating from decays of long-lived particles.
+ \item Pass ``tight'' electron set of identification criteria defined in~\cite{electron_tight}. \\ 
+ This set provide the best background rejection, a factor of two with respect to the medium selection, 
+ at the cost of less than 10$\%$ electron efficiency with respect to the medium selection.
+ \item No reconstructed jet within $\Delta R < 0.4$: 
+ to ensure that electron is not part of a jet.
+%  to remove ambiguous classification of the track, 
+%  when track is classified as an electron and as a jet simultaneously,
+%  or when a jet is too close to the electron, leading to poor reconstruction of the latter. 
+ \item Pass isolation requirement: to distinguish prompt electrons from those associated with jet activity.
 \end{itemize}
 
 The isolation requirement was chosen in order to reach pile-up independent efficiency of more than 99$\%$ for electrons 
 with $p_T >$ 40 GeV. The requirement has two parts.
 Firstly, the sum of the transverse energies in the EM and hadronic calorimeters around the electron within 
 $\Delta R < 0.2$, with core electron energy subtracted from the sum, has to be less than 
-3 GeV $+ (p_T - 20$ GeV$) \times 0.037$, where $p_T$ is electron transverse momentum.
+3 GeV $+ (p_T - 20$ GeV$) \times 0.037$
+\footnote{
+Core electron energy corresponds to the electron energy deposit in the calorimeter in the core cluster, to which electron candidate is assigned. However not all electron energy is contained in the core cluster, part of it leaks to the neighbor clusters which are used for electron isolation requirement. This effect is taken into account in the isolation requirement formula.}, 
+where $p_T$ is electron transverse momentum.
 Secondly, the sum of $p_T$ of all tracks with $p_T > 0.4$ GeV within $\Delta R < 0.3$ around the the electron track has
 to be less than 10$\%$ of electron $p_T$.
 
-Electrons used in validation regions, used for validation of the background estimation, 
+Electrons used in the so-called validation regions, defined in \SectionRef{sec:bkg_validation}, used for validation of the background estimation, 
 are required to fail one or several requirements above but pass looser one, as will be described further in the text.
 
-\subsection{Definition of same-sign electron pair}
+\subsection{Electron pair selection}
 % TODO inv. mass cut; treatment of event with three leptons;
-All the electrons which passed the selection are considered while forming lepton pairs.
-All combinations are checked, and it is allowed to have more than one pair selected in one event.
-Electrons in the pair are classified by the $p_T$: electron with a higher $p_T$ is called leading lepton, while another one with lower $p_T$ - subleading lepton.
-The leading lepton has to pass a more strict cut $p_T>25$ GeV while the subleading lepton has to satisfy $p_T>20$ GeV as described above.
-
-If an event contains an opposite-sign same flavour lepton pair which satisfies condition $( |m_{\Plepton\Plepton} - m_{Z}| < 10$ GeV$)$,
-where $m_{\Plepton\Plepton}$ is the lepton pair invariant mass and $m_{Z}$ is the mass of Z boson, the entire event is discarded.
-This significantly suppresses prompt background contribution.
+All the electrons which passed the selection are used in the considered lepton pair formation step.
+All combinations are considered, and it is allowed to have more than one pair selected in one event.
+Electrons in the pair are classified by the $p_T$: the electron with a higher $p_T$ is called leading lepton, while the another one is the subleading lepton.
+The leading lepton has to pass a more strict cut of $p_T>25$ GeV, while the subleading lepton has to satisfy $p_T>20$ GeV as described above.
 
 To avoid low-mass hadronic resonances like $J/\psi$ or $\varUpsilon$ to show up in the invariant mass spectrum, 
 only same-sign pairs with $m_{\Plepton\Plepton}>15$ GeV are selected.
@@ -223,9 +226,13 @@ Additionally, if same-sign lepton pairs with the invariant mass $70 < m_{\Plepto
 which corresponds to the Z peak region, are found in the event, such event is removed.
 This region is used for estimation of the electron charge misidentification background, as described further.
 
-\section{Estimation of the charge flip and non-prompt backgrounds}
+Since more than one pair is allowed in one event an additional requirement, which significantly suppresses the prompt background contribution, is required.
+If an event contains an opposite-sign same-flavour lepton pair which satisfies the condition $( |m_{\Plepton\Plepton} - m_{Z}| < 10$ GeV$)$,
+where $m_{\Plepton\Plepton}$ is the lepton pair invariant mass and $m_{Z}$ is the mass of Z boson, the event is discarded.
 
-\subsection{Prompt opposite-sign dilepton with charge flip}
+\section{Estimation of the charge misidentification and non-prompt backgrounds}
+
+\subsection{Prompt opposite-sign dilepton with charge misidentification}
 \label{subsec:CF_definition}
 % TODO
 % subsection flow:
@@ -236,46 +243,47 @@ This region is used for estimation of the electron charge misidentification back
 
 Since the charge of one of the reconstructed electrons from the pair can be misidentified, 
 processes with opposite-sign dilepton final state can contribute to the signal region.
-Because the prompt background is relatively small in the signal region, a possibility of a charge flip cannot be neglected and has to be properly estimated. 
-Two cases are considered as a charge flip background. 
+Because the prompt background is relatively small in the signal region, a possibility of a charge misidentification cannot be neglected and has to be precisely estimated. 
+Two cases are considered as a charge misidentification background. 
 The first one is when the electron charge is truly misidentified due to matching of the wrong track to the EM cluster 
 or due to a small curvature of the high-momentum track. 
-The second one is when an electron emits a photon by bremsstrahlung, which in its turn decays to an electron-positron pair. 
+The second one arises when an electron emits a photon by bremsstrahlung, which in turn decays to an electron-positron pair. 
 Instead of the original electron, an electron from the photon decay can be attributed to the pair and can have an opposite charge.
 
-In order to estimate how many events with opposite-sign dileptons will ``leak'' to the same-sign dilepton signal region, 
-one has to know the electron charge flip rate. It is expected that the charge flip depends on the electron momentum (due to the track curvature) 
+In order to estimate how many events with opposite-sign dileptons will contribute to the same-sign dilepton signal region, 
+one has to know the electron charge misidentification rate. It is expected that the charge misidentification depends on the electron momentum (due to the track curvature) 
 and on $\eta$ (due to the different amount of material in the detector versus $\eta$).
 
-Electrons from Z boson decays provide a huge sample of opposite-sign lepton pairs which can be used to estimate the charge flip rate. 
-By applying signal selection
-and requiring the invariant mass of the lepton pair to be around Z mass, $80 < m_{ee} < 100$ GeV, one obtains a pure
-sample of electron pairs, where charge of one electron is flipped. Knowing the number of opposite-sign pairs which pass signal selection, 
-one can extract the charge flip rate.
+Electrons from Z boson decays provide a huge sample of opposite-sign lepton pairs which can be used to estimate the charge misidentification rate. 
+By applying the signal selection criteria
+and requiring the invariant mass of the lepton pair to be around the Z mass, $80 < m_{ee} < 100$ GeV, one obtains a pure
+sample of electron pairs, where the charge of one electron is misidentified. Knowing the number of opposite-sign pairs which pass the signal selection, 
+one can extract the charge misidentification rate.
 
-In \FigureRef{fig:chargeFlip_structure} charge flip rate obtained from MC simulation as a function of $p_T$ is shown.
-By using information on truth (generated) level one can distinguish charge flip due to photon conversion from other effects which is shown in the figure.
-Contribution from photon conversion from the bremsstrahlung process dominates 
-the total charge flip rate over entire $p_T$ range except of the high-$p_T$ region, where misidentification 
-of charge due to very small curvature of tracks becomes dominant.
+In \FigureRef{fig:chargeFlip_structure} the charge misidentification rate obtained from MC simulation as a function of $p_T$ is shown.
+By using generator level information one can distinguish charge misidentification due to photon conversion from other effects which is shown in the figure.
+The contribution from photon conversions from bremsstrahlung dominates 
+the total charge misidentification rate over the entire $p_T$ range except in the high-$p_T$ region, where misidentification 
+of charge due to very small curvature of tracks becomes the dominant effect.
 
 \begin{figure}
 \begin{center}
  \includegraphics[width=0.7\columnwidth]{SS/support_note/chargeflip/misidratept_ZDY.eps}
 \caption{Electron charge misidentification rate, obtained from MC simulation using electrons from Z boson decay. 
-Contribution from charge flip due to photon conversion is shown separately on the plot and as a fraction of the total rate in the ratio plot below.}
+Contribution from charge misidentification due to photon conversion is shown separately on the plot and as a fraction of the total rate in the ratio plot below.}
 \label{fig:chargeFlip_structure}
 \end{center}
 \end{figure}
 
-To verify MC estimation of the charge flip, a special data-driven technique, the so-called likelihood method, 
+% TODO to describe method??? --> see Monika comment
+To verify the MC estimation of the charge misidentification, a special data-driven technique, the so-called likelihood method, 
 is used in the same way as in ref.~\cite{same_sign_paper_7tev}.
-This method is based on using a maximum likelihood fit to extract the charge flip rates in different kinematic regions simultaneously~\cite{cf_top_paper}.
-This method is found to be the most precise due to using most statistics available and providing kinematically unbiased results~\cite{anthony_thesis} 
+This method is based on using a maximum likelihood fit to extract the charge misidentification rates in different kinematic regions simultaneously~\cite{cf_top_paper}.
+This method is found to be the most precise method due to using most statistics available and providing kinematically unbiased results~\cite{anthony_thesis} 
 for same-sign dilepton analysis with 7 TeV data.
 
-To cross-check applicability of the method, it was first used on 
-the MC simulation, and charge flip rates were compared with the ones from the generator level (truth) information. 
+To cross-check the applicability of the method, it was first used 
+in reconstructed MC events, and then the charge misidentification rates were compared with the ones from the generator level (truth) information. 
 
 The comparison demonstrates that the likelihood method provides a very reliable result as shown in
 \FigureRef{fig:likelihood_cross_check}.
@@ -294,10 +302,10 @@ Ratio between the rate obtained with the likelihood method to the rate obtained 
 \label{fig:likelihood_cross_check}
 \end{figure}
 
-Charge flip rate as a function of $p_T$ and $\eta$ is shown in \FigureRef{fig:charge_flip_data_vs_mc}.
-Comparisons between MC simulation and likelihood data-driven predictions are shown. 
-Dependence of the rate on $p_T$ is well described by MC simulation, while some difference is observed
-in high-$\eta$ region. This is why $\eta$-dependent scale factors were calculated as a ratio of the charge flip rate extracted from collision date 
+The charge misidentification rate as a function of $p_T$ and $\eta$ is shown in \FigureRef{fig:charge_flip_data_vs_mc}
+for the MC simulation and the likelihood data-driven predictions.
+The dependence of the rate on $p_T$ is well described by MC simulation, while some difference is observed
+in high-$\eta$ region. This is why $\eta$-dependent correction factors were calculated as a ratio of the charge misidentification rate extracted from collision date 
 to the rate predicted by the MC simulation.
 
 \begin{figure}
@@ -310,13 +318,13 @@ to the rate predicted by the MC simulation.
   \includegraphics[width=\textwidth]{SS/support_note/chargeflip/misidratept_datamc.eps}
 \end{subfigure}
 \caption{Electron charge misidentification rate, obtained from MC simulation and from real collision data with the likelihood method.
-Ratio plot shows charge flip scale factor (SF), which correspond to the ratio between rates from data and MC simulation.}
+Ratio plot shows charge misidentification scale factor (SF), which correspond to the ratio between rates from data and MC simulation.}
 \label{fig:charge_flip_data_vs_mc}
 \end{figure}
 
-The charge flip background consists of opposite-sign lepton pairs which were reconstructed as same-sign pairs.
+The charge misidentification background consists of opposite-sign lepton pairs which were reconstructed as same-sign pairs.
 The background is estimated from MC simulation (all the considered processes are shown in the lower part of the \TableRef{tab:MC_cross}) 
-plus is corrected by a charge flip scale factor to properly reproduce $\eta$-dependence of the charge flip rate.
+plus is corrected by a charge misidentification scale factor to properly reproduce the $\eta$-dependence of the charge misidentification rate.
 
 To estimate the systematic error of the derived scale factors, the following uncertainty sources were considered:
 \begin{itemize}
@@ -325,58 +333,65 @@ To estimate the systematic error of the derived scale factors, the following unc
  \item The electron isolation requirement was loosened by 4 GeV in both track- and calorimeter-based isolation criteria.
 \end{itemize}
 Electrons from Z decays have a limited $p_T$-range of up to around 100 GeV. As can be seen in~\FigureRef{fig:charge_flip_data_vs_mc} (right), 
-MC simulation describes $p_T$ dependence of the charge flip rate very well, thus it was decided to rely on MC simulation 
+the MC simulation describes the $p_T$ dependence of the charge misidentification rate very well, thus it was decided to rely on MC simulation 
 for the high-$p_T$ leptons. Additional studies were done to estimate systematic uncertainty in this case.
 Special MC samples with varied detector alignment and amount of detector material (with 5-20$\%$ of variations depending on the sub-detector) 
-were used in order to estimate an effect on the charge flip rate.
-A conservative estimate of a 20$\%$ error was assigned to the high-$p_T$ lepton charge flip rate.
+were used in order to estimate the effect on the charge misidentification rate.
+% TODO Monika commetns
+This ??? in a conservative estimate of a 20$\%$ error, which was assigned to the high-$p_T$ lepton charge misidentification rate.
 
 The total systematic uncertainty of the background prediction is shown in~\TableRef{tab:syst}.
 
-The charge flip scale factor are also applied for the MC prediction of the background from $W\gamma$ process as well.
-\toAsk[should I say smth. more about $W\gamma$ process]
+The charge misidentification scale factor are also applied for the MC prediction of the background from $W\gamma$ process
+% TODO Monika comment
+as the origin of ??? a same-sign electron pair is very similar.
+In this case an electron is produced in the $W$-decay and the $\gamma$ conversion.
+% \toAsk[should I say smth. more about $W\gamma$ process]
+
 
 \subsection{Non-prompt background}
 \label{subsec:fakes_description}
+
+% TODO comment from Monika
 Another type of background present after the signal selection is the so-called non-prompt background.
 Main sources of this background are jets misidentified as electrons and electrons which do not originate from 
 the primary vertex, e.g. electrons from semi-leptonic decays of heavy flavor quarks ($b$, $c$).
 To estimate this background a data-driven method, the so-called fake factor method, is used.
 
-The first step of the methods is to define a background region, which does not overlap with the signal region, where 
-contribution of non-prompt electrons is dominant, while contribution from prompt electrons is as small as possible.
-It must contain strictly one reconstructed electron (probably a jet misreconstructed as electron) with $p_T > 20$ GeV.
+The first step of the methods is to define a background region, which does not overlap with the signal region in which the
+contribution of non-prompt electrons is dominant, while the contribution from prompt electrons is minimal.
+Events in this region must contain exactly one reconstructed electron (probably a jet misreconstructed as electron) with $p_T > 20$ GeV.
 To counterbalance the electron, a jet in the opposite azimuthal direction ($\Delta \phi (e,jet) > 2.4$) is required.
 By requiring strictly one electron one can make sure that the background region will not overlap with the signal selection and processes 
 like Drell-Yan and \ttbar~will be suppressed.
-To make sure that the opposite side jet and the non-prompt electron are well balanced in terms of energy, such jet is
+To make sure that the jet and the non-prompt electron are well balanced in terms of energy, the jet is
 requested to have $p_T > 30$ GeV.
-To suppress contribution from W boson production processes, a requirement on transverse invariant mass 
+To suppress contributions from W boson production, a requirement on the transverse invariant mass of 
 $m_\mathrm{T}$
 \footnote{$m_\mathrm{T} = \sqrt{2 p_\mathrm{T} p_T^{miss} (1-\cos\varphi_{\Plepton\nu})}$, where
 $p_\mathrm{T}$ is the transverse momentum of the electron, $p_T^{miss}$ is the transverse missing energy of the event
 and $\varphi_{\Plepton\nu}$ is the angle in transverse plane between electron direction and direction of the missing energy.}
 $ > 40$ GeV is applied.
 
-In this background region one define a fake factor $f$ as:
+In this background region the fake factor $f$ is defined as:
 \begin{equation}
 f = \frac{N_{\mathrm{P}} - N_{\mathrm{P}}^{\mathrm{prompt}}}{N_{\mathrm{F}}  - N_{\mathrm{F}}^{\mathrm{prompt}}}
 \label{eq:fakefactor}
 \end{equation}
 where $N_{\mathrm{P}}$ is the number of reconstructed electrons in the background region which pass the electron signal selection,
-described above in \SectionRef{subsec:electron_selection}, and $N_{\mathrm{F}}$ is the number of electrons which do not meet 
-signal electron selection requirements but satisfy a looser selection. Looser selection is identical to that for the signal, except 
-the requirement that the electron has to satisfy ``medium'' set of electron identification criteria~\cite{electron_tight} instead of ``tight'',
+described above in \SectionRef{subsec:electron_selection}, and $N_{\mathrm{F}}$ is the number of electrons which do not fulfill the 
+signal electron selection requirements but satisfy a looser selection. This looser selection is identical to that for the signal selection, except 
+that the electron only has to satisfy ``medium'' set of electron identification criteria~\cite{electron_tight} instead of the ``tight'',
 and it has to fail the calorimeter- or track-based isolation criterion, or both.
-$N_{\mathrm{P}}^{\mathrm{prompt}}$ and $N_{\mathrm{F}}^{\mathrm{prompt}}$ are numbers of real prompt
-leptons, obtained from MC simulation, which pass signal and looser selections respectively.
-Contribution of prompt leptons has to be subtracted in order to make sure that 
+$N_{\mathrm{P}}^{\mathrm{prompt}}$ and $N_{\mathrm{F}}^{\mathrm{prompt}}$ are the numbers of real prompt
+leptons, obtained from MC simulation, which pass the signal and looser selections respectively.
+The contribution of prompt leptons has to be subtracted in order to make sure that 
 the fake factor is evaluated as ratio of non-prompt electrons that passed the signal selection to
 the number of non-prompt electrons that passed the looser selection and there is no contamination from real prompt leptons.
-When the fake factor has been measured in the background region it can be used to predict the non-prompt background in the signal region.
+The fake factor, measured in this way, can then be used to predict the non-prompt background in the signal region.
 In order to take into account possible different kinematics of a lepton in the region were the fake factor was derived 
 and the region were it will be applied, the fake factor is measured as a function of electrons $p_T$ and $\eta$.
-The total number of the non-prompt same-sign pairs, $N_{\mathrm{NP}}$, in the signal region can be estimated as:
+The total number of non-prompt same-sign pairs, $N_{\mathrm{NP}}$, in the signal region can be estimated as:
 \begin{equation}
 N_{\mathrm{NP}} = \sum_{i}^{\mathrm{N_{P_l F_s}}} f_{\mathrm{s}}(p_{\mathrm{Ti}},|\eta_{i}|) + \sum_{i}^{\mathrm{N_{F_l P_s}}} f_{\mathrm{l}}(p_{\mathrm{T}i},|\eta_{i}|) - \sum_{i}^{\mathrm{N_{F_l F_s}}} f_{\mathrm{l}}(p_{\mathrm{T}i},|\eta_{i}|) \times f_{\mathrm{s}}(p_{\mathrm{T}i},|\eta_{i}|)
 \label{eq:fake_pred}
@@ -389,27 +404,27 @@ Contribution of every such pair to the signal region is scaled by the fake facto
 $f_{\mathrm{s}}(p_{\mathrm{Ti}},|\eta_{i}|)$, where $p_\mathrm{Ti}$ and $\eta_{i}$ are transverse momentum and pseudorapidity
 of the subleading electron of a pair which fails the signal selection. 
 Similarly, the second term represents the number of pairs where
-the leading electron fails signal selection while the subleading one passes it. 
-The last term corresponds to the case when both leading
-and subleading electrons fail signal selection. This term has to be subtracted from the sum to correct for the double
+the leading electron fails the signal selection while the subleading one passes it. 
+The last term corresponds to the case in which both the leading
+and subleading electrons fail the signal selection. This term has to be subtracted to correct for the double
 counting of non-prompt electron pairs.
 
-To estimate systematic errors of the method one can test all the assumptions made in the method and take into account possible differences between 
-the region used to derive fake factors, and the region where they will be applied. The following sources were considered:
+To estimate the systematic errors of the method one can test all the assumptions made in the method and take into account possible differences between 
+the region used to derive fake factors, and the region in which they are applied. The following sources were considered:
 \begin{itemize}
  \item statistical uncertainty of the data sample used to derive fake factors;
  \item prompt MC subtraction, which is done to verify that there is no contamination from prompt leptons when deriving/applying fake factors.
- Due to the luminosity uncertainty of 2.8$\%$ and the uncertainty of MC cross section (7$\%$ on major prompt processes), prompt MC subtraction
+ Due to the luminosity uncertainty of 2.8$\%$ and the uncertainty of MC cross section (7$\%$ on major prompt processes), the prompt MC subtraction
  was varied by 10$\%$;
- \item requirement on away side jet $p_T$. It was varied up to 50 GeV in order to test dependence of the fake factor on faking jet kinematics;
+ \item requirement on the away side jet $p_T$. It was varied up to $>50$ GeV in order to test the dependence of the fake factor on kinematics of the jets faking electrons;
  \item difference in the non-prompt background composition in the region used to derive the fake factors and the region where they were applied.
  Non-prompt background can originate from jets, which were created by gluons or light quarks, as well as from heavy flavour jets.
- Fake factor depends on the proportion of these two categories of jets in the region. This is why fake factors were derived separately
+ The fake factor depends on the proportion of these two categories of jets in the region. Therefore the fake factors were derived separately
  for heavy and light flavour jets, and the difference between the results was taken as systematic error.
 \end{itemize}
-More detailed description of the evaluated systematic uncertainties and the fake factor method overall can be found in~\cite{anthony_thesis}.
+A more detailed description of the evaluated systematic uncertainties and the fake factor method can be found in~\cite{anthony_thesis}.
 
-The electron fake factor as a function of electron $p_T$ with statistical and systematic errors is
+The electron fake factor as a function of electron $p_T$ together with the statistical and systematic errors is
 shown in \FigureRef{fig:ff_e_errs}.
 \begin{figure}[h]
 \begin{center}
@@ -421,18 +436,20 @@ shown in \FigureRef{fig:ff_e_errs}.
 \end{figure} 
 % TODO[say that fake factors were also measured not only for signal selection, but also for less strong selections which are used for fake validation regions].
 
-Verification of the fake factor method is done with the help of validation regions which are described further.
+Verification of the fake factor method is done with the help of validation regions which will be described in \SectionRef{subsec:fake_validation}.
 
 % The fake background includes all background processes where at least one of the leptons is fake. The dominant sources are $W$+jets and QCD multijets with smaller contributions arising from $Z$+jets and $t\bar{t}$. To assess this background, a data-driven method, known as the fake factor method, is employed. This method is used in several ATLAS analyses, particularly diboson measurements and searches\footnotemark. The method employed was covered in great depth in the previous 7 TeV incarnation of this analysis.
 
 % \footnotetext{The following analyses, among others, use the fake factor method: SM $WW \ra \ell\nu\ell\nu$ and $WZ \ra \ell\nu\ell\ell$, $H \ra WW \ra \ell\nu\ell\nu$, and exotics $WZ \ra \ell\nu\ell\ell$ search.}
 
 \section{Background validation regions}
+\label{sec:bkg_validation}
 
 In order to make sure that all backgrounds are modelled/predicted correctly in the signal region, one can define and use special validation regions.
 These regions should be kinematically close to the signal region but should not overlap with it. 
-Each region is designed to test one given background type at a time,
-which means that in each validation region only one background type has to give a dominant contribution with respect to all other backgrounds.
+The first validation region tests overall normalization of the background prediction to the data.
+Other described regions are designed to test one given background type at a time,
+which means that in each of these regions only one background type has to give a dominant contribution with respect to all other backgrounds.
 
 \subsection{Prompt opposite-sign dileptons}
 
@@ -442,9 +459,9 @@ This validation region does not test any background specifically.
 MC-based background estimation is normalized by the luminosity of the data sample.
 This is why overall normalization of the simulation to the data in the opposite-sign region verifies trigger and lepton reconstruction efficiencies.
 The correct description of the Z peak shape in data by the MC simulation tests electron scale momentum and resolution.
-In \FigureRef{fig:OS_CR} invariant mass of opposite-sign electron pairs is shown.
-In \TableRef{tab:dilep_isoOS} observed and expected number of the electron pairs are shown as well.
-Good agreement between data and simulation can be seen.
+In \FigureRef{fig:OS_CR} the invariant mass of opposite-sign electron pairs is shown.
+\TableRef{tab:dilep_isoOS} gives the observed and expected number of the electron pairs.
+Good agreement between data and simulation is observed.
 
 \begin{table}[htbp]
 \begin{center}
@@ -487,16 +504,16 @@ The last bin is an overflow bin.
 \subsection{Prompt same-sign dileptons}
 % TODO table with final numbers to show how good MC normalization is wrt to data.
 
-Same-sign dilepton prompt background originates dominantly from $WZ$ and $ZZ$ processes, where both Z and W bosons decay leptonicaly.
-In order to check normalization of these processes, a prompt validation region is used.
-In a fully reconstructed event, where one of these processes took place, one can find at least one same-sign and one opposite-sign lepton pairs.
-In order to enhance $WZ$ and $ZZ$ contributions in the validation region, at least three leptons are required in the event, where one lepton pair
-has to be a same-sign electron pair and other one - an opposite-sign same-flavour pair (from $Z$ boson decay). 
-Invariant mass of the opposite-sign pair has to be close to the $Z$ boson mass $(|m_{\Plepton\Plepton} - m_{Z}| < 10$ GeV$)$.
+The same-sign dilepton prompt background originates dominantly from $WZ$ and $ZZ$ processes, where both Z and W bosons decay leptonically.
+In order to check the normalization of these processes, a prompt validation region is used.
+In a fully reconstructed event, in which one of these processes took place, one can find at least one same-sign and one opposite-sign lepton pair.
+In order to enhance the $WZ$ and $ZZ$ contributions in the validation region, at least three leptons are required in the event, where one lepton pair
+has to be a same-sign electron pair and the other one - an opposite-sign same-flavour pair (from $Z$ boson decay). 
+The invariant mass of the opposite-sign pair has to be close to the $Z$ boson mass $(|m_{\Plepton\Plepton} - m_{Z}| < 10$ GeV$)$.
 
-Expected and observed numbers of same-sign pairs in this region are listed in \TableRef{tab:promptCR_yields}, 
+The expected and observed numbers of same-sign pairs in this region are listed in \TableRef{tab:promptCR_yields}, 
 and the ratios between observed and expected number of pairs are summarized in \TableRef{tab:prompt_ratios}. 
-The expectations are in good agreement with observation.
+The expectations are in good agreement with the observation.
 
 \begin{table*}[htbp]
 \begin{center}
@@ -543,8 +560,10 @@ The uncertainties account for both statistical and systematic errors.}
 \label{tab:prompt_ratios}
 \end{table*}
 
-\FigureRef{fig:prompt_CR} shows an invariant mass distribution in the prompt validation region.
-Simulation agrees well with data.
+\FigureRef{fig:prompt_CR} shows the invariant mass distribution in the prompt validation region. As was mentioned above, 
+the invariant mass $70 < m_{\Plepton\Plepton}< 110$ GeV region have been excluded
+to be used for the estimation of the electron charge misidentification background.
+The simulation agrees well with data.
 
 \begin{figure}[h]
 \begin{center}
@@ -556,26 +575,26 @@ Simulation agrees well with data.
 \end{figure} 
 
 
-\subsection{Electron charge flip}
+\subsection{Electron charge misidentification}
 
 As was described above, events with opposite-sign lepton pairs in the final state can be reconstructed as same-sign lepton pairs, 
 if charge of one of the leptons was wrongly identified.
 Misidentification probability is well modelled as a function of $p_T$ by MC simulation, 
 but $\eta$-dependence has to be corrected by scale factors obtained with a data-driven method.
 One can make a sanity check, comparing data from $Z$ peak window (same-sign pairs with invariant mass $80 < m_{ee} < 100$~GeV)
-with the MC simulation corrected by the charge flip scale factors.
+with the MC simulation corrected by the charge misidentification scale factors.
 
-Invariant mass of the same-sign pairs within $Z$ peak window is shown in \FigureRef{fig:charge_flip_CR_inv_mass}. 
-$p_T$ and $\eta$ distribution for the leading electron are shown in \FigureRef{fig:charge_flip_CR_kinematics}.
-A good agreement is observed, which demonstrates correctness of the derived charge flip scale factor.
+The invariant mass of the same-sign pairs within the $Z$ peak window is shown in \FigureRef{fig:charge_flip_CR_inv_mass}. 
+The $p_T$ and $\eta$ distribution for the leading electron are shown in \FigureRef{fig:charge_flip_CR_kinematics}.
+A good agreement is observed between the data and MC expectations, which demonstrates correctness of the derived charge misidentification scale factor.
 
-Observed and expected numbers of electron pairs are also shown in \TableRef{tab:ee_isoSS_Z} for combined $e^{\pm}e^{\pm}$ and separately for $e^{+}e^{+}$ and $e^{-}e^{-}$ pairs.
+The observed and expected numbers of electron pairs are also shown in \TableRef{tab:ee_isoSS_Z} for all same-sign electron pairs and separately for positively and negatively charged pairs.
 
 \begin{figure}[h]
 \begin{center}
 %\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
 \includegraphics[width=0.65\textwidth]{SS/paper_draft/2isoSS_ee_mll_ssz.eps}
-\caption{Invariant mass of reconstructed same-sign electron in the validation region for the charge flip background prediction.
+\caption{Invariant mass of reconstructed same-sign electron in the validation region for the charge misidentification background prediction.
 Dominant background contribution is arising due to electron charge misidentification.
 }
 \label{fig:charge_flip_CR_inv_mass}
@@ -591,7 +610,7 @@ Dominant background contribution is arising due to electron charge misidentifica
   \centering
   \includegraphics[width=\textwidth]{SS/paper_draft/2isoSS_ee_eta1_ssz.eps}
 \end{subfigure}
-\caption{Leading electron $p_T$ (left) and $\eta$ (right) distributions in the charge flip validation region. The last bin is an overflow bin in the left figure.}
+\caption{Leading electron $p_T$ (left) and $\eta$ (right) distributions in the charge misidentification validation region. The last bin is an overflow bin in the left figure.}
   \label{fig:charge_flip_CR_kinematics}
 \end{figure}
 
@@ -650,6 +669,7 @@ Agreement between observed and expected number of pairs is quoted as a fraction 
 
 
 \subsection{Non-prompt background validation region}
+\label{subsec:fake_validation}
 % TODO [explain here how fake factors for validation regions were calculated]
 
 To verify the fake factor method, a set of validation regions is checked. 
@@ -657,18 +677,15 @@ These regions have to be as much as possible kinematically close to
 the nominal signal selection as well as to the looser signal selection, 
 which is used in non-prompt background estimation with \EquationRef{eq:fake_pred}.
 
-Looser signal selection has weaker isolation requirements and a weaker 
+The looser signal selection requires weaker isolation and
 electron identification requirement compared to the nominal selection.
-This is why two validation regions are used, one of which is identical
-to the nominal signal selection, except for the weaker isolation cut, and another
-one - except for the weaker identification requirement. 
-Schematic representation of the signal and validation regions is shown
-in \FigureRef{fig:fake_validation_regions}. 
+Two validation regions were defined, as shown in a schematic representation in \FigureRef{fig:fake_validation_regions}. 
+Both regions are identical to the nominal signal selection 
+except either the weaker identification requirement (shown as ``VR1''), and 
+the weaker isolation cut (``VR2'').
 Looser selections for the
 validation regions which were used for fake factor calculation are shown
-as well. As can be seen from the figure, such design of the validation
-region allows to test non-prompt estimation for signal region in the 
-best way possible.
+as well. Such a design of the validation region provide similar kinematics to the one in the signal region.
 
 \begin{figure}[h]
 \begin{center}
@@ -679,15 +696,15 @@ best way possible.
 \end{center}
 \end{figure}
 
-In total, four different validation regions were defined.
-One validation region consists from same-sign electron pairs, where both electrons pass the signal region isolation requirement, 
-but fail ``tight'' electron identification requirement, while passing ``medium''.
-The second validation region consists from same-sign electron pairs, where both electrons fail the signal isolation requirement
-but pass a looser intermediate isolation cut, which is loosened by 4 GeV, instead.
+In total, four different validation regions are defined.
+One validation region consists of same-sign electron pairs, where both electrons pass the signal region isolation requirement, 
+but fail the ``tight'' electron identification requirement, while passing ``medium''.
+The second validation region consists of same-sign electron pairs, where both electrons fail the signal isolation requirement
+but pass a looser intermediate isolation cut (loosened by 4 GeV) instead.
 The third and fourth validation regions are identical to the second one but require only the leading (third region) or the subleading (fourth region)
 electron to fail the signal isolation requirement, but pass a looser intermediate isolation cut instead.
 
-\FigureRef{fig:fakeCR_part1} and \FigureRef{fig:fakeCR_part2} show the invariant mass distributions for the validation regions descried above. 
+\FigureRef{fig:fakeCR_part1} and \FigureRef{fig:fakeCR_part2} show the invariant mass distributions for the validation regions described above. 
 The agreement between observation and prediction is generally good.  
 \TableRef{tab:ee_fakeCR} shows the expected and observed numbers of electron pairs. 
 The uncertainties quoted are statistical only. 
@@ -709,9 +726,9 @@ The uncertainties quoted are statistical only.
     \end{tabular}
     }
 \caption{Expected and observed numbers of electron pairs for the different same-sign $ee$ fake control regions. 
-The uncertainties on the predictions include the statistical and systematic uncertainties (fake factor and charge flip 
+The uncertainties on the predictions include the statistical and systematic uncertainties (fake factor and charge misidentification 
 uncertainties have been included; other systematic uncertainties are negligible in these regions).
-Agreement between observed and expected number of pairs is quoted in the bottom of the table as a fraction of the total uncertainty on the prediction.
+Agreement between observed and expected number of pairs is quoted in the last column of the table as a fraction of the total uncertainty on the prediction.
 % For the fake predictions, a systematic uncertainty derived for the signal region is assumed.
 }
 \label{tab:ee_fakeCR}
@@ -754,51 +771,55 @@ The hatched areas show the statistical uncertainty of the background prediction.
 % TODO [add Fast/Full sim. systematics]
 
 A set of possible systematic sources which can affect background predictions were studied.
-Description of the considered sources are presented below.
-Systematic uncertainties related to the data-driven methods for non-prompt and charge flip background estimations
-were described in \SectionRef{subsec:fakes_description} and \SectionRef{subsec:CF_definition} respectively.
+These sources are presented below.
+Systematic uncertainties related to the data-driven methods for non-prompt and charge misidentification background estimations
+were described already in \SectionRef{subsec:fakes_description} and \SectionRef{subsec:CF_definition} respectively.
 
 \subsection{Electron reconstruction}
+\label{subsec:elec_reco_system}
 Several systematic uncertainties are related to the electron reconstruction procedure.
-These uncertainties are provided by the ATLAS e/gamma working group which works on electron and photon identification performance of the ATLAS detector.
+These uncertainties are provided by the ATLAS e/gamma working group which studies the electron and photon identification performance of the ATLAS detector.
 They provide recommendations and uncertainty estimations for all physics analyses which use electron or photon final states.
 
-Electron reconstruction and ``tight'' identification efficiencies are obtained with tag-and-probe methods using
-events with leptonic decays of $W$ and $Z$ bosons as well as $J/\psi$ mesons.
-Reconstruction efficiency uncertainty range between 1.3-2.4\% depending on $\eta$, while
+Electron reconstruction and ``tight'' identification efficiencies are obtained with so-called tag-and-probe data-driven methods.
+This method allows to measure the efficiency of a studied electron selection using $Z \to e e$ and $J/\psi \to e e$ resonance decays from data. 
+One electron from a pair is selected by requiring very tight criteria, 
+while the second one is required to pass the studied selection.
+By counting a number of pairs from the resonance decays (by making the fitting of an invariant mass resonance peak) which were selected or were failed to be selected due to the electron required to pass studied selection one can extract efficiency of the studied selection. Detailed information on the method can be found, for example, in ref.~\cite{tag-and-probe}.
+The reconstruction efficiency uncertainty range between 1.3-2.4\% depending on $\eta$, while the 
 ``tight'' identification efficiency uncertainty range between 2.0-2.8\% depending on both $p_T$ and $\eta$~\cite{electron_reco_id_2011}.
 
 Reconstruction of the electron energy is optimized using multivariate algorithms.
-Electron energy scale and energy resolution are obtained using electrons from Z boson decays.
+The electron energy scale and energy resolution are obtained using electrons from Z boson decays.
 Their uncertainties are provided as a function of $p_T$ and $\eta$~\cite{electron_energy_errors_Run1} 
 by the working group as well.
 
-The total effect of these uncertainties on total background prediction 
+The total effect of these uncertainties on the total background prediction 
 is shown under the name ``Electron reconstruction and identification'' in \TableRef{tab:syst}.
 
 \subsection{Trigger and luminosity}
-Trigger efficiency for electrons with different $p_T$ and $\eta$ has some uncertainty as well.
+The electron trigger efficiency varies with $p_T$ and $\eta$ and is measured with respect of the offline identification.
 This uncertainty is estimated to be at $\sim1\%$ level by the ATLAS trigger groups.
 The resulting uncertainty on the yield in the signal region is different, since there are two leptons that can pass the trigger requirement. 
 
 To scale the background prediction obtained with MC simulation to the data 
-one has to know an integrated luminosity of the collected data sample. 
-This is why a luminosity uncertainty propagates to all the backgrounds measured using MC simulation.
+one has to know the integrated luminosity of the collected data sample. 
+Therefore the luminosity uncertainty propagates to all the backgrounds measured using MC simulation.
 The integrated luminosity uncertainty in 2012 is equal to 2.8$\%$~\cite{Aad:2013ucp} 
 and it was obtained in a similar way to that described in \SectionRef{sec:lucid_performance}.
 
 \subsection{Statistics and the theoretical cross section}
 % TODO describe how much statistics (wrt data lumi) samples had!
-Limited number of simulated events in the Monte Carlo samples lead to an additional uncertainty which is listed as ``MC statistics'' in \TableRef{tab:syst}.
-This uncertainty also includes effect of the limited number of events in data sets used in data-driven methods to measure the charge flip rate and the fake factor.
-Statistical uncertainty is significant for high-mass region.
+The limited number of simulated events in the Monte Carlo samples lead to an additional uncertainty which is listed as ``MC statistics'' in \TableRef{tab:syst}.
+This uncertainty also includes the effect of the limited number of events in data sets used in data-driven methods to measure the charge misidentification rate and the fake factor.
+The statistical uncertainty is significant in the high-mass region.
 
 % TODO describe who did all this tests and variations! Who it was???
-As one can see from \TableRef{tab:MC_cross}, different processes were simulated using different MC generators and PDF sets.
+As one can see from \TableRef{tab:MC_cross}, different processes were simulated using different MC generators, PDF sets and level of perturbative higher order calculations.
 Additional uncertainty arises from  their choice.
 To estimate these uncertainties, different MC generators, parton shower and hadronization models are tested.
 Uncertainty on PDF and strong coupling constant $\alpha_{\mathrm{s}}$ are estimated by using different PDF sets following recommendations from~\cite{pdf4lhc}.
-Also renormalization and factorization scales are varied by a factor of two to estimate an effect on total cross section of the processes.
+Also renormalization and factorization scales are varied by a factor of two to estimate the effect on the cross section.
 The summary list of uncertainties used in the analysis is shown in \TableRef{tab:systematics_common}.
 Detailed information about cross section calculations and their errors for some processes 
 are reported in~\cite{diboson_cross_section,ttW_cross_section,ttV_cross_section}.
@@ -859,20 +880,20 @@ Processes affected & Uncertainty \\
 \section{Signal Region}
 \label{sec:ss_signalRegion}
 
-Same-sign lepton pair invariant mass in the signal region is shown in~\FigureRef{fig:signal_mass}.
+The same-sign lepton pair invariant mass in the signal region is shown in~\FigureRef{fig:signal_mass}.
 The last bin in the histogram is an overflow bin, which includes pairs with invariant mass higher than 600 GeV.
 The observed number of pairs is compatible with the predicted background.
-As one can see, the dominant background arises from the charge flip component.
-Predicted contributions from each background processes with different invariant mass cuts are shown in \TableRef{tab:2iso_ee_SS}.
-In \FigureRef{fig:signal_kinematics}, kinematics of the leading lepton is shown. 
-In \FigureRef{fig:delta_phi}, angle between same-sign electrons in the pair is shown as well.
-Background prediction describes observed numbers in all of these distributions reasonable well within uncertainties bands.
+As one can see, the dominant background arises from the charge misidentification component.
+The predicted contributions from each background process with different invariant mass cuts are shown in \TableRef{tab:2iso_ee_SS}.
+In \FigureRef{fig:signal_kinematics}, the kinematics of the leading lepton is shown. 
+In \FigureRef{fig:delta_phi}, the angle between same-sign electrons in the pair is shown as well.
+The background prediction describes the observed numbers of all of these distributions reasonable well within the uncertainties bands.
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{SS/paper_draft/2isoSS_ee_mll.eps}
 \caption{Invariant mass distribution for $e^{\pm}e^{\pm}$ pairs in the signal region. 
-Shaded band in the lower plot corresponds to the combination of the statistical and systematic uncertainties of the background prediction.
+The shaded band in the lower plot corresponds to the combination of the statistical and systematic uncertainties of the background prediction.
 The last bin is an overflow bin.}
 \label{fig:signal_mass}
 \end{center}
@@ -934,7 +955,7 @@ Data	& $ 1976 $	& $ 987 $	& $ 265 $	& $ 83 $	& $ 30 $	& $ 13 $	& $ 7 $	\\[+0.05i
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{SS/support_note/dielectrons/crs/signal_deltaPhi_v2.eps}
-\caption{Azimuthal angle difference between two same-sign electrons from the pair in the signal region.}
+\caption{Azimuthal angle difference between two same-sign electrons from the pair in the signal region. The uncertainties shown include statistical and systematic contributions.}
 \label{fig:delta_phi}
 \end{center}
 \end{figure}
@@ -943,18 +964,18 @@ Data	& $ 1976 $	& $ 987 $	& $ 265 $	& $ 83 $	& $ 30 $	& $ 13 $	& $ 7 $	\\[+0.05i
 
 \subsection{Limit setting}
 
-Background prediction describes data very well and there are no significant visible deviations which could indicate a potential presence of the BSM signal.
+The background prediction describes data very well and there are no significant visible deviations which could indicate a potential presence of the BSM signal.
 The idea of this analysis is to be as general as possible and to perform a search for the a new physics without favoring any BSM model.
-This is why the next step is to calculate exclusion limits on the new physics with same-sign lepton pairs.
+This is why the next step is to calculate exclusion limits on any type of new physics with prompt same-sign lepton pairs.
 
-Due to the limited acceptance of the detector the signal region was designed to use the most efficient phase space possible.
+Due to the limited acceptance of the detector the signal region was designed to use the phase space which is used in ATLAS for precision measurements.
 This is why the cross section of the process, $\sigma$, relates with the measured cross section in the signal region, the so-called fiducial cross section, $\sigma^{fid}$, as:
 \begin{equation}
  \sigma = \dfrac{\sigma^{fid}}{<N_{pair}>A}
  \label{eq:cross_section}
 \end{equation}
 where $<N_{pair}>$ is the average number of same-sign pairs produced per event and $A$ is the fiducial acceptance (or volume).
-Definition of the fiducial volume is discussed in \SectionRef{subsec:fid_volume_eff}.
+The definition of the fiducial volume is discussed in \SectionRef{subsec:fid_volume_eff}.
 
 The cross section limits are derived using a $CLs$~\cite{CLs_tecnique,CLs_2} prescription with the help of the RooStat~\cite{RooStat_project} framework 
 provided by the ATLAS Statistics Committee. $CLs$ method state that the signal hypothesis is excluded at the confidence level $CL$ when
@@ -968,20 +989,20 @@ where $CL_s$ is defined as
 where $CL_b$ is a confidence level observed for the background-only hypothesis and $CL_{s+b}$ - for the background plus signal hypothesis.
 In practise, $CL_b$ ($CL_{s+b}$) is a probability to find the observed data given an expected background (background plus signal).
 This probability is Poisson-distributed and is calculated basing on the number of observed and expected same-sign electron pairs in the signal region.
-A used test-statistics for the limit settings is a log likelihood ratio test.
-Systematic uncertainties and their correlations between each other are taken into account during the limit settings.
-For example, the charge-flip scale factor uncertainty is correlated across Drell-Yan, $t\bar{t}$, $WW$ and $W\gamma$ background samples.
+The test-statistics used for the limit settings is a log likelihood ratio test.
+Systematic uncertainties and their correlations between each other are taken into account with this method.
+For example, the charge misidentification scale factor uncertainty is correlated across Drell-Yan, $t\bar{t}$, $WW$ and $W\gamma$ background samples.
 Experimental errors such as electron reconstruction, identification, energy scale and trigger 
 are treated as one uncertainty and correlated across all the expected backgrounds and signal.
-MC cross section errors are independent except for dibosons ($ZZ$, $WZ$ and $WW$).
-The luminosity is common to all the background samples, so it is naturally correlated.
-Statistical errors are independent.
+The MC cross section errors are independent except for the diboson ($ZZ$, $WZ$ and $WW$) samples.
+The luminosity is common to all the background samples, thus it is correlated.
+The statistical errors are independent.
 
-Following this prescription and using number of expected and observed same-sign lepton pairs one can compute 
+Following this prescription and using the number of expected and observed same-sign lepton pairs one can compute 
 upper limits at a given confidence level (typically at 95$\%$ level) on the number of same-sign lepton pairs ($N_{95}$)
-contributed by the new physics beyond the SM. Limits can be set for different invariant mass thresholds, 
-because dilepton invariant mass is the main observable for the analysis.
-Limits on the number of pairs can be translated to the upper limits on fiducial cross section as:
+arising from the new physics beyond the SM. Limits can be set for different invariant mass thresholds, 
+because the dilepton invariant mass is the main observable in the analysis.
+Limits on the number of pairs can be translated into upper limits on the fiducial cross section as:
 \begin{equation}
  \sigma_{95}^{fid} = \dfrac{N_{95}}{\epsilon_{fid} \times \int \mathscr{L} dt}
  \label{eq:fid_cross_section}
@@ -995,11 +1016,11 @@ a possible signal from new physics in the fiducial volume, which is described in
 \label{subsec:fid_volume_eff}
 
 As can be seen from \EquationRef{eq:cross_section} and \EquationRef{eq:fid_cross_section}, in order to translate the number of measured and expected lepton pairs 
-to the cross section limit of the potential signal from new physics, one has to know the fiducial volume and efficiency.
-The reason is that the detector does not reconstruct leptons 100$\%$ efficiently, and it does not cover the whole phase space around the interaction point.
-Fiducial volume represents the phase space region that is truncated in a manner that mimics the detector acceptance.
+to the cross section limit of a signal from new physics, one has to know the fiducial volume and efficiency.
+The reason is that the detector does not reconstruct leptons with a 100$\%$ efficiency, and it does not cover the whole phase space around the interaction point.
+The fiducial volume represents the phase space region that is truncated in a manner that mimics the detector acceptance.
 It is defined by a set of cuts on the truth (generator) level. 
-Kinematic cuts on the electrons are identical to the one used in the signal region definition on the reconstruction level:
+Kinematic cuts on the electrons are identical to the one used in the signal region definition on reconstruction level:
 \begin{itemize}
  \item Leading electron $p_T > 25$ GeV
  \item Subleading electron $p_T > 20$ GeV
@@ -1011,15 +1032,14 @@ Requirements on the electron pair are the same as well:
  \item Veto pairs with $70 < m_{ee} < 110$ GeV
  \item No opposite-sign same-flavour pairs with $|m_{ee} - m_{Z}| < 10$ GeV
 \end{itemize}
-Since electrons are required to be isolated on the reconstruction level, isolation has to be applied on the truth level as well.
+Since electrons are required to be isolated on reconstruction level, isolation has to be applied on the truth level as well.
 Track-based isolation on truth level is identical to the one on reconstruction level:
 all charged particles within the cone $\Delta R < 0.3$ around the electron with $p_T > 0.4$ GeV are considered and
 sum of their $p_T$ has to be not larger than 10$\%$ of the electron $p_T$.
-Calorimeter-based isolation was not applied on the truth level due to a significantly different behavior of the cuts on the reconstruction and truth levels.
+Calorimeter-based isolation was not applied on the truth level due to a significantly different behaviour at reconstruction and truth levels.
 
-As one can see, cuts on the truth level are identical to those used on the reconstruction level.
-In a case of an ideal detector, fiducial volume would completely correspond to the geometrical detector acceptance.
-But because the real detector does not provide a 100$\%$ reconstruction efficiency, in order to relate the fiducial volume with the real geometrical detector acceptance
+In the case of an ideal detector, fiducial volume would completely correspond to the geometrical detector acceptance.
+But because the real detector does not provide a 100$\%$ reconstruction and identification efficiency, in order to relate the fiducial volume with the real geometrical detector acceptance
 a fiducial efficiency is used, which is defined as:
 \begin{equation}
  \epsilon_{fid} = \dfrac{N_r}{N_f}
@@ -1027,47 +1047,46 @@ a fiducial efficiency is used, which is defined as:
 where $N_f$ is the number of electron pairs which pass the fiducial volume cuts on the truth level and $N_r$ - which pass the fiducial volume cuts on the truth level, 
 as well as all the signal selection cuts on the reconstruction level.
 
-In order to perform a search for new physics in a model-independent way, one wants the fiducial efficiency to be constant and not depending on the type of the BSM model.
-However, different models provide different $p_T$ and $\eta$ spectra, and electron reconstruction efficiency depends on both $p_T$ and $\eta$.
-As reported in~\cite{electron_tight}, efficiency can vary up to 15$\%$ for ``tight'' identification criteria with respect to the electron $p_T$.
-Also, presence and number of jets in the final state, which is model dependent, affects electron isolation efficiency, which will have an effect on 
-the fiducial efficiency as well.
+In order to perform a search for new physics in a model-independent way, the fiducial efficiency has to be constant and to not depend on the type of the BSM model.
+However, different models provide different $p_T$ and $\eta$ spectra, and the electron reconstruction efficiency depends on both $p_T$ and $\eta$.
+As reported in~\cite{electron_tight}, the efficiency can vary up to 15$\%$ for the ``tight'' identification criteria with respect to the electron $p_T$.
+Also, the presence and number of jets in the final state is model dependent, and affects the electron isolation efficiency, which will have an effect on 
+the fiducial efficiency.
 
 In order to estimate the value of the fiducial efficiency, efficiencies for four different BSM models were calculated:
 \begin{itemize}
  \item Doubly charged Higgs. This model assumes production of two doubly charged scalar bosons which, decaying leptonically, will provide two pairs of same-sign leptons.
- No jets are produced in the final state. A range of 100-1000 GeV of double charged Higgs was considered.
- \item Colored Zee-Babu model. It assumes production of a diquark, which decays to two leptoquarks with the same charge, 
- which in their turn decay to lepton and quark. The final state consists of one same-sign lepton pair plus two jets.
- Masses considered in the model were 2.5-3.5 TeV for the diquark and 1-1.4 TeV for leptoquarks.
+ No jets are produced in the final state of the hard process. The Higgs mass was varied between 100 GeV and 1000 GeV.
+ \item Colored Zee-Babu model. Diquarks are produced, which decay to two leptoquarks with the same charge, 
+ which subsequently decay to a lepton and a quark. The final state consists of one same-sign lepton pair and two jets.
+ The masses considered in the model are 2.5-3.5 TeV for the diquark and 1-1.4 TeV for leptoquarks.
  \item Production of a heavy right-handed $W_R$ boson and a heavy Majorana neutrino. $W_R$ decays to a lepton and a Majorana neutrino, 
- which decays to a $W$ boson and another lepton. The final state consists of one same-sign pair and products of the W boson decay.
- Mass of $W_R$ was between 1 TeV and 2 TeV, while mass of the Majorana neutrino was in the range of 0.25-1.5 TeV
- \item Pair production of the fourth generation down-type quark. Both quarks decay semi-leptonically to $t$ quark and then to $b$ quark.
+ which decays to a $W$ boson and another lepton. The final state consists of one same-sign pair and products from the W boson decay.
+ The mass of $W_R$ was varied between 1 TeV and 2 TeV, while the mass of the Majorana neutrino was in the range of 0.25-1.5 TeV
+ \item Pair production of the fourth generation down-type quark. Both quarks decay semi-leptonically to a $t$ quark and subsequently to a $b$ quark.
  The final state consists of two jets and four W bosons. At least two same-sign bosons have to decay leptonically in order to provide a same-sign lepton pair.
- This state is characterized by large hadron activity due to high jet multiplicity.
- Mass of the fourth generation quark was varied from 400 GeV to 1 TeV.
+ This state is characterized by large hadron activity due to the high jet multiplicity.
+ The mass of the fourth generation quark was varied from 400 GeV to 1 TeV.
 \end{itemize}
-Fiducial efficiencies for these models were calculated with different dilepton mass thresholds.
-Obtained efficiencies are in the range of 48-74$\%$. The lowest efficiency was given by the fourth generation down-type quark, while the highest one - 
-by the heavy right-handed $W_R$ boson and heavy Majorana neutrino. The latter model had a larger efficiency with respect to the doubly charged Higgs model
-because the final state of the doubly charged Higgs model contains two same-sign pairs against one pair in the Majorana model.
-Efficiencies were measured separately for positive and negative same-sign pairs, but no significant difference was observed.
+The fiducial efficiencies for these models were calculated with different dilepton mass thresholds.
+The obtained efficiencies are in the range of 48-74$\%$. The lowest efficiency was observed for the fourth generation down-type quark model, while the highest one is found for the heavy right-handed $W_R$ boson and heavy Majorana neutrino process. The latter model has a larger efficiency with respect to the doubly charged Higgs model
+because the final state of the doubly charged Higgs model contains two same-sign pairs compared to one pair in the Majorana model.
+The efficiencies were measured separately for positive and negative same-sign pairs, and no significant differences were observed.
 
-To provide conservative cross section limit setting for new physics beyond the SM, the lowest obtained efficiency, which was 48.3$\%$, was used.
+To provide a conservative cross section limit setting for new physics beyond the SM, the lowest obtained efficiency, which was 48.3$\%$, was used.
 
 \subsection{Fiducial cross section limits}
 
 Computed upper limits at the 95$\%$ confidence level on the fiducial cross section ($\sigma_{95}^{fid}$)
-of the new physics beyond the SM for different invariant mass thresholds based on the values from \TableRef{tab:2iso_ee_SS}
-are shown in \FigureRef{fig:inclusive_fid_limit}. Separate limits for positive and negative same-sign pairs are shown in \FigureRef{fig:signal_kinematics}.
-Expected limits are shown with 2$\sigma$ bands. Limits are summarized in \TableRef{tab:limits}.
+of new physics beyond the SM for the invariant mass thresholds used in \TableRef{tab:2iso_ee_SS}
+are shown in \FigureRef{fig:inclusive_fid_limit}. Separate limits for positive and negative same-sign pairs are shown in \FigureRef{fig:signal_kinematics_v2}.
+The expected limits are shown together with the 2$\sigma$ uncertainty bands. The limits are summarized in \TableRef{tab:limits}.
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{SS/paper/limit_ee_all.eps}
 \caption{Fiducial cross section upper limits at 95\% C.L. for new physics contributing to the signal region for events with $e^{\pm}e^{\pm}$ pairs.
-The green and yellow bands correspond to the 1$\sigma$ and 2$\sigma$ bands on the expected limits respectively.}
+The green and yellow bands correspond to the 1$\sigma$ and 2$\sigma$ uncertainty bands on the expected limits respectively.}
 \label{fig:inclusive_fid_limit}
 \end{center}
 \end{figure}
@@ -1083,8 +1102,8 @@ The green and yellow bands correspond to the 1$\sigma$ and 2$\sigma$ bands on th
   \includegraphics[width=\textwidth]{SS/support_note/limits/limit_ee_pos.eps}
 \end{subfigure}
 \caption{Fiducial cross section upper limits at 95\% C.L. for new physics contributing to the signal region
-for events with $e^{+}e^{+}$ (left) and $e^{+}e^{+}$ (right) pairs. The green and yellow bands correspond to the 1$\sigma$ and 2$\sigma$ bands on the expected limits respectively.}
-  \label{fig:signal_kinematics}
+for events with $e^{+}e^{+}$ (left) and $e^{+}e^{+}$ (right) pairs. The green and yellow bands correspond to the 1$\sigma$ and 2$\sigma$ uncertainty bands on the expected limits respectively.}
+  \label{fig:signal_kinematics_v2}
 \end{figure}
 
 
@@ -1115,26 +1134,25 @@ Mass range & Expected & Observed & Expected & Observed & Expected & Observed \\
 \end{table*}
 
 
-\section{Mass limits on doubly charged Higgs}
+\section{Mass limits of doubly charged Higgs}
 As an example of a BSM model which produces same-sign lepton pairs in the final state, a pair production of doubly charged Higgs bosons was studied.
 The search strategy is the same as described above.
-Since the final state of this model has two same-sign pairs of leptons, no jet activity or no missing transverse energy in the event, 
-there is no need to optimize signal selection.
-Doubly charged Higgs decay should be visible as a sharp peak in the dilepton invariant mass.
-This is why using fiducial efficiency calculated in bins of 100 GeV (as it was done for the fiducial limit calculations) is not optimal from the point of view signal sensitivity.
-Thus, the search is performed in mass bins with mass-dependent width.
+Since the final state of this model has two same-sign pairs of leptons, no jet activity or no missing transverse energy is present in the event. 
+Therefore, there is no need to optimize the signal selection.
+Doubly charged Higgs decays should be visible as a sharp peak in the dilepton invariant mass.
+Using a fiducial efficiency calculated in bins of 100 GeV (as it was done for the fiducial limit calculations) is not optimal from the point of view of the signal sensitivity.
+Thus, the search is performed in mass bins with a mass-dependent width.
 
 \subsection{MC simulation}
 A few signal samples were generated with Pythia8~\cite{pythia8} with different masses of the left-handed and right-handed doubly charged Higgs bosons.
-Simulated masses were in the range of 50-600 GeV in steps of 50 GeV and one sample had 1 TeV mass.
-Kinematics of the left-handed and right-handed Higgs bosons is identical, but production rate is different due to the different coupling to Z boson mediator~\cite{dch_note}. Cross sections were calculated with NLO precision. 
+The simulated masses were produced in the range of 50-600 GeV in steps of 50 GeV and one sample had a Higgs mass of 1 TeV.
+The kinematics of left- and right-handed Higgs bosons is identical, but the production rate is different due to a different coupling to the Z boson mediator~\cite{dch_note}. The cross sections were calculated with NLO precision. 
 % TODO [link] for NLO cross section
 
 \subsection{Model acceptance and efficiency}
-The width of the doubly charged Higgs decay is mainly caused by the detector momentum resolution of the electrons.
-Since the decay width becomes larger with the invariant mass, the search was performed in the mass bins with variable width.
+The width of the doubly charged Higgs decay is dominated by the detector momentum resolution of the electrons. Since the decay width depends from the doubly charged Higgs mass, the search was performed in the mass bins with variable width.
 The idea behind the mass bin widths optimization is based on two facts. On one hand, a mass bin has to cover as much signal as possible,
-but on the other hand, background contribution in the mass bin is desired to be as small as possible.
+while on the other hand, the background contribution in the mass bin is desired to be as small as possible.
 To satisfy both conditions, the signal significance, $S$, was chosen as an optimization criterion:
 \begin{equation}
  S = \sqrt{ 2((s+B)ln(1+s/B)-s } 
@@ -1143,16 +1161,16 @@ where $s$ is the expected signal and $B=b+\delta b^2$ is the predicted backgroun
 A bin width is parameterized as a second degree polynomial of the Higgs mass.
 Coefficients of the polynomial were the parameters to optimize.
 During the optimization procedure it became clear that there is a third effect which has to be taken into account.
-Due to the limited statistics of the predicted background, one cannot have too many mass bins, otherwise cross section
-exclusion limit will fluctuate very much from bin to bin. 
+Due to the limited statistics of the predicted background, one cannot have too many mass bins, otherwise the cross section
+exclusion limit will fluctuate significantly from bin to bin. 
 The optimal bin width parameterization was found to be $\pm(0.04 \times m(\dch) + 0.2 \cdot 10^{-4} \times m(\dch)^{2})$,
 where $m(\dch)$ is the Higgs mass.
 
-The next step is to define how many lepton pairs produced in Higgs boson decays are reconstructed, selected and fall into appropriate mass bin.
+The next step is to define how many lepton pairs produced in Higgs boson decays are reconstructed, selected and fall into the mass bin.
 The number of generated Higgs bosons is known, 
-thus one only needs to count number of reconstructed same-sign pairs which pass signal selection and fall into appropriate mass bins.
-The ratio of reconstructed to the total number of generated pairs corresponds to the total efficiency, which includes acceptance and efficiency of the signal selection.
-Efficiencies for each mass point were calculated, but in order to interpolate between the simulated mass points, the total efficiency, $\varepsilon_{tot}$, is fitted by
+thus one only needs to count number of reconstructed same-sign pairs which pass the signal selection in a given mass bins.
+The ratio of reconstructed to the total number of generated pairs corresponds to the total efficiency, which includes the effect of the acceptance and efficiency of the signal selection.
+The efficiencies for each mass point were calculated, but in order to interpolate between the simulated mass points, the total efficiency, $\varepsilon_{tot}$, is fitted by
 an empirical piecewise function:
 \begin{equation}
 \varepsilon_{tot}(m) = \begin{cases} p_{0} (1-e^{-(m-p_{1})/p_{2}}) & ,\mbox{if } m < 450\mbox{ GeV} \\ 
@@ -1178,7 +1196,7 @@ where $m$ is the Higgs mass and $p_{0}, p_{1}, p_{2}, p_{3}, p_{4}$ are fit para
     \label{tab:ee_eff_params}
 \end{table}
 
-Computed efficiencies for available mass points and their fit are shown in \FigureRef{fig:signal_efficiency}.
+The computed efficiencies for available mass points and their fit are shown in \FigureRef{fig:signal_efficiency}.
 
 \begin{figure}[h]
 \begin{center}
@@ -1193,36 +1211,36 @@ Computed efficiencies for available mass points and their fit are shown in \Figu
 
 \subsection{Cross section and mass limits}
 
-Invariant mass distribution for the same-sign electron pairs together with the signal from the left-handed Higgs 
-with masses 300 GeV and 500 GeV superimposed are shown in \FigureRef{fig:signal_mass}.
-Branching ratio of the $H^{\pm\pm} \to e^{\pm}e^{\pm}$ decay is assumed to be 100$\%$.
+The invariant mass distribution of the same-sign electron pairs together with the signal from a left-handed Higgs 
+with masses between 300 GeV and 500 GeV are shown in \FigureRef{fig:signal_mass_v2}.
+The branching ratio of the $H^{\pm\pm} \to e^{\pm}e^{\pm}$ decay is assumed to be 100$\%$.
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{SS/support_note/DCHPlots/ee/2isoSS_ee_mll_dch.eps}
 \caption{Invariant mass distributions for $\ee$ pairs passing the full event selection. 
 The open histograms show the expected signal from simulated $H^{\pm\pm}$ samples,
-assuming a 100\% branching ratio to the same-sign electron pair. The last bin is an overflow bin.}
-\label{fig:signal_mass}
+assuming a 100\% branching ratio to the same-sign electron pair. The last bin is an overflow bin. Only statistical uncertainties for data are shown.}
+\label{fig:signal_mass_v2}
 \end{center}
 \end{figure}
 
 The upper cross section limit on pair production of the doubly charged Higgs is set in the same way as the limits on the new physics described above.
-A cross section is determined as:
+The cross section is determined as:
 \begin{equation}
  \sigma_{HH}\times BR =\frac{N_{H}^{rec}}{2\times A\times \epsilon \times \int \mathscr{L} dt}
 \end{equation}
 where BR is the branching ratio of the $H^{\pm\pm} \to e^{\pm}e^{\pm}$ decay, 
 $N_{H}^{rec}$ is the number of reconstructed $H^{\pm\pm}$, $A\times \epsilon$ is the total efficiency described earlier and
-$\int \mathscr{L} dt$ is integrated luminosity.
-Factor 2 in the denominator is needed to take into account presence of two same-sign pairs from $H^{++}$ and $H^{--}$ in the event.
+$\int \mathscr{L} dt$ is the integrated luminosity.
+The factor 2 in the denominator is needed to take into account presence of two same-sign pairs from $H^{++}$ and $H^{--}$ in the event.
 
 The upper cross section limit times branching ratio (which is assumed to be 100$\%$) at 95$\%$ CL is shown in \FigureRef{fig:dch_limits_mass}.
-The scatter between mass bins is caused by fluctuations of the predicted background due to the low statistics in bins.
-A good agreement between expected and observed limit lines can be seen, and all deviations lay within $2\sigma$.
+The scatter between the mass bins is caused by fluctuations of the predicted background due to the low statistics per bin.
+A good agreement between expected and observed limit lines can be seen, and all deviations are within $2\sigma$.
 The theoretical cross section curves as a function of Higgs mass for left- and right-handed doubly charged Higgs bosons 
 are shown as well.
-Lower mass limits of the model correspond to the intersection of the theoretical curve with the expected cross section limit. Obtained
+Lower mass limits of the model correspond to the intersection of the theoretical curve with the expected cross section limit. The obtained
 mass limits are summarized in \TableRef{tab:limits_mass}.
 
 \begin{figure}[h]
@@ -1250,8 +1268,7 @@ $H^{\pm\pm}_R$ & $424.8^{+1.0}_{-59.7}$ & $374.0 \pm 6.2$ \\
 \label{tab:limits_mass}
 \end{table}
 
-Limits above can also be interpreted as mass limits as a function of the branching ratio for $H^{\pm\pm}_L$ and $H^{\pm\pm}_R$ decays.
-They are shown in \FigureRef{fig:dch_limits_BR}.
+These limits can also be interpreted as mass limits as a function of the branching ratio for $H^{\pm\pm}_L$ and $H^{\pm\pm}_R$ decays, which are shown in \FigureRef{fig:dch_limits_BR}.
 
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
