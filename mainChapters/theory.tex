@@ -13,26 +13,29 @@
 
 \section{Introduction}
 % TODO add one or two sentences
-Particle physics study the elementary constituents of the universe and how they interact with each other. One of many questions which it attempts to address is the origin of our universe and what it is consist of. 
-Like any field of science, particle physics is based on the two pillars: the experiment and the theory.
+Particle physics studies the elementary constituents of the universe and how they interact with each other. One of many questions which it attempts to address is the origin of our universe and what it consists of. 
+Like any field of science, particle physics is based on the two pillars: experiment and theory.
 By making experimental observations, one obtains certain information, and by systematizing this information and making relations between the pieces, one aims to develop a theory or a model which would explain everything.
-The more different observations the model can explain, the more confidence one can have that the model works and that it can be used to predict unmeasured yet effects. 
+The more different observations the model can explain, the more confidence one can have that the model works and that it can be used to predict as-yet unmeasured effects. 
 
-This was the case with the so-called Standard Model (SM) which became extremely popular in the last century because it was able to describe hundreds of newly observed particles in the collision experiments.
-The SM describes with remarkable precision three types of particle interactions, with only gravitational interaction left unincluded.
+This was the case with the so-called Standard Model (SM) which became extremely popular in the last century because it was able to describe hundreds of newly observed particles in collider experiments.
+The SM describes with remarkable precision three types of particle interactions, 
+with only the gravitational interaction left unincluded.
 Thus a significant effort is ongoing to try to incorporate gravity into the SM to obtain a complete model.
 
 However, despite the fact that the SM agrees amazingly well with experimental measurements, and even if gravity is not taken into account, 
 there are many reasons to think that the SM is not complete.
 There is a set of unsolved questions which the SM cannot address (e.g. neutrino masses, dark matter, matter-antimatter asymmetry).
 Because all known elementary particles fit well in the SM, these problems make us believe that there is
-potentially new physics (and new particles which correspond to it) in TeV or above-TeV regimes which can solve these problems.
-The Large Hadron Collider (LHC) provides us a possibility to look inside the TeV energy frontier.
+potentially new physics (and correspondingly new particles) in TeV or above-TeV regimes which can solve these problems.
+% TODO Will comment: I think either "provides a possibility" or "provides us with a possibility" are correct, but "provides us a possibility" seems not quite right to me 
+The Large Hadron Collider (LHC) provides us with a possibility to explore a TeV energy frontier.
 This is why many analyses are focused on an investigation of new energy regime and search for possible deviations from the SM which can be hints of new physics.
 Since the SM was well established more than 30 years ago, many theorists spent a tremendous amount of time and effort to create
 a plethora of models which extend the SM and address multiple unsolved problems. These models can predict signatures and criteria which are most sensitive to the possible new physics and motivate strategies of the searches.
 
-This chapter contains a brief description of the SM, its problems and introduces some of Beyond Standard Model (BSM) models which can address some unsolved SM questions.
+This chapter contains a brief description of the SM, its problems and 
+some Beyond Standard Model (BSM) models which have been developed to address several of these problems.
 
 \section{The Standard Model}
 
@@ -42,12 +45,16 @@ This chapter contains a brief description of the SM, its problems and introduces
 % INTRO
 % *****************
 
+% TODO Will: You don't define "e" when you use it to talk about quark and lepton charges. Maybe talk about lepton charge first as this ~ defines it 
+
 The SM is a very successful model which describes all the known particles in existence to a remarkable degree of accuracy.
-All of the SM particles are fundamental particles (have no internal structure) that make up the matter and forces in the universe.
+All of the SM particles are fundamental particles (they have no internal structure) that make up the matter and forces in the universe.
 The elementary particles can be classified into two groups: 
+% TODO Will comment:
+% - the spin-1/2 fermions which & the bosons which > "the spin-1/2 fermions, which" and "the bosons, which" - if you miss the comma, it suggests there are other fermions which do not obey Fermi-Dirac statistics 
 \begin{itemize}
- \item the spin-1/2 fermions which obey Fermi-Dirac statistics,
- \item the bosons which obey Bose-Einstein statistics and have integer spin values.
+ \item the spin-1/2 fermions, which obey Fermi-Dirac statistics,
+ \item the bosons, which obey Bose-Einstein statistics and have integer spin values.
 \end{itemize}
 
 % *****************
@@ -57,16 +64,25 @@ The matter in the universe is made of fermions, which are classified into three 
 Each generation consists of two electromagnetically charged quarks and one charged lepton as well as an associated neutral neutrino.
 Fermions from different generations have the same charges but differ by mass.
 One quark from a generation has charge +2/3$e$, while the other has -1/3$e$. Charged leptons carry an integer charge -1$e$.
+% TODO Will: Technically Z measurements support the hypothesis that there are three *light* generations 
 Experimental evidence supports the hypothesis that the number of fermion generations has to be three~\cite{three_lepton_generations}.
+% TODO Will comment: - "Each higher generation" - you haven't mentioned any hierarchy of generations thus far 
 Each higher generation consists of more heavy particles which decay to lighter particles from lower generations, and that can be
-interpreted as an explanation of why matter is made from the first generation particles.
-In addition to the electrical charge, quarks also carry colour charge, which allows the same flavour quarks to coexist inside one hadron without violating the Pauli principle.
-There are three different ``colours'' within the SM, namely: red, green and blue.
-The number of colours has been experimentally confirmed by the measurements of the ratio of the hadronic cross section 
-to the $\mu^+\mu^-$ production cross section in the electron-positron annihilation~\cite{pdg_2014}. 
-Each fermion has an associated antiparticle, which is the particle with opposite charges but with identical mass and spin.
-List of fermions and their properties is presented in \TableRef{tab:fermions}.
+interpreted as an explanation of 
+% why matter is made from the first generation particles.
+why the observed stable matter in the universe is made exclusively from particles of the first generation.
+% TODO Will: I would also say it's a bit more than "allows" - it's what holds hadrons together and stops electromagnetism blasting them apart 
+In addition to electric charge, quarks also carry colour charge, which allows two otherwise identical quarks to jointly occupy an energy and spin state inside a hadron.
 
+% TODO Will: - different “colours” within the SM -> I think I would say "colour charges" without quotation marks, but put quotation marks the first time you mention colour charge i.e. " "colour" charge" 
+There are three different ``colours'' within the SM, namely: red, green and blue.
+The number of colours has been experimentally confirmed by measurements of the 
+ratio of hadronic to $\mu^+\mu^-$ production cross sections
+in the electron-positron annihilation~\cite{pdg_2014}. 
+Each fermion has an associated antiparticle, which is the particle with opposite charges but with identical mass and spin.
+A list of fermions and their properties is presented in \TableRef{tab:fermions}.
+
+% TODO Will Table 1.1: "nu_e" isn't really a flavour. Maybe "flavour" -> "particle"? 
 \begin{table*}[!ht]
 \begin{center}
 \begin{tabular}{c||c|c|c||c|c|c}
@@ -92,12 +108,14 @@ List of fermions and their properties is presented in \TableRef{tab:fermions}.
 % BOSONS
 % *****************
 The remaining particles described by the SM are bosons. These particles have integer values of spin.
-List of all known elementary bosons is shown in \TableRef{tab:bosons}.
-Many experimental measurements obtained with the help of colliders prove the existence of the bosons
+A list of all known elementary bosons is shown in \TableRef{tab:bosons}.
+Many experimental measurements obtained with the help of colliders prove the existence of the bosons.
 The first evidence of the Z and W bosons was obtained by the UA1 and UA2 collaborations~\cite{ARNISON1983103, BAGNAIA1983130}
 which made the first measurements of their masses.
-The gluon has been experimentally confirmed at PETRA storage ring in the electron-positron annihilation by observation of the three-jet topology~\cite{three_jet_event}.
-The Higgs boson has been discovered recently by the ATLAS and CMS collaborations in 2012~\cite{Aad2012tfa, Chatrchyan2012ufa}.
+The gluon has been experimentally confirmed 
+in electron-positron annihilation at the PETRA storage ring by observation
+of the three-jet topology~\cite{three_jet_event}.
+The Higgs boson was discovered by the ATLAS and CMS collaborations in 2012~\cite{Aad2012tfa, Chatrchyan2012ufa}.
 
 \begin{table}[h!]
 \begin{center}
@@ -124,32 +142,36 @@ The Higgs boson has been discovered recently by the ATLAS and CMS collaborations
 % quanta of interaction fields
 
 The SM is a Quantum Field Theory that describes interactions between particles.
-There are three fundamental forces which are incorporated into the SM framework: the electromagnetic, the weak and the strong forces. These forces are mediated between matter particles (elementary or composite) by carrier particles with integer spin (spin 1), which are called gauge bosons.
-Each fundamental force has its own gauge boson: the electromagnetic force is mediated via an exchange of massless photons, the strong force is mediated by massless gluons, while the weak force is transmitted by massive W and Z bosons.
+There are three fundamental forces which are incorporated into the SM framework: the electromagnetic, the weak and the strong forces. These forces are mediated between matter particles (elementary or composite) by carrier particles with spin 1, which are called gauge bosons.
+Each fundamental force has its own gauge boson(s): the electromagnetic force is mediated via an exchange of massless photons, the strong force is mediated by massless gluons, while the weak force is transmitted by massive W and Z bosons.
 % TODO Snizhko suggest just to not use this sentence...
 % TODO comment it after Will will read it.
-In quantum field theories the forces are given by the dynamics of the quantized, relativistic and locally interacting fields.
+In quantum field theories the forces are given by the dynamics of the quantised, relativistic and locally interacting fields.
 % \toAsk[is ``interpreted as dynamics'' correct?]
-The electromagnetic, weak and strong forces have different strength and act over different ranges (see \TableRef{tab:bosons}). 
+The electromagnetic, weak and strong forces have different strengths and act over different ranges (see \TableRef{tab:bosons}). 
 Both types of fundamental matter particles, leptons and quarks, interact through the electromagnetic and weak forces (except neutrinos, which interact only weakly), whereas only quarks interact strongly.
 
-The SM combines two main theories built to describe all of three fundamental interactions, the force-carrier bosons, and the matter particles. The first one is the Glashow-Salam-Weinberg (GSW) theory which unifies the electromagnetic and weak interactions. The second theory, quantum chromodynamics (QCD), describes the strong interactions of quarks and gluons. Both GSW and QCD theories are constrained by principles of local gauge invariance of the fields based on the $U(1)_Y\times SU(2)_{L}$ weak isospin and hypercharge, and $SU(3)_C$ color symmetry groups, respectively. Thus, the SM is a Quantum Field Theory based on $U(1)_Y\times SU(2)_{L}\times SU(3)_C$ symmetry group with $1+3+8=12$ generators that correspond to 12 massless gauge bosons (see \TableRef{tab:bosons}), if the gauge symmetry is unbroken. 
+The SM combines two main theories built to describe all three fundamental interactions, the force-carrier bosons and the matter particles. The first one is the Glashow-Salam-Weinberg (GSW) theory which unifies the electromagnetic and weak interactions. The second theory, quantum chromodynamics (QCD), describes the strong interactions of quarks and gluons. Both GSW and QCD theories are constrained by principles of local gauge invariance of the fields based on the $U(1)_Y\times SU(2)_{L}$ weak isospin and hypercharge, and $SU(3)_C$ color symmetry groups, respectively. Thus, the SM is a Quantum Field Theory based on the $U(1)_Y\times SU(2)_{L}\times SU(3)_C$ symmetry group with $1+3+8=12$ generators that correspond to 12 massless gauge bosons (see \TableRef{tab:bosons}), if the gauge symmetry is unbroken. 
 % TODO Oxana was not sure about word ``determines''... consult with Oleg!
-Remarkably, both GSW and QCD theories, unlike the quantum electrodynamics (QED), are non-abelian, which determines the property of self-interactions between the corresponding gauge boson fields. In particular, self-interaction of the gluon field leads to essential characteristics of the QCD, such as the asymptotic freedom and confinement.
+Both GSW and QCD theories, unlike the quantum electrodynamics (QED), are non-abelian, which determines the property of self-interactions between the corresponding gauge boson fields. In particular, self-interaction of the gluon field leads to essential characteristics of the QCD, such as asymptotic freedom and confinement.
 
-The weak W and Z bosons are experimentally proved to be massive, indicating that the electro-weak symmetry of the SM is spontaneously broken. 
-In the SM the spontaneous symmetry breaking is implemented by the Higgs mechanism. In this approach,
-a doublet of complex fields is introduced which interacts with all the SM particles and has a potential with an infinite number of degenerate vacuum states. 
+% TODO Will: "indicating that the electro-weak symmetry of the SM is spontaneously broken" - I'm not sure it directly indicates that, more that SSB is a way to give masses to the EW bosons while maintaining the gauge invariance of the EW lagrangian. But I'm not certain about that distinction. 
+The weak W and Z bosons have been experimentally proven to be massive, indicating that the electro-weak symmetry of the SM is spontaneously broken. 
+In the SM the spontaneous symmetry breaking is implemented by the Higgs mechanism. 
+% TODO Will: "doublet of complex fields is introduced which interacts with all the SM particles" > not neutrinos unless there are RH ones, which are not included in the SM. And certainly not photons or gluons. Ah you get to this in the next paragraph. But still I wouldn't say "all". 
+In this approach, a doublet of complex fields is introduced which interacts with the SM particles and has a potential with an infinite number of degenerate vacuum states. 
 The choice of one particular ground state with nonzero vacuum expectation value, $v$, breaks the $SU(2)$ symmetry and results in one scalar neutral particle (Higgs boson) that must be present in the SM. As was mentioned above, the existence of the Higgs boson has been confirmed recently.
 
 % TODO cross-check validity of this statement
-The Higgs mechanism gives masses not only to $Z$ and $W$ gauge bosons but also to fermions through the corresponding Yukawa coupling terms. An important property of the Higgs field is that it flips the left-handed fermions into right-handed fermions and vice versa. 
-As the right-handed neutrinos have not been observed and, thus, do not exist within the SM, the left-handed
+The Higgs mechanism gives masses not only to $Z$ and $W$ gauge bosons but also to fermions through the corresponding Yukawa coupling terms. 
+% TODO Will: "flips the left-handed fermions into right-handed fermions" - this is a bit of a vague statement. I would say "it couples left and right handed fermions" 
+An important property of the Higgs field is that it flips the left-handed fermions into right-handed fermions and vice versa. 
+As right-handed neutrinos have not been observed and, thus, are not included in the SM, the left-handed
 neutrinos can not interact with Higgs boson and remain massless within the SM. 
 However, as will be discussed further, there is experimental evidence which proves that neutrinos are massive.
 
 % TODO check is paragraph below is well connected to the text above
-SM has been tested in thousands of measurements by many different experiments.
+The SM has been tested in thousands of measurements by many different experiments.
 All measurements are in remarkably good agreement with theoretical predictions.
 For example, comparison of the latest measurements of different SM process cross sections by the ATLAS collaboration with theoretical predictions is shown in
 \FigureRef{fig:SM_theory_vs_data}.
@@ -158,10 +180,10 @@ For example, comparison of the latest measurements of different SM process cross
   \centering
   \includegraphics[width=0.99\textwidth]{intro/ATLAS_a_SMSummary_TotalXsect.eps}
   \caption{
-  Summary of the Standard Model total production cross section measurements done by the ATLAS experiment, compared to the corresponding theoretical expectations~\cite{sm_atlas_public_plots_2016}. 
+  Summary of the Standard Model total production cross section measurements made by the ATLAS experiment, compared to the corresponding theoretical expectations~\cite{sm_atlas_public_plots_2016}. 
   Theoretical predictions and their errors are shown with gray bars, while experimental
   measurements are shown with hollow markers with colored bars, which represent measurement errors.
-  All theoretical expectations were calculated at the next-to-leading order or higher. 
+  All theoretical expectations were calculated at next-to-leading order or higher in perturbative QCD.
   }
   \label{fig:SM_theory_vs_data}
 \end{figure}
@@ -213,17 +235,17 @@ A possible explanation could come from new physics predicting baryon number viol
 
 These questions unsolved by the SM motivate us to continue searches for new physics beyond the SM at the TeV scale and higher.
 
-\subsection{Strategies for finding new physics}
-% Oleg: (look in paper with prospects of BSM searches)
-% say about my final state (with leptons)
-
-\toDo[This subsection is in progress. Preliminary content of the subsection:]
-\begin{itemize}
- \item search of new physics is done mainly with a high energetic object or rare final states.
- \item Electrons and muons are most well-measured objects at colliders.
- \item Jets are more complicated objects to use in the analysis than $e$ and $\mu$.
- \item Transverse missing momentum - powerful object for the search of new physics, the only way to measure weak particles.
-\end{itemize}
+% \subsection{Strategies for finding new physics}
+% % Oleg: (look in paper with prospects of BSM searches)
+% % say about my final state (with leptons)
+% 
+% \toDo[This subsection is in progress. Preliminary content of the subsection:]
+% \begin{itemize}
+%  \item search of new physics is done mainly with a high energetic object or rare final states.
+%  \item Electrons and muons are most well-measured objects at colliders.
+%  \item Jets are more complicated objects to use in the analysis than $e$ and $\mu$.
+%  \item Transverse missing momentum - powerful object for the search of new physics, the only way to measure weak particles.
+% \end{itemize}
 
 
 % TODO write something like this:
@@ -249,7 +271,7 @@ Some famous examples can be found in ref.~\cite{Ellis:2011jb}.
 Many models are based on the idea of Grand Unified Theory~\cite{GUT_bigPaper},
 which seeks to find a simple symmetry group which are based on the SM symmetry group
 and contains all known interactions~\cite{Langacker:1984dc,Cvetic:1995zs}.
-One of such models is the model which is based on $SO(10)$ group, which leads to intermediate symmetry:
+One of such models is the model which is based on the $SO(10)$ group, which leads to intermediate symmetry:
 \begin{equation}
 SO(10) \to SU(3)_C \times SU(2)_L \times SU(2)_R \times U(1)_{B-L}
 \end{equation}

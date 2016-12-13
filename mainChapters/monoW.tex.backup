@@ -1037,27 +1037,28 @@ For the D52 model ref~\cite{???} (which corresponds to the right diagram in  \Fi
 we consider only constructive interference with SM.
 
 \subsection{Sensitivity studies}
+% TODO Oxana comment: Explain what exactly did you do?
 
-Main idea of the study is to understand kinematics of DM models in final state with one lepton and missing energy and to estimate sensitivity 
-of signal selection to such kind of models.
-Signal selection are designed with focus of high-$m_{T}$ region in order to get rid of dominant SM W background.
-Kinematic distribution of DM models were studied to evaluate contribution to the signal selection and to make comparison
-with signal from $\PWprime$ model.
-It's worth to mention that due to the fact that mass of DM particles doesn't affect kinematic distribution of the event 
-all simulated DM samples used are with mass of DM particle was set to 1 GeV.
+The main idea of the study is to understand kinematics of the DM models in the final state with one lepton and missing energy and to estimate sensitivity 
+of the signal selection to such kind of models.
+The signal selection is designed with focus of high-$m_{T}$ region in order to get rid of the dominant SM W background.
+Kinematic distributions of the DM models were studied to evaluate contribution to the signal selection and to make comparison
+with the signal from the $\PWprime$ model.
+It's worth to mention that due to the fact that the mass of the DM particles doesn't affect kinematic distribution of the events, 
+all the simulated DM samples used are with the mass of the DM particles set to 1 GeV.
 (should some plots to be shown to proof this???).
 
-In \FigureRef{fig:kinematicsSChannel} normalized kinematic distributions of transverse mass of lepton and $E_{T}^{miss}$ of the event
-and $E_{T}^{miss}$ of the event for s-channel simplified model as well as EFT models with comparison with $\PWprime$ model are shown.
-First distinguishable charachteristic of all DM models is that there is no clear peak structure in any kinematic distribution, 
+In \FigureRef{fig:kinematicsSChannel} the normalized kinematic distributions of the transverse mass of a lepton and $E_{T}^{miss}$ of the event
+for the s-channel simplified model as well as EFT models with comparison with $\PWprime$ model are shown.
+First distinguishable characteristics of all DM models is that there is no clear peak structure in any kinematic distribution, 
 which is expected because transverse missing energy is formed by
-neutrino from W boson decay and two DM particles which are independent between each other. 
-Second feature of DM models that main contribution are tends to be in low-$m_{T}$ region.
-Especially it concern simplified models, for which dominant contribution is outside of signal region for any parameter of mediator mass.
-But with increasing of mediator's mass $m_{T}$ distribution tends to become more flat and moves towards high-$m_{T}$ region.
-Also with increasing mediator mass cross section of process significantly decreasing (see \TableRef{tab:TriggerDetails}) 
-and for mass equal 10 TeV cross section is a few order of magnitude lower than background (need proof, find plot ???) which 
-makes signal selection not sensitive for s-channel simplified DM model.
+neutrino from W boson decay and two DM particles which are independent from each other. 
+Second feature of the DM models is that main contribution tend to be in low-$m_{T}$ region.
+Especially it concerns simplified models, for which the dominant contribution is outside of the signal region for any parameter of mediator mass.
+But with increasing of the mediator mass $m_{T}$, distribution tends to become more flat and moves towards high-$m_{T}$ region.
+Also, with increasing mediator mass, the cross section of the process is significantly decreasing (see \TableRef{tab:TriggerDetails}) 
+and for mass of 10 TeV, the cross section is a few orders of magnitude lower than the background \toDo[proof?], which 
+makes signal selection not sensitive for the s-channel simplified DM model.
 
 % TODO reprhase it. It not visible from table - only from non-normalized plot. Plot should be mono-W with W backgound only? Or I should also include other backgounds?
 
@@ -1077,15 +1078,16 @@ makes signal selection not sensitive for s-channel simplified DM model.
 \end{subfigure}
 
 % \includegraphics[width=0.75\textheight]{monoW/kinematics_simplifiedSChannel_EFT_Wprime.png}
-\caption{Normalized kinematic distributions of transverse mass (left) and transverse missing energy in the event (right) of simplified model in s-channel as well as EFT models compared to $\PWprime$ distribution.}
+\caption{Normalized kinematic distributions of the transverse mass (left) and transverse missing energy in the event (right) of the simplified model in the s-channel, as well as EFT models compared to the $\PWprime$ distribution.}
   \label{fig:kinematicsSChannel}
 \end{figure}
 
-In \FigureRef{fig:scaledKin} transverse mass distribution are show for s- and t-channels simplified models as well as EFT and $\PWprime$ signals with comparison to SM W background 
-scaled to according cross process section. Distribution for t-channel model looks almost identical to one for s-channel. 
-But cross sections for t-channel processes are for one-two order of magnitude lower compared to s-channel (see \TableRef{tab:TriggerDetails}) which leads to conclution
-that signal selection even less sensitive for t-channel simplified model. Aslo SM W backround are for a few orders higher in all range of $m_{T}$ than any sample of simplified model.
-For D52 EFT model excess over SM W backgound can be seen in high-$m_{T}$ region. While for WW$\chi\chi$ EFT model it is not the case, because cross section is very low.
+In \FigureRef{fig:scaledKin}, transverse mass distributions are shown for the s- and t-channels simplified models, as well as EFT and $\PWprime$ signals with comparison to the SM W background scaled to 
+% TODO Oxana comment
+\toDo[according cross process section?]. 
+Distribution for the t-channel model looks almost identical to the one for the s-channel. 
+But the cross sections for the t-channel processes are one-two orders of magnitude lower when compared to the s-channel (see \TableRef{tab:TriggerDetails}), which leads to the conclusion that signal selection is even less sensitive for the t-channel simplified model. Also, SM W background are a few orders higher in the entire range of $m_{T}$ than any sample of the simplified model.
+For the D52 EFT model, an excess over SM W backgound can be seen in high-$m_{T}$ region, while for WW$\chi\chi$ EFT model it is not the case, because the cross section is very low.
 
 % TODO us or D5 or D52. harmonize stuff!!!
 
@@ -1103,12 +1105,12 @@ For D52 EFT model excess over SM W backgound can be seen in high-$m_{T}$ region.
   \includegraphics[width=\textwidth]{monoW/dm_final_EFT_vs_SMW_pad1.png}
 \end{subfigure}
 % \includegraphics[width=0.75\textheight]{monoW/kinematics_simplifiedTChannel_EFT_Wprime.png}
-\caption{Kinematic distributions of transverse mass of simplified model in s- and t-channels (left) 
-and EFT models with $\PWprime$ signal (right) in comparison with SM W background scaled to according process cross section.}
+\caption{Kinematic distributions of the transverse mass of the simplified model in the s- and t-channels (left), 
+and EFT models with the $\PWprime$ signal (right) in comparison with the SM W background scaled to the respective process cross section.}
   \label{fig:scaledKin}
 \end{figure}
 
-Transverse mass distribution for both EFT models looks similar and majority (???) of the signal lays in the signal region. 
+Transverse mass distributions for both EFT models look similar and majority (???) of the signal lays in the signal region. 
 % Cross section for both processes strongly depends on energy scale of new physics $\Lambda$ (or effective mediator mass for D52 model).
 % Dependence of cross section for WW$\chi\chi$ model versus energy scale is shown in \FigureRef{fig:lambdaScan}. 
 
