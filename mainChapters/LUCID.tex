@@ -1041,14 +1041,27 @@ One can then calculate the efficiency of the luminosity algorithm as:
 \label{eq:alg_method_eff}
 \end{equation}
 Measured visible cross sections and efficiencies for some LUCID luminosity algorithms are given in \TableRef{tab:sigma_vis_efficiency}.
-The last column in the table contain the maximum possible number of interactions, $\mu_{max}$, which an algorithm can deal with without saturation.
-It has been calculated by an assumption that maximum number of interactions observed by the detector $\varepsilon\mu_{max} = 10$, which is somewhat arbitrary 
-threshold which represent accepted level of uncertainty caused by logarithm calculation in \EquationRef{eq:logFormula}.
+% The last column in the table contain the maximum possible number of interactions,
+% $\mu_{max}$, which an algorithm can deal with without saturation.
+% 
+% $\mu_{max}$, at which the statistical error of logarithm calculation as in \EquationRef{eq:logFormula} starts to exceed 2$\%$.
+% 
+% At these values, the statistical error of luminosity measurements starts to exceed 2$\%$.
+% It has been calculated by an assumption that maximum number of interactions observed by the detector $\varepsilon\mu_{max} = 10$, which is somewhat arbitrary 
+% threshold which represent accepted level of uncertainty caused by logarithm calculation in \EquationRef{eq:logFormula}.
+% 
+% TODO proofread paragraph below:
 All counting algorithms can start to saturate if the number of interactions became large enough.
 If in all bunch crossings during a LB at least one hit is detected by LUCID (which correspond to the ``Event OR'' definition) 
 the ratio $\frac{N_{OR}}{N_{BC}}$ will be equal to 1 and it will be impossible to use \EquationRef{eq:logFormula} to calculate 
-the number of interactions $\mu$. In the \FigureRef{fig:peakMuByFill} one can see that the maximum number of interactions per beam crossing 
-for some physics runs in 2016 were higher than 40, which shows that BI$\_$OR$\_$A algorithm, which was mainly used in 2015, saturated in some LB.
+the number of interactions $\mu$. 
+Thus one can calculate the maximum possible number of interaction,
+$\mu_{max}$, which different algorithms can deal with without saturation, 
+which corresponds to the case when there is at least one bunch crossings during a LB
+when a combination of hits, required by a given counting algorithm, was not detected by LUCID.
+These values are shown in the last column in \TableRef{tab:sigma_vis_efficiency}.
+However, the statistical error of logarithmic calculations of the number of interactions $\mu$ starts to become large at lower values of $\mu$.
+In the \FigureRef{fig:peakMuByFill} one can see that the maximum number of interactions per beam crossing for some physics runs in 2016 were higher than 40-45. At this values, the statistical error of the BI$\_$OR$\_$A algorithm exceeds 2$\%$, which is too large errors for the physics runs.
 This is why it was decided to switch to the ``HITOR'' algorithm, which counts the number of hits in all PMTs per event.
 It saturates on the similar level as counting algorithm for single tube (e.g. ``Bi$\_$OR$\_$C9'' in \TableRef{tab:sigma_vis_efficiency}).
 % TODO describe how often vdM runs are done and explain that parameters of the beams have to stay more or less constant.
@@ -1057,15 +1070,15 @@ It saturates on the similar level as counting algorithm for single tube (e.g. ``
   \begin{tabular}{|l|c|c|c|}
     Algorithm & $\sigma^{vis}$ (mb) & $\varepsilon$ ($\%$) & $\mu_{max}$ \\
     \hline
-    BI$\_$OR & 32.4 & 40.5 & 24 \\
+    BI$\_$OR & 32.4 & 40.5 & 33 \\
     \hline
-    BI$\_$OR$\_$A & 19.3 & 24.2 & 41 \\
+    BI$\_$OR$\_$A & 19.3 & 24.2 & 55 \\
 %     \hline
 %     BI$\_$AND & 6.38 & 8.0 & 125 \\
     \hline
-    BI$\_$OR$\_$C9 & 6.44 & 8.0 & 125 \\
+    BI$\_$OR$\_$C9 & 6.44 & 8.0 & 168 \\
     \hline
-    MOD$\_$OR & 21.7 & 27.1 & 36 \\
+    MOD$\_$OR & 21.7 & 27.1 & 50 \\
   \end{tabular}
   \caption{The result of the vdM calibrations for some of the LUCID luminosity algorithms.}
   \label{tab:sigma_vis_efficiency}
@@ -1390,10 +1403,12 @@ and to derive corrections from it. Calibration transfer correction was found to 
 Systematic uncertainty for the calibration transfer was obtained by comparison four different track selections as well as measurements by the Tile calorimeter
 and was equal 1.2$\%$.
 
+% TODO not todo, but just a remark about factorisation corrections:
+% Factorisation correction is estimated by using the information of the beam spot position to model beams with a correlated triple Gaussian functions. Using information about the modelled beams on can theoreticaly calculate luminosity and compare it with measured in the vdM scan. The difference between these values are taken as systematic uncertainty.
 Additionally one need to take into account systematic uncertainty on $\sigma^{vis}$ itself, determination of which was described previously.
 Systematic uncertainty was obtained during analysis of the vdM scans and are related to the uncertainty of variables which are used in
 \EquationRef{eq:sigma_vis} to calculate $\sigma^{vis}$. 
-Detailed description of the uncertainty estimation of the vdM scans can be found on many notes and paper such 
+Detailed description of the uncertainty estimation of the vdM scans can be found in many notes and papers such 
 as~\cite{ATLAS:2010uca,ATLAS-CONF-2011-011,ATLAS:2011cia,ATLAS:2012roa,Aad:2011dr,Aad:2013ucp,Aaboud:2016hhf}.
 
 Taking into account all systematic effect of different luminometers one has to choose the preferred detector algorithm to be used as a main algorithm for high-$\mu$ runs.

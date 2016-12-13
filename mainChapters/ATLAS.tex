@@ -205,6 +205,25 @@ with absorber thickness of 25 and 50 mm; respectively. The forward calorimeter i
 % The energy resolution in a calorimeter is parametrized as the following: 
 
 \section{Muon Spectrometer}
+
+\subsection{Muon Spectrometer}
+
+Muon Spectrometer (MS) is the outermost part of the ATLAS detector designed to trigger and measure the muons, the only charged particles that penetrate the calorimeter system, and covers the pseudorapidity range of $|\eta|<2.7$. It is a tracking detector which measures the muon tracks deflected in the strong magnetic field. The MS consists of barrel $|\eta|<1.05$ and two end-cap sections.  The system of large superconducting air-core toroid magnets provides the magnetic field of 0.5~T and 1~T in the barrel and endcap, respectively, resulting in a bending power between 2.0 and 7.5~Tm~\cite{MCPrun1}. It is equipped with three cylindrical layers around beam axis of Monitored Drift Tubes Chambers (MDT) and Cathode Strip Chambers (CSC) providing a measurement of tracks; three doublet layers for $|\eta|<1.05$ of Resistive Plate Chambers (RPC) and three triplet and doublet layers for $1.0 < |\eta| < 2.4$ of Thin Gap Chambers (TGC) providing triggering and ($\eta, \phi$) measurements of muon tracks.
+The CSC is used in the forward region instead of MDT due to high background conditions.
+A combination of four complementary technologies allows to achieve the goals needed for physics. The layout of the muon spectrometer is shown in \FigureRef{fig:MS}.
+
+\begin{figure}[h!]
+\centering
+ \includegraphics[width=0.64\textwidth]{intro/MS1.pdf}
+ \caption{Cut-view of quadrant of the Muon Spectrometer.}
+\label{fig:MS}
+\end{figure}
+
+The MS allows a precise muon momentum measurement in the pseuorapidity region up to $|\eta|<2.7$ and provides a relative resolution better than 3\% over a wide range of $p_T$ and up to 10\% at $p_T\sim 1$~TeV.
+The MDT and the CSC provide a single hit resolution in the bending plane of about 80~$\mu m$ and 60~$\mu m$, respectively.
+
+The muon track in the MS is reconstructed in two steps. In first step muons are triggered in RPC/TGC and local track segments are defined in each layer of chambers. In the next step the local track segments from different layers are combined through $\chi^2-$fit forming full MS track. To reduce an amount of background events penetrating the calorimeter, the fitted tracks for the muon candidates are required to point towards the interaction point.
+
 \section{Luminometers and beam monitors}
 \section{Trigger, Data Acquisition and Detector Control Systems}
 
