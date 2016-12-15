@@ -226,6 +226,7 @@ Events should have at least one muon candidate, and fire the single muon trigger
 which requires the presence of one muon with $p_T > 50$ GeV.
 
 \subsection{Lepton selection}
+\label{subsec:lepton_selection}
 % description of muon reconstruction in the ATLAS detector
 Muon reconstruction in ATLAS is performed independently in ID and MS detectors. 
 Information from the detectors is then combined to form a muon track.
@@ -842,42 +843,39 @@ since the multi-jet systematics are not included in the statistical analysis.}
 %*******************************************************************************
 
 \section{Cross section and mass limits}
-% TODO say that Bayesian approach is used...
-\toDo[some text here]
-
 
 % TODO describe look for deviation
 To search for a $\PWprime$ signal-like excess in the data a log likelihood ratio test is performed using RooStat~\cite{RooStat_project} framework.
 The likelihood function is constructed as the product of Poisson probabilities of over all $m_T$ bins in the search region.
 The effect of systematic uncertainties are described by nuisance parameters in the likelihood function.
 
-One of the needed component for the statistical analysis to calculate the number of expected events is total efficiency (product of acceptance and reconstruction efficiency) 
-of the signal selection to reconstruct $\PWprime$ decay, which is shown in \FigureRef{fig:AccEff_mu}.
-
-\toDo[explain shape of the total efficiency curve!]
+The total efficiency (product of acceptance and reconstruction efficiency)
+needed by the statistical analysis to calculate the number of expected events is shown in \FigureRef{fig:AccEff_mu}.
+The slow decrease of the total efficiency from 1 TeV can be explain of the shape
+of the $\PWprime$ signal, which is become more prolonged to the low-$mT$ region with increasing of $\PWprime$ pole mass as shown in \FigureRef{???}.
 
 \begin{figure}[]
   \centering
   \includegraphics[width=0.65\textwidth]{Wprime/acceptance.eps}
   \caption{
-%   Total signal acceptance times efficiency versus SMM \wp\ pole mass for the SSM \wp\ model in the muon channel.
+  Total reconstruction efficiency ($\varepsilon_{tot}$) of the $\PWprime \to \mu \nu$ as a function of simulated $\PWprime$ mass.
   }
   \label{fig:AccEff_mu}
 \end{figure}
 
 Statistical analysis demonstrates that no excess larger than 2$\sigma$ is observed.
-This is why upper limit on the cross section for the production of $\PWprime$ times branching ratio has been set. 
-A Bayesian approach have been used for the limit settings and limits were calculated with help of the Bayesian Analysis Toolkit~\cite{BAT}.
+This is why the upper limit on the cross section for the production of $\PWprime$ times branching ratio has been set. 
+A Bayesian approach have been used for the limit settings, and limits were calculated with help of the Bayesian Analysis Toolkit~\cite{BAT}.
 
-\toAsk[is it OK to not explain in the detail about limit setting procedure?]
+% \toAsk[is it OK to not explain in the detail about limit setting procedure?]
 
-\toDo[add something here???]
+% \toDo[add something here???]
 
-Upper limits are set on the cross-section times branching ratio, $\PWprime \rightarrow \Plepton\nu$, at 95\% C.L. and mass 
-limits are extracted using the relationship between the theoretical $\PWprime$ cross section and pole mass. Limits are presented for the electron, muon, 
+Upper limits are set on the cross-section times branching ratio, $\PWprime \rightarrow \Plepton\nu$, at 95\% C.L. 
+Limits are presented for the electron, muon, 
 and combined lepton channels in \TableRef{tab:limits_mass_wp}, \FigureRef{fig:wprime_limits} and \FigureRef{fig:wprime_limits_combined}.
-
-\toAsk[which conclution whuols I made? comparison with 8 TeV?]
+The theoretical cross section curves as a function of $\PWprime$ mass are shown as well.
+Lower mass limits of the model correspond to the intersection of the theoretical curve with the expected cross section limit. The obtained mass limits are summarized in \TableRef{tab:limits_mass_wp}. The mass limit are for 800 GeV stronger in comparison with previous ATLAS search reported in ref.~\cite{wprime_8TeV}.
 
 \begin{figure}[]
   \centering
@@ -1206,3 +1204,33 @@ are not sensitive enough for DM searches and is significantly worse comparing to
 
 \section{Summary and outlook}
 \label{sec:wprimeConclusion}
+
+% general search summary
+A search for a new heavy gauge boson $\PWprime$ has been performed in the final state of muon and transverse missing energy using 3.2 fb$^{-1}$ of 13 TeV center of mass pp collision data collected in 2015. 
+Upper limit on the cross section for SSM $\PWprime$ production have been set as a function of $\PWprime$ pole mass. A significantly stronger exclusion mass limit have been obtained in comparison with previous ATLAS searches~\cite{atlas_7tev_pub_1fb,atlas_7tev_pub,wprime_8TeV} as shown in \FigureRef{fig:Wprime_allResults}.
+
+\begin{figure}[]
+ \includegraphics[width=0.8\textwidth]{Wprime/combWprime_summary.eps}
+  \caption{
+Cross section limits for $\PWprime$ searches performed by ATLAS
+normalized to the SM background cross section prediction.
+The region above each curve is excluded at 95\% CL.
+}
+  \label{fig:Wprime_allResults}
+\end{figure}
+
+% recovery excluded phase space and mT-binned samples
+There are different ways to improve and develop the analysis.
+One of the obvious possibilities is to include phase-space which has been excluded due
+to the problem with alignment in the muon spectrometer as was described previously in \SectionRef{subsec:lepton_selection}.
+Other improvement mentioned before is to use $m_T$ binned diboson and top MC background samples, which will provide enough statistics to populate high-$m_T$ region and no extrapolations will be needed (which is the dominant contribution to the systematic uncertainty).
+
+% muon identification cut
+Also one can investigate the possibility to loose a strict ``high-$p_T$'' set of muon identification criteria, which reduce the efficiency of muon reconstruction for approximately 20$\%$ in comparison with ``tight'' one. However one need to be careful about the muon momentum resolution not to worsen significantly.
+
+% new methods from SM W measurements
+The better understanding of the missing transverse mass could bring a significant reduction of the systematic uncertainty in the low-$m_T$ region, which is used for validation of the fake background estimation.
+
+Also sensitivity study of the signal selection for different DM model which predict production of WIMPs with association with SM W has been done.
+It has been shown that current signal selection has low sensitivity to considered DM models
+moreover, is not sensitive as searches with jet final signatures.

@@ -226,6 +226,7 @@ Events should have at least one muon candidate, and fire the single muon trigger
 which requires the presence of one muon with $p_T > 50$ GeV.
 
 \subsection{Lepton selection}
+\label{subsec:lepton_selection}
 % description of muon reconstruction in the ATLAS detector
 Muon reconstruction in ATLAS is performed independently in ID and MS detectors. 
 Information from the detectors is then combined to form a muon track.
@@ -932,6 +933,16 @@ and combined lepton channels in \TableRef{tab:limits_mass_wp}, \FigureRef{fig:wp
 \section{Search for dark matter pair-production with a leptonically decaying W boson}
 \label{chap:monoW}
 
+Goal of this chapter
+\begin{itemize}
+ \item make overview of the model which are recommended by the ATLAS DM forum and can be potentially interesting to look from with lepton+MET final state
+ \item investigate shape of the mT spectra of these models and compare it with Wprime shape
+ \item cross section of the models 
+ \item overview of the literature about the possibility of this models
+\end{itemize}
+
+
+
 \subsection{Introduction}
 
 Beside the $\PWprime$ model discussed above, there are other BSM models 
@@ -1194,5 +1205,27 @@ are not sensitive enough for DM searches and is significantly worse comparing to
   \label{fig:bellExclLim}
 \end{figure}
 
-\section{Outlook}
+\section{Summary and outlook}
 \label{sec:wprimeConclusion}
+
+% general search summary
+An search for a new heavy gauge boson $\PWprime$ has been performed in the final state of muon and transverse missing energy using 3.2 fb$^{-1}$ of 13 TeV center of mass pp collision data collected in 2015. 
+Upper limit on the cross section for SSM $\PWprime$ production have been set as a function of $\PWprime$ pole mass. A significantly stronger exclusion mass limit have been obtained in comparison with previous ATLAS searches~\cite{atlas_7tev_pub_1fb,atlas_7tev_pub,wprime_8TeV} as shown in \FigureRef{fig:Wprime_allResults}.
+
+\begin{figure}[]
+ \includegraphics[width=0.8\textwidth]{Wprime/combWprime_summary.eps}
+  \caption{???}
+  \label{fig:Wprime_allResults}
+\end{figure}
+
+% recovery excluded phase space and mT-binned samples
+There are different ways to improve and develop analysis.
+One of the obvious possibilities is to include phase-space which has been excluded due
+to problem with alignment in the muon spectrometer as was described previously in \SectionRef{subsec:lepton_selection}.
+Other improvement mentioned before is to use $m_T$ binned diboson and top background samples, which will provide enough statistics to populate high-$m_T$ region and no extrapolations will be needed (which is the dominant contribution to the systematic uncertainty).
+
+% muon identification cut
+Also one can investigate possibility to loose a really strict ``high-$p_T$'' set of muon identification criteria, which reduce efficiency of muon reconstruction for approximately 20$\%$ in comparison with ``tight'' one. However one need to be careful about the muon momentum resolution to not worsen significantly.
+
+% new methods from SM W measurements
+The better understanding of the missing transverse mass could bring significant reduction of the systematic uncertainty in the low-$m_T$ region, which is used for validation of the fake background estimation.
