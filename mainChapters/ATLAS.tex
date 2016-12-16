@@ -5,54 +5,53 @@
 \chapter{The LHC and The \ATLAS experiment}
 \label{chap:MoreStuff}
 
-The Large Hadron Collider (LHC) is a proton circular accelerator at CERN with designed center-of-mass (CM) energy of proton-proton collisions is up to 14~TeV and 2.3~TeV per nucleon for heavy ion collisions.
-It provides luminosity to the four large experiments: ATLAS, CMS, ALICE, and LHCp. This chapter contains a short overview of the LHC performance as well as a description of the ATLAS experiment.
+The Large Hadron Collider (LHC) is a circular proton accelerator at CERN with a designed center-of-mass (CM) energy of proton-proton collisions up to 14~TeV and up to 2.3~TeV per nucleon for heavy ion collisions.
+It provides luminosity to the four large experiments: ATLAS, CMS, ALICE, and LHCb. This chapter contains a short overview of the LHC performance as well as a description of the ATLAS experiment.
 
 \section{The LHC performance and beam structure}
 
 The proton bunches are delivered to the Large Hadron Collider (LHC) 
-by the injector chain Linac2 - Proton Synchrotron Booster (PSB) - Proton Synchrotron (PS) - Super Proton Synchrotron (SPS)~\cite{lhc_tdr_vol3}.
+by an injector chain that consists of Linac2 - the Proton Synchrotron Booster (PSB) - the Proton Synchrotron (PS) - the Super Proton Synchrotron (SPS)~\cite{lhc_tdr_vol3}.
 The schematic picture of the full acceleration chain is shown in \FigureRef{fig:accelerator_complex}.
 
 \begin{figure}[]
   \centering
 \includegraphics[width=0.99\textwidth]{intro/Cern-Accelerator-Complex_v2.jpg}
-\caption{Schematic of the LHC accelerator complex at CERN.}
+\caption{Schematic picture of the LHC accelerator complex at CERN.}
 \label{fig:accelerator_complex}
 \end{figure}
 
 The maximum number of bunches possible in the LHC is 2808~\cite{lhc_tdr_vol1}.
-Bunches are grouped in the so-called bunch trains or simply trains.
-Design distance between the bunches in the train is 25 ns.
-The longest possible train in the LHC during the normal operation consist of 72 bunches with gaps between the trains of at least of 12 empty bunches~\cite{lhc_tdr_vol3}.
+Bunches are grouped in so-called bunch trains.
+The design distance between the bunches in the train is 25 ns.
+The longest possible train in the LHC during normal operation consists of 72 bunches with gaps between the trains of at least of 12 empty bunches~\cite{lhc_tdr_vol3} 
+The energy of the protons in the injected bunches equal 450 GeV and the bunches are injected from the SPS one after another. 
+When the injection is done, the fill is complete and an additional acceleration in the LHC starts.
+When the bunches have been accelerated to the collision energy (up to 7 TeV) and when all experiments are ready to record data, the so-called physics run starts. During physics runs all the LHC experiments collect physics data for offline analysis. 
 
-Bunches are injected from SPS by portions. 
-The energy of protons in the injected bunches equal to 450 GeV.
-When injection is done, the fill is complete, and further acceleration in the LHC starts.
-When bunches have been accelerated to the nominal energies (up to 7 TeV) and when all experiments are ready to record the data the so-called physics run starts. During physics run all LHC experiments collect physics data for offline analysis. 
-
-The number of protons in the bunches is decreasing with time due to the constant pp collision.
-This is why to achieve maximum delivered luminosity to experiments 
-it is more optimal to dumps the beams when their intensity becomes to low and to inject new one into the ring.
-After the beams have being dumped a magnetic field (which is equivalent to the current in the magnets) has to be slowly decreased (due to safety reasons) to make machine ready for new 450 GeV bunches and new acceleration cycle.
-The period between fills, where there are no bunches in the LHC, is called interfill period. In the interfill period, ATLAS sub-detectors perform calibrations to prepare for the next run. 
-The luminosity distribution during the physics runs shown in \FigureRef{fig:interfill} demonstrates a decrease of the luminosity over the run as well as the interfill period between the runs. 
+The number of protons in the bunches is decreasing with time due to the pp collisions.
+To achieve maximum delivered luminosity to the experiments 
+it is therefore more optimal to dumps the beams when their intensity becomes too low and to inject new beams into the ring.
+After the beams have been dumped, the magnetic field (which is equivalent to the current in the magnets) has to be slowly decreased to make the machine ready for new 450 GeV bunches and a new acceleration cycle.
+The period between fills, where there are no bunches in the LHC, is called the interfill period. In the interfill period, the ATLAS sub-detectors perform calibrations to prepare for the next run. 
+The luminosity distribution during the physics runs shown in \FigureRef{fig:interfill} demonstrates
+the decrease of the luminosity over the run as well as the interfill period between the runs. 
 
 \begin{figure}[]
   \centering
 \includegraphics[width=0.6\textwidth]{intro/lhc_record_lumi_v2.eps}
-\caption{Example of the luminosity during the run as a function of time. Period with zero luminosity between the runs corresponds to the interfill period used by the detector to make calibrations.}
+\caption{Example of the luminosity during two runs as a function of time. The period with zero luminosity between the runs corresponds to the interfill period used by the detector groups to make calibrations.}
 \label{fig:interfill}
 \end{figure}
 
 
-It is worth mentioning that there are other types of the runs, which are used for LHC beam performance studies or special detector tests.
-One of the examples of the special run is the so-called van-der-Meer (vdM) run which is used to calibrate LHC experiment luminometers as will be described in \SectionRef{subsec:alfa_run}.
+It is worth mentioning that there are other types of runs, which are used for LHC beam performance studies or special detector tests.
+One example of such a special run is the so-called van-der-Meer (vdM) run which is used to calibrate  the luminometers in the experiments as will be described in \SectionRef{subsec:alfa_run}.
 
 % LHC program description
-LHC running schedule is split into the different periods which are called Runs. Run-1 started at the LHC startup and was going on with 50 ns bunch spacing in the trains and with the center-of-mass energy of 7 and 8 TeV. 
-Run-2 started in 2014 and is still ongoing. Center-of-mass energy of pp collisions is 13 TeV and bunch spacing is 25 ns (which corresponds to the designed bunch spacing).
-During Run-3 and Run-4 LHC will operate with 14 TeV CM energy with significantly increased luminosity. The total planned luminosity to be delivered by LHC to the experiments is 3000 fb$^{-1}$.
+The LHC running schedule is split into different periods which are called Runs. Run-1 started at the LHC startup and was using a 50 ns bunch spacing in the trains and had a center-of-mass energy of 7 and 8 TeV. 
+Run-2 started in 2014 and is still ongoing. The center-of-mass energy of the collisions is 13 TeV and the bunch spacing is 25 ns (which corresponds to the designed bunch spacing).
+During Run-3 and Run-4 LHC will operate with 14 TeV CM energy and with a significantly increased luminosity. The total planned luminosity to be delivered by LHC to the experiments is 3000 fb$^{-1}$.
 Information about all running periods is shown in \FigureRef{fig:lhc_program}.
 
 \begin{figure}[]
@@ -70,19 +69,19 @@ Information about all running periods is shown in \FigureRef{fig:lhc_program}.
 % 
 % Reconstruction of the track of the charged particles and primary and secondary vertices is done in the Inner Detector, which consist from high-precision silicon Pixel detector, silicon strip detector (SCT) and transition radiation tracker (TRT).
 
-The ATLAS (A Toroidal LHC ApparatuS) experiment is a multi-purpose detector at LHC. It has a forward-backward symmetric design with respect to the Interaction Point (IP).
-It consists from the Inner Detector (ID), Electromagnetic (EM) and hadronic Tile calorimeter and muon spectrometer (MS). The magnetic field is provided by the magnet system. A detailed description of each subsystem is presented below.
+The ATLAS (A Toroidal LHC ApparatuS) experiment is a multi-purpose detector at the LHC. It has a forward-backward symmetric design with respect to the Interaction Point (IP).
+It consists of the Inner Detector (ID), the Electromagnetic (EM) and hadronic calorimeter and the Muon Spectrometer (MS). The magnetic field is provided by the magnet system. A detailed description of each subsystem is presented below.
 
 \subsection{The ATLAS coordinate system}
 
-Illustration of the coordinate system and track parameters are shown in \FigureRef{fig:coordinate_system}.
-Base vectors $e_x$, $e_y$ and $e_z$ shown in figure represent x-, y- and z-axes respectively. Vector $e_x$ is pointing to the center of the LHC ring;
-vector $e_y$ is pointing vertically upward; vector $e_z$ is pointing along the axis beam. 
-In ATLAS tracks of charged particles are parameterized with these five parameters~\cite{track_parameterization}:
+An illustration of the coordinate system and the track parameters are shown in \FigureRef{fig:coordinate_system}.
+The base vectors $e_x$, $e_y$ and $e_z$ shown in figure represent the x-, y- and z-axes respectively. The vector $e_x$ is pointing to the center of the LHC ring;
+vector $e_y$ is pointing vertically upward; vector $e_z$ is pointing along the beam axis. 
+Tracks of charged particles are parameterized with these five parameters in ATLAS~\cite{track_parameterization}:
 \begin{itemize}
- \item The transverse impact parameter $d_0$, which is the distance to the beam axis in $x-y$ plane. 
+ \item The transverse impact parameter $d_0$, which is the distance to the beam axis in the $x-y$ plane. 
  \item The longitudinal impact parameter $z_0$, which is the distance to the coordinate system origin in z-direction.
- \item The azimuthal angle $\phi$, measured in $x-y$ plane starting from vector $e_x$. 
+ \item The azimuthal angle $\phi$, measured in the $x-y$ plane starting from vector $e_x$. 
  \item The polar angle $\theta$, measured from vector $e_z$.
  \item The charge of the particle divided by its momentum, $q/p$, which characterize the track curvature.
 \end{itemize}
@@ -90,19 +89,19 @@ In ATLAS tracks of charged particles are parameterized with these five parameter
 \begin{figure}[]
   \centering
 \includegraphics[width=0.6\textwidth]{intro/coordinate_system.png}
-\caption{???~\cite{Cornelissen:2007aca}.}
+\caption{Track parameterization in the ATLAS coordinate system~\cite{Cornelissen:2007aca}.}
 \label{fig:coordinate_system}
 \end{figure}
 
 \subsection{Magnet System}
-The ATLAS Magnet System~\cite{tdr_magnet} provide a magnetic field to bend tracks of the charged particles. This is used to measure the momentum of the particles as well as their charge by the curvature of the track.
-Magnet system consists of three superconducting magnets:
+The ATLAS Magnet System~\cite{tdr_magnet} provide a magnetic field to bend tracks of charged particles. This is used to measure the momentum of the particles as well as their charge by the curvature of the track.
+The magnet system consists of three superconducting magnets:
 \begin{itemize}
- \item The Central Solenoid. It is placed around the Inner Detector and provides 2 T magnetic field directed along the beam axis inside the ID. 
+ \item The Central Solenoid. It is placed around the Inner Detector and provides a 2~T magnetic field directed along the beam axis inside the ID. 
  Since it is placed before EM calorimeter, the material budget has to be low 
  in order to not distort measurement in the calorimeter.
- \item The air-cored Barrel Toroid. Provide $\sim$0.5 T inside the muon spectrometer.
- \item The air-cored End-Cap Toroids. Provide $\sim$1.0 T inside the muon spectrometer.
+ \item The Barrel Toroid. Provides $\sim$0.5~T inside the barrel muon spectrometer.
+ \item The End-Cap Toroids. Provides $\sim$1.0~T inside the toroid muon spectrometer.
 \end{itemize}
 The magnet configuration is shown in \FigureRef{fig:atlas_magnets}.
 
@@ -123,12 +122,12 @@ Tracking detectors also have to provide information on the sign of the electrica
 which is why a strong magnetic field is applied within the ID, 
 which makes tracks of particles with different charges bend into different directions.
 
-Vertices are formed from reconstructed tracks. The primary vertex correspond to the vertex where the $pp$ collision took place, 
+Vertices are formed from reconstructed tracks. The primary vertex corresponds to the vertex where the $pp$ collision took place, 
 while secondary vertices correspond to the decay of particles.
 
-The ID is done with different layers of the detectors. When a particle interacts with one of them it deposits a part of its energy to the sensor,
-and this energy is being detected by the sensor readout electronics. The collected signal is triggered with a predefined threshold and if 
-the signal is larger than a threshold a hit is recorded.
+The ID is done with different layers of detectors. When a particle interacts with one of them it deposits a part of its energy to the sensor,
+and this energy is being detected by the sensor readout electronics. 
+If the signal is larger than a predefined threshold a hit is recorded.
 One wants to have a large number of hits in order to precisely measure the particles track.  
 However, a lot of material can lead to multiple scattering and conversion of photons.
 The material  budget of the ID is shown in \FigureRef{fig:material_budget}.
@@ -145,7 +144,7 @@ The material budget of the ATLAS Inner Detector as a function of absolute pseudo
 
 The particle density is falling with the distance from the IP as $1/R^2$, 
 and the layers close to the IP therefore need to have a large granularity in order to be able to distinguish between
-hundreds of particle from one pp collisions, while the outermost layers can have a larger granularity.
+hundreds of particle from one pp collisions, while the outermost layers can have a smaller granularity.
 The ID consists of three subdetectors, listed from innermost to outermost: the high-granular silicon pixel detector, the silicon strip (SCT) detector and the transition radiation tracker (TRT).
 
 All subdetectors consist of two barrel parts (Barrel A and Barrel C) and two end-cap parts (End-cap A and End-cap C) 
@@ -193,7 +192,7 @@ The hadronic calorimeter is divided up into a barrel hadronic calorimeter coveri
 \subsubsection{EM calorimeter}
 The ATLAS EM calorimeter is a sampling calorimeter with accordion-shaped lead absorbers and kapton electrodes.
 \FigureRef{fig:EMgran} shows the accordion shaped geometry of the ATLAS EM calorimeter. The accordion geometry provide a fast signal readout and an azimuthal symmetry without cracks. Liquid Argon is used as an active material. The EM calorimeter is divided into two barrel parts ($|\eta|<1.475$) and end-caps ($1.375<|\eta|<3.2$).
-The end-cap calorimeter on each side is consists of two wheels: The Inner Wheel ($1.375<|\eta|<2.5$) is the closest part to the beam pipe while the
+The end-cap calorimeter on each side consists of two wheels: The Inner Wheel ($1.375<|\eta|<2.5$) is the closest part to the beam pipe while the
 Outer Wheel ($2.5<|\eta|<3.2$) is the part furthest from the beam pipe.
 The amount of material in terms of number of electromagnetic radiation lengths ($X_0$) is shown in \FigureRef{fig:Calo}.
 The thickness of the EM calorimeter is above $24 X_0$ in the barrel and above $26 X_0$ in the end-cap regions.
@@ -217,7 +216,7 @@ Both the barrel and the end-cap calorimeters are segmented into three longitudin
 \end{figure}
 
 The main goal of the lead absorbers in the sampling EM calorimeter is to develop an electromagnetic shower, with a part of the EM shower detected in the lAr sensitive material. The energy deposited in the absorber material is accounted for by the known sampling fraction of the calorimeter. In order to achieve a good performance of an EM calorimeter, an important aspect is the material in front of the calorimeter as it degrades the energy resolution of the calorimeter~\cite{electron_tight}.
-Before the ATLAS EM calorimeter a presampler is placed covering the pseudorapidity range of $|\eta|<1.8$. It is needed in order to recover the energy lost in the material before the calorimeter (inner detector, cryostat, etc).
+A presampler is placed before the ATLAS EM calorimeter covering the pseudorapidity range of $|\eta|<1.8$. It is needed in order to recover the energy lost in the material before the calorimeter (inner detector, cryostat, etc).
 The relative energy resolution for EM objects is parameterized as follows:
 \begin{equation}
 \frac{\sigma(E)}{E}=\frac{a}{\sqrt{E[GeV]}}\otimes\frac{b}{E[GeV]}\otimes c
@@ -236,47 +235,47 @@ It consists of a Tile calorimeter in the range of $|\eta|<1.7$ that is construct
 In the Tile calorimeter the signal is provided by scintillating tiles as an active material, while the absorbers are made out of iron. It is divided into a barrel and two extended barrels with inner radius 2.28~m and outer radius 4.23~m. Similarly to the EM calorimeter, the Tile calorimeter is longitudinally segmented into three layers, which are needed for triggering and reconstruction of jets. The readout of the tiles is performed by optical fibers. The tiles are grouped into readout cells, which are designed to be projective with respect to the interaction point.
 
 The Hadronic end-cap calorimeters are constructed with copper as an absorber and lAr as an active material. The absorber plates are orthogonal to the beam axis and consists of two consecutive wheels
-with thickness of 25 and 50 mm; respectively. The forward calorimeter is placed at a distance of about 5 meters from the interaction point. It consists of three longitudinal sections: the first is made of copper absorbers, while the next two are made of tungsten absorbers. The forward calorimeter also provides an electron reconstruction capability.
+with a thickness of 25 and 50 mm respectively. The forward calorimeter is placed at a distance of about 5 meters from the interaction point. It consists of three longitudinal sections: the first is made of copper absorbers, while the next two are made of tungsten absorbers. The forward calorimeter also provides an electron reconstruction capability.
 
 % TODO Few sentenceas how jets are reconstructed?
 
 \subsection{Muon Spectrometer}
 
-The Muon Spectrometer (MS) is the outermost part of the ATLAS detector designed to trigger on and detect muons, the only charged particles that penetrate the calorimeter system, and covers the pseudorapidity range of $|\eta|<2.7$. It is a tracking detector which measures the muon tracks deflected in the strong magnetic field. The MS consists of barrel $|\eta|<1.05$ and two end-cap sections. The system of large superconducting air-core toroid magnets provides the magnetic field of 0.5~T and 1~T in the barrel and endcap, respectively, resulting in a bending power between 2.0 and 7.5~Tm~\cite{MCPrun1}. It is equipped with three cylindrical layers around beam axis of Monitored Drift Tubes Chambers (MDT) and Cathode Strip Chambers (CSC) providing a measurement of tracks; three doublet layers for $|\eta|<1.05$ of Resistive Plate Chambers (RPC) and three triplet and doublet layers for $1.0 < |\eta| < 2.4$ of Thin Gap Chambers (TGC) providing triggering and ($\eta, \phi$) measurements of muon tracks momentum.
-The CSC is used in the forward region instead of MDT due to high background conditions.
-A combination of four complementary technologies allows achieving the goals needed for physics. The layout of the muon spectrometer is shown in \FigureRef{fig:MS}.
+The Muon Spectrometer (MS) is the outermost part of the ATLAS detector and is designed to trigger on and detect muons, the only charged particles that penetrate the calorimeter system, and it covers the pseudorapidity range of $|\eta|<2.7$. It is a tracking detector which measures the muon tracks deflected in the strong magnetic field. The MS consists of one barrel $|\eta|<1.05$ and two end-cap sections. The system of large superconducting air-core toroid magnets provides the magnetic field of 0.5~T and 1~T in the barrel and endcap, respectively, resulting in a bending power between 2.0 and 7.5~Tm~\cite{MCPrun1}. It is equipped with three cylindrical layers of Monitored Drift Tube Chambers (MDT) and Cathode Strip Chambers (CSC) providing a measurement of tracks; three doublet layers for $|\eta|<1.05$ of Resistive Plate Chambers (RPC) and three triplet and doublet layers for $1.0 < |\eta| < 2.4$ of Thin Gap Chambers (TGC) providing triggering and ($\eta, \phi$) measurements of the muon track momentum.
+The CSC is used in the forward region instead of MDT due to the high background conditions.
+A combination of four complementary technologies is needed to provide a precise muon measurement over a large $\eta-$range. The layout of the muon spectrometer is shown in \FigureRef{fig:MS}.
 
 \begin{figure}[h!]
 \centering
  \includegraphics[width=0.64\textwidth]{intro/MS1.pdf}
- \caption{Cut-view of quadrant of the Muon Spectrometer.}
+ \caption{Cut-view of one quadrant of the Muon Spectrometer.}
 \label{fig:MS}
 \end{figure}
 
-The MS allows a precise muon momentum measurement in the pseudorapidity region up to 
-$|\eta|<2.7$ and provides a relative resolution better than 3\% over a wide range of $p_T$ and up to 10\% at $p_T\sim 1$~TeV.
+The MS allows for a precise muon momentum measurement in the pseudorapidity region up to 
+$|\eta|<2.7$ and provides a relative resolution better than 3\% over a wide range of $p_T$. It deteriorates to 10\% at $p_T\sim 1$~TeV.
 The MDT and the CSC provide a single hit resolution in the bending plane of about 80~$\mu m$ and 60~$\mu m$, respectively.
 
-The muon track in the MS is reconstructed in two steps. In first step muons are triggered in RPC/TGC and local track segments are defined in each layer of chambers. In the next step, the local track segments from different layers are combined through $\chi^2-$fit forming full MS track. To reduce an amount of background events penetrating the calorimeter, the fitted tracks for the muon candidates are required to point towards the interaction point.
+The muon track in the MS is reconstructed in two steps. In first step muons are triggered in the RPC/TGC and local track segments are defined in each layer of chambers. In the next step, the local track segments from different layers are combined through a $\chi^2-$fit forming full MS track. To reduce the probability of background tracks penetrating the calorimeter, the fitted tracks of the muon candidates are required to point towards the interaction point.
 
-\subsection{Triggers}
+\subsection{Trigger system}
 % TRIGGER
 % Why do we need triggers
-Theoretical maximum possible collision rate at LHC is 40MHz.
-Since the size of one pp collision event recorded by the detector is 1-2 Mbytes, there is no physical possibility to record such huge stream of the data and store it for a long time. However, more than 99$\%$ of events happening at pp collisions have no interest for physicist cause they are well studied due to their high cross section. Thus one wants to ``hunt'' only events which occur very rarely. This is why not interesting events have to be rejected by the triggers.
+The theoretical maximum possible collision rate at the LHC is 40MHz.
+Since the size of one pp collision event recorded by the detector is 1-2 Mbytes, there is no physical possibility to record such a huge stream of data and store it permanently. However, more than 99$\%$ of the events happening in pp collisions have no interest for physicists because they are well studied previously due to their high cross section. Thus one wants to ``hunt'' for only events which occur very rarely. This is why non-interesting events have to be rejected by the trigger system.
 % Three-level trigger system with description of the L1, ROI, L2 and EF
-The ATLAS experiment has three levels of triggers: hardware-based level 1 (L1) and software-based level 2 (L2) and Event Filter (EF)~\cite{tdr_tdaq}.
-The reduction of the rate of the accepted events for three trigger levels is shown in \FigureRef{fig:trigger_rate}.
-L1 trigger use trigger chambers in the MS and coarse-granulated calorimeter information to find high-$p_T$ charged leptons, photons or large missing transverse energy. The so-called region of interest (ROI) are formed which correspond to the ($\eta$,$\phi$) phase space of the detector where large signals have been observed. These regions are used by L2, which use full granularity information within ROI. EF take events which passed L2 and apply the same algorithms as in offline analysis to make a decision to store or discard the event.
+The ATLAS experiment has three levels of triggers: a hardware-based level 1 (L1) and a software-based level 2 (L2) and the Event Filter (EF)~\cite{tdr_tdaq}.
+The reduction of the rate of the accepted events for the three trigger levels is shown in \FigureRef{fig:trigger_rate}.
+The L1 trigger use trigger chambers in the MS and the coarse-granulated calorimeter information to find high-$p_T$ charged leptons, photons or large missing transverse energy. The so-called regions of interest (ROI) are formed which correspond to the ($\eta$,$\phi$) phase space of the detector where large signals have been observed. These regions are used by the L2, which use full granularity information within a ROI. The EF takes events which passed L2 and apply the same algorithms as in the offline analysis to make a final decision to store or discard the event.
 
 \begin{figure}[h!]
 \centering
  \includegraphics[width=0.7\textwidth]{intro/trigger_rate_anthony.png}
- \caption{Three-level acceptance rate as a function of time needed to make a decision about the event by the trigger. A comparison with the rate of the SM processes occurring in the pp collision are as well~\cite{anthony_thesis}}
+ \caption{The acceptance rate as a function of time needed to make a decision about the event by the trigger. A comparison with the rate of the SM processes occurring in the pp collision are shown as well~\cite{anthony_thesis}.}
 \label{fig:trigger_rate}
 \end{figure}
 
-In this way, one can significantly reduce the rate and accept only events of the interest. A comparison of the three-level trigger acceptance rate with the rate of some SM processes is shown in \FigureRef{fig:trigger_rate}.
+In this way, one can significantly reduce the rate and accept only events of interest. A comparison of the  trigger acceptance rate with the rate of some SM processes is shown in \FigureRef{fig:trigger_rate}.
 
 % TODO DAQ
 
