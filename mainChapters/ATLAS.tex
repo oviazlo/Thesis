@@ -1,78 +1,137 @@
+
+% TODO define
+% - BCID
+
 \chapter{The LHC and The \ATLAS experiment}
 \label{chap:MoreStuff}
 
-% TODO describe
-% 1) Run-1 and Run-2 definitions
-% 2) BCID, bunch spasing, bunch length
-% 3) define physics run, mention about vdM runs, define interfill period (LUCID calibration)
-% 4) ATLAS coordination system
+The Large Hadron Collider (LHC) is a proton circular accelerator at CERN with designed center-of-mass (CM) energy of proton-proton collisions is up to 14~TeV and 2.3~TeV per nucleon for heavy ion collisions.
+It provides luminosity to the four large experiments: ATLAS, CMS, ALICE, and LHCp. This chapter contains a short overview of the LHC performance as well as a description of the ATLAS experiment.
 
-% coordinate system
+\section{The LHC performance and beam structure}
 
-\section{The \LHC}
-\subsection{The LHC performance and beam structure}
+The proton bunches are delivered to the Large Hadron Collider (LHC) 
+by the injector chain Linac2 - Proton Synchrotron Booster (PSB) - Proton Synchrotron (PS) - Super Proton Synchrotron (SPS)~\cite{lhc_tdr_vol3}.
+The schematic picture of the full acceleration chain is shown in \FigureRef{fig:accelerator_complex}.
 
-% define physics run
-% define vdM run
-% all other technical runs
+\begin{figure}[]
+  \centering
+\includegraphics[width=0.99\textwidth]{intro/Cern-Accelerator-Complex_v2.jpg}
+\caption{Schematic of the LHC accelerator complex at CERN.}
+\label{fig:accelerator_complex}
+\end{figure}
 
-% define bunch
-% define train
+The maximum number of bunches possible in the LHC is 2808~\cite{lhc_tdr_vol1}.
+Bunches are grouped in the so-called bunch trains or simply trains.
+Design distance between the bunches in the train is 25 ns.
+The longest possible train in the LHC during the normal operation consist of 72 bunches with gaps between the trains of at least of 12 empty bunches~\cite{lhc_tdr_vol3}.
+
+Bunches are injected from SPS by portions. 
+The energy of protons in the injected bunches equal to 450 GeV.
+When injection is done, the fill is complete, and further acceleration in the LHC starts.
+When bunches have been accelerated to the nominal energies (up to 7 TeV) and when all experiments are ready to record the data the so-called physics run starts. During physics run all LHC experiments collect physics data for offline analysis. 
+
+The number of protons in the bunches is decreasing with time due to the constant pp collision.
+This is why to achieve maximum delivered luminosity to experiments 
+it is more optimal to dumps the beams when their intensity becomes to low and to inject new one into the ring.
+After the beams have being dumped a magnetic field (which is equivalent to the current in the magnets) has to be slowly decreased (due to safety reasons) to make machine ready for new 450 GeV bunches and new acceleration cycle.
+The period between fills, where there are no bunches in the LHC, is called interfill period. In the interfill period, ATLAS sub-detectors perform calibrations to prepare for the next run. 
+The luminosity distribution during the physics runs shown in \FigureRef{fig:interfill} demonstrates a decrease of the luminosity over the run as well as the interfill period between the runs. 
+
+\begin{figure}[]
+  \centering
+\includegraphics[width=0.6\textwidth]{intro/lhc_record_lumi_v2.eps}
+\caption{Example of the luminosity during the run as a function of time. Period with zero luminosity between the runs corresponds to the interfill period used by the detector to make calibrations.}
+\label{fig:interfill}
+\end{figure}
 
 
+It is worth mentioning that there are other types of the runs, which are used for LHC beam performance studies or special detector tests.
+One of the examples of the special run is the so-called van-der-Meer (vdM) run which is used to calibrate LHC experiment luminometers as will be described in \SectionRef{subsec:alfa_run}.
 
-
-The number of protons in the bunches is decreasing with time due to the collision.
-This is why in order to achieve maximum delivered luminosity one have to dump beams at some point when intensity decreased significantly and to inject new bunches into the ring.
-When beam is dumped one need to decrease magnetic field to make machine ready for new 450 GeV bunches. Decreasing current on the magnets has to be done slowly due to safety reasons.
-The period between fills, where there is no bunches in the LHC, is called interfill period.
-In the interfill period ATLAS sub-detectors perform calibrations in order to prepare for the next run. The luminosity profile which demonstrate previously defined definitions is shown in \FigureRef{???}.
-% TODO shown fills/runs, interfill period, intensity beam decrease
-
-the so-called physics run. The purpose of the physics run is to provide nominal high luminosity pp collisions to be used by the experiments for the physics analyses.
-However there are many other special types of runs, which are used to studies of the LHC beam performance, detector tests, etc.
-One of example of the special runs is the so-called van-der-Meer (vdM) run which is used to calibrate LHC experiment luminometers will be described in \SectionRef{subsec:alfa_run}.
-
+% LHC program description
+LHC running schedule is split into the different periods which are called Runs. Run-1 started at the LHC startup and was going on with 50 ns bunch spacing in the trains and with the center-of-mass energy of 7 and 8 TeV. 
+Run-2 started in 2014 and is still ongoing. Center-of-mass energy of pp collisions is 13 TeV and bunch spacing is 25 ns (which corresponds to the designed bunch spacing).
+During Run-3 and Run-4 LHC will operate with 14 TeV CM energy with significantly increased luminosity. The total planned luminosity to be delivered by LHC to the experiments is 3000 fb$^{-1}$.
+Information about all running periods is shown in \FigureRef{fig:lhc_program}.
 
 \begin{figure}[]
   \centering
 \includegraphics[width=0.99\textwidth]{intro/lhc_program.png}
 \caption{An approximate timeline of the scheduled LHC upgrades with planned integrated luminosity to be delivered to the experiments~\cite{Kawamoto:1552862}.}
-\label{fig:wprime_limits}
+\label{fig:lhc_program}
 \end{figure}
 
 
-The maximum number of bunches in the LHC is 2808~\cite{lhc_tdr_vol1}.
+\section{The ATLAS experiment}
+% a few words about ATLAS
 
-Linac2 - Proton Synchrotron Booster (PSB) - Proton Synchrotron (PS) - Super Proton Synchrotron (SPS)~\cite{lhc_tdr_vol3}.
+% ATLAS is a multipurpose detector at LHC
+% 
+% Reconstruction of the track of the charged particles and primary and secondary vertices is done in the Inner Detector, which consist from high-precision silicon Pixel detector, silicon strip detector (SCT) and transition radiation tracker (TRT).
 
+The ATLAS (A Toroidal LHC ApparatuS) experiment is a multi-purpose detector at LHC. It has a forward-backward symmetric design with respect to the Interaction Point (IP).
+It consists from the Inner Detector (ID), Electromagnetic (EM) and hadronic Tile calorimeter and muon spectrometer (MS). The magnetic field is provided by the magnet system. A detailed description of each subsystem is presented below.
 
+\subsection{The ATLAS coordinate system}
 
-The longest possible train in the LHC during the normal operation consist of 72 bunches
-with gaps between the trains of at least of 12 empty bunches~\cite{lhc_tdr_vol3}.
+Illustration of the coordinate system and track parameters are shown in \FigureRef{fig:coordinate_system}.
+Base vectors $e_x$, $e_y$ and $e_z$ shown in figure represent x-, y- and z-axes respectively. Vector $e_x$ is pointing to the center of the LHC ring;
+vector $e_y$ is pointing vertically upward; vector $e_z$ is pointing along the axis beam. 
+In ATLAS tracks of charged particles are parameterized with these five parameters~\cite{track_parameterization}:
+\begin{itemize}
+ \item The transverse impact parameter $d_0$, which is the distance to the beam axis in $x-y$ plane. 
+ \item The longitudinal impact parameter $z_0$, which is the distance to the coordinate system origin in z-direction.
+ \item The azimuthal angle $\phi$, measured in $x-y$ plane starting from vector $e_x$. 
+ \item The polar angle $\theta$, measured from vector $e_z$.
+ \item The charge of the particle divided by its momentum, $q/p$, which characterize the track curvature.
+\end{itemize}
 
+\begin{figure}[]
+  \centering
+\includegraphics[width=0.6\textwidth]{intro/coordinate_system.png}
+\caption{???~\cite{Cornelissen:2007aca}.}
+\label{fig:coordinate_system}
+\end{figure}
 
+\subsection{Magnet System}
+The ATLAS Magnet System~\cite{tdr_magnet} provide a magnetic field to bend tracks of the charged particles. This is used to measure the momentum of the particles as well as their charge by the curvature of the track.
+Magnet system consists of three superconducting magnets:
+\begin{itemize}
+ \item The Central Solenoid. It is placed around the Inner Detector and provides 2 T magnetic field directed along the beam axis inside the ID. 
+ Since it is placed before EM calorimeter, the material budget has to be low 
+ in order to not distort measurement in the calorimeter.
+ \item The air-cored Barrel Toroid. Provide $\sim$0.5 T inside the muon spectrometer.
+ \item The air-cored End-Cap Toroids. Provide $\sim$1.0 T inside the muon spectrometer.
+\end{itemize}
+The magnet configuration is shown in \FigureRef{fig:atlas_magnets}.
 
-\section{Magnet System}
-\section{The inner detector}
+\begin{figure}[]
+  \centering
+\includegraphics[width=0.8\textwidth]{intro/magnets.eps}
+\caption{Illustration of the ATLAS magnet system.}
+\label{fig:atlas_magnets}
+\end{figure}
+
+\subsection{The inner detector}
 \label{sec:ID}
 % additional feature - electron identifiation with TRT
 
 The innermost detector of ATLAS and the closest one to the interaction point (IP) is the inner detector (ID).
-The main purpose of the ID is to reconstruct tracks of all charged particles which pass through the detector.
-Also tracking detector have to provide information on the sign of the electrical charge of the particles, 
-this is why a strong magnetic field is maintained within ID, which 
-which makes tracks of particle with different charges be bent into different directions.
+The main purpose of the ID is to reconstruct tracks of all charged particles which pass through the detector and to measure their momentum.
+Tracking detectors also have to provide information on the sign of the electrical charge of the particles, 
+which is why a strong magnetic field is applied within the ID, 
+which makes tracks of particles with different charges bend into different directions.
 
-From reconstructed tracks vertices are formed. The primary vertex correspond to the vertex where $pp$ collision took place, 
-while secondary vertices correspond to the decay of the particles.
+Vertices are formed from reconstructed tracks. The primary vertex correspond to the vertex where the $pp$ collision took place, 
+while secondary vertices correspond to the decay of particles.
 
-ID is done with layers of the sensitive detectors. When particle interact with one of them it deposits the part of its energy to the sensor,
-and this energy afterwards is being read and multiplied by the sensor readout electronics. The collected signal is trigerred against the predefined threshold and if 
-it signal is larger a hit have been recorded.
-One want to have the large number of hits in order to precisely measure the particles track, however, more interaction particles experienced with the detector the more
-energy it left, the more distorted track of the particle will be. This is why one prefer as less amount of the material in the ID as possible.
-Material  budget of the ID is shown in \FigureRef{fig:material_budget}.
+The ID is done with different layers of the detectors. When a particle interacts with one of them it deposits a part of its energy to the sensor,
+and this energy is being detected by the sensor readout electronics. The collected signal is triggered with a predefined threshold and if 
+the signal is larger than a threshold a hit is recorded.
+One wants to have a large number of hits in order to precisely measure the particles track.  
+However, a lot of material can lead to multiple scattering and conversion of photons.
+The material  budget of the ID is shown in \FigureRef{fig:material_budget}.
 
 \begin{figure}
 \centering
@@ -84,19 +143,20 @@ The material budget of the ATLAS Inner Detector as a function of absolute pseudo
 \end{figure}
 
 
-Particle density is falling with the distance from the IP as a $1/R^2$, this is why layers close to the IP need to have a large granularity in order to be able to distinguish 
-hundreds of particle from one pp collisions, while outermost layers can have lesser granularity to provide the same occupancy as innermost layers.
-Thus ID consists from three subdetectors, listed from innermost to outermost one: high-granular silicon pixel detector, silicon strip (SCT) detector and transition radiation tracker (TRT).
+The particle density is falling with the distance from the IP as $1/R^2$, 
+and the layers close to the IP therefore need to have a large granularity in order to be able to distinguish between
+hundreds of particle from one pp collisions, while the outermost layers can have a larger granularity.
+The ID consists of three subdetectors, listed from innermost to outermost: the high-granular silicon pixel detector, the silicon strip (SCT) detector and the transition radiation tracker (TRT).
 
 All subdetectors consist of two barrel parts (Barrel A and Barrel C) and two end-cap parts (End-cap A and End-cap C) 
 which are placed symmetrically with respect to the interaction point.
-Detector geometry and acceptance is shown in \FigureRef{fig:ID_eta}.
+The detector geometry and acceptance is shown in \FigureRef{fig:ID_eta}.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.99\textwidth]{TRT/TRTeta.png}
 \caption{ 
-The Inner Detector quarter-section showing detector acceptance and geometrical sizes of the layers.
+A quarter of the Inner Detector showing the detector acceptance and the geometrical sizes of the layers.
 }
 \label{fig:ID_eta}
 \end{figure}
@@ -104,52 +164,47 @@ The Inner Detector quarter-section showing detector acceptance and geometrical s
 
 % Pixel and SCT
 The Pixel detector is a semiconductor detector which consists of pixels~\cite{Wermes:381263}.
-Detector resolution in the barrel region is 10 $\mu m$ in $R-\phi$ and 115 in $z$,
-while in the endcap region is 10 $\mu m$ in $R-\phi$ and 115 in $R$.
+The detector resolution in the barrel (endcap) region is 10 $\mu m$ in $R-\phi$ and 115 $\mu m$ in $R$ ($z$).
 
-The SCT detector is a semiconductor microstrip detector. Each layer consists from
-two layers of strips rotated in 40 mrad with respect to each other.
-Detector resolution in the barrel region is 17 $\mu m$ in $R-\phi$ and 580 in $z$,
-while in the endcap region is 17 $\mu m$ in $R-\phi$ and 580 in $R$.
+The SCT detector is a semiconductor microstrip detector. Each layer consists of two layers of strips rotated in 40 mrad with respect to each other.
+The detector resolution in the barrel (endcap) region is 17 $\mu m$ in $R-\phi$ and 580 $\mu m$ in $z$ ($R$).
 
 % TRT
 % electron identifications
 The TRT contains $\sim$300000 thin-walled proportional-mode drift tubes providing on average 30 two-dimensional 
 space points with $\sim$130 $\mu m$ resolution for charged particle tracks with |$\eta$| < 2 and $p_T$ > 0.5 GeV~\cite{Abat:2008zza,Abat:2008zzb,Abat:2008zz}.
-Along with continuous tracking, the TRT provides electron identification capability through the detection of transition radiation X-ray photons, which is created by the charged particles passing through layers of the radiator material between the tubes.
-Detailed description of the detector can be found in \ChapterRef{chap:TRT}.
-
-
-
+In addition to continuous tracking, the TRT provides electron identification through the detection of transition radiation X-ray photons, which are created by the charged particles passing through layers of radiator material between the tubes.
+A detailed description of the detector can be found in \ChapterRef{chap:TRT}.
 
 \subsection{The calorimetry system}
 
-The ATLAS calorimeter is designed to trigger and to measure accurately the energy and position of photons, electrons and hadrons, as well as to ensure a good missing energy measurement, which is crucial for new physics searches. The calorimeter system is divided into two different parts: an inner electromagnetic (EM) calorimeter is aimed to detect electrons and photons, an outer hadronic calorimeter is designed to detect mesons and baryons which escape the EM calorimeter.
+The ATLAS calorimeters are designed to trigger on and to measure accurately the energy and position of photons, electrons and hadrons, as well as to ensure a good missing energy measurement, which is crucial for new physics searches. The calorimeter system is divided into two main parts: an inner electromagnetic (EM) calorimeter that is aimed at detecting electrons and photons and an outer hadronic calorimeter that is designed to detect mesons and baryons which penetrate the EM calorimeter.
 
 The EM calorimeter covers the rapidity region $|\eta| < 3.2$.
-In order to meet the physics requirements and to operate properly at high radiation environment, the hadronic calorimeter is further divided into barrel hadronic calorimeter covering $|\eta| < 1.7$, hadronic end-cap calorimeter covering $1.5 < |\eta| < 3.2$, and forward calorimeter covering $3.1 < |\eta| < 4.9$. A global view of the ATLAS calorimeter is illustrated in \FigureRef{fig:Calo}.
+The hadronic calorimeter is divided up into a barrel hadronic calorimeter covering $|\eta| < 1.7$, an hadronic end-cap calorimeter covering $1.5 < |\eta| < 3.2$ and a forward calorimeter covering $3.1 < |\eta| < 4.9$. A global view of the ATLAS calorimeter system is illustrated in \FigureRef{fig:Calo}.
 
 \begin{figure}[h!]
 \centering
  \includegraphics[width=0.99\textwidth]{intro/0803015_01-A4-at-144-dpi.jpg}
- \caption{ Three-dimensional view of the ATLAS calorimetry.}
+ \caption{Three-dimensional view of the ATLAS calorimetry.}
 \label{fig:Calo}
 \end{figure}
 
 \subsubsection{EM calorimeter}
-The ATLAS EM calorimeter is a sampling calorimeter with accordion-shaped lead absorbers and Kapton electrodes.
-\FigureRef{fig:EMgran} shows illustrates the accordion shape geometry of the ATLAS EM calorimeter. The accordion geometry benefits from fast signal readout and the azimuthal symmetry without cracks. The liquid Argon is used as an active material. The EM calorimeter is divided into two barrel parts ($|\eta|<1.475$) and end-caps ($1.375<|\eta|<3.2$).
-The end-cap calorimeter on each side is built of two wheels: Inner Wheel ($1.375<|\eta|<2.5$) is the closest part to the beam pipe,
-Outer Wheel ($2.5<|\eta|<3.2$) is the part further from the beam pipe.
-An amount of the material in terms of number of electromagnetic radiation lengths ($X_0$) is shown in Figure 2.
+The ATLAS EM calorimeter is a sampling calorimeter with accordion-shaped lead absorbers and kapton electrodes.
+\FigureRef{fig:EMgran} shows the accordion shaped geometry of the ATLAS EM calorimeter. The accordion geometry provide a fast signal readout and an azimuthal symmetry without cracks. Liquid Argon is used as an active material. The EM calorimeter is divided into two barrel parts ($|\eta|<1.475$) and end-caps ($1.375<|\eta|<3.2$).
+The end-cap calorimeter on each side is consists of two wheels: The Inner Wheel ($1.375<|\eta|<2.5$) is the closest part to the beam pipe while the
+Outer Wheel ($2.5<|\eta|<3.2$) is the part furthest from the beam pipe.
+The amount of material in terms of number of electromagnetic radiation lengths ($X_0$) is shown in \FigureRef{fig:Calo}.
 The thickness of the EM calorimeter is above $24 X_0$ in the barrel and above $26 X_0$ in the end-cap regions.
 
-Both, barrel and end-cap calorimeters, are segmented into three longitudinal layers. The first layer has about $6 X_0$ thickness with upstream material and plays a role as preshower compartment. It has the finest granularity in $\eta$ with cell width of about 4~mm. The second layer has the thickness of about $18 X_0$ and is designed to contain almost full EM shower. It has the finest cell granularity in $\phi$ allowing to provide the azimuth coordinate of the electromagnetic shower direction. The third layer has two times coarser granularity and the thickness varying between $2 X_0$ and $12 X_0$. The read-out granularity of the LAr system and the accordion shape of the EM calorimeter are schematically illustrated in \FigureRef{fig:EMgran}.
+Both the barrel and the end-cap calorimeters are segmented into three longitudinal layers. The first layer has a thickness of about $6 X_0$ and plays a role as a preshower. It has the finest granularity in $\eta$ with a cell width of about 4~mm. The second layer has a thickness of about $18 X_0$ and is designed to contain almost a full EM shower. It has the finest cell granularity in $\phi$ and provides the azimuth coordinate of the electromagnetic shower direction. The third layer has a two times coarser granularity and the thickness is varying between $2 X_0$ and $12 X_0$. The read-out granularity of the LAr system and the accordion shape of the EM calorimeter are schematically illustrated in \FigureRef{fig:EMgran}.
 
 \begin{figure}[h!]
 \centering
  \includegraphics[width=0.5\textwidth]{intro/caloDepth_eta.png}
- \caption{Amount of material traversed by a particle before and in EM calorimeter, in units of radiation length $X_0$ , as a function of $|\eta|$.}
+ \caption{
+ The amount of material traversed by a particle before and in the EM calorimeter, in units of radiation lengths $X_0$ , as a function of $|\eta|$. Different colors represent three different longitudinal layers of the EM calorimeter.}
 \label{fig:Calo}
 \end{figure}
 
@@ -161,94 +216,35 @@ Both, barrel and end-cap calorimeters, are segmented into three longitudinal lay
 \label{fig:EMgran}
 \end{figure}
 
-The main goal of the lead absorbers in the sampling EM calorimeter is to develop an electromagnetic shower, while a part of EM shower is collected in the lAr sensitive material. The energy deposited in the absorber material is accounted through the known sampling fraction of the calorimeter. In order to achieve a good performance of the EM calorimeter, an important aspect is the material budget in front of the calorimeter as it degrades the energy resolution of the calorimeter~\cite{electron_tight}.
-Before the EM calorimeter the presampler is placed covering the pseudorapidity range of $|\eta|<1.8$. It is needed to recover the energy lost in the material before the calorimeter (inner detector, cryostat, etc).
+The main goal of the lead absorbers in the sampling EM calorimeter is to develop an electromagnetic shower, with a part of the EM shower detected in the lAr sensitive material. The energy deposited in the absorber material is accounted for by the known sampling fraction of the calorimeter. In order to achieve a good performance of an EM calorimeter, an important aspect is the material in front of the calorimeter as it degrades the energy resolution of the calorimeter~\cite{electron_tight}.
+Before the ATLAS EM calorimeter a presampler is placed covering the pseudorapidity range of $|\eta|<1.8$. It is needed in order to recover the energy lost in the material before the calorimeter (inner detector, cryostat, etc).
 The relative energy resolution for EM objects is parameterized as follows:
 \begin{equation}
 \frac{\sigma(E)}{E}=\frac{a}{\sqrt{E[GeV]}}\otimes\frac{b}{E[GeV]}\otimes c
 \end{equation}
-where $a$ is the sampling term which describes the statistical fluctuations of the EM shower, $b$ is the noise term due to electronics and pile-up, and $c$ is the constant term which accounts for non-uniformity of the calorimeter response. The sampling term mostly contributes at low energies, whereas at high energies theenergy resolution tends asymptotically to the constant term, which is designed  to be of 0.7\%.
-The transition region between the barrel and the end-cap, $1.37<|\eta|<1.52$, has significant amount of material in front of the calorimeter (about $ 10 X_0$), making the energy resolution to be poor and thus is usually excluded in physics analyses.
+where $a$ is the sampling term which describes the statistical fluctuations of the EM shower, $b$ is the noise term due to electronics and pile-up and $c$ is the constant term which accounts for non-uniformity of the calorimeter response. The sampling term mostly contributes at low energies, whereas at high energies the energy resolution goes asymptotically towards the constant term, which is designed to be 0.7\%.
+The transition region between the barrel and the end-cap, $1.37<|\eta|<1.52$, has a significant amount of material in front of the calorimeter (about $ 10 X_0$), making the energy resolution there to be poor and thus it is usually excluded in physics analyses.
 
-The drift of ionisation electrons in the lAr gap is ensured by high voltage system which generates an electric field of about 1~kV/mm. The induced current on the electrodes is then reconstructed into the deposited energy in an EM calorimeter cell.
+The drift of ionisation electrons in the lAr gap is ensured by a high voltage system which generates an electric field of about 1~kV/mm. The induced current on the electrodes is then used to reconstructed the deposited energy in an EM calorimeter cell.
 
-The reconstruction of the electrons and photons starts from reconstructing of clusters, a group of the calorimeter cells ($3\times 5$ cells of middle sampling) containing almost full EM shower. Clusters matched to a well-reconstructed track in the ID and originating from the interaction point (IP) are classified as electrons. Clusters without corresponding track matching are considered as unconverted photons. If there are two tracks corresponding to the reconstructed cluster, and if in addition the conversion vertex can be reconstructed, the considered candidate is reconstructed as converted photon.
+The reconstruction of the electrons and photons starts by reconstructing clusters, i.e., a group of calorimeter cells containing almost the full EM shower. Clusters matched to a well-reconstructed track in the ID and originating from the interaction point (IP) are then classified as electrons. Clusters without corresponding track matching are considered as unconverted photons. If there are two tracks corresponding to the reconstructed cluster, and if a conversion vertex can be reconstructed, the cluster is classified as a converted photon.
 
 \subsubsection{Hadronic calorimeter}
 
-The hadronic calorimeter surrounding the EM calorimeter, is designed to measure the hadrons penetrating the EM calorimeter.
-It consists of Tile calorimeter in the range of $|\eta|<1.7$ constructed with iron-scintillating-tiles technique, and hadronic end-cap lAr calorimeter spanning $1.5<|\eta|<3.2$. The acceptance of the hadronic calorimeter is extended by lAr Forward calorimeter up to $|\eta|<4.9$ (see \FigureRef{fig:Calo}). The lAr technology for large $|\eta|$ is chosen because of the
-intrinsic radiation hardness.
-In the Tile calorimeter the signal is provided by scintillating tiles as an active material, while the absorbers are made out of iron. It is divided into of barrel and two extended barrels with inner radius of 2.28~m and outer radius of 4.23~m. Similarly to EM calorimeter, the Tile calorimeter is longitudinally segmented into three layers, which are needed for triggering and reconstruction of jets. The readout of the tiles is performed using optical fibers. The tiles are grouped into the readout cells, which are designed to be projective with respect to the interaction point.
+The hadronic calorimeter surrounds the EM calorimeter and is designed to detect the hadrons penetrating the EM calorimeter.
+It consists of a Tile calorimeter in the range of $|\eta|<1.7$ that is constructed with an iron-scintillating-tiles technique, and an hadronic end-cap lAr calorimeter spanning $1.5<|\eta|<3.2$. The acceptance of the hadronic calorimeter is extended by the lAr Forward calorimeter up to $|\eta|<4.9$ (see \FigureRef{fig:Calo}). The lAr technology for large $|\eta|$ is chosen because of its intrinsic radiation hardness.
+In the Tile calorimeter the signal is provided by scintillating tiles as an active material, while the absorbers are made out of iron. It is divided into a barrel and two extended barrels with inner radius 2.28~m and outer radius 4.23~m. Similarly to the EM calorimeter, the Tile calorimeter is longitudinally segmented into three layers, which are needed for triggering and reconstruction of jets. The readout of the tiles is performed by optical fibers. The tiles are grouped into readout cells, which are designed to be projective with respect to the interaction point.
 
-The Hadronic end-cap calorimeters are constructed using coppers as an absorber material and lAr as an active material. The absorber plates are orthogonal to the beam axis and consists of two consecutive wheels
-with absorber thickness of 25 and 50 mm; respectively. The forward calorimeter is placed at a distance of about 5 meters from the interaction point. It consists of three longitudinal sections: the first is made of copper absorbers, while the next two are made of tungsten absorbers. The forward calorimeter also provides the electron reconstruction capability.
+The Hadronic end-cap calorimeters are constructed with copper as an absorber and lAr as an active material. The absorber plates are orthogonal to the beam axis and consists of two consecutive wheels
+with thickness of 25 and 50 mm; respectively. The forward calorimeter is placed at a distance of about 5 meters from the interaction point. It consists of three longitudinal sections: the first is made of copper absorbers, while the next two are made of tungsten absorbers. The forward calorimeter also provides an electron reconstruction capability.
 
-% Few sentenceas how jets are reconstructed?
-
-
-
-
-
-% 
-% \section{Calorimeters}
-% 
-% The ATLAS calorimeter is designed to trigger and to measure accurately the energy and position of photons, electrons and hadrons, as well as to ensure a good missing energy measurement, which is crucial for new physics searches. The calorimeter system is divided into two different parts: an inner electromagnetic (EM) calorimeter is aimed to detect electrons and photons, an outer hadronic calorimeter is designed to detect mesons and baryons which escape the EM calorimeter.
-% 
-% The EM calorimeter covers the rapidity region $|\eta| < 3.2$.
-% In order to meet the physics requirements and to operate properly at high radiation environment, the hadronic calorimeter is further divided into barrel hadronic calorimeter covering $|\eta| < 1.7$, hadronic end-cap calorimeter covering $1.5 < |\eta| < 3.2$, and forward calorimeter covering $3.1 < |\eta| < 4.9$. A global view of the ATLAS calorimeter is illustrated in Figure \ref{fig:Calo}.
-% 
-% \begin{figure}[h!]
-% \centering
-% \includegraphics[width=0.84\textwidth]{intro/0803015_01-A4-at-144-dpi.jpg}
-% \caption{ Three-dimensional view of the ATLAS calorimetry.}
-% \label{fig:Calo}
-% \end{figure}
-% 
-% \subsubsection{EM calorimeter}
-% The ATLAS EM calorimeter is a sampling calorimeter with accordion-shaped lead absorbers and Kapton electrodes.
-% Figure \ref{fig:EMgran} shows illustrates the accordion shape geometry of the ATLAS EM calorimeter. The accordion geometry benefits from fast signal readout and the azimuthal symmetry without cracks. The liquid Argon is used as an active material. The EM calorimeter is divided into two barrel parts ($|\eta|<1.475$) and end-caps ($1.375<|\eta|<3.2$).
-% Before the EM calorimeter the presampler is placed covering the pseudorapidity range of $|\eta|<1.8$. It is needed to correct the energy lost in the material before the calorimeter (inner detector, cryostat). An amount of the material in terms of number of electromagnetic radiation lengths ($X_0$) is shown in Figure 2.
-% The thickness of the EM calorimeter is above $24 X_0$ in the barrel and above $26 X_0$ in the end-cap regions.
-% 
-% Both, barrel and end-cap calorimeters, are segmented into three longitudinal layers. The first layer has about $6 X_0$ thickness with upstream material and plays a role as preshower compartment. It has the finest granularity in $\eta$ with cell width of about 4~mm. The second layer has the thickness of about $18 X_0$ and is designed to contain almost full EM shower. The third layer has two times coarser granularity and the thickness varying between $2 X_0$ and $12 X_0$.
-% 
-% \begin{figure}[h!]
-% \centering
-% \includegraphics[width=0.5\textwidth]{intro/caloDepth_eta.png}
-% \caption{Amount of material in the EM calorimeter (with upstream material), in units of radiation length $X_0$, as a function of $|\eta|$.}
-% \label{fig:Calo}
-% \end{figure}
-% 
-% \begin{figure}[h!]
-% \centering
-% \includegraphics[width=0.44\textwidth]{intro/LARG3-TDR-barrelM_samplings_presamp_new.png}
-% \includegraphics[width=0.44\textwidth]{intro/F3-eps-converted-to.pdf}
-% \caption{Read-out granularity and accordion shape of the EM calorimeter.}
-% \label{fig:EMgran}
-% \end{figure}
-
-% TODO to use this paragraph
-% The particles entering the EM calorimeter develop EM showers through their interactions with absorbers.
-% The ionization electrons drift to the electrode under electric field generated
-% by the high voltage of 2000 V. The size of the drift gap on each side of the electrode is 2.1 mm.
-% The induced current on the electrode has triangular shape and is initially proportional
-% to the deposited energy in the cell. The time of charge collection has order of 400 ns. The physical triangular
-% signal is then amplified, shaped by bipolar shaper and digitized every 25 nanoseconds. If signal is accepted
-% by trigger, the signal amplitude is determined  from signal samples and transformed to the cell energy.
-% The energy response of the calorimeter needs to be calibrated in advance. The energy deposited in the absorber
-% can be taken into account by knowing the sample fraction of the calorimeter. 
-
-% TODO formula of energy resolution...
-% The energy resolution in a calorimeter is parametrized as the following: 
-
-\section{Muon Spectrometer}
+% TODO Few sentenceas how jets are reconstructed?
 
 \subsection{Muon Spectrometer}
 
-Muon Spectrometer (MS) is the outermost part of the ATLAS detector designed to trigger and measure the muons, the only charged particles that penetrate the calorimeter system, and covers the pseudorapidity range of $|\eta|<2.7$. It is a tracking detector which measures the muon tracks deflected in the strong magnetic field. The MS consists of barrel $|\eta|<1.05$ and two end-cap sections.  The system of large superconducting air-core toroid magnets provides the magnetic field of 0.5~T and 1~T in the barrel and endcap, respectively, resulting in a bending power between 2.0 and 7.5~Tm~\cite{MCPrun1}. It is equipped with three cylindrical layers around beam axis of Monitored Drift Tubes Chambers (MDT) and Cathode Strip Chambers (CSC) providing a measurement of tracks; three doublet layers for $|\eta|<1.05$ of Resistive Plate Chambers (RPC) and three triplet and doublet layers for $1.0 < |\eta| < 2.4$ of Thin Gap Chambers (TGC) providing triggering and ($\eta, \phi$) measurements of muon tracks.
+The Muon Spectrometer (MS) is the outermost part of the ATLAS detector designed to trigger on and detect muons, the only charged particles that penetrate the calorimeter system, and covers the pseudorapidity range of $|\eta|<2.7$. It is a tracking detector which measures the muon tracks deflected in the strong magnetic field. The MS consists of barrel $|\eta|<1.05$ and two end-cap sections. The system of large superconducting air-core toroid magnets provides the magnetic field of 0.5~T and 1~T in the barrel and endcap, respectively, resulting in a bending power between 2.0 and 7.5~Tm~\cite{MCPrun1}. It is equipped with three cylindrical layers around beam axis of Monitored Drift Tubes Chambers (MDT) and Cathode Strip Chambers (CSC) providing a measurement of tracks; three doublet layers for $|\eta|<1.05$ of Resistive Plate Chambers (RPC) and three triplet and doublet layers for $1.0 < |\eta| < 2.4$ of Thin Gap Chambers (TGC) providing triggering and ($\eta, \phi$) measurements of muon tracks momentum.
 The CSC is used in the forward region instead of MDT due to high background conditions.
-A combination of four complementary technologies allows to achieve the goals needed for physics. The layout of the muon spectrometer is shown in \FigureRef{fig:MS}.
+A combination of four complementary technologies allows achieving the goals needed for physics. The layout of the muon spectrometer is shown in \FigureRef{fig:MS}.
 
 \begin{figure}[h!]
 \centering
@@ -257,11 +253,31 @@ A combination of four complementary technologies allows to achieve the goals nee
 \label{fig:MS}
 \end{figure}
 
-The MS allows a precise muon momentum measurement in the pseuorapidity region up to $|\eta|<2.7$ and provides a relative resolution better than 3\% over a wide range of $p_T$ and up to 10\% at $p_T\sim 1$~TeV.
+The MS allows a precise muon momentum measurement in the pseudorapidity region up to 
+$|\eta|<2.7$ and provides a relative resolution better than 3\% over a wide range of $p_T$ and up to 10\% at $p_T\sim 1$~TeV.
 The MDT and the CSC provide a single hit resolution in the bending plane of about 80~$\mu m$ and 60~$\mu m$, respectively.
 
-The muon track in the MS is reconstructed in two steps. In first step muons are triggered in RPC/TGC and local track segments are defined in each layer of chambers. In the next step the local track segments from different layers are combined through $\chi^2-$fit forming full MS track. To reduce an amount of background events penetrating the calorimeter, the fitted tracks for the muon candidates are required to point towards the interaction point.
+The muon track in the MS is reconstructed in two steps. In first step muons are triggered in RPC/TGC and local track segments are defined in each layer of chambers. In the next step, the local track segments from different layers are combined through $\chi^2-$fit forming full MS track. To reduce an amount of background events penetrating the calorimeter, the fitted tracks for the muon candidates are required to point towards the interaction point.
 
-\section{Luminometers and beam monitors}
-\section{Trigger, Data Acquisition and Detector Control Systems}
+\subsection{Triggers}
+% TRIGGER
+% Why do we need triggers
+Theoretical maximum possible collision rate at LHC is 40MHz.
+Since the size of one pp collision event recorded by the detector is 1-2 Mbytes, there is no physical possibility to record such huge stream of the data and store it for a long time. However, more than 99$\%$ of events happening at pp collisions have no interest for physicist cause they are well studied due to their high cross section. Thus one wants to ``hunt'' only events which occur very rarely. This is why not interesting events have to be rejected by the triggers.
+% Three-level trigger system with description of the L1, ROI, L2 and EF
+The ATLAS experiment has three levels of triggers: hardware-based level 1 (L1) and software-based level 2 (L2) and Event Filter (EF)~\cite{tdr_tdaq}.
+The reduction of the rate of the accepted events for three trigger levels is shown in \FigureRef{fig:trigger_rate}.
+L1 trigger use trigger chambers in the MS and coarse-granulated calorimeter information to find high-$p_T$ charged leptons, photons or large missing transverse energy. The so-called region of interest (ROI) are formed which correspond to the ($\eta$,$\phi$) phase space of the detector where large signals have been observed. These regions are used by L2, which use full granularity information within ROI. EF take events which passed L2 and apply the same algorithms as in offline analysis to make a decision to store or discard the event.
 
+\begin{figure}[h!]
+\centering
+ \includegraphics[width=0.7\textwidth]{intro/trigger_rate_anthony.png}
+ \caption{Three-level acceptance rate as a function of time needed to make a decision about the event by the trigger. A comparison with the rate of the SM processes occurring in the pp collision are as well~\cite{anthony_thesis}}
+\label{fig:trigger_rate}
+\end{figure}
+
+In this way, one can significantly reduce the rate and accept only events of the interest. A comparison of the three-level trigger acceptance rate with the rate of some SM processes is shown in \FigureRef{fig:trigger_rate}.
+
+% TODO DAQ
+
+% TODO DCS (from paper)

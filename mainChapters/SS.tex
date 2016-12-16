@@ -778,21 +778,21 @@ The hatched areas show the statistical uncertainty of the background prediction.
 A set of possible systematic sources which can affect background predictions were studied.
 These sources are presented below.
 Systematic uncertainties related to the data-driven methods for non-prompt and charge misidentification background estimations
-were described already in \SectionRef{subsec:fakes_description} and \SectionRef{subsec:CF_definition} respectively.
+were described already in \SectionRef{subsec:fakes_description} and \SectionRef{subsec:CF_definition}, respectively.
 
 \subsection{Electron reconstruction}
 \label{subsec:elec_reco_system}
 Several systematic uncertainties are related to the electron reconstruction procedure.
-These uncertainties are provided by the ATLAS e/gamma working group which studies the electron and photon identification performance of the ATLAS detector.
+These uncertainties are provided by the ATLAS e/gamma working group which studies electron and photon identification performance of the ATLAS detector.
 They provide recommendations and uncertainty estimations for all physics analyses which use electron or photon final states.
 
-Electron reconstruction and ``tight'' identification efficiencies are obtained with so-called tag-and-probe data-driven methods.
-This method allows to measure the efficiency of a studied electron selection using $Z \to e e$ and $J/\psi \to e e$ resonance decays from data. 
+Electron reconstruction and ``tight'' identification efficiencies are obtained with so-called tag-and-probe data-driven method.
+This method allows to measure from the data the efficiency of a studied electron selection using $Z \to e e$ and $J/\psi \to e e$ resonance decays. 
 One electron from a pair is selected by requiring very tight criteria, 
 while the second one is required to pass the studied selection.
-By counting a number of pairs from the resonance decays (by making the fitting of an invariant mass resonance peak) which were selected or were failed to be selected due to the electron required to pass studied selection one can extract efficiency of the studied selection. Detailed information on the method can be found, for example, in ref.~\cite{tag-and-probe}.
-The reconstruction efficiency uncertainty range between 1.3-2.4\% depending on $\eta$, while the 
-``tight'' identification efficiency uncertainty range between 2.0-2.8\% depending on both $p_T$ and $\eta$~\cite{electron_reco_id_2011}.
+By counting a number of pairs from the resonance decays (by fitting an invariant mass resonance peak) which were selected or were failed to be selected due to the electron required to pass studied selection, one can extract efficiency of the studied selection. Detailed information on the method can be found, for example, in ref.~\cite{tag-and-probe}.
+The reconstruction efficiency uncertainty range is between 1.3-2.4\% depending on $\eta$, while the 
+``tight'' identification efficiency uncertainty range is between 2.0-2.8\% depending on both $p_T$ and $\eta$~\cite{electron_reco_id_2011}.
 
 Reconstruction of the electron energy is optimized using multivariate algorithms.
 The electron energy scale and energy resolution are obtained using electrons from Z boson decays.
@@ -813,9 +813,9 @@ Therefore the luminosity uncertainty propagates to all the backgrounds measured 
 The integrated luminosity uncertainty in 2012 is equal to 2.8$\%$~\cite{Aad:2013ucp} 
 and it was obtained in a similar way to that described in \SectionRef{sec:lucid_performance}.
 
-\subsection{Statistics and the theoretical cross section}
+\subsection{Statistics and theoretical cross section}
 % TODO describe how much statistics (wrt data lumi) samples had!
-The limited number of simulated events in the Monte Carlo samples lead to an additional uncertainty which is listed as ``MC statistics'' in \TableRef{tab:syst}.
+The limited number of simulated events in the Monte Carlo samples leads to additional uncertainty which is listed as ``MC statistics'' in \TableRef{tab:syst}.
 This uncertainty also includes the effect of the limited number of events in data sets used in data-driven methods to measure the charge misidentification rate and the fake factor.
 The statistical uncertainty is significant in the high-mass region.
 
@@ -890,9 +890,9 @@ The last bin in the histogram is an overflow bin, which includes pairs with inva
 The observed number of pairs is compatible with the predicted background.
 As one can see, the dominant background arises from the charge misidentification component.
 The predicted contributions from each background process with different invariant mass cuts are shown in \TableRef{tab:2iso_ee_SS}.
-In \FigureRef{fig:signal_kinematics}, the kinematics of the leading lepton is shown. 
-In \FigureRef{fig:delta_phi}, the angle between same-sign electrons in the pair is shown as well.
-The background prediction describes the observed numbers of all of these distributions reasonable well within the uncertainties bands.
+In \FigureRef{fig:signal_kinematics} the kinematics of the leading lepton is shown. 
+In \FigureRef{fig:delta_phi} the angle between same-sign electrons in the pair is shown as well.
+The background prediction describes the observed numbers of all of these distributions reasonably well within the uncertainties bands.
 
 \begin{figure}[h]
 \begin{center}
@@ -974,7 +974,7 @@ The idea of this analysis is to be as general as possible and to perform a searc
 This is why the next step is to calculate exclusion limits on any type of new physics with prompt same-sign lepton pairs.
 
 Due to the limited acceptance of the detector the signal region was designed to use the phase space which is used in ATLAS for precision measurements.
-This is why the cross section of the process, $\sigma$, relates with the measured cross section in the signal region, the so-called fiducial cross section, $\sigma^{fid}$, as:
+This is why the cross section, $\sigma$, of the process relates with the measured cross section in the signal region, the so-called fiducial cross section $\sigma^{fid}$, as:
 \begin{equation}
  \sigma = \dfrac{\sigma^{fid}}{<N_{pair}>A}
  \label{eq:cross_section}
@@ -993,7 +993,7 @@ where $CL_s$ is defined as
 \end{equation}
 where $CL_b$ is a confidence level observed for the background-only hypothesis and $CL_{s+b}$ - for the background plus signal hypothesis.
 In practise, $CL_b$ ($CL_{s+b}$) is a probability to find the observed data given an expected background (background plus signal).
-This probability is Poisson-distributed and is calculated basing on the number of observed and expected same-sign electron pairs in the signal region.
+This probability is Poisson-distributed and is calculated based on the number of observed and expected same-sign electron pairs in the signal region.
 The test-statistics used for the limit settings is a log likelihood ratio test.
 Systematic uncertainties and their correlations between each other are taken into account with this method.
 For example, the charge misidentification scale factor uncertainty is correlated across Drell-Yan, $t\bar{t}$, $WW$ and $W\gamma$ background samples.
@@ -1023,7 +1023,7 @@ a possible signal from new physics in the fiducial volume, which is described in
 As can be seen from \EquationRef{eq:cross_section} and \EquationRef{eq:fid_cross_section}, in order to translate the number of measured and expected lepton pairs 
 to the cross section limit of a signal from new physics, one has to know the fiducial volume and efficiency.
 The reason is that the detector does not reconstruct leptons with a 100$\%$ efficiency, and it does not cover the whole phase space around the interaction point.
-The fiducial volume represents the phase space region that is truncated in a manner that mimics the detector acceptance.
+The fiducial volume represents the phase space region which is truncated so that it mimics the detector acceptance.
 It is defined by a set of cuts on the truth (generator) level. 
 Kinematic cuts on the electrons are identical to the one used in the signal region definition on reconstruction level:
 \begin{itemize}
@@ -1044,12 +1044,11 @@ sum of their $p_T$ has to be not larger than 10$\%$ of the electron $p_T$.
 Calorimeter-based isolation was not applied on the truth level due to a significantly different behaviour at reconstruction and truth levels.
 
 In the case of an ideal detector, fiducial volume would completely correspond to the geometrical detector acceptance.
-But because the real detector does not provide a 100$\%$ reconstruction and identification efficiency, in order to relate the fiducial volume with the real geometrical detector acceptance
-a fiducial efficiency is used, which is defined as:
+But because the real detector does not provide a 100$\%$ reconstruction and identification efficiency, a fiducial efficiency is used in order to relate the fiducial volume with the real geometrical detector acceptance, which is defined as:
 \begin{equation}
  \epsilon_{fid} = \dfrac{N_r}{N_f}
 \end{equation}
-where $N_f$ is the number of electron pairs which pass the fiducial volume cuts on the truth level and $N_r$ - which pass the fiducial volume cuts on the truth level, 
+where $N_f$ is the number of electron pairs which pass the fiducial volume cuts on the truth level and $N_r$ - which pass the fiducial volume cuts on the truth level 
 as well as all the signal selection cuts on the reconstruction level.
 
 In order to perform a search for new physics in a model-independent way, the fiducial efficiency has to be constant and to not depend on the type of the BSM model.
@@ -1074,7 +1073,7 @@ In order to estimate the value of the fiducial efficiency, efficiencies for four
  The mass of the fourth generation quark was varied from 400 GeV to 1 TeV.
 \end{itemize}
 The fiducial efficiencies for these models were calculated with different dilepton mass thresholds.
-The obtained efficiencies are in the range of 48-74$\%$. The lowest efficiency was observed for the fourth generation down-type quark model, while the highest one is found for the heavy right-handed $W_R$ boson and heavy Majorana neutrino process. The latter model has a larger efficiency with respect to the doubly charged Higgs model
+The obtained efficiencies are in the range of 48-74$\%$. The lowest efficiency was observed for the fourth generation down-type quark model, while the highest one is found for the heavy right-handed $W_R$ boson and heavy Majorana neutrino process. The latter model has larger efficiency with respect to the doubly charged Higgs model
 because the final state of the doubly charged Higgs model contains two same-sign pairs compared to one pair in the Majorana model.
 The efficiencies were measured separately for positive and negative same-sign pairs, and no significant differences were observed.
 
@@ -1091,7 +1090,7 @@ The expected limits are shown together with the 2$\sigma$ uncertainty bands. The
 \begin{center}
 \includegraphics[width=0.7\textwidth]{SS/paper/limit_ee_all.eps}
 \caption{Fiducial cross section upper limits at 95\% C.L. for new physics contributing to the signal region for events with $e^{\pm}e^{\pm}$ pairs.
-The green and yellow bands correspond to the 1$\sigma$ and 2$\sigma$ uncertainty bands on the expected limits respectively.}
+Green and yellow bands correspond to the 1$\sigma$ and 2$\sigma$ uncertainty bands on the expected limits respectively.}
 \label{fig:inclusive_fid_limit}
 \end{center}
 \end{figure}
@@ -1107,7 +1106,7 @@ The green and yellow bands correspond to the 1$\sigma$ and 2$\sigma$ uncertainty
   \includegraphics[width=\textwidth]{SS/support_note/limits/limit_ee_pos.eps}
 \end{subfigure}
 \caption{Fiducial cross section upper limits at 95\% C.L. for new physics contributing to the signal region
-for events with $e^{+}e^{+}$ (left) and $e^{+}e^{+}$ (right) pairs. The green and yellow bands correspond to the 1$\sigma$ and 2$\sigma$ uncertainty bands on the expected limits respectively.}
+for events with $e^{+}e^{+}$ (left) and $e^{+}e^{+}$ (right) pairs. Green and yellow bands correspond to the 1$\sigma$ and 2$\sigma$ uncertainty bands on the expected limits respectively.}
   \label{fig:signal_kinematics_v2}
 \end{figure}
 
@@ -1142,7 +1141,7 @@ Mass range & Expected & Observed & Expected & Observed & Expected & Observed \\
 \section{Mass limits of doubly charged Higgs}
 As an example of a BSM model which produces same-sign lepton pairs in the final state, a pair production of doubly charged Higgs bosons was studied.
 The search strategy is the same as described above.
-Since the final state of this model has two same-sign pairs of leptons, no jet activity or no missing transverse energy is present in the event. 
+Since the final state of this model has two same-sign pairs of leptons, no jet activity and no missing transverse energy is present in the event.
 Therefore, there is no need to optimize the signal selection.
 Doubly charged Higgs decays should be visible as a sharp peak in the dilepton invariant mass.
 Using a fiducial efficiency calculated in bins of 100 GeV (as it was done for the fiducial limit calculations) is not optimal from the point of view of the signal sensitivity.
@@ -1151,7 +1150,7 @@ Thus, the search is performed in mass bins with a mass-dependent width.
 \subsection{MC simulation}
 A few signal samples were generated with Pythia8~\cite{pythia8} with different masses of the left-handed and right-handed doubly charged Higgs bosons.
 The simulated masses were produced in the range of 50-600 GeV in steps of 50 GeV and one sample had a Higgs mass of 1 TeV.
-The kinematics of left- and right-handed Higgs bosons is identical, but the production rate is different due to a different coupling to the Z boson mediator~\cite{dch_note}. The cross sections were calculated with NLO precision. 
+The kinematics of left- and right-handed Higgs bosons is identical, but the production rate is different due to different coupling to the Z boson mediator~\cite{dch_note}. The cross sections were calculated with NLO precision. 
 % TODO [link] for NLO cross section
 
 \subsection{Model acceptance and efficiency}
@@ -1166,7 +1165,7 @@ where $s$ is the expected signal and $B=b+\delta b^2$ is the predicted backgroun
 A bin width is parameterized as a second degree polynomial of the Higgs mass.
 Coefficients of the polynomial were the parameters to optimize.
 During the optimization procedure it became clear that there is a third effect which has to be taken into account.
-Due to the limited statistics of the predicted background, one cannot have too many mass bins, otherwise the cross section
+Due to limited statistics of the predicted background, one cannot have too many mass bins, otherwise the cross section
 exclusion limit will fluctuate significantly from bin to bin. 
 The optimal bin width parameterization was found to be $\pm(0.04 \times m(\dch) + 0.2 \cdot 10^{-4} \times m(\dch)^{2})$,
 where $m(\dch)$ is the Higgs mass.
@@ -1175,14 +1174,14 @@ The next step is to define how many lepton pairs produced in Higgs boson decays 
 The number of generated Higgs bosons is known, 
 thus one only needs to count number of reconstructed same-sign pairs which pass the signal selection in a given mass bins.
 The ratio of reconstructed to the total number of generated pairs corresponds to the total efficiency, which includes the effect of the acceptance and efficiency of the signal selection.
-The efficiencies for each mass point were calculated, but in order to interpolate between the simulated mass points, the total efficiency, $\varepsilon_{tot}$, is fitted by
+The efficiencies for each mass point were calculated, but in order to interpolate between the simulated mass points, the total efficiency $\varepsilon_{tot}$ is fitted by
 an empirical piecewise function:
 \begin{equation}
 \varepsilon_{tot}(m) = \begin{cases} p_{0} (1-e^{-(m-p_{1})/p_{2}}) & ,\mbox{if } m < 450\mbox{ GeV} \\ 
 p_{3} + p_{4} m & ,\mbox{if } m \geq 450\mbox{ GeV} \end{cases}
 \label{eq:ee_eff}
 \end{equation}
-where $m$ is the Higgs mass and $p_{0}, p_{1}, p_{2}, p_{3}, p_{4}$ are fit parameters, shown in \TableRef{tab:ee_eff_params}.
+where $m$ is the Higgs mass and $p_{0}, p_{1}, p_{2}, p_{3}, p_{4}$ are fit parameters shown in \TableRef{tab:ee_eff_params}.
 \begin{table}[htbp]
     \begin{center}
     \begin{tabular}{ l | l }
@@ -1224,7 +1223,7 @@ The branching ratio of the $H^{\pm\pm} \to e^{\pm}e^{\pm}$ decay is assumed to b
 \begin{center}
 \includegraphics[width=0.7\textwidth]{SS/support_note/DCHPlots/ee/2isoSS_ee_mll_dch.eps}
 \caption{Invariant mass distributions for $\ee$ pairs passing the full event selection. 
-The open histograms show the expected signal from simulated $H^{\pm\pm}$ samples,
+Open histograms show the expected signal from simulated $H^{\pm\pm}$ samples,
 assuming a 100\% branching ratio to the same-sign electron pair. The last bin is an overflow bin. Only statistical uncertainties for data are shown.}
 \label{fig:signal_mass_v2}
 \end{center}
