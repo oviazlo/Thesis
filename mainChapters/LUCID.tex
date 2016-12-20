@@ -1,105 +1,39 @@
 \chapter{LUCID - The ATLAS Luminosity Monitor}
 \label{chap:LUCID}
 
-% ToWRITE:
-% \begin{itemize}
-%  \item what this chapter is about
-%  \item List of publications related to this topic
-%  \item My personal contribution related to the described topic
-% \end{itemize}
-
 This chapter describes the LUCID-2 detector which was built specially for the Run-2 phase of the LHC program.
 It covers aspects such as the design of the detector and its key components,the assembly and testing of the new detector as well as
 operation and performance of the detector during the 2015-2016 data taking periods.
 Special attention is given to the calibration system of the detector and the development of the calibration procedure.
 
-During the design phase many tests were done in order to find an optimal design and the optimal parameters for various detector components.
-During the assembly and installation phase a number of tests were done to make sure that all components performed as they should.
-An overall test of the system was done to make sure that no damage had been done during the installation of the detector.
-During the operation phase, which is still ongoing, a lot of studies have been made to understand the performance of the calibration system and the detector.
-
-I contributed to all the steps mentioned above. I took part in the development of the LUCID design and in particularly the design of the calibration system. 
-I made a series of tests to find the optimal design parameters of the LED and Laser diffusers used to evenly distribute LED and laser signals and deliver it to all detector 
-channels. 
-I spent a lot of time on understanding the behavior of the LED system as well as the PMT and PIN-diode signal behavior.
-Tests with Bi-207 radioactive sources which are used as one of the way to monitor photomultiplier (PMT) gain were done as well.
-I participated in the detector assembly in the clean room and did testing of the detector during this process.
-Testing of LED and laser diffusers were done in order to cross check the integrity of fibers and the homogeneity of signals between all PMTs.
-Also temperature stress-test was performed in order to understand what maximum temperature could be allowed without destroying the detector during the 
-beam pipe bake-out procedure.
-In the operational phase the main focus was on understanding the aging of PMTs and the possibility to improve the calibration system.
-
-The LUCID group published a paper with a description of the choice and the characterization of photomultipliers for the new LUCID detector for Run-2~\cite{Alberghi:2016tad}.
-My contribution was in understanding and developing the monitoring using a Bi-207 source.
-
-During my PhD studies I was the ATLAS Forward detectors Run Coordinator for a period of 5 months.
-
-
-% \section{Plan of the LUCID chapter}
+% This chapter describes the LUCID-2 detector which was built specially for the Run-2 phase of the LHC program.
+% It covers aspects such as the design of the detector and its key components,the assembly and testing of the new detector as well as
+% operation and performance of the detector during the 2015-2016 data taking periods.
+% Special attention is given to the calibration system of the detector and the development of the calibration procedure.
 % 
-% \begin{itemize}
-%  \item Lucid operation (should I write about it? if yes - what can I write?)
-%  \begin{itemize}
-%   \item performance of calibration system.
-%   \item HV changes in 2015/2016. As an interesting fact how PMTs are aging.
-%   \item interesting observations from LUCID operatins.
-%   \item performance of detector - luminosity in 2015 (as a conlusion of LUCID chapter).
-%  \end{itemize}
-%  
-%  \item PMT temperature test (should I describe experimental setup and procedure of development a circuit?);
-%  \begin{itemize}
-%   \item have a look on temperature change during the nights...
-%  \end{itemize}
+% During the design phase many tests were done in order to find an optimal design and the optimal parameters for various detector components.
+% During the assembly and installation phase a number of tests were done to make sure that all components performed as they should.
+% An overall test of the system was done to make sure that no damage had been done during the installation of the detector.
+% During the operation phase, which is still ongoing, a lot of studies have been made to understand the performance of the calibration system and the detector.
 % 
-%  \item Fiber boiling test (see sent letter by october 15, 2014):
-%  \begin{itemize}
-%   \item picture of bake-out phase
-%  \end{itemize}
-%  
-%  \item Testing of LUCID after installation:
-%  \begin{itemize}
-%   \item testing of LED diffuser and integrity of fibers
-%  \end{itemize}
-%  
-%  \item Detector design tests:
-%  \begin{itemize}
-%   \item Understanding LED and PIN-diode:
-%   \begin{itemize}
-%    \item tests charge or PMT/PIN vs. LED DAC (no conclution reached?)
-%    \item angular distribution (lucid$\_$july22.pdf)
-%    \item distance measurements 
-%    \begin{itemize}
-%     \item was done to proof that PMT is linear with light intensity
-%     \item this because we saw that PMT charge is not linear vs. LED DAC.
-%     \item conclusion: LED is not linear vs. DAC
-%    \end{itemize}
-%    
-%    \item LED frequency test
-%   \end{itemize}
-%   
-%   \item LED difuser geometry (no presentation?).
-%   \item Laser diffuser distance.
-%   \item Filter choice for LED diffuser (lucid$\_$september10.pdf; also ask Carla about 100 mV restriction).
-% %   \item 
-% %   \item 
-% %   \item 
-%  \end{itemize}
-%  
-%  \item Time tests. Long LED runs. (Though Anders also did it and Vincent is using his results to show, but I also was working for quite some time on it, 
-% so I think I should write about it as well):
-%  \begin{itemize}
-%   \item find presentation of Anders. Check what he did.
-%   \item from my presentation (lucid15$\_$apr15.pdf) it looks like we have strong effect in high rate and no effect in low rate.
-%  \end{itemize}
-% \end{itemize}
+% I contributed to all the steps mentioned above. I took part in the development of the LUCID design and in particularly the design of the calibration system. 
+% I made a series of tests to find the optimal design parameters of the LED and Laser diffusers used to evenly distribute LED and laser signals and deliver it to all detector 
+% channels. 
+% I spent a lot of time on understanding the behavior of the LED system as well as the PMT and PIN-diode signal behavior.
+% Tests with Bi-207 radioactive sources which are used as one of the way to monitor photomultiplier (PMT) gain were done as well.
+% I participated in the detector assembly in the clean room and did testing of the detector during this process.
+% Testing of LED and laser diffusers were done in order to cross check the integrity of fibers and the homogeneity of signals between all PMTs.
+% Also temperature stress-test was performed in order to understand what maximum temperature could be allowed without destroying the detector during the 
+% beam pipe bake-out procedure.
+% In the operational phase the main focus was on understanding the aging of PMTs and the possibility to improve the calibration system.
 % 
-% \newpage
+% The LUCID group published a paper with a description of the choice and the characterization of photomultipliers for the new LUCID detector for Run-2~\cite{Alberghi:2016tad}.
+% My contribution was in understanding and developing the monitoring using a Bi-207 source.
+% 
+% During my PhD studies I was the ATLAS Forward detectors Run Coordinator for a period of 5 months.
 
 \section{The new LUCID-2 detector}
 \label{sec:LUCID}
-
-% TODO: rewrite thoroughly this subsection!.
-% Is this relevant comment?
 
 LUCID (LUminosity Cherenkov Integrating Detector) is a luminosity monitor with two detectors placed around the beam-pipe on both forward ends of the ATLAS detector.
 It is a relative luminosity detector which detects inelastic $pp$ scattering events in order to measure luminosity and provide online monitoring of the instantaneous luminosity.
