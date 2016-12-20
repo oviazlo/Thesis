@@ -1,45 +1,60 @@
 %% Title
-\titlepage[of Churchill College]{%
-  A dissertation submitted to the University of Cambridge\\ for the degree of Doctor of Philosophy}
+\titlepage[of Lund Universoty]{%
+  A dissertation submitted to the Lund University\\ for the degree of Doctor of Philosophy}
 
 %% Abstract
 \begin{abstract}%[\smaller \thetitle\\ \vspace*{1cm} \smaller {\theauthor}]
   %\thispagestyle{empty}
-  \LHCb is a \bphysics detector experiment which will take data at
-  the \unit{14}{\TeV} \LHC accelerator at \CERN from 2007 onward\dots
+  Abstract here
 \end{abstract}
-
-
-%% Declaration
-\begin{declaration}
-  This dissertation is the result of my own work, except where explicit
-  reference is made to the work of others, and has not been submitted
-  for another qualification to this or any other university. This
-  dissertation does not exceed the word limit for the respective Degree
-  Committee.
-  \vspace*{1cm}
-  \begin{flushright}
-    Andy Buckley
-  \end{flushright}
-\end{declaration}
 
 
 %% Acknowledgements
 \begin{acknowledgements}
-  Of the many people who deserve thanks, some are particularly prominent,
-  such as my supervisor\dots
+  Of the many people who deserve thanks.
 \end{acknowledgements}
 
 
 %% Preface
 \begin{preface}
-  This thesis describes my research on various aspects of the \LHCb
-  particle physics program, centred around the \LHCb detector and \LHC
-  accelerator at \CERN in Geneva.
+%   This thesis describes my research on various aspects of the \ATLAS
+%   particle physics program, centred around the \ATLAS detector and \LHC
+%   accelerator at \CERN in Geneva.
 
-  \noindent
-  For this example, I'll just mention \ChapterRef{chap:SomeStuff}
-  and \ChapterRef{chap:MoreStuff}.
+
+
+%% ***WPRIME***
+% This analysis have been made public as a conference note~\cite{ATLAS-CONF-2015-063} with early reasults and later as a paper~\cite{Aaboud:2016zkn} where final results were presented.
+% 
+% \toDo[carefully revisit and rewrite this]
+% 
+% My personal contribution to the analysis can be concluded in following three parts.
+% I was involved in the analysis of muon channel. Signal selection, muon and missing transverse momentum performance, validation plots and estimation of some systematic uncertainties.
+% This part was done in parrallel with other collaborator to make sure that results are robust and are the same from two independent analyses codes and there are no mistaken done.
+% 
+% SECOND WPRIME: MT BINNED MC
+% Secondly I was investigating ways to decrease systematic uncertainty caused by the limited available statistic of inclusive diboson and top backgound samples at high-$m_{T}$ region.
+% One option was to generate lepton-neutrino mass-binned samples. However, it was found out that these samples doesn't populate enough high-$m_{T}$ region
+% so it was decided to make samples in bins of lepton-$E_T^{miss}$ $m_T$.
+% This is still ongoing project and it is planned to finish these samples for paper of the $\PZprime$ and $\PWprime$ results from 2015-2016.
+% 
+
+My second contribution was related to the design of the $m_T$-binned diboson and top background samples. Since the main source of the systematic uncertainty is caused by the limited statistic of the available inclusive samples for the top and diboson processes it was crucially important to make it ready this samples.
+However simple in the beginning problem became more and more deeper and harder and 
+
+I wrote custom selector for the Sherpa generator which allow to make filters on the transverse mass of the lepton momentum plus missing transverse energy variable (all definitions are done in the body text)
+
+However months were spent for the debugging of the problem 
+and I had to hand it over to other people to finish due to starting work on the writing this thesis.
+
+% THIRD WPRIME: MONO-W
+% The third part was related to the investigation of sensitivity of the analysis signal selection for the so-called Dark Matter simplified models, which are recommended benchmark models for Run-2 searches at LHC.
+% In these models a pair of DM particles candidates are produced in final state in association with SM W boson.
+% The study was done in a way of comparison of the signals from so-called Effective Field Theory (used for Run-1 search) and $\PWprime$ models signals with signals from simplified models. 
+
+
+
+  
 \end{preface}
 
 %% ToC

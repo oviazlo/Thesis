@@ -58,9 +58,9 @@
 
 
 %% Define the un-numbered front matter (cover pages, rubrik and table of contents)
-% \begin{frontmatter}
-%   \input{otherText/frontmatter}
-% \end{frontmatter}
+\begin{frontmatter}
+  \input{otherText/frontmatter}
+\end{frontmatter}
 
 % TODO there is tableofcontents in frontmatter. Just temprorary
 \tableofcontents
@@ -69,20 +69,20 @@
 %% Start the content body of the thesis
 \begin{mainmatter}
   %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
-%   \input{mainChapters/theory}
+  \input{mainChapters/theory}
   \input{mainChapters/ATLAS}
-%   \input{mainChapters/TRT}
-%   \input{mainChapters/LUCID}
-%   \input{mainChapters/SS}
-%   \input{mainChapters/monoW}
+  \input{mainChapters/TRT}
+  \input{mainChapters/LUCID}
+  \input{mainChapters/SS}
+  \input{mainChapters/monoW}
   %% To ignore a specific chapter while working on another, making the build faster, comment it out:
   %\input{chap4}
 \end{mainmatter}
 
 %% Produce the appendices
-% \begin{appendices}
-%   \input{otherText/appendices}
-% \end{appendices}
+\begin{appendices}
+  \input{otherText/appendices}
+\end{appendices}
 
 %% Produce the un-numbered back matter (e.g. colophon,
 %% bibliography, tables of figures etc., index...)

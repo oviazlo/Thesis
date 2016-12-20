@@ -1,21 +1,380 @@
 %% The "\appendix" call has already been made in the declaration
 %% of the "appendices" environment (see thesis.tex).
-\chapter{Extra}
-\label{app:Extra}
-
-\section{Possible bibliography to use}
-TRT:\\
-~\cite{CERN-THESIS-2006-025} \\
-
-LUCID:\\
+% \chapter{Extra}
+% \label{app:Extra}
 
 
-SSdileptom:\\
+%*******************************************************************************
+%*******************************************************************************
+% MONO-W STUDY
+%*******************************************************************************
+%*******************************************************************************
 
-$\PWprime$:\\
-~\cite{arXiv:1503.07874} \\
-~\cite{arXiv:1512.00476} \\
-~\cite{arXiv:1506.03116} \\
+% Sources:
+% 
+% Dark Matter Benchmark Models for Early LHC Run-2 Searches:
+% Report of the ATLAS/CMS Dark Matter Forum (July 6, 2015)
+% http://arxiv.org/pdf/1507.00966.pdf
+% 
+
+% \chapter{Search for the dark matter pair-production with a leptonically decaying W boson}
+\chapter{Sensitivity study of the mono-W Dark Matter models}
+\label{chap:monoW}
+
+% \toDo[some ideas what to include to the section:]
+% \begin{itemize}
+%  \item EFT D5 model has been used as a benchmark model to compare results of DM searches between the experiments.
+%  \item D5 violates weak gauge invariance $\to$ not recommended by DM Forum for Run-2 
+%  \item make overview of the model which are recommended by the ATLAS DM forum and can be potentially interesting to look from with lepton+MET final state
+%  \item investigate shape of the mT spectra of these models and compare it with Wprime shape
+%  \item cross section of the models 
+%  \item overview of the literature about the possibility of this models
+% \end{itemize}
+
+
+
+\section{Introduction}
+
+Besides the $\PWprime$ model discussed above, there are other BSM models 
+which can provide a signal in the lepton plus $E_{T}^{miss}$ selection.
+For example, some models (which are referred as mono-W models further in the text) that try to explain Dark Matter through hypothetical particles which can be produced at LHC, assume an associated production of pairs of weakly interacting massive particles (WIMPs) with the SM W boson.
+Because these DM candidates do not interact strongly or electromagnetically, they will escape undetected in the same way as neutrinos from leptonic W decays, and will contribute to $E_{T}^{miss}$ of the event.
+
+There is a plethora of different models available which explain the DM.
+However, only a few benchmark models are used for the result interpretations in order to be able to compare results between analyses and experiments.
+Many LHC Run-1 analyses were using models based on the so-called DM Effective Field Theories (EFT). 
+% TODO refs. for previous sentence
+This was the case for the previous search with a lepton and $E_T^{miss}$ final state in 8~TeV collision data, where limits on the DM production have been set considering three DM models: D1, D5 and D9~\cite{wprime_8TeV}. 
+
+However, recent studies have shown that these models do not respect gauge symmetries of the SM, which leads to spurious cross section enhancements at LHC energies~\cite{arXiv:1503.07874}.
+Thus, so-called simplified models are recommended to be used for Run-2 analyses
+by the ATLAS/CMS Dark Matter Forum, as described in ref.~\cite{DM_forum_2015}
+
+This appendix contains a qualitative study of the sensitivity of the analysis selection
+to the recommended simplified models. D5 EFT DM and $\PWprime$ models are used as a reference for the comparison.
+
+% Another possible BSM signature which can be easily tested in signal region is
+% associated production of pair of weakly interacting massive particles (WIMP), 
+% which are candidates for dark matter (DM) particles, with SM W. 
+
+% While searching for $\PWprime$ boson one can naivly expect that distributions of 
+% transferred energy of decay products will look quite similar, which
+% means that distributions of transfer lepton momentum and missing energy will 
+% look the same as well. But if we consider pair-production of dark matter 
+% particles associated with W we expect 
+
+\section{Theoretical models}
+
+The EFT DM models are based on the assumption that 
+the DM-SM interactions are mediated through the exchange of particles that are much heavier than the typical momentum transfer of that interaction~\cite{arXiv:1512.00476}.
+Under such an assumption, the propagator which connects SM quarks to the DM particles becomes independent from momentum transfer of the interaction. In this case the SM-DM interaction is described with the mass scale $M_{*} = M/\sqrt{g_q g_{\chi}}$, where $M$ is the mediator particle mass, and $g_q$ and $g_{\chi}$ are the mediator couplings to the SM quarks and the DM particle respectively. As described in ref.~\cite{dm_eft_models}, different types of DM particles (Dirac fermions, scalars) and types of interaction (effective operators) can be used, which leads to many different models.
+Models used in the previous analysis~\cite{wprime_8TeV} assume DM particles to be Dirac fermions with scalar (D1), vector (D5) and tensor (D9) effective operators.
+In this study we consider two EFT models: the D5 EFT model with only constructive interference with SM included (which is denoted as D5c later in the text) and the WW$\chi\chi$ EFT model.
+Feynman diagrams of these models are shown in \FigureRef{fig:feynMonoWEFT}.
+
+\begin{figure}[]
+
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.3\textheight]{monoW/WWxx_diagramm_v2.pdf}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.3\textheight]{monoW/EFT_D5_model_diag_v3.pdf}
+\end{subfigure}
+  \caption{Representative diagrams for production of dark matter pairs ($\chi\overline{\chi}$) associated with a W boson in models where
+dark matter interacts directly with the W boson (left) or with quarks (right).
+Unresolved vertices are shown with shaded areas which correspond to the 
+contact interaction between SM and DM sectors described by the Effective Field Theories.
+}
+  \label{fig:feynMonoWEFT}
+\end{figure}
+
+% Say about simplified models
+Simplified models resolve the EFT contact interaction in single-particle 
+s- or t-channel exchange. Thus, one can consider different types of SM-DM mediators (spin-0, spin-1 or Higgs bosons)~\cite{dm_simplified_models}.
+Simplified models considered in this study assume spin-1 neutral mediator, namely, $\PZprime$. Both s- and t-channel scenarios are considered, as shown in \FigureRef{fig:feynMonoWSimple}.
+
+\begin{figure}[]
+
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.3\textheight]{monoW/simplifiedDM_diagram.pdf}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.3\textheight]{monoW/simplified_tChannel_model_diag.pdf}
+\end{subfigure}
+  \caption{Feynman diagrams of production of the dark matter pairs ($\chi\overline{\chi}$) associated with a W boson in the simplified model 
+	   in the s-channel (left) and t-channel (right) scenarios.}
+  \label{fig:feynMonoWSimple}
+\end{figure}
+% TODO mediator in t-channel diagram is not Zprime!!! Fix text or diagram!!!
+
+The DM model samples have been generated with the default configurations recommended by the ATLAS DM Forum. Information about MC generators and PDF sets used to produce the DM samples is summarized in \TableRef{tab:monoW_samples}.
+A set of samples with different $\PZprime$ masses for simplified models has been generated (see \TableRef{tab:sample_params_xsec}),
+however, only one sample per EFT model was generated, with mass scales equal to 1 TeV and 3 TeV for D5c and WW$\chi\chi$ models, respectively.
+
+\begin{table}[ht]
+  \begin{center}
+    \begin{tabular}{l|c|c|c}
+
+Model &  Generator & Fragmentation/Hadronization  & PDF set \\
+\hline\hline
+Simplified s-channel & M{\scshape ad}G{\scshape raph}-??? & {\scshape pythia-8} & NNPDF2.3 LO \\
+Simplified t-channel & M{\scshape ad}G{\scshape raph}-??? & {\scshape pythia-8} & NNPDF2.3 LO \\
+EFT D5 & M{\scshape ad}G{\scshape raph}-??? & {\scshape pythia-8} & MSTW2008 LO \\
+EFT WW$\chi\chi$ & M{\scshape ad}G{\scshape raph}-??? & {\scshape pythia-8} & NNPDF2.3 LO \\
+
+\end{tabular}
+\end{center}
+  \caption{List of MC generated samples for DM models. The used MC generator and the PDF set are listed for each sample.
+  }
+\label{tab:monoW_samples}
+\end{table}
+
+\begin{table}[]
+  \begin{tabular}{r|c|c|c}
+    Model 	& Channel 	  & Parameters	    & Cross section, [nb] \\
+    \midrule
+    Simplified  & s-channel	  & $M_{Z'}$=10 GeV    & 5.2$\times 10^{-2}$ \\
+		&		  & $M_{Z'}$=100 GeV  & 2.0$\times 10^{-3}$ \\
+		&		  & $M_{Z'}$=10 TeV   & 7.5$\times 10^{-11}$ \\ 
+		& t-channel	  & $M_{Z'}$=10 GeV   & 1.9$\times 10^{-3}$ \\
+		&		  & $M_{Z'}$=100 GeV  & 9.2$\times 10^{-5}$ \\
+		&		  & $M_{Z'}$=2 TeV    & 4.9$\times 10^{-8}$ \\
+    \midrule
+%     EFT 	& WW$\chi\chi$	  & $m_{\chi}$=1GeV; $\Lambda$=3TeV    & 3.6$\times 10^{-10}$ \\
+% 		& D5c		  & $m_{\chi}$=1GeV; $M_{*}$=1TeV	& 4.4$\times 10^{-4}$ \\
+EFT 	& WW$\chi\chi$	  & $M_{*}$=3 TeV    & 3.6$\times 10^{-10}$ \\
+	& D5c		  & $M_{*}$=1 TeV	& 4.4$\times 10^{-4}$ \\
+    \midrule	
+$\PWprime$ 	& 	  & $m_{\PWprime} =$ 2 GeV   & 1.1$\times 10^{-4}$ \\    
+		%     Wprime ($m_{\PWprime}$=2TeV) & 1.1$\times 10^{-4}$ \\
+  \end{tabular}
+  \caption{Mono-W cross section for different theoretical models.}
+  \label{tab:sample_params_xsec}
+\end{table}
+
+% Detailed description of the models and generated samples used in this study can be found in ref.~\cite{dm_simplified_models}.
+
+% \toDo[]
+
+
+
+% All these models can be classified to the three distinct classes: DM Effective Field Theories (EFT), Simplified DM models 
+% and Complete DM models. 
+
+
+% It allows to derive stringent bounds on the ``new physics'' scale $\Lambda$. 
+% Simplified models are characterized by the most important state which mediates the DM interaction with the SM. Unlike the EFT approach,
+% simplified models are able to describe correctly full kinematics of the DM production, because they resolve the EFT contact interaction in single-particle 
+% s- or t-channel exchange. The complete DM models allow to describe correlations between observables~\cite{dm_simplified_models}.
+
+
+
+% The main focus of this study is on EFT and Simplified DM models with W boson and DM particles produced in the final state. In total, four different DM models are considered:
+% \begin{itemize}
+%  \item s-channel simplified model with different masses of the $\PZprime$ mediator and with different masses of DM particles. In this model a W boson is produced as an initial state radiation from one of the incoming quarks. The Feynman diagram of the simulated process is shown in \FigureRef{fig:feynMonoWSimple} (left).
+%  \item t-channel simplified model, with the same set of $\PZprime$ mediator and DM particles masses as s-channel model with corresponding Feynman diagram shown in \FigureRef{fig:feynMonoWSimple} (right).
+%  \item D5 EFT model~\cite{dm_simplified_models} with only constructive interference with SM included. In this model, a W boson is produced as an initial state radiation from one of the incoming quarks as well. Corresponding Feynman diagram is shown in \FigureRef{fig:feynMonoWEFT} (right).
+%  The model is characterized by the energy scale of the ``new physics'' $\Lambda$, which defines the cross section of the process. 
+% %  TODO say that Lambda have to be more than TeV...
+%  As will be described below the energy scale have to be above TeV scale.
+%  \item WW$\chi\chi$ EFT model. In this model, W is produced as a final state particle as shown in \FigureRef{fig:feynMonoWEFT} (left). The model is characterized by the effective mass $M_{*}$.
+% \end{itemize}
+
+% 
+% 
+% They are characterized by the energy scale of the ``new physics'' $\Lambda$ (or effective mass $M_{*}$), as well as the mass of the DM particles.
+% Both models assume a vector type interaction between the DM and SM sectors. 
+% 
+% Thus, four different DM models will be considered in this study
+% 
+% 
+% 
+% For the D5c model ref~\cite{???} (which corresponds to the right diagram in  \FigureRef{fig:feynMonoWEFT}) 
+% we consider only constructive interference with SM.
+
+
+
+
+
+
+% TODO: explanation of simplified and EFT models (take from DM forum report or from Bell's papers).
+
+
+% and mediator connect SM interaction from one side and DM 
+
+% TODO find reference from DM forum report which explain idea of simlified models 
+% (that we introduce additionla mediator which on one side interact with SM particles and on other side - with dark matter particles).
+% same for EFT models. But for now skip this part.
+
+% TODO describe possible type of interection for mono-W models.
+
+% TODO figure out what does it mean constructive and destructive intereference for DX models?
+
+% TODO explanation for contact interaction is needed as well, ha-ha-ha...
+
+% TODO say that our main focus is on simplified models because they are recommended by Dark Matter forum.
+
+
+
+% TODO change y-axis title. because it is normalized distribution!!!
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Sensitivity studies}
+% TODO Oxana comment: Explain what exactly did you do?
+% TODO say something about no dependence versus mass of DM particle.
+
+The main idea of this study is to understand the kinematics of the simplified DM models in the final states with one lepton and missing energy and to estimate the sensitivity of this analysis to such models.
+The signal selection is designed with focus on the high-$m_{T}$ region 
+since the low-$m_T$ region has been tested in many other analyses during Run-1.
+The kinematic distributions of the DM models were studied to evaluate the contribution in the signal region and to perform comparison with a signal from the $\PWprime$ model.
+It is worth mentioning that the simplified DM model samples with different mass of the produced DM particles have been studied and it was found that the shape of the $m_T$ spectrum does not depend significantly on the mass. Therefore, all the simplified DM model samples described below have the mass of the DM particles set to 1 GeV.
+
+In \FigureRef{fig:kinematicsSChannel} the normalized distributions of the transverse mass of the lepton and $E_{T}^{miss}$ on the generated MC level
+for the s-channel simplified model and EFT models are shown together with the $\PWprime$ model.
+The first observation that can be done is that there is no sharp peak structure in any of these distributions for the DM models.
+This is expected, because the transverse missing energy is formed by
+a neutrino from W boson decay and two DM particles which are independent of each other. 
+
+\begin{figure}[]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{monoW/mT_kinemComparison_simplS_EFT_Wprime.png}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{monoW/EtMiss_kinemComparison_simplS_EFT_Wprime.png}
+\end{subfigure}
+\caption{Normalized transverse mass (left) and missing transverse energy (right) distributions of the simplified model in the s-channel and EFT models together with the $\PWprime$ model.}
+  \label{fig:kinematicsSChannel}
+\end{figure}
+
+The second observation is that the largest part of the signal of the simplified DM models 
+is in the low-$m_{T}$ region and is outside of the signal selection for any mediator mass parameter.
+However, with increasing mediator mass the $m_{T}$ spectrum tends to become 
+more flat and shifts towards higher $m_{T}$ values.
+Distributions obtained from the EFT models have dominant signal contribution in the high-$m_T$ region.
+
+\FigureRef{fig:scaledKin} shows the transverse mass distributions
+scaled to the integrated luminosity of the respective sample for the DM and $\PWprime$ models with comparison to the SM $W$ boson background.
+% Comparison of EFT models
+As one can see from \FigureRef{fig:scaledKin} (left), both $\PWprime$ and 
+D5c models show an excess with respect to the SM $W$ boson background at the high-$m_T$ region. The $WW\chi\chi$ EFT model has a significantly lower contribution, which can be explained by the fact that the sample has been generated with the mass scale $M_{*} = 3$, TeV while it was equal to 1 TeV for the D5c model. 
+This is why a scan for a range of $M_{*}$ values from 100 GeV to 6 TeV for the $WW\chi\chi$ process was done, and cross sections were estimated by the M{\scshape ad}G{\scshape raph} MC generator.
+The dependence is shown in \FigureRef{fig:lambdaScan}.
+As one can see, the cross section for $M_{*} = 1$ TeV is approximately three orders of magnitude higher than for $M_{*} = 3$ TeV.
+Since the kinematics of the final state for the EFT models does not depend on the value of parameter $M_{*}$, one can simply scale the $m_T$ distribution.
+As one can see from \FigureRef{fig:scaledKin} (left), even is one scales up $WW\chi\chi$ distribution by three orders of magnitude, it will still lower than the contribution from the D5c EFT model.
+
+\begin{figure}[]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{monoW/dm_final_EFT_vs_SMW_pad1.png}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{monoW/dm_final_S_vs_T_channel_pad1.png} 
+\end{subfigure}
+\caption{The transverse mass distribution
+of the EFT and $\PWprime$ models (left) and the simplified model in the s- and t-channels (right) in comparison with the SM W background scaled to the respective process cross section.}
+  \label{fig:scaledKin}
+\end{figure}
+
+\begin{figure}[]
+ \includegraphics[width=0.6\textheight]{monoW/WWxx_Wlv_DM1_LambdaScan.pdf}
+  \caption{Cross section of WW$\chi\chi$ EFT model as a function of energy scale of new physics, $\Lambda$.}
+  \label{fig:lambdaScan}
+\end{figure}
+
+% Comparison of simplified models
+\FigureRef{fig:scaledKin} (right) shows the transverse mass distributions for s- and t-channel simplified DM models together with the SM $W$ boson background.
+The shape of the distributions from the simplified DM models is very similar to the one for the SM $W$ boson background, which puts doubt on the effectiveness of the $m_T$ distribution as the signal discriminant. In general, the $m_T$ spectrum contribution of the SM $W$ background is
+a few order of magnitude larger than the signal from the simplified DM models.
+A comparison of the distributions for the s- and t-channels shows that the t-channel distributions
+have similar shapes as the one from the s-channel, however cross sections of the t-channel 
+processes are one-two orders of magnitude lower than for the s-channel (as can be seen from \TableRef{tab:sample_params_xsec}).
+
+
+
+% In \FigureRef{fig:scaledKin}, transverse mass distributions are shown for the s- and t-channels simplified models, as well as EFT and $\PWprime$ signals with comparison to the SM W background scaled to 
+% % TODO Oxana comment
+% \toDo[according cross process section?]. 
+% Distribution for the t-channel model looks almost identical to the one for the s-channel. 
+% But the cross sections for the t-channel processes are one-two orders of magnitude lower when compared to the s-channel (see \TableRef{tab:sample_params_xsec}), which leads to the conclusion that signal selection is even less sensitive for the t-channel simplified model. Also, SM W background are a few orders higher in the entire range of $m_{T}$ than any sample of the simplified model.
+% For the D5c EFT model, an excess over SM W backgound can be seen in high-$m_{T}$ region, while for WW$\chi\chi$ EFT model it is not the case, because the cross section is very low.
+
+
+
+% Transverse mass distributions for both EFT models look similar and majority (???) of the signal lays in the signal region. 
+
+
+% Cross section for both processes strongly depends on energy scale of new physics $\Lambda$ (or effective mediator mass for D5c model).
+% Dependence of cross section for WW$\chi\chi$ model versus energy scale is shown in \FigureRef{fig:lambdaScan}. 
+
+% TODO describe what is D5c model. That it is vector interaction constructive interference
+
+
+
+\section{Validity of EFT approach}
+
+The cross section for both EFT processes strongly depends on the mass scale $M_{*}$,
+as shown in \FigureRef{fig:lambdaScan} for the WW$\chi\chi$ EFT model.
+In order for the WW$\chi\chi$ process to have a sizeable cross section compared to the $\PWprime$ ($M_{\PWprime}$=2TeV) model, 
+the mass scale $M_{*}$ has to be of the order of 200-300 GeV. 
+However, the EFT approximation is valid when the momentum transfer in a given
+process of interest is much smaller than the mass of the mediating
+particle. 
+In ref.~\cite{eft_validity_limits} authors investigates the validity of the EFT approach at
+the LHC energy scale. They demonstrates that for the $\sqrt{s} = 14$~TeV the 
+EFT approach can be used only for $M_{*}$ values higher than 1-2 TeV, depending on the assumptions on the SM-DM couplings.
+
+\section{Conclusion}
+
+The transverse mass and $E_{T}^{miss}$ distributions for all the presented DM models are shown in \FigureRef{fig:scaledKin}. This can be compared to a $\PWprime$ signal with $M_{W'} = 2$~TeV.
+It is clearly seen that the simplified DM models tend to contribute to the low-$m_{T}$ region
+outside of the signal selection and have distributions similar to the SM $W$ boson background.
+This demonstrates that the signal selection used in the search presented in this appendix 
+has low sensitivity to the simplified DM models recommended for Run-2 DM searches at LHC.
+
+On the other hand, the EFT DM models contribute to the high-$m_{T}$ region, but, as described above, the D5c model has a spuriously enhanced cross section at LHC energies and are not recommended to be used in Run-2. The WW$\chi\chi$ EFT model has a significantly smaller contribution for physically motivated values of mass scale $M_{*}$.
+
+
+% \toAsk[Should I keep paragraph below? Or it's better to remove it?]
+% 
+% \toAsk[Because one can ask why this study have been done as all?]
+
+Similar studies were done by Bell and collaborators~\cite{arXiv:1512.00476} where the authors estimated an approximate upper limits with using simplified DM models with 3000 fb$^{-1}$ of integrated luminosity at LHC. 
+% On \FigureRef{fig:bellExclLim} the exclusion limit
+% as a function of the mass of the DM particle and the mass of the DM-SM mediator $Z'$ is shown. 
+They considered set of different final states (di-jets, mono-jets and mono-leptons)
+and that limits in the mono-lepton channel are increadibly weak even with 3000 fb$^{-1}$ and is significantly worse than those from all other channels, especially the one from the di-jet analysis. 
+The conclusion of the authors is identical to the conclusion of this study, that the mono-lepton channel is not sensitive enough for the DM searches and is significantly worse compared to all other hadronic channels.
+
+% \begin{figure}[]
+%  \includegraphics[width=0.8\textwidth]{monoW/schan1.pdf}
+%   \caption{Exclusion limit for the s-channel $Z'$ model as a function of mass of dark matter particle, $m_{\chi}$, 
+%   and mass of DM-SM mediator, $m_{Z'}$, reported in~\cite{arXiv:1512.00476}.
+%   Exclusions are shown as shaded regions for LUX and for mono-jet and di-jets at 8 TeV, 
+%   and the reaches are shown for the mono lepton and mono fat jet searches at 14 TeV 3000 fb$^{-1}$.}
+%   \label{fig:bellExclLim}
+% \end{figure}
+
+
 
 %% Big appendixes should be split off into separate files, just like chapters
 %\input{app-myreallybigappendix}
