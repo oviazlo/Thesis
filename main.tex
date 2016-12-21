@@ -24,7 +24,6 @@
 %% or a section at a time like this
 %\setfrontmatterspacing{double}
 
-
 %% Define the thesis title and author
 \title{Search for beyond Standard Model physics with high-$p_T$ leptons}
 \author{Oleksandr Viazlo}
@@ -33,7 +32,7 @@
 \makeatletter
 \@ifpackageloaded{hyperref}{%
 \hypersetup{%
-  pdftitle = {Same-signa and $\PWprime$, LUCID and TRT},
+  pdftitle = {Search for beyond Standard Model physics with high-$p_T$ leptons},
   pdfsubject = {Oleksandr Viazlo's PhD thesis},
   pdfkeywords = {ATLAS, BSM, physics, LHC, LUCID, TRT},
   pdfauthor = {\textcopyright\ Oleksandr Viazlo}
@@ -51,46 +50,34 @@
 
 %% Start the document
 \begin{document}
-
 % TODO this line is to remove page numbers from lines in the table of contents
 % \let\Contentsline\contentsline
 % \renewcommand\contentsline[3]{\Contentsline{#1}{#2}{}}
-
-
 %% Define the un-numbered front matter (cover pages, rubrik and table of contents)
-% \begin{frontmatter}
-%   \input{otherText/frontmatter}
-% \end{frontmatter}
-
-%   \input{otherText/glossaries}
-%   % Glossaries
-% %   \glsaddall
-%   \printglossaries
-%   \gls{computer}
-%   \gls{seqse}
+\begin{frontmatter}
+  \input{otherText/frontmatter}
+\end{frontmatter}
 
 % TODO there is tableofcontents in frontmatter. Just temprorary
 % \tableofcontents
 
-
 %% Start the content body of the thesis
 \begin{mainmatter}
   %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
-%   \input{mainChapters/theory}
-%   \input{mainChapters/ATLAS}
-%   \input{mainChapters/TRT}
-%   \input{mainChapters/LUCID}
-%   \input{mainChapters/SS}
+  \input{mainChapters/theory}
+  \input{mainChapters/ATLAS}
+  \input{mainChapters/TRT}
+  \input{mainChapters/LUCID}
+  \input{mainChapters/SS}
   \input{mainChapters/wprime}
   %% To ignore a specific chapter while working on another, making the build faster, comment it out:
   %\input{chap4}
-  
 \end{mainmatter}
 
 % Produce the appendices
-% \begin{appendices}
-%   \input{otherText/appendices}
-% \end{appendices}
+\begin{appendices}
+  \input{otherText/appendices}
+\end{appendices}
 
 %% Produce the un-numbered back matter (e.g. colophon,
 %% bibliography, tables of figures etc., index...)

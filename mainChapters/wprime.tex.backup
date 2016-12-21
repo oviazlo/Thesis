@@ -70,7 +70,8 @@ Samples for the signal process $\PWprime \to \mu \nu$ are produced with the lead
 Additionally, the so-called flat sample is produced. This sample has a flat lepton-neutrino invariant mass spectrum.
 Thus, it can be reweighted with the correct line shape to any desired $\PWprime$ mass by an appropriate reweighting function.
 To verify the validity of this sample and validity of the reweighting procedure, comparisons with fixed mass samples were done.
-% TODO Else asking for a reference for sentence above... should I show this comparison here? alos it was not me who did them,
+% TODO Else asking for a reference for sentence above... should I show this comparison here? alos it was not me who did them.
+% TODO make this fucking plot. however a priority is low.
 The flat sample was generated with large statistics to cover
 a wide range of transverse invariant mass $m_T$.
 
@@ -502,8 +503,7 @@ The impact of the systematic variations of the efficiencies on the final $m_T$ s
 %*******************************************************************************
 
 \subsection{Multijet validation region}
-
-\toAsk[this subsection has to be carefully reviewed]
+% TODO review this section carefuly again!!!
 
 % definition of the validation region
 To test the data-driven prediction of the multijet background one 
@@ -526,7 +526,7 @@ This affects in principle the MC subtraction in the ``fake'' muon control region
 but the discrepancy is present only for $N_\mathrm{jet}\geq2$, while the control region is 
 % TODO Monika - see comments from Dec14
 defined with the requirement $N_\mathrm{jet}\geq1$ and thus this discrepancy does not strongly affect the ``fake'' muon efficiency calculations.
-Furthermore, as the systematic variation of the ``fake'' muon efficiency was estimated with no $N_\mathrm{jet}$ cut at all and was found to be negligible. This proves the discrepancy in the $N_\mathrm{jet}$ is negligible as well.
+Furthermore, one the systematic variation of the ``fake'' muon efficiency was obtained with no $N_\mathrm{jet}$ cut at all. The effect of the variation was found to be negligible. This demonstrates that the discrepancy in the $N_\mathrm{jet}$ can be neglected.
 
 % TODO think about some additional description here!
 % TODO check in the Magnars thesis
@@ -679,7 +679,7 @@ and was found to be negligible for all of them.\\
 No resolution smearing is applied in the default scenario. 
 According to the working group recommendation, effect of the smearing has to be used as a systematic uncertainty.\\ The jet uncertainties are fully correlated between the electron and muon channel.
 
-\subsection{Transverse missing energy scale and resolution}
+\subsection{Missing transverse energy scale and resolution}
 The uncertainties for the $\met$ scale and resolution are provided by the JetEtMiss group~\cite{met2015_1}. They enter
 the analysis through the soft term in the $\met$ calculation, 
 which corresponds to the energy deposits in the calorimeter not associated with
@@ -704,7 +704,7 @@ results with NNPDF3.0~\cite{Ball:2014uwa}.
 The difference between CT14 and HERAPDF2.0 is not considered as the PDF does not include high Bjorken x data. 
 % TODO fix above about x. comment from Oxana
 
-The uncertainty of the ``Top'' and ``Diboson'' backgrounds consists of the theoretical corss section uncertainty and the high-$m_T$ extrapolation uncertainty. The former uncertainty affects the total background
+The uncertainty of the ``Top'' and ``Diboson'' backgrounds modelling consists of the theoretical cross section uncertainty and the high-$m_T$ extrapolation uncertainty. The former uncertainty affects the total background
 prediction by less than 3$\%$ and thus is neglected; the latter one becomes considerable at the high-$m_T$ region and is taken into account during the limit setting step.
 
 The detailed description of the theoretical uncertainties on the MC cross section can be found in~\cite{Aaboud:2016zkn}.
@@ -722,7 +722,7 @@ The systematic variations on the ``real'' and ``fake'' efficiency used in the ma
 described previously in \SectionRef{subsec:matrix_method}.
 The multijet background has a very small contribution to the muon signal selection, as can be seen in 
 \FigureRef{fig:muMMfinal} (left), where the fraction of the multijet background to the total background
-after the final selection is shown as function of $m_T$. Thus the effect from the systematic
+after the final selection is shown as a function of $m_T$. Thus the effect from the systematic
 variations of the matrix method efficiencies on the total background is small as well, as shown in
 \FigureRef{fig:muMMfinal} (right). 
 The systematic uncertainty on the total background is at the level of 1 $\%$ for $m_T<4$~TeV and less than 2$\%$ for $m_T>4$~TeV.
@@ -858,7 +858,8 @@ since the multi-jet systematics are not included in the statistical analysis.}
 \label{tab:muBkgData}
 \end{table}
 
-\toAsk[something more here?]
+% TODO something more here???
+% TODO see comments from Else
 
 %*******************************************************************************
 % XSEC and MASS LIMITS
@@ -942,7 +943,7 @@ The lower mass limits of the model correspond to the intersection of the theoret
 \label{sec:wprimeConclusion}
 
 % general search summary
-A search for a new heavy gauge boson $\PWprime$ has been performed in the final state of a muon and transverse missing energy using 3.2 fb$^{-1}$ of 13 TeV center of mass pp collision data collected in 2015~\cite{Aaboud:2016zkn}. 
+A search for a new heavy gauge boson $\PWprime$ has been performed in the final state with a muon and missing transverse energy using 3.2 fb$^{-1}$ of $\sqrt{s}=13$~TeV pp collision data collected in 2015~\cite{Aaboud:2016zkn}. 
 Upper limits on the cross section for SSM $\PWprime$ production have been set as a function of $\PWprime$ pole mass. A significantly stronger exclusion mass limit has been obtained in comparison with previous ATLAS searches~\cite{atlas_7tev_pub_1fb,atlas_7tev_pub,wprime_8TeV} as shown in \FigureRef{fig:Wprime_allResults}.
 
 \begin{figure}[]
@@ -964,10 +965,10 @@ Another improvement mentioned previously is to use $m_T$ binned diboson and top 
 % muon identification cut
 Also one can investigate the possibility to loose a strict ``high-$p_T$'' set of muon identification criteria, which improves the momentum resolution but also significantly reduce the muon reconstruction efficiency.
 
-reduce the efficiency of muon reconstruction for approximately 20$\%$ in comparison with ``tight'' one. However one need to be careful that the muon momentum resolution doesn't worsen significantly.
+% reduce the efficiency of muon reconstruction for approximately 20$\%$ in comparison with ``tight'' one. However one need to be careful that the muon momentum resolution doesn't worsen significantly.
 
 % new methods from SM W measurements
-A better understanding of the missing transverse mass could bring a significant reduction of the systematic uncertainty in the low-$m_T$ region, which is used for validation of the fake background estimation.
+A better understanding of the missing transverse mass could result in a significant reduction of the systematic uncertainty in the low-$m_T$ region, which is used for validation of the fake background estimation.
 
 % TODO rewrite it. write it as outlook not as a summary
 Also a sensitivity study of the signal selection for different DM models which predict production of WIMPs in association with a SM W has been done (see \AppendixRef{app:monoW}).

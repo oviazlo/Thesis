@@ -16,9 +16,6 @@ The search was done with the first $\sqrt{s}$=13~TeV data collected in 2015 by A
 
 \section{Search strategy}
 \label{sec:wprimeIntro} 
-% TODO model-independent search???
-% TODO experimental signature - lepton + MET
-% TODO a signal discriminant: mT
 
 As described in \SectionRef{subsec:bsm_models}, there is a large number of models
 which predict a new spin-1 charged gauge boson $\PWprime$. Thus it is not practical to perform a number of dedicated searches for all of them. Therefore, the so-called ``sequential'' Standard Model (SSM) is often used, as reference benchmark model.
@@ -70,7 +67,8 @@ Samples for the signal process $\PWprime \to \mu \nu$ are produced with the lead
 Additionally, the so-called flat sample is produced. This sample has a flat lepton-neutrino invariant mass spectrum.
 Thus, it can be reweighted with the correct line shape to any desired $\PWprime$ mass by an appropriate reweighting function.
 To verify the validity of this sample and validity of the reweighting procedure, comparisons with fixed mass samples were done.
-% TODO Else asking for a reference for sentence above... should I show this comparison here? alos it was not me who did them,
+% TODO Else asking for a reference for sentence above... should I show this comparison here? alos it was not me who did them.
+% TODO make this fucking plot. however a priority is low.
 The flat sample was generated with large statistics to cover
 a wide range of transverse invariant mass $m_T$.
 
@@ -390,12 +388,12 @@ the so-called Matrix Method, is used to estimate the contribution of multijet pr
 \subsection{The Matrix Method}
 \label{subsec:matrix_method}
 The goal of this method is to get an estimation of the ``fake'' muon contribution in the signal region.
-The ``fake'' muons in general are expected to be non-isolated, however, a fraction of them pass the isolation cut. 
+The ``fake'' muons are expected to be non-isolated, however, a fraction of them pass the isolation cut. 
 The idea of the method is to measure the probability (efficiency) of the ``fake'' muons
 (which pass the loosened signal selection without isolation requirement) to pass the nominal muon signal selection without requiring isolation.
 The same efficiency is measured for ``real'' muons, which originate from processes with muons from the primary vertex.
 
-The matrix method provides a connection between the number of true ``fakes'' ($N_F$) and the number of true ``real'' muons ($N_R$) and the measurable quantities from a sample in which the muons are passing loose selection ($N_L$) criteria and at the same time failing a tight selection and a sample in which the muons pass the tight selection ($N_T$) criteria, via \EquationRef{eq:mm1}.
+The matrix method provides a connection between the number of true ``fakes'' ($N_F$) and ``real'' muons ($N_R$) with the measurable quantities: the number of muon candidates which pass loose but fail tight selection criteria ($N_L$) and the number of candidates which pass the tight selection criteria ($N_T$), via \EquationRef{eq:mm1}.
 \begin{equation}
   \left(\begin{array}{c} N_T \\ N_L \end{array}\right)&=
   \begin{pmatrix}
@@ -505,19 +503,15 @@ The impact of the systematic variations of the efficiencies on the final $m_T$ s
 % TODO review this section carefuly again!!!
 
 % definition of the validation region
-To test the data-driven prediction of the multijet background one 
-has to find a region
-in which its contribution will be enhanced. 
-Thus region has to be kinematically 
-close to the signal selection.
+To test the data-driven multijet background prediction one 
+has to find a region in which its contribution will be enhanced. 
+This region has to be kinematically close to the signal region.
 Therefore, a validation region is defined in the same way as the signal selection but without the $E_T^{miss}$ and $m_T$ requirements. 
-% TODO Monika: ``Also the distributions'' --> ``Also regions''?
-Also the distributions with and without using isolation requirements are considered, 
-which corresponds to tight and loose muon definitions used in the matrix method described above.
+Two sets of validation regions are considered: with and without using isolation requirements. They correspond to the tight and loose muon definitions in the matrix method.
 
 % plots used for multijet CR
 The validation distributions of criteria variables used to define the enhanced ``fake'' muon control region, are shown in \FigureRef{fig:muMMval1}.
-A reasonable agreement within 10$\%$ for both tight and loose distributions is observed for $\Delta\phi_{\mu,E_T^{miss}}$ and muon $d_0$ significance.
+A reasonable agreement within 10$\%$ for both tight and loose distributions is observed for $\Delta\phi_{\mu,E_T^{miss}}$ and muon $d_0$ significance as can be seen from the ratio plots in panels in the bottom of each plot.
 The most obvious discrepancy is seen in the
 distribution of the number of jets. The disagreement arises most likely from the modeling of jet emission in the $W +$ jets MC, where only one jet emission is included at the
 matrix element level of calculations.
@@ -525,13 +519,15 @@ This affects in principle the MC subtraction in the ``fake'' muon control region
 but the discrepancy is present only for $N_\mathrm{jet}\geq2$, while the control region is 
 % TODO Monika - see comments from Dec14
 defined with the requirement $N_\mathrm{jet}\geq1$ and thus this discrepancy does not strongly affect the ``fake'' muon efficiency calculations.
-Furthermore, as the systematic variation of the ``fake'' muon efficiency was estimated with no $N_\mathrm{jet}$ cut at all and was found to be negligible. This proves the discrepancy in the $N_\mathrm{jet}$ is negligible as well.
+Furthermore, one the systematic variation of the ``fake'' muon efficiency was obtained with no $N_\mathrm{jet}$ cut at all. The effect of the variation was found to be negligible. This demonstrates that the discrepancy in the $N_\mathrm{jet}$ can be neglected.
 
 % TODO think about some additional description here!
 % TODO check in the Magnars thesis
 The distribution of the $E_T^{miss}$, muon momentum and $m_T$ are shown in \FigureRef{fig:muMMval2}.
 % TODO Monika - see comments
+% TODO Else - you could spend a few lines describing also the shape agreement in the plots.
 As one can note the multijet background is significantly enhanced in the looser muon sample with respect to the tight sample. 
+A reasonable agreement within 10$\%$ for both tight and loose distributions is observed for all distributions. Also, shape of the distribution is described reasonably well for both cases as well.
 Taking into account the size of the systematic uncertainties, discussed in \SectionRef{sec:wprimeSystematics}, the data and background prediction agrees reasonably well. 
 The tight muon sample includes the isolation requirement and thus the contribution from multijet background is significantly reduced. Also because no $E_T^{miss}$ and $m_T$ are applied 
 there are significantly more statistics available than in the signal region which allows to test the overall background prediction more precisely. In general, a reasonable agreement is observed. 
@@ -703,7 +699,7 @@ results with NNPDF3.0~\cite{Ball:2014uwa}.
 The difference between CT14 and HERAPDF2.0 is not considered as the PDF does not include high Bjorken x data. 
 % TODO fix above about x. comment from Oxana
 
-The uncertainty of the ``Top'' and ``Diboson'' backgrounds consists of the theoretical corss section uncertainty and the high-$m_T$ extrapolation uncertainty. The former uncertainty affects the total background
+The uncertainty of the ``Top'' and ``Diboson'' backgrounds modelling consists of the theoretical cross section uncertainty and the high-$m_T$ extrapolation uncertainty. The former uncertainty affects the total background
 prediction by less than 3$\%$ and thus is neglected; the latter one becomes considerable at the high-$m_T$ region and is taken into account during the limit setting step.
 
 The detailed description of the theoretical uncertainties on the MC cross section can be found in~\cite{Aaboud:2016zkn}.
@@ -944,6 +940,8 @@ The lower mass limits of the model correspond to the intersection of the theoret
 % general search summary
 A search for a new heavy gauge boson $\PWprime$ has been performed in the final state with a muon and missing transverse energy using 3.2 fb$^{-1}$ of $\sqrt{s}=13$~TeV pp collision data collected in 2015~\cite{Aaboud:2016zkn}. 
 Upper limits on the cross section for SSM $\PWprime$ production have been set as a function of $\PWprime$ pole mass. A significantly stronger exclusion mass limit has been obtained in comparison with previous ATLAS searches~\cite{atlas_7tev_pub_1fb,atlas_7tev_pub,wprime_8TeV} as shown in \FigureRef{fig:Wprime_allResults}.
+Also, mass limits for three ATLAS analyses done with 8 and 13 TeV data are shown in \TableRef{tab:Wprime_limit_vs_years_ATLAS}.
+The results from the CMS collaboration are shown in \TableRef{tab:Wprime_limit_vs_years_CMS}. Measured mass limits are compatible between the experiments.
 
 \begin{figure}[]
  \includegraphics[width=0.8\textwidth]{Wprime/combWprime_summary.eps}
@@ -954,6 +952,50 @@ The region above each curve is excluded at 95\% CL.
 }
   \label{fig:Wprime_allResults}
 \end{figure}
+
+
+\begin{table*}[]
+\begin{center}
+\begin{tabular}{c||c|c||c|c||c|c}
+ & \multicolumn{6}{c}{95\%  C.L. upper limit [TeV]} \\
+ & \multicolumn{2}{c||}{20.3 fb$^{-1}$ at 8 TeV} & \multicolumn{2}{c||}{3.2 fb$^{-1}$ at 13 TeV} & \multicolumn{2}{c}{13.3 fb$^{-1}$ at 13 TeV} \\
+ \hline
+Signal & Expected & Observed & Expected & Observed & Expected & Observed \\
+%[+0.05in]
+\hline
+\rule{0pt}{3ex}
+$\PWprime \to e\nu$ & 3.13 & 3.13 & 3.99 & 3.96 & 4.59 & 4.64 \\
+\hline
+$\PWprime \to \mu\nu$ & 2.97 & 2.97 & 3.72 & 3.56 & 4.33 & 4.19 \\
+\hline
+$\PWprime \to \Plepton\nu$ & 3.17 & 3.24 & 4.18 & 4.07 & 4.77 & 7.74 \\
+\end{tabular}
+\end{center}
+ \caption{Upper limit at 95\% C.L. on mass of SSM $\PWprime$ for three ATLAS analyses done with 8 and 13 TeV pp collision data~\cite{wprime_8TeV,Aaboud:2016zkn,wprime_atlas_13TeV_13fb}.}
+\label{tab:Wprime_limit_vs_years_ATLAS}
+\end{table*}
+
+
+\begin{table*}[]
+\begin{center}
+\begin{tabular}{c||c|c||c|c}
+ & \multicolumn{4}{c}{95\%  C.L. upper limit [TeV]} \\
+ & \multicolumn{2}{c||}{19.7 fb$^{-1}$ at 8 TeV} & \multicolumn{2}{c||}{2.2 fb$^{-1}$ at 13 TeV}  \\
+ \hline
+Signal & Expected & Observed & Expected & Observed  \\
+%[+0.05in]
+\hline
+\rule{0pt}{3ex}
+$\PWprime \to e\nu$ & 3.18 & 3.22 & 3.7 & 3.8 \\
+\hline
+$\PWprime \to \mu\nu$ & 3.09 & 2.99 & 3.8 & 4.0 \\
+\hline
+$\PWprime \to \Plepton\nu$ & 3.26 & 3.28 & 4.2 & 4.4 \\
+\end{tabular}
+\end{center}
+ \caption{Upper limit at 95\% C.L. on mass of SSM $\PWprime$ for two CMS analyses done with 8 and 13 TeV pp collision data~\cite{wprime_cms_8TeV,wprime_cms_13TeV}.}
+\label{tab:Wprime_limit_vs_years_CMS}
+\end{table*}
 
 % recovery excluded phase space and mT-binned samples
 There are different ways to improve and develop the analysis.
@@ -972,3 +1014,6 @@ A better understanding of the missing transverse mass could result in a signific
 % TODO rewrite it. write it as outlook not as a summary
 Also a sensitivity study of the signal selection for different DM models which predict production of WIMPs in association with a SM W has been done (see \AppendixRef{app:monoW}).
 It has been shown that the current signal selection has low sensitivity to considered DM models moreover, is not sensitive as searches with jet final signatures.
+
+
+
