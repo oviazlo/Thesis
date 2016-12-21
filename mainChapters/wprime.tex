@@ -21,7 +21,7 @@ The search was done with the first $\sqrt{s}$=13~TeV data collected in 2015 by A
 % TODO a signal discriminant: mT
 
 As described in \SectionRef{subsec:bsm_models}, there is a large number of models
-which predict a new spin-1 gauge charged boson $\PWprime$. Thus it is not practical to perform a number of dedicated searches for all of them. Therefore, the so-called ``sequential'' Standard Model (SSM) is often used, as reference benchmark model.
+which predict a new spin-1 charged gauge boson $\PWprime$. Thus it is not practical to perform a number of dedicated searches for all of them. Therefore, the so-called ``sequential'' Standard Model (SSM) is often used, as reference benchmark model.
 This model provides a clear interpretation of the experimental results and
 is also used for comparing the results between experiments.
 It assumes the $\PWprime$ boson to be a heavy ``copy'' of the SM $W$ with the same couplings to leptons, quarks and gauge bosons. 
@@ -48,7 +48,7 @@ Considering this model one can highlight three key features essential for this s
  Thus, it is crucial to use the latest and most precise high-order calculations and corrections available at the time.
  \item High-$p_T$ lepton selection. Due to a simple event selection (one isolated lepton and missing $E_T$) 
  this analysis uses the most energetic lepton candidates available at 13 TeV center-of-mass energy collisions.
- This is why the understanding of the reconstruction efficiency and momentum resolution of high-$p_T$ leptons are are very important for the analysis.
+ This is why the understanding of the reconstruction efficiency and momentum resolution of high-$p_T$ leptons are very important for the analysis.
  \item Missing transverse energy, $E_T^{miss}$. Along with the lepton momentum, $E_T^{miss}$ is used in the calculation of the transverse invariant mass $m_T$ (which will be defined in \SectionRef{subsec:etmiss}),
  which is the signal discriminant and search variable in the analysis. For $m_T$ to be precisely reconstructed and modelled a good understanding of the missing $E_T$ reconstruction as well as good lepton momentum resolution is needed.
 \end{itemize}
@@ -72,7 +72,7 @@ Thus, it can be reweighted with the correct line shape to any desired $\PWprime$
 To verify the validity of this sample and validity of the reweighting procedure, comparisons with fixed mass samples were done.
 % TODO Else asking for a reference for sentence above... should I show this comparison here? alos it was not me who did them,
 The flat sample was generated with large statistics to cover
-a wide range of the transverse invariant mass $m_T$.
+a wide range of transverse invariant mass $m_T$.
 
 % TODO explain what is ``Wprime signal''... see comment from Oxana by Dec7
 % comparison with W boson background (show plot of Wprime overlaid on top of W)
@@ -106,7 +106,7 @@ In order to look for a potential signal from  new physics, one has to examine al
 % as leptons.
 
 Since this chapter is focused on the muon decay channel, the processes which produce a muon and missing transverse momentum will be discussed, 
-however, in general, the same processes are relevant for the electron decay channel as well.
+however, in general, the same processes are relevant for the electron decay channel.
 
 The dominant expected background in the analysis comes from the charged current Drell-Yan process.
 The SM W decays to a lepton and a neutrino, which will be reconstructed as missing transverse momentum in the detector.
@@ -204,7 +204,7 @@ $Z/\gamma^* +$ jets & + {\scshape pythia-8.186}~\cite{pythia8}  & &  NLO QED \\
 \ttbar, t-channel $t$, & \powhegbox\ & \multirow{2}{*}{CT10} & \multirow{2}{*}{NLO QCD} \\
 s-channel $Wt$ & + {\scshape pythia-6.428}~\cite{Pythia} & &  \\
 \hline
-\multirow{2}{*}{$WW, WZ, ZZ$} & \multirow{2}{*}{{\scshape sherpa-2.1.1}~\cite{Sherpa}} & \multirow{2}{*}{CT10} & \multirow{2}{*}{\toDo[???]} \\
+\multirow{2}{*}{$WW, WZ, ZZ$} & \multirow{2}{*}{{\scshape sherpa-2.1.1}~\cite{Sherpa}} & \multirow{2}{*}{CT10} & \multirow{2}{*}{NLO QCD} \\
  & & &  \\
 \hline
 \hline
@@ -262,7 +262,7 @@ from the primary vertex. Candidates have to satisfy the following set of criteri
  \item Pass ``high-$p_T$'' set of muon identification criteria defined in~\cite{muon_performance_2015}. \\ 
  This set aims to maximize the momentum resolution for tracks with $p_T > 100$~GeV.
  It includes tight requirements on the MS part of the track, 
- which improves the $p_T$ resolution by approximately 30$\%$ in comparison with with ``tight'' criteria.  However, the muons reconstruction efficiency drops by 20$\%$ drops as well.
+ which improves the $p_T$ resolution by approximately 30$\%$ in comparison with with ``tight'' criteria.  However, the muons reconstruction efficiency drops by 20$\%$ as well.
 %  TODO describe why LooseTrackOnly isolation is enough
  \item Pass ``LooseTrackOnly'' isolation requirement~\cite{muon_performance_2015}. 
  This requirement provides 99$\%$ constant efficiency over complete ($\eta$,$p_T$) phase space.
@@ -278,8 +278,8 @@ To suppress the contribution from the neutral current Drell-Yan $Z/\gamma^*$ and
 in which two isolated leptons are expected in the final state, an additional lepton veto requirement
 is applied. 
 Events are rejected if a second muon with $p_T > 20$ GeV is found passing
-wither the ``high-$p_T$`` or the ``medium'' identification criteria.
-Events are also vetoed if an additional electron passing the selection below is found.
+either the ``high-$p_T$`` or the ``medium'' identification criteria.
+Events are also vetoed if an additional electron passing the following selection is found:
 \begin{itemize}
 \item $|\eta| < 2.47$, excluding barrel-endcap calorimeter transition region $1.37 < |\eta| < 1.52$
 \item $p_T > 20$~GeV
@@ -354,13 +354,13 @@ momentum and $E_T^{miss}$.
 \label{sec:wprime_backgroundEstimation}
 % TODO describe sources of fakes:
 
-The background which arises from neutral and charged current Drell-Yan processes ($W$, $Z$), diboson production ($WW$,$WZ$,$ZZ$) and top background  (ttbar, single top) - in general all processes listed  is estimated with MC simulation.
+The background which arises from neutral and charged current Drell-Yan processes ($W$, $Z$), diboson production ($WW$,$WZ$,$ZZ$) and top background  (ttbar, single top) is estimated with MC simulation.
 
 Processes with multijet final state have a small chance 
 to have a reconstructed muon present in these events.
 % of being reconstructed as those which contain an isolated muon. 
 There are two cases when jets lead to a reconstructed muon. 
-On the first case a hadron is not stopped in the calorimeter and passes through to the muon spectrometer and is misidentified as a muon. Another possibility is if a real muon originates from a jet. However, such muons are not produced in the primary vertex, because they originate from decays of heavy flavor hadrons, which have long lifetimes and travel for few hundreds of $\mu m$'s before they decay.
+In the first case a hadron is not stopped in the calorimeter and passes through to the muon spectrometer and is misidentified as a muon. Another possibility is if a real muon originates from a jet. However, such muons are not produced in the primary vertex, because they originate from decays of heavy flavor hadrons, which have long lifetimes and travel for few hundreds of $\mu m$'s before they decay.
 Thus, such muons from jets are called ``fake'' muons.
 
 Due to the huge cross section of the processes which lead to the multijet final state 
@@ -502,8 +502,7 @@ The impact of the systematic variations of the efficiencies on the final $m_T$ s
 %*******************************************************************************
 
 \subsection{Multijet validation region}
-
-\toAsk[this subsection has to be carefully reviewed]
+% TODO review this section carefuly again!!!
 
 % definition of the validation region
 To test the data-driven prediction of the multijet background one 
@@ -520,7 +519,7 @@ which corresponds to tight and loose muon definitions used in the matrix method 
 The validation distributions of criteria variables used to define the enhanced ``fake'' muon control region, are shown in \FigureRef{fig:muMMval1}.
 A reasonable agreement within 10$\%$ for both tight and loose distributions is observed for $\Delta\phi_{\mu,E_T^{miss}}$ and muon $d_0$ significance.
 The most obvious discrepancy is seen in the
-distribution of the number of jets. The disagreement arises most likely from the modeling of jet emission in the $W\to\mu\,\nu$ MC, where only one jet emission is included at the
+distribution of the number of jets. The disagreement arises most likely from the modeling of jet emission in the $W +$ jets MC, where only one jet emission is included at the
 matrix element level of calculations.
 This affects in principle the MC subtraction in the ``fake'' muon control region,
 but the discrepancy is present only for $N_\mathrm{jet}\geq2$, while the control region is 
@@ -616,8 +615,6 @@ For the diboson background these values were from $120$~GeV to $240$~GeV and fro
 % The extrapolation was stitched to the background estimated by Monte Carlo at $\mt=600$~GeV in both cases.
 The extrapolation is used in the $m_T$ spectrum starting from $\mt=600$~GeV for both top and diboson background estimations.
 
-was stitched to the background estimated by Monte Carlo at $\mt=600$~GeV in both cases.
-
 The fits and appropriate systematic uncertainty estimates are shown in 
 \FigureRef{fig:mu_extrapolate_top} for the top and in \FigureRef{fig:mu_extrapolate_diboson} for the diboson backgrounds.
 \begin{figure}[!htb]
@@ -681,7 +678,7 @@ and was found to be negligible for all of them.\\
 No resolution smearing is applied in the default scenario. 
 According to the working group recommendation, effect of the smearing has to be used as a systematic uncertainty.\\ The jet uncertainties are fully correlated between the electron and muon channel.
 
-\subsection{Transverse missing energy scale and resolution}
+\subsection{Missing transverse energy scale and resolution}
 The uncertainties for the $\met$ scale and resolution are provided by the JetEtMiss group~\cite{met2015_1}. They enter
 the analysis through the soft term in the $\met$ calculation, 
 which corresponds to the energy deposits in the calorimeter not associated with
@@ -724,7 +721,7 @@ The systematic variations on the ``real'' and ``fake'' efficiency used in the ma
 described previously in \SectionRef{subsec:matrix_method}.
 The multijet background has a very small contribution to the muon signal selection, as can be seen in 
 \FigureRef{fig:muMMfinal} (left), where the fraction of the multijet background to the total background
-after the final selection is shown as function of $m_T$. Thus the effect from the systematic
+after the final selection is shown as a function of $m_T$. Thus the effect from the systematic
 variations of the matrix method efficiencies on the total background is small as well, as shown in
 \FigureRef{fig:muMMfinal} (right). 
 The systematic uncertainty on the total background is at the level of 1 $\%$ for $m_T<4$~TeV and less than 2$\%$ for $m_T>4$~TeV.
@@ -860,7 +857,8 @@ since the multi-jet systematics are not included in the statistical analysis.}
 \label{tab:muBkgData}
 \end{table}
 
-\toAsk[something more here?]
+% TODO something more here???
+% TODO see comments from Else
 
 %*******************************************************************************
 % XSEC and MASS LIMITS
@@ -944,7 +942,7 @@ The lower mass limits of the model correspond to the intersection of the theoret
 \label{sec:wprimeConclusion}
 
 % general search summary
-A search for a new heavy gauge boson $\PWprime$ has been performed in the final state of a muon and transverse missing energy using 3.2 fb$^{-1}$ of 13 TeV center of mass pp collision data collected in 2015~\cite{Aaboud:2016zkn}. 
+A search for a new heavy gauge boson $\PWprime$ has been performed in the final state with a muon and missing transverse energy using 3.2 fb$^{-1}$ of $\sqrt{s}=13$~TeV pp collision data collected in 2015~\cite{Aaboud:2016zkn}. 
 Upper limits on the cross section for SSM $\PWprime$ production have been set as a function of $\PWprime$ pole mass. A significantly stronger exclusion mass limit has been obtained in comparison with previous ATLAS searches~\cite{atlas_7tev_pub_1fb,atlas_7tev_pub,wprime_8TeV} as shown in \FigureRef{fig:Wprime_allResults}.
 
 \begin{figure}[]
@@ -966,11 +964,11 @@ Another improvement mentioned previously is to use $m_T$ binned diboson and top 
 % muon identification cut
 Also one can investigate the possibility to loose a strict ``high-$p_T$'' set of muon identification criteria, which improves the momentum resolution but also significantly reduce the muon reconstruction efficiency.
 
-reduce the efficiency of muon reconstruction for approximately 20$\%$ in comparison with ``tight'' one. However one need to be careful that the muon momentum resolution doesn't worsen significantly.
+% reduce the efficiency of muon reconstruction for approximately 20$\%$ in comparison with ``tight'' one. However one need to be careful that the muon momentum resolution doesn't worsen significantly.
 
 % new methods from SM W measurements
-A better understanding of the missing transverse mass could bring a significant reduction of the systematic uncertainty in the low-$m_T$ region, which is used for validation of the fake background estimation.
+A better understanding of the missing transverse mass could result in a significant reduction of the systematic uncertainty in the low-$m_T$ region, which is used for validation of the fake background estimation.
 
 % TODO rewrite it. write it as outlook not as a summary
-Also a sensitivity study of the signal selection for different DM models which predict production of WIMPs in association with a SM W has been done.
+Also a sensitivity study of the signal selection for different DM models which predict production of WIMPs in association with a SM W has been done (see \AppendixRef{app:monoW}).
 It has been shown that the current signal selection has low sensitivity to considered DM models moreover, is not sensitive as searches with jet final signatures.

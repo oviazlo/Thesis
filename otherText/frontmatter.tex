@@ -1,5 +1,5 @@
 %% Title
-\titlepage[of Lund Universoty]{%
+\titlepage[Lund Universoty]{%
   A dissertation submitted to the Lund University\\ for the degree of Doctor of Philosophy}
 
 %% Abstract
@@ -18,66 +18,78 @@
 %% Preface
 \begin{preface}
 
-During my PhD studies, I was working in the \ATLAS collaboration, one of the experiments at Large Hadron Collider (\LHC), and all studies presented in this thesis are based on data collected by the \ATLAS experiment or related to the \ATLAS detector performance.
-\ATLAS is a multi-purpose detector which is recording proton-proton collisions provided by the \LHC. \ATLAS consists of a set of subdetectors which perform dedicated tasks by providing specific information about particles which were created from proton-proton collisions.
+During my PhD studies, I was working with the \ATLAS experiment, one of the detectors at the Large Hadron Collider (\LHC). All studies presented in this thesis are based on data collected by the \ATLAS experiment or related to the \ATLAS detector performance.
+\ATLAS is a multi-purpose detector which is registering results of hadron collisions at the \LHC. It consists of a set of subdetectors which perform dedicated tasks and provide providing specific information about particles which were created in collisions.
+While LHC can collide both proton and lead beams, this thesis focuses on proton-proton collision data.
 
 % ***TRT***
-My first study has been related with one of the \ATLAS tracking subdetectors - the Transition Radiation Tracker (TRT).
-It is gas detector which uses the gas mixture as active detector volume to detect the charged particles. It was designed to use only one type of the gas mixture based on Xenon gas during the operation. However, some parts of detector start to leak. Thus, to decrease operational costs of the detector, it was decided to switch to a cheaper gas mixture based on Argon. My task was to rewrite TRT simulation software, used for Monte Carlo simulation of any physics process in \ATLAS, to support new gas mixture. It was very challenging, but interesting task because one has to revisit the whole chain of the numerical simulation of the TRT detector and add support for the new gas in each step. After implementation had been done, I did performance study of the TRT with a focus on hit and track parameters for Argon and Xenon gas mixtures.
+The first study concerns one of the \ATLAS tracking subdetectors - the Transition Radiation Tracker (TRT).
+It uses a gas mixture as an active detector volume to detect charged particles. The TRT was designed to use only one type of gas mixture based on Xenon. However, some parts of the detector started to leak after few years of running. Thus, to decrease the operational costs of the detector, it was decided to switch to a cheaper gas mixture based on Argon. My task was to rewrite the TRT simulation software, used for Monte Carlo (MC) simulation of physics processes, to support the new gas mixture. It was a very challenging but interesting task, because I had to review the whole chain of the numerical simulation of the TRT detector and add support for the new gas in each step. After the implementation was completed, I did a performance study of the TRT with focus on the hit and track parameters for the Argon and Xenon gas mixtures.
 
 % ***LUCID***
-Later in my PhD studies in 2014, I join LUCID group, which was designing new LUCID-2 detector. My involvement with LUCID was the longest one among activities during my PhD studies, and it was more than two years. LUCID detector is a luminosity detector which measures the rate of the proton-proton interactions in ATLAS. The luminosity measurements are crucial because it is used for all analyses which measure or put a limit on a cross section of any processes.
+Later in my PhD studies in 2014, I joined the LUCID group, which was designing the new LUCID-2 detector. My involvement with LUCID lasted more than two years. The LUCID detector is a luminosity detector which measures the collision rate of the hadron-hadron interactions in ATLAS. The luminosity measurements are crucial because luminosity is used for all analyses which measure or put limits on cross sections of processes.
 During the design phase, many tests were done to find an optimal design and the optimal parameters for various detector components.
 During the assembly and installation phase, a number of tests were done to make sure that all components performed as they should.
 An overall test of the system was done to make sure that no damage had been done during the installation of the detector.
 During the operation phase, which is still ongoing, many studies have been made to understand the performance of the calibration system and the detector.
 
 I contributed to all the steps mentioned above. I took part in the development of the LUCID design and particularly the design of the calibration system. 
-I made a series of tests to find the optimal design parameters of the LED and Laser diffusers used to evenly distribute LED and laser signals and deliver it to all detector channels. 
-I spent a lot of time on understanding the behavior of the LED system as well as the PMT and PIN-diode signal behavior.
-Tests with Bi-207 radioactive sources which are used as one of the ways to monitor photomultiplier (PMT) gain were done as well.
-I participated in the detector assembly in the clean room and did testing of the detector during this process.
-Testing of LED and laser diffusers were done to cross check the integrity of fibers and the homogeneity of signals between all PMTs.
-Also, temperature stress test was performed to understand what maximum temperature could be allowed without destroying the detector during the 
+I made a series of tests to find the optimal design parameters of the LED and Laser diffusers used to distribute LED and laser signals evenly and deliver them to all 
+% TODO ``detector channels'' - maybe rephrase?
+detector channels. 
+I spent a lot of time investigating the behavior of the LED system as well as the PMT and PIN-diode signal behavior.
+I also conducted tests with Bi-207 radioactive sources which are used to monitor the photomultiplier (PMT) gain.
+I participated in the detector assembly in the clean room and did detector testing during this process.
+Testing of the LED and laser diffusers were done to cross check the integrity of fibers and the homogeneity of signals between all PMTs.
+Also, a temperature stress test was performed in order to understand what maximum temperature can be tolerated without destroying the detector during the 
 beam pipe bake-out procedure.
-In the operational phase, the main focus was on understanding the aging of PMTs and the possibility to improve the calibration system.
-Lastly, I become the ATLAS Forward detectors Run Coordinator for five months, where my task was to make sure of successful operation of the LUCID and to verify the correctness of the measured luminosity during the ATLAS data taking.
+In the operational phase, the main focus was on understanding the aging of the PMTs and the possibility of improving the calibration system.
+Lastly, I became the ATLAS Forward Detectors Run Coordinator for five months, where my task was to ensure the successful operation of LUCID and to verify the correctness of the measured luminosity during the ATLAS data taking.
 
 % The LUCID group published a paper with a description of the choice and the characterization of photomultipliers for the new LUCID detector for Run-2~\cite{Alberghi:2016tad}.
 % My contribution was in understanding and developing the monitoring using a Bi-207 source.
 
 % ***Same-Sign***
-In another half of my time, I was doing searches for the new physics Beyond the Standard Model (BSM) using final states with isolated leptons. The first search I did was inclusive search with same-sign lepton pairs. The analysis was performed in three channel: $e^{\pm}e^{\pm}$, $\mu^{\pm}\mu^{\pm}$. My contribution was to perform complete analysis with $e^{\pm}e^{\pm}$ channel and to make cross-checks for other channels with other people from analysis team. Thus, I was doing event and lepton selection, a study of the MC inputs, testing of the charge flip and non-prompt background modelling, optimization of the selection criteria, verifying prompt background predictions, estimation of the systematic uncertainties and providing final numbers for the limit settings. Also, I was studying doubly charged Higgs signal, calculating the total efficiency of the signal selection and making bin width optimization for the limit setting for doubly charged Higgs signal.
+During the second half of my studies, I was doing searches for new physics beyond the Standard Model (BSM) in final states with isolated leptons. The first search I did was an inclusive search with same-sign lepton pairs. The analysis was performed in three channels: $e^{\pm}e^{\pm}$, $\mu^{\pm}\mu^{\pm}$, $e^{\pm}\mu^{\pm}$. My task was to perform a complete analysis with the $e^{\pm}e^{\pm}$ channel and to make cross-checks for other channels. To achieve this, I was doing event and lepton selections, a study of the MC inputs, testing of the charge flip and non-prompt background modelling, optimization of the selection criteria, verification of prompt background predictions, estimation of the systematic uncertainties and provision of final numbers for the limit settings. Also, I was studying the hypothetical doubly charged Higgs signal, calculating the total efficiency of the signal selection and making the bin width optimization for the limit setting for the doubly charged Higgs signal.
 
 % ***WPRIME***
-The second analysis which I was doing was a search for the new heavy spin-1 gauge boson, namely, $\PWprime$. The final state of interest was high momentum lepton and significant missing transverse energy observed in the detector, which corresponds to the particle which escapes the detector without interacting with it, for example, neutrinos.  The analysis was performed in electron and muon channels.
-I was working on muon channel, making an event and lepton selection, studying the behavior of the missing transverse energy, testing fake background predictions and performing cross-checks both in muon and electron channels. Also, I was working on a production of the new MC simulation samples of the top and diboson backgrounds which would provide enough statistics in the whole signal region and significantly reduce dominant systematic uncertainty contribution. However, the problem appeared to be much deeper than was expected before thus it was not solved to the end and I had to take it over in the middle to the analysis team which starts to work with new data.
-Also, I made a study of the sensitivity of the analysis signal selection for the so-called Dark Matter simplified models, which are recommended benchmark models for Run-2 searches at LHC. 
+The second analysis was a search for the a new heavy spin-1 gauge boson, namely, $\PWprime$. The final state of interest was a high momentum lepton and significant missing transverse energy observed in the detector (which corresponds to a particle which escapes the detector without interacting with it, for example, a neutrino). The analysis was performed in the electron and muon channels.
+I was working on the muon channel, making an event and lepton selection, studying the behavior of the missing transverse energy, testing fake background predictions and performing cross-checks both in muon and electron channels. Also, I was working on a production of the new MC simulation samples of the top and diboson backgrounds which would provide enough statistics in the whole signal region and significantly reduce the dominant systematic uncertainty. However, the problem appeared to be much deeper than expected, thus it was not solved completely in time for the publication and I had to hand it over to the analysis team which started working with the new 2016 data.
+Also, I made a study of the signal selection sensitivity to the so-called Simplified Dark Matter models, which are the recommended 
+% benchmark models for the current running period searches at the LHC. 
+benchmark model searches for the current running period at the LHC.
 
-Contribution described above were included in the publications:
+The results of the research activities described above were included in the publications:
 \begin{itemize}
- \item \bibentry{Aaboud:2016zkn}
- \item \bibentry{Alberghi:2016tad}
- \item \bibentry{ss_8TeV}
+\item G.~L. Alberghi {et~al.}, {\em {Choice and characterization of photomultipliers
+  for the new ATLAS LUCID detector}},
+  \href{http://dx.doi.org/10.1088/1748-0221/11/05/P05014}{JINST {\bfseries 11}
+  no.~05, (2016) P05014}.
+\item {ATLAS} Collaboration, G.~Aad {et~al.}, {\em {Search for anomalous production
+  of prompt same-sign lepton pairs and pair-produced doubly charged Higgs
+  bosons with $ \sqrt{s}=8 $ TeV $pp$ collisions using the ATLAS detector}},
+  \href{http://dx.doi.org/10.1007/JHEP03(2015)041}{JHEP {\bfseries 03} (2015)
+  041},
+  \href{http://arxiv.org/abs/1412.0237}{{\ttfamily arXiv:1412.0237 [hep-ex]}}.
+\item {ATLAS} Collaboration, M.~Aaboud {et~al.}, {\em {Search for new resonances in
+  events with one lepton and missing transverse momentum in $pp$ collisions at
+  $\sqrt{s} = 13$ TeV with the ATLAS detector}},
+  \href{http://arxiv.org/abs/1606.03977}{{\ttfamily arXiv:1606.03977 [hep-ex]}}.
 \end{itemize}
 
-Also, I have been presenting results of my studies on two international conferences which as can be seen from the public proceeding:
+Also, I presented my results at two international conferences with published proceedings:
 \begin{itemize}
- \item \bibentry{Viazlo:2015jfy}
- \item \bibentry{Viazlo:2016gyq}
+ \item O.~Viazlo, {\em {ATLAS LUCID detector upgrade for LHC Run 2}},
+PoS {\bfseries EPS-HEP2015} (2015) 275.
+ \item O.~Viazlo, {\em {Searches for new physics in high-mass
+  fermionic final states and jets with the ATLAS detector at the LHC}},
+PoS {\bfseries DIS2016} (2016) 109.
 \end{itemize}
 
-% \begin{thebibliography}{1}
-%   %\cite{Aaboud:2016zkn}
-% \bibitem{Aaboud:2016zkn} 
-%   M.~Aaboud {\it et al.} [ATLAS Collaboration],
-%   %``Search for new resonances in events with one lepton and missing transverse momentum in $pp$ collisions at $\sqrt{s} = 13$ TeV with the ATLAS detector,''
-%   Phys.\ Lett.\ B {\bf 762}, 334 (2016)
-%   doi:10.1016/j.physletb.2016.09.040
-%   [arXiv:1606.03977 [hep-ex]].
-%   %%CITATION = doi:10.1016/j.physletb.2016.09.040;%%
-%   %8 citations counted in INSPIRE as of 20 Dec 2016
-% \end{thebibliography}
+
+
+
+
 
 
 
