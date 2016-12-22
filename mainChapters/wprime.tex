@@ -503,43 +503,46 @@ The impact of the systematic variations of the efficiencies on the final $m_T$ s
 % TODO review this section carefuly again!!!
 
 % definition of the validation region
-To test the data-driven multijet background prediction one 
-has to find a region in which its contribution will be enhanced. 
+To test the data-driven multijet background prediction, one has to find a region in which its contribution will be enhanced. 
 This region has to be kinematically close to the signal region.
 Therefore, a validation region is defined in the same way as the signal selection but without the $E_T^{miss}$ and $m_T$ requirements. 
 Two sets of validation regions are considered: with and without using isolation requirements. They correspond to the tight and loose muon definitions in the matrix method.
 
 % plots used for multijet CR
-The validation distributions of criteria variables used to define the enhanced ``fake'' muon control region, are shown in \FigureRef{fig:muMMval1}.
-A reasonable agreement within 10$\%$ for both tight and loose distributions is observed for $\Delta\phi_{\mu,E_T^{miss}}$ and muon $d_0$ significance as can be seen from the ratio plots in panels in the bottom of each plot.
+% TODO Monika - see comments from Dec14
+The validation distributions of criteria variables used to define the enhanced ``fake'' muon control region are shown in \FigureRef{fig:muMMval1}.
+A reasonable agreement within 10$\%$ for both tight and loose distributions is observed for $\Delta\phi_{\mu,E_T^{miss}}$ and muon $d_0$ significance as can be seen from the data over background prediction ratio plots in panels in the bottom of each plot. The shape of the distributions is modelled well as well for both tight and loose regions.
 The most obvious discrepancy is seen in the
 distribution of the number of jets. The disagreement arises most likely from the modeling of jet emission in the $W +$ jets MC, where only one jet emission is included at the
 matrix element level of calculations.
 This affects in principle the MC subtraction in the ``fake'' muon control region,
-but the discrepancy is present only for $N_\mathrm{jet}\geq2$, while the control region is 
-% TODO Monika - see comments from Dec14
+however, the discrepancy is present only for $N_\mathrm{jet}\geq2$, while the control region is 
 defined with the requirement $N_\mathrm{jet}\geq1$ and thus this discrepancy does not strongly affect the ``fake'' muon efficiency calculations.
 Furthermore, one the systematic variation of the ``fake'' muon efficiency was obtained with no $N_\mathrm{jet}$ cut at all. The effect of the variation was found to be negligible. This demonstrates that the discrepancy in the $N_\mathrm{jet}$ can be neglected.
 
 % TODO think about some additional description here!
 % TODO check in the Magnars thesis
 The distribution of the $E_T^{miss}$, muon momentum and $m_T$ are shown in \FigureRef{fig:muMMval2}.
+The contribution of the ``fake'' background in the tight distributions (right-hand plots) is tiny. Thus, the agreement between background estimation and observations demonstrates how well background is modelled by the MC simulation.
+Since no $E_T^{miss}$ and $m_T$ are applied there are significantly more statistics available than in the signal region. It allows testing the overall background prediction more precisely.
+
+In the looser muon sample (left-hand plots) the multijet background is significantly enhanced which gives a handle to check the ``fake'' background estimate. 
+A reasonable agreement within 10-15$\%$ for both tight and loose distributions is observed for all distributions.
+The level of the agreement is compatible between loose and tight distributions.
+It proves good estimation of the ``fake'' background.
+
+Taking into account the size of the systematic uncertainties, discussed in \SectionRef{sec:wprimeSystematics}, the data and background prediction agree reasonably well. 
+
+
 % TODO Monika - see comments
 % TODO Else - you could spend a few lines describing also the shape agreement in the plots.
-As one can note the multijet background is significantly enhanced in the looser muon sample with respect to the tight sample. 
-A reasonable agreement within 10$\%$ for both tight and loose distributions is observed for all distributions. Also, shape of the distribution is described reasonably well for both cases as well.
-Taking into account the size of the systematic uncertainties, discussed in \SectionRef{sec:wprimeSystematics}, the data and background prediction agrees reasonably well. 
-The tight muon sample includes the isolation requirement and thus the contribution from multijet background is significantly reduced. Also because no $E_T^{miss}$ and $m_T$ are applied 
-there are significantly more statistics available than in the signal region which allows to test the overall background prediction more precisely. In general, a reasonable agreement is observed. 
+% As one can note the multijet background is significantly enhanced in the looser muon sample with respect to the tight sample. 
+% A reasonable agreement within 10$\%$ for both tight and loose distributions is observed for all distributions. Also, shape of the distribution is described reasonably well for both cases as well.
+% Taking into account the size of the systematic uncertainties, discussed in \SectionRef{sec:wprimeSystematics}, the data and background prediction agrees reasonably well. 
+% The tight muon sample includes the isolation requirement and thus the contribution from multijet background is significantly reduced. Also because no $E_T^{miss}$ and $m_T$ are applied 
+% there are significantly more statistics available than in the signal region which allows to test the overall background prediction more precisely. In general, a reasonable agreement is observed. 
 
 % TODO Else: I like the explanation, but think that you could spend a few lines describing also the shape agreement in the plots.
-
-% \toAsk[Is explanation above good enough?]
-
-% \toAsk[should I focus more of the shape comparison of tight and loose plots?]
-
-% TODO some more discussion here!
-% \toDo[more discussion here?]
 
 \begin{figure}[]
   \centering
@@ -784,7 +787,7 @@ Uncertainties that are not applicable are denoted ``n/a''. \label{tab:syst}}
 \label{sec:wprimeSignalRegion}
 The muon $\eta$, $\phi$, $p_T$, and $E_T^{miss}$ distributions in the signal region are shown in \FigureRef{fig:mu_results_etaphi} and \FigureRef{fig:mu_results_ptmet}. 
 The dominant contribution to the signal region originates from W boson background.
-No visible excess is observed, and good agreement between data and background estimate is observed.
+No visible excess and good agreement between data and background estimate are observed.
 
 The basis for the statistical analysis and the main distribution of interest 
 is the transverse mass distributions which is shown in \FigureRef{fig:MT_mu_Wprime}.
@@ -938,10 +941,9 @@ The lower mass limits of the model correspond to the intersection of the theoret
 \label{sec:wprimeConclusion}
 
 % general search summary
-A search for a new heavy gauge boson $\PWprime$ has been performed in the final state with a muon and missing transverse energy using 3.2 fb$^{-1}$ of $\sqrt{s}=13$~TeV pp collision data collected in 2015~\cite{Aaboud:2016zkn}. 
+A search for a new heavy gauge boson $\PWprime$ has been performed in the final state with a muon and missing transverse energy using 3.2 fb$^{-1}$ of $\sqrt{s}=13$~TeV pp collision data collected in 2015 and has been reported in ref.~\cite{Aaboud:2016zkn}. 
 Upper limits on the cross section for SSM $\PWprime$ production have been set as a function of $\PWprime$ pole mass. A significantly stronger exclusion mass limit has been obtained in comparison with previous ATLAS searches~\cite{atlas_7tev_pub_1fb,atlas_7tev_pub,wprime_8TeV} as shown in \FigureRef{fig:Wprime_allResults}.
-Also, mass limits for three ATLAS analyses done with 8 and 13 TeV data are shown in \TableRef{tab:Wprime_limit_vs_years_ATLAS}.
-The results from the CMS collaboration are shown in \TableRef{tab:Wprime_limit_vs_years_CMS}. Measured mass limits are compatible between the experiments.
+For comparison, the mass limits for three ATLAS analyses done with 8 and 13 TeV data are shown in \TableRef{tab:Wprime_limit_vs_years_ATLAS} as well as the results from the CMS collaboration shown in \TableRef{tab:Wprime_limit_vs_years_CMS}. Measured mass limits are compatible between the experiments.
 
 \begin{figure}[]
  \includegraphics[width=0.8\textwidth]{Wprime/combWprime_summary.eps}
@@ -1004,16 +1006,18 @@ to the problem with alignment in the muon spectrometer as was described previous
 Another improvement mentioned previously is to use $m_T$ binned diboson and top MC background samples, which will provide enough statistics to populate the high-$m_T$ region and no extrapolations will be needed (which is the dominant contribution to the systematic uncertainty).
 
 % muon identification cut
-Also one can investigate the possibility to loose a strict ``high-$p_T$'' set of muon identification criteria, which improves the momentum resolution but also significantly reduce the muon reconstruction efficiency.
+One can investigate the possibility to loose a strict ``high-$p_T$'' set of muon identification criteria, which improves the momentum resolution but also significantly reduce the muon reconstruction efficiency.
 
 % reduce the efficiency of muon reconstruction for approximately 20$\%$ in comparison with ``tight'' one. However one need to be careful that the muon momentum resolution doesn't worsen significantly.
 
 % new methods from SM W measurements
-A better understanding of the missing transverse mass could result in a significant reduction of the systematic uncertainty in the low-$m_T$ region, which is used for validation of the fake background estimation.
+A better understanding of the missing transverse mass could result in a significant reduction of the systematic uncertainty in the low-$m_T$ region, which is used for validation of the background estimations.
 
 % TODO rewrite it. write it as outlook not as a summary
-Also a sensitivity study of the signal selection for different DM models which predict production of WIMPs in association with a SM W has been done (see \AppendixRef{app:monoW}).
-It has been shown that the current signal selection has low sensitivity to considered DM models moreover, is not sensitive as searches with jet final signatures.
+One of the possibilities to extend the analysis is to consider BSM models which assume as associate pair production of the DM particles with SM $W$ boson.
+Such models have been investigated in the previous ATLAS search~\cite{wprime_8TeV}
+Thus, a sensitivity study of the signal selection for different DM models has been done (see \AppendixRef{app:monoW}).
+Performed study concluded that the current signal selection has low sensitivity to the DM models recommended by the ATLAS/CMS Dark Matter Forum~\cite{DM_forum_2015}.
 
 
 
