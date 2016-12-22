@@ -45,8 +45,8 @@
 \newcommand{\toDo}[1][]{\colorbox{green!40}{[TODO: #1]}}
 
 %% To add line numbers to the text
-\usepackage{lineno}
-\linenumbers
+% \usepackage{lineno}
+% \linenumbers
 
 %% Start the document
 \begin{document}
@@ -54,9 +54,9 @@
 % \let\Contentsline\contentsline
 % \renewcommand\contentsline[3]{\Contentsline{#1}{#2}{}}
 %% Define the un-numbered front matter (cover pages, rubrik and table of contents)
-% \begin{frontmatter}
-%   \input{otherText/frontmatter}
-% \end{frontmatter}
+\begin{frontmatter}
+  \input{otherText/frontmatter}
+\end{frontmatter}
 
 % TODO there is tableofcontents in frontmatter. Just temprorary
 % \tableofcontents
@@ -67,7 +67,7 @@
 %   \input{mainChapters/theory}
 %   \input{mainChapters/ATLAS}
 %   \input{mainChapters/TRT}
-  \input{mainChapters/LUCID}
+%   \input{mainChapters/LUCID}
 %   \input{mainChapters/SS}
 %   \input{mainChapters/wprime}
   %% To ignore a specific chapter while working on another, making the build faster, comment it out:
