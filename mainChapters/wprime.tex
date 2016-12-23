@@ -707,7 +707,7 @@ The PDF uncertainty of the CT14NNLO PDF is one of the main theory uncertainties
 and it was calculated by using 90$\%$ CL PDF error set.
 The uncertainty related to the choice of the PDF set used was estimated by comparing
 results with NNPDF3.0~\cite{Ball:2014uwa}.
-The difference between CT14 and HERAPDF2.0 is not considered as the PDF does not include high Bjorken x data. 
+The difference between CT14 and HERAPDF2.0 is not considered as the PDF does not include high Bjorken-$x$ data. 
 % TODO fix above about x. comment from Oxana
 
 The uncertainty of the ``Top'' and ``Diboson'' backgrounds modelling consists of the theoretical cross section uncertainty and the high-$m_T$ extrapolation uncertainty. The former uncertainty affects the total background
@@ -880,21 +880,22 @@ The likelihood function is constructed as the product of Poisson probabilities o
 % The likelihood function is constructed as the product of Poisson probabilities of over all $m_T$ bins in the search region.
 The effect of systematic uncertainties is described by nuisance parameters in the likelihood function.
 
-The total efficiency (the product of acceptance and reconstruction efficiency)
-needed by the statistical analysis to calculate the number of expected events is shown in \FigureRef{fig:AccEff_mu}.
-The slow decrease of the total efficiency from 1 TeV can be explained by the shape
-of the $\PWprime$ signal, which becomes more prolonged in the low-$mT$ region with increasing of the $\PWprime$ pole mass as shown in \FigureRef{???}.
-\toDo[insert plot]
+% TODO total efficiency... maybe include it later...
+% The total efficiency (the product of acceptance and reconstruction efficiency)
+% needed by the statistical analysis to calculate the number of expected events is shown in \FigureRef{fig:AccEff_mu}.
+% The slow decrease of the total efficiency from 1 TeV can be explained by the shape
+% of the $\PWprime$ signal, which becomes more prolonged in the low-$mT$ region with increasing of the $\PWprime$ pole mass as shown in \FigureRef{???}.
+% \toDo[insert plot]
 % TODO !!! insert fucking plot 
 
-\begin{figure}[]
-  \centering
-  \includegraphics[width=0.65\textwidth]{Wprime/acceptance.eps}
-  \caption{
-  Total reconstruction efficiency ($\varepsilon_{tot}$) of $\PWprime \to \mu \nu$ as a function of simulated $\PWprime$ mass.
-  }
-  \label{fig:AccEff_mu}
-\end{figure}
+% \begin{figure}[]
+%   \centering
+%   \includegraphics[width=0.65\textwidth]{Wprime/acceptance.eps}
+%   \caption{
+%   Total reconstruction efficiency ($\varepsilon_{tot}$) of $\PWprime \to \mu \nu$ as a function of simulated $\PWprime$ mass.
+%   }
+%   \label{fig:AccEff_mu}
+% \end{figure}
 
 % Statistical analysis demonstrates that no excess larger than 2$\sigma$ is observed.
 % Therefore we proceed to set upper limit on the cross section for the production of $\PWprime$ times branching ratio has been set. 
@@ -952,7 +953,7 @@ The lower mass limits of the model correspond to the intersection of the theoret
 % general search summary
 A search for a new heavy gauge boson $\PWprime$ has been performed in the final state with a muon and missing transverse energy using 3.2 fb$^{-1}$ of $\sqrt{s}=13$~TeV \pp collision data collected in 2015. This has also been reported in Ref.~\cite{Aaboud:2016zkn}. 
 Upper limits on the cross section for SSM $\PWprime$ production have been set as a function of the $\PWprime$ pole mass. A significantly stronger exclusion mass limit has been obtained in comparison to previous ATLAS searches~\cite{atlas_7tev_pub_1fb,atlas_7tev_pub,wprime_8TeV} as shown in \FigureRef{fig:Wprime_allResults}.
-For comparison, the mass limits for three ATLAS analyses done with 8 and 13 TeV data are shown in \TableRef{tab:Wprime_limit_vs_years_ATLAS} and the results from the CMS collaboration shown are in \TableRef{tab:Wprime_limit_vs_years_CMS}. As can be seen, the measured mass limits are compatible between the two experiments.
+For comparison, the mass limits for three ATLAS analyses using $\sqrt{s}=8$ and 13~TeV data are shown in \TableRef{tab:Wprime_limit_vs_years_ATLAS} and the results from the CMS collaboration shown are in \TableRef{tab:Wprime_limit_vs_years_CMS}. As can be seen, the measured mass limits are compatible between the two experiments.
 
 \begin{figure}[]
  \includegraphics[width=0.8\textwidth]{Wprime/combWprime_summary.eps}
@@ -1016,8 +1017,8 @@ Even with more luminosity, the DM interpretation in this channel is not worthwhi
 
 
 % recovery excluded phase space and mT-binned samples
-There are still ways to improve and develop the analysis.
-One of the obvious possibilities is to include phase-space that has been excluded due
+There are still ways to improve the analysis.
+One of the possibilities is to include phase-space that has been excluded due
 to the problem with the alignment in the muon spectrometer as was described in \SectionRef{subsec:lepton_selection}.
 Another improvement mentioned previously is to use $m_T$ binned diboson and top MC background samples, which will provide enough statistics to populate the high-$m_T$ region and no extrapolations will be needed (which is the dominant contribution to the systematic uncertainty).
 
