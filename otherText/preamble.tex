@@ -76,13 +76,16 @@
 \DeclareRobustCommand{\epluseminus}{\Ppositron\!\Pelectron\xspace}
 \DeclareRobustCommand{\protonproton}{\Pproton\APantiproton\xspace}
 
+
 \DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
 
 % Some custom declarations needed for pieces of text taken from internal notes...
 \def\Wpm{\ensuremath{W^{\pm}}}%
 \def\antibar#1{\ensuremath{#1\bar{#1}}}
 % \def\tbar{\ensuremath{\bar{t}}}
-\def\ttbar{\antibar{t}}
+
+\DeclareRobustCommand{\ttbar}{\antibar{t}\xspace}
+\DeclareRobustCommand{\pp}{\textit{pp}\xspace}
 
 %% Fix for \bf problem in bibliography
 \DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
@@ -125,6 +128,14 @@
 % \usepackage{tikz}
 % \usepackage[xindy]{glossaries}
 % \makeglossaries
+
+\usepackage[percent]{overpic}
+\usepackage{xcolor}
+\newcommand\crule[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+% USAGE: 
+% \begin{overpic}[width=0.5\textwidth,grid,tics=10]{momentum_resolution.png}
+%  \put (20,10) {\crule[blue]{0.1\textwidth}{0.1\textwidth}}
+% \end{overpic}
 
 \graphicspath{ {/home/oviazlo/PhD_study/THESIS/pictures/} }
 \DeclareGraphicsExtensions{.eps, .pdf, .png}

@@ -47,7 +47,7 @@ the decrease of the luminosity over the run as well as the interfill period betw
 
 
 It is worth mentioning that there are other types of runs, which are used for LHC beam performance studies or special detector tests.
-One example of such a special run is the so-called van-der-Meer (vdM) run which is used to calibrate  the luminometers in the experiments as will be described in \SectionRef{subsec:alfa_run}.
+One example of such a special run is the so-called van der Meer (vdM) run which is used to calibrate  the luminometers in the experiments as will be described in \SectionRef{subsec:alfa_run}.
 
 % LHC program description
 The LHC running schedule is split into different periods which are called Runs (not to be confused with physics runs mentioned above). Run-1 started at the LHC startup and was using a 50 ns bunch spacing in the trains and had a center-of-mass energy of 7 and 8 TeV. 
@@ -135,7 +135,7 @@ The material  budget of the ID is shown in \FigureRef{fig:material_budget}.
 
 The particle density is falling with the distance from the IP as $1/R^2$, 
 thus the layers close to the IP need to have a high granularity in order to be able to distinguish between
-hundreds of particles from one pp collision, while the outermost layers can have a lower granularity.
+hundreds of particles from one \pp collision, while the outermost layers can have a lower granularity.
 The ID consists of three subdetectors, listed from innermost to outermost: the high-granular silicon pixel detector, the silicon strip (SCT) detector and the transition radiation tracker (TRT).
 
 
@@ -196,27 +196,27 @@ The hadronic calorimeter is divided up into a barrel hadronic calorimeter coveri
 \subsubsection{EM calorimeter}
 The ATLAS EM calorimeter is a sampling calorimeter with accordion-shaped lead absorbers and kapton electrodes.
 \FigureRef{fig:EMgran} shows the accordion shaped geometry of the ATLAS EM calorimeter. The accordion geometry provides a fast signal readout and an azimuthal symmetry without cracks. Liquid Argon (LAr) is used as an active material. The EM calorimeter is divided into two barrel parts ($|\eta|<1.475$) and end-caps ($1.375<|\eta|<3.2$).
-The end-cap calorimeter on each side consists of two wheels: the Inner Wheel ($1.375<|\eta|<2.5$) is the closest part to the beam pipe, while the
-Outer Wheel ($2.5<|\eta|<3.2$) is the part furthest from the beam pipe.
+The end-cap calorimeter on each side consists of two wheels: the Inner Wheel ($1.375<|\eta|<2.5$) is the closest part to the beampipe, while the
+Outer Wheel ($2.5<|\eta|<3.2$) is the part furthest from the beampipe.
 The amount of material in terms of number of electromagnetic radiation lengths ($X_0$) is shown in \FigureRef{fig:material_budget_calo}.
 The thickness of the EM calorimeter is above $24 X_0$ in the barrel and above $26 X_0$ in the end-cap regions.
 
 Both the barrel and the end-cap calorimeters are segmented into three longitudinal layers. The first layer has a thickness of about $6 X_0$ and plays a role as a preshower. It has the finest granularity in $\eta$ with a cell width of about 4~mm. The second layer has a thickness of about $18 X_0$ and is designed to contain almost a full EM shower. It has the finest cell granularity in $\phi$ and provides the azimuth coordinate of the electromagnetic shower direction. The third layer has a two times coarser granularity and the thickness varying between $2 X_0$ and $12 X_0$. The read-out granularity of the LAr system and the accordion shape of the EM calorimeter are schematically illustrated in \FigureRef{fig:EMgran}.
 
-\begin{figure}[h!]
-\centering
- \includegraphics[width=0.5\textwidth]{intro/caloDepth_eta.png}
- \caption{
- The amount of material traversed by a particle before and in the EM calorimeter, in units of radiation lengths $X_0$ , as a function of $|\eta|$. Different colors represent three different longitudinal layers of the EM calorimeter.}
-\label{fig:material_budget_calo}
-\end{figure}
-
-\begin{figure}[h!]
+\begin{figure}[h]
 \centering
  \includegraphics[width=0.6\textwidth]{intro/LARG3-TDR-barrelM_samplings_presamp_new.png}
  \includegraphics[width=0.39\textwidth]{intro/F3-eps-converted-to.pdf}
  \caption{Read-out granularity and accordion shape of the barrel EM calorimeter.}
 \label{fig:EMgran}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.5\textwidth]{intro/caloDepth_eta.png}
+ \caption{
+ The amount of material traversed by a particle before and in the EM calorimeter, in units of radiation lengths $X_0$ , as a function of $|\eta|$. Different colors represent three different longitudinal layers of the EM calorimeter.}
+\label{fig:material_budget_calo}
 \end{figure}
 
 The main goal of the lead absorbers in the sampling EM calorimeter is to develop an electromagnetic shower, with a part of the EM shower detected in the LAr sensitive material. The energy deposited in the absorber material is accounted for by the known sampling fraction of the calorimeter. In order to achieve a good performance of an EM calorimeter, an important aspect is the material in front of the calorimeter as it degrades the energy resolution of the calorimeter~\cite{electron_tight}.
@@ -266,7 +266,7 @@ The muon track in the MS is reconstructed in two steps. In the first step the mu
 % TRIGGER
 % Why do we need triggers
 The maximal theoretically possible collision rate at the LHC is 40MHz.
-Since the size of one pp collision event recorded by the ATLAS detector is 1-2 Mbytes, there is no physical possibility to record such a huge stream of data and store it permanently. However, more than 99$\%$ of the events happening in pp collisions have no interest for physicists because they have been well studied previously due to their high cross section. Thus one wants to ``hunt'' only for events which occur very rarely. This is why non-interesting events have to be rejected by the trigger system.
+Since the size of one \pp collision event recorded by the ATLAS detector is 1-2 Mbytes, there is no physical possibility to record such a huge stream of data and store it permanently. However, more than 99$\%$ of the events happening in \pp collisions have no interest for physicists because they have been well studied previously due to their high cross section. Thus one wants to ``hunt'' only for events which occur very rarely. This is why non-interesting events have to be rejected by the trigger system.
 % Three-level trigger system with description of the L1, ROI, L2 and EF
 The ATLAS experiment has three levels of triggers: a hardware-based level 1 (L1), a software-based level 2 (L2) and the Event Filter (EF)~\cite{tdr_tdaq}.
 The reduction of the rate of the accepted events for the three trigger levels is shown in \FigureRef{fig:trigger_rate}.
@@ -275,7 +275,7 @@ The L1 trigger uses trigger chambers in the MS and the coarse-granulated calorim
 \begin{figure}[h!]
 \centering
  \includegraphics[width=0.7\textwidth]{intro/trigger_rate_anthony.png}
- \caption{The acceptance rate as a function of time needed to make a decision about the event by the trigger. A comparison with the rate of the SM processes occurring in the pp collision are shown as well~\cite{anthony_thesis}.}
+ \caption{The acceptance rate as a function of time needed to make a decision about the event by the trigger. A comparison with the rate of the SM processes occurring in the \pp collision are shown as well~\cite{anthony_thesis}.}
 \label{fig:trigger_rate}
 \end{figure}
 

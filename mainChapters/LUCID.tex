@@ -24,7 +24,7 @@ Special attention is given to the calibration system of the detector and the dev
 % I participated in the detector assembly in the clean room and did testing of the detector during this process.
 % Testing of LED and laser diffusers were done in order to cross check the integrity of fibers and the homogeneity of signals between all PMTs.
 % Also temperature stress-test was performed in order to understand what maximum temperature could be allowed without destroying the detector during the 
-% beam pipe bake-out procedure.
+% beampipe bake-out procedure.
 % In the operational phase the main focus was on understanding the aging of PMTs and the possibility to improve the calibration system.
 % 
 % The LUCID group published a paper with a description of the choice and the characterization of photomultipliers for the new LUCID detector for Run-2~\cite{Alberghi:2016tad}.
@@ -539,7 +539,7 @@ The new material was chosen to minimize the induced radioactivity of the beampip
 The new beampipe also had a reduced aperture in the inner detector region to allow for a new pixel inner barrel layer (IBL) of the inner tracker.
 
 In order to remove residual gas molecules from the inner walls of the new beampipe (which otherwise will lead to significant beam-gas interactions during operation)
-the beampipe had to undergo a so called ``bake-out'' process, which consists of heating up the walls of the beam pipe from the outside.
+the beampipe had to undergo a so called ``bake-out'' process, which consists of heating up the walls of the beampipe from the outside.
 
 Since LUCID sits close to the beampipe there was a need to understand the temperature tolerance of the detector components.
 During the design phase a special cooling system of the detector was proposed in order to protect PMTs, cables and calibration fibers against potential overheating.
@@ -618,7 +618,7 @@ In order to satisfy this condition the temperature gradient was chosen to be 0.2
 % TODO probably make it not here.
 The PMT signal was digitized by a 12 bit VME Flash ADC which was operated by the ATLAS central Trigger and Data Acquisition (TDAQ) framework.
 In order to record only signals from the Bi-207 source, a triggering was done that requires a signal above a certain threshold.
-The digitized pulse height of every triggered event was stored in ROOT files.
+The digitized pulseheight of every triggered event was stored in ROOT files.
 The shape of the digitized pulses from a Bi-207 source is shown in \FigureRef{fig:bi207DigitizedPulse}. 
 
 \begin{figure}
@@ -729,7 +729,7 @@ to temperatures above 95\degree~C for a long period of time.
 % Also to provide circulation of air in the detector region additional air cooling was installed. 
 % [according to Giulio air circulation was essential in order to make sure that some gas will not get into PMTs???]
  
-\subsection{Temperature conditions during the beam pipe bake-out and detector operational period}
+\subsection{Temperature conditions during the beampipe bake-out and detector operational period}
 
 The LUCID detector was equipped with 18 temperature sensors per side which were installed (see \FigureRef{fig:TempProbes1}
 and \FigureRef{fig:temperatureProbes_VJCone})
@@ -739,7 +739,7 @@ Temperatures from all sensors were recorded and archived every 10 seconds.
 \begin{figure}
 \centering
 \includegraphics[width=.99\textwidth]{LUCID/temperatureProbes_1_v3.jpg}
-\caption{Positions of the temperature probes close to the beam pipe flange.}
+\caption{Positions of the temperature probes close to the beampipe flange.}
 \label{fig:TempProbes1}
 \end{figure}
 
@@ -750,7 +750,7 @@ Temperatures from all sensors were recorded and archived every 10 seconds.
 \label{fig:temperatureProbes_VJCone}
 \end{figure}
 
-The temperature from the sensor placed in the cable tray and at the beam pipe flange during the beampipe bake-out is shown in \FigureRef{fig:NEG_ctflangeA}.
+The temperature from the sensor placed in the cable tray and at the beampipe flange during the beampipe bake-out is shown in \FigureRef{fig:NEG_ctflangeA}.
 The temperature were well within the safety margin and didn't exceed 40\degree~C. The temperature from other sensors didn't exceed 40\degree~C either.
 It demonstrated the high efficiency of the beampipe insulation and the LUCID cooling system, and no damage to the LUCID detector components was done.
 
@@ -1100,11 +1100,11 @@ coordination with the Tile sub-detector which makes it more complicated to use.
 \subsection{The first 13 TeV collisions at the LHC}
 \label{sec:physics}
 
-The LHC reported the first 13 TeV pp collision in May 2015 and these were  duly recorded by ATLAS and other LHC experiments. 
+The LHC reported the first 13 TeV \pp collision in May 2015 and these were  duly recorded by ATLAS and other LHC experiments. 
 Starting from that time the new LUCID was succesfully operating and provided information about the 
 luminosity delivered to ATLAS. 
 % More than a femtobarn of luminosity is already recorded by ATLAS, which provides a
-% sufficient amount of data about the performace of the LUCID detector with a high number of pp-interaction per bunch 
+% sufficient amount of data about the performace of the LUCID detector with a high number of \pp-interaction per bunch 
 % crossing.
 
 The PMT pulseheight distribution in a physics run is shown in the left plot of \FigureRef{fig:Pulseheight} (blue) 
@@ -1145,7 +1145,7 @@ detector. The agreement between the two LUCID arms is better than 1$\%$.}
 \label{fig:InternalConsistency}
 \end{figure}
 
-The left plot of \FigureRef{fig:LumiVsTime} shows a measurement of the average number of inelastic pp collisions 
+The left plot of \FigureRef{fig:LumiVsTime} shows a measurement of the average number of inelastic \pp collisions 
 using different ATLAS 
 luminometers, and the right plot shows the ratio of this measurement with respect to a LUCID measurement. The BCM 
 detector (described in next section) shows a deviation of up to 2$\%$ during this LHC fill but the Tile calorimeter measurements are all in agreement 
@@ -1273,13 +1273,13 @@ The main approach used by ATLAS to investigate systematic effects is to compare 
 Different detectors have different acceptance coverage, sensitivity and methods to measure the luminosity, 
 which means different detector behavior and response to pile-up and beam-induced backgrounds.
 
-In \FigureRef{fig:mu_dependence} the ratio of the average number of pp interactions per bunch crossing measured by the Tile Calorimeter to that of BI$\_$OR$\_$A LUCID is shown.
+In \FigureRef{fig:mu_dependence} the ratio of the average number of \pp interactions per bunch crossing measured by the Tile Calorimeter to that of BI$\_$OR$\_$A LUCID is shown.
 Values have been normalized in such a way that the ratio is equal to 1 for the vdM fill.
 One can observe a clear $\mu$-dependence in both 50 and 25 ns runs. 
 The decrease is equal to 0.1$\%$ for one unit of $\mu$ for 50 ns runs and is approximately 0.2$\%$ for 25 ns runs.
 % TODO ask Vincent for possible reasons of this (sentence above)?
 A similar dependence has been observed with respect to the track counting algorithm.
-One of the effects which contribute to the $\mu$-dependence is the assumption that the probability of an individual pp interaction to give a hit (or event) does not depend on the number of interactions in the bunch crossing, which was made during the derivation of \EquationRef{eq:logFormula}.
+One of the effects which contribute to the $\mu$-dependence is the assumption that the probability of an individual \pp interaction to give a hit (or event) does not depend on the number of interactions in the bunch crossing, which was made during the derivation of \EquationRef{eq:logFormula}.
 However, in the case of many $pp$ interactions the signals from separate proton collisions which do not provide large enough signal to reach the threshold value can sum up and give a hit. 
 This effect is known as a pile-up (or migration).
 It is present at some level in any counting algorithm because they rely on the definition of independent hits as a signal exceeding a certain threshold.
@@ -1318,7 +1318,7 @@ However, no special systematic uncertainty is assigned to this because these dif
 and the estimation of the systematic uncertainty from the run-to-run stability will cover $\mu$-dependence effects as well.
 
 % By extrapolating curves of 25 and 50 ns runs to low-$\mu$ values one can see that extrapolation from high-$\mu$ region will not match with values obtained in vdM runs.
-As one can see from \FigureRef{fig:mu_dependence}, the ratio of the the average number of pp interactions per bunch crossing
+As one can see from \FigureRef{fig:mu_dependence}, the ratio of the the average number of \pp interactions per bunch crossing
 measured by the Tile Calorimeter to that of BI$\_$OR$\_$A LUCID is systematically below 1. 
 It means that the calibration constant $\sigma^{vis}$ (measured in vdM runs for LUCID) is not directly applicable for the high-$\mu$ regime, 
 which was the case for 2012 as well~\cite{Aaboud:2016hhf}.

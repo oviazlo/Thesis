@@ -5,7 +5,7 @@
 % 1) explain my personal contribution to the study.
 
 This chapter describes the performance of the ATLAS Transition Radiation Tracker (TRT) detector with an Argon-based gas mixture in some sectors of the detector.
-The TRT was designed for a Xenon-based mixture with carbon dioxide and oxygen additions (in proportions 70/27/3).
+The TRT was designed for a Xenon-based mixture with carbon dioxide and Oxygen additions (in proportions 70/27/3).
 However, leaks in some drift tubes led to the decision to switch to a cheaper Argon-based mixture for the leaking modules.
 This chapter covers a description of the implementation of the Argon mixture in the TRT digitization package.
 The chapter consists of three sections. In \SectionRef{sec:TRT_intro}, an overview of the detector running conditions is given. In \SectionRef{sec:trt_straw_hw}, the general TRT description is presented with an emphasis on a description of the drift tubes, the gas used and the front-end electronics.
@@ -38,7 +38,7 @@ and a study of the possibility of using Argon-based gas mixtures (which are sign
 With time, the amount of leaking gas increased, and it became inevitable to switch to the Argon mixture 
 for the most leaking TRT modules. In \FigureRef{fig:mixed_condition_2015_2016} the gas configurations of the TRT used in years 2015 and 2016 are shown, demonstrating that the problem was gradually increasing with time.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -117,7 +117,7 @@ These two films are placed back to back and are glued by a 5 $\mu$m thick polyur
 Mechanically, each straw is supported by 4 carbon fiber bundles.
 The anode is a 30 $\mu$m diameter tungsten wire coated with a 0.6-0.7 $\mu$m layer of gold.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=.4\textwidth]{TRT/straw_cross_section.png}
 \caption{ 
@@ -136,15 +136,15 @@ safety margin in case the high voltage has to be changed to correct for temperat
 or to adjust for 
 heavy-ionizing particle effects~\cite{Abat:2008zza}.
 Several noble gases were considered as a main component of the gas mixture. Because they are inert they are safe to use in the detector for a long time, and they have 
-excellent photo-adsorption cross sections.
+excellent photoadsorption cross sections.
 The target energy of transition radiation photons for electron identification is in the range of 1-20 keV.
 In \FigureRef{fig:absorption_lenght} the absorption lengths are shown for the four heaviest noble gases.
 As one can see, the best choice would be Radon, but due to its radioactivity it can not be used.
 The next candidate was Xenon, and it was chosen to be the main gas component.
-Because of the high cost of Xenon it was decided to use Argon gas for a large number of tests and during the commissioning phase before pp collisions. This is the reason why the read-out electronics was
+Because of the high cost of Xenon it was decided to use Argon gas for a large number of tests and during the commissioning phase before \pp collisions. This is the reason why the read-out electronics was
 designed with a possibility to work with both Argon- and Xenon-based gas mixtures, as described in \SectionRef{subsubsec:front_end_electronics}.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=.7\textwidth]{TRT/absorption_lenght_noble_gases.png}
 \caption{ 
@@ -155,12 +155,12 @@ designed with a possibility to work with both Argon- and Xenon-based gas mixture
 
 In order to have a well controlled electron avalanches in the straw, one has to add another gas component, a quencher. The main purpose of the quencher is to absorb UV photons created in the avalanche process and to prevent secondary avalanches, which can lead to an early breakdown.
 After a dedicated study, reported in~\cite{Abat:2008zza}, it was decided to use carbon dioxide as a quencher due to its suitability and well known properties.
-In order to increase the width of the operating plateau even more, a third gas component, oxygen, was added.
+In order to increase the width of the operating plateau even more, a third gas component, Oxygen, was added.
 By itself $O_2$ does not interact with UV photons, but ozone ($O_3$), which is created in the electron avalanches, does.
 However, $O_2$ is a strongly electronegative gas, which can negatively affect straw performance by capturing drifting primary electrons, as described below,
 and therefore only a few percent of it can be used in the mixture.
  
-The final choice of the gas mixture to be used in the TRT was decided to be 70$\%$ of Xenon, 27 $\%$ of carbon dioxide and 3$\%$ of oxygen.
+The final choice of the gas mixture to be used in the TRT was decided to be 70$\%$ of Xenon, 27 $\%$ of carbon dioxide and 3$\%$ of Oxygen.
 When some straws started to leak, it was decided to switch the main gas component from Xenon to Argon for these straws, due to economic reasons.
 Argon has significantly higher absorption length with respect to Xenon, as can be seen in \FigureRef{fig:absorption_lenght} (approximately an order of magnitude difference), 
 therefore straws with Argon almost completely lose the ability to detect transition radiation, 
@@ -169,7 +169,7 @@ which means losing the particle identification capability.
 The operating gas gain for the straws was chosen to be 2.5 $\cdot$ 10$^4$~\cite{ID_TDR_vol1} and it had to be the same for all straws. It corresponds to 1530~V for the Xenon mixture, as shown in \FigureRef{fig:gas_gain}.
 The gas gain curve for the Argon mixture is significantly different, and to reach the same gain only a voltage of 1420~V had to be applied.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=.5\textwidth]{TRT/gas_gain_Xe_Ar.png}
 \caption{ 
@@ -198,7 +198,7 @@ A value of 1 is assigned to a bit if the signal amplitude is higher than the pre
 otherwise a value of 0 is assigned. The first transition in the bit pattern from 0 to 1 corresponds to the so-called leading edge of the signal and the transition from 1 to 0 
 corresponds to the trailing edge of the signal. Their difference is equal to the Time over Threshold of the signal. 
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
  \includegraphics[width=0.8\columnwidth]{TRT/fromPoster/TRTdigi4.pdf}
 \caption{Illustration of the digitization of the straw signal.}
@@ -210,14 +210,14 @@ corresponds to the trailing edge of the signal. Their difference is equal to the
 % Measurements in the laboratory showed that signal from the straw consists from two components, as shown in \FigureRef{fig:ion_tail}: 
 % a sharp peak, which correspond to the primary ionization electrons, created by passing particle, reaching the anode wire and the ion tail, which is caused by ion drift towards the cathode.
 % When ions hit the wall of the straw there is a probability that it will free a few electrons from the wall which will start to drift towards the anode.
-% This effect is partly compensated by the oxygen gas component, which provide recapturing of the electron by oxygen moleulus, as described in the following \SectionRef{subsec:recapture}.
+% This effect is partly compensated by the Oxygen gas component, which provide recapturing of the electron by Oxygen moleulus, as described in the following \SectionRef{subsec:recapture}.
 % But some electrons will reach anode and will cause slowly falling component of the signal. To cancel out 
 
 A typical signal from the straw consists of two components, as shown in \FigureRef{fig:ion_tail}: 
 a sharp peak, which corresponds to the fast electron drift, and a slowly falling ion tail, which corresponds to the gas ions created in the avalanche process.
 Only the electron peak contains information of interest (the drift time of the primary electron clusters), thus the ion tail is canceled out by adding a mirror image pulse to the signal.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=.6\textwidth]{TRT/ion_tail.png}
 \caption{ 
@@ -245,7 +245,7 @@ information from two ASDBLRs and holds data in the pipeline until the first leve
 % If the event is accepted, data is sent further to read-out electronics.
 The overall TRT read-out chain is shown in \FigureRef{fig:electronics}. The detailed description of the TRT electronics is reported in~\cite{TRT_electronics}.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=.8\textwidth]{TRT/nice_ASDBLR_schematics.png}
 \caption{ 
@@ -255,7 +255,7 @@ The overall TRT read-out chain is shown in \FigureRef{fig:electronics}. The deta
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=.7\textwidth]{TRT/electronics.png}
 \caption{ 
@@ -298,7 +298,7 @@ In the same manner, the time residuals can be measured, which are equal to the d
 $r-t$ relation.
 
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=.7\textwidth]{TRT/drift_radius.png}
 \caption{ 
@@ -338,7 +338,7 @@ This plot shows the momentum resolution of cosmic rays data collected in 2008, f
 A clear and significant improvement can be seen, especially in the high momentum region.
 
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=.6\textwidth]{TRT/TRT_improvement_momentum_resolution.png}
 \caption{ 
@@ -389,7 +389,7 @@ Typical MC generators used in ATLAS
  data, e.g. some timing shifts in the electronics can not be simulated because they do not play any role, which means that the timing corrections of the calibrated constants will be different for simulation and real data.
 \end{itemize}
 
-A more detailed description of the ATLAS detector simulation can be found in ref.~\cite{Aad:2010ah}.
+A more detailed description of the ATLAS detector simulation can be found in Ref.~\cite{Aad:2010ah}.
 
 \subsection{Simulation and digitization of the Argon gas mixture in the TRT}
 \label{subsec:TRT:argonImpl}
@@ -408,7 +408,7 @@ The digitization package also covers the simulation of the following properties:
 \begin{itemize}
  \item The number of the primary ionization clusters along the particle path and the number of electrons in these clusters
  \item The drift time of the electrons to the anode wire, taking into account the magnetic flux density and drift diffusion
- \item The probability of electron recapture by the oxygen molecules
+ \item The probability of electron recapture by the Oxygen molecules
  \item The signal shaping and discrimination by the front-end electronics
  \item The detector white noise
 \end{itemize}
@@ -496,16 +496,16 @@ The PAI tool calculates the mean free path, which is the distance between two ne
 The mean free paths for Xenon- and Argon-based gas mixtures, calculated by the PAI tool, are shown in \FigureRef{fig:meanFreePath} as a function of the scaled kinetic energy 
 (the kinetic energy of a particle scaled by the factor $\frac{m_{proton}}{m_{particle}}$). As one can see, the mean free path for the Argon mixture is approximately 1.5 times longer than the one in the Xenon mixture.
 The mean free path for a highly energetic pion is 150-160 $\mu$m in the Xenon mixture. If a pion penetrates a straw centrally close to the anode (i.e. will travel 4 mm in the gas), then 25-27 primary clusters will appear.
-However, if it will travel 2 mm in the gas, the number of clusters will be only 12-14, and a part of them will not reach the anode due to recapture in the oxygen. 
+However, if it will travel 2 mm in the gas, the number of clusters will be only 12-14, and a part of them will not reach the anode due to recapture in the Oxygen. 
 That is why measurements of the time of when the first cluster arrived to the anode will not directly correspond to the measurement of the distance of the closest approach between the wire and the track, 
 which can be seen in \FigureRef{fig:clusterDriftInTube}. This effect is directly linked to the spatial resolution of the hit.
 For the Argon mixture, the number of clusters will be even smaller (8-9 clusters created by a particle traveling 2 mm in the mixture), which leads to an even worse spatial hit resolution in the Argon mixture comparing 
 to the Xenon one.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
  \includegraphics[width=0.7\columnwidth]{TRT/meanFreePath.eps}
-\caption{Mean free path of a relativistic muon as a function of scaled kinetic energy ($E_{kin}\frac{m_{proton}}{m_{particle}}$) for Xenon- and Argon-based gas mixtures.}
+\caption{Mean free path of a relativistic muon as a function of scaled kinetic energy $\big(E_{kin}\frac{m_{proton}}{m_{particle}}\big)$ for Xenon- and Argon-based gas mixtures.}
 \label{fig:meanFreePath}
 \end{figure}
 
@@ -553,7 +553,7 @@ such as the creation of the UV photons etc. However, if one assumes that all tub
 be possible to use tabulated average values of the drift time calculated by the Garfield package (and cross checked in the laboratory) to simulate it.
 This is the approach used by the TRT community. 
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
  \includegraphics[width=0.85\columnwidth]{TRT/electron_drift.png}
 \caption {Drift of primary electron clusters in a straw tube without (left) and with (right) a magnetic field~\cite{cwetanski_thesis}. 
@@ -577,7 +577,7 @@ To get the $r-t$ relation for a specific value of the magnetic field, $B_{eff}$,
 where $RT_{MAX}$ corresponds to the $r-t$ relation for the magnetic field $B_{max}$ (which is equal to 2T -- the maximum magnetic field in ATLAS) and $RT_{WO}$ is the 
 $r-t$ relation for the case without magnetic field.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
  \includegraphics[width=0.99\columnwidth]{TRT/rt_comp.png}
 \caption{r-t relation for the Xenon- (red) and Argon-based (green) gas mixtures. The curve for the Argon-based mixture was obtained from the Garfield simulation. 
@@ -602,7 +602,7 @@ Black points correspond to the drift time spread obtained with the Garfield simu
 In the digitization code, the spread is parameterized by a 4-th order polynomial
 in order to preserve consistency (the spread of the drift time is shown with red and green points in \FigureRef{fig:diffusion} for Xenon and Argon accordingly).
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.69\columnwidth]{TRT/diffusion.eps}
 \caption{Electron drift-diffusion in Xenon- (red) and Argon-based (green) gas mixtures as modelled in the digitization package (with a 4-th degree polynomial). 
@@ -616,7 +616,8 @@ Black points correspond to the Garfield simulation for the an Argon-based gas mi
 \subsection{Electron attachment processes in Oxygen}
 \label{subsec:recapture}
 When electrons drift towards the anode, there is a probability that they will be captured by the Oxygen molecules in reactions:
-$O_2 + e^- \to O_2^-$ or $O_2 + e^- \to O + O^-$. The presence of the magnetic field enhances the cross section of these reactions.
+$O_2 + e^- \to O_2^-$ or $O_2 + e^- \to O + O^-$. 
+% The presence of the magnetic field enhances the cross section of these reactions.
 To take into account this effect, a special study was done, reported in~\cite{esben_thesis}.
 It was found that the electron capture probability strongly depends on the distance from the primary electron to the anode.
 A Garfield simulation shows that this dependence can be parameterized with a 4-th order polynomial (see \FigureRef{fig:electron_recapture}), 
@@ -631,7 +632,7 @@ Drifting ions might free electrons when they reach the cathode, which in turn ca
 As can be seen from \FigureRef{fig:electron_recapture}, Oxygen addition to the gas mixture provides approximately a 65$\%$ probability that these electrons will be recaptured 
 and will never reach the anode. 
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=.7\textwidth]{TRT/electron_recapture.png}
 \caption{ 
@@ -652,7 +653,7 @@ The drift velocity in the Argon mixture is significantly larger than for Xenon. 
 Argon gas was used for tests and commissioning phases, and this is why a compatibility with the Argon mixture was foreseen for the ASDBLR chip. It contains a set of four shaping functions (which can be selected
 by a pin on the board itself): two for Xenon and two for Argon mixtures. Two sets of functions are needed for each gas because different shaping functions are used for discrimination of LT and HT. Shaping function for Argon, measured in the lab using a prototype of the ASDBLR chip, is shown in \FigureRef{fig:shaping} together with Xenon functions. The shown Argon functions were implemented in the digitization package for the Argon mixture simulation. In the code, the shaping function is convoluted with energy deposits, which are stored in a vector of time bins.
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
  \includegraphics[width=0.69\columnwidth]{TRT/shaping.eps}
 \caption{Argon low threshold shaping function compared to the Xenon low and high threshold shaping functions.}
@@ -747,7 +748,7 @@ with the usual Xenon mixture, as shown in \FigureRef{fig:argonModulesIn2013}.
 It was an excellent opportunity to test the implementation of the Argon mixture in the digitization package.
 This section contains an overview of the track and hit performance study of the TRT in this gas configuration.
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
  \includegraphics[width=0.59\columnwidth]{TRT/Xe_Ar_map_2013_cutted.png}
 \caption{Detector gas configuration with a couple of Argon modules used during part of 2013.}
@@ -801,7 +802,7 @@ This can be seen from the plot in \FigureRef{fig:RT_xenon_argon},
 which shows $r-t$ relation obtained after an iterative calibration procedure using data.
 The Argon $r-t$ distribution is shorter by a few nanoseconds than the Xenon one, which means that the drift time for a given drift radius is shorter.
 
-\begin{figure}
+\begin{figure}[h]
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=\textwidth]{TRT/fromPoster/rt_FinalXenon_v2.eps}
@@ -820,7 +821,7 @@ The faster drift velocity of electrons in the Argon leads thus to a shorter drif
 
 It is worth mentioning that these results were obtained before any fine tuning of Argon simulation parameters. Thus a slightly larger difference between data and MC distributions can be observed for Argon straws. A dedicated study was performed later by the TRT team to tune the Argon MC parameters.
 
-\begin{figure}
+\begin{figure}[h]
 
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -856,14 +857,14 @@ for Xenon and Argon straws are quite different (300~eV versus 100~eV). The small
 and the number of electrons in the cluster will be smaller. It means that the signals from the Argon tubes are weaker, which means
 that the threshold has to be lower as well. Still, we observe higher efficiency for Argon than for Xenon. After some investigation, it was found that quite often for the signal to exceed the low threshold, two or more primary electron clusters have to reach the anode wire in
 Xenon straws, while in Argon in most cases only one first cluster is enough to exceed the low threshold. This is caused by the lower LT in Argon with respect to the one in Xenon.
-To equalize hit efficiency between Argon and Xenon, the low threshold for Xenon tubes can be slightly increased.
+To equalize hit efficiency between Argon and Xenon, the low threshold for Argon tubes can be slightly increased.
 The hit efficiency is shown in \FigureRef{fig:hit_eff_rtrack_bar} as a function of the track to wire distance. 
 It is stable throughout the straw radius except for the values close to 2 mm, which corresponds
 to the case when particles fly just a short path in the gas close to the straw wall. 
 The number of primary ionization clusters is thus very small, hence the hit efficiency drops significantly.
 % TODO explain hit eff distribution vs. track to wire distance. Why do we have some deep close to r=0 ??? Ask Alex!
 
-\begin{figure}
+\begin{figure}[h]
 
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -893,7 +894,7 @@ According to \EquationRef{eq:momentum_resolution}, a larger number of hits leads
 worse for Argon and thus negatively affect the momentum resolution. Both factors are still quite small and therefore the momentum resolution is expected to be similar for
 Argon and Xenon mixtures.
 
-\begin{figure}
+\begin{figure}[h]
 
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -913,7 +914,7 @@ The fractions of precision hits to total number of hits are shown in \FigureRef{
 hit if the difference between track and drift radius is smaller than 2.5 times the hit uncertainty. Argon has a higher fraction because the hit uncertainty
 for Argon is larger due to the faster drift time of the electron clusters and the digitization binning. 
 
-\begin{figure}
+\begin{figure}[h]
 
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -941,7 +942,7 @@ traverse a smaller number of straws and with increasing $\eta$ the number of str
 One can observe that the fraction is slightly higher for the Argon straws. This can be explained by the higher reconstruction hit efficiency and the larger number of hits per
 track for Argon tubes.
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
  \includegraphics[width=0.9\columnwidth]{TRT/fromPoster/track_ext_frac_eta.eps}
 \caption{Simulation of the track extension fraction as a function of $\eta$ for Xenon and Argon gas mixture.}

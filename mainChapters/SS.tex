@@ -39,7 +39,7 @@ The corresponding Feynman diagrams are shown in \FigureRef{fig:prompt_bkg_feynma
 In general, SM processes with the same-sign dilepton final state have relatively small cross sections at high dilepton invariant mass regions of interest.
 
 The second source comes from wrongful identification of the lepton itself, when a pion or a jet is reconstructed as a lepton, or from leptons which were produced 
-not in the pp collision but from decays of secondary particles, e.g. kaons. This source is called non-prompt or fake background.
+not in the \textit{pp} collision but from decays of secondary particles, e.g. kaons. This source is called non-prompt or fake background.
 
 The third source comes from the misidentification of the electric charge of the lepton, which makes processes in which an opposite-sign prompt lepton pair is produced 
 contribute to the signal selection as well. The charge misidentification effect becomes significant for high-momentum leptons, when the curvature of the track in the ID is difficult to reconstruct. 
@@ -132,7 +132,7 @@ $V=W,Z$ &  + {\scshape pythia-6.426} & & \\
 % TODO description of the used triggers here!
 % TODO [no jet selection is described]
 
-The analysis is based on the pp collision data collected in 2012 by the ATLAS detector with 8 TeV center of mass energy.
+The analysis is based on the \textit{pp} collision data collected in 2012 by the ATLAS detector with 8 TeV center of mass energy.
 The integrated luminosity of the sample corresponds to 20.3 fb$^{-1}$ and the mean number of interactions per bunch crossing was 21.
 
 An event selected for the analysis must have at least one reconstructed vertex with at least three tracks matched to it. 
@@ -251,7 +251,7 @@ Contribution from charge misidentification due to photon conversion is shown sep
 \end{figure}
 
 To verify the MC estimation of the charge misidentification, a special data-driven technique, the so-called likelihood method, 
-is used in the same way as in ref.~\cite{same_sign_paper_7tev}.
+is used in the same way as in Ref.~\cite{same_sign_paper_7tev}.
 
 % This method is based on using a maximum likelihood fit to extract the charge misidentification rates in different kinematic regions simultaneously~\cite{cf_top_paper,alonso_thesis}.
 
@@ -277,11 +277,17 @@ The comparison demonstrates that the likelihood method provides a very reliable 
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{SS/support_note/chargeflip/eta_mctruth.eps}
+  \begin{overpic}[width=\textwidth]{SS/support_note/chargeflip/eta_mctruth.eps}
+    \put (20,63) {\crule[white]{0.3\textwidth}{0.05\textwidth}}
+  \end{overpic}
+%   \includegraphics[width=\textwidth]{SS/support_note/chargeflip/eta_mctruth.eps}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{SS/support_note/chargeflip/pt_mctruth.eps}
+  \begin{overpic}[width=\textwidth]{SS/support_note/chargeflip/pt_mctruth.eps}
+    \put (20,63) {\crule[white]{0.3\textwidth}{0.05\textwidth}}
+  \end{overpic}
+%   \includegraphics[width=\textwidth]{SS/support_note/chargeflip/pt_mctruth.eps}
 \end{subfigure}
 \caption{Electron charge misidentification rate, obtained from MC simulation using generator level information and the likelihood method. 
 Ratio between the rate obtained with the likelihood method to the rate obtained with truth MC information is shown below in the ratio plot. }
@@ -300,7 +306,10 @@ in high-$\eta$ region. This is why $\eta$-dependent correction factors were calc
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{SS/support_note/chargeflip/misidratept_datamc.eps}
+  \begin{overpic}[width=\textwidth]{SS/support_note/chargeflip/misidratept_datamc.eps}
+    \put (20,63) {\crule[white]{0.2\textwidth}{0.05\textwidth}}
+  \end{overpic}
+%   \includegraphics[width=\textwidth]{SS/support_note/chargeflip/misidratept_datamc.eps}
 \end{subfigure}
 \caption{Electron charge misidentification rate, obtained from MC simulation and from real collision data with the likelihood method as a function of $|\eta|$ (lett) and $p_T$ (right).
 Ratio plot shows charge misidentification scale factor (SF), which corresponds to the ratio between rates from data and MC simulation.}
@@ -344,7 +353,7 @@ contribution of non-prompt electrons is dominant, while the contribution from pr
 Events in this region must contain exactly one reconstructed electron (probably a jet misreconstructed as electron) with $p_T > 20$ GeV.
 To counterbalance the electron, a jet in the opposite azimuthal direction ($\Delta \phi (e,jet) > 2.4$) is required.
 By requiring strictly one electron one can make sure that the background region does not overlap with the signal selection and processes 
-like Drell-Yan and \ttbar~will be suppressed.
+like Drell-Yan and \ttbar will be suppressed.
 To make sure that the jet and the non-prompt electron are well balanced in terms of energy, the jet is
 required to have $p_T > 30$ GeV.
 To suppress contributions from W boson production, a requirement on the transverse invariant mass of 
@@ -482,7 +491,10 @@ Agreement between the observed and the expected number of pairs is quoted in the
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.65\textwidth]{SS/support_note/dielectrons/crs/OS_mod_v4.pdf}
+\begin{overpic}[width=0.65\textwidth]{SS/support_note/dielectrons/crs/OS_mod_v4.pdf}
+    \put (30,53) {\crule[white]{0.17\textwidth}{0.03\textwidth}}
+\end{overpic}
+% \includegraphics[width=0.65\textwidth]{SS/support_note/dielectrons/crs/OS_mod_v4.pdf}
 \caption{Invariant mass of the opposite-sign electron pairs that passed signal selection.
 The data is shown as closed circles. The stacked histograms represent the background estimations. 
 The last bin is an overflow bin.
@@ -557,7 +569,12 @@ The simulation agrees well with data.
 \begin{figure}[h]
 \begin{center}
 %\includegraphics[width=0.48\textwidth]{figures/electrons/electron-syst}
-\includegraphics[width=0.65\textwidth]{SS/support_note/PromptCR/ElEl/2isoSS_ee_mll_pr.eps}
+
+\begin{overpic}[width=0.65\textwidth]{SS/support_note/PromptCR/ElEl/2isoSS_ee_mll_pr.eps}
+    \put (45,78.3) {\crule[white]{0.14\textwidth}{0.02\textwidth}}
+\end{overpic}
+
+% \includegraphics[width=0.65\textwidth]{SS/support_note/PromptCR/ElEl/2isoSS_ee_mll_pr.eps}
 \caption{Invariant mass of reconstructed same-sign electron pairs in the prompt background validation region. The last bin is an overflow bin.}
 \label{fig:prompt_CR}
 \end{center}
@@ -736,11 +753,17 @@ Agreement between observed and expected number of pairs is quoted in the last co
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_medium_v2.eps}
+  \begin{overpic}[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_medium_v2.eps}
+    \put (45,63) {\crule[white]{0.21\textwidth}{0.03\textwidth}}
+  \end{overpic}
+%   \includegraphics[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_medium_v2.eps}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_bothInter_v2.eps}
+  \begin{overpic}[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_bothInter_v2.eps}
+    \put (44,62) {\crule[white]{0.23\textwidth}{0.03\textwidth}}
+  \end{overpic}
+%   \includegraphics[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_bothInter_v2.eps}
 \end{subfigure}
 \caption{
 % Invariant $e^{\pm}e^{\pm}$ mass distributions for non-prompt background prediction with ``medium'' electron identification (left) and with weak isolation on both electrons (right).
@@ -755,11 +778,17 @@ The hatched areas show the statistical uncertainty of the background prediction.
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_leadNom_sublInter_v2.eps}
+  \begin{overpic}[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_leadNom_sublInter_v2.eps}
+    \put (44,63) {\crule[white]{0.23\textwidth}{0.03\textwidth}}
+  \end{overpic}
+%   \includegraphics[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_leadNom_sublInter_v2.eps}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_leadInter_sublNom_v2.eps}
+  \begin{overpic}[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_leadInter_sublNom_v2.eps}
+    \put (44,62) {\crule[white]{0.23\textwidth}{0.03\textwidth}}
+  \end{overpic}
+%   \includegraphics[width=\textwidth]{SS/support_note/dielectrons/crs/dec13_fake_leadInter_sublNom_v2.eps}
 \end{subfigure}
 \caption{
 % Invariant $e^{\pm}e^{\pm}$ mass distributions for non-prompt background prediction with weak isolation on the subleading electron (left) and on the leading electron (right).
@@ -795,7 +824,7 @@ One electron from a pair is selected by requiring very strict criteria,
 while the second one is required to pass the selection in the analysis.
 By counting the number of pairs from the resonance decays (by fitting the invariant mass resonance peak) which were selected or 
 were rejected due to the cut one can extract the efficiency. 
-Detailed information on the method can be found, for example, in ref.~\cite{tag-and-probe}.
+Detailed information on the method can be found, for example, in Ref.~\cite{tag-and-probe}.
 The reconstruction efficiency uncertainty range is between 1.3-2.4\% depending on $\eta$, while the 
 tight identification criteria efficiency uncertainty range is between 2.0-2.8\% depending on both $p_T$ and $\eta$~\cite{electron_reco_id_2011}.
 
@@ -966,7 +995,10 @@ Data	& $ 1976 $	& $ 987 $	& $ 265 $	& $ 83 $	& $ 30 $	& $ 13 $	& $ 7 $	\\[+0.05i
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.7\textwidth]{SS/support_note/dielectrons/crs/signal_deltaPhi_v2.eps}
+\begin{overpic}[width=0.7\textwidth]{SS/support_note/dielectrons/crs/signal_deltaPhi_v2.eps}
+ \put (30,63) {\crule[white]{0.18\textwidth}{0.02\textwidth}}
+\end{overpic}
+% \includegraphics[width=0.7\textwidth]{SS/support_note/dielectrons/crs/signal_deltaPhi_v2.eps}
 \caption{Azimuthal angle difference between two same-sign electrons from the pair in the signal region. The uncertainties shown include statistical and systematic contributions.}
 \label{fig:delta_phi}
 \end{center}
@@ -981,7 +1013,7 @@ The idea of this analysis is to be as general as possible and to perform a searc
 Thus, the next step is to calculate exclusion limits on any type of new physics with prompt same-sign lepton pairs.
 
 Due to the limited acceptance of the detector the signal region was designed to use the phase space which is used in ATLAS for precision measurements.
-This restricted acceptance results in the following relation between total, $\sigma$, and measured, or fiducial, $\sigma^{fid}$, cross-sections:
+This restricted acceptance results in the following relation between total, $\sigma$, and measured, or fiducial, $\sigma^{fid}$, cross sections:
 % The total cross section, $\sigma$, of the process relates with the measured cross section in the signal region, the so-called fiducial cross section $\sigma^{fid}$, as:
 \begin{equation}
  \sigma = \dfrac{\sigma^{fid}}{\langle N_{pair} \rangle A}
@@ -1059,7 +1091,7 @@ as well as all the signal selection cuts on the reconstruction level.
 
 In order to perform a search for new physics in a model-independent way, the fiducial efficiency has to be constant and to not depend on the type of the BSM model.
 However, different models provide different $p_T$ and $\eta$ spectra, and the electron reconstruction efficiency depends on both $p_T$ and $\eta$.
-As reported in ref.~\cite{electron_tight}, the efficiency can vary up to 15$\%$ for the tight identification criteria with respect to the electron $p_T$.
+As reported in Ref.~\cite{electron_tight}, the efficiency can vary up to 15$\%$ for the tight identification criteria with respect to the electron $p_T$.
 Also, the presence and number of jets in the final state is model dependent, and affects the electron isolation efficiency, which will have an effect on 
 the fiducial efficiency.
 
@@ -1105,11 +1137,17 @@ Green and yellow bands correspond to the 1$\sigma$ and 2$\sigma$ uncertainty ban
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{SS/support_note/limits/limit_ee_neg.eps}
+  \begin{overpic}[width=\textwidth]{SS/support_note/limits/limit_ee_neg.eps}
+    \put (45,51.6) {\crule[white]{0.21\textwidth}{0.024\textwidth}}
+  \end{overpic}
+%   \includegraphics[width=\textwidth]{SS/support_note/limits/limit_ee_neg.eps}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{SS/support_note/limits/limit_ee_pos.eps}
+  \begin{overpic}[width=\textwidth]{SS/support_note/limits/limit_ee_pos.eps}
+    \put (45,51.6) {\crule[white]{0.21\textwidth}{0.024\textwidth}}
+  \end{overpic}
+%   \includegraphics[width=\textwidth]{SS/support_note/limits/limit_ee_pos.eps}
 \end{subfigure}
 \caption{Fiducial cross section upper limits at 95\% C.L. for new physics contributing to the signal region
 for events with $e^{+}e^{+}$ (left) and $e^{+}e^{+}$ (right) pairs. Green and yellow bands correspond to the 1$\sigma$ and 2$\sigma$ uncertainty bands on the expected limits respectively.}
@@ -1137,7 +1175,7 @@ Mass range & Expected & Observed & Expected & Observed & Expected & Observed \\
 
 \end{tabular}
 \end{center}
- \caption{Upper limit at 95\% CL on the fiducial cross-section for $e^{\pm} e^{\pm}$ pairs from non-SM signals. 
+ \caption{Upper limit at 95\% CL on the fiducial cross section for $e^{\pm} e^{\pm}$ pairs from non-SM signals. 
  The expected limits and their $1 \sigma$ uncertainties are given together with the observed limits derived from the data. 
  Limits are given inclusively and separated by charge.}
 \label{tab:limits}
@@ -1231,7 +1269,10 @@ The branching ratio of the $H^{\pm\pm} \to e^{\pm}e^{\pm}$ decay is assumed to b
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.7\textwidth]{SS/support_note/DCHPlots/ee/2isoSS_ee_mll_dch.eps}
+\begin{overpic}[width=0.7\textwidth]{SS/support_note/DCHPlots/ee/2isoSS_ee_mll_dch.eps}
+  \put (45,58.9) {\crule[white]{0.16\textwidth}{0.02\textwidth}}
+\end{overpic}
+% \includegraphics[width=0.7\textwidth]{SS/support_note/DCHPlots/ee/2isoSS_ee_mll_dch.eps}
 \caption{Invariant mass distributions for $\ee$ pairs passing the full event selection. 
 Open histograms show the expected signal from simulated $H^{\pm\pm}$ samples,
 assuming a 100\% branching ratio to the same-sign electron pair. The last bin is an overflow bin. Only statistical uncertainties for data are shown.}
@@ -1310,8 +1351,8 @@ branching ratio of $H^{\pm\pm}_L$ (left) and $H^{\pm\pm}_R$ (right) for events w
 % \end{itemize}
 
 % fiducial limits
-An inclusive search for a new physics has been performed in the final state of a same-sign electron pair using 20.3 fb$^{-1}$ of 8 TeV center of mass pp collision data~\cite{ss_8TeV}. Limits on the fiducial cross sections has been set as a function of electron pair invariant mass with cuts ranging from $>15$ to $>600$ GeV.
-With respect to the previous ATLAS analysis performed with 7 TeV center of mass data (reported in ref.~\cite{ss_7TeV}) cross section limits have been 
+An inclusive search for a new physics has been performed in the final state of a same-sign electron pair using 20.3 fb$^{-1}$ of 8 TeV center of mass \textit{pp} collision data~\cite{ss_8TeV}. Limits on the fiducial cross sections has been set as a function of electron pair invariant mass with cuts ranging from $>15$ to $>600$ GeV.
+With respect to the previous ATLAS analysis performed with 7 TeV center of mass data (reported in Ref.~\cite{ss_7TeV}) cross section limits have been 
 extended with two additional invariant mass bins ($>500$ and $>600$ GeV).
 
 % DCH limits
@@ -1320,7 +1361,7 @@ Upper limit on the cross section for pair production of right- and left-handed d
 Based on predicted cross section limits a mass limit has been derived as well.
 
 Comparison of the obtained 95\% C.L. upper \dch mass limit, assuming 100\% branching ratio to $e^{\pm}e^{\pm}$ with results from 7 TeV~\cite{dch_7TeV_paper} and 13 TeV~\cite{dch_13TeV_conf} analyses performed by ATLAS are shown in \TableRef{tab:DCH_limit_vs_years}.
-As one can see from \TableRef{tab:DCH_limit_vs_years} mass limits benefit from the larger center of mass pp collision data though using a dataset with larger integrated luminosity will improve limits further.
+As one can see from \TableRef{tab:DCH_limit_vs_years} mass limits benefit from the larger center of mass \textit{pp} collision data though using a dataset with larger integrated luminosity will improve limits further.
 
 \begin{table*}[]
 \begin{center}
@@ -1361,7 +1402,7 @@ Also, increased statistics available in Run-2 can be used for better understandi
 % Other analysis improvements possible developments
 As was mentioned before, the analyses have been performed with three channels: $e^{\pm}e^{\pm}$, $\mu^{\pm}\mu^{\pm}$ and $e^{\pm}\mu^{\pm}$. However, it might be possible to add a tau lepton channel, which would complement results from the other three. 
 
-% Also, one can use a different definition of the fiducial region where the fiducial efficiency is counted separately per lepton, as was done in the search with three charged leptons final state reported in ref.~\cite{TheATLAScollaboration:2013cia}.
+% Also, one can use a different definition of the fiducial region where the fiducial efficiency is counted separately per lepton, as was done in the search with three charged leptons final state reported in Ref.~\cite{TheATLAScollaboration:2013cia}.
 
 
 

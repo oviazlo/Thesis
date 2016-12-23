@@ -121,9 +121,20 @@ To get a sufficient statistics at the high transverse mass, several samples, bin
 % TODO replace these plots with my own!!! also change caption
 % TODO
 \begin{figure}[!htb]
+\begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=7.5cm]{Wprime/WenuPlus_TruthLepBornElectrons_hist_invmass_notStacked.eps}
-  \includegraphics[width=7.5cm]{Wprime/WenuPlus_TruthLepBornElectrons_hist_mt_logX_notStacked.eps}
+  \begin{overpic}[width=\textwidth]{Wprime/WenuPlus_TruthLepBornElectrons_hist_invmass_notStacked.eps}
+    \put (50,61) {\crule[white]{0.3\textwidth}{0.05\textwidth}}
+  \end{overpic}
+%   \includegraphics[width=\textwidth]{SS/support_note/limits/limit_ee_neg.eps}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \begin{overpic}[width=\textwidth]{Wprime/WenuPlus_TruthLepBornElectrons_hist_mt_logX_notStacked.eps}
+    \put (50,61) {\crule[white]{0.3\textwidth}{0.05\textwidth}}
+  \end{overpic}
+%   \includegraphics[width=\textwidth]{SS/support_note/limits/limit_ee_pos.eps}
+\end{subfigure}
   \caption{Invariant mass and transverse mass spectrum of the invariant mass-binned W samples. The coloured lines show the different mass slices and the black line -- the sum of all, scaled up with a factor of 2.}
   \label{fig:wenu_notstacked}
 \end{figure}
@@ -223,7 +234,7 @@ s-channel $Wt$ & + {\scshape pythia-6.428}~\cite{Pythia} & &  \\
 \section{Event object selection}
 \label{sec:wprimeSelection}
 
-The analysis is based on pp collision data collected in 2015 by the ATLAS detector with 13 TeV CM energy.
+The analysis is based on \pp collision data collected in 2015 by the ATLAS detector with 13 TeV CM energy.
 The integrated luminosity of the data sample corresponds to 3.2 fb$^{-1}$ and the mean number of interactions per bunch crossing was 14.
 
 An event selected for the analysis has to have at least one reconstructed vertex with at least two tracks matched to it. 
@@ -256,7 +267,7 @@ from the primary vertex. Candidates have to satisfy the following set of criteri
  a more strict requirement $|z_0 \times sin \theta| < 0.5$ mm, however, as this criteria rejects many muons and just a little background it  
  was decided to relax this requirement to 10 mm as will be described in \SectionRef{subsec:wprime_cut_optimization}.
  \item Pass ``high-$p_T$'' set of muon identification criteria. 
- In the same way, as for electrons, ATLAS defines three sets of reference muon identification criteria designed for use in analyses: ``loose'', ``medium'',  ``tight''. These criteria are designed in a hierarchical way -- increasing the background-rejection power at some cost to the identification efficiency.
+ In the same way, as for electrons, ATLAS defines three sets of reference muon identification criteria designed for use in analyses: ``loose'', ``medium'',  ``tight''. These criteria are designed in a hierarchical way -- increasing the background rejection power at some cost to the identification efficiency.
  In 2015 a new ``high-$p_T$'' set has been introduced which aims to maximize the momentum resolution for tracks with $p_T > 100$~GeV~\cite{muon_performance_2015,ATLAS-CONF-2016-024}.
  It includes strict requirements on the MS part of the track, 
  which improves the $p_T$ resolution by approximately 30$\%$ in comparison with the ``tight'' criteria.  However, the muon reconstruction efficiency drops by 20$\%$ as well.
@@ -315,7 +326,7 @@ $\PWprime$ flat sample passing the medium or high-$p_T$ working point requiremen
 
 \subsection{Transverse mass and missing transverse momentum}
 \label{subsec:etmiss}
-The missing transverse momentum, $E_T^{miss}$, is calculated following the ATLAS recommendation described in ref.~\cite{met2015_1,met2015_2}.
+The missing transverse momentum, $E_T^{miss}$, is calculated following the ATLAS recommendation described in Ref.~\cite{met2015_1,met2015_2}.
 $E_T^{miss}$ is calculated as a vector sum of the $p_T$ of selected objects:
 \begin{itemize}
  \item muons which satisfy the analysis signal selection;
@@ -325,7 +336,7 @@ $E_T^{miss}$ is calculated as a vector sum of the $p_T$ of selected objects:
  \item tau leptons which satisfy the ``medium'' identification criteria~\cite{tau_id_8TeV} and $|\eta| < 2.5$, excluding  $1.37 < |\eta| < 1.52$ and $p_T > 20$~GeV requirements;
  \item photons which satisfy the ``tight'' identification criteria~\cite{photon_id_2011}, $|\eta| < 2.37$, excluding  $1.37 < |\eta| < 1.52$ and $p_T > 25$~GeV requirements;
  \item jets reconstructed with the anti-$k_t$ algorithm~\cite{jet_anti_kt} with the radius parameter of 0.4 in $|\eta| < 4.9$.
- Jets are calibrated using the method described in ref.~\cite{jet_calib_syst_13TeV}.
+ Jets are calibrated using the method described in Ref.~\cite{jet_calib_syst_13TeV}.
  Only jets with $p_T > 20$~GeV are used;
  \item tracks originating from the primary vertex with $p_T > 0.5$ GeV and $|\eta| < 2.5$ but not belonging to any of the reconstructed physics objects listed above.
 \end{itemize}
@@ -507,30 +518,29 @@ The impact of the systematic variations of the efficiencies on the final $m_T$ s
 To test the data-driven multijet background prediction, one has to find a region in which its contribution will be enhanced. 
 This region has to be kinematically close to the signal region.
 Therefore, a validation region is defined in the same way as the signal selection but without the $E_T^{miss}$ and $m_T$ requirements. 
-Two sets of validation regions are considered: with and without using isolation requirements. They correspond to the tight and loose muon definitions in the matrix method.
+Two sets of validation regions are considered: with and without using isolation requirements. They correspond to the tight and loose muon definitions used in the matrix method.
 
 % plots used for multijet CR
 % TODO Monika - see comments from Dec14
-The validation distributions of the variables used to define the enhanced ``fake'' muon control region are shown in \FigureRef{fig:muMMval1}.
-A reasonable agreement within 10$\%$ for both the tight and loose distributions is observed for $\Delta\phi_{\mu,E_T^{miss}}$ and muon $d_0$ significance, as can be seen from the data over background prediction ratio plots in panels in the bottom of each plot. The shape of the distributions is modelled well too for both the tight and loose regions.
+The distributions of the variables used to define the enhanced ``fake'' muon control region are shown in \FigureRef{fig:muMMval1}.
+A reasonable agreement within 10$\%$ for both the tight and loose distributions is observed for $\Delta\phi_{\mu,E_T^{miss}}$ and muon $d_0$ significance, as can be seen from the data over background prediction ratio plots in the bottom of each plot. The shape of the distributions is modelled well too for both the tight and loose regions.
 The most obvious discrepancy is seen in the
 distribution of the number of jets. The disagreement most likely arises from the modeling of jet emission in the $W +$ jets MC, where only one jet emission is included at the
-matrix element level of calculations.
+matrix element level.
 This in principle affects the MC subtraction in the ``fake'' muon control region.
 However, the discrepancy is present only for $N_\mathrm{jet}\geq2$, while the control region is 
 defined with the requirement $N_\mathrm{jet}\geq1$ and thus this discrepancy does not affect strongly the ``fake'' muon efficiency calculations.
-Furthermore, one of the systematic variations of the ``fake'' muon efficiency was obtained with no $N_\mathrm{jet}$ cut at all. The effect of the variation was found to be negligible. This demonstrates that the discrepancy in the $N_\mathrm{jet}$ can be neglected.
+Furthermore, one of the systematic variations of the ``fake'' muon efficiency was obtained with no $N_\mathrm{jet}$ cut at all. The effect of the variation of the $N_\mathrm{jet}$ requirement was found to be negligible. 
 
 % TODO think about some additional description here!
 % TODO check in the Magnars thesis
-The distributions of the $E_T^{miss}$, muon momentum and $m_T$ are shown in \FigureRef{fig:muMMval2}.
-The contribution of the ``fake'' background to the tight distributions (right-hand plots) is tiny. Thus, the agreement between background estimation and observations demonstrates how well the background is modelled by the MC simulation.
-Since no $E_T^{miss}$ and $m_T$ cuts are applied there is significantly more statistics available than in the signal region. It allows to test the overall background prediction more precisely.
+The $E_T^{miss}$, muon momentum and $m_T$ distributions are shown in \FigureRef{fig:muMMval2}.
+The contribution of the ``fake'' background to the tight distributions (right-hand plots) is tiny. Thus, the agreement between background estimation and observation demonstrates that the background is well modelled by the MC simulation.
+Since no $E_T^{miss}$ and $m_T$ cuts are applied there is significantly more statistics available than in the signal region. This allows to test the overall background prediction more precisely.
 
-In the looser muon sample (left-hand plots) the multijet background is significantly enhanced which provides us with a handle to check the ``fake'' background estimate. 
+In the sample fulfilling the looser muon definition (left-hand plots) the multijet background is significantly enhanced which provides us with a handle to check the ``fake'' background estimate. 
 A reasonable agreement within 10-15$\%$ for both the tight and loose selections is observed for all distributions.
-The level of the agreement is comparable between loose and tight distributions.
-It proves that this is a good estimation of the "fake" background.
+The level of the agreement is comparable between loose and tight distributions, which shows the validity of the ``fake'' background estimation.
 
 Taking into account the size of the systematic uncertainties, discussed in \SectionRef{sec:wprimeSystematics}, the data and background prediction agree reasonably well. 
 
@@ -893,11 +903,11 @@ A Bayesian approach has been used for the limit settings, and the limits were ca
 
 % \toDo[add something here???]
 
-Upper limits are set on the cross-section times branching ratio, $\PWprime \rightarrow \Plepton\nu$, at 95\% C.L. 
+Upper limits are set on the cross section times branching ratio, $\PWprime \rightarrow \Plepton\nu$, at 95\% C.L. 
 The limits for the electron, muon, 
 and combined lepton channels are presented in \TableRef{tab:limits_mass_wp}, \FigureRef{fig:wprime_limits} and \FigureRef{fig:wprime_limits_combined}.
 The theoretical cross section curves as a function of $\PWprime$ mass are shown as well.
-The lower mass limits of the model correspond to the intersection of the theoretical curve with the expected cross section limit. The obtained mass limits are summarized in \TableRef{tab:limits_mass_wp}. The mass limit has improved by 800 GeV in comparison with the previous ATLAS search reported in ref.~\cite{wprime_8TeV}.
+The lower mass limits of the model correspond to the intersection of the theoretical curve with the expected cross section limit. The obtained mass limits are summarized in \TableRef{tab:limits_mass_wp}. The mass limit has improved by 800 GeV in comparison with the previous ATLAS search reported in Ref.~\cite{wprime_8TeV}.
 
 \begin{figure}[]
   \centering
@@ -940,9 +950,9 @@ The lower mass limits of the model correspond to the intersection of the theoret
 \label{sec:wprimeConclusion}
 
 % general search summary
-A search for a new heavy gauge boson $\PWprime$ has been performed in the final state with a muon and missing transverse energy using 3.2 fb$^{-1}$ of $\sqrt{s}=13$~TeV pp collision data collected in 2015. This has also been reported in ref.~\cite{Aaboud:2016zkn}. 
-Upper limits on the cross section for SSM $\PWprime$ production have been set as a function of $\PWprime$ pole mass. A significantly stronger exclusion mass limit has been obtained in comparison to previous ATLAS searches~\cite{atlas_7tev_pub_1fb,atlas_7tev_pub,wprime_8TeV} as shown in \FigureRef{fig:Wprime_allResults}.
-For comparison, the mass limits for three ATLAS analyses done with 8 and 13 TeV data are shown in \TableRef{tab:Wprime_limit_vs_years_ATLAS} as well as the results from the CMS collaboration shown in \TableRef{tab:Wprime_limit_vs_years_CMS}. Measured mass limits are compatible between the two experiments.
+A search for a new heavy gauge boson $\PWprime$ has been performed in the final state with a muon and missing transverse energy using 3.2 fb$^{-1}$ of $\sqrt{s}=13$~TeV \pp collision data collected in 2015. This has also been reported in Ref.~\cite{Aaboud:2016zkn}. 
+Upper limits on the cross section for SSM $\PWprime$ production have been set as a function of the $\PWprime$ pole mass. A significantly stronger exclusion mass limit has been obtained in comparison to previous ATLAS searches~\cite{atlas_7tev_pub_1fb,atlas_7tev_pub,wprime_8TeV} as shown in \FigureRef{fig:Wprime_allResults}.
+For comparison, the mass limits for three ATLAS analyses done with 8 and 13 TeV data are shown in \TableRef{tab:Wprime_limit_vs_years_ATLAS} and the results from the CMS collaboration shown are in \TableRef{tab:Wprime_limit_vs_years_CMS}. As can be seen, the measured mass limits are compatible between the two experiments.
 
 \begin{figure}[]
  \includegraphics[width=0.8\textwidth]{Wprime/combWprime_summary.eps}
@@ -972,7 +982,7 @@ $\PWprime \to \mu\nu$ & 2.97 & 2.97 & 3.72 & 3.56 & 4.33 & 4.19 \\
 $\PWprime \to \Plepton\nu$ & 3.17 & 3.24 & 4.18 & 4.07 & 4.77 & 7.74 \\
 \end{tabular}
 \end{center}
- \caption{Upper limit at 95\% C.L. on mass of SSM $\PWprime$ for three ATLAS analyses done with 8 and 13 TeV pp collision data~\cite{wprime_8TeV,Aaboud:2016zkn,wprime_atlas_13TeV_13fb}.}
+ \caption{Upper limit at 95\% C.L. on mass of SSM $\PWprime$ for three ATLAS analyses using $\sqrt{s} =$ 8 and 13 TeV \pp collision data~\cite{wprime_8TeV,Aaboud:2016zkn,wprime_atlas_13TeV_13fb}.}
 \label{tab:Wprime_limit_vs_years_ATLAS}
 \end{table*}
 
@@ -981,7 +991,7 @@ $\PWprime \to \Plepton\nu$ & 3.17 & 3.24 & 4.18 & 4.07 & 4.77 & 7.74 \\
 \begin{center}
 \begin{tabular}{c||c|c||c|c}
  & \multicolumn{4}{c}{95\%  C.L. upper limit [TeV]} \\
- & \multicolumn{2}{c||}{19.7 fb$^{-1}$ at 8 TeV} & \multicolumn{2}{c||}{2.2 fb$^{-1}$ at 13 TeV}  \\
+ & \multicolumn{2}{c||}{19.7 fb$^{-1}$ at 8 TeV} & \multicolumn{2}{c}{2.2 fb$^{-1}$ at 13 TeV}  \\
  \hline
 Signal & Expected & Observed & Expected & Observed  \\
 %[+0.05in]
@@ -994,29 +1004,31 @@ $\PWprime \to \mu\nu$ & 3.09 & 2.99 & 3.8 & 4.0 \\
 $\PWprime \to \Plepton\nu$ & 3.26 & 3.28 & 4.2 & 4.4 \\
 \end{tabular}
 \end{center}
- \caption{Upper limit at 95\% C.L. on mass of SSM $\PWprime$ for two CMS analyses done with 8 and 13 TeV pp collision data~\cite{wprime_cms_8TeV,wprime_cms_13TeV}.}
+ \caption{Upper limit at 95\% C.L. on mass of SSM $\PWprime$ for two CMS analyses using $\sqrt{s} =$ 8 and 13 TeV \pp collision data~\cite{wprime_cms_8TeV,wprime_cms_13TeV}.}
 \label{tab:Wprime_limit_vs_years_CMS}
 \end{table*}
+
+% TODO rewrite it. write it as outlook not as a summary
+One of the possibilities to extend the analysis is to consider BSM models which predict an associated pair production of the DM particles with SM $W$ boson. Such models have been investigated in a previous ATLAS search~\cite{wprime_8TeV}.
+A sensitivity study of the signal selection for different DM models has been performed (see \AppendixRef{app:monoW}).
+The study concluded that the sensitivity of the DM models, recommended by the ATLAS/CMS Dark Matter Forum~\cite{DM_forum_2015} for Run-2 searches, is small.
+Even with more luminosity, the DM interpretation in this channel is not worthwhile.
+
 
 % recovery excluded phase space and mT-binned samples
 There are still ways to improve and develop the analysis.
 One of the obvious possibilities is to include phase-space that has been excluded due
-to the problem with alignment in the muon spectrometer as was described previously in \SectionRef{subsec:lepton_selection}.
+to the problem with the alignment in the muon spectrometer as was described in \SectionRef{subsec:lepton_selection}.
 Another improvement mentioned previously is to use $m_T$ binned diboson and top MC background samples, which will provide enough statistics to populate the high-$m_T$ region and no extrapolations will be needed (which is the dominant contribution to the systematic uncertainty).
 
 % muon identification cut
-One can investigate the possibility of loosening a strict ``high-$p_T$'' set of muon identification criteria, which improves the momentum resolution but also significantly reduces the muon reconstruction efficiency.
+One can investigate the possibility to apply less strict muon identification criteria in a way such that the muon efficiency is increased without affecting significantly neither the muon resolution nor the background rejection power.
 
 % reduce the efficiency of muon reconstruction for approximately 20$\%$ in comparison with ``tight'' one. However one need to be careful that the muon momentum resolution doesn't worsen significantly.
 
 % new methods from SM W measurements
-A better understanding of the missing transverse mass could result in a significant reduction of the systematic uncertainty in the low-$m_T$ region, which is used to validate the background estimations.
+A better understanding of the missing transverse energy could result in a significant reduction of the systematic uncertainty in the low-$m_T$ region, which is used to validate the background estimations.
 
-% TODO rewrite it. write it as outlook not as a summary
-One of the possibilities to extend the analysis is to consider BSM models which predict an associated pair production of the DM particles with SM $W$ boson.
-Such models have been investigated in the previous ATLAS search~\cite{wprime_8TeV}.
-A sensitivity study of the signal selection for different DM models has been performed (see \AppendixRef{app:monoW}).
-The study concluded that the current signal selection has low sensitivity to the DM models recommended by the ATLAS/CMS Dark Matter Forum~\cite{DM_forum_2015}.
 
 
 
