@@ -42,7 +42,7 @@ Considering this model one can highlight three key features essential for this s
  \item Precise modeling of the background prediction. 
  The dominant part of the background originates from the charged-current Drell-Yan process and the analysis selection tests it up to few TeV.
  Thus, it is crucial to use the latest and most precise high-order calculations and corrections available at the time.
- \item High-$p_T$ lepton selection. Due to a simple event selection (one isolated lepton and missing $E_T$) 
+ \item High-$p_T$ lepton selection. Due to a simple event selection (one isolated lepton and $E_T^{miss}$) 
  this analysis uses the most energetic lepton candidates available at 13 TeV center-of-mass energy collisions.
  This is why the understanding of the reconstruction efficiency and momentum resolution of high-$p_T$ leptons are very important for the analysis.
  \item Missing transverse momentum, $E_T^{miss}$. Along with the lepton momentum, $E_T^{miss}$ is used in the calculation of the transverse invariant mass $m_T$ (which will be defined in \SectionRef{subsec:etmiss}),
@@ -349,11 +349,11 @@ the multi-jet background, which will be described below.
 
 The main variable of interest, $m_T$, which is used for statistical discovery analysis is defined as:
 \begin{equation}
- m_\mathrm{T} = \sqrt{2 p_\mathrm{T} E_T^{miss} (1-\cos\varphi_{\Plepton\nu})}
+ m_T = \sqrt{2 p_T E_T^{miss} (1-\cos\varphi_{\Plepton\nu})}
 \end{equation}
 where $\varphi_{\Plepton\nu}$ is the angle between the muon momentum and the missing transverse momentum in the transverse plane.
 
-The transverse mass has to be $m_\mathrm{T} > 110$~GeV which corresponds to twice the required  value of the muon
+The transverse mass has to be $m_T > 110$~GeV which corresponds to twice the required  value of the muon
 momentum and $E_T^{miss}$.
 
 %*******************************************************************************
