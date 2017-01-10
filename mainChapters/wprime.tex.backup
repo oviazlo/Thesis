@@ -42,10 +42,10 @@ Considering this model one can highlight three key features essential for this s
  \item Precise modeling of the background prediction. 
  The dominant part of the background originates from the charged-current Drell-Yan process and the analysis selection tests it up to few TeV.
  Thus, it is crucial to use the latest and most precise high-order calculations and corrections available at the time.
- \item High-$p_T$ lepton selection. Due to a simple event selection (one isolated lepton and missing $E_T$) 
+ \item High-$p_T$ lepton selection. Due to a simple event selection (one isolated lepton and $E_T^{miss}$) 
  this analysis uses the most energetic lepton candidates available at 13 TeV center-of-mass energy collisions.
  This is why the understanding of the reconstruction efficiency and momentum resolution of high-$p_T$ leptons are very important for the analysis.
- \item Missing transverse energy, $E_T^{miss}$. Along with the lepton momentum, $E_T^{miss}$ is used in the calculation of the transverse invariant mass $m_T$ (which will be defined in \SectionRef{subsec:etmiss}),
+ \item Missing transverse momentum, $E_T^{miss}$. Along with the lepton momentum, $E_T^{miss}$ is used in the calculation of the transverse invariant mass $m_T$ (which will be defined in \SectionRef{subsec:etmiss}),
  which is the signal discriminant and search variable in the analysis. For $m_T$ to be precisely reconstructed and modelled a good understanding of the missing $E_T$ reconstruction as well as good lepton momentum resolution is needed.
 \end{itemize}
 
@@ -123,19 +123,22 @@ To get a sufficient statistics at the high transverse mass, several samples, bin
 \begin{figure}[!htb]
 \begin{subfigure}{.5\textwidth}
   \centering
-  \begin{overpic}[width=\textwidth]{Wprime/WenuPlus_TruthLepBornElectrons_hist_invmass_notStacked.eps}
-    \put (50,61) {\crule[white]{0.3\textwidth}{0.05\textwidth}}
+  \begin{overpic}[width=\textwidth,grid,tics=5]{Wprime/WenuPlus_TruthLepBornElectrons_hist_invmass_notStacked.eps}
+    \put (50,51) {\crule[white]{0.3\textwidth}{0.15\textwidth}}
+    \put (75,1) {\crule[white]{0.25\textwidth}{0.05\textwidth}}
+    \put (50,1) { \includegraphics[width=0.16\textwidth]{Wprime/label_m_inv-crop.pdf} }
   \end{overpic}
 %   \includegraphics[width=\textwidth]{SS/support_note/limits/limit_ee_neg.eps}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \begin{overpic}[width=\textwidth]{Wprime/WenuPlus_TruthLepBornElectrons_hist_mt_logX_notStacked.eps}
-    \put (50,61) {\crule[white]{0.3\textwidth}{0.05\textwidth}}
+  \begin{overpic}[width=\textwidth,grid,tics=5]{Wprime/WenuPlus_TruthLepBornElectrons_hist_mt_logX_notStacked.eps}
+    \put (50,51) {\crule[white]{0.3\textwidth}{0.15\textwidth}}
+    \put (50,1) { \includegraphics[width=0.16\textwidth]{Wprime/label_mT-crop.pdf} }
   \end{overpic}
 %   \includegraphics[width=\textwidth]{SS/support_note/limits/limit_ee_pos.eps}
 \end{subfigure}
-  \caption{Invariant mass and transverse mass spectrum of the invariant mass-binned W samples. The coloured lines show the different mass slices and the black line -- the sum of all, scaled up with a factor of 2.}
+  \caption{Invariant mass and transverse mass spectrum of the invariant mass-binned W samples on generated MC level. The coloured lines show the different mass slices and the black line -- the sum of all, scaled up with a factor of 2.}
   \label{fig:wenu_notstacked}
 \end{figure}
 
@@ -297,7 +300,7 @@ Events are also vetoed if an additional electron passing the following selection
 \item Transverse impact parameter $|d_0|/\sigma(d_0) < 5$
 \item Pass the medium muon identification criteria
 \item Pass the ``Loose'' isolation criteria~\cite{muon_performance_2015,ATLAS-CONF-2016-024}.
-In contrary to the ``LooseTrackOnly'' isolation described before, it uses an additional calorimeter-based discriminating variable to provide the same efficiency. The additional variable is the ratio of the sum of the transverse energy of topological clusters~\cite{Aad:2011he} (excluding the muon contribution itself) within $\Delta R = 0.2$ cone around the muon track, to the muon track $p_T^{\mu}$.
+In contrary to the ``LooseTrackOnly'' isolation described before, it uses an additional calorimeter-based discriminating variable to provide the same efficiency. The additional variable is the ratio of the sum of the transverse momentum of topological clusters~\cite{Aad:2011he} (excluding the muon contribution itself) within $\Delta R = 0.2$ cone around the muon track, to the muon track $p_T^{\mu}$.
 \item Electron must not overlap with the muon: $\Delta R(e,\mu)>0.1$. If it overlaps ($\Delta R(e,\mu)>0.1$)
 it is assumed that the electron candidate arises from photon radiation from the muon and the event is kept.
 \end{itemize}
@@ -349,11 +352,11 @@ the multi-jet background, which will be described below.
 
 The main variable of interest, $m_T$, which is used for statistical discovery analysis is defined as:
 \begin{equation}
- m_\mathrm{T} = \sqrt{2 p_\mathrm{T} E_T^{miss} (1-\cos\varphi_{\Plepton\nu})}
+ m_T = \sqrt{2 p_T E_T^{miss} (1-\cos\varphi_{\Plepton\nu})}
 \end{equation}
 where $\varphi_{\Plepton\nu}$ is the angle between the muon momentum and the missing transverse momentum in the transverse plane.
 
-The transverse mass has to be $m_\mathrm{T} > 110$~GeV which corresponds to twice the required  value of the muon
+The transverse mass has to be $m_T > 110$~GeV which corresponds to twice the required  value of the muon
 momentum and $E_T^{miss}$.
 
 %*******************************************************************************
@@ -572,8 +575,18 @@ Taking into account the size of the systematic uncertainties, discussed in \Sect
 \end{figure}
 \begin{figure}[]
   \centering
-  \includegraphics[width=0.49\textwidth]{Wprime/METloose.eps}
-  \includegraphics[width=0.49\textwidth]{Wprime/MET.eps}
+  
+  \begin{overpic}[width=0.49\textwidth]{Wprime/METloose.eps}
+    \put (55,25) {\crule[white]{0.2\textwidth}{0.024\textwidth}}
+    \put (81.6,25.5) {\includegraphics[scale=.35]{Wprime/etmiss_label-crop.pdf}}
+  \end{overpic}
+  \begin{overpic}[width=0.49\textwidth]{Wprime/MET.eps}
+    \put (55,25) {\crule[white]{0.2\textwidth}{0.024\textwidth}}
+    \put (81.6,25.5) {\includegraphics[scale=.35]{Wprime/etmiss_label-crop.pdf}}
+  \end{overpic}
+  
+%   \includegraphics[width=0.49\textwidth]{Wprime/METloose.eps}
+%   \includegraphics[width=0.49\textwidth]{Wprime/MET.eps}
   \includegraphics[width=0.49\textwidth]{Wprime/pTloose.eps}
   \includegraphics[width=0.49\textwidth]{Wprime/pT.eps}
   \includegraphics[width=0.49\textwidth]{Wprime/mTloose.eps}
@@ -685,7 +698,7 @@ and was found to be negligible for all of them.\\
 No resolution smearing is applied in the default scenario. 
 According to the working group recommendation, effect of the smearing has to be used as a systematic uncertainty.\\ The jet uncertainties are fully correlated between the electron and muon channel.
 
-\subsection{Missing transverse energy scale and resolution}
+\subsection{Missing transverse momentum scale and resolution}
 The uncertainties for the $\met$ scale and resolution are provided by the JetEtMiss group~\cite{met2015_1}. They enter
 the analysis through the soft term in the $\met$ calculation, 
 which corresponds to the energy deposits in the calorimeter not associated with
@@ -707,7 +720,7 @@ The PDF uncertainty of the CT14NNLO PDF is one of the main theory uncertainties
 and it was calculated by using 90$\%$ CL PDF error set.
 The uncertainty related to the choice of the PDF set used was estimated by comparing
 results with NNPDF3.0~\cite{Ball:2014uwa}.
-The difference between CT14 and HERAPDF2.0 is not considered as the PDF does not include high Bjorken-x data. 
+The difference between CT14 and HERAPDF2.0 is not considered as the PDF does not include high Bjorken-$x$ data. 
 % TODO fix above about x. comment from Oxana
 
 The uncertainty of the ``Top'' and ``Diboson'' backgrounds modelling consists of the theoretical cross section uncertainty and the high-$m_T$ extrapolation uncertainty. The former uncertainty affects the total background
@@ -808,29 +821,30 @@ in the low-$m_T$ region but are still within the $\pm 1 \sigma$ uncertainty band
   \includegraphics[width=0.49\textwidth]{Wprime/muon_eta.eps}
   \includegraphics[width=0.49\textwidth]{Wprime/muon_phi.eps}
   \caption{
-  Muon \eta\ (left) and $\phi$ (right) distributions after the final selection. The uncertainty band in the ratio plot includes all systematic uncertainties which are included in the statistical analysis except the integrated luminosity uncertainty ($5\%$).
+  Muon \eta\ (left) and $\phi$ (right) distributions after the final selection. The uncertainty band in the ratio plot indicate the sum in quadrature of the systematic uncertainties.
 }
   \label{fig:mu_results_etaphi}
 \end{figure}
 
 \begin{figure}[]
   \centering
-  \includegraphics[width=0.49\textwidth]{Wprime/muon_pT.eps}
-  \includegraphics[width=0.49\textwidth]{Wprime/muon_MET.eps}
+%   \includegraphics[width=0.49\textwidth]{Wprime/muon_pT.eps}
+%   \includegraphics[width=0.49\textwidth]{Wprime/muon_MET.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/hist_pt_muon.eps}
+  \includegraphics[width=0.49\textwidth]{Wprime/hist_met_muon.eps}
  \caption{
- Muon $p_T$ (left) and $E_T^{miss}$ (right) distributions after the final selection. The uncertainty band in the ratio plot includes all systematic uncertainties which are included in the statistical analysis except the integrated luminosity uncertainty ($5\%$).
+ Muon $p_T$ (left) and $E_T^{miss}$ (right) distributions after the final selection. The uncertainty band in the ratio plot indicate the sum in quadrature of the systematic uncertainties.
 }
   \label{fig:mu_results_ptmet}
 \end{figure}
 
-
 \begin{figure}[]
   \centering
-  \includegraphics[width=0.65\textwidth]{Wprime/muon_mT.eps}
+  \includegraphics[width=0.65\textwidth]{Wprime/hist_mt_muon_paper.png}
   \caption{
   Muon $m_T$ distribution after final selection. 
   Shown is the total background estimate with resonant $\PWprime$ signal overlaid for various pole masses. 
-  The uncertainty band in the ratio plot includes all systematic uncertainties which are included in the statistical analysis except the integrated luminosity uncertainty (5$\%$).}
+  The uncertainty band in the ratio plot indicate the sum in quadrature of the systematic uncertainties.}
   \label{fig:MT_mu_Wprime}
 \end{figure}
 
@@ -880,21 +894,21 @@ The likelihood function is constructed as the product of Poisson probabilities o
 % The likelihood function is constructed as the product of Poisson probabilities of over all $m_T$ bins in the search region.
 The effect of systematic uncertainties is described by nuisance parameters in the likelihood function.
 
-The total efficiency (the product of acceptance and reconstruction efficiency)
-needed by the statistical analysis to calculate the number of expected events is shown in \FigureRef{fig:AccEff_mu}.
-The slow decrease of the total efficiency from 1 TeV can be explained by the shape
-of the $\PWprime$ signal, which becomes more prolonged in the low-$mT$ region with increasing of the $\PWprime$ pole mass as shown in \FigureRef{???}.
-\toDo[insert plot]
+% The total efficiency (the product of acceptance and reconstruction efficiency)
+% needed by the statistical analysis to calculate the number of expected events is shown in \FigureRef{fig:AccEff_mu}.
+% The slow decrease of the total efficiency from 1 TeV can be explained by the shape
+% of the $\PWprime$ signal, which becomes more prolonged in the low-$mT$ region with increasing of the $\PWprime$ pole mass as shown in \FigureRef{???}.
+% \toDo[insert plot]
 % TODO !!! insert fucking plot 
 
-\begin{figure}[]
-  \centering
-  \includegraphics[width=0.65\textwidth]{Wprime/acceptance.eps}
-  \caption{
-  Total reconstruction efficiency ($\varepsilon_{tot}$) of $\PWprime \to \mu \nu$ as a function of simulated $\PWprime$ mass.
-  }
-  \label{fig:AccEff_mu}
-\end{figure}
+% \begin{figure}[]
+%   \centering
+%   \includegraphics[width=0.65\textwidth]{Wprime/acceptance.eps}
+%   \caption{
+%   Total reconstruction efficiency ($\varepsilon_{tot}$) of $\PWprime \to \mu \nu$ as a function of simulated $\PWprime$ mass.
+%   }
+%   \label{fig:AccEff_mu}
+% \end{figure}
 
 % Statistical analysis demonstrates that no excess larger than 2$\sigma$ is observed.
 % Therefore we proceed to set upper limit on the cross section for the production of $\PWprime$ times branching ratio has been set. 
@@ -950,7 +964,7 @@ The lower mass limits of the model correspond to the intersection of the theoret
 \label{sec:wprimeConclusion}
 
 % general search summary
-A search for a new heavy gauge boson $\PWprime$ has been performed in the final state with a muon and missing transverse energy using 3.2 fb$^{-1}$ of $\sqrt{s}=13$~TeV \pp collision data collected in 2015. This has also been reported in Ref.~\cite{Aaboud:2016zkn}. 
+A search for a new heavy gauge boson $\PWprime$ has been performed in the final state with a muon and missing transverse momentum using 3.2 fb$^{-1}$ of $\sqrt{s}=13$~TeV \pp collision data collected in 2015. This has also been reported in Ref.~\cite{Aaboud:2016zkn}. 
 Upper limits on the cross section for SSM $\PWprime$ production have been set as a function of the $\PWprime$ pole mass. A significantly stronger exclusion mass limit has been obtained in comparison to previous ATLAS searches~\cite{atlas_7tev_pub_1fb,atlas_7tev_pub,wprime_8TeV} as shown in \FigureRef{fig:Wprime_allResults}.
 For comparison, the mass limits for three ATLAS analyses using $\sqrt{s}=8$ and 13~TeV data are shown in \TableRef{tab:Wprime_limit_vs_years_ATLAS} and the results from the CMS collaboration shown are in \TableRef{tab:Wprime_limit_vs_years_CMS}. As can be seen, the measured mass limits are compatible between the two experiments.
 
@@ -1027,7 +1041,7 @@ One can investigate the possibility to apply less strict muon identification cri
 % reduce the efficiency of muon reconstruction for approximately 20$\%$ in comparison with ``tight'' one. However one need to be careful that the muon momentum resolution doesn't worsen significantly.
 
 % new methods from SM W measurements
-A better understanding of the missing transverse energy could result in a significant reduction of the systematic uncertainty in the low-$m_T$ region, which is used to validate the background estimations.
+A better understanding of the missing transverse momentum could result in a significant reduction of the systematic uncertainty in the low-$m_T$ region, which is used to validate the background estimations.
 
 
 

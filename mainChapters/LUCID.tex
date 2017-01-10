@@ -412,7 +412,10 @@ since the laser light is delivered from the Tile calibration system by a single 
 
 \begin{figure}
 \centering
-\includegraphics[width=.6\textwidth]{LUCID/laserDiffuserAirGap_v2.pdf}
+% \includegraphics[width=.6\textwidth]{LUCID/laserDiffuserAirGap_v2.pdf}
+  \begin{overpic}[width=.6\textwidth]{LUCID/laserDiffuserAirGap_v2.pdf}
+    \put (5,62) {\crule[white]{0.5\textwidth}{0.04\textwidth}}
+  \end{overpic}
 % TODO need to move top text from picture to the main text
 \caption{Schematic drawing of a laser diffuser that couples a fiber bundle to the single quartz fiber which delivers laser light from the Tile calibration system.}
 \label{fig:laserDiffuserSchematics}
@@ -756,7 +759,11 @@ It demonstrated the high efficiency of the beampipe insulation and the LUCID coo
 
 \begin{figure}
 \centering
-\includegraphics[width=.8\textwidth]{LUCID/NEG_ctflangeA_v2.png}
+% \includegraphics[width=.8\textwidth]{LUCID/NEG_ctflangeA_v2.png}
+  \begin{overpic}[width=.8\textwidth]{LUCID/NEG_ctflangeA_v2.png}
+    \put (92,-1) {Date}
+    \put (-5,30) {\rotatebox{90}{Temperature [\degree~C]}}
+  \end{overpic}
 \caption{The temperature reading from the temperature probes during the bake-out procedure.}
 \label{fig:NEG_ctflangeA}
 \end{figure}
@@ -1162,12 +1169,24 @@ luminosity with a precision of about 0.5$\%$ at low luminosity.
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{LUCID/LumiVsTime_preliminary_v2.pdf}
+%   \includegraphics[width=\linewidth]{LUCID/LumiVsTime_preliminary_v2.pdf}
+  \begin{overpic}[width=\linewidth]{LUCID/LumiVsTime_preliminary_v2.pdf}
+    \put (80,3) {\crule[white]{0.25\textwidth}{0.05\textwidth}}
+    \put (5,25) {\crule[white]{0.05\textwidth}{0.4\textwidth}}
+    \put (71,4) {\scriptsize Time [minutes]}
+    \put (9,7) {\rotatebox{90}{\scriptsize Average number of pp-interactions}}
+  \end{overpic}
   \label{fig:sub3}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{LUCID/DeviationSubsystems_preliminary_v2.pdf}
+%   \includegraphics[width=\linewidth]{LUCID/DeviationSubsystems_preliminary_v2.pdf}
+  \begin{overpic}[width=\linewidth]{LUCID/DeviationSubsystems_preliminary_v2.pdf}
+    \put (80,3) {\crule[white]{0.25\textwidth}{0.05\textwidth}}
+    \put (71,4) {\scriptsize Time [minutes]}
+    \put (5,25) {\crule[white]{0.05\textwidth}{0.4\textwidth}}
+    \put (9,20) {\rotatebox{90}{\tiny $<\mu_{Algo}>/<\mu_{LUCID}> -1 [\%]$}}
+  \end{overpic}
   \label{fig:sub4}
 \end{subfigure}
 \caption{(left) Average number of inelastic proton-proton collisions per bunch crossing during an early 13 TeV fill; 

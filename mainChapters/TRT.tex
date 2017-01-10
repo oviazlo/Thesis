@@ -602,9 +602,14 @@ Black points correspond to the drift time spread obtained with the Garfield simu
 In the digitization code, the spread is parameterized by a 4-th order polynomial
 in order to preserve consistency (the spread of the drift time is shown with red and green points in \FigureRef{fig:diffusion} for Xenon and Argon accordingly).
 
+\definecolor{myGray}{HTML}{F2F2F2}
+
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.69\columnwidth]{TRT/diffusion.eps}
+% \includegraphics[width=0.69\columnwidth]{TRT/diffusion_v2.eps}
+  \begin{overpic}[width=0.69\columnwidth]{TRT/diffusion.eps}
+    \put (33,48) {\crule[myGray]{0.1\textwidth}{0.024\textwidth}}
+  \end{overpic}
 \caption{Electron drift-diffusion in Xenon- (red) and Argon-based (green) gas mixtures as modelled in the digitization package (with a 4-th degree polynomial). 
 Black points correspond to the Garfield simulation for the an Argon-based gas mixture.}
 \label{fig:diffusion}
@@ -925,7 +930,7 @@ for Argon is larger due to the faster drift time of the electron clusters and th
   \includegraphics[width=\textwidth]{TRT/fromPoster/argon_precHitFracPerTrack_vs_phi.eps}
 \end{subfigure}
 
-\caption{Simulation of the precision hit fraction in configurations with all straws filled with Xenon (left) and Argon (right) gas mixtures in the barrel detector.}
+\caption{Simulation of the precision hit fraction as a function of $\phi$ in configurations with all straws filled with Xenon (left) and Argon (right) gas mixtures in the barrel detector.}
   \label{fig:precHitFracPerTrack}
 \end{figure}
 
